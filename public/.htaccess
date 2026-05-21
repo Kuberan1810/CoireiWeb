@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteBase /
+
+# ── Force HTTPS ──
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# ── Force www ──
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# ── React SPA fallback ──
+# If file or folder exists, serve it normally
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Otherwise redirect everything to index.html
+RewriteRule ^ index.html [L]

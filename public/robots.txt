@@ -1,0 +1,54 @@
+# ============================================
+# coirei.com — SEO Optimized robots.txt
+# Last Updated: 2026-03-12
+# ============================================
+
+# --- Google ---
+User-agent: Googlebot
+Allow: /
+
+# --- Bing ---
+User-agent: Bingbot
+Allow: /
+
+# --- LinkedIn (important for B2B SaaS) ---
+User-agent: LinkedInBot
+Allow: /
+
+# --- Facebook ---
+User-agent: facebookexternalhit
+Allow: /
+
+# --- All other bots ---
+User-agent: *
+Allow: /
+
+# Block crawling of internal or administrative paths
+Disallow: /admin/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /api/
+Disallow: /staging/
+Disallow: /private/
+
+# Block query parameters to prevent duplicate content indexing
+Disallow: /*?*
+
+# Explicitly allow UTM params (marketing tracking — do not block)
+Allow: /*?utm_source=
+Allow: /*?utm_medium=
+Allow: /*?utm_campaign=
+
+# Explicitly allow crawling of essential assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.woff2$
+Allow: /*.woff$
+
+# Sitemap declaration
+Sitemap: https://www.coirei.com/sitemap.xml
