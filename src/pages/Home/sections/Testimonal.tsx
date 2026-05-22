@@ -165,19 +165,19 @@ export default function TestimonialSection() {
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] w-full max-w-[342px] bg-linear-to-r from-[#161616] to-white"
+                    className="h-[1.5px] w-full max-w-[342px] bg-linear-to-r from-[#161616] to-white hidden sm:block"
                 ></div>
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="px-5 py-1.5 border border-white/10 rounded-md bg-transparent text-white text-[22px] whitespace-nowrap"
+                    className="px-5 py-1.5 border border-white/10 rounded-md bg-transparent text-white text-[16px] sm:text-[22px] whitespace-nowrap"
                 >
                     Testimonial
                 </div>
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] w-full max-w-[342px] bg-linear-to-l from-[#161616] to-white"
+                    className="h-[1.5px] w-full max-w-[342px] bg-linear-to-l from-[#161616] to-white hidden sm:block"
                 ></div>
             </div>
 
@@ -226,8 +226,8 @@ export default function TestimonialSection() {
                             {[left, cur, right].map((t, idx) => (
                                 <div
                                     key={`${t.id}-${idx}`}
-                                    className="flex-1 min-w-0 rounded-[20px] p-6 flex flex-col justify-between
-                                               border border-white/[0.07] select-none  glass"
+                                    className={`rounded-[20px] p-6 flex flex-col justify-between border border-white/[0.07] select-none glass
+                                               ${idx === 1 ? 'flex-1 min-w-0' : 'hidden md:flex md:flex-1 md:min-w-0'}`}
 
                                 >
                                     <div className="">

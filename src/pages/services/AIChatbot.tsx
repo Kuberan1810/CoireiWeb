@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
@@ -80,8 +81,62 @@ const JackpotNumber = ({ value }: { value: string }) => {
     );
 };
 
+const countryCodes = [
+    { flagUrl: "https://flagcdn.com/w20/in.png", code: "+91", alt: "India" },
+    { flagUrl: "https://flagcdn.com/w20/us.png", code: "+1", alt: "USA" },
+    { flagUrl: "https://flagcdn.com/w20/gb.png", code: "+44", alt: "UK" },
+    { flagUrl: "https://flagcdn.com/w20/ae.png", code: "+971", alt: "UAE" },
+    { flagUrl: "https://flagcdn.com/w20/sg.png", code: "+65", alt: "Singapore" },
+];
+
 const AIChatbot = () => {
     useScrollAnimations();
+    const navigate = useNavigate();
+
+    const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]);
+    const [countryOpen, setCountryOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const [formData, setFormData] = useState({
+        name: "",
+        company: "",
+        phone: "",
+        email: "",
+        message: "",
+    });
+
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmitForm = () => {
+        console.log({
+            ...formData,
+            countryCode: selectedCountry.code,
+        });
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target as Node)
+            ) {
+                setCountryOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     return (
         <>
@@ -390,20 +445,166 @@ const AIChatbot = () => {
                         Get Started with <span className="text-[#F67300]">Coirei AI</span> Virtual Assistant
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full mb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start w-full mb-10">
                         {/* Left Content */}
-                        <div data-ns-animate="true" className="flex flex-col gap-6 items-start text-left">
-                            <h3 className="text-2xl md:text-[28px] font-normal text-white leading-tight">
+                        <div className="flex flex-col gap-4 items-start text-left md:sticky md:top-40">
+                            <h3 className="text-3xl md:text-[35px] font-medium text-white leading-tight">
                                 Ready to transform your business?
                             </h3>
-                            <div className="flex flex-col gap-4 text-white/70 text-lg font-light leading-relaxed">
-                                <p>Book a consultation with us.</p>
-                                <p>We'll customize the chatbot to fit your needs.</p>
-                            </div>
+                            <p className="text-white/70 text-lg font-light leading-relaxed mb-2">
+                                We'll customize the chatbot to fit your needs.
+                            </p>
+                            <button
+                                onClick={() => navigate("/contactsales")}
+                                className="text-[#252525] py-2.5 px-6 bg-[#FAF9F6] rounded-md font-semibold border border-transparent hover:bg-[#F67300] hover:text-white hover:border-[#F67300] transition-all duration-500 ease-out cursor-pointer text-xs sm:text-sm w-fit"
+                            >
+                                Book a Consultation
+                            </button>
                         </div>
 
-                        {/* Right Image Placeholder (Blank Space) */}
-                        <div className="w-full h-[250px] md:h-[350px]"></div>
+                        {/* Right Content - Contact Form */}
+                        <div className="w-full">
+                            <div className="space-y-6">
+                                {/* Name */}
+                                <div>
+                                    <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                        Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className="w-full h-12 bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg px-4 text-base text-white/90 focus:outline-none focus:border-white/20 transition"
+                                    />
+                                </div>
+
+                                {/* Company */}
+                                <div>
+                                    <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                        Company
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        value={formData.company}
+                                        onChange={handleChange}
+                                        className="w-full h-12 bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg px-4 text-base text-white/90 focus:outline-none focus:border-white/20 transition"
+                                    />
+                                </div>
+
+                                {/* Phone & Email */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    {/* Phone */}
+                                    <div>
+                                        <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                            Phone
+                                        </label>
+                                        <div className="flex items-center h-12 bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg overflow-visible focus-within:border-white/20 transition relative">
+                                            {/* Dropdown */}
+                                            <div ref={dropdownRef} className="relative h-full">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setCountryOpen(!countryOpen)}
+                                                    className="flex items-center gap-2 px-3 h-full border-r border-[#2d2d2d] text-white/80 text-[14px] bg-[#202020] rounded-l-lg cursor-pointer"
+                                                >
+                                                    <img
+                                                        src={selectedCountry.flagUrl}
+                                                        alt={selectedCountry.alt}
+                                                        className="w-5 h-auto object-contain shrink-0"
+                                                    />
+                                                    <span>{selectedCountry.code}</span>
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="14"
+                                                        height="14"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        className={`text-white/40 transition ${countryOpen ? "rotate-180" : ""}`}
+                                                    >
+                                                        <path d="m6 9 6 6 6-6" />
+                                                    </svg>
+                                                </button>
+
+                                                {/* Dropdown Menu */}
+                                                {countryOpen && (
+                                                    <div className="absolute top-14 left-0 w-[130px] bg-[#1A1A1A] border border-[#2d2d2d] rounded-xl overflow-hidden z-50 shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
+                                                        {countryCodes.map((country) => (
+                                                            <button
+                                                                key={country.code}
+                                                                type="button"
+                                                                onClick={() => {
+                                                                    setSelectedCountry(country);
+                                                                    setCountryOpen(false);
+                                                                }}
+                                                                className="w-full flex items-center gap-3 px-4 py-3 text-white/80 hover:bg-white/5 transition cursor-pointer"
+                                                            >
+                                                                <img
+                                                                    src={country.flagUrl}
+                                                                    alt={country.alt}
+                                                                    className="w-5 h-auto object-contain shrink-0"
+                                                                />
+                                                                <span>{country.code}</span>
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Phone Input */}
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                placeholder="98765 43210"
+                                                className="flex-1 h-full bg-transparent px-4 text-base text-white/90 placeholder:text-white/20 focus:outline-none"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Email */}
+                                    <div>
+                                        <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            className="w-full h-12 bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg px-4 text-base text-white/90 focus:outline-none focus:border-white/20 transition"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Message */}
+                                <div>
+                                    <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                        Message
+                                    </label>
+                                    <textarea
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        rows={5}
+                                        className="w-full bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg px-4 py-3 text-base text-white/90 resize-none focus:outline-none focus:border-white/20 transition"
+                                    />
+                                </div>
+
+                                {/* Submit Button */}
+                                <button
+                                    onClick={handleSubmitForm}
+                                    className="w-full h-12 bg-[#F67300] text-white rounded-lg text-lg font-medium transition-all duration-300 ease-out hover:brightness-95 hover:shadow-[0_0_0_3px_rgba(246,115,0,0.25)] active:scale-[0.98] cursor-pointer"
+                                >
+                                    Get in touch
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
