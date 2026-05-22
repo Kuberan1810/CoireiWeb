@@ -51,6 +51,29 @@ function WhyChooseUs() {
             gsap.set(".why-choose-header", { opacity: 0, y: 30 });
             gsap.set(".why-choose-paragraph", { opacity: 0, y: 30 });
 
+            // Animate headers when they enter viewport (not pinned)
+            gsap.to(".why-choose-header", {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: "top 80%", // Trigger when top of wrapper hits 80% of viewport height
+                }
+            });
+
+            gsap.to(".why-choose-paragraph", {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: "top 80%",
+                }
+            });
+
             const spreadX = window.innerWidth < 1024 ? "-300px" : "-460px";
             const spreadXRight = window.innerWidth < 1024 ? "300px" : "460px";
 
@@ -66,9 +89,7 @@ function WhyChooseUs() {
                 },
             });
 
-            // Entrance animations for headers
-            tl.to(".why-choose-header", { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0)
-              .to(".why-choose-paragraph", { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.1)
+            tl
               // Phase 1 — stack cards 1 and 2 into view behind card 0
               .to(cards[1], { y: "6%", scale: 0.98, opacity: 1, duration: 0.4, ease: "power2.out" }, 0.2)
               .to(cards[2], { y: "12%", scale: 0.96, opacity: 1, duration: 0.4, ease: "power2.out" }, 0.3)

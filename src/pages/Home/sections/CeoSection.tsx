@@ -7,16 +7,15 @@ export const CeoSection = () => {
         <section className="mx-4 sm:mx-8 md:mx-15 lg:mx-20 py-8 sm:py-14 md:py-20">
             <div>
 
-                {/* BADGE */}
-                <div
+                {/* HEADING */}
+                <h2 
                     data-ns-animate
                     data-offset="80"
                     data-direction="up"
-                    className="mb-6 sm:mb-8 md:mb-10"
+                    className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 tracking-tight leading-tight md:leading-[68px]"
                 >
-
-                 
-                </div>
+                    Meet our <span className="text-[#F67300]">CEO</span>
+                </h2>
 
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0 lg:gap-24 max-w-6xl mx-auto">

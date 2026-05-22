@@ -2,6 +2,7 @@ import logo from "../assets/images/homepage/coirei-logo.png";
 import { Link } from "react-router-dom";
 import ResourcesDropdown from "../component/NavDropdown/ResourcesDropdown";
 import ProductsDropdown from "../component/NavDropdown/ProductsDropdown";
+import ServicesDropdown from "../component/NavDropdown/ServicesDropdown";
 import { useState } from "react";
 import { Menu, X, ChevronRight, ChevronUp} from "lucide-react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
@@ -40,6 +41,7 @@ function Navbar() {
     const [open, setOpen] = useState(false);
     const [resourcesOpen, setResourcesOpen] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);
+    const [servicesOpen, setServicesOpen] = useState(false);
 
     return (
         <header data-ns-animate data-offset="40" data-direction="down" data-duration="1" className="text-[rgb(212,212,212)] mx-5 my-7.5 rounded-lg backdrop-blur-3xl ">
@@ -68,11 +70,8 @@ function Navbar() {
                             </Link>
                         </li>
 
-                        <li>
-                            <Link to="/services" className="p-2.5 rounded hover:bg-[#7B7B7B20] transition-colors">
-                                Services
-                            </Link>
-                        </li>
+                        <ServicesDropdown />
+
                         <li>
                             <Link to="/Learning" className="p-2.5 rounded hover:bg-[#7B7B7B20] transition-colors">
                                 Learning
@@ -182,11 +181,36 @@ function Navbar() {
                                     </Link>
                                 </li>
 
-                                <li>
-                                    <Link to="/services" onClick={() => setOpen(false)} className="flex items-center justify-between text-lg px-4 py-3 rounded-lg hover:bg-white/5">
+                                {/* SERVICES ACCORDION */}
+                                <li className={`overflow-hidden rounded-2xl transition-all duration-300 ${servicesOpen ? "bg-[#292929]/90 border border-white/10" : ""}`}>
+                                    <button
+                                        onClick={() => setServicesOpen(prev => !prev)}
+                                        className="w-full flex items-center justify-between px-4 py-4 text-lg font-medium hover:bg-white/5"
+                                    >
                                         <span>Services</span>
-                                        <ChevronRight size={16} className="opacity-40" />
-                                    </Link>
+                                        <ChevronUp size={18} className={`transition-transform duration-300 ${servicesOpen ? "rotate-0" : "rotate-180"}`} />
+                                    </button>
+
+                                    <div className={`overflow-hidden transition-all duration-300 ${servicesOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}`}>
+                                        {[
+                                            { label: "Web & Platform Development", to: "/services/custom-web-platform-development" },
+                                            { label: "Custom Business Applications", to: "/services/custom-business-application-development" },
+                                            { label: "AI Chatbots & Virtual Assistants", to: "/services/ai-chatbot-development" },
+                                            { label: "Process Automation & Integration", to: "/services/process-automation-system-integration" },
+                                            { label: "Data, Dashboards & BI", to: "/services/business-intelligence-dashboard-development" },
+                                            { label: "UI/UX, Branding & Design", to: "/services/ui-ux-branding-product-design" },
+                                        ].map((item, index) => (
+                                            <Link
+                                                key={item.label}
+                                                to={item.to}
+                                                onClick={() => setOpen(false)}
+                                                className={`flex items-center justify-between px-4 py-3 text-[15px] text-white/90 hover:bg-white/5 ${index !== 0 ? "border-t border-white/10" : ""}`}
+                                            >
+                                                <span>{item.label}</span>
+                                                <ChevronRight size={14} className="opacity-40" />
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </li>
                                 <li>
                                     <Link to="/learning" onClick={() => setOpen(false)} className="flex items-center justify-between text-lg px-4 py-3 rounded-lg hover:bg-white/5">

@@ -51,8 +51,7 @@ function AboutUs() {
                         className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] text-[#E3E3E0] font-medium leading-[1.2] max-w-2xl"
                     >
 
-                        Create <span className="text-[#F67300]">Real Time Business</span> with  AI Strategy.<br className="hidden lg:block" />
-                    
+                        Create Real Time<span className="text-[#FF6B00]"> Business</span> with <span className='text-[#FF6B00]'>AI </span>Strategy.<br className="hidden lg:block" />
 
                     </h2>
 

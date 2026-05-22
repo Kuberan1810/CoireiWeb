@@ -13,6 +13,10 @@ const faqs = [
     {
         question: "3. Can I integrate Coirei with my existing tools?",
         answer: "Absolutely. Our AI solutions are designed to be flexible and can integrate with most modern software stacks and APIs without complex coding."
+    },
+    {
+        question: "4. What kind of ongoing support do you offer after deployment?",
+        answer: " We provide continuous support, regular updates, and analytics reviews to ensure yCoirei AI stays effective and aligned with your business goals."
     }
 ];
 

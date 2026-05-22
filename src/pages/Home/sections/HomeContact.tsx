@@ -2,11 +2,11 @@ import React, { useRef, useState, useEffect } from "react";
 import useScrollReveal from "../../../hooks/useScrollReveal";
 
 const countryCodes = [
-  { flag: "🇮🇳", code: "+91" },
-  { flag: "🇺🇸", code: "+1" },
-  { flag: "🇬🇧", code: "+44" },
-  { flag: "🇦🇪", code: "+971" },
-  { flag: "🇸🇬", code: "+65" },
+  { flagUrl: "https://flagcdn.com/w20/in.png", code: "+91", alt: "India" },
+  { flagUrl: "https://flagcdn.com/w20/us.png", code: "+1", alt: "USA" },
+  { flagUrl: "https://flagcdn.com/w20/gb.png", code: "+44", alt: "UK" },
+  { flagUrl: "https://flagcdn.com/w20/ae.png", code: "+971", alt: "UAE" },
+  { flagUrl: "https://flagcdn.com/w20/sg.png", code: "+65", alt: "Singapore" },
 ];
 
 const HomeContact = () => {
@@ -42,25 +42,25 @@ const HomeContact = () => {
     });
   };
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     if (
-  //       dropdownRef.current &&
-  //       !dropdownRef.current.contains(event.target as Node)
-  //     ) {
-  //       setCountryOpen(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setCountryOpen(false);
+      }
+    };
 
-  //   document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
-  //   return () => {
-  //     document.removeEventListener(
-  //       "mousedown",
-  //       handleClickOutside
-  //     );
-  //   };
-  // }, []);
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+    };
+  }, []);
 
   const { ref: sectionRef, revealStyle } = useScrollReveal(0.6);
 
@@ -189,12 +189,15 @@ const HomeContact = () => {
                           text-white/80
                           text-[15px]
                           bg-[#202020]
+                          rounded-l-lg
                           cursor-pointer
                         "
                       >
-                        <span className="text-base">
-                          {selectedCountry.flag}
-                        </span>
+                        <img
+                          src={selectedCountry.flagUrl}
+                          alt={selectedCountry.alt}
+                          className="w-5 h-auto object-contain shrink-0"
+                        />
 
                         <span>
                           {selectedCountry.code}
@@ -258,9 +261,11 @@ const HomeContact = () => {
                                 cursor-pointer
                               "
                             >
-                              <span>
-                                {country.flag}
-                              </span>
+                              <img
+                                src={country.flagUrl}
+                                alt={country.alt}
+                                className="w-5 h-auto object-contain shrink-0"
+                              />
 
                               <span>
                                 {country.code}

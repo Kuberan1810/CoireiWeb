@@ -1,246 +1,343 @@
-import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import SEO from "../../component/SEO";
-import { ServiceSchema, BreadcrumbSchema } from "../../component/StructuredData";
-import { ArrowLeft, ChevronDown } from "lucide-react";
-import { servicesData } from "./ServiceData";
+import { useParams } from "react-router-dom";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
-
-const FAQAccordion = ({ content }: { content: string }) => {
-    const pairs: { q: string; a: string }[] = [];
-    const parts = content.split(/\*\*(.*?)\*\*/g);
-
-    for (let i = 1; i < parts.length; i += 2) {
-        let question = parts[i].trim();
-        question = question.replace(/^(Q:|Q\s|FAQ\s|A:|\d+[\.\:]\s*)/i, "").trim();
-        const answer = parts[i + 1] ? parts[i + 1].trim() : "";
-        if (question) {
-            pairs.push({ q: question, a: answer });
-        }
-    }
-
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-    return (
-        <div className="flex flex-col gap-4 mt-6">
-            {pairs.map((pair, index) => {
-                const isOpen = openIndex === index;
-                return (
-                    <div
-                        key={index}
-                        className="bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
-                    >
-                        <button
-                            onClick={() => setOpenIndex(isOpen ? null : index)}
-                            className="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-white/5 transition-colors cursor-pointer mb-2"
-                        >
-                            <span className="font-medium text-[#E3E3E0] text-lg pr-4">{index + 1}. {pair.q}</span>
-                            <ChevronDown
-                                size={18}
-                                className={`text-white/50 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-white" : ""}`}
-                            />
-                        </button>
-                        <div
-                            className={`px-6 overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[500px] pb-5 opacity-100" : "max-h-0 opacity-0"}`}
-                        >
-                            <p className="text-white/60  leading-relaxed">
-                                {pair.a}
-                            </p>
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
+import { ArrowUpRight, HandCoins } from "lucide-react";
+import FAQSection from "../Home/sections/FAQSection";
+import dashboardImg from "../../assets/images/services/dashboard.jpg";
 
 const ServiceDetails = () => {
     useScrollAnimations();
-
     const { slug } = useParams();
-    const navigate = useNavigate();
-
-
-    const service = servicesData.find(
-        (s) => s.slug === slug
-    );
-
-
-    if (!service) {
-        return (
-            <>
-                <div className="fixed w-full top-0 z-10">
-                    <Navbar />
-                </div>
-                <div className="min-h-screen flex flex-col items-center justify-center text-white gap-4">
-                    <h2 className="text-3xl font-semibold">Service not found</h2>
-                    <p className="text-white/60">We couldn't find the service details you were looking for.</p>
-                    <button
-                        onClick={() => navigate("/services")}
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl text-white transition cursor-pointer mt-4"
-                    >
-                        <ArrowLeft size={16} />
-                        Back to Services
-                    </button>
-                </div>
-                <Footer />
-            </>
-        );
-    }
-
-    // 3 related services (exclude current)
-    const related = servicesData.filter((s) => s.id !== service.id).slice(0, 3);
 
     return (
         <>
-            {(service.metaTitle || service.metaDescription) && (
-                <SEO 
-                    title={service.metaTitle || service.title}
-                    description={service.metaDescription || ""}
-                    breadcrumbs={[
-                        { name: "Home", url: "https://www.coirei.com" },
-                        { name: "Services", url: "https://www.coirei.com/services" },
-                        { name: service.title, url: `https://www.coirei.com/services/${service.slug}` }
-                    ]}
-                />
-            )}
-            <ServiceSchema
-                name={service.title}
-                url={`https://www.coirei.com/services/${service.slug}`}
-                description={service.metaDescription || service.title}
-            />
-            <BreadcrumbSchema
-                items={[
-                    { name: "Home", url: "https://www.coirei.com" },
-                    { name: "Services", url: "https://www.coirei.com/services" },
-                    { name: service.title, url: `https://www.coirei.com/services/${service.slug}` },
-                ]}
-            />
-            <div className="fixed w-full top-0 z-10">
+            <div className="fixed w-full top-0 z-50">
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-28 pb-0">
-                <div className="pt-14 px-6 md:px-10">
+            <main className="min-h-screen pt-32 pb-20 w-full bg-[#161616] flex flex-col items-center">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
-                    {/* ── Title ── */}
-                    <h1 data-ns-animate="true" className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-[#E3E3E0] leading-tight mb-4">
-                        {service.title}
+                    {/* --- HEADER SECTION --- */}
+                <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
+
+
+                    {/* Main Title */}
+                    <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight mb-8 max-w-4xl tracking-tight">
+                        Enhance Your Business with AI Chat and Virtual Assistance
                     </h1>
 
-                    {/* ── Back + Category ── */}
-                    <div data-ns-animate="true" data-delay="0.1" className="flex items-center gap-3 mb-8">
-                        <button
-                            onClick={() => navigate("/services")}
-                            className="flex items-center justify-center w-8 h-8 rounded-[4px] bg-white/8 hover:bg-white/15 border border-white/10 text-white/60 hover:text-white transition-all duration-300 group cursor-pointer"
-                        >
-                            <ArrowLeft
-                                size={14}
-                                className="group-hover:-translate-x-0.5 transition-transform duration-300"
-                            />
-                        </button>
-                        <span className="text-sm font-medium text-white/70 bg-white/8 border border-white/12 px-4 py-1.5 rounded-[4px]">
-                            Services
-                        </span>
-                    </div>
-
-                    {/* ── Hero Image (contained, rounded) ── */}
-                    <div data-ns-animate="true" data-delay="0.2" className="overflow-hidden rounded-xl shadow-2xl mb-15">
-                        <img
-                            src={service.image}
-                            alt={service.title}
-                            className="w-full h-64 md:h-[620px] object-cover"
-                        />
-                    </div>
+                    {/* Subtitle / Description */}
+                    <p data-ns-animate="true" data-delay="0.2" className="text-white/70 text-lg md:text-xl leading-relaxed max-w-4xl mb-24 font-light">
+                        Welcome to the future of business communication. Coirei AI chatbot and virtual assistant are designed to help you automate customer support, streamline operations, and engage with your audience like never before.
+                    </p>
                 </div>
+            </div>
 
-                <div className="max-w-7xl mx-auto px-6 md:px-10">
-                    {/* ── Article Body ── */}
-                    <div className="flex flex-col gap-12 mb-20">
-                        {service.sections.map((section, index) => {
-                            const isFAQ = section.title.toUpperCase() === "FAQ" || section.title.toUpperCase() === "FAQS";
+            {/* --- FEATURES SECTION --- */}
+            <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                    Features of Coirei AI Chatbot
+                </h2>
 
-                            return (
-                                <div key={index} data-ns-animate="true">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight">
-                                        {section.title}
-                                    </h2>
-
-                                    {isFAQ ? (
-                                        <FAQAccordion content={section.content} />
-                                    ) : (
-                                        <>
-                                            {section.content.split("\n").map((line, i) => {
-                                                if (!line.trim()) return <div key={i} className="h-4" />;
-
-                                                const parts = line.split(/(\*\*.*?\*\*)/g);
-
-                                                return (
-                                                    <p
-                                                        key={i}
-                                                        className="text-white/70 text-[18px] md:text-xl leading-[1.7] font-light mb-4 last:mb-0"
-                                                    >
-                                                        {parts.map((part, pidx) => {
-                                                            if (part.startsWith("**") && part.endsWith("**")) {
-                                                                return (
-                                                                    <strong key={pidx} className="text-white font-bold">
-                                                                        {part.slice(2, -2)}
-                                                                    </strong>
-                                                                );
-                                                            }
-                                                            return part;
-                                                        })}
-                                                    </p>
-                                                );
-                                            })}
-                                        </>
-                                    )}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+                        {/* --- LEFT COLUMN: FEATURES LIST --- */}
+                        <div className="flex flex-col">
+                            {/* Feature 1 */}
+                            <div data-ns-animate="true" className="flex flex-col mb-16">
+                                <div className="h-px w-full bg-white/20 mb-8"></div>
+                                <div className="mb-8 text-white">
+                                    {/* Temporary basic icon for 24/7 */}
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
                                 </div>
-                            );
-                        })}
+                                <div className="flex items-center justify-between mb-6 group cursor-pointer">
+                                    <h3 className="text-2xl font-medium text-white">
+                                        24/7 Customer Support
+                                    </h3>
+                                    <ArrowUpRight size={24} className="text-white/70 group-hover:text-white transition-colors" />
+                                </div>
+                                <p className="text-white/70 text-lg leading-relaxed font-light pr-4">
+                                    Our chatbot never sleeps. It's there for your customers at any hour, answering questions, solving problems, and offering guidance so you never miss a lead.
+                                </p>
+                            </div>
+
+                            {/* Feature 2: Easy Integration */}
+                            <div data-ns-animate="true" className="flex flex-col mb-16">
+                                <div className="h-px w-full bg-white/20 mb-8"></div>
+                                <div className="mb-8 text-white">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="6" cy="6" r="3" />
+                                        <circle cx="6" cy="18" r="3" />
+                                        <path d="M20 4L8.12 15.88" />
+                                        <path d="M14.47 14.48L20 20" />
+                                        <path d="M8.12 8.12L12 12" />
+                                    </svg>
+                                </div>
+                                <div className="flex items-center justify-between mb-6 group cursor-pointer">
+                                    <h3 className="text-2xl font-medium text-white">
+                                        Easy Integration
+                                    </h3>
+                                    <ArrowUpRight size={24} className="text-white/70 group-hover:text-white transition-colors" />
+                                </div>
+                                <p className="text-white/70 text-lg leading-relaxed font-light pr-4">
+                                    Connect the chatbot effortlessly with your CRM, website, or other business tools, making your workflow smoother than ever.
+                                </p>
+                            </div>
+
+                            {/* Feature 3: Personalized User Interactions */}
+                            <div data-ns-animate="true" className="flex flex-col mb-16">
+                                <div className="h-px w-full bg-white/20 mb-8"></div>
+                                <div className="mb-8 text-white">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
+                                </div>
+                                <div className="flex items-center justify-between mb-6 group cursor-pointer">
+                                    <h3 className="text-2xl font-medium text-white">
+                                        Personalized User Interactions
+                                    </h3>
+                                    <ArrowUpRight size={24} className="text-white/70 group-hover:text-white transition-colors" />
+                                </div>
+                                <p className="text-white/70 text-lg leading-relaxed font-light pr-4">
+                                    The AI learns and adapts to each user, offering tailored responses that make every interaction feel personal and valuable.
+                                </p>
+                            </div>
+
+                            {/* Feature 4: Advanced Analytics */}
+                            <div data-ns-animate="true" className="flex flex-col mb-8">
+                                <div className="h-px w-full bg-white/20 mb-8"></div>
+                                <div className="mb-8 text-white">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                        <polyline points="16 7 22 7 22 13" />
+                                    </svg>
+                                </div>
+                                <div className="flex items-center justify-between mb-6 group cursor-pointer">
+                                    <h3 className="text-2xl font-medium text-white">
+                                        Advanced Analytics
+                                    </h3>
+                                    <ArrowUpRight size={24} className="text-white/70 group-hover:text-white transition-colors" />
+                                </div>
+                                <p className="text-white/70 text-lg leading-relaxed font-light pr-4">
+                                    Track user interactions, measure engagement, and discover insights that help you refine your customer strategy.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* --- RIGHT COLUMN: BLANK SPACE --- */}
+                        <div className="w-full h-[350px] md:h-[450px] lg:h-[550px]"></div>
+
                     </div>
                 </div>
 
-                {/* ── Related Services ── */}
-                {related.length > 0 && (
-                    <div className="border-t border-white/10 pt-14 pb-20 px-6 md:px-10">
-                        <h3 data-ns-animate="true" className="text-base font-semibold text-white/60 uppercase tracking-widest mb-8">
-                            Other Services
-                        </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {related.map((rel, idx) => (
-                                <article
-                                    key={rel.id}
-                                    data-ns-animate="true"
-                                    data-delay={(idx * 0.1).toString()}
-                                    onClick={() => navigate(`/services/${rel.slug}`)}
-                                    className="group cursor-pointer rounded-2xl p-5 bg-transparent hover:bg-[#29292950] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1"
-                                >
-                                    {/* Image */}
-                                    <div className="relative overflow-hidden rounded-xl mb-6">
-                                        <img
-                                            src={rel.image}
-                                            alt={rel.title}
-                                            className="h-50 w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-                                        />
-                                    </div>
-                                    {/* Content */}
-                                    <div>
-                                        <h3 className="text-xl font-medium text-white leading-snug mb-6 transition-colors duration-500 group-hover:text-white">
-                                            {rel.title}
-                                        </h3>
-                                        <span className="inline-block mb-6 text-sm font-medium text-white/90 bg-white/10 py-2 px-4 rounded transition-all duration-500 group-hover:bg-white/15">
-                                            Learn More
-                                        </span>
-                                    </div>
-                                </article>
-                            ))}
+                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+
+                {/* --- HOW IT WORKS SECTION --- */}
+                <div className="w-full mt-32">
+                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                        How Coirei AI Virtual Assistant Works
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 border-b border-white/20">
+                        {/* Step 1 */}
+                        <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-white/20 py-10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-[#F67300]">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="11" cy="11" r="8" />
+                                        <path d="m21 21-4.3-4.3" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-medium text-white">
+                                    Identify Customer Needs
+                                </h3>
+                            </div>
+                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                                Right from the first interaction, Coirei AI spots what your customers need and responds accordingly.
+                            </p>
+                        </div>
+
+                        {/* Step 2 */}
+                        <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-white/20 py-10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-[#F67300]">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        <path d="M3 15v-4a2 2 0 0 1 2-2h4" />
+                                        <path d="m7 5 4-4 4 4" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-medium text-white">
+                                    Natural Language Processing
+                                </h3>
+                            </div>
+                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                                Using advanced NLP, the assistant understands and engages in real, human-like conversation.
+                            </p>
+                        </div>
+
+                        {/* Step 3 */}
+                        <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-white/20 py-10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-[#F67300]">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                                        <path d="M6.5 10v3a2 2 0 0 0 2 2h5.5" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-medium text-white">
+                                    Custom Workflows
+                                </h3>
+                            </div>
+                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                                Every business is unique so we tailor the chatbot to guide users step by step, ensuring they get exactly what they need.
+                            </p>
+                        </div>
+
+                        {/* Step 4 */}
+                        <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-white/20 py-10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-[#F67300]">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                                        <path d="M8 7h8" />
+                                        <path d="M8 11h8" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-medium text-white">
+                                    Ongoing Learning
+                                </h3>
+                            </div>
+                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                                Coirei AI keeps improving. With each conversation, it learns, ensuring smarter, more accurate responses over time.
+                            </p>
                         </div>
                     </div>
-                )}
+                </div>
+
+                {/* --- WHY CHOOSE US SECTION --- */}
+                <div className="w-full mt-32">
+                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                        Why Choose <span className="text-[#F67300]">Coirei AI</span> Chatbot for Your Business
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl mx-auto px-4 md:px-0">
+                        {/* Card 1 */}
+                        <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-[#292929] border border-white/15 rounded-[20px] p-10 hover:bg-[#323232] hover:border-white/25 transition-all duration-300 min-h-[580px] justify-between group">
+                            <div className="w-[250px] h-[250px] flex items-center justify-center text-white/80 group-hover:text-white transition-colors duration-300">
+                                <HandCoins size={250} strokeWidth={0.5} className="text-white/80 group-hover:text-white transition-colors duration-300" />
+                            </div>
+                            <div className="flex flex-col items-center gap-[53px]">
+                                <h3 className="text-[22px] md:text-[24px] font-medium text-white tracking-tight">
+                                    Reduce Operational Cost
+                                </h3>
+                                <p className="text-white/60 text-base md:text-lg leading-relaxed font-light">
+                                    Automate routine tasks and support queries, so you save time and money on manual processes.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div data-ns-animate="true" data-delay="0.2" className="flex flex-col items-center text-center bg-[#292929] border border-white/15 rounded-[20px] p-10 hover:bg-[#323232] hover:border-white/25 transition-all duration-300 min-h-[580px] justify-between group">
+                            <div className="w-[250px] h-[250px] flex items-center justify-center text-white/80 group-hover:text-white transition-colors duration-300">
+                                <svg width="250" height="250" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="48" cy="30" r="14" />
+                                    <path d="M22 75 C22 58, 32 54, 48 54 C64 54, 74 58, 74 75" />
+                                    <path d="M68 22 A 10 10 0 0 1 76 38" />
+                                    <path d="M78 58 C84 60, 88 65, 88 75" />
+                                </svg>
+                            </div>
+                            <div className="flex flex-col items-center gap-[53px]">
+                                <h3 className="text-[22px] md:text-[24px] font-medium text-white tracking-tight">
+                                    Improve Customer Engagement
+                                </h3>
+                                <p className="text-white/60 text-base md:text-lg leading-relaxed font-light">
+                                    Offer instant, personalized responses that keep customers happy and engaged.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div data-ns-animate="true" data-delay="0.3" className="flex flex-col items-center text-center bg-[#292929] border border-white/15 rounded-[20px] p-10 hover:bg-[#323232] hover:border-white/25 transition-all duration-300 min-h-[580px] justify-between group">
+                            <div className="w-[250px] h-[250px] flex items-center justify-center text-white/80 group-hover:text-white transition-colors duration-300">
+                                <svg width="250" height="250" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="30" cy="30" r="6" />
+                                    <circle cx="80" cy="70" r="6" />
+                                    <path d="M30 36 L30 70 L74 70" />
+                                    <path d="M30 70 L55 45" />
+                                </svg>
+                            </div>
+                            <div className="flex flex-col items-center gap-[53px]">
+                                <h3 className="text-[22px] md:text-[24px] font-medium text-white tracking-tight">
+                                    Scale Effortlessly
+                                </h3>
+                                <p className="text-white/60 text-base md:text-lg leading-relaxed font-light">
+                                    Whether you have 100 customers or 10,000, Coirei AI scales with you, no extra effort required.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* --- PROVEN IMPACT TEXT --- */}
+                    <div className="w-full mt-24 text-center">
+                        <p data-ns-animate="true" className="text-white text-lg md:text-xl font-light tracking-wide">
+                            Proven Impact, Measurable Results
+                        </p>
+                    </div>
+
+                    {/* --- STATS GRID --- */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mt-16 max-w-5xl mx-auto w-full mb-16">
+                        <div data-ns-animate="true" data-delay="0.1">
+                            <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">50+</h4>
+                            <p className="text-white/60 text-base md:text-[18px] font-light">Companies Trust Us</p>
+                        </div>
+                        <div data-ns-animate="true" data-delay="0.2">
+                            <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">10+</h4>
+                            <p className="text-white/60 text-base md:text-[18px] font-light">Industries Served</p>
+                        </div>
+                        <div data-ns-animate="true" data-delay="0.3">
+                            <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">99%</h4>
+                            <p className="text-white/60 text-base md:text-[18px] font-light">Customer Satisfaction</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                {/* --- CTA SECTION --- */}
+                <div className="w-full mt-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                        Get Started with <span className="text-[#F67300]">Coirei AI</span> Virtual Assistant
+                    </h2>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full mb-10">
+                            {/* Left Content */}
+                            <div data-ns-animate="true" className="flex flex-col gap-6 items-start text-left">
+                                <h3 className="text-2xl md:text-[28px] font-normal text-white leading-tight">
+                                    Ready to transform your business?
+                                </h3>
+                                <div className="flex flex-col gap-4 text-white/70 text-lg font-light leading-relaxed">
+                                    <p>Book a consultation with us.</p>
+                                    <p>We'll customize the chatbot to fit your needs.</p>
+                                </div>
+                            </div>
+
+                            {/* Right Image Placeholder (Blank Space) */}
+                            <div className="w-full h-[250px] md:h-[350px]"></div>
+                        </div>
+                    </div>
+
             </main>
+
+            <FAQSection />
 
             <Footer />
         </>
