@@ -21,6 +21,8 @@ import ContactSales from "./pages/ContactUs/ContactSales/ContactSales";
 import Company from "./pages/Resources/Company/Company";
 import Services from "./pages/services/Services";
 import ServiceDetails from "./pages/services/ServiceDetails";
+import BusinessAppDetails from "./pages/services/BusinessAppDetails";
+import AIChatbot from "./pages/services/AIChatbot";
 import Learning from "./pages/Learning/Learning";
 
 // Product pages
@@ -47,6 +49,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/contact-sales" element={<ContactSales />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/custom-business-application-development" element={<BusinessAppDetails />} />
+        <Route path="/services/ai-chatbot-development" element={<AIChatbot />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
         <Route path="/learning" element={<Learning />} />
         {/* RESOURCES (NO parent page) */}

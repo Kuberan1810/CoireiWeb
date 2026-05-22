@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Star } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import Image from "../../../assets/images/homepage/image.png";
+import TestimonialImage2 from "../../../assets/images/homepage/pfp.png";
+import TestimonialImage3 from "../../../assets/images/homepage/priyanka.png";
+import TestimonialImage4 from "../../../assets/images/homepage/confident-indian-business-woman.jpg";
 
 const TESTIMONIALS = [
     {
@@ -10,11 +13,8 @@ const TESTIMONIALS = [
         date: "03/12/2026",
         rating: 5,
         quote: "This adventure exceeded all my expectations and gave me memories I'll cherish forever.",
-        avatar: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?w=80&h=80&fit=crop&crop=face",
-        images: [
-            "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?w=600&h=760&fit=crop&crop=face",
-            "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&h=760&fit=crop&crop=face",
-        ],
+        avatar: Image,
+
     },
     {
         id: 1,
@@ -23,11 +23,8 @@ const TESTIMONIALS = [
         date: "03/18/2026",
         rating: 5,
         quote: "Coirei transformed our entire workflow. Onboarding, tracking, everything became seamless and efficient.",
-        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face",
-        images: [
-            "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=760&fit=crop&crop=face",
-            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=760&fit=crop&crop=face",
-        ],
+        avatar: TestimonialImage3,
+
     },
     {
         id: 2,
@@ -36,11 +33,8 @@ const TESTIMONIALS = [
         date: "03/24/2026",
         rating: 5,
         quote: 'Working with Coirei was a Game-changer. They delivered ahead of schedule and the quality is unmatched.',
-        avatar: "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=80&h=80&fit=crop&crop=face",
-        images: [
-            "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&h=760&fit=crop&crop=face",
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=760&fit=crop&crop=face",
-        ],
+        avatar: TestimonialImage2,
+        
     },
     {
         id: 3,
@@ -49,19 +43,10 @@ const TESTIMONIALS = [
         date: "03/28/2026",
         rating: 5,
         quote: "Their AI solutions saved us hundreds of hours in automation. Highly professional team and delivery.",
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face",
-        images: [
-            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=760&fit=crop&crop=face",
-            "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=760&fit=crop&crop=face",
-        ],
+        avatar: TestimonialImage4,
+
     },
 ];
-
-const XIcon = ({ muted = false }: { muted?: boolean }) => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill={muted ? "#444" : "#aaa"}>
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-);
 
 const Stars = ({ count, size = 15 }: { count: number; size?: number }) => (
     <div className="flex gap-0.5">
@@ -76,8 +61,6 @@ const Stars = ({ count, size = 15 }: { count: number; size?: number }) => (
 );
 
 export default function TestimonialSection() {
-    const navigate = useNavigate();
-
     const [activeIndex, setActiveIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [slideDir, setSlideDir] = useState<'left' | 'right'>('right');
@@ -167,11 +150,6 @@ export default function TestimonialSection() {
     const nextIdx = (activeIndex + 1) % n;
     const left = TESTIMONIALS[prevIdx];
     const right = TESTIMONIALS[nextIdx];
-
-    const splitQuote = (q: string) => {
-        const words = q.split(" ");
-        return { bold: words.slice(0, 5).join(" "), rest: words.slice(5).join(" ") };
-    };
 
     return (
         <section

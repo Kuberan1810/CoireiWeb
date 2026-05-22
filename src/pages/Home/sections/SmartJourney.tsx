@@ -1,21 +1,25 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Terminal, Lightbulb, MessageSquare, Bug } from "lucide-react";
 
 const journeyItems = [
     {
-        title: <span className="text-[#F67300]">Gen AI Developer</span>,
+        title: "Gen AI Developer",
+        icon: <Terminal size={20} className="text-[#F67300]" />,
         description: "Our AI Developers build intelligent solutions that help businesses work smarter and faster. We focus on creating reliable, scalable, and user-friendly AI systems for real business needs. From automation to smart analytics, our team delivers technology that drives growth and innovation."
     },
     {
-        title: <span className="text-[#F67300]">AI Strategist</span>,
+        title: "AI Strategist",
+        icon: <Lightbulb size={20} className="text-[#F67300]" />,
         description: "Our AI Strategists help businesses identify the right AI opportunities for long-term success. We create clear strategies that align technology with your business goals and customer needs. With deep market understanding, we ensure every AI solution adds real value to your company."
     },
     {
-        title: <span className="text-[#F67300]">AI Consultant</span>,
+        title: "AI Consultant",
+        icon: <MessageSquare size={20} className="text-[#F67300]" />,
         description: "Our AI Consultants work closely with clients to understand challenges and provide practical AI solutions. We guide businesses through every step, from planning to implementation with complete transparency. Our goal is to help companies adopt AI confidently and achieve measurable results."
     },
     {
-        title: <span className="text-[#F67300]">App Tester</span>,
+        title: "App Tester",
+        icon: <Bug size={20} className="text-[#F67300]" />,
         description: "Our App Testers ensure every application performs smoothly, securely, and without errors. We carefully test functionality, performance, and user experience before every launch. With attention to detail and quality assurance, we help deliver reliable digital products for your business."
     }
 ];
@@ -60,9 +64,12 @@ function SmartJourney() {
                         "
                     >
                         <div className="space-y-[15px]">
-                            <h3 className="text-white font-medium text-[20px] sm:text-[22px] tracking-tight">
-                                {item.title}
-                            </h3>
+                            <div className="flex items-center gap-3">
+                                {item.icon}
+                                <h3 className="text-white font-medium text-[20px] sm:text-[22px] tracking-tight">
+                                    <span className="text-[#F67300]">{item.title}</span>
+                                </h3>
+                            </div>
                             <div className="h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                             <p className="text-[#B5B4B2] text-[14px] sm:text-[15px] leading-relaxed font-light">
                                 {item.description}

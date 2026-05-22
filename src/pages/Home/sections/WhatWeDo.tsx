@@ -1,4 +1,4 @@
-import { Lightbulb, PenTool, BarChart2, Wrench } from "lucide-react";
+import { Lightbulb, PenTool, BarChart2, Wrench, BrainCircuit } from "lucide-react";
 
 const services = [
     {
@@ -48,6 +48,11 @@ const services = [
         description:
             "Create impactful digital experiences with our UI/UX design, branding, and product design services. We focus on user-centered design, modern interfaces, and strong brand identity to enhance engagement and conversion.",
     },
+    {
+        icon: <BrainCircuit size={18} className="text-white/80" />,
+        title: "AI research and development",
+        description: "Our AI Research and Development service accelerates research, experiment & business research by providing advanced AI tools and deep analytical insights. We help you uncover new patterns, drive innovation, and make informed decisions.",
+    }
 ];
 
 

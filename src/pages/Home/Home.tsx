@@ -11,7 +11,6 @@ import WhyChooseUs from "./sections/WhyChooseUs";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 import { CeoSection } from "./sections/CeoSection";
 
-import SecondContent from "./sections/SecondContent";   
 import OurProducts from "./sections/OurProducts";
 import TestimonialSection from "./sections/Testimonal";
 import HomeContact from "./sections/HomeContact";

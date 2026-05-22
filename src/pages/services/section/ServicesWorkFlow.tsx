@@ -1,4 +1,3 @@
-
 import {
   MessageSquare,
   Lightbulb,
@@ -32,29 +31,17 @@ const steps = [
     desc: "After thorough testing and validation, we deliver a polished solution that’s ready to launch",
   },
 ];
+
 const ServicesWorkFlow = () => {
   return (
     <section className="text-white py-10 sm:py-20 mx-15 max-sm:py-16 max-sm:mx-5">
       <div className="">
 
         {/* HEADER */}
-        <div className="text-center mb-16 max-sm:mb-12">
-          <h2 
-            data-ns-animate 
-            data-offset="40" 
-            className="inline-flex items-center justify-center text-xl max-sm:text-base text-white py-2.5 max-sm:py-2 px-10 max-sm:px-6 bg-[#7B7B7B]/10 backdrop-blur-3xl border border-white/20 w-fit shadow-[inset_1px_2px_4px_rgba(255,255,255,0.10)] rounded-full mb-10 max-sm:mb-6"
-          >
-            Our Work Process
+        <div className="flex flex-col items-center text-center px-6 mb-16">
+          <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] tracking-tight leading-tight md:leading-[68px]">
+            Our Proven <span className="text-[#F67300]">Work Process</span>
           </h2>
-
-          <p 
-            data-ns-animate 
-            data-delay="0.2" 
-            data-offset="80" 
-            className="text-[40px] max-sm:text-[28px] font-medium"
-          >
-            Our Proven <span className="text-orange-500">Work Process</span>
-          </p>
         </div>
 
         {/* PROCESS STEPS */}
@@ -79,8 +66,8 @@ const ServicesWorkFlow = () => {
 
                 {/* ICON CIRCLE */}
                 <div className="relative mx-auto w-20 h-20 max-sm:w-16 max-sm:h-16 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.08)]">
-                  <Icon size={28} className="text-white max-sm:hidden" />
-                  <Icon size={22} className="text-white hidden max-sm:block" />
+                  <Icon size={28} className="text-[#F67300] max-sm:hidden" />
+                  <Icon size={22} className="text-[#F67300] hidden max-sm:block" />
 
                   {/* STEP NUMBER */}
                   <span className="absolute -top-2 -right-2 w-6 h-6 max-sm:w-5 max-sm:h-5 rounded-full bg-white text-black text-xs font-semibold flex items-center justify-center">

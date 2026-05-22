@@ -1,4 +1,4 @@
-import coireimg from "../../../assets/images/homepage/coireimg.png";
+import coireimg from "../../../assets/images/homepage/ourmissions.png";
 
 function OurMission() {
     return (

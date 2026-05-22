@@ -1,14 +1,13 @@
 
-import { Utensils, ShoppingBag, GraduationCap, Globe, HeartPulse } from "lucide-react";
-import {HeartEdit, Car} from "iconsax-react"
+import { ChartCandlestick, ShoppingBag, GraduationCap, Globe, HeartPulse, Hospital } from "lucide-react";
 
 const industries = [
-    { name: "IT / Tech", icon: <Globe size={20} /> },
-    { name: "Food", icon: <Utensils size={20} /> },
+    { name: "Information Technology", icon: <Globe size={20} /> },
+    { name: "Fintech", icon: <ChartCandlestick size={20} /> },
     { name: "E-Commerce", icon: <ShoppingBag size={20} /> },
     { name: "Education", icon: <GraduationCap size={20} /> },
     { name: "Healthcare", icon: <HeartPulse size={20} /> },
-    { name: "Automobile", icon: <Car size={20}  color="currentColor"/> },
+    { name: "Hospitality", icon: <Hospital size={20} color="currentColor" /> },
     
 
 

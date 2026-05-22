@@ -26,9 +26,7 @@ function NewHero() {
                     <p>
                         At Coirei, we turn business ideas into digital success through AI powered solutions. From AI agent development and customized business applications to advanced digital platforms.
                     </p>
-                    <p>
-                        We create innovative solutions through ai strategy, enhance customer business, and drive sustainable growth for startups and enterprises alike.
-                    </p>
+
                 </div>
 
 

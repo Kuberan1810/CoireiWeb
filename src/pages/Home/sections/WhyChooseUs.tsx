@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Wrench, BarChart2, Lightbulb } from "lucide-react";
+import { Lightbulb, BarChart2, DollarSign } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -7,26 +7,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 const reasons = [
     {
-        icon: <Lightbulb size={18} className="text-white/80" />,
-
+        icon: <Lightbulb size={120} strokeWidth={0.5} className="text-white/80 group-hover:text-white transition-colors duration-300" />,
         title: "Industry-Leading Solutions",
         description: "Delivering top-tier digital products built with precision and modern technology.",
-
         index: "01",
     },
     {
-        icon: <BarChart2 size={18} className="text-white/80" />,
-
+        icon: <BarChart2 size={120} strokeWidth={0.5} className="text-white/80 group-hover:text-white transition-colors duration-300" />,
         title: "AI-Driven Innovation",
         description: "Smart AI-powered systems to automate processes and drive business efficiency.",
         index: "02",
     },
     {
-        icon: <Wrench size={18} className="text-white/80" />,
-
+        icon: <DollarSign size={120} strokeWidth={0.5} className="text-white/80 group-hover:text-white transition-colors duration-300" />,
         title: "Cost effective",
         description: "High-quality, scalable solutions designed to fit your business budget and goals.",
-
         index: "03",
     },
 ];
@@ -130,9 +125,9 @@ function WhyChooseUs() {
 
 
             </section>
-            <div className="flex flex-col items-center text-center gap-6">
+            <div className="flex flex-col items-center text-center gap-6 mb-16">
 
-                 
+
                     <p
                         className="text-[#B5B4B2] text-[16px] sm:text-[18px] leading-relaxed max-w-2xl why-choose-paragraph"
                     >
@@ -143,19 +138,18 @@ function WhyChooseUs() {
 
 
             {/* Mobile — vertical stack, no animation */}
-            <div className="flex sm:hidden flex-col gap-6 mx-6 md:pb-16  ">
+            <div className="flex sm:hidden flex-col gap-6 mx-6 md:pb-16">
                 {reasons.map((reason, index) => (
                     <div
                         key={index}
-
-                        className="group rounded-2xl border border-white/15 bg-[#292929] px-5 py-5 flex flex-col justify-between shadow-[0_-20px_40px_-20px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.05)] w-full min-h-[280px] hover:bg-[#323232] hover:border-white/25 transition-all duration-500"
+                        className="group rounded-2xl border border-white/15 bg-[#292929] px-5 py-8 flex flex-col items-center justify-center gap-5 shadow-[0_-20px_40px_-20px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.05)] w-full min-h-[280px] hover:bg-[#323232] hover:border-white/25 transition-all duration-500"
                     >
-                        <div className="w-14 h-14 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white/70 group-hover:text-white transition-colors duration-300">
+                        <div className="text-white/80 group-hover:text-white transition-colors duration-300">
                             {reason.icon}
                         </div>
-                        <div className="mt-auto pt-8">
-                            <h3 className="text-white font-semibold tracking-wide text-[20px] mb-3">{reason.title}</h3>
-                            <p className="text-[#a1a1aa] text-[16px] leading-relaxed">{reason.description}</p>
+                        <div className="flex flex-col items-center">
+                            <h3 className="text-white font-semibold tracking-wide text-[20px] mb-3 text-center">{reason.title}</h3>
+                            <p className="text-[#a1a1aa] text-[16px] leading-relaxed text-center">{reason.description}</p>
                         </div>
                     </div>
                 ))}
@@ -170,20 +164,16 @@ function WhyChooseUs() {
                     {reasons.map((reason, index) => (
                         <div
                             key={index}
-
                             ref={(el) => { if (el) cardsRef.current[index] = el; }}
-                            className="absolute rounded-[20px] border border-white/15 bg-[#292929] px-[20px] py-[20px] flex flex-col justify-between shadow-[0_-20px_40px_-20px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.05)] w-[85vw] sm:w-[380px] md:w-[440px] h-[320px] sm:h-[360px] group hover:bg-[#323232] hover:border-white/25  transition-colors duration-300 glass"
+                            className="absolute rounded-[20px] border border-white/15 bg-[#292929] px-6 py-6 flex flex-col items-center justify-center gap-5 shadow-[0_-20px_40px_-20px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.05)] w-[85vw] sm:w-[380px] md:w-[440px] h-[320px] sm:h-[360px] group hover:bg-[#323232] hover:border-white/25 transition-colors duration-300 glass"
                         >
-                            <div className="w-[56px] h-[56px] rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white/70 group-hover:text-white transition-colors duration-300">
+                            <div className="text-white/80 group-hover:text-white transition-colors duration-300">
                                 {reason.icon}
                             </div>
-                            <div className="mt-auto pt-8">
-                                <h3 className="text-white font-semibold tracking-wide text-[20px] mb-3">{reason.title}</h3>
-                                <p className="text-[#a1a1aa] text-[16px] leading-relaxed">{reason.description}</p>
+                            <div className="flex flex-col items-center">
+                                <h3 className="text-white font-semibold tracking-wide text-[20px] mb-2 text-center">{reason.title}</h3>
+                                <p className="text-[#a1a1aa] text-[15px] leading-relaxed text-center px-2">{reason.description}</p>
                             </div>
-
-                            
-
                         </div>
                     ))}
                 </div>

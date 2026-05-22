@@ -21,6 +21,7 @@ const useScrollAnimations = (): void => {
                 const scale = parseFloat(el.dataset.scale ?? "1");
                 const blur = el.dataset.blur !== "false";
                 const once = el.dataset.once !== "false";
+                const start = el.dataset.start ?? "top 95%";
 
                 /* ---------- CALCULATE AXIS & SPECIALS ---------- */
                 let x = 0;
@@ -75,7 +76,7 @@ const useScrollAnimations = (): void => {
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: el,
-                        start: "top 95%",
+                        start,
                         end: "top 40%",
                         toggleActions: once
                             ? "play none none none"

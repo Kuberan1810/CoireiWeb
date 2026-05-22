@@ -31,7 +31,9 @@ export default function ServicesDropdown() {
                 className="flex items-center gap-1 p-2.5 rounded cursor-pointer
                 hover:bg-[#7B7B7B20] transition-all duration-300"
             >
-                <span className="font-medium leading-none">Services</span>
+                <span 
+                
+                className="font-medium leading-none">Services</span>
                 <ChevronRight
                     size={16}
                     strokeWidth={2}
