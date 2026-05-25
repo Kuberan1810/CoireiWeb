@@ -86,10 +86,12 @@ const WebPlatformDetails = () => {
 
     const [hoveredCard, setHoveredCard] = useState<number | null>(0);
 
-
-
-
-
+    const offeringsScrollRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress: offeringsScrollY } = useScroll({
+        target: offeringsScrollRef,
+        offset: ["start 85%", "end 20%"]
+    });
+    const offeringsXProgress = useTransform(offeringsScrollY, [0.05, 0.55], [1, 0]);
 
     const sectionPinRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress: sectionScrollY } = useScroll({
@@ -179,7 +181,7 @@ const WebPlatformDetails = () => {
                 </div>
 
                 {/* --- SERVICE OFFERINGS SECTION --- */}
-                <div className="w-full mb-32 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
+                <div ref={offeringsScrollRef} className="w-full mb-32 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
                     {/* Header Pill */}
                     <div className="mb-4 px-3 py-1 rounded border border-dashed border-white/20 bg-white/5 uppercase tracking-widest text-[10px] text-white/60 font-mono">
                         OUR SERVICE
@@ -214,8 +216,8 @@ const WebPlatformDetails = () => {
                                     }}
                                     className={`relative flex flex-col justify-between p-8 rounded-[20px] border border-white/10 bg-[#1e1e1e]/40 transition-colors duration-500 overflow-hidden cursor-pointer h-[320px] md:h-full w-full md:w-auto ${
                                         isHovered
-                                            ? "bg-white/10 border-white/20 z-10 shadow-[0_0_50px_rgba(246,115,0,0.1)]"
-                                            : "bg-white/5 opacity-70 hover:opacity-100 z-0"
+                                            ? "bg-white/10 border-white/20 shadow-[0_0_50px_rgba(246,115,0,0.1)]"
+                                            : "bg-white/5 opacity-70 hover:opacity-100"
                                     } ${
                                         index === 0 
                                             ? "md:rounded-l-[20px] md:rounded-r-none" 
@@ -224,10 +226,12 @@ const WebPlatformDetails = () => {
                                                 : "md:rounded-none"
                                     }`}
                                     style={{
+                                        x: useTransform(offeringsXProgress, (v) => `${v * index * -72}%`),
                                         borderColor: isHovered ? "rgba(246, 115, 0, 0.4)" : "rgba(255, 255, 255, 0.1)",
                                         borderRightColor: isHovered 
                                             ? "rgba(246, 115, 0, 0.4)" 
-                                            : (index === offerings.length - 1 ? "rgba(255, 255, 255, 0.1)" : "transparent")
+                                            : (index === offerings.length - 1 ? "rgba(255, 255, 255, 0.1)" : "transparent"),
+                                        zIndex: isHovered ? 20 : index
                                     }}
                                 >
                                     {/* Content Wrapper */}
