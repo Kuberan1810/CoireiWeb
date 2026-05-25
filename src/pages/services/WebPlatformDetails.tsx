@@ -478,10 +478,10 @@ const WebPlatformDetails = () => {
                             How We Work?
                         </h2>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full">
+                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-[1800px] sm:h-[2000px] md:h-[2200px] lg:h-[2400px]">
 
                             {/* LEFT SIDE */}
-                            <div className="lg:col-span-5 text-left sticky top-[160px] lg:top-[22vh] h-fit">
+                            <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] lg:h-[880px] h-auto">
                                 <h3 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-white leading-tight tracking-tight">
                                     A Transparent<br className="hidden lg:block" />
                                     Process Built for<br />
@@ -491,8 +491,7 @@ const WebPlatformDetails = () => {
                             </div>
 
                             {/* RIGHT SIDE - STACKED CARDS */}
-                            <div ref={howWeWorkRef} className="lg:col-span-7 w-full relative h-[1800px] sm:h-[2000px] md:h-[2200px] lg:h-[2400px]">
-                                <div className="sticky top-[160px] w-full h-[750px] lg:h-[880px]">
+                            <div className="lg:col-span-7 w-full lg:sticky lg:top-[160px] lg:h-[880px] h-auto relative">
                                     {[
                                         {
                                             step: 1,
@@ -581,7 +580,6 @@ const WebPlatformDetails = () => {
                                             </div>
                                         </motion.div>
                                     ))}
-                                </div>
                             </div>
 
                         </div>
