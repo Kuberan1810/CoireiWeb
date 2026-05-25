@@ -478,7 +478,7 @@ const WebPlatformDetails = () => {
                             How We Work?
                         </h2>
 
-                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-[1800px] sm:h-[2000px] md:h-[2200px] lg:h-[2400px]">
+                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-[1100px] sm:h-[1200px] md:h-[1300px] lg:h-[1400px]">
 
                             {/* LEFT SIDE */}
                             <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] lg:h-[880px] h-auto">
