@@ -135,7 +135,7 @@ const WebPlatformDetails = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-20 w-full bg-[#161616] flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-4 w-full bg-[#161616] flex flex-col items-center">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}
@@ -470,7 +470,7 @@ const WebPlatformDetails = () => {
                     </div>
                 </div>
                 {/* --- HOW WE WORK SECTION --- */}
-                <div className="relative w-full mb-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                <div className="relative w-full mb-8 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
                     <div className="max-w-6xl mx-auto">
 
                         {/* TITLE */}
@@ -478,7 +478,7 @@ const WebPlatformDetails = () => {
                             How We Work?
                         </h2>
 
-                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-[1100px] sm:h-[1200px] md:h-[1300px] lg:h-[1400px]">
+                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-[800px] sm:h-[900px] md:h-[1000px] lg:h-[1100px]">
 
                             {/* LEFT SIDE */}
                             <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] lg:h-[880px] h-auto">
