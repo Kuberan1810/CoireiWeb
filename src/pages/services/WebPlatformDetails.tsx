@@ -58,8 +58,33 @@ const serviceDetails = {
     ]
 };
 
+const offerings = [
+    {
+        title: "Custom Web Platforms",
+        icon: Globe,
+        desc: "High-performance web apps built to support high concurrency, complex logic, and custom user roles."
+    },
+    {
+        title: "Full-Stack Development",
+        icon: Layers,
+        desc: "End-to-end solutions (Frontend, Backend, Database) using modern, secure frameworks."
+    },
+    {
+        title: "Platform Modernization",
+        icon: Sparkles,
+        desc: "Refreshing legacy systems into fast, mobile-responsive, and SEO-friendly architectures."
+    },
+    {
+        title: "API & Third-Party Integration",
+        icon: Cpu,
+        desc: "Connecting your platform to the tools that matter—payment gateways, CRM/ERPs, and marketing automation suites."
+    }
+];
+
 const WebPlatformDetails = () => {
     useScrollAnimations();
+
+    const [hoveredCard, setHoveredCard] = useState<number | null>(0);
 
 
 
@@ -124,9 +149,9 @@ const WebPlatformDetails = () => {
 
     const yOffsets = [
         useTransform(scrollYProgress, [0.05, 0.75], [0, 0]),
-        useTransform(scrollYProgress, [0.05, 0.75], [160, 0]),
-        useTransform(scrollYProgress, [0.05, 0.75], [320, 0]),
-        useTransform(scrollYProgress, [0.05, 0.75], [480, 0])
+        useTransform(scrollYProgress, [0.05, 0.75], [250, 0]),
+        useTransform(scrollYProgress, [0.05, 0.75], [500, 0]),
+        useTransform(scrollYProgress, [0.05, 0.75], [750, 0])
     ];
 
     return (
@@ -135,7 +160,7 @@ const WebPlatformDetails = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-4 w-full bg-[#161616] flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-20 w-full bg-[#161616] flex flex-col items-center">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}
@@ -155,62 +180,97 @@ const WebPlatformDetails = () => {
 
                 {/* --- SERVICE OFFERINGS SECTION --- */}
                 <div className="w-full mb-32 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
-                    <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 tracking-tight leading-tight">
+                    {/* Header Pill */}
+                    <div className="mb-4 px-3 py-1 rounded border border-dashed border-white/20 bg-white/5 uppercase tracking-widest text-[10px] text-white/60 font-mono">
+                        OUR SERVICE
+                    </div>
+
+                    <h2 data-ns-animate="true" className="text-3xl md:text-5xl lg:text-[56px] font-semibold text-[#E3E3E0] text-center mb-6 tracking-tight leading-tight">
                         <span className="text-[#F67300]">Coirei Core</span> Service Offerings
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-[35px] w-full">
-                        {/* Card 1: Custom Web Platforms */}
-                        <div data-ns-animate="true" data-delay="0.1" className="md:col-span-7 bg-white/5 border border-white/10 rounded-[20px] pt-[50px] pb-[50px] px-[35px] hover:bg-white/10 hover:border-white/20 transition-all duration-300 group cursor-default flex flex-col text-left md:h-[320px]">
-                            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[24px] transition-colors duration-300 text-[#F67300] shrink-0">
-                                <Globe size={24} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="text-2xl font-medium text-white mb-[24px]">
-                                Custom Web Platforms
-                            </h3>
-                            <p className="text-white/70 text-base leading-relaxed font-light">
-                                High-performance web apps built to support high concurrency, complex logic, and custom user roles.
-                            </p>
-                        </div>
+                    <p data-ns-animate="true" className="text-white/60 text-base md:text-lg max-w-3xl text-center mb-16 font-light">
+                        End-to-end engineered platforms optimized for performance, security, and true scalability.
+                    </p>
 
-                        {/* Card 2: Full-Stack Development */}
-                        <div data-ns-animate="true" data-delay="0.2" className="md:col-span-5 bg-white/5 border border-white/10 rounded-[20px] pt-[50px] pb-[50px] px-[35px] hover:bg-white/10 hover:border-white/20 transition-all duration-300 group cursor-default flex flex-col text-left md:h-[320px]">
-                            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[24px] transition-colors duration-300 text-[#F67300] shrink-0">
-                                <Layers size={24} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="text-2xl font-medium text-white mb-[24px]">
-                                Full-Stack Development
-                            </h3>
-                            <p className="text-white/70 text-base leading-relaxed font-light">
-                                End-to-end solutions (Frontend, Backend, Database) using modern, secure frameworks.
-                            </p>
-                        </div>
+                    {/* Expanding Horizontal Accordion Container */}
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-0 w-full h-auto md:h-[420px] items-stretch mt-4">
+                        {offerings.map((card, index) => {
+                            const Icon = card.icon;
+                            const isHovered = hoveredCard === index;
+                            
+                            return (
+                                <motion.div
+                                    key={index}
+                                    onMouseEnter={() => setHoveredCard(index)}
+                                    layout
+                                    animate={{
+                                        flexGrow: isHovered ? 2.8 : 1,
+                                    }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 140,
+                                        damping: 18
+                                    }}
+                                    className={`relative flex flex-col justify-between p-8 rounded-[20px] border border-white/10 bg-[#1e1e1e]/40 transition-colors duration-500 overflow-hidden cursor-pointer h-[320px] md:h-full w-full md:w-auto ${
+                                        isHovered
+                                            ? "bg-white/10 border-white/20 z-10 shadow-[0_0_50px_rgba(246,115,0,0.1)]"
+                                            : "bg-white/5 opacity-70 hover:opacity-100 z-0"
+                                    } ${
+                                        index === 0 
+                                            ? "md:rounded-l-[20px] md:rounded-r-none" 
+                                            : index === offerings.length - 1 
+                                                ? "md:rounded-r-[20px] md:rounded-l-none" 
+                                                : "md:rounded-none"
+                                    }`}
+                                    style={{
+                                        borderColor: isHovered ? "rgba(246, 115, 0, 0.4)" : "rgba(255, 255, 255, 0.1)",
+                                        borderRightColor: isHovered 
+                                            ? "rgba(246, 115, 0, 0.4)" 
+                                            : (index === offerings.length - 1 ? "rgba(255, 255, 255, 0.1)" : "transparent")
+                                    }}
+                                >
+                                    {/* Content Wrapper */}
+                                    <div className="flex flex-col h-full justify-between relative z-10">
+                                        {/* Top Section: Icon */}
+                                        <div className={`w-14 h-14 rounded-full flex items-center justify-center border transition-colors duration-500 shrink-0 ${
+                                            isHovered 
+                                                ? "bg-[#F67300]/10 border-[#F67300]/30 text-[#F67300] shadow-[0_0_20px_rgba(246,115,0,0.15)]" 
+                                                : "bg-white/5 border-white/10 text-white/80"
+                                        }`}>
+                                            <Icon size={24} strokeWidth={1.5} />
+                                        </div>
 
-                        {/* Card 3: Platform Modernization */}
-                        <div data-ns-animate="true" data-delay="0.3" className="md:col-span-5 bg-white/5 border border-white/10 rounded-[20px] pt-[50px] pb-[50px] px-[35px] hover:bg-white/10 hover:border-white/20 transition-all duration-300 group cursor-default flex flex-col text-left md:h-[320px]">
-                            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[24px] transition-colors duration-300 text-[#F67300] shrink-0">
-                                <Sparkles size={24} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="text-2xl font-medium text-white mb-[24px]">
-                                Platform Modernization
-                            </h3>
-                            <p className="text-white/70 text-base leading-relaxed font-light">
-                                Refreshing legacy systems into fast, mobile-responsive, and SEO-friendly architectures.
-                            </p>
-                        </div>
+                                        {/* Middle Section: Title & Description */}
+                                        <div className="flex flex-col text-left justify-end h-full">
+                                            <h3 className={`text-xl md:text-2xl font-medium tracking-tight transition-colors duration-300 text-left ${
+                                                isHovered ? "text-[#F67300]" : "text-white"
+                                            }`}>
+                                                {card.title}
+                                            </h3>
+                                            
+                                            <motion.p
+                                                initial={false}
+                                                animate={{
+                                                    opacity: isHovered ? 0.7 : 0,
+                                                    height: isHovered ? "auto" : 0,
+                                                    marginTop: isHovered ? 12 : 0
+                                                }}
+                                                transition={{ duration: 0.3 }}
+                                                className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light text-left overflow-hidden"
+                                            >
+                                                {card.desc}
+                                            </motion.p>
+                                        </div>
+                                    </div>
 
-                        {/* Card 4: API & Third-Party Integration */}
-                        <div data-ns-animate="true" data-delay="0.4" className="md:col-span-7 bg-white/5 border border-white/10 rounded-[20px] pt-[50px] pb-[50px] px-[35px] hover:bg-white/10 hover:border-white/20 transition-all duration-300 group cursor-default flex flex-col text-left md:h-[320px]">
-                            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[24px] transition-colors duration-300 text-[#F67300] shrink-0">
-                                <Cpu size={24} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="text-2xl font-medium text-white mb-[24px]">
-                                API & Third-Party Integration
-                            </h3>
-                            <p className="text-white/70 text-base leading-relaxed font-light">
-                                Connecting your platform to the tools that matter—payment gateways, CRM/ERPs, and marketing automation suites.
-                            </p>
-                        </div>
+                                    {/* Ambient Glow effect inside the active card */}
+                                    {isHovered && (
+                                        <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-[#F67300]/5 rounded-full blur-[80px] pointer-events-none" />
+                                    )}
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -470,7 +530,7 @@ const WebPlatformDetails = () => {
                     </div>
                 </div>
                 {/* --- HOW WE WORK SECTION --- */}
-                <div className="relative w-full mb-8 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                <div className="relative w-full mb-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
                     <div className="max-w-6xl mx-auto">
 
                         {/* TITLE */}
@@ -478,10 +538,10 @@ const WebPlatformDetails = () => {
                             How We Work?
                         </h2>
 
-                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-[700px] sm:h-[800px] md:h-[900px] lg:h-[950px]">
+                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-[1800px] sm:h-[2000px] md:h-[2200px] lg:h-[2400px]">
 
                             {/* LEFT SIDE */}
-                            <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] lg:h-[630px] h-auto">
+                            <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] lg:h-[880px] h-auto">
                                 <h3 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-white leading-tight tracking-tight">
                                     A Transparent<br className="hidden lg:block" />
                                     Process Built for<br />
@@ -491,95 +551,95 @@ const WebPlatformDetails = () => {
                             </div>
 
                             {/* RIGHT SIDE - STACKED CARDS */}
-                            <div className="lg:col-span-7 w-full lg:sticky lg:top-[160px] lg:h-[630px] h-auto relative">
-                                    {[
-                                        {
-                                            step: 1,
-                                            title: "Requirement Deep-Dive",
-                                            desc: "We analyze your business goals before we write a line of code.",
-                                            tabLeft: "0%",
-                                        },
-                                        {
-                                            step: 2,
-                                            title: "Agile Sprints",
-                                            desc: "We break your project into manageable 2-week sprints, providing you with functional builds at every stage.",
-                                            tabLeft: "28%",
-                                        },
-                                        {
-                                            step: 3,
-                                            title: "Collaborative Communication",
-                                            desc: "You get a dedicated project manager and direct access to your dev team through your preferred communication tools (Slack/Teams).",
-                                            tabLeft: "54%",
-                                        },
-                                        {
-                                            step: 4,
-                                            title: "Rigorous QA",
-                                            desc: "Our testing team ensures your platform is bug-free across all devices, browsers, and load conditions.",
-                                            tabLeft: "76%",
-                                        },
-                                    ].map((s, index) => (
-                                        <motion.div
-                                            key={s.step}
-                                            className="absolute w-full left-0 top-[44px]"
+                            <div className="lg:col-span-7 w-full lg:sticky lg:top-[160px] lg:h-[880px] h-auto relative">
+                                {[
+                                    {
+                                        step: 1,
+                                        title: "Requirement Deep-Dive",
+                                        desc: "We analyze your business goals before we write a line of code.",
+                                        tabLeft: "0%",
+                                    },
+                                    {
+                                        step: 2,
+                                        title: "Agile Sprints",
+                                        desc: "We break your project into manageable 2-week sprints, providing you with functional builds at every stage.",
+                                        tabLeft: "28%",
+                                    },
+                                    {
+                                        step: 3,
+                                        title: "Collaborative Communication",
+                                        desc: "You get a dedicated project manager and direct access to your dev team through your preferred communication tools (Slack/Teams).",
+                                        tabLeft: "54%",
+                                    },
+                                    {
+                                        step: 4,
+                                        title: "Rigorous QA",
+                                        desc: "Our testing team ensures your platform is bug-free across all devices, browsers, and load conditions.",
+                                        tabLeft: "76%",
+                                    },
+                                ].map((s, index) => (
+                                    <motion.div
+                                        key={s.step}
+                                        className="absolute w-full left-0 top-[44px]"
+                                        style={{
+                                            y: yOffsets[index],
+                                            zIndex: 20 - index,
+                                        }}
+                                    >
+                                        {/* STEP TAB */}
+                                        <div
+                                            className="absolute -top-[43px] h-[44px] z-30"
                                             style={{
-                                                y: yOffsets[index],
-                                                zIndex: 20 - index,
+                                                left: s.tabLeft,
+                                                width: "22%",
+                                                minWidth: "120px",
                                             }}
                                         >
-                                            {/* STEP TAB */}
+                                            <svg width="100%" height="45" viewBox="0 0 167 45">
+                                                <path
+                                                    d="M 0,45 L 13,9 Q 16,0 25,0 L 142,0 Q 151,0 154,9 L 167,45"
+                                                    fill="#161616"
+                                                    stroke="#757575"
+                                                />
+                                            </svg>
+
+                                            <div className="absolute inset-0 flex items-center justify-center">
+                                                <span className="text-[#F67300] text-sm font-semibold">
+                                                    Step {s.step}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        {/* CARD */}
+                                        <div className={`relative bg-[#161616] border border-[#757575] p-7 md:p-9 flex gap-6 shadow-lg backdrop-blur-md transition-all duration-500 ${s.step === 1
+                                            ? "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
+                                            : s.step === 4
+                                                ? "rounded-tl-[20px] rounded-b-[20px] rounded-tr-none"
+                                                : "rounded-[20px]"
+                                            }`}>
+                                            {/* Mask to hide top border under the tab */}
                                             <div
-                                                className="absolute -top-[43px] h-[44px] z-30"
+                                                className="absolute bg-[#161616] h-[2px] z-20"
                                                 style={{
                                                     left: s.tabLeft,
                                                     width: "22%",
                                                     minWidth: "120px",
+                                                    top: "-1px",
                                                 }}
-                                            >
-                                                <svg width="100%" height="45" viewBox="0 0 167 45">
-                                                    <path
-                                                        d="M 0,45 L 13,9 Q 16,0 25,0 L 142,0 Q 151,0 154,9 L 167,45"
-                                                        fill="#161616"
-                                                        stroke="#757575"
-                                                    />
-                                                </svg>
+                                            />
 
-                                                <div className="absolute inset-0 flex items-center justify-center">
-                                                    <span className="text-[#F67300] text-sm font-semibold">
-                                                        Step {s.step}
-                                                    </span>
-                                                </div>
+                                            <div className="w-[3px] bg-[#F67300] rounded-full shrink-0" />
+                                            <div className="flex flex-col gap-2 relative z-10 text-left">
+                                                <h4 className="text-lg md:text-xl font-semibold text-white">
+                                                    {s.title}
+                                                </h4>
+                                                <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light">
+                                                    {s.desc}
+                                                </p>
                                             </div>
-
-                                            {/* CARD */}
-                                            <div className={`relative bg-[#161616] border border-[#757575] p-7 md:p-9 flex gap-6 shadow-lg backdrop-blur-md transition-all duration-500 ${s.step === 1
-                                                ? "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
-                                                : s.step === 4
-                                                    ? "rounded-tl-[20px] rounded-b-[20px] rounded-tr-none"
-                                                    : "rounded-[20px]"
-                                                }`}>
-                                                {/* Mask to hide top border under the tab */}
-                                                <div
-                                                    className="absolute bg-[#161616] h-[2px] z-20"
-                                                    style={{
-                                                        left: s.tabLeft,
-                                                        width: "22%",
-                                                        minWidth: "120px",
-                                                        top: "-1px",
-                                                    }}
-                                                />
-
-                                                <div className="w-[3px] bg-[#F67300] rounded-full shrink-0" />
-                                                <div className="flex flex-col gap-2 relative z-10 text-left">
-                                                    <h4 className="text-lg md:text-xl font-semibold text-white">
-                                                        {s.title}
-                                                    </h4>
-                                                    <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light">
-                                                        {s.desc}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </motion.div>
-                                    ))}
+                                        </div>
+                                    </motion.div>
+                                ))}
                             </div>
 
                         </div>
