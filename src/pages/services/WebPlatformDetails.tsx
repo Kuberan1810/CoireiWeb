@@ -350,19 +350,17 @@ const WebPlatformDetails = () => {
                                     </div>
                                 </div>
 
-                                {/* Right Column - Overlay text rows in the exact same spot */}
-                                <div className="w-full lg:w-1/2 relative h-[250px] md:h-[300px]">
+                                {/* Right Column - List text rows vertically */}
+                                <div className="w-full lg:w-1/2 flex flex-col gap-12 lg:gap-16 text-left">
                                     {/* Row 1 */}
                                     <motion.div
                                         animate={{
-                                            opacity: activeSection === 1 ? 1 : 0,
-                                            y: activeSection === 1 ? 0 : 20,
-                                            pointerEvents: activeSection === 1 ? "auto" : "none"
+                                            opacity: activeSection === 1 ? 1 : 0.4,
                                         }}
                                         transition={{ duration: 0.6, ease: "easeOut" }}
-                                        className="absolute inset-0 flex flex-col gap-4 text-left justify-center"
+                                        className="flex flex-col gap-4 text-left"
                                     >
-                                        <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
+                                        <h3 className="text-2xl md:text-3xl font-medium transition-colors duration-300" style={{ color: activeSection === 1 ? "#F67300" : "#ffffff" }}>
                                             Integrated Architecture
                                         </h3>
                                         <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
@@ -373,14 +371,12 @@ const WebPlatformDetails = () => {
                                     {/* Row 2 */}
                                     <motion.div
                                         animate={{
-                                            opacity: activeSection === 2 ? 1 : 0,
-                                            y: activeSection === 2 ? 0 : 20,
-                                            pointerEvents: activeSection === 2 ? "auto" : "none"
+                                            opacity: activeSection === 2 ? 1 : 0.4,
                                         }}
                                         transition={{ duration: 0.6, ease: "easeOut" }}
-                                        className="absolute inset-0 flex flex-col gap-4 text-left justify-center"
+                                        className="flex flex-col gap-4 text-left"
                                     >
-                                        <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
+                                        <h3 className="text-2xl md:text-3xl font-medium transition-colors duration-300" style={{ color: activeSection === 2 ? "#F67300" : "#ffffff" }}>
                                             Security by Design
                                         </h3>
                                         <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
@@ -391,14 +387,12 @@ const WebPlatformDetails = () => {
                                     {/* Row 3 */}
                                     <motion.div
                                         animate={{
-                                            opacity: activeSection === 3 ? 1 : 0,
-                                            y: activeSection === 3 ? 0 : 20,
-                                            pointerEvents: activeSection === 3 ? "auto" : "none"
+                                            opacity: activeSection === 3 ? 1 : 0.4,
                                         }}
                                         transition={{ duration: 0.6, ease: "easeOut" }}
-                                        className="absolute inset-0 flex flex-col gap-4 text-left justify-center"
+                                        className="flex flex-col gap-4 text-left"
                                     >
-                                        <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
+                                        <h3 className="text-2xl md:text-3xl font-medium transition-colors duration-300" style={{ color: activeSection === 3 ? "#F67300" : "#ffffff" }}>
                                             True Scalability
                                         </h3>
                                         <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
