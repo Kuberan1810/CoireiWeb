@@ -1,10 +1,59 @@
-import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, AnimatePresence, useInView } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 import { Workflow, Smartphone, Settings, Building2 } from "lucide-react";
 import FAQSection from "../Home/sections/FAQSection";
+
+// --- Slot machine number reel ---
+const DigitReel = ({ digit, delay }: { digit: number; delay: number }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const [yPos, setYPos] = useState(0);
+    const cycles = 5;
+    const allDigits = Array.from({ length: cycles * 10 }, (_, i) => i % 10);
+    useEffect(() => {
+        if (isInView) {
+            const finalIndex = (cycles - 1) * 10 + digit;
+            setYPos(-finalIndex * (100 / (cycles * 10)));
+        }
+    }, [isInView, digit]);
+    return (
+        <div ref={ref} className="inline-block overflow-hidden relative" style={{ height: "1.1em", verticalAlign: "bottom" }}>
+            <motion.div
+                initial={{ y: "0%" }}
+                animate={isInView ? { y: `${yPos}%` } : { y: "0%" }}
+                transition={{ duration: 2.0, ease: [0.15, 0.85, 0.3, 1.0], delay }}
+                className="flex flex-col text-center"
+            >
+                {allDigits.map((num, idx) => (
+                    <span key={idx} className="leading-none select-none h-[1.1em] flex items-center justify-center">{num}</span>
+                ))}
+            </motion.div>
+        </div>
+    );
+};
+
+const JackpotNumber = ({ value }: { value: string }) => {
+    const chars = value.split("");
+    let digitCount = 0;
+    return (
+        <span className="inline-flex items-baseline justify-center">
+            {chars.map((char, index) => {
+                const isDigit = /^[0-9]$/.test(char);
+                if (isDigit) {
+                    const digitVal = parseInt(char, 10);
+                    const delay = digitCount * 0.15;
+                    digitCount++;
+                    return <DigitReel key={index} digit={digitVal} delay={delay} />;
+                } else {
+                    return <span key={index} className="leading-none select-none">{char}</span>;
+                }
+            })}
+        </span>
+    );
+};
 
 const steps = [
     {
@@ -438,6 +487,38 @@ const BusinessAppDetails = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* --- PROVEN IMPACT STATS SECTION --- */}
+                <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto mb-32">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="w-full mt-8 text-center">
+                            <p data-ns-animate="true" className="text-white text-2xl md:text-3xl font-light tracking-wide">
+                                Proven Impact, Measurable Results
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mt-16 w-full">
+                            <div data-ns-animate="true" data-delay="0.1">
+                                <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">
+                                    <JackpotNumber value="100+" />
+                                </h4>
+                                <p className="text-white/60 text-base md:text-[18px] font-light">Projects Delivered</p>
+                            </div>
+                            <div data-ns-animate="true" data-delay="0.2">
+                                <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">
+                                    <JackpotNumber value="50+" />
+                                </h4>
+                                <p className="text-white/60 text-base md:text-[18px] font-light">Industries</p>
+                            </div>
+                            <div data-ns-animate="true" data-delay="0.3">
+                                <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">
+                                    <JackpotNumber value="99%" />
+                                </h4>
+                                <p className="text-white/60 text-base md:text-[18px] font-light">Satisfied Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </main>
 
             <FAQSection />

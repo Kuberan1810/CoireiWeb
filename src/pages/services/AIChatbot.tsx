@@ -256,13 +256,11 @@ const AIChatbot = () => {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
-
-                    {/* --- HOW IT WORKS SECTION --- */}
-                    <div className="w-full mt-32">
-                        <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
-                            How <span className="text-[#F67300]">Coirei AI Virtual Assistant</span> Works
-                        </h2>
+                {/* --- HOW IT WORKS SECTION --- */}
+                <div className="w-full mt-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                        How <span className="text-[#F67300]">Coirei AI Virtual Assistant</span> Works
+                    </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 border-b border-white/20">
                             {/* Step 1 */}
@@ -342,7 +340,11 @@ const AIChatbot = () => {
                         </div>
                     </div>
 
-                    <ServicesWorkFlow />
+                    <div className="w-full mt-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                        <ServicesWorkFlow />
+                    </div>
+
+                    <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- WHY CHOOSE US SECTION --- */}
                     <div className="w-full mt-32">
@@ -447,7 +449,7 @@ const AIChatbot = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 md:items-center items-start w-full mb-10">
                         {/* Left Content */}
-                        <div className="flex flex-col gap-4 items-start text-left">
+                        <div data-ns-animate="true" data-direction="right" className="flex flex-col gap-4 items-start text-left">
                             <h3 className="text-3xl md:text-[35px] font-medium text-white leading-tight">
                                 Ready to transform your business?
                             </h3>
@@ -463,7 +465,7 @@ const AIChatbot = () => {
                         </div>
 
                         {/* Right Content - Contact Form */}
-                        <div className="w-full">
+                        <div data-ns-animate="true" data-direction="left" data-delay="0.15" className="w-full">
                             <div className="space-y-6">
                                 {/* Name */}
                                 <div>
