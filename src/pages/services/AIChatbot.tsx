@@ -151,7 +151,7 @@ const AIChatbot = () => {
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
                         {/* Main Title */}
                         <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight mb-8 max-w-4xl tracking-tight">
-                            Enhance Your Business with AI Chat and Virtual Assistance
+                            Enhance Your Business with <span className="text-[#F67300]">AI Chat</span> and <span className="text-[#F67300]">Virtual Assistance</span>
                         </h1>
 
                         {/* Subtitle / Description */}
@@ -445,9 +445,9 @@ const AIChatbot = () => {
                         Get Started with <span className="text-[#F67300]">Coirei AI</span> Virtual Assistant
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start w-full mb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 md:items-center items-start w-full mb-10">
                         {/* Left Content */}
-                        <div className="flex flex-col gap-4 items-start text-left md:sticky md:top-40">
+                        <div className="flex flex-col gap-4 items-start text-left">
                             <h3 className="text-3xl md:text-[35px] font-medium text-white leading-tight">
                                 Ready to transform your business?
                             </h3>

@@ -120,7 +120,6 @@ function Navbar() {
 
                                     <div className={`overflow-hidden transition-all duration-300 ${productsOpen ? "max-h-75 opacity-100" : "max-h-0 opacity-0"}`}>
                                         {[
-                                            { label: "Execa", to: "/products/execa" },
                                             { label: "Follei", to: "/products/follei" },
                                             { label: "CoireiLMS", to: "/products/coireilms" },
                                         ].map((item, index) => (

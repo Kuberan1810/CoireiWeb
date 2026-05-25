@@ -206,10 +206,10 @@ export default function TestimonialSection() {
                 {/* ── Cards row ── */}
                 <div className="relative">
                     {/* Left fade */}
-                    <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
+                    <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none hidden md:block"
                         style={{ background: "linear-gradient(to right, #161616 0%, transparent 100%)" }} />
                     {/* Right fade */}
-                    <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
+                    <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none hidden md:block"
                         style={{ background: "linear-gradient(to left, #161616 0%, transparent 100%)" }} />
 
                     <div className="overflow-hidden">

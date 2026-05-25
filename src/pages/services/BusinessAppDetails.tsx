@@ -110,7 +110,7 @@ const BusinessAppDetails = () => {
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
                         {/* Main Title */}
                         <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-8 max-w-5xl tracking-tight">
-                            Custom Business Solutions for Business Growth
+                            <span className="text-[#F67300]">Custom Business Solutions</span> for Business Growth
                         </h1>
 
                         {/* Subtitle / Description */}
@@ -122,13 +122,13 @@ const BusinessAppDetails = () => {
                     {/* --- WHY COIREI FOR BUSINESS APP SECTION --- */}
                     <div className="w-full mb-32 flex flex-col items-center">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 tracking-tight leading-tight">
-                            Why Coirei for Business App?
+                            Why <span className="text-[#F67300]">Coirei</span> for Business App?
                         </h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                             {/* Card 1 */}
                             <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-white">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Workflow size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -141,7 +141,7 @@ const BusinessAppDetails = () => {
 
                             {/* Card 2 */}
                             <div data-ns-animate="true" data-delay="0.2" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-white">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <AnalyticsIcon />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -154,7 +154,7 @@ const BusinessAppDetails = () => {
 
                             {/* Card 3 */}
                             <div data-ns-animate="true" data-delay="0.3" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-white">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <IntegrationsIcon />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -167,7 +167,7 @@ const BusinessAppDetails = () => {
 
                             {/* Card 4 */}
                             <div data-ns-animate="true" data-delay="0.4" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-white">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Smartphone size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -183,13 +183,13 @@ const BusinessAppDetails = () => {
                     {/* --- CORE BUSINESS APPS SECTION --- */}
                     <div className="w-full mb-32 flex flex-col items-center">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 tracking-tight leading-tight">
-                            Coirei Core Custom Business Apps
+                            <span className="text-[#F67300]">Coirei Core</span> Custom Business Apps
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                             {/* App 1: Custom ERPs */}
                             <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default">
-                                <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-white">
+                                <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Settings size={28} strokeWidth={1.5} className="animate-spin-slow" />
                                 </div>
                                 <h3 className="text-2xl font-medium text-white mb-5">
@@ -202,7 +202,7 @@ const BusinessAppDetails = () => {
 
                             {/* App 2: CRMs */}
                             <div data-ns-animate="true" data-delay="0.2" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default">
-                                <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-white">
+                                <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <CRMIcon />
                                 </div>
                                 <h3 className="text-2xl font-medium text-white mb-5">
@@ -215,7 +215,7 @@ const BusinessAppDetails = () => {
 
                             {/* App 3: Enterprise Portals */}
                             <div data-ns-animate="true" data-delay="0.3" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default">
-                                <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-white">
+                                <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Building2 size={28} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-2xl font-medium text-white mb-5">
@@ -301,9 +301,29 @@ const BusinessAppDetails = () => {
                                                         <div className="bg-[#4d3a2d] text-[#E3E3E0] px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap">
                                                             {steps[activeStep].topPill}
                                                         </div>
-                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="#FF7A00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-[100deg] w-3.5 h-3.5 md:w-5 md:h-5">
+                                                        <motion.svg
+                                                            width="20"
+                                                            height="20"
+                                                            viewBox="0 0 24 24"
+                                                            fill="white"
+                                                            stroke="#FF7A00"
+                                                            strokeWidth="2"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            className="w-3.5 h-3.5 md:w-5 md:h-5"
+                                                            style={{ rotate: 100 }}
+                                                            animate={{
+                                                                x: [-0.8, 0.8, -0.8, 0.8, -0.8, 0.8, 0],
+                                                                y: [-0.8, 0.8, 0.8, -0.8, -0.8, 0.8, 0]
+                                                            }}
+                                                            transition={{
+                                                                duration: 0.5,
+                                                                repeat: Infinity,
+                                                                ease: "linear"
+                                                            }}
+                                                        >
                                                             <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
-                                                        </svg>
+                                                        </motion.svg>
                                                     </div>
 
                                                     {/* Center Text */}
@@ -316,9 +336,29 @@ const BusinessAppDetails = () => {
                                                         <div className="bg-[#FF7A00] text-white px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap shadow-[0_0_15px_rgba(255,122,0,0.3)]">
                                                             {steps[activeStep].bottomPill}
                                                         </div>
-                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF7A00" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="rotate-[0deg] w-3.5 h-3.5 md:w-5 md:h-5">
+                                                        <motion.svg
+                                                            width="20"
+                                                            height="20"
+                                                            viewBox="0 0 24 24"
+                                                            fill="#FF7A00"
+                                                            stroke="white"
+                                                            strokeWidth="1.5"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            className="w-3.5 h-3.5 md:w-5 md:h-5"
+                                                            style={{ rotate: 0 }}
+                                                            animate={{
+                                                                x: [-0.8, 0.8, -0.8, 0.8, -0.8, 0.8, 0],
+                                                                y: [-0.8, 0.8, 0.8, -0.8, -0.8, 0.8, 0]
+                                                            }}
+                                                            transition={{
+                                                                duration: 0.5,
+                                                                repeat: Infinity,
+                                                                ease: "linear"
+                                                            }}
+                                                        >
                                                             <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
-                                                        </svg>
+                                                        </motion.svg>
                                                     </div>
                                                 </motion.div>
                                             </AnimatePresence>
@@ -335,7 +375,7 @@ const BusinessAppDetails = () => {
                     {/* Left Heading */}
                     <div className="lg:col-span-4 flex flex-col justify-center">
                         <h2 data-ns-animate="true" className="text-4xl md:text-5xl lg:text-[56px] font-medium text-[#E3E3E0] tracking-tight leading-none lg:leading-[64px]">
-                            Why<br />Partner<br />with Us
+                            Why<br />Partner<br /><span className="text-[#F67300]">with Us</span>
                         </h2>
                     </div>
 
@@ -346,7 +386,7 @@ const BusinessAppDetails = () => {
                             <div className="flex items-start md:w-2/5">
                                 <span className="border-l-2 border-white h-6 mt-1 self-start shrink-0"></span>
                                 <span className="text-white font-mono text-xl leading-none mt-1 ml-3 shrink-0">01</span>
-                                <h3 className="text-xl md:text-2xl font-medium text-white leading-tight ml-6">
+                                <h3 className="text-xl md:text-2xl font-medium text-[#F67300] leading-tight ml-6">
                                     Domain<br />Expertise
                                 </h3>
                             </div>
@@ -360,7 +400,7 @@ const BusinessAppDetails = () => {
                             <div className="flex items-start md:w-2/5">
                                 <span className="border-l-2 border-white h-6 mt-1 self-start shrink-0"></span>
                                 <span className="text-white font-mono text-xl leading-none mt-1 ml-3 shrink-0">02</span>
-                                <h3 className="text-xl md:text-2xl font-medium text-white leading-tight ml-6">
+                                <h3 className="text-xl md:text-2xl font-medium text-[#F67300] leading-tight ml-6">
                                     Ownership<br />& Security
                                 </h3>
                             </div>
@@ -374,7 +414,7 @@ const BusinessAppDetails = () => {
                             <div className="flex items-start md:w-2/5">
                                 <span className="border-l-2 border-white h-6 mt-1 self-start shrink-0"></span>
                                 <span className="text-white font-mono text-xl leading-none mt-1 ml-3 shrink-0">03</span>
-                                <h3 className="text-xl md:text-2xl font-medium text-white leading-tight ml-6">
+                                <h3 className="text-xl md:text-2xl font-medium text-[#F67300] leading-tight ml-6">
                                     Agile<br />Methodology
                                 </h3>
                             </div>
@@ -388,7 +428,7 @@ const BusinessAppDetails = () => {
                             <div className="flex items-start md:w-2/5">
                                 <span className="border-l-2 border-white h-6 mt-1 self-start shrink-0"></span>
                                 <span className="text-white font-mono text-xl leading-none mt-1 ml-3 shrink-0">04</span>
-                                <h3 className="text-xl md:text-2xl font-medium text-white leading-tight ml-6">
+                                <h3 className="text-xl md:text-2xl font-medium text-[#F67300] leading-tight ml-6">
                                     Post-Launch<br />Reliability
                                 </h3>
                             </div>
