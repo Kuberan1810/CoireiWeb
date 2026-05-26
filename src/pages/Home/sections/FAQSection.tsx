@@ -24,7 +24,7 @@ const FAQSection = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(0);
 
     return (
-        <section className="mx-6 sm:mx-10 md:mx-15 pt-12 md:pt-16 pb-20 md:pb-6 ">
+        <section className="mx-6 sm:mx-10 md:mx-15 pt-2 md:pt-4 pb-20 md:pb-6 ">
           
             <div className="flex md:flex-col flex-col gap-10 jusify-center items-center">
 

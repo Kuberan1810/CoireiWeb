@@ -4,7 +4,7 @@ import Ceo from "../../../assets/images/homepage/Ceo-img.png";
 export const CeoSection = () => {
     const navigate = useNavigate();
     return (
-        <section className="mx-4 sm:mx-8 md:mx-15 lg:mx-20 py-8 sm:py-14 md:py-20">
+        <section className="mx-4 sm:mx-8 md:mx-15 lg:mx-20 pt-6 pb-8 sm:pt-8 sm:pb-14 md:pt-8 md:pb-20">
             <div>
 
                 {/* HEADING */}

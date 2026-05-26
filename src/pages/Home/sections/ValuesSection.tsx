@@ -9,7 +9,7 @@ const ValuesSection = () => {
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] flex-1 bg-gradient-to-r from-[#161616] to-white" />
+                    className="h-[1.5px] flex-1 bg-linear-to-r from-[#161616] to-white" />
                 <div
                     data-ns-animate
                     data-offset="80"
@@ -19,7 +19,7 @@ const ValuesSection = () => {
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] flex-1 bg-gradient-to-l from-[#161616] to-white" />
+                    className="h-[1.5px] flex-1 bg-linear-to-l from-[#161616] to-white" />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-16 max-w-7xl mx-auto">

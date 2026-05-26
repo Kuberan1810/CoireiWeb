@@ -10,7 +10,7 @@ const steps = [
     step: "01",
     title: "Consultation",
     icon: MessageSquare,
-    desc: "We start by understanding your business goals, challenges and requirements in-depth discussions",
+    desc: "We start by understanding your business goals, challenges and requirements through in-depth discussions",
   },
   {
     step: "02",
@@ -34,7 +34,7 @@ const steps = [
 
 const ServicesWorkFlow = () => {
   return (
-    <section className="text-white py-10 sm:py-20 mx-15 max-sm:py-16 max-sm:mx-5">
+    <section className="text-white pt-2 pb-10 sm:pt-4 sm:pb-20 mx-15 max-sm:pt-2 max-sm:pb-16 max-sm:mx-5">
       <div className="">
 
         {/* HEADER */}
@@ -76,11 +76,11 @@ const ServicesWorkFlow = () => {
                 </div>
 
                 {/* TEXT */}
-                <h3 className="mt-6 max-sm:mt-4 text-[24px] max-sm:text-[18px] font-medium">
+                <h3 className="mt-6 max-sm:mt-4 text-center text-[24px] max-sm:text-[18px] font-medium">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-[18px] max-sm:text-[16px] text-white/70 leading-relaxed max-w-xs mx-auto">
+                <p className="mt-3 text-center text-[16px] text-white/70 leading-relaxed max-w-xs mx-auto">
                   {item.desc}
                 </p>
               </div>

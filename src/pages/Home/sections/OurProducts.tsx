@@ -21,7 +21,7 @@ const products = [
 
 function OurProducts() {
     return (
-        <section className="mx-6 sm:mx-10 md:mx-15 pt-15 pb-16  md:pt-6 md:pb-20">
+        <section className="mx-6 sm:mx-10 md:mx-15 pt-15 pb-6  md:pt-6 md:pb-8">
             {/* Badge */}
             <div className="flex items-center justify-center w-full mx-auto mb-12 gap-4">
                 <div

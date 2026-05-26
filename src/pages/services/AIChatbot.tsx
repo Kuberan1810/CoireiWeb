@@ -144,7 +144,7 @@ const AIChatbot = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-20 w-full bg-[#161616] flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}
@@ -340,14 +340,14 @@ const AIChatbot = () => {
                         </div>
                     </div>
 
-                    <div className="w-full mt-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                    <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
                         <ServicesWorkFlow />
                     </div>
 
                     <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- WHY CHOOSE US SECTION --- */}
-                    <div className="w-full mt-32">
+                    <div className="w-full mt-10">
                         <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                             Why Choose <span className="text-[#F67300]">Coirei AI</span> Chatbot for Your Business
                         </h2>
@@ -442,7 +442,7 @@ const AIChatbot = () => {
                 </div>
 
                 {/* --- CTA SECTION --- */}
-                <div className="w-full mt-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
                     <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                         Get Started with <span className="text-[#F67300]">Coirei AI</span> Virtual Assistant
                     </h2>

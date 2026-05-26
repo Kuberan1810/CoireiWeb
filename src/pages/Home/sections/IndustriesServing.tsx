@@ -11,13 +11,13 @@ const industries = [
 
 const IndustriesServing = () => {
     return (
-        <section className="py-20 overflow-hidden bg-[#161616] w-full">
+        <section className="pt-6 pb-6 sm:pt-8 sm:pb-8 overflow-hidden bg-[#161616] w-full">
             {/* Section Badge */}
             <div className="flex items-center justify-center w-full mx-auto mb-8 gap-4 px-4">
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] flex-1 bg-gradient-to-r from-[#161616] to-white hidden sm:block" 
+                    className="h-[1.5px] flex-1 bg-linear-to-r from-[#161616] to-white hidden sm:block" 
                 />
                 <div
                     data-ns-animate
@@ -29,7 +29,7 @@ const IndustriesServing = () => {
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] flex-1 bg-gradient-to-l from-[#161616] to-white hidden sm:block" 
+                    className="h-[1.5px] flex-1 bg-linear-to-l from-[#161616] to-white hidden sm:block" 
                 />
             </div>
 

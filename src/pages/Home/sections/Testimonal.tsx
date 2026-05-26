@@ -154,7 +154,7 @@ export default function TestimonialSection() {
     return (
         <section
             ref={sectionRef}
-            className="bg-[#161616] py-16 px-6 md:px-12 lg:px-20 overflow-hidden"
+            className="bg-[#161616] pt-6 pb-6 px-6 md:px-12 lg:px-20 overflow-hidden sm:pt-8 sm:pb-8"
             style={{
             }}
         >
@@ -250,7 +250,7 @@ export default function TestimonialSection() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/[0.06]">
+                                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/6">
                                         <Stars count={t.rating} />
                                         <span className="text-[12px] text-white/60">{t.date}</span>
                                     </div>
@@ -267,8 +267,8 @@ export default function TestimonialSection() {
                         onClick={handlePrev}
                         aria-label="Previous testimonial"
                         className="w-11 h-11 rounded-full flex items-center justify-center text-xl
-                                   bg-white/[0.05] border border-white/[0.1] text-[#777]
-                                   hover:bg-white/[0.10] hover:text-white hover:border-white/20
+                                   bg-white/5 border border-white/10 text-[#777]
+                                   hover:bg-white/10 hover:text-white hover:border-white/20
                                    transition-all duration-200 cursor-pointer leading-none"
                     >
                         ‹
@@ -277,14 +277,14 @@ export default function TestimonialSection() {
                         onClick={handleNext}
                         aria-label="Next testimonial"
                         className="w-11 h-11 rounded-full flex items-center justify-center text-xl
-                                   bg-white/[0.05] border border-white/[0.1] text-[#777]
-                                   hover:bg-white/[0.10] hover:text-white hover:border-white/20
+                                   bg-white/5 border border-white/10 text-[#777]
+                                   hover:bg-white/10 hover:text-white hover:border-white/20
                                    transition-all duration-200 cursor-pointer leading-none"
                     >
                         ›
                     </button>
                 </div>
-
+                
             </div>
         </section>
     );

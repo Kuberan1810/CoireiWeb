@@ -84,8 +84,6 @@ const offerings = [
 const WebPlatformDetails = () => {
     useScrollAnimations();
 
-    const [hoveredCard, setHoveredCard] = useState<number | null>(0);
-
     const offeringsScrollRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress: offeringsScrollY } = useScroll({
         target: offeringsScrollRef,
@@ -182,11 +180,6 @@ const WebPlatformDetails = () => {
 
                 {/* --- SERVICE OFFERINGS SECTION --- */}
                 <div ref={offeringsScrollRef} className="w-full mb-32 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
-                    {/* Header Pill */}
-                    <div className="mb-4 px-3 py-1 rounded border border-dashed border-white/20 bg-white/5 uppercase tracking-widest text-[10px] text-white/60 font-mono">
-                        OUR SERVICE
-                    </div>
-
                     <h2 data-ns-animate="true" className="text-3xl md:text-5xl lg:text-[56px] font-semibold text-[#E3E3E0] text-center mb-6 tracking-tight leading-tight">
                         <span className="text-[#F67300]">Coirei Core</span> Service Offerings
                     </h2>
@@ -195,83 +188,39 @@ const WebPlatformDetails = () => {
                         End-to-end engineered platforms optimized for performance, security, and true scalability.
                     </p>
 
-                    {/* Expanding Horizontal Accordion Container */}
-                    <div className="flex flex-col md:flex-row gap-4 md:gap-0 w-full h-auto md:h-[420px] items-stretch mt-4">
+                    {/* Horizontal Plain Cards Container (revealing as we scroll, with gaps) */}
+                    <div className="flex flex-col md:flex-row gap-6 w-full h-auto md:h-[420px] items-stretch mt-4">
                         {offerings.map((card, index) => {
                             const Icon = card.icon;
-                            const isHovered = hoveredCard === index;
-                            
+
                             return (
                                 <motion.div
                                     key={index}
-                                    onMouseEnter={() => setHoveredCard(index)}
-                                    layout
-                                    animate={{
-                                        flexGrow: isHovered ? 2.8 : 1,
-                                    }}
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 140,
-                                        damping: 18
-                                    }}
-                                    className={`relative flex flex-col justify-between p-8 rounded-[20px] border border-white/10 bg-[#1e1e1e]/40 transition-colors duration-500 overflow-hidden cursor-pointer h-[320px] md:h-full w-full md:w-auto ${
-                                        isHovered
-                                            ? "bg-white/10 border-white/20 shadow-[0_0_50px_rgba(246,115,0,0.1)]"
-                                            : "bg-white/5 opacity-70 hover:opacity-100"
-                                    } ${
-                                        index === 0 
-                                            ? "md:rounded-l-[20px] md:rounded-r-none" 
-                                            : index === offerings.length - 1 
-                                                ? "md:rounded-r-[20px] md:rounded-l-none" 
-                                                : "md:rounded-none"
-                                    }`}
+                                    className="relative flex flex-col justify-between p-8 rounded-[20px] border border-white/10 bg-[#1E1E1E] transition-all duration-500 overflow-hidden h-[320px] md:h-full w-full md:w-auto md:flex-1"
                                     style={{
                                         x: useTransform(offeringsXProgress, (v) => `${v * index * -72}%`),
-                                        borderColor: isHovered ? "rgba(246, 115, 0, 0.4)" : "rgba(255, 255, 255, 0.1)",
-                                        borderRightColor: isHovered 
-                                            ? "rgba(246, 115, 0, 0.4)" 
-                                            : (index === offerings.length - 1 ? "rgba(255, 255, 255, 0.1)" : "transparent"),
-                                        zIndex: isHovered ? 20 : index
+                                        borderColor: "rgba(255, 255, 255, 0.1)",
+                                        zIndex: index
                                     }}
                                 >
                                     {/* Content Wrapper */}
                                     <div className="flex flex-col h-full justify-between relative z-10">
                                         {/* Top Section: Icon */}
-                                        <div className={`w-14 h-14 rounded-full flex items-center justify-center border transition-colors duration-500 shrink-0 ${
-                                            isHovered 
-                                                ? "bg-[#F67300]/10 border-[#F67300]/30 text-[#F67300] shadow-[0_0_20px_rgba(246,115,0,0.15)]" 
-                                                : "bg-white/5 border-white/10 text-white/80"
-                                        }`}>
+                                        <div className="w-14 h-14 rounded-full flex items-center justify-center border bg-[#161616] border-white/10 text-[#F67300] shrink-0">
                                             <Icon size={24} strokeWidth={1.5} />
                                         </div>
 
                                         {/* Middle Section: Title & Description */}
                                         <div className="flex flex-col text-left justify-end h-full">
-                                            <h3 className={`text-xl md:text-2xl font-medium tracking-tight transition-colors duration-300 text-left ${
-                                                isHovered ? "text-[#F67300]" : "text-white"
-                                            }`}>
+                                            <h3 className="text-xl md:text-2xl font-medium tracking-tight text-white text-left mb-3">
                                                 {card.title}
                                             </h3>
-                                            
-                                            <motion.p
-                                                initial={false}
-                                                animate={{
-                                                    opacity: isHovered ? 0.7 : 0,
-                                                    height: isHovered ? "auto" : 0,
-                                                    marginTop: isHovered ? 12 : 0
-                                                }}
-                                                transition={{ duration: 0.3 }}
-                                                className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light text-left overflow-hidden"
-                                            >
+
+                                            <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light text-left">
                                                 {card.desc}
-                                            </motion.p>
+                                            </p>
                                         </div>
                                     </div>
-
-                                    {/* Ambient Glow effect inside the active card */}
-                                    {isHovered && (
-                                        <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-[#F67300]/5 rounded-full blur-[80px] pointer-events-none" />
-                                    )}
                                 </motion.div>
                             );
                         })}
@@ -302,7 +251,7 @@ const WebPlatformDetails = () => {
                                             {/* Top-left node (Document/Checkmark) on Outer Ring */}
                                             <motion.div
                                                 initial={{ rotate: 180 }}
-                                                animate={{ rotate: activeSection === 1 ? 45 : (activeSection >= 2 ? -45 : 180) }}
+                                                animate={{ rotate: activeSection === 1 ? 45 : (activeSection >= 2 ? -135 : 180) }}
                                                 transition={{ duration: 1.2, ease: "easeOut" }}
                                                 className="absolute inset-0 rounded-full pointer-events-none"
                                             >
@@ -311,7 +260,7 @@ const WebPlatformDetails = () => {
                                                     animate={{
                                                         opacity: activeSection >= 1 ? (activeSection === 1 ? 1 : 0.4) : 0,
                                                         scale: activeSection >= 1 ? (activeSection === 1 ? 1.1 : 1.0) : 0.5,
-                                                        rotate: activeSection === 1 ? -45 : (activeSection >= 2 ? 45 : -180),
+                                                        rotate: activeSection === 1 ? -45 : (activeSection >= 2 ? 135 : -180),
                                                         x: "-50%",
                                                         y: "-50%",
                                                         borderColor: activeSection === 1 ? "rgba(246, 115, 0, 0.5)" : "rgba(255, 255, 255, 0.15)",
@@ -330,38 +279,7 @@ const WebPlatformDetails = () => {
                                                 </motion.div>
                                             </motion.div>
 
-                                            {/* Top-right node (Box/Package) on Outer Ring */}
-                                            <motion.div
-                                                initial={{ rotate: 180 }}
-                                                animate={{ rotate: activeSection === 2 ? 45 : (activeSection === 3 ? -135 : 180) }}
-                                                transition={{ duration: 1.2, ease: "easeOut" }}
-                                                className="absolute inset-0 rounded-full pointer-events-none"
-                                            >
-                                                <motion.div
-                                                    initial={{ opacity: 0, scale: 0.5, rotate: -180, x: "-50%", y: "-50%" }}
-                                                    animate={{
-                                                        opacity: activeSection >= 2 ? (activeSection === 2 ? 1 : 0.4) : 0,
-                                                        scale: activeSection >= 2 ? (activeSection === 2 ? 1.1 : 1.0) : 0.5,
-                                                        rotate: activeSection === 2 ? -45 : (activeSection === 3 ? 135 : -180),
-                                                        x: "-50%",
-                                                        y: "-50%",
-                                                        borderColor: activeSection === 2 ? "rgba(246, 115, 0, 0.5)" : "rgba(255, 255, 255, 0.15)",
-                                                        color: activeSection === 2 ? "#F67300" : "#ffffff",
-                                                        boxShadow: activeSection === 2 ? "0 0 30px rgba(246, 115, 0, 0.3)" : "0 0 15px rgba(255, 255, 255, 0.05)"
-                                                    }}
-                                                    transition={{ duration: 1.2, ease: "easeOut" }}
-                                                    style={{ left: "50%", top: "0" }}
-                                                    className="absolute w-14 h-14 md:w-20 md:h-20 lg:w-[96px] lg:h-[96px] rounded-full bg-[#1e1e1e] border flex items-center justify-center pointer-events-auto"
-                                                >
-                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
-                                                        <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h16z" />
-                                                        <rect x="12" y="10" width="8" height="6" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                                                        <path d="M14 10V8a2 2 0 0 1 4 0v2" />
-                                                    </svg>
-                                                </motion.div>
-                                            </motion.div>
-
-                                            {/* Bottom node (Box/Package) on Outer Ring */}
+                                            {/* Top-right node (True Scalability / 3D Box) on Last/Outer Ring */}
                                             <motion.div
                                                 initial={{ rotate: 180 }}
                                                 animate={{ rotate: activeSection === 3 ? 45 : 180 }}
@@ -371,7 +289,7 @@ const WebPlatformDetails = () => {
                                                 <motion.div
                                                     initial={{ opacity: 0, scale: 0.5, rotate: -180, x: "-50%", y: "-50%" }}
                                                     animate={{
-                                                        opacity: activeSection === 3 ? 1 : 0,
+                                                        opacity: activeSection === 3 ? 1 : (activeSection === 2 ? 0.4 : 0),
                                                         scale: activeSection === 3 ? 1.1 : 0.5,
                                                         rotate: activeSection === 3 ? -45 : -180,
                                                         x: "-50%",
@@ -388,6 +306,37 @@ const WebPlatformDetails = () => {
                                                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                                                         <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
                                                         <line x1="12" y1="22.08" x2="12" y2="12" />
+                                                    </svg>
+                                                </motion.div>
+                                            </motion.div>
+
+                                            {/* Bottom node (Security by Design / Folder Lock) on Last/Outer Ring */}
+                                            <motion.div
+                                                initial={{ rotate: 180 }}
+                                                animate={{ rotate: activeSection === 2 ? 45 : (activeSection === 3 ? -45 : 180) }}
+                                                transition={{ duration: 1.2, ease: "easeOut" }}
+                                                className="absolute inset-0 rounded-full pointer-events-none"
+                                            >
+                                                <motion.div
+                                                    initial={{ opacity: 0, scale: 0.5, rotate: -180, x: "-50%", y: "-50%" }}
+                                                    animate={{
+                                                        opacity: activeSection >= 2 ? (activeSection === 2 ? 1 : 0.4) : 0,
+                                                        scale: activeSection >= 2 ? (activeSection === 2 ? 1.1 : 1.0) : 0.5,
+                                                        rotate: activeSection === 2 ? -45 : (activeSection === 3 ? 45 : -180),
+                                                        x: "-50%",
+                                                        y: "-50%",
+                                                        borderColor: activeSection === 2 ? "rgba(246, 115, 0, 0.5)" : "rgba(255, 255, 255, 0.15)",
+                                                        color: activeSection === 2 ? "#F67300" : "#ffffff",
+                                                        boxShadow: activeSection === 2 ? "0 0 30px rgba(246, 115, 0, 0.3)" : "0 0 15px rgba(255, 255, 255, 0.05)"
+                                                    }}
+                                                    transition={{ duration: 1.2, ease: "easeOut" }}
+                                                    style={{ left: "50%", top: "0" }}
+                                                    className="absolute w-14 h-14 md:w-20 md:h-20 lg:w-[96px] lg:h-[96px] rounded-full bg-[#1e1e1e] border flex items-center justify-center pointer-events-auto"
+                                                >
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
+                                                        <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h16z" />
+                                                        <rect x="12" y="10" width="8" height="6" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                                                        <path d="M14 10V8a2 2 0 0 1 4 0v2" />
                                                     </svg>
                                                 </motion.div>
                                             </motion.div>
@@ -414,17 +363,20 @@ const WebPlatformDetails = () => {
                                     </div>
                                 </div>
 
-                                {/* Right Column - List text rows vertically */}
-                                <div className="w-full lg:w-1/2 flex flex-col gap-12 lg:gap-16 text-left">
+                                {/* Right Column - Dynamically reveal only active section content */}
+                                <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left min-h-[250px] relative">
                                     {/* Row 1 */}
                                     <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
                                         animate={{
-                                            opacity: activeSection === 1 ? 1 : 0.4,
+                                            opacity: activeSection === 1 ? 1 : 0,
+                                            y: activeSection === 1 ? 0 : 10,
+                                            pointerEvents: activeSection === 1 ? "auto" : "none"
                                         }}
-                                        transition={{ duration: 0.6, ease: "easeOut" }}
-                                        className="flex flex-col gap-4 text-left"
+                                        transition={{ duration: 0.5, ease: "easeOut" }}
+                                        className={`flex flex-col gap-4 text-left w-full ${activeSection === 1 ? "relative z-10" : "absolute inset-0 pointer-events-none"}`}
                                     >
-                                        <h3 className="text-2xl md:text-3xl font-medium transition-colors duration-300" style={{ color: activeSection === 1 ? "#F67300" : "#ffffff" }}>
+                                        <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
                                             Integrated Architecture
                                         </h3>
                                         <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
@@ -434,13 +386,16 @@ const WebPlatformDetails = () => {
 
                                     {/* Row 2 */}
                                     <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
                                         animate={{
-                                            opacity: activeSection === 2 ? 1 : 0.4,
+                                            opacity: activeSection === 2 ? 1 : 0,
+                                            y: activeSection === 2 ? 0 : 10,
+                                            pointerEvents: activeSection === 2 ? "auto" : "none"
                                         }}
-                                        transition={{ duration: 0.6, ease: "easeOut" }}
-                                        className="flex flex-col gap-4 text-left"
+                                        transition={{ duration: 0.5, ease: "easeOut" }}
+                                        className={`flex flex-col gap-4 text-left w-full ${activeSection === 2 ? "relative z-10" : "absolute inset-0 pointer-events-none"}`}
                                     >
-                                        <h3 className="text-2xl md:text-3xl font-medium transition-colors duration-300" style={{ color: activeSection === 2 ? "#F67300" : "#ffffff" }}>
+                                        <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
                                             Security by Design
                                         </h3>
                                         <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
@@ -450,13 +405,16 @@ const WebPlatformDetails = () => {
 
                                     {/* Row 3 */}
                                     <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
                                         animate={{
-                                            opacity: activeSection === 3 ? 1 : 0.4,
+                                            opacity: activeSection === 3 ? 1 : 0,
+                                            y: activeSection === 3 ? 0 : 10,
+                                            pointerEvents: activeSection === 3 ? "auto" : "none"
                                         }}
-                                        transition={{ duration: 0.6, ease: "easeOut" }}
-                                        className="flex flex-col gap-4 text-left"
+                                        transition={{ duration: 0.5, ease: "easeOut" }}
+                                        className={`flex flex-col gap-4 text-left w-full ${activeSection === 3 ? "relative z-10" : "absolute inset-0 pointer-events-none"}`}
                                     >
-                                        <h3 className="text-2xl md:text-3xl font-medium transition-colors duration-300" style={{ color: activeSection === 3 ? "#F67300" : "#ffffff" }}>
+                                        <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
                                             True Scalability
                                         </h3>
                                         <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
@@ -485,7 +443,7 @@ const WebPlatformDetails = () => {
                                         INDUSTRIES
                                     </span>
                                     {/* Divider / brand orange line underneath */}
-                                    <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#F67300]" />
+                                    <div className="absolute bottom-0 left-0 w-full h-px bg-[#F67300]" />
                                 </div>
                             </div>
 
@@ -592,7 +550,7 @@ const WebPlatformDetails = () => {
                                     >
                                         {/* STEP TAB */}
                                         <div
-                                            className="absolute -top-[43px] h-[44px] z-30"
+                                            className="absolute top-[-43px] h-[44px] z-30"
                                             style={{
                                                 left: s.tabLeft,
                                                 width: "22%",
