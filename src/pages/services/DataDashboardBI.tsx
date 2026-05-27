@@ -92,7 +92,7 @@ const DataDashboardBI = () => {
             </div>
 
             <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+                <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER HERO SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
@@ -237,7 +237,7 @@ const DataDashboardBI = () => {
                             Our Working Process
                         </h2>
 
-                        <div className="relative w-full max-w-5xl h-[450px] md:h-[400px]">
+                        <div className="relative w-full max-w-none h-[450px] md:h-[400px]">
                             {/* Curved Arc SVG */}
                             <svg className="absolute inset-0 w-full h-[300px]" viewBox="0 0 1000 300" fill="none" preserveAspectRatio="xMidYMid meet">
                                 {/* Background Curve Arc */}
@@ -393,7 +393,7 @@ const DataDashboardBI = () => {
                             Measurable <span className="text-[#F67300]">Impact</span> by the Numbers
                         </h2>
 
-                        <div className="relative w-full max-w-6xl h-[450px] md:h-[400px]">
+                        <div className="relative w-full max-w-none h-[450px] md:h-[400px]">
                             {/* Curved Arc SVG */}
                             <svg className="absolute inset-0 w-full h-[320px]" viewBox="0 0 1200 320" fill="none" preserveAspectRatio="xMidYMid meet">
                                 {/* Background Curve Arc */}
