@@ -4,7 +4,6 @@ import { motion, useTransform, useMotionValue, animate } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
-import TestimonialSection from "../Home/sections/Testimonal";
 import FAQSection from "../Home/sections/FAQSection";
 import { LayoutGrid, LineChart, TrendingUp, Handshake, Network, Bot, Scan, Coins, Stethoscope, Factory, PhoneCall, Truck, Monitor, GraduationCap } from "lucide-react";
 
@@ -432,7 +431,12 @@ const DataDashboardBI = () => {
                         </div>
                     </div>
 
-                    <TestimonialSection />
+                    {/* --- CLIENT TESTIMONIALS SECTION --- */}
+                    <div className="w-full mt-24 mb-16 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto flex flex-col items-center">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#E3E3E0] text-center mb-12 tracking-tight">
+                            Client Testimonials
+                        </h2>
+                    </div>
                     <FAQSection />
 
             </main>
