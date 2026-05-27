@@ -24,10 +24,10 @@ const DataDashboardBI = () => {
     // Reveal SVG path from 0 to 1
     const curvePathLength = useTransform(processAnimProgress, [0.15, 0.65], [0, 1]);
 
-    // Animate lines height dynamically
-    const line1Height = useTransform(processAnimProgress, [0.25, 0.32], [0, 72]);
+    // Animate lines height dynamically (aligned to baseline Y = 260px)
+    const line1Height = useTransform(processAnimProgress, [0.25, 0.32], [0, 142]);
     const line2Height = useTransform(processAnimProgress, [0.42, 0.49], [0, 68]);
-    const line3Height = useTransform(processAnimProgress, [0.59, 0.66], [0, 72]);
+    const line3Height = useTransform(processAnimProgress, [0.59, 0.66], [0, 122]);
 
     // Animate nodes borders colors
     const circle1Color = useTransform(processAnimProgress, [0, 0.25, 0.26], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
@@ -60,11 +60,11 @@ const DataDashboardBI = () => {
     // Curve Path animation
     const statsCurveLength = useTransform(statsAnimProgress, [0.15, 0.75], [0, 1]);
 
-    // Animate lines height dynamically
-    const statLine1Height = useTransform(statsAnimProgress, [0.25, 0.35], [0, 120]);
-    const statLine2Height = useTransform(statsAnimProgress, [0.40, 0.50], [0, 120]);
-    const statLine3Height = useTransform(statsAnimProgress, [0.55, 0.65], [0, 120]);
-    const statLine4Height = useTransform(statsAnimProgress, [0.70, 0.80], [0, 120]);
+    // Animate lines height dynamically (aligned to baseline Y = 320px)
+    const statLine1Height = useTransform(statsAnimProgress, [0.25, 0.35], [0, 154]);
+    const statLine2Height = useTransform(statsAnimProgress, [0.40, 0.50], [0, 109]);
+    const statLine3Height = useTransform(statsAnimProgress, [0.55, 0.65], [0, 99]);
+    const statLine4Height = useTransform(statsAnimProgress, [0.70, 0.80], [0, 124]);
 
     // Animate nodes borders colors
     const statCircle1Color = useTransform(statsAnimProgress, [0, 0.24, 0.25], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
@@ -292,7 +292,7 @@ const DataDashboardBI = () => {
                                     x1="200"
                                     y1="118"
                                     x2="200"
-                                    y2="190"
+                                    y2="260"
                                     stroke="rgba(255, 255, 255, 0.08)"
                                     strokeWidth="1.5"
                                 />
@@ -330,7 +330,7 @@ const DataDashboardBI = () => {
                                     x1="800"
                                     y1="138"
                                     x2="800"
-                                    y2="210"
+                                    y2="260"
                                     stroke="rgba(255, 255, 255, 0.08)"
                                     strokeWidth="1.5"
                                 />
@@ -534,7 +534,7 @@ const DataDashboardBI = () => {
                             {/* Step 1 */}
                             <motion.div
                                 style={{ opacity: statCol1Opacity, y: statCol1Y }}
-                                className="absolute left-[22.5%] top-[296px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-2"
+                                className="absolute left-[22.5%] top-[335px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-2"
                             >
                                 <span className="text-3xl md:text-5xl font-medium text-white tracking-tight">
                                     $1.2B+
@@ -547,7 +547,7 @@ const DataDashboardBI = () => {
                             {/* Step 2 */}
                             <motion.div
                                 style={{ opacity: statCol2Opacity, y: statCol2Y }}
-                                className="absolute left-[40.83%] top-[334px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-2"
+                                className="absolute left-[40.83%] top-[335px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-2"
                             >
                                 <span className="text-3xl md:text-5xl font-medium text-white tracking-tight">
                                     100+
@@ -560,7 +560,7 @@ const DataDashboardBI = () => {
                             {/* Step 3 */}
                             <motion.div
                                 style={{ opacity: statCol3Opacity, y: statCol3Y }}
-                                className="absolute left-[59.16%] top-[344px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-2"
+                                className="absolute left-[59.16%] top-[335px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-2"
                             >
                                 <span className="text-3xl md:text-5xl font-medium text-white tracking-tight">
                                     50M+
@@ -573,7 +573,7 @@ const DataDashboardBI = () => {
                             {/* Step 4 */}
                             <motion.div
                                 style={{ opacity: statCol4Opacity, y: statCol4Y }}
-                                className="absolute left-[77.5%] top-[326px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-2"
+                                className="absolute left-[77.5%] top-[335px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-2"
                             >
                                 <span className="text-3xl md:text-5xl font-medium text-white tracking-tight">
                                     99%
