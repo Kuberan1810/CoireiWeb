@@ -26,6 +26,7 @@ import AIChatbot from "./pages/services/AIChatbot";
 import WebPlatformDetails from "./pages/services/WebPlatformDetails";
 import Learning from "./pages/Learning/Learning";
 import ProcessAutomation from "./pages/services/ProcessAutomation";
+import DataDashboardBI from "./pages/services/DataDashboardBI";
 
 // Product pages
 import Execa from "./pages/Products/Execa/Execa";
@@ -55,6 +56,7 @@ function App() {
         <Route path="/services/ai-chatbot-development" element={<AIChatbot />} />
         <Route path="/services/custom-web-platform-development" element={<WebPlatformDetails />} />
         <Route path="/services/process-automation-system-integration" element={<ProcessAutomation />} />
+        <Route path="/services/business-intelligence-dashboard-development" element={<DataDashboardBI />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
         <Route path="/learning" element={<Learning />} />
         {/* RESOURCES (NO parent page) */}

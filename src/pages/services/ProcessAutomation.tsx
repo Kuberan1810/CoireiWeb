@@ -513,44 +513,50 @@ const ProcessAutomation = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* --- IMPACT ACROSS INDUSTRIES SECTION --- */}
-                <div className="w-full mt-24 mb-16 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto flex flex-col items-center">
-                    <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#E3E3E0] text-center mb-10 tracking-tight">
-                        Impact Across Industries
-                    </h2>
-
-                    <div data-ns-animate="true" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-                        {/* Finance */}
-                        <div className="flex items-center gap-4 px-8 py-5 bg-[#1A1A1A] border border-white/10 rounded-xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 group cursor-default w-full justify-center md:justify-start">
-                            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-[#F67300] shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                <Receipt size={22} strokeWidth={1.5} />
-                            </div>
-                            <span className="text-[#E3E3E0]/80 group-hover:text-white font-light tracking-wide text-lg transition-colors select-none">finance</span>
+                {/* --- INDUSTRIES WE SERVE SECTION --- */}
+                <div className="w-full mt-24 mb-16 bg-transparent">
+                    {/* Section Badge */}
+                    <div className="flex items-center justify-center w-full mx-auto mb-8 gap-4 px-4">
+                        <div className="h-[1.5px] flex-1 bg-linear-to-r from-[#161616] to-white hidden sm:block opacity-20" />
+                        <div className="px-6 py-2 border border-white/10 rounded-xl bg-transparent text-white text-[16px] sm:text-[22px] whitespace-nowrap shrink-0">
+                            AI Solutions Across Global
                         </div>
+                        <div className="h-[1.5px] flex-1 bg-linear-to-l from-[#161616] to-white hidden sm:block opacity-20" />
+                    </div>
 
-                        {/* Healthcare */}
-                        <div className="flex items-center gap-4 px-8 py-5 bg-[#1A1A1A] border border-white/10 rounded-xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 group cursor-default w-full justify-center md:justify-start">
-                            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-[#F67300] shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                <Hospital size={22} strokeWidth={1.5} />
-                            </div>
-                            <span className="text-[#E3E3E0]/80 group-hover:text-white font-light tracking-wide text-lg transition-colors select-none">healthcare</span>
-                        </div>
+                    {/* Header Section */}
+                    <div className="flex flex-col items-center text-center px-6 mb-12">
+                        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
+                           <span className="text-[#F67300]">Impact </span>
+                           <span className="text-white"> Across Industries</span>
+                        </h2>
+                    </div>
 
-                        {/* Retail */}
-                        <div className="flex items-center gap-4 px-8 py-5 bg-[#1A1A1A] border border-white/10 rounded-xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 group cursor-default w-full justify-center md:justify-start">
-                            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-[#F67300] shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                <Scan size={22} strokeWidth={1.5} />
-                            </div>
-                            <span className="text-[#E3E3E0]/80 group-hover:text-white font-light tracking-wide text-lg transition-colors select-none">retail</span>
-                        </div>
-
-                        {/* Manufacturing */}
-                        <div className="flex items-center gap-4 px-8 py-5 bg-[#1A1A1A] border border-white/10 rounded-xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 group cursor-default w-full justify-center md:justify-start">
-                            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-[#F67300] shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                <Factory size={22} strokeWidth={1.5} />
-                            </div>
-                            <span className="text-[#E3E3E0]/80 group-hover:text-white font-light tracking-wide text-lg transition-colors select-none">manufacturing</span>
+                    {/* Industries Grid */}
+                    <div className="flex justify-center px-6 py-10 w-full max-w-[1400px] mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full justify-items-center">
+                            {[
+                                { name: "Finance", icon: <Receipt size={20} /> },
+                                { name: "Healthcare", icon: <Hospital size={20} /> },
+                                { name: "Retail", icon: <Scan size={20} /> },
+                                { name: "Manufacturing", icon: <Factory size={20} /> },
+                            ].map((item, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.5, delay: idx * 0.08 }}
+                                    className="flex items-center gap-4 sm:gap-6 px-5 py-4 bg-[#1E1E1E] border-[0.5px] border-white/15 rounded-[12px] w-full max-w-[420px] h-[96px] sm:h-[110px] cursor-pointer transition-all hover:scale-[1.02] hover:border-[#F67300]/30"
+                                >
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[26px] bg-white/5 border border-white/15 flex items-center justify-center text-[#F67300] shrink-0">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-white text-[18px] sm:text-[22px] md:text-[24px] font-medium tracking-tight leading-tight">
+                                        {item.name}
+                                    </span>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -561,7 +567,7 @@ const ProcessAutomation = () => {
                         Client Testimonials
                     </h2>
                 </div>
-            </main> 
+            </main>
             <Footer />
         </>
     );
