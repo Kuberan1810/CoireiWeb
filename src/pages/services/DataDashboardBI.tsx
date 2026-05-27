@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, useTransform, useMotionValue, animate } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
@@ -22,31 +22,27 @@ const DataDashboardBI = () => {
     }, [processAnimProgress]);
 
     // Reveal SVG path from 0 to 1
-    const curvePathLength = useTransform(processAnimProgress, [0.10, 0.85], [0, 1]);
+    const curvePathLength = useTransform(processAnimProgress, [0.10, 0.70], [0, 1]);
 
-    // Animate lines height dynamically (aligned to baseline Y = 260px for all 5 nodes)
-    const line1Height = useTransform(processAnimProgress, [0.14, 0.24], [0, 190]); // Node 1 (Left Edge)
-    const line2Height = useTransform(processAnimProgress, [0.29, 0.39], [0, 105]); // Node 2 (Consultation)
-    const line3Height = useTransform(processAnimProgress, [0.46, 0.56], [0, 70]);  // Node 3 (Dashboard Design)
-    const line4Height = useTransform(processAnimProgress, [0.63, 0.73], [0, 85]);  // Node 4 (Deployment and Support)
-    const line5Height = useTransform(processAnimProgress, [0.83, 0.93], [0, 150]); // Node 5 (Right Edge)
+    // Animate lines height dynamically (aligned to baseline Y = 260px for all 3 nodes)
+    const line1Height = useTransform(processAnimProgress, [0.19, 0.34], [0, 159]); // Node 1 (Consultation)
+    const line2Height = useTransform(processAnimProgress, [0.40, 0.55], [0, 70]);  // Node 2 (Dashboard Design)
+    const line3Height = useTransform(processAnimProgress, [0.61, 0.76], [0, 125]); // Node 3 (Deployment and Support)
 
     // Animate nodes borders colors
-    const circle1Color = useTransform(processAnimProgress, [0, 0.13, 0.14], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const circle2Color = useTransform(processAnimProgress, [0, 0.28, 0.29], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const circle3Color = useTransform(processAnimProgress, [0, 0.45, 0.46], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const circle4Color = useTransform(processAnimProgress, [0, 0.62, 0.63], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const circle5Color = useTransform(processAnimProgress, [0, 0.82, 0.83], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
+    const circle1Color = useTransform(processAnimProgress, [0, 0.18, 0.19], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
+    const circle2Color = useTransform(processAnimProgress, [0, 0.39, 0.40], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
+    const circle3Color = useTransform(processAnimProgress, [0, 0.60, 0.61], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
 
     // Animate nodes text opacity and scale reveal
-    const opacity1 = useTransform(processAnimProgress, [0.39, 0.49], [0, 1]);
-    const y1 = useTransform(processAnimProgress, [0.39, 0.49], [20, 0]);
+    const opacity1 = useTransform(processAnimProgress, [0.34, 0.49], [0, 1]);
+    const y1 = useTransform(processAnimProgress, [0.34, 0.49], [20, 0]);
 
-    const opacity2 = useTransform(processAnimProgress, [0.56, 0.66], [0, 1]);
-    const y2 = useTransform(processAnimProgress, [0.56, 0.66], [20, 0]);
+    const opacity2 = useTransform(processAnimProgress, [0.55, 0.70], [0, 1]);
+    const y2 = useTransform(processAnimProgress, [0.55, 0.70], [20, 0]);
 
-    const opacity3 = useTransform(processAnimProgress, [0.73, 0.83], [0, 1]);
-    const y3 = useTransform(processAnimProgress, [0.73, 0.83], [20, 0]);
+    const opacity3 = useTransform(processAnimProgress, [0.76, 0.91], [0, 1]);
+    const y3 = useTransform(processAnimProgress, [0.76, 0.91], [20, 0]);
 
     // Time-linked continuous animation progress for Measurable Impact Stats (14s duration, repeats in a slow loop)
     const statsAnimProgress = useMotionValue(0);
@@ -95,8 +91,8 @@ const DataDashboardBI = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center">
-                <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center overflow-x-hidden">
+                <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full overflow-x-hidden">
 
                     {/* --- HEADER HERO SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
@@ -236,14 +232,14 @@ const DataDashboardBI = () => {
                     </div>
 
                     {/* --- WORKING PROCESS SECTION --- */}
-                    <div className="w-full mt-32 mb-32 flex flex-col items-center select-none overflow-hidden py-16">
+                    <div className="w-full mt-32 mb-32 flex flex-col items-center select-none overflow-x-hidden py-16">
                         <h2 className="text-3xl md:text-5xl font-medium text-[#E3E3E0] text-center mb-24 tracking-tight leading-tight">
                             Our Working Process
                         </h2>
 
-                        <div className="relative w-full max-w-none h-[450px] md:h-[400px]">
+                        <div className="relative w-full max-w-none aspect-[1000/300]">
                             {/* Curved Arc SVG */}
-                            <svg className="absolute inset-0 w-full h-[300px]" viewBox="0 0 1000 300" fill="none" preserveAspectRatio="xMidYMid meet">
+                            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 300" fill="none" preserveAspectRatio="none">
                                 {/* Background Curve Arc */}
                                 <path
                                     d="M 50 70 Q 500 290 950 110"
@@ -261,147 +257,89 @@ const DataDashboardBI = () => {
                                     style={{ pathLength: curvePathLength }}
                                 />
 
-                                {/* Node 1 Circle */}
+                                {/* Node 1 Circle (Consultation) */}
                                 <motion.circle
-                                    cx="50"
-                                    cy="70"
+                                    cx="120"
+                                    cy="101"
                                     r="6"
                                     fill="#161616"
                                     style={{ stroke: circle1Color }}
                                     strokeWidth="3.5"
                                 />
 
-                                {/* Node 2 Circle (Consultation) */}
+                                {/* Node 2 Circle (Dashboard Design) */}
                                 <motion.circle
-                                    cx="275"
-                                    cy="155"
+                                    cx="500"
+                                    cy="190"
                                     r="6"
                                     fill="#161616"
                                     style={{ stroke: circle2Color }}
                                     strokeWidth="3.5"
                                 />
 
-                                {/* Node 3 Circle (Dashboard Design) */}
+                                {/* Node 3 Circle (Deployment and Support) */}
                                 <motion.circle
-                                    cx="500"
-                                    cy="190"
+                                    cx="880"
+                                    cy="135"
                                     r="6"
                                     fill="#161616"
                                     style={{ stroke: circle3Color }}
                                     strokeWidth="3.5"
                                 />
 
-                                {/* Node 4 Circle (Deployment and Support) */}
-                                <motion.circle
-                                    cx="725"
-                                    cy="175"
-                                    r="6"
-                                    fill="#161616"
-                                    style={{ stroke: circle4Color }}
-                                    strokeWidth="3.5"
-                                />
-
-                                {/* Node 5 Circle */}
-                                <motion.circle
-                                    cx="950"
-                                    cy="110"
-                                    r="6"
-                                    fill="#161616"
-                                    style={{ stroke: circle5Color }}
-                                    strokeWidth="3.5"
-                                />
-
-                                {/* Vertical Line 1 (Background Track) */}
+                                {/* Vertical Line 1 (Background Track - Consultation) */}
                                 <line
-                                    x1="50"
-                                    y1="70"
-                                    x2="50"
+                                    x1="120"
+                                    y1="101"
+                                    x2="120"
                                     y2="260"
                                     stroke="rgba(255, 255, 255, 0.08)"
                                     strokeWidth="1.5"
                                 />
                                 {/* Vertical Line 1 (Active) */}
                                 <motion.line
-                                    x1="50"
-                                    y1="70"
-                                    x2="50"
-                                    y2={useTransform(line1Height, h => 70 + h)}
+                                    x1="120"
+                                    y1="101"
+                                    x2="120"
+                                    y2={useTransform(line1Height, h => 101 + h)}
                                     stroke="#F67300"
                                     strokeWidth="2"
                                 />
 
-                                {/* Vertical Line 2 (Background Track - Consultation) */}
+                                {/* Vertical Line 2 (Background Track - Dashboard Design) */}
                                 <line
-                                    x1="275"
-                                    y1="155"
-                                    x2="275"
+                                    x1="500"
+                                    y1="190"
+                                    x2="500"
                                     y2="260"
                                     stroke="rgba(255, 255, 255, 0.08)"
                                     strokeWidth="1.5"
                                 />
                                 {/* Vertical Line 2 (Active) */}
                                 <motion.line
-                                    x1="275"
-                                    y1="155"
-                                    x2="275"
-                                    y2={useTransform(line2Height, h => 155 + h)}
+                                    x1="500"
+                                    y1="190"
+                                    x2="500"
+                                    y2={useTransform(line2Height, h => 190 + h)}
                                     stroke="#F67300"
                                     strokeWidth="2"
                                 />
 
-                                {/* Vertical Line 3 (Background Track - Dashboard Design) */}
+                                {/* Vertical Line 3 (Background Track - Deployment and Support) */}
                                 <line
-                                    x1="500"
-                                    y1="190"
-                                    x2="500"
+                                    x1="880"
+                                    y1="135"
+                                    x2="880"
                                     y2="260"
                                     stroke="rgba(255, 255, 255, 0.08)"
                                     strokeWidth="1.5"
                                 />
                                 {/* Vertical Line 3 (Active) */}
                                 <motion.line
-                                    x1="500"
-                                    y1="190"
-                                    x2="500"
-                                    y2={useTransform(line3Height, h => 190 + h)}
-                                    stroke="#F67300"
-                                    strokeWidth="2"
-                                />
-
-                                {/* Vertical Line 4 (Background Track - Deployment and Support) */}
-                                <line
-                                    x1="725"
-                                    y1="175"
-                                    x2="725"
-                                    y2="260"
-                                    stroke="rgba(255, 255, 255, 0.08)"
-                                    strokeWidth="1.5"
-                                />
-                                {/* Vertical Line 4 (Active) */}
-                                <motion.line
-                                    x1="725"
-                                    y1="175"
-                                    x2="725"
-                                    y2={useTransform(line4Height, h => 175 + h)}
-                                    stroke="#F67300"
-                                    strokeWidth="2"
-                                />
-
-                                {/* Vertical Line 5 (Background Track) */}
-                                <line
-                                    x1="950"
-                                    y1="110"
-                                    x2="950"
-                                    y2="260"
-                                    stroke="rgba(255, 255, 255, 0.08)"
-                                    strokeWidth="1.5"
-                                />
-                                {/* Vertical Line 5 (Active) */}
-                                <motion.line
-                                    x1="950"
-                                    y1="110"
-                                    x2="950"
-                                    y2={useTransform(line5Height, h => 110 + h)}
+                                    x1="880"
+                                    y1="135"
+                                    x2="880"
+                                    y2={useTransform(line3Height, h => 135 + h)}
                                     stroke="#F67300"
                                     strokeWidth="2"
                                 />
@@ -411,7 +349,7 @@ const DataDashboardBI = () => {
                             {/* Step 1: Consultation */}
                             <motion.div
                                 style={{ opacity: opacity1, y: y1 }}
-                                className="absolute left-[27.5%] top-[275px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-3"
+                                className="absolute left-[12%] top-[86.67%] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-3"
                             >
                                 <h3 className="text-xl md:text-2xl font-medium text-white tracking-tight">
                                     Consultation
@@ -424,7 +362,7 @@ const DataDashboardBI = () => {
                             {/* Step 2: Dashboard Design */}
                             <motion.div
                                 style={{ opacity: opacity2, y: y2 }}
-                                className="absolute left-[50%] top-[275px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-3"
+                                className="absolute left-[50%] top-[86.67%] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-3"
                             >
                                 <h3 className="text-xl md:text-2xl font-medium text-white tracking-tight">
                                     Dashboard Design
@@ -437,7 +375,7 @@ const DataDashboardBI = () => {
                             {/* Step 3: Deployment and Support */}
                             <motion.div
                                 style={{ opacity: opacity3, y: y3 }}
-                                className="absolute left-[72.5%] top-[275px] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-3"
+                                className="absolute left-[88%] top-[86.67%] w-[200px] md:w-[240px] -ml-[100px] md:-ml-[120px] text-center flex flex-col items-center gap-3"
                             >
                                 <h3 className="text-xl md:text-2xl font-medium text-white tracking-tight">
                                     Deployment and Support
@@ -450,14 +388,14 @@ const DataDashboardBI = () => {
                     </div>
                     
                     {/* --- MEASURABLE PERFORMANCE STATS SECTION --- */}
-                    <div className="w-full mt-32 mb-32 flex flex-col items-center select-none overflow-hidden py-16">
+                    <div className="w-full mt-32 mb-32 flex flex-col items-center select-none overflow-x-hidden py-16">
                         <h2 className="text-3xl md:text-5xl font-medium text-[#E3E3E0] text-center mb-24 tracking-tight leading-tight">
                             Measurable <span className="text-[#F67300]">Impact</span> by the Numbers
                         </h2>
 
-                        <div className="relative w-full max-w-none h-[450px] md:h-[400px]">
+                        <div className="relative w-full max-w-none aspect-[1200/320]">
                             {/* Curved Arc SVG */}
-                            <svg className="absolute inset-0 w-full h-[320px]" viewBox="0 0 1200 320" fill="none" preserveAspectRatio="xMidYMid meet">
+                            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 320" fill="none" preserveAspectRatio="none">
                                 {/* Background Curve Arc */}
                                 <path
                                     d="M 270 166 Q 600 260 930 196"

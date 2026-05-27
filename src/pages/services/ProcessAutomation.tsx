@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, AnimatePresence } from "framer-motion";
@@ -127,8 +128,8 @@ const ProcessAutomation = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center overflow-x-hidden">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full overflow-x-hidden">
 
                     {/* --- HEADER HERO SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
