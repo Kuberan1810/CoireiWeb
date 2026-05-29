@@ -10,15 +10,15 @@ import { LayoutGrid, LineChart, TrendingUp, Handshake, Network, Bot, Scan, Coins
 const DataDashboardBI = () => {
     useScrollAnimations();
 
-    // Time-linked continuous animation progress for Our Working Process (12s duration, repeats in a slow loop)
+    // Time-linked continuous animation progress for Our Working Process (3s duration, repeats in a very fast loop)
     const processAnimProgress = useMotionValue(0);
     useEffect(() => {
         const controls = animate(processAnimProgress, 1, {
-            duration: 12,
+            duration: 3,
             ease: "linear",
             repeat: Infinity,
             repeatType: "loop",
-            repeatDelay: 3
+            repeatDelay: 0.5
         });
         return () => controls.stop();
     }, [processAnimProgress]);
@@ -32,9 +32,14 @@ const DataDashboardBI = () => {
     const line3Height = useTransform(processAnimProgress, [0.61, 0.76], [0, 125]); // Node 3 (Deployment and Support)
 
     // Animate nodes borders colors
-    const circle1Color = useTransform(processAnimProgress, [0, 0.18, 0.19], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const circle2Color = useTransform(processAnimProgress, [0, 0.39, 0.40], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const circle3Color = useTransform(processAnimProgress, [0, 0.60, 0.61], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
+    const circle1Color = useTransform(processAnimProgress, [0, 0.18, 0.19], ["transparent", "transparent", "#F67300"]);
+    const circle2Color = useTransform(processAnimProgress, [0, 0.39, 0.40], ["transparent", "transparent", "#F67300"]);
+    const circle3Color = useTransform(processAnimProgress, [0, 0.60, 0.61], ["transparent", "transparent", "#F67300"]);
+
+    // Animate nodes fill colors (transparent to background color)
+    const circle1Fill = useTransform(processAnimProgress, [0, 0.18, 0.19], ["transparent", "transparent", "#161616"]);
+    const circle2Fill = useTransform(processAnimProgress, [0, 0.39, 0.40], ["transparent", "transparent", "#161616"]);
+    const circle3Fill = useTransform(processAnimProgress, [0, 0.60, 0.61], ["transparent", "transparent", "#161616"]);
 
     // Animate nodes text opacity and scale reveal
     const opacity1 = useTransform(processAnimProgress, [0.34, 0.49], [0, 1]);
@@ -46,15 +51,15 @@ const DataDashboardBI = () => {
     const opacity3 = useTransform(processAnimProgress, [0.76, 0.91], [0, 1]);
     const y3 = useTransform(processAnimProgress, [0.76, 0.91], [20, 0]);
 
-    // Time-linked continuous animation progress for Measurable Impact Stats (14s duration, repeats in a slow loop)
+    // Time-linked continuous animation progress for Measurable Impact Stats (3.5s duration, repeats in a very fast loop)
     const statsAnimProgress = useMotionValue(0);
     useEffect(() => {
         const controls = animate(statsAnimProgress, 1, {
-            duration: 14,
+            duration: 3.5,
             ease: "linear",
             repeat: Infinity,
             repeatType: "loop",
-            repeatDelay: 3
+            repeatDelay: 0.5
         });
         return () => controls.stop();
     }, [statsAnimProgress]);
@@ -167,16 +172,18 @@ const DataDashboardBI = () => {
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-white/40 font-light text-lg mt-1 shrink-0">01</span>
-                                        <div className="flex flex-col gap-4">
+                                        <div className="flex flex-col gap-0 group-hover:gap-4 transition-all duration-500">
                                             <h3 className="text-2xl md:text-3xl font-medium text-[#F67300] tracking-tight">
                                                 AI Expertise
                                             </h3>
-                                            <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
-                                                Our team of experienced AI specialists combines deep industry knowledge with advanced analytics to deliver intelligent, data-driven solutions.
-                                            </p>
-                                            <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
-                                                Every insight we provide is designed to be practical, actionable, and capable of driving measurable business growth.
-                                            </p>
+                                            <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 ease-in-out flex flex-col gap-4">
+                                                <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
+                                                    Our team of experienced AI specialists combines deep industry knowledge with advanced analytics to deliver intelligent, data-driven solutions.
+                                                </p>
+                                                <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
+                                                    Every insight we provide is designed to be practical, actionable, and capable of driving measurable business growth.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="text-white/70 shrink-0 mt-1">
@@ -190,16 +197,18 @@ const DataDashboardBI = () => {
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-white/40 font-light text-lg mt-1 shrink-0">02</span>
-                                        <div className="flex flex-col gap-4">
+                                        <div className="flex flex-col gap-0 group-hover:gap-4 transition-all duration-500">
                                             <h3 className="text-2xl md:text-3xl font-medium text-[#F67300] tracking-tight">
                                                 Scalable Solutions
                                             </h3>
-                                            <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
-                                                Whether you are a growing startup or a large global enterprise, our solutions are built to scale alongside your business needs.
-                                            </p>
-                                            <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
-                                                We create flexible and future-ready systems that adapt seamlessly as your data, operations, and goals evolve.
-                                            </p>
+                                            <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 ease-in-out flex flex-col gap-4">
+                                                <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
+                                                    Whether you are a growing startup or a large global enterprise, our solutions are built to scale alongside your business needs.
+                                                </p>
+                                                <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
+                                                    We create flexible and future-ready systems that adapt seamlessly as your data, operations, and goals evolve.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="text-white/70 shrink-0 mt-1">
@@ -213,16 +222,18 @@ const DataDashboardBI = () => {
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-white/40 font-light text-lg mt-1 shrink-0">03</span>
-                                        <div className="flex flex-col gap-4">
+                                        <div className="flex flex-col gap-0 group-hover:gap-4 transition-all duration-500">
                                             <h3 className="text-2xl md:text-3xl font-medium text-[#F67300] tracking-tight">
                                                 Customer-Centric Approach
                                             </h3>
-                                            <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
-                                                At Coirei, we work closely with every client to understand their unique challenges, objectives, and long-term vision.
-                                            </p>
-                                            <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
-                                                By building tailored solutions and maintaining transparent collaboration, we ensure results that truly align with your business goals.
-                                            </p>
+                                            <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 ease-in-out flex flex-col gap-4">
+                                                <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
+                                                    At Coirei, we work closely with every client to understand their unique challenges, objectives, and long-term vision.
+                                                </p>
+                                                <p className="text-white/70 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
+                                                    By building tailored solutions and maintaining transparent collaboration, we ensure results that truly align with your business goals.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="text-white/70 shrink-0 mt-1">
@@ -245,7 +256,7 @@ const DataDashboardBI = () => {
                                 {/* Background Curve Arc */}
                                 <path
                                     d="M 50 70 Q 500 290 950 110"
-                                    stroke="rgba(255, 255, 255, 0.08)"
+                                    stroke="transparent"
                                     strokeWidth="2.5"
                                     fill="none"
                                 />
@@ -264,8 +275,7 @@ const DataDashboardBI = () => {
                                     cx="120"
                                     cy="101"
                                     r="6"
-                                    fill="#161616"
-                                    style={{ stroke: circle1Color }}
+                                    style={{ stroke: circle1Color, fill: circle1Fill }}
                                     strokeWidth="3.5"
                                 />
 
@@ -274,8 +284,7 @@ const DataDashboardBI = () => {
                                     cx="500"
                                     cy="190"
                                     r="6"
-                                    fill="#161616"
-                                    style={{ stroke: circle2Color }}
+                                    style={{ stroke: circle2Color, fill: circle2Fill }}
                                     strokeWidth="3.5"
                                 />
 
@@ -284,8 +293,7 @@ const DataDashboardBI = () => {
                                     cx="880"
                                     cy="135"
                                     r="6"
-                                    fill="#161616"
-                                    style={{ stroke: circle3Color }}
+                                    style={{ stroke: circle3Color, fill: circle3Fill }}
                                     strokeWidth="3.5"
                                 />
 
@@ -295,7 +303,7 @@ const DataDashboardBI = () => {
                                     y1="101"
                                     x2="120"
                                     y2="260"
-                                    stroke="rgba(255, 255, 255, 0.08)"
+                                    stroke="transparent"
                                     strokeWidth="1.5"
                                 />
                                 {/* Vertical Line 1 (Active) */}
@@ -314,7 +322,7 @@ const DataDashboardBI = () => {
                                     y1="190"
                                     x2="500"
                                     y2="260"
-                                    stroke="rgba(255, 255, 255, 0.08)"
+                                    stroke="transparent"
                                     strokeWidth="1.5"
                                 />
                                 {/* Vertical Line 2 (Active) */}
@@ -333,7 +341,7 @@ const DataDashboardBI = () => {
                                     y1="135"
                                     x2="880"
                                     y2="260"
-                                    stroke="rgba(255, 255, 255, 0.08)"
+                                    stroke="transparent"
                                     strokeWidth="1.5"
                                 />
                                 {/* Vertical Line 3 (Active) */}
