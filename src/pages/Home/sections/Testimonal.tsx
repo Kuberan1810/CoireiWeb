@@ -154,18 +154,18 @@ export default function TestimonialSection() {
     return (
         <section
             ref={sectionRef}
-            className="bg-[#161616] pt-6 pb-6 px-6 md:px-12 lg:px-20 overflow-hidden sm:pt-8 sm:pb-8"
+            className="pt-6 pb-6 px-6 md:px-12 lg:px-20 overflow-hidden sm:pt-8 sm:pb-8 w-full"
             style={{
             }}
         >
-            <div className="">
+            <div className="w-full">
 
                 {/* ── Header row ── */}
-                        <div className="flex items-center justify-center w-full mx-auto mb-12 gap-4">
+                <div className="flex items-center justify-center w-full mx-auto mb-12 gap-4">
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] w-full max-w-[342px] bg-linear-to-r from-[#161616] to-white hidden sm:block"
+                    className="h-[1.5px] w-full bg-linear-to-r from-transparent to-white hidden sm:block"
                 ></div>
                 <div
                     data-ns-animate
@@ -177,13 +177,13 @@ export default function TestimonialSection() {
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] w-full max-w-[342px] bg-linear-to-l from-[#161616] to-white hidden sm:block"
+                    className="h-[1.5px] w-full bg-linear-to-l from-transparent to-white hidden sm:block"
                 ></div>
             </div>
 
                     <div className="flex items-start justify-center  flex-wrap gap-4 mb-16">
-                        <div>
-                            <h2 className="text-[#FFFFFF] text-[20px] sm:text-[40px] max-w-[908px] font-normal leading-[30px] md:leading-[40px] text-center">
+                        <div className="w-full">
+                            <h2 className="text-[#FFFFFF] text-[20px] sm:text-[40px] font-normal leading-[30px] md:leading-[40px] text-center w-full mx-auto">
                                 <span className="text-white">What <span className="text-[#F67300]">clients</span> say about</span>
                                 <span className="text-white"> our <span className="text-[#F67300]">AI solutions?</span></span>
                             </h2>

@@ -17,14 +17,18 @@ const UIUXDesignDetails = () => {
     const dot1Ref = useRef<HTMLDivElement>(null);
     const dot2Ref = useRef<HTMLDivElement>(null);
     const dot3Ref = useRef<HTMLDivElement>(null);
+    const card1Ref = useRef<HTMLDivElement>(null);
+    const card2Ref = useRef<HTMLDivElement>(null);
+    const card3Ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (clipRectRef.current) {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".statics-section",
-                    start: "top 80%",
-                    toggleActions: "play none none none"
+                    start: "top 70%",
+                    end: "bottom 80%",
+                    scrub: 1
                 }
             });
 
@@ -33,9 +37,9 @@ const UIUXDesignDetails = () => {
                 attr: { x: 1370, width: 0 }
             });
 
-            gsap.set([dot1Ref.current, dot2Ref.current, dot3Ref.current], {
+            gsap.set([dot1Ref.current, dot2Ref.current, dot3Ref.current, card1Ref.current, card2Ref.current, card3Ref.current], {
                 opacity: 0,
-                scale: 0.5
+                scale: 0.8
             });
 
             // Reveal from right to left
@@ -45,30 +49,48 @@ const UIUXDesignDetails = () => {
                     width: 1370
                 },
                 duration: 2.2,
-                ease: "power2.out"
+                ease: "none"
             }, 0);
 
-            // Staggered dot fade-ins timed to match the line progression
-            tl.to(dot3Ref.current, {
+            // Staggered dot + card fade-ins timed to match the line progression
+            tl.to([dot3Ref.current, card3Ref.current], {
                 opacity: 1,
                 scale: 1,
                 duration: 0.4,
-                ease: "back.out(1.7)"
+                ease: "power2.out"
             }, 0.25); // Fades in quickly as the curve starts on the right
 
-            tl.to(dot2Ref.current, {
+            tl.to([dot2Ref.current, card2Ref.current], {
                 opacity: 1,
                 scale: 1,
                 duration: 0.4,
-                ease: "back.out(1.7)"
+                ease: "power2.out"
             }, 0.9); // Fades in as the curve reaches the middle
 
-            tl.to(dot1Ref.current, {
+            tl.to([dot1Ref.current, card1Ref.current], {
                 opacity: 1,
                 scale: 1,
                 duration: 0.4,
-                ease: "back.out(1.7)"
+                ease: "power2.out"
             }, 1.65); // Fades in as the curve finishes on the left
+
+            // Mobile timeline items staggered animation
+            gsap.utils.toArray<HTMLElement>(".mobile-timeline-item").forEach((item) => {
+                gsap.fromTo(item, 
+                    { opacity: 0, x: -30 },
+                    { 
+                        opacity: 1, 
+                        x: 0, 
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
         }
     }, []);
 
@@ -174,7 +196,7 @@ const UIUXDesignDetails = () => {
                             <div ref={dot1Ref} style={{ left: "11.5%", top: "65%" }} className="absolute -translate-x-1/2 -translate-y-1/2 z-10">
                                 <div className="w-5 h-5 bg-[#FF7A00] rounded-full border-4 border-[#161616] ring-2 ring-[#FF7A00]/50 shadow-[0_0_10px_#FF7A00] transition-transform duration-300 hover:scale-125" />
                             </div>
-                            <div style={{ left: "11.5%", top: "70%" }} className="absolute z-10 w-[280px]">
+                            <div ref={card1Ref} style={{ left: "11.5%", top: "70%" }} className="absolute z-10 w-[280px]">
                                 <div className="bg-[#1A1A1A] border border-white/10 rounded-[12px] p-5 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 shadow-xl cursor-default">
                                     <p className="text-white/70 text-sm leading-relaxed font-light">
                                         UX/UI designs delivered to 60+ industries, accelerating user engagement by up to 40%.
@@ -186,7 +208,7 @@ const UIUXDesignDetails = () => {
                             <div ref={dot2Ref} style={{ left: "48%", top: "17%" }} className="absolute -translate-x-1/2 -translate-y-1/2 z-10">
                                 <div className="w-5 h-5 bg-[#FF7A00] rounded-full border-4 border-[#161616] ring-2 ring-[#FF7A00]/50 shadow-[0_0_10px_#FF7A00] transition-transform duration-300 hover:scale-125" />
                             </div>
-                            <div style={{ left: "37.5%", top: "31%" }} className="absolute z-10 w-[230px]">
+                            <div ref={card2Ref} style={{ left: "37.5%", top: "31%" }} className="absolute z-10 w-[230px]">
                                 <div className="bg-[#1A1A1A] border border-white/10 rounded-[12px] p-5 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 shadow-xl cursor-default">
                                     <p className="text-white/70 text-sm leading-relaxed font-light">
                                         More than 150 logos built, amplifying brand recognition worldwide.
@@ -198,7 +220,7 @@ const UIUXDesignDetails = () => {
                             <div ref={dot3Ref} style={{ left: "84.5%", top: "1%" }} className="absolute -translate-x-1/2 -translate-y-1/2 z-10">
                                 <div className="w-5 h-5 bg-[#FF7A00] rounded-full border-4 border-[#161616] ring-2 ring-[#FF7A00]/50 shadow-[0_0_10px_#FF7A00] transition-transform duration-300 hover:scale-125" />
                             </div>
-                            <div style={{ left: "74%", top: "16%" }} className="absolute z-10 w-[210px]">
+                            <div ref={card3Ref} style={{ left: "74%", top: "16%" }} className="absolute z-10 w-[210px]">
                                 <div className="bg-[#1A1A1A] border border-white/10 rounded-[12px] p-5 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 shadow-xl cursor-default">
                                     <p className="text-white/70 text-sm leading-relaxed font-light">
                                         Over 120 websites designed for top-tier brands.
@@ -211,7 +233,7 @@ const UIUXDesignDetails = () => {
                         <div className="md:hidden w-full max-w-md px-6 mt-6">
                             <div className="relative pl-8 border-l-2 border-dashed border-[#FF7A00]/30 ml-4 flex flex-col gap-12 py-2">
                                 {/* Mobile Item 1 */}
-                                <div className="relative flex flex-col items-start">
+                                <div className="relative flex flex-col items-start mobile-timeline-item">
                                     {/* Dot */}
                                     <div className="absolute left-[-42px] top-1.5 w-5 h-5 bg-[#FF7A00] rounded-full border-4 border-[#161616] ring-2 ring-[#FF7A00]/50 shadow-[0_0_10px_#FF7A00]" />
                                     {/* Card */}
@@ -223,7 +245,7 @@ const UIUXDesignDetails = () => {
                                 </div>
 
                                 {/* Mobile Item 2 */}
-                                <div className="relative flex flex-col items-start">
+                                <div className="relative flex flex-col items-start mobile-timeline-item">
                                     {/* Dot */}
                                     <div className="absolute left-[-42px] top-1.5 w-5 h-5 bg-[#FF7A00] rounded-full border-4 border-[#161616] ring-2 ring-[#FF7A00]/50 shadow-[0_0_10px_#FF7A00]" />
                                     {/* Card */}
@@ -235,7 +257,7 @@ const UIUXDesignDetails = () => {
                                 </div>
 
                                 {/* Mobile Item 3 */}
-                                <div className="relative flex flex-col items-start">
+                                <div className="relative flex flex-col items-start mobile-timeline-item">
                                     {/* Dot */}
                                     <div className="absolute left-[-42px] top-1.5 w-5 h-5 bg-[#FF7A00] rounded-full border-4 border-[#161616] ring-2 ring-[#FF7A00]/50 shadow-[0_0_10px_#FF7A00]" />
                                     {/* Card */}

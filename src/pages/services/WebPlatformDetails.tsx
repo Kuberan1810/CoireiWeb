@@ -97,15 +97,13 @@ const WebPlatformDetails = () => {
         offset: ["start start", "end end"]
     });
 
-    const [activeSection, setActiveSection] = useState(0);
+    const [activeSection, setActiveSection] = useState(1);
 
     useEffect(() => {
         const unsubscribe = sectionScrollY.on("change", (latest) => {
-            if (latest < 0.15) {
-                setActiveSection(0);
-            } else if (latest < 0.45) {
+            if (latest < 0.33) {
                 setActiveSection(1);
-            } else if (latest < 0.75) {
+            } else if (latest < 0.66) {
                 setActiveSection(2);
             } else {
                 setActiveSection(3);
@@ -492,8 +490,8 @@ const WebPlatformDetails = () => {
                     </div>
                 </div>
                 {/* --- HOW WE WORK SECTION --- */}
-                <div className="relative w-full mb-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
-                    <div className="max-w-6xl mx-auto">
+                <div className="relative w-full mb-32 px-6 md:px-16 lg:px-24 xl:px-32">
+                    <div className="w-full">
 
                         {/* TITLE */}
                         <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 tracking-tight leading-tight">

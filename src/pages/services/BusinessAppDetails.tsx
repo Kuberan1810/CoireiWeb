@@ -131,6 +131,13 @@ const BusinessAppDetails = () => {
         offset: ["start start", "end end"]
     });
 
+    const whyChooseScrollRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress: whyChooseScrollY } = useScroll({
+        target: whyChooseScrollRef,
+        offset: ["start 85%", "end 20%"]
+    });
+    const whyChooseXProgress = useTransform(whyChooseScrollY, [0.05, 0.55], [1, 0]);
+
     const smoothProgress = useSpring(scrollYProgress, {
         stiffness: 80,
         damping: 30,
@@ -144,8 +151,7 @@ const BusinessAppDetails = () => {
         const step = Math.min(Math.floor(latest * steps.length), steps.length - 1);
         setActiveStep(step);
     });
-
-
+    
     return (
         <>
             <div className="fixed w-full top-0 z-50">
@@ -169,15 +175,21 @@ const BusinessAppDetails = () => {
                     </div>
 
                     {/* --- WHY COIREI FOR BUSINESS APP SECTION --- */}
-                    <div className="w-full mb-32 flex flex-col items-center">
+                    <div ref={whyChooseScrollRef} className="w-full mb-32 flex flex-col items-center overflow-hidden">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 tracking-tight leading-tight">
                             Why <span className="text-[#F67300]">Coirei</span> for Business App?
                         </h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                             {/* Card 1 */}
-                            <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
+                            <motion.div
+                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[20px] p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default"
+                                style={{
+                                    x: useTransform(whyChooseXProgress, (v) => `${v * 0 * -72}%`),
+                                    zIndex: 0
+                                }}
+                            >
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#161616] border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Workflow size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -186,11 +198,17 @@ const BusinessAppDetails = () => {
                                 <p className="text-white/70 text-base leading-relaxed font-light">
                                     We help you automate everyday tasks, so your team can focus on more strategic work.
                                 </p>
-                            </div>
+                            </motion.div>
 
                             {/* Card 2 */}
-                            <div data-ns-animate="true" data-delay="0.2" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
+                            <motion.div
+                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[20px] p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default"
+                                style={{
+                                    x: useTransform(whyChooseXProgress, (v) => `${v * 1 * -72}%`),
+                                    zIndex: 1
+                                }}
+                            >
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#161616] border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <AnalyticsIcon />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -199,11 +217,17 @@ const BusinessAppDetails = () => {
                                 <p className="text-white/70 text-base leading-relaxed font-light">
                                     Get instant insights from your data, so you can make smarter decisions on the fly.
                                 </p>
-                            </div>
+                            </motion.div>
 
                             {/* Card 3 */}
-                            <div data-ns-animate="true" data-delay="0.3" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
+                            <motion.div
+                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[20px] p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default"
+                                style={{
+                                    x: useTransform(whyChooseXProgress, (v) => `${v * 2 * -72}%`),
+                                    zIndex: 2
+                                }}
+                            >
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#161616] border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <IntegrationsIcon />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -212,11 +236,17 @@ const BusinessAppDetails = () => {
                                 <p className="text-white/70 text-base leading-relaxed font-light">
                                     Our platform plugs right into your existing tools, keeping everything connected and simple.
                                 </p>
-                            </div>
+                            </motion.div>
 
                             {/* Card 4 */}
-                            <div data-ns-animate="true" data-delay="0.4" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-[53px] group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
+                            <motion.div
+                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[20px] p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] group cursor-default"
+                                style={{
+                                    x: useTransform(whyChooseXProgress, (v) => `${v * 3 * -72}%`),
+                                    zIndex: 3
+                                }}
+                            >
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#161616] border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Smartphone size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -225,7 +255,7 @@ const BusinessAppDetails = () => {
                                 <p className="text-white/70 text-base leading-relaxed font-light">
                                     Whether you're in the office or on the move, you can access your business anytime, from any device.
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
 
@@ -237,7 +267,10 @@ const BusinessAppDetails = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                             {/* App 1: Custom ERPs */}
-                            <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default">
+                            <div
+                                data-ns-animate="true" data-delay="0.1"
+                                className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default"
+                            >
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Settings size={28} strokeWidth={1.5} className="animate-spin-slow" />
                                 </div>
@@ -250,7 +283,10 @@ const BusinessAppDetails = () => {
                             </div>
 
                             {/* App 2: CRMs */}
-                            <div data-ns-animate="true" data-delay="0.2" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default">
+                            <div
+                                data-ns-animate="true" data-delay="0.2"
+                                className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default"
+                            >
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <CRMIcon />
                                 </div>
@@ -263,7 +299,10 @@ const BusinessAppDetails = () => {
                             </div>
 
                             {/* App 3: Enterprise Portals */}
-                            <div data-ns-animate="true" data-delay="0.3" className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default">
+                            <div
+                                data-ns-animate="true" data-delay="0.3"
+                                className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-[20px] p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-h-[350px] group cursor-default"
+                            >
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-white/10 mb-8 group-hover:bg-white/10 group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Building2 size={28} strokeWidth={1.5} />
                                 </div>
@@ -280,7 +319,7 @@ const BusinessAppDetails = () => {
                     {/* --- HOW WE WORK SECTION --- */}
                     <div ref={containerRef} className="relative w-full h-[300vh] mb-32">
                         {/* Sticky container */}
-                        <div className="sticky top-[10%] md:top-[15%] w-full h-fit flex flex-col items-center">
+                        <div className="sticky top-[20vh] w-full h-fit flex flex-col items-center">
                             <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-10 md:mb-16 tracking-tight leading-tight">
                                 How We Work (The Process)
                             </h2>

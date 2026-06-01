@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, Animat
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
+import TestimonialSection from "../Home/sections/Testimonal";
 import { FileText, RefreshCw, GitFork, TrendingUp, Workflow, ShieldCheck, Cpu, Sliders, Handshake, Wrench, Plug, Bot, BarChart3, Receipt, Hospital, Scan, Factory } from "lucide-react";
 import coireiLogo from "../../assets/images/products/coirei-logo.svg";
 import biDashboard from "../../assets/images/products/lmsprogresstrack.png";
@@ -62,6 +63,13 @@ const ProcessAutomation = () => {
         target: containerRef,
         offset: ["start start", "end end"]
     });
+
+    const whyChooseScrollRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress: whyChooseScrollY } = useScroll({
+        target: whyChooseScrollRef,
+        offset: ["start 85%", "end 20%"]
+    });
+    const whyChooseXProgress = useTransform(whyChooseScrollY, [0.05, 0.55], [1, 0]);
 
     const smoothProgress = useSpring(scrollYProgress, {
         stiffness: 80,
@@ -128,8 +136,8 @@ const ProcessAutomation = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center overflow-x-hidden">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full overflow-x-hidden">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616]">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER HERO SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
@@ -239,14 +247,21 @@ const ProcessAutomation = () => {
                     </div>
 
                     {/* --- WHY CHOOSE US SECTION --- */}
-                    <div className="w-full mt-24">
+                    <div ref={whyChooseScrollRef} className="w-full mt-24">
                         <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                             Why Choose <span className="text-[#F67300]">Coirei</span>
                         </h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto px-4 md:px-0">
                             {/* Card 1 */}
-                            <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group">
+                            <motion.div
+                                data-ns-animate="true" data-delay="0.1"
+                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group"
+                                style={{
+                                    x: useTransform(whyChooseXProgress, (v) => `${v * 0 * -72}%`),
+                                    zIndex: 0
+                                }}
+                            >
                                 <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner">
                                     <Sliders size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
                                 </div>
@@ -256,10 +271,17 @@ const ProcessAutomation = () => {
                                 <p className="text-white/50 text-[14px] leading-relaxed font-light px-2">
                                     We design custom automation and integration solutions that fit your exact industry challenges. Every solution is built with your business in mind.
                                 </p>
-                            </div>
+                            </motion.div>
 
                             {/* Card 2 */}
-                            <div data-ns-animate="true" data-delay="0.2" className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group">
+                            <motion.div
+                                data-ns-animate="true" data-delay="0.2"
+                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group"
+                                style={{
+                                    x: useTransform(whyChooseXProgress, (v) => `${v * 1 * -72}%`),
+                                    zIndex: 1
+                                }}
+                            >
                                 <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner">
                                     <ShieldCheck size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
                                 </div>
@@ -269,10 +291,17 @@ const ProcessAutomation = () => {
                                 <p className="text-white/50 text-[14px] leading-relaxed font-light px-2">
                                     Our clients see real results, with measurable ROI and efficiency improvements. We've helped hundreds of businesses thrive.
                                 </p>
-                            </div>
+                            </motion.div>
 
                             {/* Card 3 */}
-                            <div data-ns-animate="true" data-delay="0.3" className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group">
+                            <motion.div
+                                data-ns-animate="true" data-delay="0.3"
+                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group"
+                                style={{
+                                    x: useTransform(whyChooseXProgress, (v) => `${v * 2 * -72}%`),
+                                    zIndex: 2
+                                }}
+                            >
                                 <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner">
                                     <Cpu size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
                                 </div>
@@ -282,10 +311,17 @@ const ProcessAutomation = () => {
                                 <p className="text-white/50 text-[14px] leading-relaxed font-light px-2">
                                     We leverage the latest tools and innovations to keep you ahead in a fast-changing market. Your business benefits from every advancement.
                                 </p>
-                            </div>
+                            </motion.div>
 
                             {/* Card 4 */}
-                            <div data-ns-animate="true" data-delay="0.4" className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group">
+                            <motion.div
+                                data-ns-animate="true" data-delay="0.4"
+                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group"
+                                style={{
+                                    x: useTransform(whyChooseXProgress, (v) => `${v * 3 * -72}%`),
+                                    zIndex: 3
+                                }}
+                            >
                                 <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner">
                                     <Handshake size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
                                 </div>
@@ -295,7 +331,7 @@ const ProcessAutomation = () => {
                                 <p className="text-white/50 text-[14px] leading-relaxed font-light px-2">
                                     Our team is with you every step, providing ongoing support and scalable solutions as your business grows.
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
 
@@ -374,9 +410,12 @@ const ProcessAutomation = () => {
                     </div>
 
                     {/* --- HOW WE WORK SECTION --- */}
-                    <div ref={containerRef} className="relative w-full h-[300vh] mb-32 pt-10">
-                        {/* Sticky container */}
-                        <div className="sticky top-[10%] md:top-[15%] w-full h-fit flex flex-col items-center">
+                    <div
+                        ref={containerRef}
+                        className="relative w-full mb-32 mt-32"
+                        style={{ height: "300vh" }}
+                    >
+                        <div className="sticky top-[20vh] w-full h-fit flex flex-col items-center">
                             <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-10 md:mb-12 tracking-tight leading-tight">
                                 How We Work (The Process)
                             </h2>
@@ -528,8 +567,8 @@ const ProcessAutomation = () => {
                     {/* Header Section */}
                     <div className="flex flex-col items-center text-center px-6 mb-12">
                         <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
-                           <span className="text-[#F67300]">Impact </span>
-                           <span className="text-white"> Across Industries</span>
+                            <span className="text-[#F67300]">Impact </span>
+                            <span className="text-white"> Across Industries</span>
                         </h2>
                     </div>
 
@@ -563,11 +602,7 @@ const ProcessAutomation = () => {
                 </div>
 
                 {/* --- CLIENT TESTIMONIALS SECTION --- */}
-                <div className="w-full mt-24 mb-16 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto flex flex-col items-center">
-                    <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#E3E3E0] text-center mb-12 tracking-tight">
-                        Client Testimonials
-                    </h2>
-                </div>
+                <TestimonialSection />
             </main>
             <Footer />
         </>

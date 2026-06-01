@@ -1,10 +1,11 @@
-// @ts-nocheck
+
 import { useEffect } from "react";
 import { motion, useTransform, useMotionValue, animate } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 import FAQSection from "../Home/sections/FAQSection";
+import TestimonialSection from "../Home/sections/Testimonal";
 import { LayoutGrid, LineChart, TrendingUp, Handshake, Network, Bot, Scan, Coins, Stethoscope, Factory, PhoneCall, Truck, Monitor, GraduationCap } from "lucide-react";
 
 const DataDashboardBI = () => {
@@ -168,7 +169,8 @@ const DataDashboardBI = () => {
 
                         <div className="flex flex-col w-full border-t border-white/10">
                             {/* Row 1: AI Expertise */}
-                            <div data-ns-animate="true" data-delay="0.1" className="flex flex-col py-10 border-b border-white/10 relative group">
+                            {/* Row 1: AI Expertise */}
+                            <div data-ns-animate="true" data-delay="0.1" className="flex flex-col py-10 border-b border-white/10 relative group cursor-pointer">
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-white/40 font-light text-lg mt-1 shrink-0">01</span>
@@ -193,7 +195,7 @@ const DataDashboardBI = () => {
                             </div>
 
                             {/* Row 2: Scalable Solutions */}
-                            <div data-ns-animate="true" data-delay="0.2" className="flex flex-col py-10 border-b border-white/10 relative group">
+                            <div data-ns-animate="true" data-delay="0.2" className="flex flex-col py-10 border-b border-white/10 relative group cursor-pointer">
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-white/40 font-light text-lg mt-1 shrink-0">02</span>
@@ -218,7 +220,7 @@ const DataDashboardBI = () => {
                             </div>
 
                             {/* Row 3: Customer-Centric Approach */}
-                            <div data-ns-animate="true" data-delay="0.3" className="flex flex-col py-10 border-b border-white/10 relative group">
+                            <div data-ns-animate="true" data-delay="0.3" className="flex flex-col py-10 border-b border-white/10 relative group cursor-pointer">
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-white/40 font-light text-lg mt-1 shrink-0">03</span>
@@ -250,7 +252,7 @@ const DataDashboardBI = () => {
                             Our Working Process
                         </h2>
 
-                        <div className="relative w-full max-w-none aspect-[1000/300]">
+                        <div className="relative w-full max-w-none aspect-[1000/300] hidden md:block">
                             {/* Curved Arc SVG */}
                             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 300" fill="none" preserveAspectRatio="none">
                                 {/* Background Curve Arc */}
@@ -395,57 +397,113 @@ const DataDashboardBI = () => {
                                 </p>
                             </motion.div>
                         </div>
+
+                        {/* Mobile view (vertical list) */}
+                        <div className="flex flex-col gap-12 w-full px-6 md:hidden">
+                            {/* Step 1 */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="flex flex-col items-center text-center"
+                            >
+                                <div className="w-12 h-12 rounded-full border-2 border-[#F67300] flex items-center justify-center text-[#F67300] font-semibold text-lg mb-4">
+                                    1
+                                </div>
+                                <h3 className="text-xl font-medium text-white tracking-tight mb-2">
+                                    Consultation
+                                </h3>
+                                <p className="text-white/60 text-sm leading-relaxed font-light max-w-sm">
+                                    We listen to your challenges, understand your goals, and define a plan.
+                                </p>
+                            </motion.div>
+
+                            {/* Step 2 */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="flex flex-col items-center text-center"
+                            >
+                                <div className="w-12 h-12 rounded-full border-2 border-[#F67300] flex items-center justify-center text-[#F67300] font-semibold text-lg mb-4">
+                                    2
+                                </div>
+                                <h3 className="text-xl font-medium text-white tracking-tight mb-2">
+                                    Dashboard Design
+                                </h3>
+                                <p className="text-white/60 text-sm leading-relaxed font-light max-w-sm">
+                                    Our designers craft intuitive, actionable dashboards.
+                                </p>
+                            </motion.div>
+
+                            {/* Step 3 */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="flex flex-col items-center text-center"
+                            >
+                                <div className="w-12 h-12 rounded-full border-2 border-[#F67300] flex items-center justify-center text-[#F67300] font-semibold text-lg mb-4">
+                                    3
+                                </div>
+                                <h3 className="text-xl font-medium text-white tracking-tight mb-2">
+                                    Deployment and Support
+                                </h3>
+                                <p className="text-white/60 text-sm leading-relaxed font-light max-w-sm">
+                                    We ensure smooth rollout and ongoing support, so you never miss a beat.
+                                </p>
+                            </motion.div>
+                        </div>
                     </div>
 
 
-                       {/* Header Section */}
-                        <div className="flex flex-col items-center text-center px-6 mb-3">
-                            <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
-                               <span className="text-[#F67300]">Industries </span>
-                               <span className="text-white">We Serve</span>
-                            </h2>
-                        </div>
-
-                        {/* Industries Grid */}
-                        <div className="flex justify-center px-6 py-10 w-full max-w-[1400px] mx-auto">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full justify-items-center">
-                                {[
-                                    { name: "E-Commerce & Retail", icon: <Scan size={20} /> },
-                                    { name: "Finance & Banking", icon: <Coins size={20} /> },
-                                    { name: "Healthcare & Pharmaceuticals", icon: <Stethoscope size={20} /> },
-                                    { name: "Manufacturing & Supply Chain", icon: <Factory size={20} /> },
-                                    { name: "Telecommunications", icon: <PhoneCall size={20} /> },
-                                    { name: "Logistics & Transportation", icon: <Truck size={20} /> },
-                                    { name: "SaaS & Digital Agencies", icon: <Monitor size={20} /> },
-                                    { name: "Education", icon: <GraduationCap size={20} /> },
-                                ].map((item, idx) => (
-                                    <motion.div
-                                        key={idx}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, margin: "-50px" }}
-                                        transition={{ duration: 0.5, delay: (idx % 8) * 0.08 }}
-                                        className="flex items-center gap-4 sm:gap-6 px-5 py-5 bg-[#1E1E1E] border-[0.5px] border-white/15 rounded-[12px] w-full max-w-[420px] min-h-[96px] sm:min-h-[110px] h-auto cursor-pointer transition-all hover:scale-[1.02] hover:border-[#F67300]/30"
-                                    >
-                                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[26px] bg-white/5 border border-white/15 flex items-center justify-center text-[#F67300] shrink-0">
-                                            {item.icon}
-                                        </div>
-                                        <span className="text-white text-base sm:text-lg md:text-xl font-medium tracking-tight leading-tight">
-                                            {item.name}
-                                        </span>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* --- CLIENT TESTIMONIALS SECTION --- */}
-                    <div className="w-full mt-24 mb-16 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto flex flex-col items-center">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#E3E3E0] text-center mb-12 tracking-tight">
-                            Client Testimonials
+                    {/* Header Section */}
+                    <div className="flex flex-col items-center text-center px-6 mb-3">
+                        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
+                            <span className="text-[#F67300]">Industries </span>
+                            <span className="text-white">We Serve</span>
                         </h2>
                     </div>
-                    <FAQSection />
+
+                    {/* Industries Grid */}
+                    <div className="flex justify-center px-6 py-10 w-full max-w-[1400px] mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full justify-items-center">
+                            {[
+                                { name: "E-Commerce & Retail", icon: <Scan size={20} /> },
+                                { name: "Finance & Banking", icon: <Coins size={20} /> },
+                                { name: "Healthcare & Pharmaceuticals", icon: <Stethoscope size={20} /> },
+                                { name: "Manufacturing & Supply Chain", icon: <Factory size={20} /> },
+                                { name: "Telecommunications", icon: <PhoneCall size={20} /> },
+                                { name: "Logistics & Transportation", icon: <Truck size={20} /> },
+                                { name: "SaaS & Digital Agencies", icon: <Monitor size={20} /> },
+                                { name: "Education", icon: <GraduationCap size={20} /> },
+                            ].map((item, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.5, delay: (idx % 8) * 0.08 }}
+                                    className="flex items-center gap-4 sm:gap-6 px-5 py-5 bg-[#1E1E1E] border-[0.5px] border-white/15 rounded-[12px] w-full max-w-[420px] min-h-[96px] sm:min-h-[110px] h-auto cursor-pointer transition-all hover:scale-[1.02] hover:border-[#F67300]/30"
+                                >
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[26px] bg-white/5 border border-white/15 flex items-center justify-center text-[#F67300] shrink-0">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-white text-base sm:text-lg md:text-xl font-medium tracking-tight leading-tight">
+                                        {item.name}
+                                    </span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* --- CLIENT TESTIMONIALS SECTION --- */}
+                <TestimonialSection />
+                <FAQSection />
 
             </main>
             <Footer />

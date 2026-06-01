@@ -145,7 +145,7 @@ const AIChatbot = () => {
             </div>
 
             <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+                <div className="px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
@@ -262,89 +262,89 @@ const AIChatbot = () => {
                         How <span className="text-[#F67300]">Coirei AI Virtual Assistant</span> Works
                     </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 border-b border-white/20">
-                            {/* Step 1 */}
-                            <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-white/20 py-10">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="text-[#F67300]">
-                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <circle cx="11" cy="11" r="8" />
-                                            <path d="m21 21-4.3-4.3" />
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-2xl font-medium text-white">
-                                        Identify Customer Needs
-                                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 border-b border-white/20">
+                        {/* Step 1 */}
+                        <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-white/20 py-10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-[#F67300]">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="11" cy="11" r="8" />
+                                        <path d="m21 21-4.3-4.3" />
+                                    </svg>
                                 </div>
-                                <p className="text-white/70 text-[17px] leading-relaxed font-light">
-                                    Right from the first interaction, Coirei AI spots what your customers need and responds accordingly.
-                                </p>
+                                <h3 className="text-2xl font-medium text-white">
+                                    Identify Customer Needs
+                                </h3>
                             </div>
+                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                                Right from the first interaction, Coirei AI spots what your customers need and responds accordingly.
+                            </p>
+                        </div>
 
-                            {/* Step 2 */}
-                            <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-white/20 py-10">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="text-[#F67300]">
-                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                                            <path d="M3 15v-4a2 2 0 0 1 2-2h4" />
-                                            <path d="m7 5 4-4 4 4" />
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-2xl font-medium text-white">
-                                        Natural Language Processing
-                                    </h3>
+                        {/* Step 2 */}
+                        <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-white/20 py-10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-[#F67300]">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        <path d="M3 15v-4a2 2 0 0 1 2-2h4" />
+                                        <path d="m7 5 4-4 4 4" />
+                                    </svg>
                                 </div>
-                                <p className="text-white/70 text-[17px] leading-relaxed font-light">
-                                    Using advanced NLP, the assistant understands and engages in real, human-like conversation.
-                                </p>
+                                <h3 className="text-2xl font-medium text-white">
+                                    Natural Language Processing
+                                </h3>
                             </div>
+                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                                Using advanced NLP, the assistant understands and engages in real, human-like conversation.
+                            </p>
+                        </div>
 
-                            {/* Step 3 */}
-                            <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-white/20 py-10">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="text-[#F67300]">
-                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <rect x="3" y="3" width="7" height="7" rx="1" />
-                                            <rect x="14" y="14" width="7" height="7" rx="1" />
-                                            <path d="M6.5 10v3a2 2 0 0 0 2 2h5.5" />
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-2xl font-medium text-white">
-                                        Custom Workflows
-                                    </h3>
+                        {/* Step 3 */}
+                        <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-white/20 py-10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-[#F67300]">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                                        <path d="M6.5 10v3a2 2 0 0 0 2 2h5.5" />
+                                    </svg>
                                 </div>
-                                <p className="text-white/70 text-[17px] leading-relaxed font-light">
-                                    Every business is unique so we tailor the chatbot to guide users step by step, ensuring they get exactly what they need.
-                                </p>
+                                <h3 className="text-2xl font-medium text-white">
+                                    Custom Workflows
+                                </h3>
                             </div>
+                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                                Every business is unique so we tailor the chatbot to guide users step by step, ensuring they get exactly what they need.
+                            </p>
+                        </div>
 
-                            {/* Step 4 */}
-                            <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-white/20 py-10">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="text-[#F67300]">
-                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
-                                            <path d="M8 7h8" />
-                                            <path d="M8 11h8" />
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-2xl font-medium text-white">
-                                        Ongoing Learning
-                                    </h3>
+                        {/* Step 4 */}
+                        <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-white/20 py-10">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-[#F67300]">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                                        <path d="M8 7h8" />
+                                        <path d="M8 11h8" />
+                                    </svg>
                                 </div>
-                                <p className="text-white/70 text-[17px] leading-relaxed font-light">
-                                    Coirei AI keeps improving. With each conversation, it learns, ensuring smarter, more accurate responses over time.
-                                </p>
+                                <h3 className="text-2xl font-medium text-white">
+                                    Ongoing Learning
+                                </h3>
                             </div>
+                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                                Coirei AI keeps improving. With each conversation, it learns, ensuring smarter, more accurate responses over time.
+                            </p>
                         </div>
                     </div>
+                </div>
 
-                    <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
-                        <ServicesWorkFlow />
-                    </div>
+                <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                    <ServicesWorkFlow />
+                </div>
 
-                    <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+                <div className="px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- WHY CHOOSE US SECTION --- */}
                     <div className="w-full mt-10">
