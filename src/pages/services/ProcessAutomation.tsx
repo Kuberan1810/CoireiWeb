@@ -8,7 +8,7 @@ import useScrollAnimations from "../../hooks/useScrollAnimations";
 import TestimonialSection from "../Home/sections/Testimonal";
 import { FileText, RefreshCw, GitFork, TrendingUp, Workflow, ShieldCheck, Cpu, Sliders, Handshake, Wrench, Plug, Bot, BarChart3, Receipt, Hospital, Scan, Factory } from "lucide-react";
 import coireiLogo from "../../assets/images/products/coirei-logo.svg";
-import biDashboard from "../../assets/images/products/lmsprogresstrack.png";
+import aboutusservice from "../../assets/images/services/aboutusservice.png";
 
 const countryCodes = [
     { flagUrl: "https://flagcdn.com/w20/in.png", code: "+91", alt: "India" },
@@ -355,9 +355,9 @@ const ProcessAutomation = () => {
                             {/* Right: Dashboard Image */}
                             <div className="overflow-hidden rounded-[20px] w-full md:w-[673px] h-[424px] shrink-0">
                                 <img
-                                    src={biDashboard}
-                                    alt="BI Dashboard"
-                                    className="w-full h-full object-cover"
+                                    src={aboutusservice}
+                                    alt="about us service"
+                                    className="w-full h-full object-contain"
                                 />
                             </div>
                         </div>

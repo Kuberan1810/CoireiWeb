@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 
 import coireiLogo from "../../assets/images/products/coirei-logo.svg";
+import cardTopCurve from "../../assets/images/services/cardtopcurve.svg";
 
 
 
@@ -139,6 +140,17 @@ const WebPlatformDetails = () => {
 
     const cardRefs = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        const checkIsDesktop = () => {
+            setIsDesktop(window.innerWidth >= 1024);
+        };
+        checkIsDesktop();
+        window.addEventListener("resize", checkIsDesktop);
+        return () => window.removeEventListener("resize", checkIsDesktop);
+    }, []);
+
     const howWeWorkRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: howWeWorkRef,
@@ -152,13 +164,16 @@ const WebPlatformDetails = () => {
         useTransform(scrollYProgress, [0.05, 0.75], [750, 0])
     ];
 
+
+
+
     return (
         <>
             <div className="fixed w-full top-0 z-50">
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-20 w-full bg-[#161616] flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}
@@ -490,28 +505,28 @@ const WebPlatformDetails = () => {
                     </div>
                 </div>
                 {/* --- HOW WE WORK SECTION --- */}
-                <div className="relative w-full mb-32 px-6 md:px-16 lg:px-24 xl:px-32">
+                <div className="relative w-full mb-10 px-6 md:px-16 lg:px-24 xl:px-32">
                     <div className="w-full">
 
                         {/* TITLE */}
-                        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 tracking-tight leading-tight">
+                        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center md-10 md:mb-20 tracking-tight leading-tight ">
                             How We Work?
                         </h2>
 
-                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-[1800px] sm:h-[2000px] md:h-[2200px] lg:h-[2400px]">
+                        <div ref={howWeWorkRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start w-full relative h-auto lg:h-[1800px]">
 
                             {/* LEFT SIDE */}
-                            <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] lg:h-[880px] h-auto">
+                            <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] h-auto">
                                 <h3 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-white leading-tight tracking-tight">
-                                    A Transparent<br className="hidden lg:block" />
-                                    Process Built for<br />
-                                    <span className="text-[#F67300]">Fast & Reliable</span><br />
+                                    A Transparent Process<br className="hidden lg:block" />
+                                 Built for 
+                                    <span className="text-[#F67300]"> Fast & Reliable</span><br />
                                     Delivery.
                                 </h3>
                             </div>
 
                             {/* RIGHT SIDE - STACKED CARDS */}
-                            <div className="lg:col-span-7 w-full lg:sticky lg:top-[160px] lg:h-[880px] h-auto relative">
+                            <div className="lg:col-span-7 w-full lg:sticky lg:top-[160px] lg:h-[320px] h-auto relative flex flex-col gap-16 lg:block">
                                 {[
                                     {
                                         step: 1,
@@ -523,77 +538,69 @@ const WebPlatformDetails = () => {
                                         step: 2,
                                         title: "Agile Sprints",
                                         desc: "We break your project into manageable 2-week sprints, providing you with functional builds at every stage.",
-                                        tabLeft: "28%",
+                                        tabLeft: "26%",
                                     },
                                     {
                                         step: 3,
                                         title: "Collaborative Communication",
                                         desc: "You get a dedicated project manager and direct access to your dev team through your preferred communication tools (Slack/Teams).",
-                                        tabLeft: "54%",
+                                        tabLeft: "52%",
                                     },
                                     {
                                         step: 4,
                                         title: "Rigorous QA",
                                         desc: "Our testing team ensures your platform is bug-free across all devices, browsers, and load conditions.",
-                                        tabLeft: "76%",
+                                        tabLeft: "78%",
                                     },
                                 ].map((s, index) => (
                                     <motion.div
                                         key={s.step}
-                                        className="absolute w-full left-0 top-[44px]"
-                                        style={{
+                                        className="relative lg:absolute w-full left-0 lg:top-[44px] mt-12 lg:mt-0"
+                                        style={isDesktop ? {
                                             y: yOffsets[index],
-                                            zIndex: 20 - index,
-                                        }}
+                                            zIndex: 20 + index,
+                                        } : {}}
                                     >
                                         {/* STEP TAB */}
                                         <div
-                                            className="absolute top-[-43px] h-[44px] z-30"
+                                            className="absolute top-[-43px] h-[44px] md:top-[-77px] md:h-[78px] z-30"
                                             style={{
-                                                left: s.tabLeft,
+                                                left: isDesktop ? s.tabLeft : "0%",
                                                 width: "22%",
                                                 minWidth: "120px",
+                                                maxWidth: "200px",
                                             }}
                                         >
-                                            <svg width="100%" height="45" viewBox="0 0 167 45">
-                                                <path
-                                                    d="M 0,45 L 13,9 Q 16,0 25,0 L 142,0 Q 151,0 154,9 L 167,45"
-                                                    fill="#161616"
-                                                    stroke="#757575"
-                                                />
-                                            </svg>
+                                            <img
+                                                src={cardTopCurve}
+                                                alt={`Step ${s.step} Tab`}
+                                                className="w-full h-full object-fill"
+                                            />
 
-                                            <div className="absolute inset-0 flex items-center justify-center">
-                                                <span className="text-[#F67300] text-sm font-semibold">
-                                                    Step {s.step}
+                                            <div className="absolute inset-0 flex items-center justify-center pt-2 md:pt-4">
+                                                <span className="text-[#F67300] text-xs md:text-sm font-semibold tracking-widest">
+                                                    STEP 0{s.step}
                                                 </span>
                                             </div>
                                         </div>
 
                                         {/* CARD */}
-                                        <div className={`relative bg-[#161616] border border-[#757575] p-7 md:p-9 flex gap-6 shadow-lg backdrop-blur-md transition-all duration-500 ${s.step === 1
-                                            ? "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
-                                            : s.step === 4
-                                                ? "rounded-tl-[20px] rounded-b-[20px] rounded-tr-none"
-                                                : "rounded-[20px]"
-                                            }`}>
-                                            {/* Mask to hide top border under the tab */}
-                                            <div
-                                                className="absolute bg-[#161616] h-[2px] z-20"
-                                                style={{
-                                                    left: s.tabLeft,
-                                                    width: "22%",
-                                                    minWidth: "120px",
-                                                    top: "-1px",
-                                                }}
-                                            />
+                                        <div className={`relative bg-[#202021] pt-10 pb-15 px-7 md:px-9 flex gap-6  backdrop-blur-md transition-all duration-500 ${
+                                            isDesktop
+                                                ? (s.step === 1
+                                                    ? "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
+                                                    : s.step === 4
+                                                        ? "rounded-tl-[20px] rounded-b-[20px] rounded-tr-none"
+                                                        : "rounded-[20px]")
+                                                : "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
+                                        }`}>
 
                                             <div className="w-[3px] bg-[#F67300] rounded-full shrink-0" />
                                             <div className="flex flex-col gap-2 relative z-10 text-left">
-                                                <h4 className="text-lg md:text-xl font-semibold text-white">
+                                                <h4 className="text-lg md:text-2xl font-medium text-white">
                                                     {s.title}
                                                 </h4>
-                                                <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light">
+                                                <p className="text-white/70 text-[14px] md:text-[17px] leading-relaxed font-light">
                                                     {s.desc}
                                                 </p>
                                             </div>

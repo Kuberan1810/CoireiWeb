@@ -83,6 +83,7 @@ export default function useScrollReveal(threshold = 0.2) {
 
     return {
         ref,
+        isVisible,
 
         revealStyle: {
             opacity: isVisible ? 1 : 0,

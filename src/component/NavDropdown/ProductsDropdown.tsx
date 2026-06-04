@@ -81,7 +81,7 @@ export default function ProductsDropdown() {
             >
                 <ul className="py-3 relative z-10">
                     {[
-                        // { label: "Follei", to: "/products/follei" },
+                        { label: "Follei", to: "/products/follei" },
                         { label: "CoireiLMS", to: "/products/coireilms" },
                     ].map((item, index) => (
                         <li

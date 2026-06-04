@@ -273,7 +273,7 @@ const UIUXDesignDetails = () => {
                 </div> {/* Close Statics section wrapper */}
 
                 {/* Re-open parent max-w-1440px container for Why Choose Us */}
-                <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full overflow-x-hidden">
+                <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full">
                     {/* --- WHY CHOOSE US --- */}
                     <div className="w-full flex flex-col items-center mt-28 mb-10 max-w-6xl">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-white tracking-tight mb-20 text-center">

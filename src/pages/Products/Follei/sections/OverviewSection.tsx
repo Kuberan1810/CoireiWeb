@@ -1,44 +1,19 @@
 import React from 'react';
-import Lottie from 'lottie-react';
-import { CheckSquare, Zap, Activity, MessageSquare, Sparkles } from 'lucide-react';
+import { MessageSquare, Brain, TrendingUp, Network, Sparkles } from 'lucide-react';
+import oneAiAgent from '../../../../assets/images/products/oneaiagent.png';
 
-const ROBO_LOTTIE_URL = "https://cdn.prod.website-files.com/69108ccf43c3987ea965e960/6930eade4c8d752651faf61b_robo%20head%203.json";
-
-const VoiceAgentSection: React.FC = () => {
-    const [roboData, setRoboData] = React.useState<any>(null);
-
-    React.useEffect(() => {
-        // Load center robo head animation
-        fetch(ROBO_LOTTIE_URL)
-            .then(res => res.json())
-            .then(data => setRoboData(data))
-            .catch(err => console.error("Failed to load robo animation", err));
-    }, []);
-
+const OverviewSection: React.FC = () => {
     return (
         <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616]">
             {/* Background decorative glows */}
-            <div className="absolute top-10 left-1/3 w-80 h-80 bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-[#6FC5FE]/10 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
-                    {/* Left Column: Robot Animation */}
-                    <div className="lg:col-span-5 flex items-center justify-center relative min-h-[300px]">
-                        <div className="w-full max-w-[320px] aspect-square flex items-center justify-center overflow-visible z-10">
-                            {roboData && (
-                                <Lottie
-                                    animationData={roboData}
-                                    loop={true}
-                                    className="w-full h-full scale-110 sm:scale-125 transform-gpu"
-                                />
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Right Column: Content */}
-                    <div className="lg:col-span-7 flex flex-col items-start text-left">
+                    {/* Left Column: Content */}
+                    <div className="lg:col-span-5 flex flex-col items-start text-left order-2 lg:order-1">
                         
                         {/* Badge with gradient glow border and exact styling */}
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#004370]/10 border border-[#6FC5FE]/20 shadow-[0_0_15px_rgba(111,197,254,0.05)] mb-6">
@@ -51,16 +26,16 @@ const VoiceAgentSection: React.FC = () => {
                                 }} 
                                 className="font-semibold bg-gradient-to-r from-[#004370] to-[#6FC5FE] bg-clip-text text-transparent"
                             >
-                                AI Chatbot
+                                Overview
                             </span>
                         </div>
 
-                        {/* Heading with exact styling */}
+                        {/* Heading */}
                         <h2 className="text-white text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] mb-1">
-                            Elevate support.
+                            One AI Agent.
                         </h2>
                         <h2 className="text-[#004370] text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] mb-6">
-                            Automate sales.
+                            Unlimited Growth.
                         </h2>
 
                         {/* Description with exact styling */}
@@ -73,7 +48,7 @@ const VoiceAgentSection: React.FC = () => {
                             }} 
                             className="font-normal mb-8 max-w-xl animate-fade-in"
                         >
-                            Engage visitors with an intelligent chatbot that does more than just answer questions. Follei qualifies leads, books meetings, and handles support tickets in real-time, providing immediate value to your customers.
+                            Disconnected systems create missed opportunities. Follei combines AI conversations, customer intelligence, and automated follow-ups into a single ecosystem designed to convert more leads and drive predictable growth.
                         </p>
 
                         {/* Capabilities Header */}
@@ -84,53 +59,66 @@ const VoiceAgentSection: React.FC = () => {
                         {/* Capabilities Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 w-full">
                             
-                            {/* Lead Qualification */}
-                            <div className="flex items-center gap-4 group">
-                                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#6FC5FE] group-hover:text-blue-400 group-hover:border-[#6FC5FE]/30 transition-all duration-300 shrink-0">
-                                    <CheckSquare size={20} />
-                                </div>
-                                <span className="text-white/80 font-medium tracking-wide text-[13px] sm:text-[14px] uppercase group-hover:text-white transition-colors duration-300">
-                                    Lead Qualification
-                                </span>
-                            </div>
-
-                            {/* Instant Setup */}
-                            <div className="flex items-center gap-4 group">
-                                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#6FC5FE] group-hover:text-blue-400 group-hover:border-[#6FC5FE]/30 transition-all duration-300 shrink-0">
-                                    <Zap size={20} />
-                                </div>
-                                <span className="text-white/80 font-medium tracking-wide text-[13px] sm:text-[14px] uppercase group-hover:text-white transition-colors duration-300">
-                                    Instant Setup
-                                </span>
-                            </div>
-
-                            {/* Human Handoff */}
-                            <div className="flex items-center gap-4 group">
-                                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#6FC5FE] group-hover:text-blue-400 group-hover:border-[#6FC5FE]/30 transition-all duration-300 shrink-0">
-                                    <Activity size={20} />
-                                </div>
-                                <span className="text-white/80 font-medium tracking-wide text-[13px] sm:text-[14px] uppercase group-hover:text-white transition-colors duration-300">
-                                    Human Handoff
-                                </span>
-                            </div>
-
-                            {/* 24/7 AI Support */}
+                            {/* AI Follow-ups */}
                             <div className="flex items-center gap-4 group">
                                 <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#6FC5FE] group-hover:text-blue-400 group-hover:border-[#6FC5FE]/30 transition-all duration-300 shrink-0">
                                     <MessageSquare size={20} />
                                 </div>
                                 <span className="text-white/80 font-medium tracking-wide text-[13px] sm:text-[14px] uppercase group-hover:text-white transition-colors duration-300">
-                                    24/7 AI Support
+                                    AI Follow-ups
+                                </span>
+                            </div>
+
+                            {/* Customer Intelligence */}
+                            <div className="flex items-center gap-4 group">
+                                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#6FC5FE] group-hover:text-blue-400 group-hover:border-[#6FC5FE]/30 transition-all duration-300 shrink-0">
+                                    <Brain size={20} />
+                                </div>
+                                <span className="text-white/80 font-medium tracking-wide text-[13px] sm:text-[14px] uppercase group-hover:text-white transition-colors duration-300">
+                                    Customer Intelligence
+                                </span>
+                            </div>
+
+                            {/* Real-time Analytics */}
+                            <div className="flex items-center gap-4 group">
+                                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#6FC5FE] group-hover:text-blue-400 group-hover:border-[#6FC5FE]/30 transition-all duration-300 shrink-0">
+                                    <TrendingUp size={20} />
+                                </div>
+                                <span className="text-white/80 font-medium tracking-wide text-[13px] sm:text-[14px] uppercase group-hover:text-white transition-colors duration-300">
+                                    Real-time Analytics
+                                </span>
+                            </div>
+
+                            {/* Workflow Automation */}
+                            <div className="flex items-center gap-4 group">
+                                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#6FC5FE] group-hover:text-blue-400 group-hover:border-[#6FC5FE]/30 transition-all duration-300 shrink-0">
+                                    <Network size={20} />
+                                </div>
+                                <span className="text-white/80 font-medium tracking-wide text-[13px] sm:text-[14px] uppercase group-hover:text-white transition-colors duration-300">
+                                    Workflow Automation
                                 </span>
                             </div>
 
                         </div>
 
                     </div>
+
+                    {/* Right Column: Dashboard Mockup Image */}
+                    <div className="lg:col-span-7 flex items-center justify-center relative order-1 lg:order-2">
+                        <div className="w-full rounded-[24px] border border-white/[0.08] overflow-hidden shadow-2xl relative group">
+                            <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                            <img 
+                                src={oneAiAgent} 
+                                alt="Follei Analytics Dashboard" 
+                                className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-500"
+                            />
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
     );
 };
 
-export default VoiceAgentSection;
+export default OverviewSection;

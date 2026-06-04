@@ -1,8 +1,14 @@
 import { useEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import localGsap from "gsap";
+import localScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+const gsap: typeof localGsap = (window as any).gsap || localGsap;
+const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
+
+// Register plugin only if we are using the local bundler fallback
+if (!(window as any).gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 type Direction = "up" | "down" | "left" | "right" | "line-left" | "line-right";
 

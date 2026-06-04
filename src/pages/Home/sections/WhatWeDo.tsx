@@ -1,58 +1,49 @@
-import { Lightbulb, PenTool, BarChart2, Wrench, BrainCircuit } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Lightbulb, PenTool, BarChart2, Wrench } from "lucide-react";
 
 const services = [
     {
-
-
         icon: <Lightbulb size={18} className="text-white/80" />,
         title: "Web & Platform Development",
         description:
             "We offer professional web and platform development services to build fast, secure, and scalable digital solutions. From business websites to complex SaaS platforms, our development approach ensures performance, responsiveness, and future scalability.",
+        link: "/services/custom-web-platform-development"
     },
     {
-
-
         icon: <PenTool size={18} className="text-white/80" />,
         title: "Custom Business Applications (CRM / ERP / Portals)",
         description:
             "Streamline your business operations with custom-built CRM, ERP systems, and web portals tailored to your workflow. We develop scalable business applications that improve productivity, automate processes, and centralize your data efficiently.",
+        link: "/services/custom-business-application-development"
     },
     {
-
-
         icon: <BarChart2 size={18} className="text-white/80" />,
         title: "AI Chatbots & Virtual Assistants",
         description:
             "Enhance customer engagement with intelligent AI chatbots and virtual assistants. Our solutions provide real-time support, automate conversations, and improve user experience across websites, apps, and messaging platforms.",
+        link: "/services/ai-chatbot-development"
     },
     {
-
-
         icon: <Lightbulb size={18} className="text-white/80" />,
         title: "Process Automation & System Integration",
         description:
             "Reduce manual work and increase efficiency with advanced process automation and system integration services. We connect your tools, automate workflows, and ensure seamless data flow across your business systems.",
+        link: "/services/process-automation-system-integration"
     },
     {
-
         icon: <Wrench size={18} className="text-white/80" />,
         title: "Data, Dashboards & Business Intelligence",
         description:
             "Make smarter decisions with real-time data dashboards and business intelligence solutions. We transform raw data into meaningful insights using interactive dashboards, reports, and analytics tools tailored to your business needs.",
+        link: "/services/business-intelligence-dashboard-development"
     },
     {
-
-
         icon: <BarChart2 size={18} className="text-white/80" />,
         title: "UI/UX, Branding & Product Design",
         description:
             "Create impactful digital experiences with our UI/UX design, branding, and product design services. We focus on user-centered design, modern interfaces, and strong brand identity to enhance engagement and conversion.",
+        link: "/services/ui-ux-branding-product-design"
     },
-    {
-        icon: <BrainCircuit size={18} className="text-white/80" />,
-        title: "AI research and development",
-        description: "Our AI Research and Development service accelerates research, experiment & business research by providing advanced AI tools and deep analytical insights. We help you uncover new patterns, drive innovation, and make informed decisions.",
-    }
 ];
 
 
@@ -80,8 +71,6 @@ function WhatWeDo() {
                     data-offset="80"
                     className="h-[1.5px] flex-1 bg-gradient-to-l from-[#161616] to-white" />
             </div>
-
-
 
             {/* Two-column layout replaced with Grid Layout */}
             <div className="flex flex-col gap-16">
@@ -115,14 +104,15 @@ function WhatWeDo() {
 
                 >
                     {services.map((service, index) => (
-                        <div
+                        <Link
+                            to={service.link}
                             key={index}
 
                             data-ns-animate
                             data-delay={0.1 * index}
                             data-offset="80"
                             className="
-
+                                block no-underline cursor-pointer
                                 bg-[#292929]
                                 border border-white/15
                                 rounded-2xl
@@ -130,7 +120,6 @@ function WhatWeDo() {
                                 hover:border-white/25
                                 hover:-translate-y-1.5
                                 transition-all duration-700
-
                                 p-[24px] sm:p-[32px]
                                 w-full
                                 flex flex-col justify-between group
@@ -156,7 +145,7 @@ function WhatWeDo() {
                                     {service.description}
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 

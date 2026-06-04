@@ -1,6 +1,8 @@
 // Section Components
 import Hero from "./sections/Hero";
 import VoiceAgentSection from "./sections/VoiceAgentSection";
+import OverviewSection from "./sections/OverviewSection";
+import OmnichannelSection from "./sections/OmnichannelSection";
 import Features from "./sections/Features";
 import HowItWorks from "./sections/HowItWorks";
 import Integration from "./sections/Integration";
@@ -26,6 +28,8 @@ const Follei = () => {
             <main className="pt-20">
                 <Hero />
                 <VoiceAgentSection />
+                <OverviewSection />
+                <OmnichannelSection />
                 <Features />
                 <HowItWorks />
                 <Integration />

@@ -1,26 +1,26 @@
-import instructorImg from "../../../../assets/images/products/instructor.png";
-
+import createclass from "../../../../assets/images/products/createclass.svg";
+import createassignment from "../../../../assets/images/products/createassignment.svg";
 const cards = [
     {
-        img: instructorImg,
+        img: createclass,
         title: "New Class",
         desc: "Create a new batch or session. Set class name, batch ID, schedule time, and date. Launch in seconds",
         highlighted: false,
     },
+    // {
+    //     img: instructorImg,
+    //     title: "New courses",
+    //     desc: "Build a new course. Add course ID, title, description, duration. Auto-generated batch ID included.",
+    //     highlighted: false,
+    // },
+    // {
+    //     img: instructorImg,
+    //     title: "New student",
+    //     desc: "Enroll students manually. Select course, generate student ID, add name and email, assign to a batch.",
+    //     highlighted: false,
+    // },
     {
-        img: instructorImg,
-        title: "New courses",
-        desc: "Build a new course. Add course ID, title, description, duration. Auto-generated batch ID included.",
-        highlighted: false,
-    },
-    {
-        img: instructorImg,
-        title: "New student",
-        desc: "Enroll students manually. Select course, generate student ID, add name and email, assign to a batch.",
-        highlighted: false,
-    },
-    {
-        img: instructorImg,
+        img: createassignment,
         title: "Assignment",
         desc: "Create tasks for students. Select course, batch, and module. Track submissions and progress.",
         highlighted: false,

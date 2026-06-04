@@ -52,46 +52,7 @@ const DataDashboardBI = () => {
     const opacity3 = useTransform(processAnimProgress, [0.76, 0.91], [0, 1]);
     const y3 = useTransform(processAnimProgress, [0.76, 0.91], [20, 0]);
 
-    // Time-linked continuous animation progress for Measurable Impact Stats (3.5s duration, repeats in a very fast loop)
-    const statsAnimProgress = useMotionValue(0);
-    useEffect(() => {
-        const controls = animate(statsAnimProgress, 1, {
-            duration: 3.5,
-            ease: "linear",
-            repeat: Infinity,
-            repeatType: "loop",
-            repeatDelay: 0.5
-        });
-        return () => controls.stop();
-    }, [statsAnimProgress]);
 
-    // Curve Path animation
-    const statsCurveLength = useTransform(statsAnimProgress, [0.15, 0.75], [0, 1]);
-
-    // Animate lines height dynamically (aligned to baseline Y = 320px)
-    const statLine1Height = useTransform(statsAnimProgress, [0.25, 0.35], [0, 154]);
-    const statLine2Height = useTransform(statsAnimProgress, [0.40, 0.50], [0, 109]);
-    const statLine3Height = useTransform(statsAnimProgress, [0.55, 0.65], [0, 99]);
-    const statLine4Height = useTransform(statsAnimProgress, [0.70, 0.80], [0, 124]);
-
-    // Animate nodes borders colors
-    const statCircle1Color = useTransform(statsAnimProgress, [0, 0.24, 0.25], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const statCircle2Color = useTransform(statsAnimProgress, [0, 0.39, 0.40], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const statCircle3Color = useTransform(statsAnimProgress, [0, 0.54, 0.55], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-    const statCircle4Color = useTransform(statsAnimProgress, [0, 0.69, 0.70], ["rgba(255,255,255,0.15)", "rgba(255,255,255,0.15)", "#F67300"]);
-
-    // Dropdown / fade in for the numbers & labels
-    const statCol1Opacity = useTransform(statsAnimProgress, [0.35, 0.45], [0, 1]);
-    const statCol1Y = useTransform(statsAnimProgress, [0.35, 0.45], [20, 0]);
-
-    const statCol2Opacity = useTransform(statsAnimProgress, [0.50, 0.60], [0, 1]);
-    const statCol2Y = useTransform(statsAnimProgress, [0.50, 0.60], [20, 0]);
-
-    const statCol3Opacity = useTransform(statsAnimProgress, [0.65, 0.75], [0, 1]);
-    const statCol3Y = useTransform(statsAnimProgress, [0.65, 0.75], [20, 0]);
-
-    const statCol4Opacity = useTransform(statsAnimProgress, [0.80, 0.90], [0, 1]);
-    const statCol4Y = useTransform(statsAnimProgress, [0.80, 0.90], [20, 0]);
 
     return (
         <>
