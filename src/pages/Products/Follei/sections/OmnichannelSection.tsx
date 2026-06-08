@@ -118,7 +118,7 @@ export const OmnichannelSection: React.FC = () => {
             className="relative w-full lg:h-screen lg:min-h-[750px] py-20 lg:py-0 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616] flex items-center justify-center"
         >
             {/* Background decorative glows */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[160px] pointer-events-none z-0" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-transparent rounded-full blur-[160px] pointer-events-none z-0" />
             
             <div className="max-w-7xl mx-auto relative z-10 w-full">
                 <div className="grid grid-cols-12 gap-6 lg:gap-8 items-stretch">

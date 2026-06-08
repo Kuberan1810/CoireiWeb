@@ -2,6 +2,8 @@ import { LayoutDashboard, BookOpen, FileText, Users, MessageSquare, ClipboardLis
 
 import bgImage from "../../../../assets/images/products/bg.svg";
 import coireiLogo from "../../../../assets/images/homepage/coirei-logo.png";
+import circleLogo from "../../../../assets/images/Features/coirei-cirlce-logo.png";
+import LMSdashboard from "../../../../assets/images/products/LMSdashboard.svg";
 
 const navItems = [
     { icon: LayoutDashboard, label: 'Dashboard', active: true },
@@ -19,12 +21,6 @@ const Studentfeature = () => {
             {/* <div className="max-w-7xl mx-auto"> */}
 
             <div className="flex flex-col items-center text-center mb-10 md:mb-20">
-                <p
-                    data-ns-animate
-                    data-offset="40"
-                    className="backdrop-blur-md border border-white/20 rounded-xl py-2 px-4 max-w-fit text-sm sm:text-base text-[#959493] mb-5">
-                    LMS Features
-                </p>
                 <h2
                     data-ns-animate
                     data-delay="0.1"
@@ -109,6 +105,102 @@ const Studentfeature = () => {
                     </div>
                 </div>
 
+            </div>
+
+            {/* Grid Feature Highlights Section */}
+            <div 
+                data-ns-animate
+                data-offset="100"
+                className="mt-20 md:mt-32 max-w-7xl mx-auto w-full"
+            >
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px_1fr] border border-white/10 rounded-3xl overflow-hidden bg-[#161616]">
+                    {/* Left Column */}
+                    <div className="flex flex-col border-b lg:border-b-0 border-white/10">
+                        <div className="flex-1 p-8 sm:p-10 border-b border-white/10 flex flex-col justify-center gap-3">
+                            <h4 className="text-[22px] sm:text-[26px] font-medium text-white tracking-tight">
+                                Real Time Progress Intelligence
+                            </h4>
+                            <p className="text-[15px] sm:text-[17px] text-zinc-400 font-light leading-relaxed">
+                                Track learner engagement, progress, and outcomes with live insights that give complete visibility across the system.
+                            </p>
+                        </div>
+                        <div className="flex-1 p-8 sm:p-10 border-b border-white/10 flex flex-col justify-center gap-3">
+                            <h4 className="text-[22px] sm:text-[26px] font-medium text-white tracking-tight">
+                                Personalized Learning Experience
+                            </h4>
+                            <p className="text-[15px] sm:text-[17px] text-zinc-400 font-light leading-relaxed">
+                                Deliver structured learning journeys with organized courses, assignments, and progress tracking tailored to every learner.
+                            </p>
+                        </div>
+                        <div className="flex-1 p-8 sm:p-10 border-b lg:border-b-0 border-white/10 flex flex-col justify-center gap-3">
+                            <h4 className="text-[22px] sm:text-[26px] font-medium text-white tracking-tight">
+                                Adaptive Learning Paths
+                            </h4>
+                            <p className="text-[15px] sm:text-[17px] text-zinc-400 font-light leading-relaxed">
+                                Personalized learning journeys that evolve in real time based on each learner's behavior, performance, and interaction patterns.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Middle Column */}
+                    <div className="flex justify-center items-stretch p-4 lg:p-[10px] border-b lg:border-b-0 bg-[#121212]/50">
+                        <div 
+                            className="w-full max-w-[500px] h-full min-h-[570px] rounded-[32px] p-[10px] flex flex-col justify-between items-center border border-[#747474]/50 group mx-auto"
+                            style={{
+                                background: 'linear-gradient(180deg, #121212 0%, rgba(246, 115, 0, 0.15) 100%)',
+                            }}
+                        >
+                            {/* Top: Logo */}
+                            <div className="flex-1 flex items-center justify-center pt-8">
+                                <div className="relative flex items-center justify-center">
+                                    <div className="absolute w-32 h-32 bg-[#F67300]/10 rounded-full blur-2xl" />
+                                    <img 
+                                        src={circleLogo} 
+                                        alt="Coirei Circle Logo" 
+                                        className="w-32 h-32 object-contain relative z-10 transition-transform duration-1000 ease-in-out group-hover:rotate-[360deg]" 
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Bottom: Dashboard mockup */}
+                            <div className="w-full mt-[75px]">
+                                <img 
+                                    src={LMSdashboard} 
+                                    alt="Coirei Dashboard Mockup" 
+                                    className="w-full h-auto object-cover rounded-2xl shadow-2xl border border-white/5" 
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="flex flex-col">
+                        <div className="flex-1 p-8 sm:p-10 border-b border-white/10 flex flex-col justify-center gap-3">
+                            <h4 className="text-[22px] sm:text-[26px] font-medium text-white tracking-tight">
+                                Scalable Learning Systems
+                            </h4>
+                            <p className="text-[15px] sm:text-[17px] text-zinc-400 font-light leading-relaxed">
+                                Seamlessly scale learning across teams, organizations, and global users without losing performance or control.
+                            </p>
+                        </div>
+                        <div className="flex-1 p-8 sm:p-10 border-b border-white/10 flex flex-col justify-center gap-3">
+                            <h4 className="text-[22px] sm:text-[26px] font-medium text-white tracking-tight">
+                                Continuous Learning Optimization
+                            </h4>
+                            <p className="text-[15px] sm:text-[17px] text-zinc-400 font-light leading-relaxed">
+                                Improve learning outcomes through continuous feedback loops and evolving system intelligence.
+                            </p>
+                        </div>
+                        <div className="flex-1 p-8 sm:p-10 flex flex-col justify-center gap-3">
+                            <h4 className="text-[22px] sm:text-[26px] font-medium text-white tracking-tight">
+                                Data Driven Intelligence
+                            </h4>
+                            <p className="text-[15px] sm:text-[17px] text-zinc-400 font-light leading-relaxed">
+                                Use deep analytics and insights to refine learning strategies and maximize effectiveness over time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* </div> */}

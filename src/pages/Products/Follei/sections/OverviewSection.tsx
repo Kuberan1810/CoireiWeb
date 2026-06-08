@@ -6,8 +6,8 @@ const OverviewSection: React.FC = () => {
     return (
         <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616]">
             {/* Background decorative glows */}
-            <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-[#6FC5FE]/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-transparent rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-transparent rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -16,15 +16,15 @@ const OverviewSection: React.FC = () => {
                     <div className="lg:col-span-5 flex flex-col items-start text-left order-2 lg:order-1">
                         
                         {/* Badge with gradient glow border and exact styling */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#004370]/10 border border-[#6FC5FE]/20 shadow-[0_0_15px_rgba(111,197,254,0.05)] mb-6">
-                            <Sparkles size={14} className="text-[#6FC5FE]" />
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                            <Sparkles size={14} className="text-white/80" />
                             <span 
                                 style={{ 
                                     fontSize: '15.5px', 
                                     lineHeight: '25.6px',
                                     letterSpacing: '0px'
                                 }} 
-                                className="font-semibold bg-gradient-to-r from-[#004370] to-[#6FC5FE] bg-clip-text text-transparent"
+                                className="font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent"
                             >
                                 Overview
                             </span>
@@ -106,7 +106,7 @@ const OverviewSection: React.FC = () => {
                     {/* Right Column: Dashboard Mockup Image */}
                     <div className="lg:col-span-7 flex items-center justify-center relative order-1 lg:order-2">
                         <div className="w-full rounded-[24px] border border-white/[0.08] overflow-hidden shadow-2xl relative group">
-                            <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                            <div className="absolute inset-0 bg-transparent transition-colors duration-300 pointer-events-none" />
                             <img 
                                 src={oneAiAgent} 
                                 alt="Follei Analytics Dashboard" 

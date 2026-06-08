@@ -1,7 +1,5 @@
 import Navbar from "../../../component/Navbar";
 import Footer from "../../../component/Footer/Footer";
-import LmsHero from "./section/LmsHero";
-import WhyLms from "./section/Whylms";
 import Progresstrack from "./section/Progresstrack"
 import Timeline from "./section/Timeline"
 import Lmsroadmap from './section/Lmsroadmap'
@@ -11,6 +9,9 @@ import SEO from "../../../component/SEO";
 import { FaqSchema } from "../../../component/StructuredData";
 import Instructorfeature from "./section/Instructorfeature";
 import Studentfeature from "./section/Studentfeatures";
+import IntelligentLearning from "./section/IntelligentLearning";
+import LmsFeatures from "./section/LmsFeatures";
+import LmsAnalytics from "./section/LmsAnalytics";
 
 function Lms() {
     useScrollAnimations();
@@ -29,8 +30,9 @@ function Lms() {
             </div>
           
 
-            <LmsHero />
-            <WhyLms />
+            <IntelligentLearning />
+            <LmsFeatures />
+            <LmsAnalytics />
              <Studentfeature />
             <Instructorfeature />
             <Progresstrack />

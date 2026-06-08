@@ -219,6 +219,9 @@
 
 
 
+import { useEffect, useRef } from "react"
+import localGsap from "gsap"
+import localScrollTrigger from "gsap/ScrollTrigger"
 import "../../../../App.css"
 import F from "../../../../assets/images/products/F.svg"
 import L from "../../../../assets/images/products/L.svg"
@@ -226,10 +229,49 @@ import E from "../../../../assets/images/products/E.svg"
 import I from "../../../../assets/images/products/I.svg"
 import folleihomescreen from "../../../../assets/images/services/folleihomescreen.svg"
 
+const gsap: typeof localGsap = (window as any).gsap || localGsap
+const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger
+
+if (!(window as any).gsap) {
+    gsap.registerPlugin(ScrollTrigger)
+}
 
 export const Hero = () => {
+    const containerRef = useRef<HTMLDivElement>(null)
+    const imageRef = useRef<HTMLImageElement>(null)
+
+    useEffect(() => {
+        if (!containerRef.current || !imageRef.current) return
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(imageRef.current,
+                {
+                    scale: 1.4,
+                    filter: "blur(20px)",
+                    opacity: 0,
+                },
+                {
+                    scale: 1.0,
+                    filter: "blur(0px)",
+                    opacity: 1,
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: true,
+                    }
+                }
+            )
+        })
+
+        return () => {
+            ctx.revert()
+        }
+    }, [])
+
     return (
-        <section className="banner-section">
+        <section ref={containerRef} className="banner-section">
             <div className="banner-vh-wrap">
                 <div className="banner-sticky-wrap">
                     <div className="banner-wrapper">
@@ -259,9 +301,11 @@ export const Hero = () => {
                                                 {/* Background Image */}
                                                 <div className="banner-bg-wrap">
                                                     <img
+                                                        ref={imageRef}
                                                         src={folleihomescreen}
                                                         alt="Banner"
                                                         className="banner-bg-image"
+                                                        style={{ willChange: "filter, opacity" }}
                                                     />
                                                 </div>
 

@@ -3,16 +3,31 @@ import Hero from "./sections/Hero";
 import VoiceAgentSection from "./sections/VoiceAgentSection";
 import OverviewSection from "./sections/OverviewSection";
 import OmnichannelSection from "./sections/OmnichannelSection";
-import Features from "./sections/Features";
+import AdvancedAISection from "./sections/AdvancedAISection";
 import HowItWorks from "./sections/HowItWorks";
 import Integration from "./sections/Integration";
+import Timeline from "./sections/Timeline";
+import InsightsCTASection from "./sections/InsightsCTASection";
+import FAQSection from "./sections/FAQSection";
 import Footer from "../../../component/Footer/Footer";
 import Navbar from "../../../component/Navbar";
 import SEO from "../../../component/SEO";
 import useScrollAnimations from "../../../hooks/useScrollAnimations";
+import { useEffect } from "react";
 
 const Follei = () => {
     useScrollAnimations();
+
+    useEffect(() => {
+        const lastRefresh = sessionStorage.getItem("follei-refresh-time");
+        const now = Date.now();
+        const recentlyRefreshed = lastRefresh && (now - parseInt(lastRefresh, 10) < 10000);
+
+        if (!recentlyRefreshed) {
+            sessionStorage.setItem("follei-refresh-time", now.toString());
+            window.location.reload();
+        }
+    }, []);
 
     return (
         <div className="overflow-x-clip bg-[#161616] min-h-screen">
@@ -30,9 +45,12 @@ const Follei = () => {
                 <VoiceAgentSection />
                 <OverviewSection />
                 <OmnichannelSection />
-                <Features />
+                <AdvancedAISection />
                 <HowItWorks />
                 <Integration />
+                <Timeline />
+                <InsightsCTASection />
+                <FAQSection />
             </main>
 
             <Footer />
