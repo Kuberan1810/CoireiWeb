@@ -91,16 +91,16 @@ const Studentfeature = () => {
                     className="flex flex-col gap-8 lg:max-w-[558px]"
                 >
                     <div className="flex items-center gap-3">
-                        <LayoutDashboard size={20} strokeWidth={2.5}  className="text-white" />
+                        <LayoutDashboard size={20} strokeWidth={2.5} className="text-white" />
                         <span className="text-[20px] font-medium tracking-widest text-[#FFFFFF]">Dashboard</span>
                     </div>
 
                     <div className="space-y-3">
                         <h3 className="text-[40px] md:text-[50px] lg:text-[60px] font-medium leading-[1.1] text-white tracking-tight">
-                           improve outcome <br />Continuously
+                            improve outcome <br />Continuously
                         </h3>
                         <p className="text-[17px] md:text-[20px] text-white/60 leading-relaxed font-light">
-                           Experience a dashboard that thinks with you. From real-time feedback to adaptive learning paths, Coirei ensures you never just 'study', you evolve.
+                            Experience a dashboard that thinks with you. From real-time feedback to adaptive learning paths, Coirei ensures you never just 'study', you evolve.
                         </p>
                     </div>
                 </div>
@@ -108,14 +108,14 @@ const Studentfeature = () => {
             </div>
 
             {/* Grid Feature Highlights Section */}
-            <div 
+            <div
                 data-ns-animate
                 data-offset="100"
                 className="mt-20 md:mt-32 max-w-7xl mx-auto w-full"
             >
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px_1fr] border border-white/10 rounded-3xl overflow-hidden bg-[#161616]">
                     {/* Left Column */}
-                    <div className="flex flex-col border-b lg:border-b-0 border-white/10">
+                    <div className="flex flex-col border-b lg:border-b-0">
                         <div className="flex-1 p-8 sm:p-10 border-b border-white/10 flex flex-col justify-center gap-3">
                             <h4 className="text-[22px] sm:text-[26px] font-medium text-white tracking-tight">
                                 Real Time Progress Intelligence
@@ -143,33 +143,30 @@ const Studentfeature = () => {
                     </div>
 
                     {/* Middle Column */}
-                    <div className="flex justify-center items-stretch p-4 lg:p-[10px] border-b lg:border-b-0 bg-[#121212]/50">
-                        <div 
-                            className="w-full max-w-[500px] h-full min-h-[570px] rounded-[32px] p-[10px] flex flex-col justify-between items-center border border-[#747474]/50 group mx-auto"
-                            style={{
-                                background: 'linear-gradient(180deg, #121212 0%, rgba(246, 115, 0, 0.15) 100%)',
-                            }}
-                        >
-                            {/* Top: Logo */}
-                            <div className="flex-1 flex items-center justify-center pt-8">
-                                <div className="relative flex items-center justify-center">
-                                    <div className="absolute w-32 h-32 bg-[#F67300]/10 rounded-full blur-2xl" />
-                                    <img 
-                                        src={circleLogo} 
-                                        alt="Coirei Circle Logo" 
-                                        className="w-32 h-32 object-contain relative z-10 transition-transform duration-1000 ease-in-out group-hover:rotate-[360deg]" 
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Bottom: Dashboard mockup */}
-                            <div className="w-full mt-[75px]">
-                                <img 
-                                    src={LMSdashboard} 
-                                    alt="Coirei Dashboard Mockup" 
-                                    className="w-full h-auto object-cover rounded-2xl shadow-2xl border border-white/5" 
+                    <div 
+                        className="flex flex-col justify-between items-center border-b lg:border-b-0 bg-[#121212]/50 group min-h-[570px]"
+                        style={{
+                            background: 'linear-gradient(180deg, #121212 0%, rgba(246, 115, 0, 0.15) 100%)',
+                        }}
+                    >
+                        {/* Top: Logo */}
+                        <div className="flex-1 flex items-center justify-center pt-12 pb-6">
+                            <div className="relative flex items-center justify-center">
+                                <img
+                                    src={circleLogo}
+                                    alt="Coirei Circle Logo"
+                                    className="w-32 h-32 object-contain relative z-10 transition-transform duration-1000 ease-in-out group-hover:rotate-[360deg]"
                                 />
                             </div>
+                        </div>
+
+                        {/* Bottom: Dashboard mockup */}
+                        <div className="w-full px-6 pb-6">
+                            <img
+                                src={LMSdashboard}
+                                alt="Coirei Dashboard Mockup"
+                                className="w-full h-auto object-cover rounded-2xl shadow-2xl border border-white/5"
+                            />
                         </div>
                     </div>
 

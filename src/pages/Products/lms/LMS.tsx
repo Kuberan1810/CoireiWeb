@@ -1,17 +1,18 @@
 import Navbar from "../../../component/Navbar";
 import Footer from "../../../component/Footer/Footer";
 import Progresstrack from "./section/Progresstrack"
-import Timeline from "./section/Timeline"
 import Lmsroadmap from './section/Lmsroadmap'
 import LmsData from './section/LmsData'
 import useScrollAnimations from "../../../hooks/useScrollAnimations";
 import SEO from "../../../component/SEO";
 import { FaqSchema } from "../../../component/StructuredData";
-import Instructorfeature from "./section/Instructorfeature";
 import Studentfeature from "./section/Studentfeatures";
 import IntelligentLearning from "./section/IntelligentLearning";
 import LmsFeatures from "./section/LmsFeatures";
 import LmsAnalytics from "./section/LmsAnalytics";
+import RunLearningPrograms from "./section/RunLearningPrograms";
+import ModernLearning from "./section/ModernLearning";
+import TeachingScale from "./section/TeachingScale";
 
 function Lms() {
     useScrollAnimations();
@@ -28,15 +29,16 @@ function Lms() {
             <div className="fixed top-0 left-0 w-full z-99999">
                 <Navbar />
             </div>
-          
+
 
             <IntelligentLearning />
             <LmsFeatures />
             <LmsAnalytics />
-             <Studentfeature />
-            <Instructorfeature />
+            <Studentfeature />
+            <RunLearningPrograms />
             <Progresstrack />
-            <Timeline />
+            <ModernLearning />
+            <TeachingScale />
             <Lmsroadmap />
             <LmsData />
             <Footer />
