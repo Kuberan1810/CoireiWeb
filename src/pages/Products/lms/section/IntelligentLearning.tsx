@@ -43,7 +43,13 @@ const IntelligentLearning: React.FC = () => {
         {/* Top Text Content with Corner Brackets */}
         <div className="relative text-center max-w-4xl mb-8 flex flex-col items-center z-10 pt-10">
           {/* Top Left Corner Bracket */}
-          <div className="absolute top-2 -left-12 w-10 h-10 border-t border-l border-[#F66F00] opacity-60 hidden md:block"></div>
+          <div 
+            className="absolute top-2 -left-12 w-10 h-10 border-t-2 border-l-2 border-[#F66F00] hidden md:block"
+            style={{
+              filter: "drop-shadow(0 0 8px rgba(246, 111, 0, 0.65))",
+              opacity: 0.9
+            }}
+          ></div>
           
           <h2
             data-ns-animate
@@ -79,7 +85,13 @@ const IntelligentLearning: React.FC = () => {
               </button>
 
               {/* Bottom Right Corner Bracket (Positioned relative to buttons/text block) */}
-              <div className="absolute -bottom-6 -right-16 w-10 h-10 border-b border-r border-[#F66F00] opacity-60 hidden md:block"></div>
+              <div 
+                className="absolute -bottom-6 -right-16 w-10 h-10 border-b-2 border-r-2 border-[#F66F00] hidden md:block"
+                style={{
+                  filter: "drop-shadow(0 0 8px rgba(246, 111, 0, 0.65))",
+                  opacity: 0.9
+                }}
+              ></div>
           </div>
         </div>
 

@@ -72,7 +72,6 @@ const LmsFaq: React.FC = () => {
                     />
                   </div>
                 </button>
-
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
