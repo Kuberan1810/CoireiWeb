@@ -27,6 +27,19 @@ const RunLearningPrograms: React.FC = () => {
 
   return (
     <section className="relative text-white bg-[#161616] py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes borderFlow {
+          0% {
+            stroke-dashoffset: 0;
+          }
+          100% {
+            stroke-dashoffset: -380;
+          }
+        }
+        .animate-border-flow {
+          animation: borderFlow 1s linear infinite;
+        }
+      `}} />
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section Title */}
@@ -75,11 +88,46 @@ const RunLearningPrograms: React.FC = () => {
               {/* Right Side: The Card (280x135 px) */}
               <div className="flex-1 max-w-[280px] mt-5 relative z-10">
                 {/* Shadow Outline Card */}
-                <div 
-                  className="absolute -left-[50px] top-[20px] w-full h-full rounded-[15px] pointer-events-none z-0 p-[1.5px]"
-                  style={{ background: `linear-gradient(135deg, ${step.gradientFrom} 0%, rgba(255,255,255,0.05) 100%)` }}
-                >
-                  <div className="w-full h-full bg-[#161616] rounded-[14px]" />
+                <div className="absolute -left-[50px] top-[20px] w-[280px] h-[135px] pointer-events-none z-0">
+                  <svg className="w-full h-full overflow-visible" fill="none">
+                    <defs>
+                      <linearGradient id={`grad-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor={step.gradientFrom} stopOpacity="0.8" />
+                        <stop offset="50%" stopColor={step.gradientFrom} stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="rgba(255,255,255,0.02)" stopOpacity="0.1" />
+                      </linearGradient>
+                    </defs>
+
+                    {/* Fills the inside of the shadow card to block background */}
+                    <rect x="0.75" y="0.75" width="278.5" height="133.5" rx="14.25" fill="#161616" />
+
+                    {/* Static outline gradient */}
+                    <rect 
+                      x="0.75" 
+                      y="0.75" 
+                      width="278.5" 
+                      height="133.5" 
+                      rx="14.25" 
+                      stroke={`url(#grad-${idx})`} 
+                      strokeWidth="1.5" 
+                    />
+
+                    {/* Animated running glow border */}
+                    <rect 
+                      x="0.75" 
+                      y="0.75" 
+                      width="278.5" 
+                      height="133.5" 
+                      rx="14.25" 
+                      stroke={step.gradientFrom} 
+                      strokeWidth="1.5" 
+                      strokeDasharray="80 300"
+                      className="animate-border-flow"
+                      style={{
+                        filter: `drop-shadow(0 0 5px ${step.gradientFrom})`
+                      }}
+                    />
+                  </svg>
                 </div>
 
                 {/* Main Content Card */}

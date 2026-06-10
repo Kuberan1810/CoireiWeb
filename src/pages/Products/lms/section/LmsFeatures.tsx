@@ -4,18 +4,22 @@ interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  delay: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delay }) => {
   return (
     <div 
       data-ns-animate
-      className="flex flex-col items-center text-center p-8 rounded-3xl border border-white/5 bg-[#1C1C1C]/60 hover:bg-[#252525]/80 hover:border-white/10 transition-all duration-300 group shadow-lg"
+      data-delay={delay}
+      className="flex flex-col items-center text-center p-8 rounded-3xl border border-white/5 bg-[#1C1C1C]/60 hover:bg-[#252525]/80 hover:border-[#F67300]/30 transition-all duration-500 group shadow-lg hover:shadow-[0_0_30px_rgba(246,115,0,0.08)]"
     >
-      <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#292929] border border-white/10 mb-6 group-hover:scale-110 transition-transform duration-300">
-        {icon}
+      <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#292929] border border-white/10 mb-6 group-hover:scale-110 group-hover:bg-[#F67300]/10 group-hover:border-[#F67300]/20 transition-all duration-500">
+        <div className="text-white group-hover:text-[#F67300] transition-colors duration-500">
+          {icon}
+        </div>
       </div>
-      <h3 className="text-xl sm:text-[22px] font-medium text-white tracking-tight leading-tight mb-4 font-instrument-sans">
+      <h3 className="text-xl sm:text-[22px] font-medium text-white tracking-tight leading-tight mb-4 font-instrument-sans transition-colors duration-500">
         {title}
       </h3>
       <p className="text-zinc-400 text-[15px] sm:text-base leading-relaxed font-light">
@@ -29,7 +33,7 @@ const LmsFeatures: React.FC = () => {
   const features = [
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
           <circle cx="12" cy="12" r="6" />
           <circle cx="12" cy="12" r="2" />
@@ -40,7 +44,7 @@ const LmsFeatures: React.FC = () => {
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
           <line x1="12" y1="18" x2="12.01" y2="18" />
         </svg>
@@ -50,7 +54,7 @@ const LmsFeatures: React.FC = () => {
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 20V10M12 20V4M6 20v-6" />
         </svg>
       ),
@@ -59,7 +63,7 @@ const LmsFeatures: React.FC = () => {
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
           <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
@@ -69,7 +73,7 @@ const LmsFeatures: React.FC = () => {
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 1l4 4-4 4M21 5H9a5 5 0 0 0-5 5M7 23l-4-4 4-4M3 19h12a5 5 0 0 0 5-5" />
         </svg>
       ),
@@ -78,7 +82,7 @@ const LmsFeatures: React.FC = () => {
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2zM14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2z" />
         </svg>
       ),
@@ -109,6 +113,7 @@ const LmsFeatures: React.FC = () => {
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
+              delay={`${(idx % 3) * 0.15}`}
             />
           ))}
         </div>

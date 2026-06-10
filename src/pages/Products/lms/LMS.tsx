@@ -2,7 +2,6 @@ import Navbar from "../../../component/Navbar";
 import Footer from "../../../component/Footer/Footer";
 import Progresstrack from "./section/Progresstrack"
 import Lmsroadmap from './section/Lmsroadmap'
-import LmsData from './section/LmsData'
 import useScrollAnimations from "../../../hooks/useScrollAnimations";
 import SEO from "../../../component/SEO";
 import { FaqSchema } from "../../../component/StructuredData";
@@ -12,7 +11,7 @@ import LmsFeatures from "./section/LmsFeatures";
 import LmsAnalytics from "./section/LmsAnalytics";
 import RunLearningPrograms from "./section/RunLearningPrograms";
 import ModernLearning from "./section/ModernLearning";
-import TeachingScale from "./section/TeachingScale";
+import LmsFaq from "./section/LmsFaq";
 
 function Lms() {
     useScrollAnimations();
@@ -38,9 +37,8 @@ function Lms() {
             <RunLearningPrograms />
             <Progresstrack />
             <ModernLearning />
-            <TeachingScale />
             <Lmsroadmap />
-            <LmsData />
+            <LmsFaq />
             <Footer />
         </div>
     );

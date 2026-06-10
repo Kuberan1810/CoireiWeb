@@ -99,14 +99,14 @@ const IntelligentLearning: React.FC = () => {
         </div>
 
         {/* Dashboard Image & Dashed Lines container */}
-        <div className="relative w-full max-w-5xl mt-12 flex justify-center">
+        <div className="relative w-full  flex justify-center">
           {/* Top Left Corner Dashed Lines */}
-          <div className="absolute left-[-40px] top-[-40px] flex flex-col gap-[14px] hidden md:flex z-0">
+          <div className="absolute left-[-40px] top-0 flex flex-col gap-[14px] hidden md:flex z-0">
              {[0, 1, 2, 3].map((idx) => (
                <div 
                  key={idx} 
-                 className="w-[10px] h-[55.71px] rounded-[5px] animate-glow-dash" 
-                 style={{ 
+                 className="w-[5px] h-[51px] rounded-[5px] animate-glow-dash" 
+                 style={{
                    '--base-opacity': 1 - idx * 0.25,
                    animationDelay: `${(3 - idx) * 0.2}s`
                  } as React.CSSProperties}
@@ -115,11 +115,11 @@ const IntelligentLearning: React.FC = () => {
           </div>
 
           {/* Bottom Left Corner Dashed Lines */}
-          <div className="absolute left-[-40px] bottom-[-40px] flex flex-col gap-[14px] hidden md:flex z-0">
+          <div className="absolute left-[-40px] bottom-0 flex flex-col gap-[14px] hidden md:flex z-0">
              {[0, 1, 2, 3].map((idx) => (
                <div 
                  key={idx} 
-                 className="w-[10px] h-[55.71px] rounded-[5px] animate-glow-dash" 
+                 className="w-[5px] h-[51px] rounded-[5px] animate-glow-dash" 
                  style={{ 
                    '--base-opacity': 0.25 + idx * 0.25,
                    animationDelay: `${(3 - idx) * 0.2}s`
@@ -129,11 +129,11 @@ const IntelligentLearning: React.FC = () => {
           </div>
 
           {/* Top Right Corner Dashed Lines */}
-          <div className="absolute right-[-40px] top-[-40px] flex flex-col gap-[14px] hidden md:flex z-0">
+          <div className="absolute right-[-40px] top-0 flex flex-col gap-[14px] hidden md:flex z-0">
              {[0, 1, 2, 3].map((idx) => (
                <div 
                  key={idx} 
-                 className="w-[10px] h-[55.71px] rounded-[5px] animate-glow-dash" 
+                 className="w-[5px] h-[51px] rounded-[5px] animate-glow-dash" 
                  style={{ 
                    '--base-opacity': 1 - idx * 0.25,
                    animationDelay: `${(3 - idx) * 0.2}s`
@@ -143,11 +143,11 @@ const IntelligentLearning: React.FC = () => {
           </div>
 
           {/* Bottom Right Corner Dashed Lines */}
-          <div className="absolute right-[-40px] bottom-[-40px] flex flex-col gap-[14px] hidden md:flex z-0">
+          <div className="absolute right-[-40px] bottom-0 flex flex-col gap-[14px] hidden md:flex z-0">
              {[0, 1, 2, 3].map((idx) => (
                <div 
                  key={idx} 
-                 className="w-[10px] h-[55.71px] rounded-[5px] animate-glow-dash" 
+                 className="w-[5px] h-[51px] rounded-[5px] animate-glow-dash" 
                  style={{ 
                    '--base-opacity': 0.25 + idx * 0.25,
                    animationDelay: `${(3 - idx) * 0.2}s`

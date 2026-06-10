@@ -7,7 +7,7 @@ const LmsAnalytics: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Heading */}
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
-          <h2 
+          <h2
             data-ns-animate
             className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15] font-instrument-sans"
           >
@@ -17,14 +17,14 @@ const LmsAnalytics: React.FC = () => {
 
         {/* Learning Analytics Card */}
         <div className="w-full rounded-[36px] border border-white/5 bg-[#1C1C1C]/40 p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center shadow-2xl">
-          
+
           {/* Left Text Column */}
           <div className="flex-1 flex flex-col items-start text-left">
             {/* Orange circular icon */}
-            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#F66F00]/10 border border-[#F66F00]/20 mb-8 shadow-lg shadow-[#F66F00]/5">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F66F00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-[#F67300] mb-8 shadow-lg shadow-[#F67300]/20 text-black">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
               </svg>
             </div>
 
@@ -39,46 +39,53 @@ const LmsAnalytics: React.FC = () => {
             </p>
           </div>
 
-          {/* Right Diagram Column (Seamless - No nested black background box) */}
-          <div className="flex-1 w-full max-w-[550px] aspect-[5/3] relative flex items-center justify-center p-6 overflow-hidden">
-  
-        <svg
-  viewBox="0 0 500 300"
-  className="absolute inset-0 w-full h-full pointer-events-none"
-  fill="none"
->
-  {/* LEFT SIDE */}
+          {/* Right Diagram Column */}
+          <div className="flex-1 w-full max-w-[764px] aspect-[764/314] relative flex items-center justify-center overflow-hidden bg-transparent">
+            <svg
+              viewBox="0 0 764 314"
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              fill="none"
+            >
+              <defs>
+                <radialGradient id="center-circle-gradient" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#1C1C1C" stopOpacity="0.95" />
+                  <stop offset="60%" stopColor="#141414" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#0D0D0D" stopOpacity="0.2" />
+                </radialGradient>
+              </defs>
 
-  {/* Top */}
-  <path d="M 250 110 L 140 110 L 100 70" stroke="#626262" strokeWidth="1" />
+              {/* LEFT SIDE */}
+              {/* Top: from icon (90, 70) to bend (160, 142) to center logo (334, 142) */}
+              <path d="M 90 70 L 160 142 L 334 142" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
+              {/* Middle: from icon (45, 157) to center logo (334, 157) */}
+              <path d="M 45 157 L 334 157" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
+              {/* Bottom: from icon (90, 244) to bend (160, 172) to center logo (334, 172) */}
+              <path d="M 90 244 L 160 172 L 334 172" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
 
-  {/* Middle */}
-  <path d="M 250 150 L 60 150" stroke="#626262" strokeWidth="1" />
+              {/* RIGHT SIDE */}
+              {/* Top: from icon (674, 70) to bend (604, 142) to center logo (430, 142) */}
+              <path d="M 674 70 L 604 142 L 430 142" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
+              {/* Middle: from icon (719, 157) to center logo (430, 157) */}
+              <path d="M 719 157 L 430 157" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
+              {/* Bottom: from icon (674, 244) to bend (604, 172) to center logo (430, 172) */}
+              <path d="M 674 244 L 604 172 L 430 172" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
 
-  {/* Bottom */}
-  <path d="M 250 190 L 140 190 L 100 230" stroke="#626262" strokeWidth="1" />
-
-  {/* RIGHT SIDE */}
-
-  {/* Top */}
-  <path d="M 250 110 L 360 110 L 400 70" stroke="#626262" strokeWidth="1" />
-
-  {/* Middle */}
-  <path d="M 250 150 L 440 150" stroke="#626262" strokeWidth="1" />
-
-  {/* Bottom */}
-  <path d="M 250 190 L 360 190 L 400 230" stroke="#626262" strokeWidth="1" />
-</svg>
+              {/* Outer thin ring Layer (250px diameter -> 125px radius) */}
+              <circle cx="382" cy="157" r="125" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" fill="url(#center-circle-gradient)" />
+              
+              {/* Inner thin ring Layer (112px diameter -> 56px radius) */}
+              <circle cx="382" cy="157" r="56" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" fill="none" />
+            </svg>
 
             {/* Central Node */}
-            <div className="group absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#161616] flex items-center justify-center z-20 cursor-pointer">
-              <img src={coireiLogo} alt="Coirei Logo" className="w-full h-full object-contain transition-transform duration-1000 ease-in-out group-hover:rotate-[360deg]" />
+            <div className="group absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full flex items-center justify-center z-20 cursor-pointer bg-transparent">
+              <img src={coireiLogo} alt="Coirei Logo" className="w-20 h-20 object-contain transition-transform duration-1000 ease-in-out group-hover:rotate-[360deg] filter drop-shadow-[0_0_12px_rgba(246,115,0,0.4)]" />
             </div>
 
             {/* Nodes on Left */}
             
             {/* Top Left: Calendar */}
-            <div className="absolute left-[20%] top-[23.3%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
+            <div className="absolute left-[11.78%] top-[22.29%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                 <line x1="16" y1="2" x2="16" y2="6" />
@@ -88,7 +95,7 @@ const LmsAnalytics: React.FC = () => {
             </div>
 
             {/* Middle Left: Video Camera */}
-            <div className="absolute left-[12%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
+            <div className="absolute left-[5.89%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                 <path d="M23 7l-7 5 7 5V7z" />
                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
@@ -96,7 +103,7 @@ const LmsAnalytics: React.FC = () => {
             </div>
 
             {/* Bottom Left: Dashboard Layout */}
-            <div className="absolute left-[20%] top-[76.7%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
+            <div className="absolute left-[11.78%] top-[77.71%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                 <rect x="3" y="3" width="7" height="9" rx="1" />
                 <rect x="14" y="3" width="7" height="5" rx="1" />
@@ -108,7 +115,7 @@ const LmsAnalytics: React.FC = () => {
             {/* Nodes on Right */}
 
             {/* Top Right: Profile */}
-            <div className="absolute left-[80%] top-[23.3%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
+            <div className="absolute left-[88.22%] top-[22.29%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                 <circle cx="12" cy="7" r="4" />
@@ -116,7 +123,7 @@ const LmsAnalytics: React.FC = () => {
             </div>
 
             {/* Middle Right: Tablet / Mobile */}
-            <div className="absolute left-[88%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
+            <div className="absolute left-[94.11%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                 <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
                 <line x1="12" y1="18" x2="12.01" y2="18" />
@@ -124,7 +131,7 @@ const LmsAnalytics: React.FC = () => {
             </div>
 
             {/* Bottom Right: Checklist / Clipboard */}
-            <div className="absolute left-[80%] top-[76.7%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
+            <div className="absolute left-[88.22%] top-[77.71%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                 <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
                 <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
@@ -133,10 +140,9 @@ const LmsAnalytics: React.FC = () => {
                 <line x1="9" y1="16" x2="10" y2="16" />
                 <line x1="14" y1="16" x2="15" y2="16" />
               </svg>
-            </div>
-            
-          </div>
         </div>
+      </div>
+      </div>
       </div>
     </section>
   );

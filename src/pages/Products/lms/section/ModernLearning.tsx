@@ -85,20 +85,28 @@ const ModernLearning: React.FC = () => {
   const opCard1 = useTransform(smoothProgress, [0, 0.1], [0.3, 1]);
   const scCard1 = useTransform(smoothProgress, [0, 0.1], [0.95, 1]);
   const isCircle1Active = useTransform(smoothProgress, [0, 0.1], [0, 1]);
+  const borderCard1 = useTransform(smoothProgress, [0, 0.1], ["rgba(116, 116, 116, 0.3)", "rgba(246, 115, 0, 0.5)"]);
+  const shadowCard1 = useTransform(smoothProgress, [0, 0.1], ["0px 10px 25px rgba(0,0,0,0.3)", "0px 0px 15px rgba(246, 115, 0, 0.15)"]);
 
   const opCard2 = useTransform(smoothProgress, [0.15, 0.32], [0, 1]);
   const scCard2 = useTransform(smoothProgress, [0.15, 0.32], [0.9, 1]);
   const yCard2 = useTransform(smoothProgress, [0.15, 0.32], [20, 0]);
   const isCircle2Active = useTransform(smoothProgress, [0.22, 0.32], [0, 1]);
+  const borderCard2 = useTransform(smoothProgress, [0.15, 0.32], ["rgba(116, 116, 116, 0.3)", "rgba(246, 115, 0, 0.5)"]);
+  const shadowCard2 = useTransform(smoothProgress, [0.15, 0.32], ["0px 10px 25px rgba(0,0,0,0.3)", "0px 0px 15px rgba(246, 115, 0, 0.15)"]);
 
   const opCard3 = useTransform(smoothProgress, [0.45, 0.68], [0, 1]);
   const scCard3 = useTransform(smoothProgress, [0.45, 0.68], [0.9, 1]);
   const yCard3 = useTransform(smoothProgress, [0.45, 0.68], [20, 0]);
   const isCircle3Active = useTransform(smoothProgress, [0.58, 0.68], [0, 1]);
+  const borderCard3 = useTransform(smoothProgress, [0.45, 0.68], ["rgba(116, 116, 116, 0.3)", "rgba(246, 115, 0, 0.5)"]);
+  const shadowCard3 = useTransform(smoothProgress, [0.45, 0.68], ["0px 10px 25px rgba(0,0,0,0.3)", "0px 0px 15px rgba(246, 115, 0, 0.15)"]);
 
   const opCard4 = useTransform(smoothProgress, [0.75, 0.9], [0, 1]);
   const scCard4 = useTransform(smoothProgress, [0.75, 0.9], [0.9, 1]);
   const isCircle4Active = useTransform(smoothProgress, [0.8, 0.9], [0, 1]);
+  const borderCard4 = useTransform(smoothProgress, [0.75, 0.9], ["rgba(116, 116, 116, 0.3)", "rgba(246, 115, 0, 0.5)"]);
+  const shadowCard4 = useTransform(smoothProgress, [0.75, 0.9], ["0px 10px 25px rgba(0,0,0,0.3)", "0px 0px 15px rgba(246, 115, 0, 0.15)"]);
 
   return (
     <section ref={containerRef} className="relative text-white bg-[#161616] lg:h-screen flex items-center justify-center py-20 lg:py-0 px-6 overflow-hidden">
@@ -150,20 +158,23 @@ const ModernLearning: React.FC = () => {
           {/* Step 1: Course Management */}
           <motion.div
             style={{ opacity: opCard1, scale: scCard1 }}
-            className="absolute left-[50px] top-[320px] w-[260px] z-10"
+            className="absolute left-[-118px] top-[365px] w-[260px] z-10"
           >
-            <div className="bg-[#1E1E1E]/80 border border-[#747474]/50 border-[1.5px] rounded-[15px] p-[20px] transition-all duration-300 hover:bg-[#252525]/90 hover:border-white/10 shadow-xl min-h-[120px] flex flex-col justify-center gap-[10px]">
+            <motion.div 
+              style={{ borderColor: borderCard1, boxShadow: shadowCard1 }}
+              className="bg-[#1E1E1E]/80 border-[1.5px] rounded-[15px] p-[20px] transition-[background-color] duration-300 hover:bg-[#252525]/90 min-h-[120px] flex flex-col justify-center gap-[10px]"
+            >
               <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
                 {cards[0].title}
               </h3>
               <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
                 {cards[0].description}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Circle 1 - Aligned exactly at start of curve (x=20) */}
-          <div className="absolute left-[0px] top-[478px] w-[40px] h-[40px] rounded-full bg-[#161616] border border-white/20 flex items-center justify-center text-[16px] font-medium text-white shadow-lg overflow-hidden z-20">
+          <div className="absolute left-[-20px] top-[478px] w-[40px] h-[40px] rounded-full bg-[#161616] border border-white/20 flex items-center justify-center text-[16px] font-medium text-white shadow-lg overflow-hidden z-20">
             <motion.div
               className="absolute inset-0 border border-[#F67300] bg-[#161616] rounded-full"
               style={{ opacity: isCircle1Active }}
@@ -177,14 +188,17 @@ const ModernLearning: React.FC = () => {
             style={{ opacity: opCard2, scale: scCard2, y: yCard2 }}
             className="absolute left-[138px] top-[0px] w-[260px] z-10"
           >
-            <div className="bg-[#1E1E1E]/80 border border-[#747474]/50 border-[1.5px] rounded-[15px] p-[20px] transition-all duration-300 hover:bg-[#252525]/90 hover:border-white/10 shadow-xl min-h-[120px] flex flex-col justify-center gap-[10px]">
+            <motion.div 
+              style={{ borderColor: borderCard2, boxShadow: shadowCard2 }}
+              className="bg-[#1E1E1E]/80 border-[1.5px] rounded-[15px] p-[20px] transition-[background-color] duration-300 hover:bg-[#252525]/90 min-h-[120px] flex flex-col justify-center gap-[10px]"
+            >
               <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
                 {cards[1].title}
               </h3>
               <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
                 {cards[1].description}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Circle 2 - Aligned exactly on the curve at x=268, y=129 */}
@@ -202,14 +216,17 @@ const ModernLearning: React.FC = () => {
             style={{ opacity: opCard3, scale: scCard3, y: yCard3 }}
             className="absolute left-[554px] top-[0px] w-[260px] z-10"
           >
-            <div className="bg-[#1E1E1E]/80 border border-[#747474]/50 border-[1.5px] rounded-[15px] p-[20px] transition-all duration-300 hover:bg-[#252525]/90 hover:border-white/10 shadow-xl min-h-[120px] flex flex-col justify-center gap-[10px]">
+            <motion.div 
+              style={{ borderColor: borderCard3, boxShadow: shadowCard3 }}
+              className="bg-[#1E1E1E]/80 border-[1.5px] rounded-[15px] p-[20px] transition-[background-color] duration-300 hover:bg-[#252525]/90 min-h-[120px] flex flex-col justify-center gap-[10px]"
+            >
               <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
                 {cards[2].title}
               </h3>
               <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
                 {cards[2].description}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Circle 3 - Aligned exactly on the curve at x=684, y=130 */}
@@ -225,20 +242,23 @@ const ModernLearning: React.FC = () => {
           {/* Step 4: Learning Analytics */}
           <motion.div
             style={{ opacity: opCard4, scale: scCard4 }}
-            className="absolute left-[642px] top-[320px] w-[260px] z-10"
+            className="absolute left-[812px] top-[365px] w-[260px] z-10"
           >
-            <div className="bg-[#1E1E1E]/80 border border-[#747474]/50 border-[1.5px] rounded-[15px] p-[20px] transition-all duration-300 hover:bg-[#252525]/90 hover:border-white/10 shadow-xl min-h-[120px] flex flex-col justify-center gap-[10px]">
+            <motion.div 
+              style={{ borderColor: borderCard4, boxShadow: shadowCard4 }}
+              className="bg-[#1E1E1E]/80 border-[1.5px] rounded-[15px] p-[20px] transition-[background-color] duration-300 hover:bg-[#252525]/90 min-h-[120px] flex flex-col justify-center gap-[10px]"
+            >
               <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
                 {cards[3].title}
               </h3>
               <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
                 {cards[3].description}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Circle 4 - Aligned exactly at end of curve (x=932) */}
-          <div className="absolute left-[912px] top-[478px] w-[40px] h-[40px] rounded-full bg-[#161616] border border-white/20 flex items-center justify-center text-[16px] font-medium text-white shadow-lg overflow-hidden z-20">
+          <div className="absolute left-[930px] top-[478px] w-[40px] h-[40px] rounded-full bg-[#161616] border border-white/20 flex items-center justify-center text-[16px] font-medium text-white shadow-lg overflow-hidden z-20">
             <motion.div
               className="absolute inset-0 border border-[#F67300] bg-[#161616] rounded-full"
               style={{ opacity: isCircle4Active }}
