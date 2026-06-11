@@ -92,10 +92,15 @@ const useScrollAnimations = (): void => {
             });
         });
 
+        // Refresh ScrollTrigger after a tick/timeout to ensure layout calculations are accurate
+        const refreshTimer = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 150);
+
         /* ---------- CLEANUP ---------- */
         return () => {
+            clearTimeout(refreshTimer);
             ctx.revert();
-            ScrollTrigger.getAll().forEach(st => st.kill());
         };
     }, []);
 };
