@@ -4,7 +4,7 @@ import ResourcesDropdown from "../component/NavDropdown/ResourcesDropdown";
 import ProductsDropdown from "../component/NavDropdown/ProductsDropdown";
 import ServicesDropdown from "../component/NavDropdown/ServicesDropdown";
 import { useState } from "react";
-import { Menu, X, ChevronRight, ChevronUp} from "lucide-react";
+import { Menu, X, ChevronRight, ChevronUp } from "lucide-react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 
 
@@ -123,15 +123,23 @@ function Navbar() {
                                             { label: "Follei", to: "/products/follei" },
                                             { label: "CoireiLMS", to: "/products/coireilms" },
                                         ].map((item, index) => (
-                                            <Link
+                                            <div
                                                 key={item.label}
-                                                to={item.to}
-                                                onClick={() => setOpen(false)}
-                                                className={`flex items-center justify-between px-4 py-3 text-[15px] text-white/90 hover:bg-white/5 ${index !== 0 ? "border-t border-white/10" : ""}`}
+                                                className={`flex items-center justify-between px-4 py-3 text-[15px] text-white/90 hover:bg-white/5 cursor-default ${index !== 0 ? "border-t border-white/10" : ""}`}
                                             >
+                                                {/* Original Link code commented out to prevent page entry:
+                                                <Link
+                                                    to={item.to}
+                                                    onClick={() => setOpen(false)}
+                                                    className={`flex items-center justify-between px-4 py-3 text-[15px] text-white/90 hover:bg-white/5 ${index !== 0 ? "border-t border-white/10" : ""}`}
+                                                >
+                                                    <span>{item.label}</span>
+                                                    <ChevronRight size={14} className="opacity-40" />
+                                                </Link>
+                                                */}
                                                 <span>{item.label}</span>
                                                 <ChevronRight size={14} className="opacity-40" />
-                                            </Link>
+                                            </div>
                                         ))}
                                     </div>
                                 </li>

@@ -24,27 +24,23 @@ const FAQSection = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(0);
 
     return (
-        <section className="mx-6 sm:mx-10 md:mx-15 pt-2 md:pt-4 pb-20 md:pb-6 ">
-          
-            <div className="flex md:flex-col flex-col gap-10 jusify-center items-center">
+        <section className="mx-6 sm:mx-10 md:mx-20 pt-2 md:pt-4  md:pb-6 ">
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start w-full">
 
                 {/* LEFT SIDE */}
-                <div className="flex-1">
-                    
-
-                    <h2 className="text-4xl md:text-5xl leading-tight tracking-tight space-x-3">
-                        <span className="text-white ">
-                            Frequently Asked 
-                        </span>
-
-                        <span className="text-[#FF6B00] ">
-                            Questions.
-                        </span>
+                <div className="lg:col-span-5 w-full text-left lg:self-center">
+                    <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight tracking-tight">
+                        <span className="text-white">Frequently</span>
+                        <br />
+                        <span className="text-white">Asked</span>
+                        <br />
+                        <span className="text-[#FF6B00]">Questions.</span>
                     </h2>
                 </div>
 
                 {/* FAQ List */}
-                <div className=" flex flex-col gap-4 flex-1 max-w-4xl mx-auto">
+                <div className="lg:col-span-7 w-full flex flex-col gap-4">
                     {faqs.map((faq, index) => (
                         <div
                             key={index}

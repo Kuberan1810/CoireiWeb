@@ -227,7 +227,7 @@ import F from "../../../../assets/images/products/F.svg"
 import L from "../../../../assets/images/products/L.svg"
 import E from "../../../../assets/images/products/E.svg"
 import I from "../../../../assets/images/products/I.svg"
-import folleihomescreen from "../../../../assets/images/services/folleihomescreen.svg"
+import folleihomescreen from "../../../../assets/images/services/folleihomescreen.png"
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger
@@ -246,12 +246,10 @@ export const Hero = () => {
         const ctx = gsap.context(() => {
             gsap.fromTo(imageRef.current,
                 {
-                    scale: 1.4,
                     filter: "blur(20px)",
                     opacity: 0,
                 },
                 {
-                    scale: 1.0,
                     filter: "blur(0px)",
                     opacity: 1,
                     ease: "power1.inOut",
@@ -305,7 +303,7 @@ export const Hero = () => {
                                                         src={folleihomescreen}
                                                         alt="Banner"
                                                         className="banner-bg-image"
-                                                        style={{ willChange: "filter, opacity" }}
+                                                        style={{ willChange: "filter, opacity", objectFit: "contain" }}
                                                     />
                                                 </div>
 

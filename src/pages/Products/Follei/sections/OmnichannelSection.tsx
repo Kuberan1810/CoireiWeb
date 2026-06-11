@@ -121,10 +121,10 @@ export const OmnichannelSection: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-transparent rounded-full blur-[160px] pointer-events-none z-0" />
             
             <div className="max-w-7xl mx-auto relative z-10 w-full">
-                <div className="grid grid-cols-12 gap-6 lg:gap-8 items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
                     
                     {/* Row 1 Left - AI Voice Calls */}
-                    <div className="col-span-12 lg:col-start-3 lg:col-span-4 lg:row-start-1">
+                    <div className="col-span-1 lg:col-start-3 lg:col-span-4 lg:row-start-1">
                         <Card 
                             title="AI Voice Calls" 
                             description="Seamless outbound and inbound voice interactions powered by natural synthesis."
@@ -132,9 +132,9 @@ export const OmnichannelSection: React.FC = () => {
                             innerRef={card1}
                         />
                     </div>
-
+ 
                     {/* Row 1 Right - WhatsApp Automation */}
-                    <div className="col-span-12 lg:col-start-7 lg:col-span-4 lg:row-start-1">
+                    <div className="col-span-1 lg:col-start-7 lg:col-span-4 lg:row-start-1">
                         <Card 
                             title="WhatsApp Automation" 
                             description="Scalable official WhatsApp API integrations for mass personalized engagement."
@@ -142,9 +142,9 @@ export const OmnichannelSection: React.FC = () => {
                             innerRef={card2}
                         />
                     </div>
-
+ 
                     {/* Row 2 Left - Smart Email */}
-                    <div className="col-span-12 lg:col-span-4 lg:row-start-2">
+                    <div className="col-span-1 lg:col-span-4 lg:row-start-2">
                         <Card 
                             title="Smart Email" 
                             description="Dynamically generated email responses that actually sound like your best reps."
@@ -152,9 +152,9 @@ export const OmnichannelSection: React.FC = () => {
                             innerRef={card3}
                         />
                     </div>
-
+ 
                     {/* Row 2 Center - Central Text Block */}
-                    <div className="col-span-12 lg:col-span-4 lg:row-start-2 flex flex-col items-center justify-center text-center py-8 lg:py-0">
+                    <div className="col-span-1 lg:col-span-4 lg:row-start-2 flex flex-col items-center justify-center text-center py-8 lg:py-0">
                         {/* Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] mb-6">
                             <Sparkles size={14} className="text-[#3B82F6]" />
@@ -162,20 +162,20 @@ export const OmnichannelSection: React.FC = () => {
                                 Omnichannel AI Communication
                             </span>
                         </div>
-
+ 
                         {/* Title */}
                         <h2 className="text-[#E3E3E0] text-3xl sm:text-4xl md:text-[38px] font-medium leading-[1.2] mb-4 tracking-tight max-w-xs mx-auto">
                             Every tool you need, supercharged.
                         </h2>
-
+ 
                         {/* Subtitle */}
                         <p className="text-white/50 text-[15px] sm:text-base leading-relaxed font-light max-w-[280px]">
                             The most complete AI suite for modern enterprises.
                         </p>
                     </div>
-
+ 
                     {/* Row 2 Right - Customer Retention */}
-                    <div className="col-span-12 lg:col-span-4 lg:row-start-2">
+                    <div className="col-span-1 lg:col-span-4 lg:row-start-2">
                         <Card 
                             title="Customer Retention" 
                             description="AI-driven churn prediction and automated win-back sequences."
@@ -183,9 +183,9 @@ export const OmnichannelSection: React.FC = () => {
                             innerRef={card4}
                         />
                     </div>
-
+ 
                     {/* Row 3 Left - Smart Onboarding */}
-                    <div className="col-span-12 lg:col-span-4 lg:row-start-3">
+                    <div className="col-span-1 lg:col-span-4 lg:row-start-3">
                         <Card 
                             title="Smart Onboarding" 
                             description="Guided, personalized user journeys that ensure long term product adoption."
@@ -193,9 +193,9 @@ export const OmnichannelSection: React.FC = () => {
                             innerRef={card5}
                         />
                     </div>
-
+ 
                     {/* Row 3 Center - Upsell & Cross-Sell */}
-                    <div className="col-span-12 lg:col-span-4 lg:row-start-3">
+                    <div className="col-span-1 lg:col-span-4 lg:row-start-3">
                         <Card 
                             title="Upsell & Cross-Sell" 
                             description="Machine learning identifies the perfect moment for higher-tier offers."
@@ -203,9 +203,9 @@ export const OmnichannelSection: React.FC = () => {
                             innerRef={card6}
                         />
                     </div>
-
+ 
                     {/* Row 3 Right - Unified Workflow */}
-                    <div className="col-span-12 lg:col-span-4 lg:row-start-3">
+                    <div className="col-span-1 lg:col-span-4 lg:row-start-3">
                         <Card 
                             title="Unified Workflow" 
                             description="A drag-and-drop canvas to orchestrate every channel from one map."

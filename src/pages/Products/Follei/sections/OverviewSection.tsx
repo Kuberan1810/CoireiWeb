@@ -9,7 +9,7 @@ const OverviewSection: React.FC = () => {
             <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-transparent rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-transparent rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="max-w-6xl mx-auto relative z-10">
+            <div className="w-full max-w-none relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
                     {/* Left Column: Content */}

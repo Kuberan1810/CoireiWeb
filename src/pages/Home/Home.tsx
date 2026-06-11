@@ -31,7 +31,7 @@ function Home() {
                 description="Coirei is AI powered solutions company. We create AI apps and chatbots. AI automation and AI web and platform. AI products and customized LMS for business."
             />
             <FaqSchema />
-            
+
 
             <div className="fixed top-0 left-0 w-full z-50">
                 <Navbar />

@@ -325,12 +325,12 @@ const UIUXDesignDetails = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
+                </div>
 
                     <TestimonialSection />
                     <FAQSection />
 
-                </div>
             </main>
             <Footer />
         </>

@@ -147,7 +147,7 @@ export const HowItWorks: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
 
                     {/* Left Sticky Column (Desktop Only Sticky) */}
-                    <div className="col-span-12 md:col-span-5 md:sticky md:top-[12vh] flex flex-col items-start pr-0 md:pr-10 pl-12 relative">
+                    <div className="col-span-1 md:col-span-5 md:sticky md:top-[12vh] flex flex-col items-start pr-0 md:pr-10 pl-0 md:pl-12 relative">
                         {/* Desktop-only Ruler that spans the entire sticky column */}
                         <div ref={rulerRef} className="absolute left-0 top-0 bottom-0 w-[120px] hidden md:block select-none pointer-events-none">
                             <TimelineRuler activeCenterIdx={activeCenterIdx} totalTicks={totalTicks} />
@@ -197,7 +197,7 @@ export const HowItWorks: React.FC = () => {
                     </div>
 
                     {/* Right Scrolling Column (Cards List) */}
-                    <div className="col-span-12 md:col-span-7 flex flex-col gap-6 md:gap-8 md:pb-[5vh]">
+                    <div className="col-span-1 md:col-span-7 flex flex-col gap-6 md:gap-8 md:pb-[5vh]">
                         {cards.map((card, i) => (
                             <div
                                 key={i}

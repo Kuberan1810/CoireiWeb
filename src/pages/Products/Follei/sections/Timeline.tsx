@@ -51,6 +51,16 @@ const timelineData = [
 
 const Timeline: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -69,7 +79,7 @@ const Timeline: React.FC = () => {
     <section ref={containerRef} className="relative w-full py-20 lg:py-20 px-6 overflow-x-hidden font-inter-sans">
       
       {/* CENTRAL LINE */}
-      <div className="absolute left-1/2 top-20 lg:top-40 bottom-20 lg:bottom-40 w-[9px] bg-[#161616] border border-white/5 rounded-full -translate-x-1/2 z-0">
+      <div className="absolute left-12 lg:left-1/2 top-20 lg:top-40 bottom-20 lg:bottom-40 w-[9px] bg-[#161616] border border-white/5 rounded-full -translate-x-1/2 z-0">
         <motion.div 
           style={{ scaleY, originY: 0 }} 
           className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#004370] to-[#4488B7] shadow-[0_1px_12px_rgba(0,67,112,0.5)] rounded-full"
@@ -81,7 +91,7 @@ const Timeline: React.FC = () => {
         <div 
           data-ns-animate
           data-offset="80"
-          className="flex justify-center mb-20 lg:mb-40 relative z-30"
+          className="flex justify-start lg:justify-center pl-0 lg:pl-0 mb-20 lg:mb-40 relative z-30"
         >
           <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full bg-[#131315]/95 border border-[#004370]/50 flex items-center justify-center shadow-[0_0_40px_rgba(0,67,112,0.3)]">
             <img 
@@ -96,7 +106,7 @@ const Timeline: React.FC = () => {
         {/* SPACING */}
         <div className="space-y-24 lg:space-y-32">
           {timelineData.map((pair, index) => (
-            <TimelineRow key={index} pair={pair} progress={smoothProgress} index={index} />
+            <TimelineRow key={index} pair={pair} progress={smoothProgress} index={index} isMobile={isMobile} />
           ))}
         </div>
       </div>
@@ -104,7 +114,7 @@ const Timeline: React.FC = () => {
   );
 };
 
-const TimelineRow = ({ pair, progress, index }: { pair: any, progress: any, index: number }) => {
+const TimelineRow = ({ pair, progress, index, isMobile }: { pair: any, progress: any, index: number, isMobile: boolean }) => {
   const startTrigger = index * 0.25;
   const endTrigger = Math.min(startTrigger + 0.3, 1);
   
@@ -116,45 +126,47 @@ const TimelineRow = ({ pair, progress, index }: { pair: any, progress: any, inde
     <div className="flex flex-col lg:flex-row items-center w-full gap-24 lg:gap-0 relative z-10">
       
       {/* Left Card */}
-      <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+      <div className="w-full lg:w-1/2 flex justify-start lg:justify-end pl-16 lg:pl-0">
         <motion.div 
           style={{ x: leftX, opacity }} 
-          className="w-full flex justify-center lg:justify-end lg:pr-[78px]"
+          className="w-full flex justify-start lg:justify-end lg:pr-[78px]"
         >
-          <Card item={pair.left} side="left" />
+          <Card item={pair.left} side="left" isMobile={isMobile} />
         </motion.div>
       </div>
 
       <div className="hidden lg:block w-[1px]" />
 
       {/* Right Card */}
-      <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+      <div className="w-full lg:w-1/2 flex justify-start lg:justify-start pl-16 lg:pl-0">
         <motion.div 
           style={{ x: rightX, opacity }} 
-          className="w-full flex justify-center lg:justify-start lg:pl-[78px]"
+          className="w-full flex justify-start lg:justify-start lg:pl-[78px]"
         >
-          <Card item={pair.right} side="right" />
+          <Card item={pair.right} side="right" isMobile={isMobile} />
         </motion.div>
       </div>
     </div>
   );
 };
 
-const Card = ({ item, side }: { item: any, side: 'left' | 'right' }) => {
-  const tiltAngle = side === 'left' ? -5 : 5;
+const Card = ({ item, side, isMobile }: { item: any, side: 'left' | 'right', isMobile: boolean }) => {
+  const tiltAngle = isMobile ? 0 : (side === 'left' ? -5 : 5);
+  const rotateX = isMobile ? 0 : 5;
+  const rotateY = isMobile ? 0 : (side === 'left' ? 8 : -8);
   
   return (
     <motion.div 
       className="w-full max-w-[510px] min-h-[310px] flex relative z-10"
-      whileHover={{ scale: 1.02 }}
+      whileHover={{ scale: isMobile ? 1.0 : 1.02 }}
     >
       <div style={{ perspective: "1000px" }} className="relative w-full h-full group">
         <motion.div 
           initial={{ rotateZ: 0 }}
           whileInView={{ 
             rotateZ: tiltAngle, 
-            rotateX: 5, 
-            rotateY: side === 'left' ? 8 : -8 
+            rotateX: rotateX, 
+            rotateY: rotateY 
           }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center text-center p-[32px] w-full h-full rounded-[24px] border border-[#004370]/40 bg-[#131315]/95 shadow-[0_0_30px_rgba(0,67,112,0.1)] relative z-10 hover:border-[#6FC5FE]/30 transition-colors duration-300"

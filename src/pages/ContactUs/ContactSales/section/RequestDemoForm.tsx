@@ -223,7 +223,10 @@ const RequestDemoForm: React.FC<RequestDemoFormProps> = ({ onBack }) => {
 const Dropdown = ({ label, open, setOpen, value, error, options, onSelect }: any) => (
     <div data-ns-animate
         data-delay="0.3"
-        data-offset="20">
+        data-offset="20"
+        className="relative"
+        style={{ zIndex: open ? 50 : 1 }}
+    >
         <label className="block text-lg text-white/50 mb-3">{label}</label>
 
         <div className="relative">

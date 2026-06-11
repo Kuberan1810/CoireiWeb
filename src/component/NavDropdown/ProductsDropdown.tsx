@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { useState, useRef } from "react";
 
@@ -94,8 +94,7 @@ export default function ProductsDropdown() {
                                 transitionDelay: isOpen ? `${index * 30}ms` : '0ms'
                             }}
                         >
-                            <Link
-                                to={item.to}
+                            <div
                                 className="group flex items-center justify-between
                                 px-4 py-3 mx-2 rounded-xl
                                 text-[15px] font-medium text-white/90
@@ -103,8 +102,35 @@ export default function ProductsDropdown() {
                                 hover:backdrop-blur-xl
                                 hover:shadow-lg
                                 transition-all duration-200
-                                relative overflow-hidden"
+                                relative overflow-hidden cursor-default"
                             >
+                                {/* Original Link code commented out to prevent page entry:
+                                <Link
+                                    to={item.to}
+                                    className="group flex items-center justify-between
+                                    px-4 py-3 mx-2 rounded-xl
+                                    text-[15px] font-medium text-white/90
+                                    hover:bg-white/10
+                                    hover:backdrop-blur-xl
+                                    hover:shadow-lg
+                                    transition-all duration-200
+                                    relative overflow-hidden"
+                                >
+                                    <span className="absolute inset-0 opacity-0 group-hover:opacity-100 
+                                        bg-linear-to-r from-white/5 via-white/8 to-white/5
+                                        transition-opacity duration-300"></span>
+
+                                    <span className="relative z-10">{item.label}</span>
+                                    <ChevronRight
+                                        size={14}
+                                        strokeWidth={2}
+                                        className="opacity-50 transition-all duration-200
+                                        group-hover:opacity-90 group-hover:translate-x-1
+                                        relative z-10"
+                                    />
+                                </Link>
+                                */}
+
                                 {/* Hover gradient effect */}
                                 <span className="absolute inset-0 opacity-0 group-hover:opacity-100 
                                     bg-linear-to-r from-white/5 via-white/8 to-white/5
@@ -118,7 +144,7 @@ export default function ProductsDropdown() {
                                     group-hover:opacity-90 group-hover:translate-x-1
                                     relative z-10"
                                 />
-                            </Link>
+                            </div>
                         </li>
                     ))}
                 </ul>
