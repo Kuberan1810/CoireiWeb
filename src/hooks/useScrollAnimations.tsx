@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
 
@@ -13,6 +14,8 @@ if (!(window as any).gsap) {
 type Direction = "up" | "down" | "left" | "right" | "line-left" | "line-right";
 
 const useScrollAnimations = (): void => {
+    const { pathname } = useLocation();
+
     useEffect(() => {
         const ctx = gsap.context(() => {
             const elements = gsap.utils.toArray<HTMLElement>("[data-ns-animate]");
@@ -93,16 +96,19 @@ const useScrollAnimations = (): void => {
         });
 
         // Refresh ScrollTrigger after a tick/timeout to ensure layout calculations are accurate
-        const refreshTimer = setTimeout(() => {
-            ScrollTrigger.refresh();
-        }, 150);
+        const timers = [
+            setTimeout(() => ScrollTrigger.refresh(), 100),
+            setTimeout(() => ScrollTrigger.refresh(), 400),
+            setTimeout(() => ScrollTrigger.refresh(), 1000),
+            setTimeout(() => ScrollTrigger.refresh(), 2000),
+        ];
 
         /* ---------- CLEANUP ---------- */
         return () => {
-            clearTimeout(refreshTimer);
+            timers.forEach(t => clearTimeout(t));
             ctx.revert();
         };
-    }, []);
+    }, [pathname]);
 };
 
 export default useScrollAnimations;
