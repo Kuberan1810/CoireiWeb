@@ -117,7 +117,6 @@ export default function ProductsDropdown() {
                                 />
 
                                 <span className="relative z-10">{item.label}</span>
-
                                 <ChevronRight
                                     size={14}
                                     strokeWidth={2}
