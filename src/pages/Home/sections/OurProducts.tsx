@@ -60,7 +60,7 @@ function OurProducts() {
 
             {/* Products */}
 
-            <div className="flex lg:flex-row flex-col flex-wrap items-center justify-center gap-[30px] mt-16">
+            <div className="flex lg:flex-row flex-col flex-wrap items-center lg:items-stretch justify-center gap-[30px] mt-16">
 
                 {products.map((product, index) => {
                     const CardWrapper = product.to ? Link : "div";
@@ -73,7 +73,7 @@ function OurProducts() {
                             data-delay={`${index * 0.1}`}
                             data-offset="80"
 
-                            className="relative w-full md:max-w-[480px] rounded-[20px] overflow-hidden cursor-pointer group bg-[#29292980] border border-white/15 hover:bg-[#323232] hover:border-white/25 transition-all duration-500 no-underline "
+                            className="relative flex flex-col w-full md:max-w-[480px] rounded-[20px] overflow-hidden cursor-pointer group bg-[#29292980] border border-white/15 hover:bg-[#323232] hover:border-white/25 transition-all duration-500 no-underline "
 
                             style={{
                                 boxShadow: "0 -20px 40px -20px rgba(0,0,0,0.6), inset 0 1px 0 0 rgba(255,255,255,0.05)",
@@ -82,10 +82,10 @@ function OurProducts() {
 
                             {/* Card content */}
 
-                            <div className="relative z-10 flex  flex-col h-full p-[28px] ">
+                            <div className="relative z-10 flex flex-col h-full p-[28px] ">
 
-                                {/* Text pushed to bottom */}
-                                <div className="mt-auto flex flex-col gap-[10px]">
+                                {/* Text content */}
+                                <div className="flex flex-col gap-[10px]">
                                     <div className="flex items-center justify-center gap-4 mb-5">
                                         {/* Icon */}
                                         <div

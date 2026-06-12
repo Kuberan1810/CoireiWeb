@@ -151,7 +151,7 @@ const BusinessAppDetails = () => {
         const step = Math.min(Math.floor(latest * steps.length), steps.length - 1);
         setActiveStep(step);
     });
-    
+
     return (
         <>
             <div className="fixed w-full top-0 z-50">
@@ -164,7 +164,7 @@ const BusinessAppDetails = () => {
                     {/* --- HEADER SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
                         {/* Main Title */}
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-8 max-w-5xl tracking-tight">
+                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight mb-8 max-w-5xl tracking-tight">
                             <span className="text-[#F67300]">Custom Business Solutions</span> for Business Growth
                         </h1>
 

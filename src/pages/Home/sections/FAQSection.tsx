@@ -30,9 +30,8 @@ const FAQSection = () => {
 
                 {/* LEFT SIDE */}
                 <div className="lg:col-span-5 w-full text-left lg:self-center">
-                    <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight tracking-tight">
-                        <span className="text-white">Frequently</span>
-                        <br />
+                    <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-tight tracking-tight">
+                        <span className="text-white">Frequently </span>
                         <span className="text-white">Asked</span>
                         <br />
                         <span className="text-[#FF6B00]">Questions.</span>

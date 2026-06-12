@@ -76,11 +76,11 @@ const UIUXDesignDetails = () => {
 
             // Mobile timeline items staggered animation
             gsap.utils.toArray<HTMLElement>(".mobile-timeline-item").forEach((item) => {
-                gsap.fromTo(item, 
+                gsap.fromTo(item,
                     { opacity: 0, x: -30 },
-                    { 
-                        opacity: 1, 
-                        x: 0, 
+                    {
+                        opacity: 1,
+                        x: 0,
                         duration: 0.8,
                         ease: "power2.out",
                         scrollTrigger: {
@@ -164,20 +164,20 @@ const UIUXDesignDetails = () => {
                                 <p className="text-white/50 text-[15px] leading-relaxed font-light px-2">
                                     Using AI, we forecast trends so you can stay ahead of the curve.
                                 </p>
+                            </div>
                         </div>
-                    </div>
-                </div> {/* Close parent max-w-1440px container to let Statics go full screen */}
+                    </div> {/* Close parent max-w-1440px container to let Statics go full screen */}
 
-                {/* --- STATICS SECTION --- */}
-                <div className="w-full flex flex-col items-center mt-24 mb-16 relative statics-section">
-                    <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-white tracking-tight mb-20 text-center">
-                            Statics
-                        </h2>
-                    </div>
+                    {/* --- STATICS SECTION --- */}
+                    <div className="w-full flex flex-col items-center mt-24 mb-16 relative statics-section">
+                        <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+                            <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-white tracking-tight mb-20 text-center">
+                                Statics
+                            </h2>
+                        </div>
 
-                    {/* DESKTOP CURVED TIMELINE */}
-                    <div className="hidden md:block w-full h-[550px] relative mt-10 px-12 lg:px-24">
+                        {/* DESKTOP CURVED TIMELINE */}
+                        <div className="hidden md:block w-full h-[550px] relative mt-10 px-12 lg:px-24">
                             {/* SVG Bezier Curve from products assets: curveline.svg */}
                             <svg className="w-full h-full absolute inset-0 pointer-events-none" viewBox="0 0 1370 766" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                                 <defs>
@@ -325,11 +325,11 @@ const UIUXDesignDetails = () => {
                                 </div>
                             </div>
                         </div>
-                </div>
+                    </div>
                 </div>
 
-                    <TestimonialSection />
-                    <FAQSection />
+                <TestimonialSection />
+                <FAQSection />
 
             </main>
             <Footer />

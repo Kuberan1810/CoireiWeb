@@ -89,7 +89,7 @@ const DataDashboardBI = () => {
                                 <h3 className="text-2xl font-medium text-white mb-6 tracking-tight transition-colors">
                                     Custom Dashboards
                                 </h3>
-                                <p className="text-white/50 text-[15px] leading-relaxed font-light px-2">
+                                <p className="text-white/50 text-[16px] leading-relaxed font-light px-2">
                                     We design personalized dashboards that give you a clear view of your key metrics, all in real-time.
                                 </p>
                             </div>
@@ -102,7 +102,7 @@ const DataDashboardBI = () => {
                                 <h3 className="text-2xl font-medium text-white mb-6 tracking-tight transition-colors">
                                     Real-Time Analytics
                                 </h3>
-                                <p className="text-white/50 text-[15px] leading-relaxed font-light px-2">
+                                <p className="text-white/50 text-[16px] leading-relaxed font-light px-2">
                                     Monitor your business performance as it happens, with up-to-the-minute data streams.
                                 </p>
                             </div>
@@ -115,7 +115,7 @@ const DataDashboardBI = () => {
                                 <h3 className="text-2xl font-medium text-white mb-6 tracking-tight transition-colors">
                                     Predictive Insights
                                 </h3>
-                                <p className="text-white/50 text-[15px] leading-relaxed font-light px-2">
+                                <p className="text-white/50 text-[16px] leading-relaxed font-light px-2">
                                     Using AI, we forecast trends so you can stay ahead of the curve.
                                 </p>
                             </div>
@@ -208,7 +208,7 @@ const DataDashboardBI = () => {
                     </div>
 
                     {/* --- WORKING PROCESS SECTION --- */}
-                    <div className="w-full mt-32 mb-32 flex flex-col items-center select-none overflow-visible py-16">
+                    <div className="w-full mb-31 flex flex-col items-center select-none overflow-visible py-16">
                         <h2 className="text-3xl md:text-5xl font-medium text-[#E3E3E0] text-center mb-24 tracking-tight leading-tight">
                             Our Working Process
                         </h2>

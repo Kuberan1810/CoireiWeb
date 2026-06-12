@@ -192,7 +192,7 @@ const WebPlatformDetails = () => {
                 </div>
 
                 {/* --- SERVICE OFFERINGS SECTION --- */}
-                <div ref={offeringsScrollRef} className="w-full mb-32 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
+                <div ref={offeringsScrollRef} className="w-full px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
                     <h2 data-ns-animate="true" className="text-3xl md:text-5xl lg:text-[56px] font-semibold text-[#E3E3E0] text-center mb-6 tracking-tight leading-tight">
                         <span className="text-[#F67300]">Coirei Core</span> Service Offerings
                     </h2>
@@ -519,7 +519,7 @@ const WebPlatformDetails = () => {
                             <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] h-auto">
                                 <h3 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-white leading-tight tracking-tight">
                                     A Transparent Process<br className="hidden lg:block" />
-                                 Built for 
+                                    Built for
                                     <span className="text-[#F67300]"> Fast & Reliable</span><br />
                                     Delivery.
                                 </h3>
@@ -585,15 +585,14 @@ const WebPlatformDetails = () => {
                                         </div>
 
                                         {/* CARD */}
-                                        <div className={`relative bg-[#202021] pt-10 pb-15 px-7 md:px-9 flex gap-6  backdrop-blur-md transition-all duration-500 ${
-                                            isDesktop
+                                        <div className={`relative bg-[#202021] pt-10 pb-15 px-7 md:px-9 flex gap-6  backdrop-blur-md transition-all duration-500 ${isDesktop
                                                 ? (s.step === 1
                                                     ? "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
                                                     : s.step === 4
                                                         ? "rounded-tl-[20px] rounded-b-[20px] rounded-tr-none"
                                                         : "rounded-[20px]")
                                                 : "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
-                                        }`}>
+                                            }`}>
 
                                             <div className="w-[3px] bg-[#F67300] rounded-full shrink-0" />
                                             <div className="flex flex-col gap-2 relative z-10 text-left">
