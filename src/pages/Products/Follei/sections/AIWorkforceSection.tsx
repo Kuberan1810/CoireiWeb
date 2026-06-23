@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
-import { Sparkles } from "lucide-react";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
@@ -112,9 +111,23 @@ export const AIWorkforceSection: React.FC = () => {
             <div className="max-w-7xl w-full mx-auto px-6 sm:px-10 md:px-15 relative z-10">
                 {/* Badge with capsule style */}
                 <div className="gsap-badge mb-6 flex justify-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
-                        <Sparkles size={14} className="text-white/80" />
-                        <span className="text-sm font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                    <div
+                        className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                        style={{
+                            boxShadow: `
+                                inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                            `,
+                            borderRadius: '2px',
+                            overflow: 'visible'
+                        }}
+                    >
+                        {/* Top-Right Corner Line */}
+                        <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                        {/* Bottom-Left Corner Line */}
+                        <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                        <span className="text-sm tracking-wide text-white">
                             Autonomous Business Workforce
                         </span>
                     </div>
@@ -122,7 +135,7 @@ export const AIWorkforceSection: React.FC = () => {
 
                 {/* Heading */}
                 <h2 className="gsap-heading text-white text-3xl sm:text-5xl md:text-[52px] font-bold tracking-tight leading-[1.15] mb-6 max-w-4xl mx-auto">
-                    Hire an <span className="bg-gradient-to-r from-[#3b82f6] to-[#6fc5fe] bg-clip-text text-transparent">AI Workforce</span> That Learns Your Business
+                    Hire an <span className="bg-linear-to-r from-[#3b82f6] to-[#6fc5fe] bg-clip-text text-transparent">AI Workforce</span> That Learns Your Business
                 </h2>
 
                 {/* Subheading */}
@@ -139,9 +152,9 @@ export const AIWorkforceSection: React.FC = () => {
                         {[...pillsRow1, ...pillsRow1, ...pillsRow1, ...pillsRow1].map((pill, idx) => (
                             <div
                                 key={idx}
-                                className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#1c1c1c]/80 border border-white/5 hover:border-[#3b82f6]/30 hover:bg-white/[0.04] transition-all duration-300 transform hover:-translate-y-0.5 group cursor-default shadow-lg shrink-0 whitespace-nowrap"
+                                className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#1c1c1c]/80 border border-white/5 hover:border-[#3b82f6]/30 hover:bg-white/4 transition-all duration-300 transform hover:-translate-y-0.5 group cursor-default shadow-lg shrink-0 whitespace-nowrap"
                             >
-                                <div className="w-2.5 h-2.5 bg-[#3b82f6] rotate-45 rounded-[1px] shadow-[0_0_8px_rgba(59,130,246,0.8)] transition-transform duration-300 group-hover:rotate-[135deg]" />
+                                <div className="w-2.5 h-2.5 bg-[#3b82f6] rotate-45 rounded-[1px] shadow-[0_0_8px_rgba(59,130,246,0.8)] transition-transform duration-300 group-hover:rotate-135" />
                                 <span className="text-white/80 text-sm font-medium tracking-wide group-hover:text-white transition-colors duration-300">{pill}</span>
                             </div>
                         ))}
@@ -154,9 +167,9 @@ export const AIWorkforceSection: React.FC = () => {
                         {[...pillsRow2, ...pillsRow2, ...pillsRow2, ...pillsRow2].map((pill, idx) => (
                             <div
                                 key={idx}
-                                className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#1c1c1c]/80 border border-white/5 hover:border-[#3b82f6]/30 hover:bg-white/[0.04] transition-all duration-300 transform hover:-translate-y-0.5 group cursor-default shadow-lg shrink-0 whitespace-nowrap"
+                                className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#1c1c1c]/80 border border-white/5 hover:border-[#3b82f6]/30 hover:bg-white/4 transition-all duration-300 transform hover:-translate-y-0.5 group cursor-default shadow-lg shrink-0 whitespace-nowrap"
                             >
-                                <div className="w-2.5 h-2.5 bg-[#3b82f6] rotate-45 rounded-[1px] shadow-[0_0_8px_rgba(59,130,246,0.8)] transition-transform duration-300 group-hover:rotate-[135deg]" />
+                                <div className="w-2.5 h-2.5 bg-[#3b82f6] rotate-45 rounded-[1px] shadow-[0_0_8px_rgba(59,130,246,0.8)] transition-transform duration-300 group-hover:rotate-135" />
                                 <span className="text-white/80 text-sm font-medium tracking-wide group-hover:text-white transition-colors duration-300">{pill}</span>
                             </div>
                         ))}

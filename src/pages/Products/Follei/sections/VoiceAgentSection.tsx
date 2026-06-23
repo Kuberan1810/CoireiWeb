@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import { CheckSquare, Zap, Activity, MessageSquare, Sparkles } from 'lucide-react';
+import { CheckSquare, Zap, Activity, MessageSquare } from 'lucide-react';
 
 const ROBO_LOTTIE_URL = "https://cdn.prod.website-files.com/69108ccf43c3987ea965e960/6930eade4c8d752651faf61b_robo%20head%203.json";
 
@@ -41,18 +41,27 @@ const VoiceAgentSection: React.FC = () => {
                     <div className="lg:col-span-7 flex flex-col items-start text-left">
                         
                         {/* Badge with gradient glow border and exact styling */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
-                            <Sparkles size={14} className="text-white/80" />
-                            <span 
-                                style={{ 
-                                    fontSize: '15.5px', 
-                                    lineHeight: '25.6px',
-                                    letterSpacing: '0px'
-                                }} 
-                                className="font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent"
+                        <div className="mb-6 flex justify-start">
+                            <div
+                                className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                                style={{
+                                    boxShadow: `
+                                        inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                        inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                                    `,
+                                    borderRadius: '2px',
+                                    overflow: 'visible'
+                                }}
                             >
-                                AI Chatbot
-                            </span>
+                                {/* Top-Right Corner Line */}
+                                <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                                {/* Bottom-Left Corner Line */}
+                                <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                                <span className="text-sm tracking-wide text-white">
+                                    AI Chatbot
+                                </span>
+                            </div>
                         </div>
 
                         {/* Heading with exact styling */}

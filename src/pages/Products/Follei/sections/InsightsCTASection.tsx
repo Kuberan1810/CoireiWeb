@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
 
 const InsightsCTASection = () => {
     // Height percentages for the 6 bars in the chart
@@ -132,27 +131,6 @@ const InsightsCTASection = () => {
                             ))}
                         </div>
                     </div>
-                </div>
-
-                {/* AI Workflow Automation Section */}
-                <div className="w-full flex flex-col items-center text-center pt-16 pb-16 mb-8 relative z-10">
-                    {/* Pill Badge with Default Capsule Style */}
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8">
-                        <Sparkles size={14} className="text-[#004370]" />
-                        <span className="text-zinc-300 text-xs sm:text-sm font-medium tracking-wide">
-                            AI Workflow Automation
-                        </span>
-                    </div>
-
-                    {/* Heading */}
-                    <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-tight mb-6 max-w-5xl">
-                        Build Smarter <span className="text-[#004370]">Customer Journeys</span> With AI
-                    </h2>
-
-                    {/* Description */}
-                    <p className="text-zinc-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl font-light">
-                        Design intelligent workflows that automate voice calls, WhatsApp chats, emails, onboarding, and customer engagement. Let Follie handle the complexity while you scale the impact.
-                    </p>
                 </div>
 
                 {/* Bottom CTA Banner */}

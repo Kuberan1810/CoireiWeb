@@ -227,8 +227,8 @@ import F from "../../../../assets/images/products/F.svg"
 import L from "../../../../assets/images/products/L.svg"
 import E from "../../../../assets/images/products/E.svg"
 import I from "../../../../assets/images/products/I.svg"
-import folleihomescreen from "../../../../assets/images/services/folleihomescreen.png"
-import { Sparkles, Bot } from "lucide-react"
+import dashbaordollei from "../../../../assets/images/products/dashbaordollei.svg"
+import { Bot } from "lucide-react"
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger
@@ -293,7 +293,7 @@ export const Hero = () => {
             // Using a custom wrapper prevents Webflow interactions from overriding the transform on page load
             activeGsap.fromTo(".gsap-letters-adjust-wrap",
                 {
-                    y: "28vh"
+                    y: "14vh"
                 },
                 {
                     y: 0,
@@ -301,8 +301,97 @@ export const Hero = () => {
                     scrollTrigger: {
                         trigger: containerRef.current,
                         start: "top top",
-                        end: "28% top",
+                        end: "14% top",
                         scrub: true,
+                    }
+                }
+            )
+
+            // Translate F letter to the left on scroll
+            activeGsap.fromTo(".gsap-letter-f",
+                {
+                    x: 0
+                },
+                {
+                    x: "-25vw",
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "35% top",
+                        scrub: true,
+                    }
+                }
+            )
+
+            // Translate LLEI letters to the right on scroll (does not compress back)
+            activeGsap.fromTo(".gsap-letter-llei",
+                {
+                    x: 0
+                },
+                {
+                    x: "25vw",
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "35% top",
+                        scrub: true,
+                    }
+                }
+            )
+
+            // Fade out the AI Processing capsule when scroll is triggered
+            activeGsap.fromTo(".gsap-capsule-ai",
+                {
+                    opacity: 1,
+                    scale: 1,
+                    pointerEvents: "auto"
+                },
+                {
+                    opacity: 0,
+                    scale: 0.8,
+                    pointerEvents: "none",
+                    ease: "power1.out",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "10% top",
+                        scrub: true,
+                    }
+                }
+            )
+
+            // Translate after-banner-wrapper to center the image on scroll
+            activeGsap.fromTo(".after-banner-wrapper",
+                {
+                    left: 0
+                },
+                {
+                    left: () => {
+                        const fEl = document.querySelector(".gsap-letter-f") as HTMLElement;
+                        const wrapEl = document.querySelector(".after-banner-wrapper") as HTMLElement;
+                        const lleiEls = document.querySelectorAll(".gsap-letter-llei");
+                        if (!fEl || !wrapEl || lleiEls.length === 0) return 0;
+                        
+                        const lastEl = lleiEls[lleiEls.length - 1] as HTMLElement;
+                        
+                        const x_F = fEl.offsetLeft;
+                        const x_wrap = wrapEl.offsetLeft;
+                        const x_last = lastEl.offsetLeft;
+                        const w_wrap = wrapEl.offsetWidth;
+                        const w_last = lastEl.offsetWidth;
+                        
+                        const offset = (x_last + w_last + x_F - 2 * x_wrap - w_wrap) / 2;
+                        return offset;
+                    },
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: true,
+                        invalidateOnRefresh: true,
                     }
                 }
             )
@@ -317,17 +406,31 @@ export const Hero = () => {
         <section ref={containerRef} className="banner-section relative">
             <div className="banner-vh-wrap">
                 <div className="banner-sticky-wrap bg-[#161616]">
-                    
+
 
 
                     {/* Centered Top Content Section */}
                     <div className="gsap-hero-content relative z-20 flex flex-col items-center justify-center text-center w-full max-w-7xl mx-auto px-6 sm:px-10 md:px-15 pt-24 pb-10 pointer-events-auto">
-                        
+
                         {/* 1. Capsule Badge */}
                         <div className="mb-6">
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
-                                <Sparkles size={14} className="text-white/80" />
-                                <span className="text-sm font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                            <div
+                                className="inline-flex items-center justify-center px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                                style={{
+                                    boxShadow: `
+                                        inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                        inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                                    `,
+                                    borderRadius: '2px',
+                                    overflow: 'visible'
+                                }}
+                            >
+                                {/* Top-Right Corner Line */}
+                                <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                                {/* Bottom-Left Corner Line */}
+                                <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                                <span className="text-sm  tracking-wide text-white">
                                     One Platform. Complete customer Intelligence.
                                 </span>
                             </div>
@@ -335,7 +438,7 @@ export const Hero = () => {
 
                         {/* 2. Heading */}
                         <h1 className="text-white text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] mb-5 max-w-4xl">
-                            Track Every <span className="bg-gradient-to-r from-[#3b82f6] to-[#6fc5fe] bg-clip-text text-transparent">Customer</span> Interaction with <br />
+                            Track Every <span className="bg-linear-to-r from-[#3b82f6] to-[#6fc5fe] bg-clip-text text-transparent">Customer</span> Interaction with <br />
                             AI Precision
                         </h1>
 
@@ -359,9 +462,9 @@ export const Hero = () => {
                                 <div className="banner-letters-row">
                                     <div className="banner-letters-flex">
 
-                                        <div className="single-banner-letter _01 relative" style={{ overflow: "visible" }}>
+                                        <div className="gsap-single-banner-letter gsap-_01 gsap-letter-f relative" style={{ overflow: "visible", flexShrink: 0 }}>
                                             {/* Capsule 1: Real-Time Analytics (Top-Left of F) */}
-                                            <div className="absolute left-0 top-[20%] -translate-x-1/2 -translate-y-1/2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                                            <div className="absolute left-0 top-[0%] -translate-x-1/2 translate-y-[-150%] z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-pulse"></span>
                                                 <span className="text-[10px] sm:text-xs font-mono tracking-wider text-[#E3E3E0] whitespace-nowrap">
                                                     Real-Time Analytics
@@ -371,26 +474,28 @@ export const Hero = () => {
                                                 src={F}
                                                 loading="lazy"
                                                 alt="Banner Letter"
-                                                className="banner-letter _01"
+                                                className="gsap-banner-letter gsap-_01"
                                             />
                                         </div>
 
-                                        <div className="after-banner-wrapper">
+                                        <div className="after-banner-wrapper" style={{ flexShrink: 0 }}>
                                             <div className="after-banner-inner">
                                                 <div className="after-banner-wra">
 
-                                                    {/* Content */}
-
-
-
                                                     {/* Background Image */}
-                                                    <div className="banner-bg-wrap">
+                                                    <div className="banner-bg-wrap" style={{ position: "absolute", inset: 0, display: "flex", justifyContent: "center", alignItems: "center" }}>
                                                         <img
                                                             ref={imageRef}
-                                                            src={folleihomescreen}
+                                                            src={dashbaordollei}
                                                             alt="Banner"
                                                             className="banner-bg-image"
-                                                            style={{ willChange: "filter, opacity", objectFit: "contain" }}
+                                                            style={{ 
+                                                                willChange: "filter, opacity", 
+                                                                objectFit: "contain",
+                                                                width: "100%",
+                                                                height: "100%",
+                                                                maxWidth: "100%"
+                                                            }}
                                                         />
                                                     </div>
 
@@ -400,36 +505,36 @@ export const Hero = () => {
                                             <div className="banner-letter-o"></div>
                                         </div>
 
-                                        <div className="single-banner-letter _03">
+                                        <div className="gsap-single-banner-letter gsap-_03 gsap-letter-llei" style={{ flexShrink: 0 }}>
                                             <img
                                                 src={L}
                                                 loading="lazy"
                                                 alt="Banner Letter"
-                                                className="banner-letter _03"
+                                                className="gsap-banner-letter gsap-_03"
                                             />
                                         </div>
 
-                                        <div className="single-banner-letter _03">
+                                        <div className="gsap-single-banner-letter gsap-_03 gsap-letter-llei" style={{ flexShrink: 0 }}>
                                             <img
                                                 src={L}
                                                 loading="lazy"
                                                 alt="Banner Letter"
-                                                className="banner-letter _03"
+                                                className="gsap-banner-letter gsap-_03"
                                             />
                                         </div>
 
-                                        <div className="single-banner-letter _05">
+                                        <div className="gsap-single-banner-letter gsap-_05 gsap-letter-llei" style={{ flexShrink: 0 }}>
                                             <img
                                                 src={E}
                                                 loading="lazy"
                                                 alt="Banner Letter"
-                                                className="banner-letter _05"
+                                                className="gsap-banner-letter gsap-_05"
                                             />
                                         </div>
 
-                                        <div className="single-banner-letter _04 relative" style={{ overflow: "visible" }}>
+                                        <div className="gsap-single-banner-letter gsap-_04 gsap-letter-llei relative" style={{ overflow: "visible", flexShrink: 0 }}>
                                             {/* Capsule 2: AI Processing (Bottom-Right of I) */}
-                                            <div className="absolute right-0 bottom-[20%] translate-x-1/2 translate-y-1/2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                                            <div className="gsap-capsule-ai absolute right-0 bottom-[0%] translate-x-1/2 translate-y-[150%] z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                                                 <Bot size={12} className="text-[#3b82f6]" />
                                                 <span className="text-[10px] sm:text-xs font-mono tracking-wider text-[#E3E3E0] whitespace-nowrap">
                                                     AI Processing
@@ -439,7 +544,7 @@ export const Hero = () => {
                                                 src={I}
                                                 loading="lazy"
                                                 alt="Banner Letter"
-                                                className="banner-letter _04"
+                                                className="gsap-banner-letter gsap-_04"
                                             />
                                         </div>
 

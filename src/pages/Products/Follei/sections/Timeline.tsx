@@ -6,7 +6,7 @@ import {
   Atom, 
   Rocket, 
   Waypoints, 
-  LineChart 
+  LineChart
 } from 'lucide-react';
 import coireiLogo from "../../../../assets/images/products/coirei-logo.svg";
 
@@ -76,38 +76,77 @@ const Timeline: React.FC = () => {
   const scaleY = smoothProgress;
 
   return (
-    <section ref={containerRef} className="relative w-full py-20 lg:py-20 px-6 overflow-x-hidden font-inter-sans">
+    <section className="relative w-full py-20 px-6 overflow-x-hidden font-inter-sans">
       
-      {/* CENTRAL LINE */}
-      <div className="absolute left-12 lg:left-1/2 top-20 lg:top-40 bottom-20 lg:bottom-40 w-[9px] bg-[#161616] border border-white/5 rounded-full -translate-x-1/2 z-0">
-        <motion.div 
-          style={{ scaleY, originY: 0 }} 
-          className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#004370] to-[#4488B7] shadow-[0_1px_12px_rgba(0,67,112,0.5)] rounded-full"
-        />
+      {/* AI Workflow Automation Header */}
+      <div className="w-full flex flex-col items-center text-center pt-8 pb-16 mb-8 relative z-10">
+          {/* Pill Badge */}
+          <div className="mb-8 flex justify-center">
+              <div
+                  className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                  style={{
+                      boxShadow: `
+                          inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                          inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                      `,
+                      borderRadius: '2px',
+                      overflow: 'visible'
+                  }}
+              >
+                  {/* Top-Right Corner Line */}
+                  <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                  {/* Bottom-Left Corner Line */}
+                  <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                  <span className="text-sm tracking-wide text-white">
+                      AI Workflow Automation
+                  </span>
+              </div>
+          </div>
+
+          {/* Heading */}
+          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-tight mb-6 max-w-5xl">
+              Build Smarter <span className="text-[#004370]">Customer Journeys</span> With AI
+          </h2>
+
+          {/* Description */}
+          <p className="text-zinc-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl font-light">
+              Design intelligent workflows that automate voice calls, WhatsApp chats, emails, onboarding, and customer engagement. Let Follie handle the complexity while you scale the impact.
+          </p>
       </div>
 
-      <div className="max-w-7xl mx-auto relative">
-        {/* RESPONSIVE ATOM / LOGO */}
-        <div 
-          data-ns-animate
-          data-offset="80"
-          className="flex justify-start lg:justify-center pl-0 lg:pl-0 mb-20 lg:mb-40 relative z-30"
-        >
-          <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full bg-[#131315]/95 border border-[#004370]/50 flex items-center justify-center shadow-[0_0_40px_rgba(0,67,112,0.3)]">
-            <img 
-              src={coireiLogo} 
-              alt="Coirei Logo" 
-              className="w-[80%] h-[80%] object-contain transition-all duration-700 hover:rotate-[360deg] hover:scale-110 cursor-pointer" 
-              style={{ imageRendering: "-webkit-optimize-contrast" }}
-            />
-          </div>
+      <div ref={containerRef} className="relative w-full">
+        {/* CENTRAL LINE */}
+        <div className="absolute left-12 lg:left-1/2 top-20 lg:top-40 bottom-20 lg:bottom-40 w-[9px] bg-[#161616] border border-white/5 rounded-full -translate-x-1/2 z-0">
+          <motion.div 
+            style={{ scaleY, originY: 0 }} 
+            className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-[#004370] to-[#4488B7] shadow-[0_1px_12px_rgba(0,67,112,0.5)] rounded-full"
+          />
         </div>
 
-        {/* SPACING */}
-        <div className="space-y-24 lg:space-y-32">
-          {timelineData.map((pair, index) => (
-            <TimelineRow key={index} pair={pair} progress={smoothProgress} index={index} isMobile={isMobile} />
-          ))}
+        <div className="max-w-7xl mx-auto relative">
+          {/* RESPONSIVE ATOM / LOGO */}
+          <div 
+            data-ns-animate
+            data-offset="80"
+            className="flex justify-start lg:justify-center pl-0 lg:pl-0 mb-20 lg:mb-40 relative z-30"
+          >
+            <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full bg-[#131315]/95 border border-[#004370]/50 flex items-center justify-center shadow-[0_0_40px_rgba(0,67,112,0.3)]">
+              <img 
+                src={coireiLogo} 
+                alt="Coirei Logo" 
+                className="w-[80%] h-[80%] object-contain transition-all duration-700 hover:rotate-360 hover:scale-110 cursor-pointer" 
+                style={{ imageRendering: "-webkit-optimize-contrast" }}
+              />
+            </div>
+          </div>
+
+          {/* SPACING */}
+          <div className="space-y-24 lg:space-y-32">
+            {timelineData.map((pair, index) => (
+              <TimelineRow key={index} pair={pair} progress={smoothProgress} index={index} isMobile={isMobile} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -135,7 +174,7 @@ const TimelineRow = ({ pair, progress, index, isMobile }: { pair: any, progress:
         </motion.div>
       </div>
 
-      <div className="hidden lg:block w-[1px]" />
+      <div className="hidden lg:block w-px" />
 
       {/* Right Card */}
       <div className="w-full lg:w-1/2 flex justify-start lg:justify-start pl-16 lg:pl-0">

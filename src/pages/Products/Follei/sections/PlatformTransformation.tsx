@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Sparkles, X, Check } from "lucide-react";
+import { X, Check } from "lucide-react";
 import "../../../../App.css";
 import switch1 from "../../../../assets/images/products/switch1.svg";
 import switch2 from "../../../../assets/images/products/switch2.svg";
@@ -58,16 +58,32 @@ export const PlatformTransformation: React.FC = () => {
 
             <div className="max-w-5xl w-full mx-auto relative z-10 flex flex-col items-center">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] mb-6">
-                    <Sparkles size={13} className="text-[#3B82F6]" />
-                    <span className="text-[11px] font-semibold text-white/80 uppercase tracking-[0.15em]">
-                        Platform Transformation
-                    </span>
+                <div className="mb-6 flex justify-center">
+                    <div
+                        className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                        style={{
+                            boxShadow: `
+                                inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                            `,
+                            borderRadius: '2px',
+                            overflow: 'visible'
+                        }}
+                    >
+                        {/* Top-Right Corner Line */}
+                        <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                        {/* Bottom-Left Corner Line */}
+                        <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                        <span className="text-sm tracking-wide text-white">
+                            Platform Transformation
+                        </span>
+                    </div>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-[#E3E3E0] text-center text-3xl sm:text-5xl md:text-[54px] font-bold tracking-tight leading-[1.15] mb-19 max-w-3xl">
-                    From Reactive <span className="text-[#3B82F6] bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] bg-clip-text text-transparent">Operations</span> To Autonomous Growth
+                    From Reactive <span className="bg-linear-to-r from-[#3B82F6] to-[#60A5FA] bg-clip-text text-transparent">Operations</span> To Autonomous Growth
                 </h2>
 
                 {/* Switch Card Container Outer Wrapper */}
@@ -85,7 +101,7 @@ export const PlatformTransformation: React.FC = () => {
                         {/* BEFORE FOLLEI Tab (Left) */}
                         <div
                             onClick={() => setActiveState('before')}
-                            className={`absolute bottom-full right-1/2 mr-[75px] translate-y-[1px] w-[130px] h-[50px] flex items-center justify-end pr-4 cursor-pointer rounded-br-[20px] select-none transition-all duration-500 border-r ${!isAfter
+                            className={`absolute bottom-full right-1/2 mr-[75px] translate-y-px w-[130px] h-[50px] flex items-center justify-end pr-4 cursor-pointer rounded-br-[20px] select-none transition-all duration-500 border-r ${!isAfter
                                 ? 'border-[#DDE5ED] text-white'
                                 : 'border-[#DDE5ED]/20 text-white/30 hover:text-white/60'
                                 }`}
@@ -112,7 +128,7 @@ export const PlatformTransformation: React.FC = () => {
                         {/* AFTER FOLLEI Tab (Right) */}
                         <div
                             onClick={() => setActiveState('after')}
-                            className={`absolute bottom-full left-1/2 ml-[75px] translate-y-[1px] w-[130px] h-[50px] flex items-center justify-start pl-4 cursor-pointer rounded-bl-[20px] select-none transition-all duration-500 border-l ${isAfter
+                            className={`absolute bottom-full left-1/2 ml-[75px] translate-y-px w-[130px] h-[50px] flex items-center justify-start pl-4 cursor-pointer rounded-bl-[20px] select-none transition-all duration-500 border-l ${isAfter
                                 ? 'border-[#DDE5ED] text-white'
                                 : 'border-[#DDE5ED]/20 text-white/30 hover:text-white/60'
                                 }`}

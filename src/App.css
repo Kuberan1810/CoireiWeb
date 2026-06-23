@@ -9503,7 +9503,7 @@ textarea.w-select {
   overflow: hidden;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .gsap-single-banner-letter {
     display: none;
   }
@@ -9596,28 +9596,46 @@ textarea.w-select {
 
 /* How It Works SVG animations */
 @keyframes gsap-radar-sweep {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
 .gsap-radar-sweep-line {
   animation: gsap-radar-sweep 5s linear infinite;
   transform-origin: 120px 120px;
 }
 
 @keyframes gsap-pulse-flow {
-  0% { stroke-dashoffset: 40; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 40;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
+
 .gsap-pulse-line {
   stroke-dasharray: 8, 8;
   animation: gsap-pulse-flow 2s linear infinite;
 }
 
 @keyframes gsap-particle-dash {
-  0% { stroke-dashoffset: 30; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 30;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
+
 .gsap-particle-line {
   stroke-dasharray: 6, 12;
   animation: gsap-particle-dash 1.5s linear infinite;
-}
+}

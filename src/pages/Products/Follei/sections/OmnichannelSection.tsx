@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, MessageSquare, Mail, TrendingUp, Rocket, CreditCard, Network, Sparkles } from "lucide-react";
+import { Phone, MessageSquare, Mail, TrendingUp, Rocket, CreditCard, Network } from "lucide-react";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
 
@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ title, description, icon, innerRef }) => {
         <div 
             ref={innerRef}
             style={{ opacity: 0, willChange: "transform, opacity" }}
-            className="w-full transform-gpu [backface-visibility:hidden]"
+            className="w-full transform-gpu backface-hidden"
         >
             <div className="w-full min-h-[180px] bg-[#161616]/60 backdrop-blur-xl border border-white/10 rounded-[20px] p-5 flex flex-col justify-between hover:border-[#3B82F6]/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 hover:-translate-y-1 group">
                 <div className="flex justify-between items-start gap-3">
@@ -156,11 +156,27 @@ export const OmnichannelSection: React.FC = () => {
                     {/* Row 2 Center - Central Text Block */}
                     <div className="col-span-1 lg:col-span-4 lg:row-start-2 flex flex-col items-center justify-center text-center py-4 lg:py-0">
                         {/* Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] mb-3">
-                            <Sparkles size={14} className="text-[#3B82F6]" />
-                            <span className="text-[11px] font-medium text-white/80 uppercase tracking-widest">
-                                Omnichannel AI Communication
-                            </span>
+                        <div className="mb-3 flex justify-center">
+                            <div
+                                className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                                style={{
+                                    boxShadow: `
+                                        inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                        inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                                    `,
+                                    borderRadius: '2px',
+                                    overflow: 'visible'
+                                }}
+                            >
+                                {/* Top-Right Corner Line */}
+                                <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                                {/* Bottom-Left Corner Line */}
+                                <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                                <span className="text-sm tracking-wide text-white">
+                                    Omnichannel AI Communication
+                                </span>
+                            </div>
                         </div>
  
                         {/* Title */}

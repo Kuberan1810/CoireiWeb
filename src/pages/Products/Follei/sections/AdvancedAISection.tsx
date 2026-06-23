@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
-import { Sparkles } from "lucide-react";
 
 // Image Imports
 import businessIntelligenceImg from "../../../../assets/images/products/businessintelligence.svg";
@@ -52,6 +52,7 @@ const cardsData = [
 
 export const AdvancedAISection: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const container = sectionRef.current;
@@ -268,9 +269,23 @@ export const AdvancedAISection: React.FC = () => {
             <div className="max-w-7xl w-full mx-auto relative z-10">
                 {/* 1. Top Badge */}
                 <div className="mb-6 flex justify-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-                        <Sparkles size={14} className="text-white/80" />
-                        <span className="text-sm font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                    <div
+                        className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                        style={{
+                            boxShadow: `
+                                inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                            `,
+                            borderRadius: '2px',
+                            overflow: 'visible'
+                        }}
+                    >
+                        {/* Top-Right Corner Line */}
+                        <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                        {/* Bottom-Left Corner Line */}
+                        <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                        <span className="text-sm tracking-wide text-white">
                             Introducing the Future of AI Automation
                         </span>
                     </div>
@@ -278,7 +293,7 @@ export const AdvancedAISection: React.FC = () => {
 
                 {/* 2. Heading */}
                 <h2 className="text-white text-3xl sm:text-5xl md:text-[52px] font-bold tracking-tight leading-[1.15] mb-4 max-w-4xl mx-auto">
-                    Where <span className="bg-gradient-to-r from-[#3b82f6] to-[#6fc5fe] bg-clip-text text-transparent">advanced AI</span> meets effortless execution.
+                    Where <span className="bg-linear-to-r from-[#3b82f6] to-[#6fc5fe] bg-clip-text text-transparent">advanced AI</span> meets effortless execution.
                 </h2>
 
                 {/* 3. Subheading */}
@@ -295,7 +310,10 @@ export const AdvancedAISection: React.FC = () => {
                         {/* Card 1: Business Intelligence */}
                         <div className="w-full h-[460px] flex items-center justify-center relative">
                             <div className="gsap-bobber-1 w-full h-full flex items-center justify-center relative">
-                                <div className="gsap-card-1 mx-auto relative flex flex-col overflow-hidden border border-white/5 rounded-[20px]">
+                                <div 
+                                    onClick={() => navigate('/products/follei/business-intelligence')}
+                                    className="gsap-card-1 mx-auto relative flex flex-col overflow-hidden border border-white/5 rounded-[20px] cursor-pointer"
+                                >
                                     {/* Pill content (centered text) */}
                                     <div className="gsap-pill-content-1 absolute inset-0 flex items-center justify-center pointer-events-none">
                                         <span className="text-white text-[15px] font-medium tracking-wide whitespace-nowrap">
@@ -485,7 +503,8 @@ export const AdvancedAISection: React.FC = () => {
                     {cardsData.map((card, idx) => (
                         <div
                             key={idx}
-                            className="gsap-mobile-card relative rounded-[20px] bg-[#181818] border border-white/5 flex flex-col overflow-hidden shadow-xl"
+                            onClick={idx === 0 ? () => navigate('/products/follei/business-intelligence') : undefined}
+                            className={`gsap-mobile-card relative rounded-[20px] bg-[#181818] border border-white/5 flex flex-col overflow-hidden shadow-xl ${idx === 0 ? 'cursor-pointer' : ''}`}
                         >
                             <div className="w-full h-[280px] overflow-hidden">
                                 <img

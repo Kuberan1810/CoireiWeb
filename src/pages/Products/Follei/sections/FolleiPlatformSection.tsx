@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
-import { Sparkles } from "lucide-react";
 
 // Image Imports
-import folleihomescreen from "../../../../assets/images/services/folleihomescreen.png";
-import knowledgeSystemImg from "../../../../assets/images/products/knowledge system.svg";
-import aiWorkforceImg from "../../../../assets/images/products/aiworkforce.svg";
+import folleihomescreen from "../../../../assets/images/products/folleinewdashboard.svg";
+import knowledgeSystemImg from "../../../../assets/images/products/understand.svg";
+import aiWorkforceImg from "../../../../assets/images/products/execute.svg";
 import learningEngineImg from "../../../../assets/images/products/learningengine.svg";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
@@ -128,9 +127,23 @@ export const FolleiPlatformSection: React.FC = () => {
             <div className="max-w-7xl w-full mx-auto relative z-10">
                 {/* Badge with standard capsule style */}
                 <div className="gsap-badge mb-6 flex justify-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
-                        <Sparkles size={14} className="text-white/80" />
-                        <span className="text-sm font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                    <div
+                        className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                        style={{
+                            boxShadow: `
+                                inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                            `,
+                            borderRadius: '2px',
+                            overflow: 'visible'
+                        }}
+                    >
+                        {/* Top-Right Corner Line */}
+                        <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                        {/* Bottom-Left Corner Line */}
+                        <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                        <span className="text-sm tracking-wide text-white">
                             The Follei Platform
                         </span>
                     </div>
@@ -147,7 +160,7 @@ export const FolleiPlatformSection: React.FC = () => {
                 </p>
 
                 {/* Central Image Showcase */}
-                <div ref={imageContainerRef} className="gsap-image-showcase w-full max-w-[760px] mx-auto rounded-2xl border border-white/[0.08] bg-[#1a1a1a]/40 overflow-hidden shadow-2xl p-3 mb-10">
+                <div ref={imageContainerRef} className="gsap-image-showcase w-full max-w-[760px] mx-auto rounded-2xl border border-white/8 bg-[#1a1a1a]/40 overflow-hidden shadow-2xl p-3 mb-10">
                     <img
                         src={currentTab.graphic}
                         alt={currentTab.title}

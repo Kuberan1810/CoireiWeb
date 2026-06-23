@@ -1,6 +1,6 @@
 import React from 'react';
-import { MessageSquare, Brain, TrendingUp, Network, Sparkles } from 'lucide-react';
-import oneAiAgent from '../../../../assets/images/products/oneaiagent.png';
+import { MessageSquare, Brain, TrendingUp, Network } from 'lucide-react';
+import oneAiAgent from '../../../../assets/images/products/folleinewdashboard.svg';
 
 const OverviewSection: React.FC = () => {
     return (
@@ -16,18 +16,27 @@ const OverviewSection: React.FC = () => {
                     <div className="lg:col-span-5 flex flex-col items-start text-left order-2 lg:order-1">
                         
                         {/* Badge with gradient glow border and exact styling */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
-                            <Sparkles size={14} className="text-white/80" />
-                            <span 
-                                style={{ 
-                                    fontSize: '15.5px', 
-                                    lineHeight: '25.6px',
-                                    letterSpacing: '0px'
-                                }} 
-                                className="font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent"
+                        <div className="mb-6 flex justify-start">
+                            <div
+                                className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                                style={{
+                                    boxShadow: `
+                                        inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                        inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                                    `,
+                                    borderRadius: '2px',
+                                    overflow: 'visible'
+                                }}
                             >
-                                Overview
-                            </span>
+                                {/* Top-Right Corner Line */}
+                                <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                                {/* Bottom-Left Corner Line */}
+                                <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                                <span className="text-sm tracking-wide text-white">
+                                    Overview
+                                </span>
+                            </div>
                         </div>
 
                         {/* Heading */}
@@ -105,7 +114,7 @@ const OverviewSection: React.FC = () => {
 
                     {/* Right Column: Dashboard Mockup Image */}
                     <div className="lg:col-span-7 flex items-center justify-center relative order-1 lg:order-2">
-                        <div className="w-full rounded-[24px] border border-white/[0.08] overflow-hidden shadow-2xl relative group">
+                        <div className="w-full rounded-[24px] border border-white/8 overflow-hidden shadow-2xl relative group">
                             <div className="absolute inset-0 bg-transparent transition-colors duration-300 pointer-events-none" />
                             <img 
                                 src={oneAiAgent} 

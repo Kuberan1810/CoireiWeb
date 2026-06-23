@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
-import { Sparkles } from "lucide-react";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
@@ -17,7 +16,7 @@ const TimelineRuler: React.FC<{ activeCenterIdx: number; totalTicks: number }> =
     return (
         <div className="absolute left-0 top-0 bottom-0 w-[200px] flex flex-col justify-between items-start select-none pointer-events-none">
             {/* Main vertical track line */}
-            <div className="absolute left-[4px] top-0 bottom-0 w-[1px] bg-white/10" />
+            <div className="absolute left-[4px] top-0 bottom-0 w-px bg-white/10" />
 
             {/* Individual ruler ticks */}
             {Array.from({ length: totalTicks }).map((_, idx) => {
@@ -41,31 +40,31 @@ const TimelineRuler: React.FC<{ activeCenterIdx: number; totalTicks: number }> =
     );
 };
 
-import captureCustomerImg from "../../../../assets/images/products/capturecustomer.svg";
-import customerIntentImg from "../../../../assets/images/products/customerintent.svg";
-import aiFollowupImg from "../../../../assets/images/products/aifollowup.svg";
-import convertCustomerImg from "../../../../assets/images/products/convertcustomer.svg";
+import customeractivity from "../../../../assets/images/products/capturecustomeractivity.svg";
+import customerIntentImg from "../../../../assets/images/products/cuustomerintend.svg";
+import aifollowup from "../../../../assets/images/products/smartfollowups.svg";
+import convertcustomer from "../../../../assets/images/products/convertmore.svg";
 
 const cards = [
     {
         title: "Capture Customer Activity",
         desc: "Automatically collect leads and track customer activities across your website, forms, calls, WhatsApp, emails, and campaigns. Every interaction is recorded in one centralized platform.",
-        graphic: <img src={captureCustomerImg} alt="Capture Customer Activity" className="w-full aspect-[470/342] object-contain mb-5" />
+        graphic: <img src={customeractivity} alt="Capture Customer Activity" className="w-full aspect-470/342 object-contain mb-5" />
     },
     {
-        title: "Understand Customer Intent",
-        desc: "Our AI engine evaluates customer behavior, engagement history, and conversation patterns to identify purchase intent and prioritize high-value opportunities.",
-        graphic: <img src={customerIntentImg} alt="Understand Customer Intent" className="w-full aspect-[470/342] object-contain mb-5" />
+        title: "Capture Customer Intent",
+        desc: "Automatically collect leads and track customer activities across your website, forms, calls, WhatsApp, emails, and campaigns. Every interaction is recorded in one centralized platform.",
+        graphic: <img src={customerIntentImg} alt="Capture Customer Intent" className="w-full aspect-470/342 object-contain mb-5" />
     },
     {
         title: "Automate Smart Follow-Ups",
         desc: "Trigger intelligent follow-ups through Calls, WhatsApp, SMS, and Email based on customer actions. Deliver the right message at the right time without manual effort.",
-        graphic: <img src={aiFollowupImg} alt="Automate Smart Follow-Ups" className="w-full aspect-[470/342] object-contain mb-5" />
+        graphic: <img src={aifollowup} alt="Automate Smart Follow-Ups" className="w-full aspect-470/342 object-contain mb-5" />
     },
     {
         title: "Convert More Customers",
         desc: "Nurture leads continuously through dynamic, contextual conversations that address user objections and drive final product purchases.",
-        graphic: <img src={convertCustomerImg} alt="Convert More Customers" className="w-full aspect-[470/342] object-contain mb-5" />
+        graphic: <img src={convertcustomer} alt="Convert More Customers" className="w-full aspect-470/342 object-contain mb-5" />
     }
 ];
 
@@ -155,9 +154,23 @@ export const HowItWorks: React.FC = () => {
 
                         {/* 1. Badge */}
                         <div className="mb-6 flex justify-start">
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-                                <Sparkles size={14} className="text-white/80" />
-                                <span className="text-sm font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                            <div
+                                className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                                style={{
+                                    boxShadow: `
+                                        inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                        inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                                    `,
+                                    borderRadius: '2px',
+                                    overflow: 'visible'
+                                }}
+                            >
+                                {/* Top-Right Corner Line */}
+                                <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                                {/* Bottom-Left Corner Line */}
+                                <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                                <span className="text-sm tracking-wide text-white">
                                     How It Works
                                 </span>
                             </div>

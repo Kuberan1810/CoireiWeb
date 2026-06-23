@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
 
 interface FaqItem {
     question: string;
@@ -74,18 +73,27 @@ const FAQSection: React.FC = () => {
                     {/* Left Column: Heading & Badge */}
                     <div className="lg:col-span-5 flex flex-col items-start text-left">
                         {/* Pill Badge with exact capsule styling and default blue text */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8">
-                            <Sparkles size={14} className="text-[#014370]" strokeWidth={2.5} />
-                            <span 
-                                style={{ 
-                                    fontSize: '15.5px', 
-                                    lineHeight: '25.6px',
-                                    letterSpacing: '0px'
-                                }} 
-                                className="font-semibold text-[#014370]"
+                        <div className="mb-8 flex justify-start">
+                            <div
+                                className="inline-flex items-center justify-center gap-2 px-[13px] py-[7px] bg-[#24292C]/20 border border-white/10 text-white select-none relative"
+                                style={{
+                                    boxShadow: `
+                                        inset 0 3px 4px rgba(255, 255, 255, 0.2), 
+                                        inset 0 -3px 4px rgba(255, 255, 255, 0.2)
+                                    `,
+                                    borderRadius: '2px',
+                                    overflow: 'visible'
+                                }}
                             >
-                                FAQs
-                            </span>
+                                {/* Top-Right Corner Line */}
+                                <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
+                                {/* Bottom-Left Corner Line */}
+                                <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
+
+                                <span className="text-sm tracking-wide text-white">
+                                    FAQs
+                                </span>
+                            </div>
                         </div>
 
                         {/* Title */}
@@ -112,7 +120,7 @@ const FAQSection: React.FC = () => {
                                         <div className="flex items-start gap-6">
                                             {/* Gradient Number (Poppins font, top-to-bottom blue-to-white gradient) */}
                                             <span 
-                                                className="w-[50px] sm:w-[60px] font-poppins text-[24px] sm:text-[30px] font-normal leading-[1.2] text-transparent bg-clip-text bg-gradient-to-b from-[#014370] to-[#FFFFFF] shrink-0 pt-0.5 select-none"
+                                                className="w-[50px] sm:w-[60px] font-poppins text-[24px] sm:text-[30px] font-normal leading-[1.2] text-transparent bg-clip-text bg-linear-to-b from-[#014370] to-[#FFFFFF] shrink-0 pt-0.5 select-none"
                                                 style={{ 
                                                     fontFamily: "'Poppins', sans-serif"
                                                 }}
