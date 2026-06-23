@@ -1,20 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Sparkles, X, Check } from "lucide-react";
 import "../../../../App.css";
 import switch1 from "../../../../assets/images/products/switch1.svg";
 import switch2 from "../../../../assets/images/products/switch2.svg";
+import localGsap from "gsap";
+import localScrollTrigger from "gsap/ScrollTrigger";
+
+const gsap: typeof localGsap = (window as any).gsap || localGsap;
+const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
+
+if (!(window as any).gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 export const PlatformTransformation: React.FC = () => {
     const [activeState, setActiveState] = useState<'before' | 'after'>('before');
     const isAfter = activeState === 'after';
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const handleToggle = () => {
         setActiveState(prev => prev === 'before' ? 'after' : 'before');
     };
 
+    useEffect(() => {
+        const activeGsap = (window as any).gsap || localGsap;
+        const activeScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
+
+        if (!(window as any).gsap) {
+            activeGsap.registerPlugin(activeScrollTrigger);
+        }
+
+        if (!containerRef.current) return;
+
+        const trigger = activeScrollTrigger.create({
+            trigger: containerRef.current,
+            start: "top top",
+            end: "+=1000",
+            pin: true,
+            scrub: true,
+            onUpdate: (self: any) => {
+                if (self.progress >= 0.5) {
+                    setActiveState('after');
+                } else {
+                    setActiveState('before');
+                }
+            }
+        });
+
+        return () => {
+            trigger.kill();
+        };
+    }, []);
 
     return (
-        <section className="relative w-full pt-28 pb-4 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616] flex flex-col items-center">
+        <section ref={containerRef} className="relative w-full min-h-screen py-16 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616] flex flex-col items-center justify-center">
 
 
             <div className="max-w-5xl w-full mx-auto relative z-10 flex flex-col items-center">
@@ -27,7 +66,7 @@ export const PlatformTransformation: React.FC = () => {
                 </div>
 
                 {/* Main Heading */}
-                <h2 className="text-[#E3E3E0] text-center text-3xl sm:text-5xl md:text-[54px] font-bold tracking-tight leading-[1.15] mb-28 max-w-3xl">
+                <h2 className="text-[#E3E3E0] text-center text-3xl sm:text-5xl md:text-[54px] font-bold tracking-tight leading-[1.15] mb-19 max-w-3xl">
                     From Reactive <span className="text-[#3B82F6] bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] bg-clip-text text-transparent">Operations</span> To Autonomous Growth
                 </h2>
 
