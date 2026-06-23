@@ -228,6 +228,7 @@ import L from "../../../../assets/images/products/L.svg"
 import E from "../../../../assets/images/products/E.svg"
 import I from "../../../../assets/images/products/I.svg"
 import folleihomescreen from "../../../../assets/images/services/folleihomescreen.png"
+import { Sparkles } from "lucide-react"
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger
@@ -241,10 +242,17 @@ export const Hero = () => {
     const imageRef = useRef<HTMLImageElement>(null)
 
     useEffect(() => {
+        const activeGsap = (window as any).gsap || localGsap
+        const activeScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger
+
+        if (!(window as any).gsap) {
+            activeGsap.registerPlugin(activeScrollTrigger)
+        }
+
         if (!containerRef.current || !imageRef.current) return
 
-        const ctx = gsap.context(() => {
-            gsap.fromTo(imageRef.current,
+        const ctx = activeGsap.context(() => {
+            activeGsap.fromTo(imageRef.current,
                 {
                     filter: "blur(20px)",
                     opacity: 0,
@@ -261,6 +269,43 @@ export const Hero = () => {
                     }
                 }
             )
+
+            // Fade out the hero text content on scroll towards header
+            activeGsap.fromTo(".gsap-hero-content",
+                {
+                    opacity: 1,
+                    y: 0
+                },
+                {
+                    opacity: 0,
+                    y: -150,
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "20% top",
+                        scrub: true,
+                    }
+                }
+            )
+
+            // Translate the custom letters wrapper down on load, and slide it up on scroll to prevent overlap
+            // Using a custom wrapper prevents Webflow interactions from overriding the transform on page load
+            activeGsap.fromTo(".gsap-letters-adjust-wrap",
+                {
+                    y: "28vh"
+                },
+                {
+                    y: 0,
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "28% top",
+                        scrub: true,
+                    }
+                }
+            )
         })
 
         return () => {
@@ -269,90 +314,125 @@ export const Hero = () => {
     }, [])
 
     return (
-        <section ref={containerRef} className="banner-section">
+        <section ref={containerRef} className="banner-section relative">
             <div className="banner-vh-wrap">
-                <div className="banner-sticky-wrap">
-                    <div className="banner-wrapper">
-
-                        {/* Existing banner letters block */}
-                        <div className="banner-letters-wrap">
-                            <div className="banner-letters-row">
-                                <div className="banner-letters-flex">
-
-                                    <div className="single-banner-letter _01">
-                                        <img
-                                            src={F}
-                                            loading="lazy"
-                                            alt="Banner Letter"
-                                            className="banner-letter _01"
-                                        />
-                                    </div>
-
-                                    <div className="after-banner-wrapper">
-                                        <div className="after-banner-inner">
-                                            <div className="after-banner-wra">
-
-                                                {/* Content */}
+                <div className="banner-sticky-wrap bg-[#161616]">
+                    
 
 
-
-                                                {/* Background Image */}
-                                                <div className="banner-bg-wrap">
-                                                    <img
-                                                        ref={imageRef}
-                                                        src={folleihomescreen}
-                                                        alt="Banner"
-                                                        className="banner-bg-image"
-                                                        style={{ willChange: "filter, opacity", objectFit: "contain" }}
-                                                    />
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div className="banner-letter-o"></div>
-                                    </div>
-
-                                    <div className="single-banner-letter _03">
-                                        <img
-                                            src={L}
-                                            loading="lazy"
-                                            alt="Banner Letter"
-                                            className="banner-letter _03"
-                                        />
-                                    </div>
-
-                                    <div className="single-banner-letter _03">
-                                        <img
-                                            src={L}
-                                            loading="lazy"
-                                            alt="Banner Letter"
-                                            className="banner-letter _03"
-                                        />
-                                    </div>
-
-                                    <div className="single-banner-letter _05">
-                                        <img
-                                            src={E}
-                                            loading="lazy"
-                                            alt="Banner Letter"
-                                            className="banner-letter _05"
-                                        />
-                                    </div>
-
-                                    <div className="single-banner-letter _04">
-                                        <img
-                                            src={I}
-                                            loading="lazy"
-                                            alt="Banner Letter"
-                                            className="banner-letter _04"
-                                        />
-                                    </div>
-
-                                </div>
+                    {/* Centered Top Content Section */}
+                    <div className="gsap-hero-content relative z-20 flex flex-col items-center justify-center text-center w-full max-w-7xl mx-auto px-6 sm:px-10 md:px-15 pt-24 pb-10 pointer-events-auto">
+                        
+                        {/* 1. Capsule Badge */}
+                        <div className="mb-6">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+                                <Sparkles size={14} className="text-white/80" />
+                                <span className="text-sm font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                                    One Platform. Complete customer Intelligence.
+                                </span>
                             </div>
                         </div>
 
+                        {/* 2. Heading */}
+                        <h1 className="text-white text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] mb-5 max-w-4xl">
+                            Track Every <span className="bg-gradient-to-r from-[#3b82f6] to-[#6fc5fe] bg-clip-text text-transparent">Customer</span> Interaction with <br />
+                            AI Precision
+                        </h1>
+
+                        {/* 3. Subtext */}
+                        <p className="text-white/60 text-sm sm:text-base max-w-2xl mb-7 leading-relaxed font-light">
+                            Follie helps businesses understand customer behavior, predict user intent, and automate engagement using real-time AI-powered analytics.
+                        </p>
+
+                        {/* 4. CTA Button */}
+                        <div>
+                            <button className="px-6 py-3 bg-[#004370] hover:bg-[#005a9c] text-white rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-blue-900/20 cursor-pointer text-sm tracking-wide">
+                                Request Early Access
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="banner-wrapper">
+                        <div className="gsap-letters-adjust-wrap absolute inset-0">
+                            {/* Existing banner letters block */}
+                            <div className="banner-letters-wrap">
+                                <div className="banner-letters-row">
+                                    <div className="banner-letters-flex">
+
+                                        <div className="single-banner-letter _01">
+                                            <img
+                                                src={F}
+                                                loading="lazy"
+                                                alt="Banner Letter"
+                                                className="banner-letter _01"
+                                            />
+                                        </div>
+
+                                        <div className="after-banner-wrapper">
+                                            <div className="after-banner-inner">
+                                                <div className="after-banner-wra">
+
+                                                    {/* Content */}
+
+
+
+                                                    {/* Background Image */}
+                                                    <div className="banner-bg-wrap">
+                                                        <img
+                                                            ref={imageRef}
+                                                            src={folleihomescreen}
+                                                            alt="Banner"
+                                                            className="banner-bg-image"
+                                                            style={{ willChange: "filter, opacity", objectFit: "contain" }}
+                                                        />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div className="banner-letter-o"></div>
+                                        </div>
+
+                                        <div className="single-banner-letter _03">
+                                            <img
+                                                src={L}
+                                                loading="lazy"
+                                                alt="Banner Letter"
+                                                className="banner-letter _03"
+                                            />
+                                        </div>
+
+                                        <div className="single-banner-letter _03">
+                                            <img
+                                                src={L}
+                                                loading="lazy"
+                                                alt="Banner Letter"
+                                                className="banner-letter _03"
+                                            />
+                                        </div>
+
+                                        <div className="single-banner-letter _05">
+                                            <img
+                                                src={E}
+                                                loading="lazy"
+                                                alt="Banner Letter"
+                                                className="banner-letter _05"
+                                            />
+                                        </div>
+
+                                        <div className="single-banner-letter _04">
+                                            <img
+                                                src={I}
+                                                loading="lazy"
+                                                alt="Banner Letter"
+                                                className="banner-letter _04"
+                                            />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

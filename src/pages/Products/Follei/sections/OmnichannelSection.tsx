@@ -22,19 +22,19 @@ const Card: React.FC<CardProps> = ({ title, description, icon, innerRef }) => {
     return (
         <div 
             ref={innerRef}
-            style={{ opacity: 0 }}
-            className="w-full"
+            style={{ opacity: 0, willChange: "transform, opacity" }}
+            className="w-full transform-gpu [backface-visibility:hidden]"
         >
-            <div className="w-full min-h-[250px] bg-[#161616]/60 backdrop-blur-xl border border-white/10 rounded-[24px] p-8 flex flex-col justify-between hover:border-[#3B82F6]/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 hover:-translate-y-1 group">
-                <div className="flex justify-between items-start gap-4">
-                    <h3 className="text-white text-xl sm:text-[22px] font-medium tracking-tight leading-tight max-w-[180px]">
+            <div className="w-full min-h-[180px] bg-[#161616]/60 backdrop-blur-xl border border-white/10 rounded-[20px] p-5 flex flex-col justify-between hover:border-[#3B82F6]/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 hover:-translate-y-1 group">
+                <div className="flex justify-between items-start gap-3">
+                    <h3 className="text-white text-base sm:text-[18px] font-medium tracking-tight leading-tight max-w-[180px]">
                         {title}
                     </h3>
-                    <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 group-hover:text-white group-hover:border-white/20 transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                    <div className="w-9 h-9 shrink-0 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 group-hover:text-white group-hover:border-white/20 transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
                         {icon}
                     </div>
                 </div>
-                <p className="text-white/60 text-base sm:text-[17px] leading-relaxed mt-6">
+                <p className="text-white/60 text-[13px] sm:text-[14px] leading-relaxed mt-3">
                     {description}
                 </p>
             </div>
@@ -66,7 +66,7 @@ export const OmnichannelSection: React.FC = () => {
                         trigger: section,
                         start: "top top",
                         end: "+=1200", // Length of pinning scroll distance
-                        scrub: 1.2,
+                        scrub: true,
                         pin: true,
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
@@ -74,13 +74,13 @@ export const OmnichannelSection: React.FC = () => {
                 });
 
                 // Radial outwards expansion from the center text block
-                tl.fromTo(card1.current, { x: 300, y: 200, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, ease: "power2.out" }, 0)
-                  .fromTo(card2.current, { x: -300, y: 200, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, ease: "power2.out" }, 0)
-                  .fromTo(card3.current, { x: 400, y: 0, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, ease: "power2.out" }, 0)
-                  .fromTo(card4.current, { x: -400, y: 0, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, ease: "power2.out" }, 0)
-                  .fromTo(card5.current, { x: 300, y: -200, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, ease: "power2.out" }, 0)
-                  .fromTo(card6.current, { x: 0, y: -300, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, ease: "power2.out" }, 0)
-                  .fromTo(card7.current, { x: -300, y: -200, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, ease: "power2.out" }, 0);
+                tl.fromTo(card1.current, { x: 300, y: 200, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, force3D: true, ease: "power2.out" }, 0)
+                  .fromTo(card2.current, { x: -300, y: 200, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, force3D: true, ease: "power2.out" }, 0)
+                  .fromTo(card3.current, { x: 400, y: 0, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, force3D: true, ease: "power2.out" }, 0)
+                  .fromTo(card4.current, { x: -400, y: 0, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, force3D: true, ease: "power2.out" }, 0)
+                  .fromTo(card5.current, { x: 300, y: -200, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, force3D: true, ease: "power2.out" }, 0)
+                  .fromTo(card6.current, { x: 0, y: -300, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, force3D: true, ease: "power2.out" }, 0)
+                  .fromTo(card7.current, { x: -300, y: -200, scale: 0.1, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, force3D: true, ease: "power2.out" }, 0);
             } else {
                 // Mobile: Normal scroll-trigger reveal (no pinning for better mobile UX)
                 const tl = gsap.timeline({
@@ -95,7 +95,7 @@ export const OmnichannelSection: React.FC = () => {
                 const cards = [card1, card2, card3, card4, card5, card6, card7];
                 cards.forEach((card) => {
                     if (card.current) {
-                        tl.fromTo(card.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, ease: "power2.out" }, 0);
+                        tl.fromTo(card.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, force3D: true, ease: "power2.out" }, 0);
                     }
                 });
             }
@@ -115,20 +115,20 @@ export const OmnichannelSection: React.FC = () => {
         <section 
             ref={sectionRef} 
             id="omnichannel-section" 
-            className="relative w-full lg:h-screen lg:min-h-[750px] py-20 lg:py-0 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616] flex items-center justify-center"
+            className="relative w-full lg:h-screen lg:min-h-[660px] py-20 lg:pt-[90px] lg:pb-[30px] px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616] flex items-center justify-center"
         >
             {/* Background decorative glows */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-transparent rounded-full blur-[160px] pointer-events-none z-0" />
             
             <div className="max-w-7xl mx-auto relative z-10 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-stretch">
                     
                     {/* Row 1 Left - AI Voice Calls */}
                     <div className="col-span-1 lg:col-start-3 lg:col-span-4 lg:row-start-1">
                         <Card 
                             title="AI Voice Calls" 
                             description="Seamless outbound and inbound voice interactions powered by natural synthesis."
-                            icon={<Phone size={22} />}
+                            icon={<Phone size={18} />}
                             innerRef={card1}
                         />
                     </div>
@@ -138,7 +138,7 @@ export const OmnichannelSection: React.FC = () => {
                         <Card 
                             title="WhatsApp Automation" 
                             description="Scalable official WhatsApp API integrations for mass personalized engagement."
-                            icon={<MessageSquare size={22} />}
+                            icon={<MessageSquare size={18} />}
                             innerRef={card2}
                         />
                     </div>
@@ -148,28 +148,28 @@ export const OmnichannelSection: React.FC = () => {
                         <Card 
                             title="Smart Email" 
                             description="Dynamically generated email responses that actually sound like your best reps."
-                            icon={<Mail size={22} />}
+                            icon={<Mail size={18} />}
                             innerRef={card3}
                         />
                     </div>
  
                     {/* Row 2 Center - Central Text Block */}
-                    <div className="col-span-1 lg:col-span-4 lg:row-start-2 flex flex-col items-center justify-center text-center py-8 lg:py-0">
+                    <div className="col-span-1 lg:col-span-4 lg:row-start-2 flex flex-col items-center justify-center text-center py-4 lg:py-0">
                         {/* Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] mb-6">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] mb-3">
                             <Sparkles size={14} className="text-[#3B82F6]" />
-                            <span className="text-[12px] font-medium text-white/80 uppercase tracking-widest">
+                            <span className="text-[11px] font-medium text-white/80 uppercase tracking-widest">
                                 Omnichannel AI Communication
                             </span>
                         </div>
  
                         {/* Title */}
-                        <h2 className="text-[#E3E3E0] text-3xl sm:text-4xl md:text-[38px] font-medium leading-[1.2] mb-4 tracking-tight max-w-xs mx-auto">
+                        <h2 className="text-[#E3E3E0] text-2xl sm:text-3xl md:text-[32px] font-medium leading-[1.2] mb-2 tracking-tight max-w-xs mx-auto">
                             Every tool you need, supercharged.
                         </h2>
  
                         {/* Subtitle */}
-                        <p className="text-white/50 text-[15px] sm:text-base leading-relaxed font-light max-w-[280px]">
+                        <p className="text-white/50 text-[13px] sm:text-[14px] leading-relaxed font-light max-w-[280px]">
                             The most complete AI suite for modern enterprises.
                         </p>
                     </div>
@@ -179,7 +179,7 @@ export const OmnichannelSection: React.FC = () => {
                         <Card 
                             title="Customer Retention" 
                             description="AI-driven churn prediction and automated win-back sequences."
-                            icon={<TrendingUp size={22} />}
+                            icon={<TrendingUp size={18} />}
                             innerRef={card4}
                         />
                     </div>
@@ -189,7 +189,7 @@ export const OmnichannelSection: React.FC = () => {
                         <Card 
                             title="Smart Onboarding" 
                             description="Guided, personalized user journeys that ensure long term product adoption."
-                            icon={<Rocket size={22} />}
+                            icon={<Rocket size={18} />}
                             innerRef={card5}
                         />
                     </div>
@@ -199,7 +199,7 @@ export const OmnichannelSection: React.FC = () => {
                         <Card 
                             title="Upsell & Cross-Sell" 
                             description="Machine learning identifies the perfect moment for higher-tier offers."
-                            icon={<CreditCard size={22} />}
+                            icon={<CreditCard size={18} />}
                             innerRef={card6}
                         />
                     </div>
@@ -209,7 +209,7 @@ export const OmnichannelSection: React.FC = () => {
                         <Card 
                             title="Unified Workflow" 
                             description="A drag-and-drop canvas to orchestrate every channel from one map."
-                            icon={<Network size={22} />}
+                            icon={<Network size={18} />}
                             innerRef={card7}
                         />
                     </div>

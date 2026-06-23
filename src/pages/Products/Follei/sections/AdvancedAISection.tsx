@@ -1,14 +1,54 @@
 import React, { useEffect, useRef } from "react";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
-import { Megaphone, Gauge, BarChart3, Brain, Clock, Signal, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+
+// Image Imports
+import businessIntelligenceImg from "../../../../assets/images/products/businessintelligence.svg";
+import knowledgeSystemImg from "../../../../assets/images/products/knowledge system.svg";
+import revenueIntelligenceImg from "../../../../assets/images/products/revenueintelligence.svg";
+import customerIntelligenceImg from "../../../../assets/images/products/customerintelligence.svg";
+import aiWorkforceImg from "../../../../assets/images/products/aiworkforce.svg";
+import learningEngineImg from "../../../../assets/images/products/learningengine.svg";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
 
-if (!(window as any).gsap) {
-    gsap.registerPlugin(ScrollTrigger);
-}
+// Register ScrollTrigger plugin unconditionally to ensure it is active on the global GSAP instance
+gsap.registerPlugin(ScrollTrigger);
+
+const cardsData = [
+    {
+        title: "Business Intelligence",
+        description: "Learns your business from websites, documents, CRM, ERP, emails, and communication channels.",
+        graphic: businessIntelligenceImg
+    },
+    {
+        title: "Knowledge System",
+        description: "Creates a unified knowledge layer from products, pricing, policies, and customer interactions.",
+        graphic: knowledgeSystemImg
+    },
+    {
+        title: "Revenue Intelligence",
+        description: "Identifies buying intent, prioritizes leads, and predicts conversion opportunities.",
+        graphic: revenueIntelligenceImg
+    },
+    {
+        title: "Customer Intelligence",
+        description: "Identifies buying intent, prioritizes leads, and predicts conversion opportunities.",
+        graphic: customerIntelligenceImg
+    },
+    {
+        title: "AI Workforce",
+        description: "Deploys AI workers across sales, support, collections, renewals, and customer success.",
+        graphic: aiWorkforceImg
+    },
+    {
+        title: "Learning Engine",
+        description: "Continuously learns from every interaction to improve decisions and outcomes.",
+        graphic: learningEngineImg
+    }
+];
 
 export const AdvancedAISection: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -47,7 +87,7 @@ export const AdvancedAISection: React.FC = () => {
                             trigger: container,
                             start: "top top",
                             end: "+=180%", // Pinned scroll duration
-                            scrub: 1.2,
+                            scrub: true,
                             pin: true,
                             anticipatePin: 1,
                             invalidateOnRefresh: true,
@@ -59,7 +99,7 @@ export const AdvancedAISection: React.FC = () => {
                         transformOrigin: "center center",
                     });
 
-                    // Card 1: Smart Campaign Builder
+                    // Card 1: Business Intelligence
                     tl.fromTo(card1,
                         {
                             x: -300,
@@ -77,19 +117,20 @@ export const AdvancedAISection: React.FC = () => {
                             x: 0,
                             y: 0,
                             width: "100%",
-                            height: "260px",
-                            borderRadius: "24px",
-                            padding: "32px",
+                            height: "460px",
+                            borderRadius: "20px",
+                            padding: "0px",
                             backgroundColor: "#181818",
                             borderColor: "rgba(255, 255, 255, 0.05)",
                             backdropFilter: "blur(0px)",
                             boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
+                            force3D: true,
                             ease: "power2.inOut"
                         },
                         0
                     );
 
-                    // Card 2: Real-Time AI Insights
+                    // Card 2: Knowledge System
                     tl.fromTo(card2,
                         {
                             x: 0,
@@ -107,19 +148,20 @@ export const AdvancedAISection: React.FC = () => {
                             x: 0,
                             y: 0,
                             width: "100%",
-                            height: "260px",
-                            borderRadius: "24px",
-                            padding: "32px",
+                            height: "460px",
+                            borderRadius: "20px",
+                            padding: "0px",
                             backgroundColor: "#181818",
                             borderColor: "rgba(255, 255, 255, 0.05)",
                             backdropFilter: "blur(0px)",
                             boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
+                            force3D: true,
                             ease: "power2.inOut"
                         },
                         0
                     );
 
-                    // Card 3: Data Driven Decision Making
+                    // Card 3: Revenue Intelligence
                     tl.fromTo(card3,
                         {
                             x: 300,
@@ -137,13 +179,14 @@ export const AdvancedAISection: React.FC = () => {
                             x: 0,
                             y: 0,
                             width: "100%",
-                            height: "260px",
-                            borderRadius: "24px",
-                            padding: "32px",
+                            height: "460px",
+                            borderRadius: "20px",
+                            padding: "0px",
                             backgroundColor: "#181818",
                             borderColor: "rgba(255, 255, 255, 0.05)",
                             backdropFilter: "blur(0px)",
                             boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
+                            force3D: true,
                             ease: "power2.inOut"
                         },
                         0
@@ -178,6 +221,7 @@ export const AdvancedAISection: React.FC = () => {
                             opacity: 1,
                             scale: 1,
                             stagger: 0.15,
+                            force3D: true,
                             ease: "power2.out"
                         },
                         0.35
@@ -196,6 +240,7 @@ export const AdvancedAISection: React.FC = () => {
                                 stagger: 0.15,
                                 ease: "power2.out",
                                 overwrite: "auto",
+                                force3D: true,
                                 duration: 0.8
                             });
                         },
@@ -237,7 +282,7 @@ export const AdvancedAISection: React.FC = () => {
                 </h2>
 
                 {/* 3. Subheading */}
-                <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto font-light mb-32 md:mb-[280px] leading-relaxed">
+                <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto font-light mb-16 md:mb-[140px] leading-relaxed">
                     Transform overwhelming data into meaningful actions with precision and speed.
                 </p>
 
@@ -247,97 +292,112 @@ export const AdvancedAISection: React.FC = () => {
                     {/* Row 1: Morphing Pills to Cards */}
                     <div className="grid grid-cols-3 gap-6 text-left w-full items-stretch justify-center relative">
 
-                        {/* Card 1: Smart Campaign Builder */}
-                        <div className="w-full h-[260px] flex items-center justify-center relative">
+                        {/* Card 1: Business Intelligence */}
+                        <div className="w-full h-[460px] flex items-center justify-center relative">
                             <div className="gsap-bobber-1 w-full h-full flex items-center justify-center relative">
-                                <div className="gsap-card-1 mx-auto relative flex flex-col justify-between overflow-hidden border">
+                                <div className="gsap-card-1 mx-auto relative flex flex-col overflow-hidden border border-white/5 rounded-[20px]">
                                     {/* Pill content (centered text) */}
                                     <div className="gsap-pill-content-1 absolute inset-0 flex items-center justify-center pointer-events-none">
                                         <span className="text-white text-[15px] font-medium tracking-wide whitespace-nowrap">
-                                            Smart Campaign Builder
+                                            Business Intelligence
                                         </span>
                                     </div>
 
                                     {/* Card content (rich card layout) */}
-                                    <div className="gsap-card-content-1 opacity-0 w-full h-full flex flex-col justify-between pointer-events-none">
-                                        <div className="flex items-start justify-between w-full">
-                                            <div className="flex gap-4 items-center">
-                                                <div className="w-[3px] h-10 bg-[#3b82f6] rounded-full" />
-                                                <h3 className="text-white text-xl font-bold leading-tight max-w-[180px]">
-                                                    Smart Campaign Builder
-                                                </h3>
+                                    <div className="gsap-card-content-1 opacity-0 absolute inset-0 flex flex-col pointer-events-none">
+                                        <div className="w-full h-full flex flex-col">
+                                            {/* Illustration/Graphic Container */}
+                                            <div className="w-full h-[280px] overflow-hidden">
+                                                <img
+                                                    src={businessIntelligenceImg}
+                                                    alt="Business Intelligence"
+                                                    className="w-full h-full object-cover"
+                                                />
                                             </div>
-                                            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                                <Megaphone size={22} />
+                                            {/* Text block with padding */}
+                                            <div className="p-5 flex flex-col justify-start">
+                                                <h3 className="text-white text-xl sm:text-[22px] font-medium tracking-tight mb-2.5 text-left">
+                                                    Business Intelligence
+                                                </h3>
+                                                <p className="text-white/60 text-sm sm:text-base leading-relaxed font-light text-left">
+                                                    Learns your business from websites, documents, CRM, ERP, emails, and communication channels.
+                                                </p>
                                             </div>
                                         </div>
-                                        <p className="text-white/60 text-base leading-relaxed font-light mt-6">
-                                            Create AI-powered workflows and automate customer journeys with intelligent triggers and predictive insights.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Card 2: Real-Time AI Insights */}
-                        <div className="w-full h-[260px] flex items-center justify-center relative">
+                        {/* Card 2: Knowledge System */}
+                        <div className="w-full h-[460px] flex items-center justify-center relative">
                             <div className="gsap-bobber-2 w-full h-full flex items-center justify-center relative">
-                                <div className="gsap-card-2 mx-auto relative flex flex-col justify-between overflow-hidden border">
+                                <div className="gsap-card-2 mx-auto relative flex flex-col overflow-hidden border border-white/5 rounded-[20px]">
                                     {/* Pill content (centered text) */}
                                     <div className="gsap-pill-content-2 absolute inset-0 flex items-center justify-center pointer-events-none">
                                         <span className="text-white text-[15px] font-medium tracking-wide whitespace-nowrap">
-                                            Real-Time AI Insights
+                                            Knowledge System
                                         </span>
                                     </div>
 
                                     {/* Card content (rich card layout) */}
-                                    <div className="gsap-card-content-2 opacity-0 w-full h-full flex flex-col justify-between pointer-events-none">
-                                        <div className="flex items-start justify-between w-full">
-                                            <div className="flex gap-4 items-center">
-                                                <div className="w-[3px] h-10 bg-[#3b82f6] rounded-full" />
-                                                <h3 className="text-white text-xl font-bold leading-tight max-w-[180px]">
-                                                    Real-Time AI Insights
-                                                </h3>
+                                    <div className="gsap-card-content-2 opacity-0 absolute inset-0 flex flex-col pointer-events-none">
+                                        <div className="w-full h-full flex flex-col">
+                                            {/* Illustration/Graphic Container */}
+                                            <div className="w-full h-[280px] overflow-hidden">
+                                                <img
+                                                    src={knowledgeSystemImg}
+                                                    alt="Knowledge System"
+                                                    className="w-full h-full object-cover"
+                                                />
                                             </div>
-                                            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                                <Gauge size={22} />
+                                            {/* Text block with padding */}
+                                            <div className="p-5 flex flex-col justify-start">
+                                                <h3 className="text-white text-xl sm:text-[22px] font-medium tracking-tight mb-2.5 text-left">
+                                                    Knowledge System
+                                                </h3>
+                                                <p className="text-white/60 text-sm sm:text-base leading-relaxed font-light text-left">
+                                                    Creates a unified knowledge layer from products, pricing, policies, and customer interactions.
+                                                </p>
                                             </div>
                                         </div>
-                                        <p className="text-white/60 text-base leading-relaxed font-light mt-6">
-                                            Monitor conversations as they happen, predict drop-off triggers, and optimize system workflows instantly.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Card 3: Data Driven Decision Making */}
-                        <div className="w-full h-[260px] flex items-center justify-center relative">
+                        {/* Card 3: Revenue Intelligence */}
+                        <div className="w-full h-[460px] flex items-center justify-center relative">
                             <div className="gsap-bobber-3 w-full h-full flex items-center justify-center relative">
-                                <div className="gsap-card-3 mx-auto relative flex flex-col justify-between overflow-hidden border">
+                                <div className="gsap-card-3 mx-auto relative flex flex-col overflow-hidden border border-white/5 rounded-[20px]">
                                     {/* Pill content (centered text) */}
                                     <div className="gsap-pill-content-3 absolute inset-0 flex items-center justify-center pointer-events-none">
                                         <span className="text-white text-[15px] font-medium tracking-wide whitespace-nowrap">
-                                            Data Driven Decision Making
+                                            Revenue Intelligence
                                         </span>
                                     </div>
 
                                     {/* Card content (rich card layout) */}
-                                    <div className="gsap-card-content-3 opacity-0 w-full h-full flex flex-col justify-between pointer-events-none">
-                                        <div className="flex items-start justify-between w-full">
-                                            <div className="flex gap-4 items-center">
-                                                <div className="w-[3px] h-10 bg-[#3b82f6] rounded-full" />
-                                                <h3 className="text-white text-xl font-bold leading-tight max-w-[180px]">
-                                                    Data Driven Decisions
-                                                </h3>
+                                    <div className="gsap-card-content-3 opacity-0 absolute inset-0 flex flex-col pointer-events-none">
+                                        <div className="w-full h-full flex flex-col">
+                                            {/* Illustration/Graphic Container */}
+                                            <div className="w-full h-[280px] overflow-hidden">
+                                                <img
+                                                    src={revenueIntelligenceImg}
+                                                    alt="Revenue Intelligence"
+                                                    className="w-full h-full object-cover"
+                                                />
                                             </div>
-                                            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                                <BarChart3 size={22} />
+                                            {/* Text block with padding */}
+                                            <div className="p-5 flex flex-col justify-start">
+                                                <h3 className="text-white text-xl sm:text-[22px] font-medium tracking-tight mb-2.5 text-left">
+                                                    Revenue Intelligence
+                                                </h3>
+                                                <p className="text-white/60 text-sm sm:text-base leading-relaxed font-light text-left">
+                                                    Identifies buying intent, prioritizes leads, and predicts conversion opportunities.
+                                                </p>
                                             </div>
                                         </div>
-                                        <p className="text-white/60 text-base leading-relaxed font-light mt-6">
-                                            Turn historical customer interaction logs into clear business strategies with zero configuration.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -348,63 +408,72 @@ export const AdvancedAISection: React.FC = () => {
                     {/* Row 2: Bottom 3 sliding up cards */}
                     <div className="grid grid-cols-3 gap-6 text-left w-full mt-6">
 
-                        {/* Card 4: Behavioral Intelligence */}
-                        <div className="gsap-bottom-card relative rounded-3xl bg-[#181818] border border-white/5 p-8 flex flex-col justify-between overflow-hidden shadow-2xl transition-all duration-300 hover:border-[#6FC5FE]/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] h-[260px]">
-                            <div className="relative z-10 w-full h-full flex flex-col justify-between">
-                                <div className="flex items-start justify-between w-full">
-                                    <div className="flex gap-4 items-center">
-                                        <div className="w-[3px] h-10 bg-[#3b82f6] rounded-full" />
-                                        <h3 className="text-white text-xl font-bold leading-tight max-w-[180px]">
-                                            Behavioral Intelligence
-                                        </h3>
-                                    </div>
-                                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                        <Brain size={22} />
-                                    </div>
+                        {/* Card 4: Customer Intelligence */}
+                        <div className="gsap-bottom-card relative rounded-[20px] bg-[#181818] border border-white/5 flex flex-col overflow-hidden shadow-2xl transition-all duration-300 hover:border-[#3b82f6]/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] h-[460px] group">
+                            <div className="w-full h-full flex flex-col">
+                                {/* Illustration/Graphic Container */}
+                                <div className="w-full h-[280px] overflow-hidden">
+                                    <img
+                                        src={customerIntelligenceImg}
+                                        alt="Customer Intelligence"
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
                                 </div>
-                                <p className="text-white/60 text-base leading-relaxed font-light">
-                                    Track user clicks, page visits, and response delays to dynamically adapt AI chat agents on the fly.
-                                </p>
+                                {/* Text Container */}
+                                <div className="p-5 flex flex-col justify-start">
+                                    <h3 className="text-white text-xl sm:text-[22px] font-medium tracking-tight mb-2.5 text-left">
+                                        Customer Intelligence
+                                    </h3>
+                                    <p className="text-white/60 text-sm sm:text-base leading-relaxed font-light text-left">
+                                        Identifies buying intent, prioritizes leads, and predicts conversion opportunities.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Card 5: Perfect Timing */}
-                        <div className="gsap-bottom-card relative rounded-3xl bg-[#181818] border border-white/5 p-8 flex flex-col justify-between overflow-hidden shadow-2xl transition-all duration-300 hover:border-[#6FC5FE]/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] h-[260px]">
-                            <div className="relative z-10 w-full h-full flex flex-col justify-between">
-                                <div className="flex items-start justify-between w-full">
-                                    <div className="flex gap-4 items-center">
-                                        <div className="w-[3px] h-10 bg-[#3b82f6] rounded-full" />
-                                        <h3 className="text-white text-xl font-bold leading-tight max-w-[180px]">
-                                            Perfect Timing
-                                        </h3>
-                                    </div>
-                                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                        <Clock size={22} />
-                                    </div>
+                        {/* Card 5: AI Workforce */}
+                        <div className="gsap-bottom-card relative rounded-[20px] bg-[#181818] border border-white/5 flex flex-col overflow-hidden shadow-2xl transition-all duration-300 hover:border-[#3b82f6]/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] h-[460px] group">
+                            <div className="w-full h-full flex flex-col">
+                                {/* Illustration/Graphic Container */}
+                                <div className="w-full h-[280px] overflow-hidden">
+                                    <img
+                                        src={aiWorkforceImg}
+                                        alt="AI Workforce"
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
                                 </div>
-                                <p className="text-white/60 text-base leading-relaxed font-light">
-                                    Trigger automated lead nurturing follow-ups exactly when a visitor is most active on your app.
-                                </p>
+                                {/* Text Container */}
+                                <div className="p-5 flex flex-col justify-start">
+                                    <h3 className="text-white text-xl sm:text-[22px] font-medium tracking-tight mb-2.5 text-left">
+                                        AI Workforce
+                                    </h3>
+                                    <p className="text-white/60 text-sm sm:text-base leading-relaxed font-light text-left">
+                                        Deploys AI workers across sales, support, collections, renewals, and customer success.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Card 6: Omnichannel Sync */}
-                        <div className="gsap-bottom-card relative rounded-3xl bg-[#181818] border border-white/5 p-8 flex flex-col justify-between overflow-hidden shadow-2xl transition-all duration-300 hover:border-[#6FC5FE]/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] h-[260px]">
-                            <div className="relative z-10 w-full h-full flex flex-col justify-between">
-                                <div className="flex items-start justify-between w-full">
-                                    <div className="flex gap-4 items-center">
-                                        <div className="w-[3px] h-10 bg-[#3b82f6] rounded-full" />
-                                        <h3 className="text-white text-xl font-bold leading-tight max-w-[180px]">
-                                            Omnichannel Sync
-                                        </h3>
-                                    </div>
-                                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                        <Signal size={22} />
-                                    </div>
+                        {/* Card 6: Learning Engine */}
+                        <div className="gsap-bottom-card relative rounded-[20px] bg-[#181818] border border-white/5 flex flex-col overflow-hidden shadow-2xl transition-all duration-300 hover:border-[#3b82f6]/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] h-[460px] group">
+                            <div className="w-full h-full flex flex-col">
+                                {/* Illustration/Graphic Container */}
+                                <div className="w-full h-[280px] overflow-hidden">
+                                    <img
+                                        src={learningEngineImg}
+                                        alt="Learning Engine"
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
                                 </div>
-                                <p className="text-white/60 text-base leading-relaxed font-light">
-                                    Unify chat logs from WhatsApp, SMS, Web, and Email into a single consolidated interface automatically.
-                                </p>
+                                {/* Text Container */}
+                                <div className="p-5 flex flex-col justify-start">
+                                    <h3 className="text-white text-xl sm:text-[22px] font-medium tracking-tight mb-2.5 text-left">
+                                        Learning Engine
+                                    </h3>
+                                    <p className="text-white/60 text-sm sm:text-base leading-relaxed font-light text-left">
+                                        Continuously learns from every interaction to improve decisions and outcomes.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
@@ -413,115 +482,28 @@ export const AdvancedAISection: React.FC = () => {
 
                 {/* Mobile Version: Stacked list of 6 clean feature cards (no pinning) */}
                 <div className="grid grid-cols-1 gap-6 text-left md:hidden w-full">
-
-                    {/* Card 1 */}
-                    <div className="gsap-mobile-card relative rounded-2xl bg-[#181818] border border-white/5 p-6 flex flex-col justify-between overflow-hidden shadow-xl">
-                        <div className="flex items-start justify-between w-full mb-6">
-                            <div className="flex gap-3 items-center">
-                                <div className="w-[3px] h-8 bg-[#3b82f6] rounded-full" />
-                                <h3 className="text-white text-lg font-bold leading-tight">
-                                    Smart Campaign Builder
-                                </h3>
+                    {cardsData.map((card, idx) => (
+                        <div
+                            key={idx}
+                            className="gsap-mobile-card relative rounded-[20px] bg-[#181818] border border-white/5 flex flex-col overflow-hidden shadow-xl"
+                        >
+                            <div className="w-full h-[280px] overflow-hidden">
+                                <img
+                                    src={card.graphic}
+                                    alt={card.title}
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
-                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                <Megaphone size={18} />
+                            <div className="p-5 flex flex-col justify-start">
+                                <h3 className="text-white text-lg font-bold leading-tight mb-2.5">
+                                    {card.title}
+                                </h3>
+                                <p className="text-white/60 text-sm leading-relaxed font-light">
+                                    {card.description}
+                                </p>
                             </div>
                         </div>
-                        <p className="text-white/60 text-sm leading-relaxed font-light">
-                            Create AI-powered workflows and automate customer journeys with intelligent triggers and predictive insights.
-                        </p>
-                    </div>
-
-                    {/* Card 2 */}
-                    <div className="gsap-mobile-card relative rounded-2xl bg-[#181818] border border-white/5 p-6 flex flex-col justify-between overflow-hidden shadow-xl">
-                        <div className="flex items-start justify-between w-full mb-6">
-                            <div className="flex gap-3 items-center">
-                                <div className="w-[3px] h-8 bg-[#3b82f6] rounded-full" />
-                                <h3 className="text-white text-lg font-bold leading-tight">
-                                    Real-Time AI Insights
-                                </h3>
-                            </div>
-                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                <Gauge size={18} />
-                            </div>
-                        </div>
-                        <p className="text-white/60 text-sm leading-relaxed font-light">
-                            Monitor conversations as they happen, predict drop-off triggers, and optimize system workflows instantly.
-                        </p>
-                    </div>
-
-                    {/* Card 3 */}
-                    <div className="gsap-mobile-card relative rounded-2xl bg-[#181818] border border-white/5 p-6 flex flex-col justify-between overflow-hidden shadow-xl">
-                        <div className="flex items-start justify-between w-full mb-6">
-                            <div className="flex gap-3 items-center">
-                                <div className="w-[3px] h-8 bg-[#3b82f6] rounded-full" />
-                                <h3 className="text-white text-lg font-bold leading-tight">
-                                    Data Driven Decisions
-                                </h3>
-                            </div>
-                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                <BarChart3 size={18} />
-                            </div>
-                        </div>
-                        <p className="text-white/60 text-sm leading-relaxed font-light">
-                            Turn historical customer interaction logs into clear business strategies with zero configuration.
-                        </p>
-                    </div>
-
-                    {/* Card 4 */}
-                    <div className="gsap-mobile-card relative rounded-2xl bg-[#181818] border border-white/5 p-6 flex flex-col justify-between overflow-hidden shadow-xl">
-                        <div className="flex items-start justify-between w-full mb-6">
-                            <div className="flex gap-3 items-center">
-                                <div className="w-[3px] h-8 bg-[#3b82f6] rounded-full" />
-                                <h3 className="text-white text-lg font-bold leading-tight">
-                                    Behavioral Intelligence
-                                </h3>
-                            </div>
-                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                <Brain size={18} />
-                            </div>
-                        </div>
-                        <p className="text-white/60 text-sm leading-relaxed font-light">
-                            Track user clicks, page visits, and response delays to dynamically adapt AI chat agents on the fly.
-                        </p>
-                    </div>
-
-                    {/* Card 5 */}
-                    <div className="gsap-mobile-card relative rounded-2xl bg-[#181818] border border-white/5 p-6 flex flex-col justify-between overflow-hidden shadow-xl">
-                        <div className="flex items-start justify-between w-full mb-6">
-                            <div className="flex gap-3 items-center">
-                                <div className="w-[3px] h-8 bg-[#3b82f6] rounded-full" />
-                                <h3 className="text-white text-lg font-bold leading-tight">
-                                    Perfect Timing
-                                </h3>
-                            </div>
-                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                <Clock size={18} />
-                            </div>
-                        </div>
-                        <p className="text-white/60 text-sm leading-relaxed font-light">
-                            Trigger automated lead nurturing follow-ups exactly when a visitor is most active on your app.
-                        </p>
-                    </div>
-
-                    {/* Card 6 */}
-                    <div className="gsap-mobile-card relative rounded-2xl bg-[#181818] border border-white/5 p-6 flex flex-col justify-between overflow-hidden shadow-xl">
-                        <div className="flex items-start justify-between w-full mb-6">
-                            <div className="flex gap-3 items-center">
-                                <div className="w-[3px] h-8 bg-[#3b82f6] rounded-full" />
-                                <h3 className="text-white text-lg font-bold leading-tight">
-                                    Omnichannel Sync
-                                </h3>
-                            </div>
-                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#3b82f6]">
-                                <Signal size={18} />
-                            </div>
-                        </div>
-                        <p className="text-white/60 text-sm leading-relaxed font-light">
-                            Unify chat logs from WhatsApp, SMS, Web, and Email into a single consolidated interface automatically.
-                        </p>
-                    </div>
-
+                    ))}
                 </div>
 
             </div>

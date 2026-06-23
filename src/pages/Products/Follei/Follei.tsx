@@ -2,9 +2,12 @@
 import Hero from "./sections/Hero";
 import VoiceAgentSection from "./sections/VoiceAgentSection";
 import OverviewSection from "./sections/OverviewSection";
+import PlatformTransformation from "./sections/PlatformTransformation";
 import OmnichannelSection from "./sections/OmnichannelSection";
 import AdvancedAISection from "./sections/AdvancedAISection";
 import HowItWorks from "./sections/HowItWorks";
+import AIWorkforceSection from "./sections/AIWorkforceSection";
+import FolleiPlatformSection from "./sections/FolleiPlatformSection";
 import Integration from "./sections/Integration";
 import Timeline from "./sections/Timeline";
 import InsightsCTASection from "./sections/InsightsCTASection";
@@ -44,9 +47,12 @@ const Follei = () => {
                 <Hero />
                 <VoiceAgentSection />
                 <OverviewSection />
+                <PlatformTransformation />
                 <OmnichannelSection />
                 <AdvancedAISection />
                 <HowItWorks />
+                <AIWorkforceSection />
+                <FolleiPlatformSection />
                 <Integration />
                 <Timeline />
                 <InsightsCTASection />
