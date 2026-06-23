@@ -358,28 +358,15 @@ export const Hero = () => {
                             <div className="banner-letters-wrap">
                                 <div className="banner-letters-row">
                                     <div className="banner-letters-flex">
-                                        
-                                        {/* Horizontal anchor lines passing through the capsules */}
-                                        <div className="absolute left-[-100vw] right-[-100vw] h-[1px] bg-white/5 pointer-events-none z-10" style={{ top: "20%" }} />
-                                        <div className="absolute left-[-100vw] right-[-100vw] h-[1px] bg-white/5 pointer-events-none z-10" style={{ bottom: "20%" }} />
 
-                                        {/* Capsule 1: Real-Time Analytics (Top-Left of F) */}
-                                        <div className="absolute left-[0%] top-[20%] -translate-x-1/2 -translate-y-1/2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-pulse"></span>
-                                            <span className="text-[10px] sm:text-xs font-mono tracking-wider text-[#E3E3E0] whitespace-nowrap">
-                                                Real-Time Analytics
-                                            </span>
-                                        </div>
-
-                                        {/* Capsule 2: AI Processing (Bottom-Right of I) */}
-                                        <div className="absolute right-[0%] bottom-[20%] translate-x-1/2 translate-y-1/2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
-                                            <Bot size={12} className="text-[#3b82f6]" />
-                                            <span className="text-[10px] sm:text-xs font-mono tracking-wider text-[#E3E3E0] whitespace-nowrap">
-                                                AI Processing
-                                            </span>
-                                        </div>
-
-                                        <div className="single-banner-letter _01">
+                                        <div className="single-banner-letter _01 relative" style={{ overflow: "visible" }}>
+                                            {/* Capsule 1: Real-Time Analytics (Top-Left of F) */}
+                                            <div className="absolute left-0 top-[20%] -translate-x-1/2 -translate-y-1/2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-pulse"></span>
+                                                <span className="text-[10px] sm:text-xs font-mono tracking-wider text-[#E3E3E0] whitespace-nowrap">
+                                                    Real-Time Analytics
+                                                </span>
+                                            </div>
                                             <img
                                                 src={F}
                                                 loading="lazy"
@@ -440,7 +427,14 @@ export const Hero = () => {
                                             />
                                         </div>
 
-                                        <div className="single-banner-letter _04">
+                                        <div className="single-banner-letter _04 relative" style={{ overflow: "visible" }}>
+                                            {/* Capsule 2: AI Processing (Bottom-Right of I) */}
+                                            <div className="absolute right-0 bottom-[20%] translate-x-1/2 translate-y-1/2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                                                <Bot size={12} className="text-[#3b82f6]" />
+                                                <span className="text-[10px] sm:text-xs font-mono tracking-wider text-[#E3E3E0] whitespace-nowrap">
+                                                    AI Processing
+                                                </span>
+                                            </div>
                                             <img
                                                 src={I}
                                                 loading="lazy"
