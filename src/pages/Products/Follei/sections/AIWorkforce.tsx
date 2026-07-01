@@ -1,9 +1,7 @@
+import React from "react";
 
+export const AIWorkforce: React.FC = () => {
+    return null;
+};
 
-const AIWorkforce = () => {
-  return (
-    <div>AIWorkforce</div>
-  )
-}
-
-export default AIWorkforce
+export default AIWorkforce;

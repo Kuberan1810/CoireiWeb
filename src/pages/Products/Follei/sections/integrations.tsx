@@ -1,8 +1,8 @@
 
 const integrations = () => {
-  return (
-    <div>integrations</div>
-  )
+    return (
+        <div>integrations</div>
+    )
 }
 
 export default integrations
