@@ -13,7 +13,7 @@ import Folleiplatform from "./sections/Folleiplatform";
 import Automation from "./sections/Automation";
 import AIWorkforce from "./sections/AIWorkforce";
 import Faq from "./sections/Faq";
-import HowWeWork from "./sections/howwework"
+import HowWeWork from "./sections/HowWeWorks";
 import Integrations from "./sections/integrations";
 
 const Follei = () => {
@@ -31,7 +31,7 @@ const Follei = () => {
     }, []);
 
     return (
-        <div className="overflow-x-clip bg-[#161616] min-h-screen">
+        <div className="overflow-x-clip bg-[#FFFFFF] min-h-screen">
             <SEO
                 title="Our Products – Coirei"
                 description="Explore our range of AI-driven digital products including Execa, Follei, and Coirei LMS."
@@ -53,7 +53,7 @@ const Follei = () => {
                 <Faq />
             </main>
 
-            <Footer />
+            <Footer isFollei />
         </div>
     );
 };
