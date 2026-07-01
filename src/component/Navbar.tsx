@@ -1,5 +1,5 @@
 import logo from "../assets/images/homepage/coirei-logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ResourcesDropdown from "../component/NavDropdown/ResourcesDropdown";
 import ProductsDropdown from "../component/NavDropdown/ProductsDropdown";
 import ServicesDropdown from "../component/NavDropdown/ServicesDropdown";
@@ -43,37 +43,40 @@ function Navbar() {
     const [productsOpen, setProductsOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
 
+    const location = useLocation();
+    const isLight = location.pathname === "/products/follei";
+
     return (
-        <header data-ns-animate data-offset="40" data-direction="down" data-duration="1" className="text-[rgb(212,212,212)] mx-5 my-7.5 rounded-lg backdrop-blur-3xl ">
-            <nav className="glass flex items-center justify-between px-5 py-2.5  backdrop-blur-3xl">
+        <header data-ns-animate data-offset="40" data-direction="down" data-duration="1" className={`mx-5 my-6 rounded-lg backdrop-blur-3xl transition-colors duration-300 ${isLight ? 'text-[#04032E]' : 'text-[rgb(212,212,212)]'}`}>
+            <nav className={`flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-300 ${isLight ? 'bg-white/80 border border-black/[0.04] shadow-[0_8px_30px_rgba(0,0,0,0.03),_0_1px_2px_rgba(0,0,0,0.02)]' : 'glass'}`}>
 
                 {/* LEFT */}
-                <div className="flex gap-7.5 items-center">
+                <div className="flex gap-6 items-center">
                     <Link to="/" data-ns-animate data-delay="0.1">
                         <img src={logo} alt="Coirei Logo" className="w-20 h-7 transition-transform duration-500 hover:scale-105" />
                     </Link>
 
                     {/* DESKTOP MENU */}
-                    <ul data-ns-animate data-delay="0.2" className="hidden md:flex items-center gap-7.5">
-                        <ProductsDropdown />
+                    <ul data-ns-animate data-delay="0.2" className="hidden md:flex items-center gap-5">
+                        <ProductsDropdown isLight={isLight} />
                         {/* <li>
                             <Link to="/features" className="p-2.5 rounded hover:bg-[#7B7B7B20] transition-colors">
                                 Features
                             </Link>
                         </li> */}
 
-                        <ResourcesDropdown />
+                        <ResourcesDropdown isLight={isLight} />
 
                         <li>
-                            <Link to="/careers" className="p-2.5 rounded hover:bg-[#7B7B7B20] transition-colors">
+                            <Link to="/careers" className={`px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-300 ${isLight ? 'text-[#595959] hover:text-[#04032E] hover:bg-black/[0.03]' : 'hover:bg-[#7B7B7B20] text-inherit'}`}>
                                 Careers
                             </Link>
                         </li>
 
-                        <ServicesDropdown />
+                        <ServicesDropdown isLight={isLight} />
 
                         <li>
-                            <Link to="/Learning" className="p-2.5 rounded hover:bg-[#7B7B7B20] transition-colors">
+                            <Link to="/Learning" className={`px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-300 ${isLight ? 'text-[#595959] hover:text-[#04032E] hover:bg-black/[0.03]' : 'hover:bg-[#7B7B7B20] text-inherit'}`}>
                                 Learning
                             </Link>
                         </li>
@@ -84,7 +87,7 @@ function Navbar() {
                 <div data-ns-animate data-delay="0.25" className="hidden md:block">
                     <Link
                         to="/contactsales"
-                        className="bg-white text-[#3E3E3E] rounded-lg py-2.5 px-5 font-medium hover:bg-[#3E3E3E] hover:text-white transition-all duration-300"
+                        className={`rounded-lg py-2 px-4.5 text-[14px] font-medium transition-all duration-300 ${isLight ? 'bg-linear-to-r from-[#1E62A6] to-[#0F4275] text-white hover:from-[#17508B] hover:to-[#0B345D] shadow-[0_4px_12px_rgba(30,98,166,0.15)]' : 'bg-white text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-white'}`}
                     >
                         Contact sales
                     </Link>
@@ -106,13 +109,13 @@ function Navbar() {
                         exit="exit"
                         className="md:hidden mt-3 px-2"
                     >
-                        <div className="glass rounded-2xl p-3 bg-[#292929]/90! backdrop-blur-2xl border border-white/10">
-                            <ul className="flex flex-col gap-3 text-white">
+                        <div className={`rounded-2xl p-3 backdrop-blur-2xl border transition-all duration-300 ${isLight ? 'bg-white/95 border-black/10 shadow-lg text-[#3E3E3E]' : 'glass bg-[#292929]/90! border-white/10 text-white'}`}>
+                            <ul className={`flex flex-col gap-3 ${isLight ? 'text-[#3E3E3E]' : 'text-white'}`}>
 
-                                <li className={`overflow-hidden rounded-2xl transition-all duration-300 ${productsOpen ? "bg-[#292929]/90 border border-white/10" : ""}`}>
+                                <li className={`overflow-hidden rounded-2xl transition-all duration-300 ${productsOpen ? (isLight ? "bg-black/5 border border-black/5" : "bg-[#292929]/90 border border-white/10") : ""}`}>
                                     <button
                                         onClick={() => setProductsOpen(prev => !prev)}
-                                        className="w-full flex items-center justify-between px-4 py-4 text-lg font-medium hover:bg-white/5"
+                                        className={`w-full flex items-center justify-between px-4 py-4 text-lg font-medium ${isLight ? 'hover:bg-black/5' : 'hover:bg-white/5'}`}
                                     >
                                         <span>Products</span>
                                         <ChevronUp size={18} className={`transition-transform duration-300 ${productsOpen ? "rotate-0" : "rotate-180"}`} />
@@ -125,18 +128,8 @@ function Navbar() {
                                         ].map((item, index) => (
                                             <div
                                                 key={item.label}
-                                                className={`flex items-center justify-between px-4 py-3 text-[15px] text-white/90 hover:bg-white/5 cursor-default ${index !== 0 ? "border-t border-white/10" : ""}`}
+                                                className={`flex items-center justify-between px-4 py-3 text-[15px] cursor-default transition-colors duration-250 ${isLight ? 'text-[#3E3E3E]/90 hover:bg-black/5' : 'text-white/90 hover:bg-white/5'} ${index !== 0 ? (isLight ? "border-t border-black/5" : "border-t border-white/10") : ""}`}
                                             >
-                                                {/* Original Link code commented out to prevent page entry:
-                                                <Link
-                                                    to={item.to}
-                                                    onClick={() => setOpen(false)}
-                                                    className={`flex items-center justify-between px-4 py-3 text-[15px] text-white/90 hover:bg-white/5 ${index !== 0 ? "border-t border-white/10" : ""}`}
-                                                >
-                                                    <span>{item.label}</span>
-                                                    <ChevronRight size={14} className="opacity-40" />
-                                                </Link>
-                                                */}
                                                 <span>{item.label}</span>
                                                 <ChevronRight size={14} className="opacity-40" />
                                             </div>
@@ -144,18 +137,11 @@ function Navbar() {
                                     </div>
                                 </li>
 
-                                {/* <li>
-                                    <Link to="/features" onClick={() => setOpen(false)} className="flex items-center justify-between text-lg px-4 py-3 rounded-lg hover:bg-white/5">
-                                        <span>Features</span>
-                                        <ChevronRight size={16} className="opacity-40" />
-                                    </Link>
-                                </li> */}
-
                                 {/* RESOURCES ACCORDION */}
-                                <li className={`overflow-hidden rounded-2xl transition-all duration-300 ${resourcesOpen ? "bg-[#292929]/90 border border-white/10" : ""}`}>
+                                <li className={`overflow-hidden rounded-2xl transition-all duration-300 ${resourcesOpen ? (isLight ? "bg-black/5 border border-black/5" : "bg-[#292929]/90 border border-white/10") : ""}`}>
                                     <button
                                         onClick={() => setResourcesOpen(prev => !prev)}
-                                        className="w-full flex items-center justify-between px-4 py-4 text-lg font-medium hover:bg-white/5"
+                                        className={`w-full flex items-center justify-between px-4 py-4 text-lg font-medium ${isLight ? 'hover:bg-black/5' : 'hover:bg-white/5'}`}
                                     >
                                         <span>Resources</span>
                                         <ChevronUp size={18} className={`transition-transform duration-300 ${resourcesOpen ? "rotate-0" : "rotate-180"}`} />
@@ -172,7 +158,7 @@ function Navbar() {
                                                 key={item.label}
                                                 to={item.to}
                                                 onClick={() => setOpen(false)}
-                                                className={`flex items-center justify-between px-4 py-3 text-[15px] text-white/90 hover:bg-white/5 ${index !== 0 ? "border-t border-white/10" : ""}`}
+                                                className={`flex items-center justify-between px-4 py-3 text-[15px] transition-colors duration-250 ${isLight ? 'text-[#3E3E3E]/90 hover:bg-black/5' : 'text-white/90 hover:bg-white/5'} ${index !== 0 ? (isLight ? "border-t border-black/5" : "border-t border-white/10") : ""}`}
                                             >
                                                 <span>{item.label}</span>
                                                 <ChevronRight size={14} className="opacity-40" />
@@ -182,17 +168,17 @@ function Navbar() {
                                 </li>
 
                                 <li>
-                                    <Link to="/careers" onClick={() => setOpen(false)} className="flex items-center justify-between text-lg px-4 py-3 rounded-lg hover:bg-white/5">
+                                    <Link to="/careers" onClick={() => setOpen(false)} className={`flex items-center justify-between text-lg px-4 py-3 rounded-lg transition-colors duration-250 ${isLight ? 'hover:bg-black/5' : 'hover:bg-white/5'}`}>
                                         <span>Careers</span>
                                         <ChevronRight size={16} className="opacity-40" />
                                     </Link>
                                 </li>
 
                                 {/* SERVICES ACCORDION */}
-                                <li className={`overflow-hidden rounded-2xl transition-all duration-300 ${servicesOpen ? "bg-[#292929]/90 border border-white/10" : ""}`}>
+                                <li className={`overflow-hidden rounded-2xl transition-all duration-300 ${servicesOpen ? (isLight ? "bg-black/5 border border-black/5" : "bg-[#292929]/90 border border-white/10") : ""}`}>
                                     <button
                                         onClick={() => setServicesOpen(prev => !prev)}
-                                        className="w-full flex items-center justify-between px-4 py-4 text-lg font-medium hover:bg-white/5"
+                                        className={`w-full flex items-center justify-between px-4 py-4 text-lg font-medium ${isLight ? 'hover:bg-black/5' : 'hover:bg-white/5'}`}
                                     >
                                         <span>Services</span>
                                         <ChevronUp size={18} className={`transition-transform duration-300 ${servicesOpen ? "rotate-0" : "rotate-180"}`} />
@@ -211,7 +197,7 @@ function Navbar() {
                                                 key={item.label}
                                                 to={item.to}
                                                 onClick={() => setOpen(false)}
-                                                className={`flex items-center justify-between px-4 py-3 text-[15px] text-white/90 hover:bg-white/5 ${index !== 0 ? "border-t border-white/10" : ""}`}
+                                                className={`flex items-center justify-between px-4 py-3 text-[15px] transition-colors duration-250 ${isLight ? 'text-[#3E3E3E]/90 hover:bg-black/5' : 'text-white/90 hover:bg-white/5'} ${index !== 0 ? (isLight ? "border-t border-black/5" : "border-t border-white/10") : ""}`}
                                             >
                                                 <span>{item.label}</span>
                                                 <ChevronRight size={14} className="opacity-40" />
@@ -220,7 +206,7 @@ function Navbar() {
                                     </div>
                                 </li>
                                 <li>
-                                    <Link to="/learning" onClick={() => setOpen(false)} className="flex items-center justify-between text-lg px-4 py-3 rounded-lg hover:bg-white/5">
+                                    <Link to="/learning" onClick={() => setOpen(false)} className={`flex items-center justify-between text-lg px-4 py-3 rounded-lg transition-colors duration-250 ${isLight ? 'hover:bg-black/5' : 'hover:bg-white/5'}`}>
                                         <span>Learning</span>
                                         <ChevronRight size={16} className="opacity-40" />
                                     </Link>
@@ -228,7 +214,7 @@ function Navbar() {
                                 <Link
                                     to="/contactsales"
                                     onClick={() => setOpen(false)}
-                                    className="mt-4 text-center bg-white text-black rounded-lg py-3 font-medium hover:bg-white/90 transition"
+                                    className={`mt-4 text-center rounded-lg py-3  font-medium transition-all duration-300 ${isLight ? 'bg-[#04032E] text-white hover:bg-[#1b1a1f]' : 'bg-white text-black hover:bg-white/90'}`}
                                 >
                                     Contact sales
                                 </Link>

@@ -4,9 +4,8 @@ import Navbar from "../../../component/Navbar";
 import SEO from "../../../component/SEO";
 import useScrollAnimations from "../../../hooks/useScrollAnimations";
 import { useEffect } from "react";
-
 // Sections
-import { Hero } from "./sections/Hero";
+import Hero  from "./sections/Hero";
 import AboutFollei from "./sections/AboutFollei";
 import Overview from "./sections/Overview";
 import Folleiplatform from "./sections/Folleiplatform";
@@ -41,7 +40,7 @@ const Follei = () => {
                 <Navbar />
             </div>
 
-            <main className="pt-20">
+            <main>
                 <Hero />
                 <Overview />
                 <AIWorkforce />

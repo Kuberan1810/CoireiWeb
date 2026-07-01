@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { useState, useRef } from "react";
 
-export default function ServicesDropdown() {
+export default function ServicesDropdown({ isLight = false }: { isLight?: boolean }) {
     const [isOpen, setIsOpen] = useState(false);
     const timeoutId = useRef<number | null>(null);
 
@@ -28,12 +28,13 @@ export default function ServicesDropdown() {
         >
             {/* Trigger */}
             <div
-                className="flex items-center gap-1 p-2.5 rounded cursor-pointer
-                hover:bg-[#7B7B7B20] transition-all duration-300"
+                className={`flex items-center gap-1 cursor-pointer transition-all duration-300 ${
+                    isLight 
+                        ? 'text-[#04032E]/80 hover:text-[#04032E] hover:bg-white/50 hover:shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] border border-transparent hover:border-white/60 px-3.5 py-2 rounded-xl' 
+                        : 'hover:bg-[#7B7B7B20] text-inherit p-2.5 rounded'
+                }`}
             >
-                <span 
-                
-                className="font-medium leading-none">Services</span>
+                <span className="font-medium leading-none">Services</span>
                 <ChevronRight
                     size={16}
                     strokeWidth={2}
@@ -42,16 +43,16 @@ export default function ServicesDropdown() {
                 />
             </div>
 
-            {/* Dropdown with Dark Liquid Glass Effect */}
+            {/* Dropdown with Dark/Light Liquid Glass Effect */}
             <div
                 className={`
                     absolute left-1/2 -translate-x-1/2 top-full mt-5 w-[340px]
                     
                     backdrop-blur-2xl backdrop-saturate-150
-                    bg-linear-to-br from-[#292929]/95 via-[#292929]/90 to-[#292929]/85
-                    
-                    border border-white/10
-                    shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]
+                    ${isLight 
+                        ? 'bg-white/80 border border-white/80 shadow-[0_30px_60px_-15px_rgba(4,3,46,0.08)]' 
+                        : 'bg-linear-to-br from-[#292929]/95 via-[#292929]/90 to-[#292929]/85 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]'
+                    }
                     
                     rounded-xl
                     
@@ -66,20 +67,27 @@ export default function ServicesDropdown() {
                     
                     transition-all duration-400 ease-[cubic-bezier(0.34,1.56,0.64,1)]
                     
+                    ${!isLight ? `
                     before:absolute before:inset-0 
                     before:rounded-2xl 
                     before:bg-linear-to-br before:from-white/5 before:to-transparent
                     before:opacity-50
                     before:pointer-events-none
+                    ` : ''}
                 `}
                 style={{
-                    boxShadow: `
-                        0 8px 32px 0 rgba(0, 0, 0, 0.4),
-                        0 2px 8px 0 rgba(0, 0, 0, 0.2),
-                        inset 0 1px 0 0 rgba(255, 255, 255, 0.1)
-                    `
+                    boxShadow: isOpen 
+                        ? (isLight
+                            ? `0 30px 60px -15px rgba(4, 3, 46, 0.08), 0 0 50px 0 rgba(4, 3, 46, 0.02), inset 0 1px 0 0 rgba(255, 255, 255, 0.9)`
+                            : `0 8px 32px 0 rgba(0, 0, 0, 0.4), 0 2px 8px 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)`)
+                        : undefined
                 }}
             >
+                {/* Premium Gradient Top Border for Light Theme */}
+                {isLight && (
+                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-linear-to-r from-[#04032E] via-[#0A084E] to-[#3B79C3] rounded-t-xl" />
+                )}
+
                 <ul className="py-3 relative z-10">
                     {[
                         { label: "Web & Platform Development", to: "/services/custom-web-platform-development" },
@@ -101,27 +109,40 @@ export default function ServicesDropdown() {
                         >
                             <Link
                                 to={item.to}
-                                className="group flex items-center justify-between
-                                px-4 py-3 mx-2 rounded-xl
-                                text-[15px] font-medium text-white/90
-                                hover:bg-white/10
-                                hover:backdrop-blur-xl
-                                hover:shadow-lg
-                                transition-all duration-200
-                                relative overflow-hidden"
+                                className={`
+                                    group relative flex items-center justify-between
+                                    px-4 py-3 mx-2 rounded-xl
+                                    text-[15px] font-medium transition-all duration-200 overflow-hidden
+                                    ${isLight 
+                                        ? 'text-[#04032E]/80 hover:text-[#04032E] hover:bg-slate-50/80 hover:shadow-xs' 
+                                        : 'text-white/90 hover:bg-white/10 hover:backdrop-blur-xl hover:shadow-lg'
+                                    }
+                                `}
                             >
-                                {/* Hover gradient effect */}
-                                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 
-                                    bg-linear-to-r from-white/5 via-white/8 to-white/5
-                                    transition-opacity duration-300"></span>
+                                <span
+                                    className={`
+                                        absolute inset-0
+                                        opacity-0 group-hover:opacity-100
+                                        transition-opacity duration-300
+                                        ${isLight 
+                                            ? 'bg-linear-to-r from-slate-100/20 via-slate-100/40 to-slate-100/20' 
+                                            : 'bg-linear-to-r from-white/5 via-white/8 to-white/5'
+                                        }
+                                    `}
+                                />
 
                                 <span className="relative z-10">{item.label}</span>
                                 <ChevronRight
                                     size={14}
                                     strokeWidth={2}
-                                    className="opacity-50 transition-all duration-200
-                                    group-hover:opacity-90 group-hover:translate-x-1
-                                    relative z-10"
+                                    className={`
+                                        relative z-10
+                                        opacity-50
+                                        transition-all duration-200
+                                        group-hover:opacity-90
+                                        group-hover:translate-x-1
+                                        ${isLight ? 'text-[#04032E]' : 'text-white'}
+                                    `}
                                 />
                             </Link>
                         </li>
