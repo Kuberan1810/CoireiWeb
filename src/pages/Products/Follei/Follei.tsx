@@ -1,22 +1,20 @@
-// Section Components
-import Hero from "./sections/Hero";
-import VoiceAgentSection from "./sections/VoiceAgentSection";
-import OverviewSection from "./sections/OverviewSection";
-import PlatformTransformation from "./sections/PlatformTransformation";
-import OmnichannelSection from "./sections/OmnichannelSection";
-import AdvancedAISection from "./sections/AdvancedAISection";
-import HowItWorks from "./sections/HowItWorks";
-import AIWorkforceSection from "./sections/AIWorkforceSection";
-import FolleiPlatformSection from "./sections/FolleiPlatformSection";
-import Integration from "./sections/Integration";
-import Timeline from "./sections/Timeline";
-import InsightsCTASection from "./sections/InsightsCTASection";
-import FAQSection from "./sections/FAQSection";
+
 import Footer from "../../../component/Footer/Footer";
 import Navbar from "../../../component/Navbar";
 import SEO from "../../../component/SEO";
 import useScrollAnimations from "../../../hooks/useScrollAnimations";
 import { useEffect } from "react";
+
+// Sections
+import { Hero } from "./sections/Hero";
+import AboutFollei from "./sections/AboutFollei";
+import Overview from "./sections/Overview";
+import Folleiplatform from "./sections/Folleiplatform";
+import Automation from "./sections/Automation";
+import AIWorkforce from "./sections/AIWorkforce";
+import Faq from "./sections/Faq";
+import HowWeWork from "./sections/howwework"
+import Integrations from "./sections/integrations";
 
 const Follei = () => {
     useScrollAnimations();
@@ -45,18 +43,14 @@ const Follei = () => {
 
             <main className="pt-20">
                 <Hero />
-                <VoiceAgentSection />
-                <OverviewSection />
-                <PlatformTransformation />
-                <OmnichannelSection />
-                <AdvancedAISection />
-                <HowItWorks />
-                <AIWorkforceSection />
-                <FolleiPlatformSection />
-                <Integration />
-                <Timeline />
-                <InsightsCTASection />
-                <FAQSection />
+                <Overview />
+                <AIWorkforce />
+                <AboutFollei />
+                <Automation />
+                <HowWeWork/>
+                <Integrations />
+                <Folleiplatform />
+                <Faq />
             </main>
 
             <Footer />

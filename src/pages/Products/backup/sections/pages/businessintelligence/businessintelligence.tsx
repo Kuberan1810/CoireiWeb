@@ -11,7 +11,7 @@ import { WhatFolleiLearnsSection } from "./WhatFolleiLearnsSection";
 import { TimelineSection } from "./TimelineSection";
 import { WhyItMattersSection } from "./WhyItMattersSection";
 import { BusinessImpactSection } from "./BusinessImpactSection";
-import Faq from "../../Faq";
+import FAQSection from "../../FAQSection";
 
 const BusinessIntelligence: React.FC = () => {
     useScrollAnimations();
@@ -34,7 +34,7 @@ const BusinessIntelligence: React.FC = () => {
                 <TimelineSection />
                 <WhyItMattersSection />
                 <BusinessImpactSection />
-                <Faq />
+                <FAQSection />
             </main>
 
             <Footer />
