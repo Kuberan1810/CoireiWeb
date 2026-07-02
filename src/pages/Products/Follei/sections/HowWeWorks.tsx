@@ -14,12 +14,12 @@ export const HowWeWorks: React.FC = () => {
             <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#8E2884]/3 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-center gap-12">
-                
+
                 {/* Header Area */}
                 <div className="flex flex-col items-center">
                     {/* Badge with Figma style from Overview */}
                     <div className="mb-6 flex justify-center">
-                        <div 
+                        <div
                             style={{
                                 borderWidth: '0.5px',
                                 borderColor: '#004370',
@@ -51,10 +51,10 @@ export const HowWeWorks: React.FC = () => {
 
                 {/* Checkerboard Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full mt-4">
-                    
+
                     {/* Step-01 Content */}
                     <div className="md:col-start-1 md:row-start-1 order-1 flex flex-col">
-                        <div className="w-full border border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
+                        <div className="w-full border-[1px] border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
                             <span className="text-sm font-medium text-slate-400 block mb-[50px]">Step-01</span>
                             <div className="flex flex-col gap-2">
                                 <h3 className="text-[24px] font-normal leading-[32px] text-[#000000]">Business Discovery</h3>
@@ -64,13 +64,13 @@ export const HowWeWorks: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     {/* Step-01 Image */}
                     <div className="md:col-start-2 md:row-start-1 order-2 flex flex-col">
-                        <div className="w-full border border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
-                            <img 
-                                src={builddiscoveryImg} 
-                                alt="Business Discovery" 
+                        <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
+                            <img
+                                src={builddiscoveryImg}
+                                alt="Business Discovery"
                                 className="max-h-[160px] w-auto object-contain transform hover:scale-105 transition-transform duration-500"
                             />
                         </div>
@@ -78,18 +78,18 @@ export const HowWeWorks: React.FC = () => {
 
                     {/* Step-02 Image */}
                     <div className="md:col-start-1 md:row-start-2 order-4 flex flex-col">
-                        <div className="w-full border border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
-                            <img 
-                                src={buildintelligenceImg} 
-                                alt="Build Intelligence" 
+                        <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
+                            <img
+                                src={buildintelligenceImg}
+                                alt="Build Intelligence"
                                 className="max-h-[160px] w-auto object-contain transform hover:scale-105 transition-transform duration-500"
                             />
                         </div>
                     </div>
-                    
+
                     {/* Step-02 Content */}
                     <div className="md:col-start-2 md:row-start-2 order-3 flex flex-col">
-                        <div className="w-full border border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
+                        <div className="w-full border-[1px] border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
                             <span className="text-sm font-medium text-slate-400 block mb-[50px]">Step-02</span>
                             <div className="flex flex-col gap-2">
                                 <h3 className="text-[24px] font-normal leading-[32px] text-[#000000]">Build Intelligence</h3>
@@ -102,7 +102,7 @@ export const HowWeWorks: React.FC = () => {
 
                     {/* Step-03 Content */}
                     <div className="md:col-start-3 md:row-start-1 order-5 flex flex-col">
-                        <div className="w-full border border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
+                        <div className="w-full border-[1px] border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
                             <span className="text-sm font-medium text-slate-400 block mb-[50px]">Step-03</span>
                             <div className="flex flex-col gap-2">
                                 <h3 className="text-[24px] font-normal leading-[32px] text-[#000000]">Deploy AI Workers</h3>
@@ -115,10 +115,10 @@ export const HowWeWorks: React.FC = () => {
 
                     {/* Step-03 Image */}
                     <div className="md:col-start-3 md:row-start-2 order-6 flex flex-col">
-                        <div className="w-full border border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
-                            <img 
-                                src={deployaiworkersImg} 
-                                alt="Deploy AI Workers" 
+                        <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
+                            <img
+                                src={deployaiworkersImg}
+                                alt="Deploy AI Workers"
                                 className="max-h-[160px] w-auto object-contain transform hover:scale-105 transition-transform duration-500"
                             />
                         </div>
@@ -126,10 +126,10 @@ export const HowWeWorks: React.FC = () => {
 
                     {/* Step-04 Image */}
                     <div className="md:col-start-4 md:row-start-1 order-8 flex flex-col">
-                        <div className="w-full border border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
-                            <img 
-                                src={learnimproveImg} 
-                                alt="Learn & Improve" 
+                        <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
+                            <img
+                                src={learnimproveImg}
+                                alt="Learn & Improve"
                                 className="max-h-[160px] w-auto object-contain transform hover:scale-105 transition-transform duration-500"
                             />
                         </div>
@@ -137,7 +137,7 @@ export const HowWeWorks: React.FC = () => {
 
                     {/* Step-04 Content */}
                     <div className="md:col-start-4 md:row-start-2 order-7 flex flex-col">
-                        <div className="w-full border border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
+                        <div className="w-full border-[1px] border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
                             <span className="text-sm font-medium text-slate-400 block mb-[50px]">Step-04</span>
                             <div className="flex flex-col gap-2">
                                 <h3 className="text-[24px] font-normal leading-[32px] text-[#000000]">Learn & Improve</h3>

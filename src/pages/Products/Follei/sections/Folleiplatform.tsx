@@ -101,10 +101,10 @@ export const FolleiPlatformSection: React.FC = () => {
                     let activeIndex = 0;
 
                     const st = ScrollTrigger.create({
-                        trigger: container,
-                        start: "top 80px",
+                        trigger: imageContainerRef.current,
+                        start: "center 35%",
                         end: "+=2400",
-                        pin: true,
+                        pin: container,
                         scrub: 1.5,
                         onUpdate: (self) => {
                             const progress = self.progress;
@@ -168,16 +168,16 @@ export const FolleiPlatformSection: React.FC = () => {
     };
 
     return (
-        <section ref={sectionRef} className="relative w-full lg:h-[calc(100vh-80px)] py-8 lg:py-6 px-6 sm:px-10 md:px-15 overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#FFF7F0] flex flex-col items-center justify-center text-center">
+        <section ref={sectionRef} className="relative w-full lg:min-h-screen py-4 lg:py-6 px-6 sm:px-10 md:px-15 overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#FFF7F0] flex flex-col items-center justify-start text-center">
             {/* Background Decorative Glow */}
             <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#1079B7]/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="max-w-7xl w-full h-full mx-auto relative z-10 flex flex-col justify-start items-center gap-6 ">
+            <div className="max-w-7xl w-full h-full mx-auto relative z-10 flex flex-col justify-start items-center gap-4">
                 {/* Top Header Area */}
                 <div className="flex flex-col items-center">
                     {/* Badge with exact Figma styling from Overview */}
-                    <div className="gsap-badge mb-3 flex justify-center">
-                        <div 
+                    <div className="gsap-badge mb-2 flex justify-center">
+                        <div
                             style={{
                                 borderWidth: '0.5px',
                                 borderColor: '#004370',
@@ -196,7 +196,7 @@ export const FolleiPlatformSection: React.FC = () => {
                     </div>
 
                     {/* Heading */}
-                    <h2 className="gsap-heading text-[#0A0E29] text-2xl sm:text-3xl md:text-[38px] lg:text-[44px] font-medium tracking-tight leading-[1.2] mb-2 max-w-4xl mx-auto">
+                    <h2 className="gsap-heading text-[#0A0E29] text-2xl sm:text-3xl md:text-[38px] lg:text-[44px] font-medium tracking-tight leading-[1.1] mb-2 max-w-4xl mx-auto">
                         From Business Knowledge to <br />
                         <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">Business Growth</span>
                     </h2>
@@ -207,15 +207,15 @@ export const FolleiPlatformSection: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="w-full flex items-center justify-center">
-                    <div ref={imageContainerRef} className="gsap-image-showcase w-full max-w-[740px] aspect-[16/10] rounded-2xl border border-slate-200 bg-slate-50/30 overflow-hidden shadow-xl p-2 relative">
+                <div className="w-full relative flex flex-col items-center justify-start pb-2">
+                    <div ref={imageContainerRef} className="gsap-image-showcase w-full max-w-[1072px] md:h-[480px] aspect-[1200/672] overflow-hidden relative">
                         {/* Invisible spacer image to maintain responsive height naturally */}
                         <img
                             src={tabData[0].graphic}
                             alt="spacer"
-                            className="w-full h-auto opacity-0 pointer-events-none select-none mx-auto object-contain"
+                            className="w-full h-full opacity-0 pointer-events-none select-none mx-auto object-contain"
                         />
-                        
+
                         {tabData.map((tab) => {
                             const isVisible = tab.id === activeTab;
                             return (
@@ -223,46 +223,44 @@ export const FolleiPlatformSection: React.FC = () => {
                                     key={tab.id}
                                     src={tab.graphic}
                                     alt={tab.title}
-                                    className={`absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-xl object-contain shadow-inner transition-all duration-500 ease-in-out ${
-                                        isVisible ? "opacity-100 scale-100 z-10" : "opacity-0 scale-95 z-0 pointer-events-none"
-                                    }`}
+                                    className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${isVisible ? "opacity-100 scale-100 z-10" : "opacity-0 scale-95 z-0 pointer-events-none"
+                                        }`}
                                 />
                             );
                         })}
                     </div>
-                </div>
 
-                {/* Bottom Interactive Grid Tabs */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl w-full mx-auto text-left">
-                    {tabData.map((tab) => {
-                        const isActive = tab.id === activeTab;
-                        return (
-                            <button
-                                key={tab.id}
-                                onClick={() => handleTabClick(tab.id)}
-                                className="gsap-tab-item flex flex-col items-start focus:outline-none group text-left w-full cursor-pointer"
-                            >
-                                {/* Top status indicator line */}
-                                <div className="relative h-[2px] w-full mb-3 bg-slate-200 group-hover:bg-slate-300 overflow-hidden">
-                                    <div 
-                                        className={`gsap-tab-line-fill absolute top-0 left-0 h-full w-full bg-[#0A0E29] transition-transform duration-300 origin-left ${
-                                            isActive ? "scale-x-100" : "scale-x-0"
-                                        }`} 
-                                    />
-                                </div>
-                                
-                                {/* Title */}
-                                <h3 className={`text-base lg:text-lg font-semibold mb-1 transition-colors duration-300 ${isActive ? "text-[#0A0E29]" : "text-[#94A3B8] group-hover:text-slate-500"}`}>
-                                    {tab.title}
-                                </h3>
-                                
-                                {/* Description */}
-                                <p className={`text-xs leading-relaxed transition-colors duration-300 ${isActive ? "text-[#475569]" : "text-[#94A3B8]/80 group-hover:text-slate-400 font-light"}`}>
-                                    {tab.description}
-                                </p>
-                            </button>
-                        );
-                    })}
+                    {/* Bottom Interactive Grid Tabs */}
+                    <div className="mt-6 px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl w-full mx-auto text-left z-20 relative">
+                        {tabData.map((tab) => {
+                            const isActive = tab.id === activeTab;
+                            return (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => handleTabClick(tab.id)}
+                                    className="gsap-tab-item flex flex-col items-start focus:outline-none group text-left w-full cursor-pointer"
+                                >
+                                    {/* Top status indicator line */}
+                                    <div className="relative h-[2px] w-full mb-3 bg-slate-200 group-hover:bg-slate-300 overflow-hidden">
+                                        <div
+                                            className={`gsap-tab-line-fill absolute top-0 left-0 h-full w-full bg-[#0A0E29] transition-transform duration-300 origin-left ${isActive ? "scale-x-100" : "scale-x-0"
+                                                }`}
+                                        />
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3 className={`text-base lg:text-lg font-semibold mb-1 transition-colors duration-300 ${isActive ? "text-[#0A0E29]" : "text-[#94A3B8] group-hover:text-slate-500"}`}>
+                                        {tab.title}
+                                    </h3>
+
+                                    {/* Description */}
+                                    <p className={`text-xs leading-relaxed transition-colors duration-300 ${isActive ? "text-[#475569]" : "text-[#94A3B8]/80 group-hover:text-slate-400 font-light"}`}>
+                                        {tab.description}
+                                    </p>
+                                </button>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </section>

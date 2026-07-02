@@ -74,7 +74,7 @@ const row2Cards: CardData[] = [
 
 export const Automation: React.FC = () => {
   const [activeRow1, setActiveRow1] = useState<number>(0);
-  const [activeRow2, setActiveRow2] = useState<number | null>(null);
+  const [activeRow2, setActiveRow2] = useState<number>(5);
 
   return (
     <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#FFFFFF] flex flex-col items-center justify-center text-center">
@@ -134,13 +134,13 @@ export const Automation: React.FC = () => {
                 <div
                   key={card.id}
                   onMouseEnter={() => setActiveRow1(card.id)}
-                  className={`w-full border border-slate-100 bg-[#FFFFFF] p-6 md:p-7 flex flex-col justify-between text-left h-auto min-h-[300px] md:h-[300px] rounded-[10px] shadow-sm hover:shadow-md transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden ${isExpanded ? "md:flex-[2.1_1_0%]" : "md:flex-[1_1_0%]"
+                  className={`w-full border border-slate-100 bg-[#FFFFFF] p-[20px] flex flex-col justify-between text-left h-auto min-h-[320px] md:h-[320px] rounded-[10px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden ${isExpanded ? "md:flex-[2.1_1_0%]" : "md:flex-[1_1_0%]"
                     }`}
                 >
                   <div className="flex flex-col md:flex-row justify-between items-stretch gap-6 w-full h-full">
                     {/* Left Text content - Fixed Width prevents Reflow */}
                     <div className="flex flex-col justify-between flex-1 w-full md:w-[220px] md:min-w-[220px] md:max-w-[220px]">
-                      <div className="w-[46px] h-[46px] rounded-[8px] bg-[#004370] text-[#FFFFFF] flex items-center justify-center mb-6 md:mb-8">
+                      <div className="w-[46px] h-[46px] rounded-[8px] bg-[#004370] text-[#FFFFFF] flex items-center justify-center mb-[20px]">
                         <IconComponent className="w-[22px] h-[22px]" />
                       </div>
                       <div>
@@ -172,7 +172,7 @@ export const Automation: React.FC = () => {
           </div>
 
           <div
-            onMouseLeave={() => setActiveRow2(null)}
+            onMouseLeave={() => setActiveRow2(5)}
             className="flex flex-col md:flex-row gap-[25px] w-full"
           >
             {row2Cards.map((card) => {
@@ -183,13 +183,13 @@ export const Automation: React.FC = () => {
                 <div
                   key={card.id}
                   onMouseEnter={() => setActiveRow2(card.id)}
-                  className={`w-full border border-slate-100 bg-[#FFFFFF] p-6 md:p-7 flex flex-col justify-between text-left h-auto min-h-[300px] md:h-[300px] rounded-[10px] shadow-sm hover:shadow-md transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden ${isExpanded ? "md:flex-[2.1_1_0%]" : "md:flex-[1_1_0%]"
+                  className={`w-full border border-slate-100 bg-[#FFFFFF] p-[20px] flex flex-col justify-between text-left h-auto min-h-[320px] md:h-[320px] rounded-[10px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden ${isExpanded ? "md:flex-[2.1_1_0%]" : "md:flex-[1_1_0%]"
                     }`}
                 >
-                  <div className="flex flex-col md:flex-row-reverse justify-between items-stretch gap-6 w-full h-full">
+                  <div className={`flex flex-col ${isExpanded ? "md:flex-row-reverse" : "md:flex-row"} justify-between items-stretch gap-6 w-full h-full`}>
                     {/* Right Text content - Fixed Width prevents Reflow */}
                     <div className="flex flex-col justify-between flex-1 w-full md:w-[220px] md:min-w-[220px] md:max-w-[220px]">
-                      <div className="w-[46px] h-[46px] rounded-[8px] bg-[#004370] text-[#FFFFFF] flex items-center justify-center mb-6 md:mb-8">
+                      <div className="w-[46px] h-[46px] rounded-[8px] bg-[#004370] text-[#FFFFFF] flex items-center justify-center mb-[20px]">
                         <IconComponent className="w-[22px] h-[22px]" />
                       </div>
                       <div>
