@@ -19,7 +19,7 @@ import rectangleIcon from '../../../..//assets/images/products/integration/Recta
 const HexItem = ({ icon, active, empty }: { icon?: string, active?: boolean, empty?: boolean }) => {
     return (
         <div className={`relative w-[80px] h-[92px] sm:w-[110px] sm:h-[127px] md:w-[130px] md:h-[150px] flex items-center justify-center shrink-0 ${empty ? 'opacity-40' : ''}`}>
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 ">
                 <svg viewBox="0 0 100 116" className="w-full h-full" style={{ filter: active ? 'drop-shadow(0px 8px 24px rgba(37, 99, 235, 0.25))' : 'drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.03))' }}>
                     {active ? (
                         <>

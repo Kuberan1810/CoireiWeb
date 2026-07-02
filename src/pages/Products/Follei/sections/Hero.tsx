@@ -1,10 +1,68 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Lottie from "lottie-react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import heartAnimation from "../../../../assets/js/heart_animation.json";
 import stepsAnimation from "../../../../assets/js/steps_animation.json";
 import { Link } from "react-router-dom";
+import FolleiMitra from "../../../../assets/images/products/FolleiMitra.svg"
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero: React.FC = () => {
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+
+      // Initial States
+      gsap.set(".hero-tag", { opacity: 0, y: 20 });
+      gsap.set(".hero-home-one-title-wrapper", { opacity: 0, y: 40 });
+      gsap.set(".hero-home-one-text-wrapper", { opacity: 0, y: 20 });
+      gsap.set(".hero-button-group", { opacity: 0, scale: 0.95 });
+
+      gsap.set(".hero-gallery-card", { scale: 0.8, opacity: 0, y: 40 });
+      gsap.set(".hero-gallery-left", { y: -80 }); // Parallax start state
+      gsap.set(".hero-gallery-right", { y: 80 }); // Parallax start state
+      
+      gsap.set(".hero-gallery-left .hero-gallery-image", { opacity: 0, scale: 0.9, x: -20 });
+      gsap.set(".hero-gallery-right .hero-gallery-image", { opacity: 0, scale: 0.9, x: 20 });
+
+      // Load Animation Sequence
+      tl.to(".hero-tag", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" })
+        .to(".hero-home-one-title-wrapper", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .to(".hero-home-one-text-wrapper", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.6")
+        .to(".hero-button-group", { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.5)" }, "-=0.5")
+        .to(".hero-gallery-card", { scale: 1, opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, "-=0.3")
+        .to(".hero-gallery-left .hero-gallery-image", { opacity: 1, scale: 1, x: 0, duration: 1, stagger: 0.15, ease: "power2.out" }, "-=1")
+        .to(".hero-gallery-right .hero-gallery-image", { opacity: 1, scale: 1, x: 0, duration: 1, stagger: 0.15, ease: "power2.out" }, "-=1");
+
+      // Scroll Parallax for Side Galleries
+      gsap.to(".hero-gallery-left", {
+        y: 80, // Moves down as you scroll down
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero-gallery",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+
+      gsap.to(".hero-gallery-right", {
+        y: -80, // Moves up as you scroll down
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero-gallery",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   const splitText = (text: string) => {
     return text.split("").map((char, index) => (
       <span
@@ -133,7 +191,7 @@ const Hero: React.FC = () => {
                     data-wf-ignore="true"
                     className="hero-gallery-video w-background-video w-background-video-atom"
                   >
-                    <video
+                    {/* <video
                       id="ae81bb96-d2ba-a387-d4db-09df5498e49b-video"
                       autoPlay
                       loop
@@ -154,8 +212,8 @@ const Hero: React.FC = () => {
                         src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097%2F69d4f511ac6d668c965420e3_freepik_let-me-make-a-video-of-th_2732932913_webm.webm"
                         data-wf-ignore="true"
                       />
-                    </video>
-
+                    </video> */}
+                    <img src={FolleiMitra} alt="FolleiMitra" className="w-full h-full object-cover" />
                     <noscript>
                       <style>{`
                       [data-wf-bgvideo-fallback-img] {
@@ -210,7 +268,7 @@ const Hero: React.FC = () => {
                   <div className="hero-gallery-info-wrap flex">
                     <div className="hero-gallery-info-details-wrap mg-bottom-0px">
                       <h2 className="hero-gallery-info-details-name text-[#04032E]! text-2xl! font-semibold!">
-                        Julian
+                        Follei Mitra
                       </h2>
 
                       <div className="hero-gallery-info-details-designation text-[#5A5A5C]! text-base! -mt-2!">

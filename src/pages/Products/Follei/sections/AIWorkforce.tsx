@@ -252,19 +252,85 @@ export const AIWorkforce: React.FC = () => {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // If not desktop width, disable scrolltrigger pinning
-    if (window.innerWidth < 1024) return;
-
     const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray<HTMLElement>(".stack-card");
+      // Title and header reveal animation
+      gsap.fromTo(
+        ".section-header",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".section-header",
+            start: "top 80%",
+          },
+        }
+      );
+
+      // Card reveals - If not desktop width, use simple scroll trigger
+      if (window.innerWidth < 1024) {
+        const items = gsap.utils.toArray<HTMLElement>(".solution-item");
+        items.forEach((item) => {
+          gsap.fromTo(item, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: item, start: "top 85%" } });
+        });
+        return;
+      }
+
+      // Desktop Pinned Animation (Step by step)
+      const cards = gsap.utils.toArray<HTMLElement>(".solution-item");
       if (cards.length === 0) return;
 
       const totalCards = cards.length;
 
-      // Reset initial card locations
+      // Faster, distinct animations for text vs image on the first card
+      const firstCardText = cards[0].querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
+      const firstCardImg = cards[0].querySelector(".solution-image-wrapper");
+
+      gsap.fromTo(
+        firstCardText,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: cards[0],
+            start: "top 75%",
+          },
+        }
+      );
+
+      if (firstCardImg) {
+        gsap.fromTo(
+          firstCardImg,
+          { opacity: 0, scale: 0.95 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: cards[0],
+              start: "top 75%",
+            },
+          }
+        );
+      }
+
+      // Reset initial card locations for subsequent cards
       cards.forEach((card, index) => {
         if (index > 0) {
           gsap.set(card, { y: 650, opacity: 1 });
+
+          // Initial state for inner contents of subsequent cards
+          const innerText = card.querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
+          const innerImg = card.querySelector(".solution-image-wrapper");
+          gsap.set(innerText, { opacity: 0, y: 30 });
+          if (innerImg) gsap.set(innerImg, { opacity: 0, scale: 0.95 });
         } else {
           gsap.set(card, { y: 0, opacity: 1 });
         }
@@ -296,7 +362,7 @@ export const AIWorkforce: React.FC = () => {
           ease: "power1.out"
         }, `step-${i}`);
 
-        // Simultaneously animate the new card sliding 
+        // Simultaneously animate the new card sliding up
         tl.to(cards[i], {
           y: 0,
           opacity: 1,
@@ -304,109 +370,101 @@ export const AIWorkforce: React.FC = () => {
           ease: "power1.out"
         }, `step-${i}`);
 
+        // Animate the inner contents smoothly WITHIN the scrubbed timeline
+        // Reduced duration and stagger to make the animation fast and snappy!
+        const textContents = cards[i].querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
+        const imgWrapper = cards[i].querySelector(".solution-image-wrapper");
+
+        tl.to(textContents, {
+          opacity: 1,
+          y: 0,
+          duration: 8, // Slowed down text duration
+          stagger: 2,  // Slower stagger between text items
+          ease: "power2.out"
+        }, `step-${i}+=1.5`);
+
+        if (imgWrapper) {
+          tl.to(imgWrapper, {
+            opacity: 1,
+            scale: 1,
+            duration: 1.2,
+            ease: "power2.out"
+          }, `step-${i}+=1.5`);
+        }
+
         // Pause to hold the current card in view
         tl.to({}, { duration: 4 });
       }
+
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full bg-white py-16 lg:py-24"
-    >
-      {/* Background Texture Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.02] pointer-events-none"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      />
+    <section ref={sectionRef} className="section-solution relative w-full bg-white py-16 lg:py-24">
+      <div className="section-space">
+        <div ref={containerRef} className="w-layout-blockcontainer container w-container mx-auto px-6 sm:px-10 md:px-15 max-w-[1300px]">
+          {/* Section Header */}
+          <div className="section-header text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center shrink-0">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
+              <span>AI Workforce</span>
+            </div>
 
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[150px] pointer-events-none" />
+            {/* Heading */}
+            <div className="solution-title-wrapper">
+              <h2 className="section-title text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+                Meet Your Autonomous <br />
+                <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
+                  AI Workforce
+                </span>
+              </h2>
+            </div>
 
-      {/* Viewport Content Wrapper */}
-      <div ref={containerRef} className="w-full flex flex-col justify-center items-center max-w-[1300px] mx-auto px-6 sm:px-10 md:px-15 z-10 min-h-[85vh]">
-
-        {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center shrink-0">
-          {/* Badge */}
-          <div
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
-            <span>AI Workforce</span>
+            {/* Subheading */}
+            <p className="text-[#5A5A5C] text-sm sm:text-[16px] md:text-[17px] font-normal leading-relaxed max-w-2xl mt-2">
+              Six specialized AI workers collaborate across every stage of the customer lifecycle—automating conversations, accelerating decisions, and driving measurable business outcomes.
+            </p>
           </div>
 
-          {/* Heading */}
-          <h2
-            className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none"
-          >
-            Meet Your Autonomous <br />
-            <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
-              AI Workforce
-            </span>
-          </h2>
-
-          {/* Subheading */}
-          <p
-            className="text-[#5A5A5C] text-sm sm:text-[16px] md:text-[17px] font-normal leading-relaxed max-w-2xl mt-2"
-          >
-            Six specialized AI workers collaborate across every stage of the customer lifecycle—automating conversations, accelerating decisions, and driving measurable business outcomes.
-          </p>
-        </div>
-
-        {/* Stacked Cards Wrapper */}
-        <div ref={cardsWrapperRef} className="relative w-full max-w-[1300px] h-[550px] sm:h-[520px] lg:h-[481px] flex flex-col gap-12 lg:block">
-          {agents.map((agent, index) => (
-            <div
-              key={agent.id}
-              className="stack-card relative lg:absolute w-full left-0 lg:top-[20px] mt-10 lg:mt-0"
-            >
-              {/* CARD */}
+          {/* Stacked Cards Wrapper */}
+          <div ref={cardsWrapperRef} className="solution-list relative w-full max-w-[1300px] h-[550px] sm:h-[520px] lg:h-[481px] flex flex-col gap-12 lg:block">
+            {agents.map((agent) => (
               <div
-                className="group w-full h-[520px] sm:h-[500px] lg:h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between"
-                style={{ backgroundColor: '#F1F1F1', opacity: 1 }}
+                key={agent.id}
+                className="solution-item relative lg:absolute left-0 lg:top-[20px] mt-10 lg:mt-0 group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1]"
               >
-                {/* Left Content */}
-                <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
-                  {/* Badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[16px] text-[#000000] mb-6">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#004370] " />
-                    <span>{agent.badgeText.replace("• ", "")}</span>
+                <div className="solution-content w-full lg:w-1/2 flex flex-col items-start text-left">
+                  <div className="solution-icon">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[16px] text-[#000000]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
+                      <span>{agent.badgeText.replace("• ", "")}</span>
+                    </div>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-[#000000] text-2xl sm:text-3xl lg:text-[35px] font-medium tracking-tight leading-[1.2] mb-6 max-w-[538px]">
+                  <div className="solution-title text-[#000000] text-2xl sm:text-3xl lg:text-[35px] font-medium tracking-tight leading-[1.2] mt-6 mb-6">
                     {agent.title}
-                  </h3>
-
-                  {/* Divider Line */}
+                  </div>
                   <div className="w-full h-[1px] bg-[#ADADAD] mb-6" />
-
-                  {/* Description */}
-                  <p className="text-[#5A5A5C] text-sm sm:text-[20px] font-normal leading-relaxed">
+                  <p className="solution-text text-[#5A5A5C] text-sm sm:text-[20px] font-normal leading-relaxed">
                     {agent.description}
                   </p>
+                  <div className="solution-icon-link mt-8" style={{ backgroundColor: "transparent" }}>
+                    <div className="solution-icon-wrapper">
+                      {/* Placeholder for link arrow if needed */}
+                    </div>
+                    <div className="solution-hover-background"></div>
+                  </div>
                 </div>
-
-                {/* Right Mockup */}
-                <div
-                  className={`w-full lg:w-1/2 aspect-[1.4/1] bg-[#090C15] rounded-[20px] px-6 py-8 relative overflow-hidden flex flex-col justify-center items-center ${agent.hoverBorder} transition-all duration-500`}
-                >
-                  {/* Background Image with Opacity */}
-                  <div
-                    className="absolute inset-0 opacity-30 pointer-events-none"
-                    style={{
-                      backgroundImage: `url(${agent.bgImage})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
+                <div className={`solution-image-wrapper w-full lg:w-1/2 aspect-[1.4/1] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 ${agent.hoverBorder}`}>
+                  <img
+                    src={agent.bgImage}
+                    loading="lazy"
+                    alt=""
+                    className="image-cover absolute inset-0 w-full h-full object-cover opacity-30"
                   />
-
-                  {/* Mockup Content Container */}
-                  <div className="relative z-10 w-full h-full flex flex-col justify-center items-center">
+                  <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-6">
                     {agent.id === "sdr" ? (
                       <div className={`w-full h-full rounded-[20px] p-5 flex flex-col overflow-hidden gap-[10px] ${agent.mockupBg}`}>
                         {agent.mockup}
@@ -419,10 +477,9 @@ export const AIWorkforce: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );

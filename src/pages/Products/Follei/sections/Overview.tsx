@@ -80,7 +80,7 @@ const OverviewSection: React.FC = () => {
                                 <span>Book a demo</span>
                                 <ChevronRight size={16} className="text-white/70 transition-transform duration-300 group-hover:translate-x-1" />
                             </button>
-                            <button className="flex items-center justify-center gap-2 w-[179px] h-[60px] bg-white hover:bg-slate-50 text-[#1F2A47] rounded-full font-medium transition-all duration-300 border border-[#1F2A47]/10 cursor-pointer text-sm">
+                            <button className="flex items-center justify-center gap-2 w-[179px] h-[60px] bg-white hover:bg-slate-50 text-[#1F2A47] rounded-full font-medium transition-all duration-300 border! border-[#1F2A47]/10! cursor-pointer text-sm">
                                 <span>Watch video</span>
                                 <Play size={14} className="text-[#1F2A47]/40 fill-none" />
                             </button>

@@ -48,9 +48,9 @@ export default function ProductsDropdown({ isLight = false }: { isLight?: boolea
                 className={`
                     absolute left-0 top-full mt-5 w-72
                     
-                    backdrop-blur-2xl backdrop-saturate-150
+                    backdrop-blur-3xl backdrop-saturate-150
                     ${isLight 
-                        ? 'bg-white/80 border border-white/80 shadow-[0_30px_60px_-15px_rgba(4,3,46,0.08)]' 
+                        ? 'bg-white/95 border border-black/5 shadow-[0_24px_48px_-12px_rgba(16,121,183,0.15)]' 
                         : 'bg-linear-to-br from-[#292929]/95 via-[#292929]/90 to-[#292929]/85 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]'
                     }
                     
@@ -78,14 +78,14 @@ export default function ProductsDropdown({ isLight = false }: { isLight?: boolea
                 style={{
                     boxShadow: isOpen 
                         ? (isLight
-                            ? `0 30px 60px -15px rgba(4, 3, 46, 0.08), 0 0 50px 0 rgba(4, 3, 46, 0.02), inset 0 1px 0 0 rgba(255, 255, 255, 0.9)`
+                            ? `0 24px 48px -12px rgba(16, 121, 183, 0.15), 0 0 1px 0 rgba(0, 0, 0, 0.1)`
                             : `0 8px 32px 0 rgba(0, 0, 0, 0.4), 0 2px 8px 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)`)
                         : undefined
                 }}
             >
                 {/* Premium Gradient Top Border for Light Theme */}
                 {isLight && (
-                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-linear-to-r from-[#04032E] via-[#0A084E] to-[#3B79C3] rounded-t-xl" />
+                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] rounded-t-xl opacity-90" />
                 )}
 
                 <ul className="py-3 relative z-10">
@@ -107,10 +107,10 @@ export default function ProductsDropdown({ isLight = false }: { isLight?: boolea
                                 to={item.to}
                                 className={`
                                     group relative flex items-center justify-between
-                                    px-4 py-3 mx-2 rounded-xl
-                                    text-[15px] font-medium transition-all duration-200 overflow-hidden
+                                    px-4 py-3 mx-2 rounded-lg
+                                    text-[15px] font-medium transition-all duration-300 overflow-hidden
                                     ${isLight 
-                                        ? 'text-[#04032E]/80 hover:text-[#04032E] hover:bg-slate-50/80 hover:shadow-xs' 
+                                        ? 'text-[#0A0E29] hover:text-[#1079B7] hover:bg-[#1079B7]/5' 
                                         : 'text-white/90 hover:bg-white/10 hover:backdrop-blur-xl hover:shadow-lg'
                                     }
                                 `}
@@ -121,7 +121,7 @@ export default function ProductsDropdown({ isLight = false }: { isLight?: boolea
                                         opacity-0 group-hover:opacity-100
                                         transition-opacity duration-300
                                         ${isLight 
-                                            ? 'bg-linear-to-r from-slate-100/20 via-slate-100/40 to-slate-100/20' 
+                                            ? 'bg-transparent' 
                                             : 'bg-linear-to-r from-white/5 via-white/8 to-white/5'
                                         }
                                     `}
@@ -134,10 +134,10 @@ export default function ProductsDropdown({ isLight = false }: { isLight?: boolea
                                     className={`
                                         relative z-10
                                         opacity-50
-                                        transition-all duration-200
-                                        group-hover:opacity-90
+                                        transition-all duration-300
+                                        group-hover:opacity-100
                                         group-hover:translate-x-1
-                                        ${isLight ? 'text-[#04032E]' : 'text-white'}
+                                        ${isLight ? 'text-[#1079B7]' : 'text-white'}
                                     `}
                                 />
                             </Link>

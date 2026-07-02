@@ -15,10 +15,30 @@ import Faq from "./sections/Faq";
 import HowWeWork from "./sections/HowWeWorks";
 import Integrations from "./sections/integrations";
 
+import Lenis from '@studio-freight/lenis'
+
 const Follei = () => {
     useScrollAnimations();
 
     useEffect(() => {
+        // Initialize Lenis smooth scroll
+        const lenis = new Lenis({
+            duration: 1.8, // Ultra smooth duration (increased from 1.2)
+            easing: (t) => 1 - Math.pow(1 - t, 4), // Quartic ease-out for a buttery gliding feel
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 0.8, // Slightly softer wheel step to enhance smoothness
+            touchMultiplier: 1.5,
+        });
+
+        function raf(time: number) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
         const lastRefresh = sessionStorage.getItem("follei-refresh-time");
         const now = Date.now();
         const recentlyRefreshed = lastRefresh && (now - parseInt(lastRefresh, 10) < 10000);
@@ -27,6 +47,10 @@ const Follei = () => {
             sessionStorage.setItem("follei-refresh-time", now.toString());
             window.location.reload();
         }
+
+        return () => {
+            lenis.destroy();
+        };
     }, []);
 
     return (

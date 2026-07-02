@@ -1,11 +1,49 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Network } from "lucide-react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import bgImage from "../../../../assets/images/products/bg.png";
 import bg7 from "../../../../assets/images/products/bg7.jpg";
 import gmailIcon from "../../../../assets/images/products/socialMediaIcons/Gmail.svg";
 import whatsappIcon from "../../../../assets/images/products/socialMediaIcons/WhatsApp.svg";
 import callsIcon from "../../../../assets/images/products/socialMediaIcons/Calls.svg";
 import messengerIcon from "../../../../assets/images/products/socialMediaIcons/Messenger.svg";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const AnimatedNumber: React.FC<{ value: number; suffix?: string; prefix?: string; className?: string }> = ({ value, suffix = "", prefix = "", className }) => {
+  const numberRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!numberRef.current) return;
+    
+    const obj = { val: 0 };
+    
+    const tween = gsap.to(obj, {
+      val: value,
+      duration: 2.5,
+      delay: 0.2, // Slight delay so the user sees it start after scrolling
+      ease: "power3.out", // Premium, cinematic deceleration
+      scrollTrigger: {
+        trigger: numberRef.current,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      },
+      onUpdate: () => {
+        if (numberRef.current) {
+          numberRef.current.innerText = prefix + Math.round(obj.val) + suffix;
+        }
+      }
+    });
+
+    return () => {
+      if (tween.scrollTrigger) tween.scrollTrigger.kill();
+      tween.kill();
+    };
+  }, [value, suffix, prefix]);
+
+  return <span ref={numberRef} className={className}>{prefix}0{suffix}</span>;
+};
 
 const AboutFollei: React.FC = () => {
   return (
@@ -21,7 +59,7 @@ const AboutFollei: React.FC = () => {
       <div className="w-full mx-auto px-6 sm:px-10 md:px-15 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center">
+        <div data-ns-animate data-delay="0" className="text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center">
           <div
             className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
           >
@@ -51,6 +89,7 @@ const AboutFollei: React.FC = () => {
 
           {/* Card 1*/}
           <div
+            data-ns-animate data-delay="0.1"
             className="relative bg-gradient-to-br from-[#1E293B] to-[#0A111F] text-white rounded-[10px] p-5 flex flex-col justify-between w-full mx-auto overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all duration-500" />
@@ -72,7 +111,7 @@ const AboutFollei: React.FC = () => {
             </div>
 
             <div className="relative z-10 bg-white text-[#0B0F19] rounded-[14px] p-[15px] flex flex-col justify-between h-[193px] mt-auto shadow-sm">
-              <span className="text-[100px] tracking-tight text-[#222222] leading-none select-none">6</span>
+              <AnimatedNumber value={6} className="text-[100px] tracking-tight text-[#222222] leading-none select-none" />
               <p className="text-[#0B0F19] text-[13px] leading-relaxed font-normal">
                 Business Intelligence, Knowledge, Revenue, Customer, AI Workforce, and Learning Systems working together as one intelligent platform.
               </p>
@@ -81,6 +120,7 @@ const AboutFollei: React.FC = () => {
 
           {/* Card 2: Built For Modern Enterprises */}
           <div
+            data-ns-animate data-delay="0.2"
             className="relative bg-[#F2F2F2] rounded-[16px] p-5 flex flex-col justify-between w-full mx-auto hover:bg-[#F3F4F6]/90 transition-all duration-500"
           >
             <div className="flex items-start justify-between">
@@ -90,7 +130,7 @@ const AboutFollei: React.FC = () => {
             </div>
 
             <div className="my-2 flex flex-col justify-center">
-              <span className="text-[70px] tracking-tight text-[#222222]">24/7</span>
+              <AnimatedNumber value={24} suffix="/7" className="text-[70px] tracking-tight text-[#222222]" />
 
               <div className="flex items-center gap-2.5 mt-5">
                 <img src={gmailIcon} className="w-7 h-7 object-contain hover:scale-110 transition-transform duration-300" alt="Gmail" />
@@ -109,13 +149,14 @@ const AboutFollei: React.FC = () => {
 
             {/* Card 3: Connected Ecosystem */}
             <div
+              data-ns-animate data-delay="0.3"
               className="relative bg-[#D7FD76] text-[#0B0F19] rounded-[16px] p-5 flex flex-col justify-between hover:brightness-105 transition-all duration-500"
             >
               <div>
                 <h3 className="text-[18px] tracking-tight leading-tight">
                   Connected Ecosystem
                 </h3>
-                <span className="text-[60px] tracking-tight">50+</span>
+                <AnimatedNumber value={50} suffix="+" className="text-[60px] tracking-tight" />
               </div>
               <p className="text-[#000000] text-[18px] leading-snug">
                 Integrate business systems, communication channels, and knowledge sources into a single AI-ready ecosystem.
@@ -124,6 +165,7 @@ const AboutFollei: React.FC = () => {
 
             {/* Card 4: Availability */}
             <div
+              data-ns-animate data-delay="0.4"
               className="bg-[#131313] text-white rounded-[16px] p-6 h-[78px] flex items-center justify-between hover:border-slate-800 transition-all duration-300"
             >
               <div className="flex flex-col">
