@@ -139,7 +139,7 @@ export const Automation: React.FC = () => {
                 >
                   <div className="flex flex-col md:flex-row justify-between items-stretch gap-6 w-full h-full">
                     {/* Left Text content - Fixed Width prevents Reflow */}
-                    <div className="flex flex-col justify-between flex-1 w-full md:w-[220px] md:min-w-[220px] md:max-w-[220px]">
+                    <div className={`flex flex-col justify-between flex-1 w-full ${isExpanded ? "md:w-[220px] md:min-w-[220px] md:max-w-[220px]" : "md:w-full md:min-w-0"}`}>
                       <div className="w-[46px] h-[46px] rounded-[8px] bg-[#004370] text-[#FFFFFF] flex items-center justify-center mb-[20px]">
                         <IconComponent className="w-[22px] h-[22px]" />
                       </div>
@@ -155,8 +155,8 @@ export const Automation: React.FC = () => {
 
                     {/* Right Graphic content - smooth reveal */}
                     <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden flex items-center justify-center bg-slate-50/20 border border-slate-100 rounded-xl ${isExpanded
-                        ? "w-full md:w-[48%] opacity-100 p-4 min-h-[160px] md:min-h-full"
-                        : "w-0 h-0 md:h-auto opacity-0 p-0 border-none"
+                      ? "w-full md:w-[48%] opacity-100 p-4 min-h-[160px] md:min-h-full"
+                      : "w-0 h-0 md:h-auto opacity-0 p-0 border-none"
                       }`}>
                       <img
                         src={card.graphic}
@@ -188,7 +188,7 @@ export const Automation: React.FC = () => {
                 >
                   <div className={`flex flex-col ${isExpanded ? "md:flex-row-reverse" : "md:flex-row"} justify-between items-stretch gap-6 w-full h-full`}>
                     {/* Right Text content - Fixed Width prevents Reflow */}
-                    <div className="flex flex-col justify-between flex-1 w-full md:w-[220px] md:min-w-[220px] md:max-w-[220px]">
+                    <div className={`flex flex-col justify-between flex-1 w-full ${isExpanded ? "md:w-[220px] md:min-w-[220px] md:max-w-[220px]" : "md:w-full md:min-w-0"}`}>
                       <div className="w-[46px] h-[46px] rounded-[8px] bg-[#004370] text-[#FFFFFF] flex items-center justify-center mb-[20px]">
                         <IconComponent className="w-[22px] h-[22px]" />
                       </div>
@@ -204,8 +204,8 @@ export const Automation: React.FC = () => {
 
                     {/* Left Graphic content - smooth reveal */}
                     <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden flex items-center justify-center bg-slate-50/20 border border-slate-100 rounded-xl ${isExpanded
-                        ? "w-full md:w-[48%] opacity-100 p-4 min-h-[160px] md:min-h-full"
-                        : "w-0 h-0 md:h-auto opacity-0 p-0 border-none"
+                      ? "w-full md:w-[48%] opacity-100 p-4 min-h-[160px] md:min-h-full"
+                      : "w-0 h-0 md:h-auto opacity-0 p-0 border-none"
                       }`}>
                       <img
                         src={card.graphic}
