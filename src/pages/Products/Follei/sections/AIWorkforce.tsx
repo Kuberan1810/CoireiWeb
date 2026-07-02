@@ -259,15 +259,17 @@ export const AIWorkforce: React.FC = () => {
       const cards = gsap.utils.toArray<HTMLElement>(".stack-card");
       if (cards.length === 0) return;
 
+      const totalCards = cards.length;
+
       // Reset initial card locations
       cards.forEach((card, index) => {
         if (index > 0) {
-          gsap.set(card, { y: 550, opacity: 0 });
+          gsap.set(card, { y: 650, opacity: 1 });
         } else {
           gsap.set(card, { y: 0, opacity: 1 });
         }
         gsap.set(card, {
-          zIndex: 20 + index
+          zIndex: totalCards - index
         });
       });
 
@@ -275,32 +277,34 @@ export const AIWorkforce: React.FC = () => {
         scrollTrigger: {
           trigger: cardsWrapperRef.current,
           start: "top 15%",
-          end: "+=3200", // Height of scroll pin
+          end: "+=3200",
           pin: true,
           pinSpacing: true,
-          scrub: 0.5,
+          scrub: 1.5,
         }
       });
 
       for (let i = 1; i < cards.length; i++) {
-        // Animate previous card scaling down
+        tl.set(cards[i], { zIndex: totalCards + i }, `step-${i}`);
+
+        // Animate previous card scaling down 
         tl.to(cards[i - 1], {
-          scale: 0.92,
-          y: -30,
-          opacity: 0.5,
-          duration: 3,
-          ease: "power2.inOut"
+          scale: 0.95,
+          y: -20,
+          opacity: 1,
+          duration: 6,
+          ease: "power1.out"
         }, `step-${i}`);
 
-        // Simultaneously animate the new card sliding in
+        // Simultaneously animate the new card sliding 
         tl.to(cards[i], {
           y: 0,
           opacity: 1,
-          duration: 3,
-          ease: "power2.inOut"
+          duration: 6,
+          ease: "power1.out"
         }, `step-${i}`);
 
-        // Small pause between card transitions to keep active card locked
+        // Pause to hold the current card in view
         tl.to({}, { duration: 4 });
       }
     }, sectionRef);
@@ -311,7 +315,7 @@ export const AIWorkforce: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#F8F9FA] py-16 lg:py-24"
+      className="relative w-full bg-white py-16 lg:py-24"
     >
       {/* Background Texture Overlay */}
       <div
@@ -362,7 +366,8 @@ export const AIWorkforce: React.FC = () => {
             >
               {/* CARD */}
               <div
-                className="group w-full h-[520px] sm:h-[500px] lg:h-[481px] bg-[#F1F1F1] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between"
+                className="group w-full h-[520px] sm:h-[500px] lg:h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between"
+                style={{ backgroundColor: '#F1F1F1', opacity: 1 }}
               >
                 {/* Left Content */}
                 <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
