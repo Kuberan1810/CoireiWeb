@@ -70,15 +70,13 @@ const OverviewSection: React.FC = () => {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-wrap items-center gap-4">
-                            <button className="flex items-center gap-2 px-6 py-3.5 bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-full font-medium transition-all duration-300  group cursor-pointer text-sm">
+                            <button className="flex items-center justify-center gap-2 w-[179px] h-[60px] bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-full font-medium transition-all duration-300 group cursor-pointer text-sm">
                                 <span>Book a demo</span>
                                 <ChevronRight size={16} className="text-white/70 transition-transform duration-300 group-hover:translate-x-1" />
                             </button>
-                            <button className="flex items-center gap-2.5 px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 rounded-full font-medium transition-all duration-300 border border-slate-200 cursor-pointer text-sm">
+                            <button className="flex items-center justify-center gap-2 w-[179px] h-[60px] bg-white hover:bg-slate-50 text-[#1F2A47] rounded-full font-medium transition-all duration-300 border border-[#1F2A47]/10 cursor-pointer text-sm">
                                 <span>Watch video</span>
-                                <div className="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center bg-transparent">
-                                    <Play size={10} className="text-slate-500 fill-slate-500 translate-x-[0.5px]" />
-                                </div>
+                                <Play size={14} className="text-[#1F2A47]/40 fill-none" />
                             </button>
                         </div>
 
@@ -86,12 +84,12 @@ const OverviewSection: React.FC = () => {
 
                     {/* Right Column: Dashboard Mockup Image */}
                     <div className="lg:col-span-7 flex items-center justify-center relative order-1 lg:order-2">
-                        <div className="w-full rounded-[24px] border border-black/5 overflow-hidden shadow-2xl relative group">
-                            <div className="absolute inset-0 bg-transparent transition-colors duration-300 pointer-events-none" />
+                        <div className="w-full rounded-[24px] border border-black/5 overflow-hidden relative">
+                            <div className="absolute inset-0 bg-transparent pointer-events-none" />
                             <img 
                                 src={oneAiAgent} 
                                 alt="Follei Analytics Dashboard" 
-                                className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-500"
+                                className="w-full h-auto object-cover"
                             />
                         </div>
                     </div>
