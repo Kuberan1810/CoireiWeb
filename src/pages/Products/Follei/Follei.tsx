@@ -1,5 +1,5 @@
 
-import Footer from "../../../component/Footer/Footer";
+import Footer from "./sections/Footer";
 import Navbar from "../../../component/Navbar";
 import SEO from "../../../component/SEO";
 import useScrollAnimations from "../../../hooks/useScrollAnimations";
@@ -32,7 +32,7 @@ const Follei = () => {
     return (
         <div className="overflow-x-clip bg-[#FFFFFF] min-h-screen">
             <SEO
-                title="Our Products – Coirei"
+                title="Follei"
                 description="Explore our range of AI-driven digital products including Execa, Follei, and Coirei LMS."
             />
 
@@ -52,7 +52,7 @@ const Follei = () => {
                 <Faq />
             </main>
 
-            <Footer isFollei />
+            <Footer/>
         </div>
     );
 };

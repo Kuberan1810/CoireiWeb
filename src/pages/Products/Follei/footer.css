@@ -1,0 +1,226 @@
+.footer {
+  z-index: 1;
+  border-radius: 20px;
+  background-color: #020625;
+  background-image: url("https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69b25bf69b88976820cc9ae9_Group%202147227631.avif");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: relative;
+}
+
+.footer {
+  z-index: 1;
+  border-radius: 20px;
+  background-color: #020625;
+  background-image: url("https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69b25bf69b88976820cc9ae9_Group%202147227631.avif");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: relative;
+}
+
+.footer-top {
+  padding-top: 150px;
+}
+
+.container-fluid {
+  max-width: 1680px;
+  padding-right: 130px;
+  padding-left: 130px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-widgets-area {
+  z-index: 2;
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+}
+
+.footer-title {
+  color: white;
+  font-size: 1.5rem;
+  line-height:110%;
+  margin-bottom: 24px;
+}
+
+.footer-text-link {
+  color: #94969a;
+  font-size: 1.125rem;
+  line-height: 110%;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.footer-text-link:hover,
+.footer-text-link.w--current {
+  color: white;
+}
+
+.footer-nav {
+  grid-column-gap: 14px;
+  grid-row-gap: 14px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.footer-center {
+  z-index: 1;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #ffffff1a;
+  text-align: center;
+  padding-bottom: 60px;
+  font-size: 24vw;
+  line-height: 100%;
+  position: relative;
+}
+
+.footer-logo {
+  z-index: 0;
+  opacity: .1;
+  color: white;
+  font-size: 23vw;
+  position: relative;
+}
+
+.foote-bottom {
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-center-backgorund {
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
+  inset: auto 0% 0%;
+}
+
+.text-link-wrapper {
+  justify-content: center;
+  align-items: center;
+  line-height: 120%;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-text-hover {
+  position: absolute;
+}
+
+.link-text-hover.white {
+  color: white;
+}
+
+.footer-source-link {
+  color: #006fb2;
+}
+
+/* Hover animation for footer text links */
+.text-link-wrapper .link-text,
+.text-link-wrapper .link-text-hover {
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.text-link-wrapper .link-text-hover {
+  top: 100%;
+}
+
+.footer-text-link:hover .link-text {
+  transform: translateY(-100%);
+}
+
+.footer-text-link:hover .link-text-hover {
+  transform: translateY(-100%);
+}
+
+/* --- Responsive Styles --- */
+
+@media screen and (min-width: 1280px) {
+  .footer {
+    border-radius: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer {
+    border-radius: 40px;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 991px) {
+  .footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .footer-top {
+    padding-top: 100px;
+  }
+  .container-fluid {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .footer-widgets-area {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 767px) {
+  .footer-top {
+    padding-top: 80px;
+  }
+  .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footer-widgets-area {
+    grid-column-gap: 24px;
+    grid-row-gap: 40px;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+  }
+  .footer-center {
+    font-size: 22vw;
+  }
+  .footer-logo {
+    font-size: 20vw;
+  }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 479px) {
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footer-widgets-area {
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+  .footer-center {
+    font-size: 19vw;
+  }
+  .footer-logo {
+    font-size: 20vw;
+  }
+}
