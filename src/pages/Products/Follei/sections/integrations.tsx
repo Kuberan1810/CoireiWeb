@@ -70,7 +70,7 @@ const Integrations = () => {
 
                 {/* Header */}
                 {/* Header Area */}
-                <div className="flex flex-col items-center  mb-20">
+                <div data-ns-animate className="flex flex-col items-center mb-20">
                     {/* Badge with Figma style from Overview */}
                     <div className="mb-6 flex justify-center">
                         <div
@@ -109,7 +109,7 @@ const Integrations = () => {
             SM (110px): gap=20px (5). overlap = 31px
             MD (130px): gap=24px (6). overlap = 37px
         */}
-                <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center scale-90 sm:scale-100">
+                <div data-ns-animate data-delay="0.2" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center scale-90 sm:scale-100">
 
                     <div className="flex gap-4 sm:gap-5 md:gap-6 justify-center">
                         {row1.map((item, idx) => (

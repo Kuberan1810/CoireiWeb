@@ -87,7 +87,7 @@ export const Automation: React.FC = () => {
         {/* Header Area */}
         <div className="flex flex-col items-center">
           {/* Badge capsule */}
-          <div className="mb-6 flex justify-center">
+          <div data-ns-animate className="mb-6 flex justify-center">
             <div
               style={{
                 borderWidth: '0.5px',
@@ -107,13 +107,13 @@ export const Automation: React.FC = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="text-[#0A0E29] text-3xl sm:text-5xl md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 text-center max-w-4xl mx-auto">
+          <h2 data-ns-animate data-delay="0.1" className="text-[#0A0E29] text-3xl sm:text-5xl md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 text-center max-w-4xl mx-auto">
             The Six Intelligence Systems That Power <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">Every AI Decision</span>
           </h2>
 
           {/* Subheading */}
-          <p className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto font-normal leading-relaxed text-center">
+          <p data-ns-animate data-delay="0.2" className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto font-normal leading-relaxed text-center">
             Follei combines business intelligence, autonomous AI workers, and continuous learning into one unified platform that helps organizations operate smarter, faster, and at scale.
           </p>
         </div>
@@ -123,6 +123,8 @@ export const Automation: React.FC = () => {
 
           {/* Row 1 */}
           <div
+            data-ns-animate
+            data-delay="0.3"
             onMouseLeave={() => setActiveRow1(0)}
             className="flex flex-col md:flex-row gap-[25px] w-full"
           >
@@ -172,6 +174,8 @@ export const Automation: React.FC = () => {
           </div>
 
           <div
+            data-ns-animate
+            data-delay="0.4"
             onMouseLeave={() => setActiveRow2(5)}
             className="flex flex-col md:flex-row gap-[25px] w-full"
           >

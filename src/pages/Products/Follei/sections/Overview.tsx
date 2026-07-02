@@ -16,7 +16,7 @@ const OverviewSection: React.FC = () => {
                     <div className="lg:col-span-5 flex flex-col items-start text-left order-2 lg:order-1">
 
                         {/* Badge with exact Figma styling */}
-                        <div className="mb-6 flex justify-start">
+                        <div data-ns-animate className="mb-6 flex justify-start">
                             <div
                                 style={{
                                     borderWidth: '0.5px',
@@ -37,6 +37,8 @@ const OverviewSection: React.FC = () => {
 
                         {/* Heading */}
                         <h1
+                            data-ns-animate
+                            data-delay="0.1"
                             style={{
                                 letterSpacing: '-2.56px',
                                 lineHeight: '1.1'
@@ -46,6 +48,8 @@ const OverviewSection: React.FC = () => {
                             One AI Agent.
                         </h1>
                         <h1
+                            data-ns-animate
+                            data-delay="0.2"
                             style={{
                                 letterSpacing: '-2.56px',
                                 lineHeight: '1.1'
@@ -57,6 +61,8 @@ const OverviewSection: React.FC = () => {
 
                         {/* Description with exact styling */}
                         <p
+                            data-ns-animate
+                            data-delay="0.3"
                             style={{
                                 fontSize: '20px',
                                 letterSpacing: '0px',
@@ -69,7 +75,7 @@ const OverviewSection: React.FC = () => {
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-wrap items-center gap-4">
+                        <div data-ns-animate data-delay="0.4" className="flex flex-wrap items-center gap-4">
                             <button className="flex items-center justify-center gap-2 w-[179px] h-[60px] bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-full font-medium transition-all duration-300 group cursor-pointer text-sm">
                                 <span>Book a demo</span>
                                 <ChevronRight size={16} className="text-white/70 transition-transform duration-300 group-hover:translate-x-1" />
@@ -83,7 +89,7 @@ const OverviewSection: React.FC = () => {
                     </div>
 
                     {/* Right Column: Dashboard Mockup Image */}
-                    <div className="lg:col-span-7 flex items-center justify-center relative order-1 lg:order-2">
+                    <div data-ns-animate data-delay="0.2" className="lg:col-span-7 flex items-center justify-center relative order-1 lg:order-2">
                         <div className="w-full rounded-[24px] border border-black/5 overflow-hidden relative">
                             <div className="absolute inset-0 bg-transparent pointer-events-none" />
                             <img
