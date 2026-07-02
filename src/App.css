@@ -594,3 +594,14 @@ img {
         grid-area: span 1 / span 2 / span 1 / span 2;
     }
 }
+
+
+::selection {
+  background: #004370;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #004370;
+  color: #fff;
+}
