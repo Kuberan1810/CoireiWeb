@@ -3,10 +3,10 @@ import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
 
 // Image Imports
-import folleihomescreen from "../../../../assets/images/products/folleinewdashboard.svg";
-import knowledgeSystemImg from "../../../../assets/images/products/totalcharts.svg";
-import aiWorkforceImg from "../../../../assets/images/products/execute2.svg";
-import learningEngineImg from "../../../../assets/images/products/improve.svg";
+import group1 from "../../../../assets/images/products/group1.svg";
+import group2 from "../../../../assets/images/products/group2.svg";
+import group3 from "../../../../assets/images/products/group3.svg";
+import group4 from "../../../../assets/images/products/group4.svg";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
@@ -18,25 +18,25 @@ const tabData = [
         id: "connect",
         title: "Connect",
         description: "Bring together your CRM, emails, WhatsApp, ERP, and customer conversations one intelligence layer.",
-        graphic: folleihomescreen
+        graphic: group1
     },
     {
         id: "understand",
         title: "Understand",
         description: "Follei learns your business context, customer behavior, pricing models, policies, and workflows automatically.",
-        graphic: knowledgeSystemImg
+        graphic: group2
     },
     {
         id: "execute",
         title: "Execute",
         description: "AI workers qualify leads, answer customers, schedule meetings, collect payments, and manage customer success.",
-        graphic: aiWorkforceImg
+        graphic: group3
     },
     {
         id: "improve",
         title: "Improve",
         description: "every interaction becomes a learning signal, helping Follei continuously optimize performance and outcomes.",
-        graphic: learningEngineImg
+        graphic: group4
     }
 ];
 
@@ -102,7 +102,7 @@ export const FolleiPlatformSection: React.FC = () => {
 
                     const st = ScrollTrigger.create({
                         trigger: imageContainerRef.current,
-                        start: "center 35%",
+                        start: "center 50%",
                         end: "+=2400",
                         pin: container,
                         scrub: 1.5,
@@ -168,7 +168,7 @@ export const FolleiPlatformSection: React.FC = () => {
     };
 
     return (
-        <section ref={sectionRef} className="relative w-full lg:min-h-screen py-4 lg:py-6 px-6 sm:px-10 md:px-15 overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#FFF7F0] flex flex-col items-center justify-start text-center">
+        <section ref={sectionRef} className="relative w-full lg:min-h-[120vh] pt-16 pb-20 md:pb-24 lg:pt-24 px-6 sm:px-10 md:px-15 overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#FFF7F0] flex flex-col items-center justify-start text-center">
             {/* Background Decorative Glow */}
             <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#1079B7]/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -207,8 +207,8 @@ export const FolleiPlatformSection: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="w-full relative flex flex-col items-center justify-start pb-2">
-                    <div ref={imageContainerRef} className="gsap-image-showcase w-full max-w-[1072px] md:h-[480px] aspect-[1200/672] overflow-hidden relative">
+                <div className="w-full relative flex flex-col items-center justify-start pb-2 mt-12 md:mt-18 lg:mt-22">
+                    <div ref={imageContainerRef} className="gsap-image-showcase w-full max-w-[1072px] aspect-[1200/672] overflow-hidden relative">
                         {/* Invisible spacer image to maintain responsive height naturally */}
                         <img
                             src={tabData[0].graphic}
@@ -249,12 +249,12 @@ export const FolleiPlatformSection: React.FC = () => {
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className={`text-base lg:text-lg font-semibold mb-1 transition-colors duration-300 ${isActive ? "text-[#0A0E29]" : "text-[#94A3B8] group-hover:text-slate-500"}`}>
+                                    <h3 className={`text-lg lg:text-xl font-semibold mb-1 transition-colors duration-300 ${isActive ? "text-[#0A0E29]" : "text-[#94A3B8] group-hover:text-slate-500"}`}>
                                         {tab.title}
                                     </h3>
 
                                     {/* Description */}
-                                    <p className={`text-xs leading-relaxed transition-colors duration-300 ${isActive ? "text-[#475569]" : "text-[#94A3B8]/80 group-hover:text-slate-400 font-light"}`}>
+                                    <p className={`text-sm leading-relaxed transition-colors duration-300 ${isActive ? "text-[#475569]" : "text-[#94A3B8]/80 group-hover:text-slate-400 font-light"}`}>
                                         {tab.description}
                                     </p>
                                 </button>
