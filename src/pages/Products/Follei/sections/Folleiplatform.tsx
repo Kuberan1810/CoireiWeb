@@ -4,9 +4,9 @@ import localScrollTrigger from "gsap/ScrollTrigger";
 
 // Image Imports
 import folleihomescreen from "../../../../assets/images/products/folleinewdashboard.svg";
-import knowledgeSystemImg from "../../../../assets/images/products/understand.svg";
-import aiWorkforceImg from "../../../../assets/images/products/execute.svg";
-import learningEngineImg from "../../../../assets/images/products/learningengine.svg";
+import knowledgeSystemImg from "../../../../assets/images/products/totalcharts.svg";
+import aiWorkforceImg from "../../../../assets/images/products/execute2.svg";
+import learningEngineImg from "../../../../assets/images/products/improve.svg";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
@@ -153,6 +153,8 @@ export const FolleiPlatformSection: React.FC = () => {
         const index = tabData.findIndex(t => t.id === tabId);
         if (index === -1) return;
 
+        setActiveTab(tabId);
+
         const st = scrollTriggerRef.current;
         if (st) {
             const startScroll = st.start;
@@ -162,8 +164,6 @@ export const FolleiPlatformSection: React.FC = () => {
                 top: targetScroll,
                 behavior: "smooth"
             });
-        } else {
-            setActiveTab(tabId);
         }
     };
 

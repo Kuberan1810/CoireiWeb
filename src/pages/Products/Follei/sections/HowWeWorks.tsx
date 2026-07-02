@@ -16,7 +16,7 @@ export const HowWeWorks: React.FC = () => {
             <div className="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-center gap-12">
 
                 {/* Header Area */}
-                <div className="flex flex-col items-center">
+                <div data-ns-animate className="flex flex-col items-center">
                     {/* Badge with Figma style from Overview */}
                     <div className="mb-6 flex justify-center">
                         <div
@@ -53,7 +53,7 @@ export const HowWeWorks: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full mt-4">
 
                     {/* Step-01 Content */}
-                    <div className="md:col-start-1 md:row-start-1 order-1 flex flex-col">
+                    <div data-ns-animate className="md:col-start-1 md:row-start-1 order-1 flex flex-col">
                         <div className="w-full border-[1px] border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
                             <span className="text-sm font-medium text-slate-400 block mb-[50px]">Step-01</span>
                             <div className="flex flex-col gap-2">
@@ -66,7 +66,7 @@ export const HowWeWorks: React.FC = () => {
                     </div>
 
                     {/* Step-01 Image */}
-                    <div className="md:col-start-2 md:row-start-1 order-2 flex flex-col">
+                    <div data-ns-animate data-delay="0.1" className="md:col-start-2 md:row-start-1 order-2 flex flex-col">
                         <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
                             <img
                                 src={builddiscoveryImg}
@@ -77,7 +77,7 @@ export const HowWeWorks: React.FC = () => {
                     </div>
 
                     {/* Step-02 Image */}
-                    <div className="md:col-start-1 md:row-start-2 order-4 flex flex-col">
+                    <div data-ns-animate data-delay="0.1" className="md:col-start-1 md:row-start-2 order-4 flex flex-col">
                         <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
                             <img
                                 src={buildintelligenceImg}
@@ -88,7 +88,7 @@ export const HowWeWorks: React.FC = () => {
                     </div>
 
                     {/* Step-02 Content */}
-                    <div className="md:col-start-2 md:row-start-2 order-3 flex flex-col">
+                    <div data-ns-animate data-delay="0.2" className="md:col-start-2 md:row-start-2 order-3 flex flex-col">
                         <div className="w-full border-[1px] border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
                             <span className="text-sm font-medium text-slate-400 block mb-[50px]">Step-02</span>
                             <div className="flex flex-col gap-2">
@@ -101,7 +101,7 @@ export const HowWeWorks: React.FC = () => {
                     </div>
 
                     {/* Step-03 Content */}
-                    <div className="md:col-start-3 md:row-start-1 order-5 flex flex-col">
+                    <div data-ns-animate data-delay="0.2" className="md:col-start-3 md:row-start-1 order-5 flex flex-col">
                         <div className="w-full border-[1px] border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
                             <span className="text-sm font-medium text-slate-400 block mb-[50px]">Step-03</span>
                             <div className="flex flex-col gap-2">
@@ -114,7 +114,7 @@ export const HowWeWorks: React.FC = () => {
                     </div>
 
                     {/* Step-03 Image */}
-                    <div className="md:col-start-3 md:row-start-2 order-6 flex flex-col">
+                    <div data-ns-animate data-delay="0.3" className="md:col-start-3 md:row-start-2 order-6 flex flex-col">
                         <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
                             <img
                                 src={deployaiworkersImg}
@@ -125,7 +125,7 @@ export const HowWeWorks: React.FC = () => {
                     </div>
 
                     {/* Step-04 Image */}
-                    <div className="md:col-start-4 md:row-start-1 order-8 flex flex-col">
+                    <div data-ns-animate data-delay="0.3" className="md:col-start-4 md:row-start-1 order-8 flex flex-col">
                         <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
                             <img
                                 src={learnimproveImg}
@@ -136,7 +136,7 @@ export const HowWeWorks: React.FC = () => {
                     </div>
 
                     {/* Step-04 Content */}
-                    <div className="md:col-start-4 md:row-start-2 order-7 flex flex-col">
+                    <div data-ns-animate data-delay="0.4" className="md:col-start-4 md:row-start-2 order-7 flex flex-col">
                         <div className="w-full border-[1px] border-[#E3E3E3] bg-[#FFFFFF] p-[20px] flex flex-col justify-start text-left h-[220px] rounded-none shadow-none">
                             <span className="text-sm font-medium text-slate-400 block mb-[50px]">Step-04</span>
                             <div className="flex flex-col gap-2">
