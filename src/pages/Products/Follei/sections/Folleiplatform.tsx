@@ -42,9 +42,24 @@ const tabData = [
 
 export const FolleiPlatformSection: React.FC = () => {
     const [activeTab, setActiveTab] = useState("connect");
+    const [isPaused, setIsPaused] = useState(false);
     const sectionRef = useRef<HTMLDivElement>(null);
     const imageContainerRef = useRef<HTMLDivElement>(null);
-    const scrollTriggerRef = useRef<any>(null);
+
+    // Auto-play loop
+    useEffect(() => {
+        if (isPaused) return;
+
+        const timer = setTimeout(() => {
+            setActiveTab(prev => {
+                const currentIndex = tabData.findIndex(t => t.id === prev);
+                const nextIndex = (currentIndex + 1) % tabData.length;
+                return tabData[nextIndex].id;
+            });
+        }, 4000); // 5 seconds per tab
+
+        return () => clearTimeout(timer);
+    }, [activeTab, isPaused]);
 
     useEffect(() => {
         const container = sectionRef.current;
@@ -96,53 +111,6 @@ export const FolleiPlatformSection: React.FC = () => {
                     { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" },
                     "-=0.5"
                 );
-
-                if (isDesktop) {
-                    let activeIndex = 0;
-
-                    const st = ScrollTrigger.create({
-                        trigger: imageContainerRef.current,
-                        start: "center 50%",
-                        end: "+=2400",
-                        pin: container,
-                        scrub: 1.5,
-                        onUpdate: (self) => {
-                            const progress = self.progress;
-                            let index = Math.floor(progress * 4);
-                            if (index > 3) index = 3;
-                            if (index < 0) index = 0;
-
-                            if (index !== activeIndex) {
-                                activeIndex = index;
-                                setActiveTab(tabData[index].id);
-                            }
-
-                            // Update progress lines
-                            const lines = container.querySelectorAll(".gsap-tab-line-fill");
-                            lines.forEach((line, i) => {
-                                let lineProgress = 0;
-                                if (i < index) {
-                                    lineProgress = 1;
-                                } else if (i === index) {
-                                    lineProgress = (progress - i * 0.25) / 0.25;
-                                } else {
-                                    lineProgress = 0;
-                                }
-                                lineProgress = Math.max(0, Math.min(1, lineProgress));
-                                gsap.set(line, { scaleX: lineProgress, transformOrigin: "left center" });
-                            });
-                        }
-                    });
-
-                    scrollTriggerRef.current = st;
-                } else {
-                    // Clean up inline styles for mobile to ensure CSS classes work correctly
-                    const lines = container.querySelectorAll(".gsap-tab-line-fill");
-                    lines.forEach((line) => {
-                        gsap.set(line, { clearProps: "transform" });
-                    });
-                    scrollTriggerRef.current = null;
-                }
             });
         });
 
@@ -150,29 +118,15 @@ export const FolleiPlatformSection: React.FC = () => {
     }, []);
 
     const handleTabClick = (tabId: string) => {
-        const index = tabData.findIndex(t => t.id === tabId);
-        if (index === -1) return;
-
         setActiveTab(tabId);
-
-        const st = scrollTriggerRef.current;
-        if (st) {
-            const startScroll = st.start;
-            const scrollDistance = 2400; // matching the end: "+=2400"
-            const targetScroll = startScroll + index * (scrollDistance / 4) + 10;
-            window.scrollTo({
-                top: targetScroll,
-                behavior: "smooth"
-            });
-        }
     };
 
     return (
-        <section ref={sectionRef} className="relative w-full lg:min-h-[120vh] pt-16 pb-20 md:pb-24 lg:pt-24 px-6 sm:px-10 md:px-15 overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#FFF7F0] flex flex-col items-center justify-start text-center">
+        <section ref={sectionRef} className="relative w-full pt-16 pb-20 md:pb-24 lg:pt-24 px-6 sm:px-10 md:px-15 overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#FFF7F0] flex flex-col items-center justify-start text-center">
             {/* Background Decorative Glow */}
             <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#1079B7]/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="max-w-7xl w-full h-full mx-auto relative z-10 flex flex-col justify-start items-center gap-4">
+            <div className=" relative z-10 flex flex-col justify-start items-center gap-10">
                 {/* Top Header Area */}
                 <div className="flex flex-col items-center">
                     {/* Badge with exact Figma styling from Overview */}
@@ -207,8 +161,8 @@ export const FolleiPlatformSection: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="w-full relative flex flex-col items-center justify-start pb-2 mt-12 md:mt-18 lg:mt-22">
-                    <div ref={imageContainerRef} className="gsap-image-showcase w-full max-w-[1072px] aspect-[1200/672] overflow-hidden relative">
+                <div className="w-full relative flex flex-col items-center justify-start pb-2">
+                    <div ref={imageContainerRef} className="gsap-image-showcase w-full max-w-7xl aspect-[1200/672] overflow-hidden relative">
                         {/* Invisible spacer image to maintain responsive height naturally */}
                         <img
                             src={tabData[0].graphic}
@@ -223,7 +177,7 @@ export const FolleiPlatformSection: React.FC = () => {
                                     key={tab.id}
                                     src={tab.graphic}
                                     alt={tab.title}
-                                    className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${isVisible ? "opacity-100 scale-100 z-10" : "opacity-0 scale-95 z-0 pointer-events-none"
+                                    className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isVisible ? "opacity-100 scale-100 z-10" : "opacity-0 scale-95 z-0 pointer-events-none"
                                         }`}
                                 />
                             );
@@ -231,30 +185,40 @@ export const FolleiPlatformSection: React.FC = () => {
                     </div>
 
                     {/* Bottom Interactive Grid Tabs */}
-                    <div className="mt-6 px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl w-full mx-auto text-left z-20 relative">
-                        {tabData.map((tab) => {
+                    <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl w-full mx-auto text-left z-20 relative">
+                        {tabData.map((tab, index) => {
                             const isActive = tab.id === activeTab;
                             return (
                                 <button
                                     key={tab.id}
                                     onClick={() => handleTabClick(tab.id)}
-                                    className="gsap-tab-item flex flex-col items-start focus:outline-none group text-left w-full cursor-pointer"
+                                    onMouseEnter={() => {
+                                        handleTabClick(tab.id);
+                                        setIsPaused(true);
+                                    }}
+                                    onMouseLeave={() => setIsPaused(false)}
+                                    className="gsap-tab-item flex flex-col items-start focus:outline-none group text-left w-full cursor-pointer transition-transform duration-300 hover:-translate-y-1"
                                 >
                                     {/* Top status indicator line */}
-                                    <div className="relative h-[2px] w-full mb-3 bg-slate-200 group-hover:bg-slate-300 overflow-hidden">
+                                    <div className="relative h-[4px] w-full mb-3 bg-[#1079B720] group-hover:bg-slate-300 overflow-hidden rounded-full">
                                         <div
-                                            className={`gsap-tab-line-fill absolute top-0 left-0 h-full w-full bg-[#0A0E29] transition-transform duration-300 origin-left ${isActive ? "scale-x-100" : "scale-x-0"
-                                                }`}
+                                            className="absolute top-0 left-0 h-full bg-[#1079B7] rounded-full"
+                                            style={{
+                                                width: isActive ? '100%' : '0%',
+                                                transition: isActive 
+                                                    ? (isPaused ? 'width 0.4s ease-out' : 'width 5s linear')
+                                                    : 'none'
+                                            }}
                                         />
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className={`text-lg lg:text-xl font-semibold mb-1 transition-colors duration-300 ${isActive ? "text-[#0A0E29]" : "text-[#94A3B8] group-hover:text-slate-500"}`}>
+                                    <h3 className={`text-lg lg:text-2xl font-medium mb-1 transition-colors duration-300 ${isActive ? "text-[#0A0E29]" : "text-[#0A0E2950] group-hover:text-slate-500"}`}>
                                         {tab.title}
                                     </h3>
 
                                     {/* Description */}
-                                    <p className={`text-sm leading-relaxed transition-colors duration-300 ${isActive ? "text-[#475569]" : "text-[#94A3B8]/80 group-hover:text-slate-400 font-light"}`}>
+                                    <p className={`text-[14px] font-medium leading-relaxed transition-colors duration-300 ${isActive ? "text-[#5A5A5C]" : "text-[#262626]/50 group-hover:text-slate-400 font-light"}`}>
                                         {tab.description}
                                     </p>
                                 </button>

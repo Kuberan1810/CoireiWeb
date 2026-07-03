@@ -17,10 +17,10 @@ import bg6 from "../../../../assets/images/products/bg6.jpg";
 
 import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
 import {
-
-  Users as 
   Search,
+  ChevronRight,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
@@ -41,6 +41,7 @@ interface AgentCard {
   mockupBg: string;
   mockup: React.ReactNode;
   bgImage: string;
+  link: string;
 }
 
 const agents: AgentCard[] = [
@@ -55,75 +56,78 @@ const agents: AgentCard[] = [
     mockupTitle: "follei-sdr-instance-1",
     mockupBg: "bg-transparent",
     bgImage: bg1,
+    link: "/products/follei/sdr-worker",
     mockup: (
-      <div
-        className="w-[461px] h-[265px] border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between p-5 relative z-10 transition-all duration-300 group-hover:scale-[1.02]"
-        style={{
-          backgroundColor: '#FFFFFF',
-        }}
-      >
-        <div className="absolute top-4 left-5 flex gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
-          <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
-          <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
-        </div>
-
-        {/* Left column - Tasks */}
-        <div className="flex flex-col gap-3 pl-2.5 text-left justify-center h-full mt-4">
-          <div className="text-slate-800 font-extrabold text-[15px] tracking-wide shrink-0">Tasks :</div>
-          <div className="flex flex-col gap-3 font-medium text-xs text-slate-500">
-            <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
-              <span className="text-[#9C9C9C] text-[16px]">✓</span>
-              <span>Automate</span>
-            </div>
-            <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
-              <span className="text-[#9C9C9C] text-[16px]">✓</span>
-              <span>Reduce</span>
-            </div>
-            <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
-              <span className="text-[#9C9C9C] text-[16px]">✓</span>
-              <span>Improve</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right column */}
+      <div className="w-full h-full flex items-center justify-center scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-center">
         <div
-          className="w-[243px] h-[224px] border-[1.1px] border-slate-200/60 rounded-[21.12px] shadow-sm relative flex flex-col justify-center px-4"
+          className="w-[461px] h-[265px] shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between p-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
           style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.51)',
-            backdropFilter: 'blur(10px)'
+            backgroundColor: '#FFFFFF',
           }}
         >
-          <Search size={14} className="absolute top-4 right-4 text-slate-400" strokeWidth={2} />
+          <div className="absolute top-4 left-5 flex gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
+          </div>
 
-          {/* Blocks */}
-          <div className="flex flex-col gap-4 pt-2">
-            {/* Nurturing Row */}
-            <div className="flex items-center gap-3">
-              <div
-                className="w-[55px] h-[55px] rounded-[10.56px] shrink-0 shadow-sm"
-                style={{
-                  background: 'linear-gradient(135deg, #5960DF 0%, #F8CBC0 33%, #D7B5C6 66%, #5960DF 100%)'
-                }}
-              />
-              <div className="flex flex-col text-left">
-                <span className="text-[14px] font-bold text-slate-800 leading-tight">Nurturing</span>
-                <span className="text-[10px] text-slate-400 leading-none mt-1">Automated</span>
+          {/* Left column - Tasks */}
+          <div className="flex flex-col gap-3 pl-2.5 text-left justify-center h-full mt-4">
+            <div className="text-slate-800 font-extrabold text-[15px] tracking-wide shrink-0">Tasks :</div>
+            <div className="flex flex-col gap-3 font-medium text-xs text-slate-500">
+              <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
+                <span className="text-[#9C9C9C] text-[16px]">✓</span>
+                <span>Automate</span>
+              </div>
+              <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
+                <span className="text-[#9C9C9C] text-[16px]">✓</span>
+                <span>Reduce</span>
+              </div>
+              <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
+                <span className="text-[#9C9C9C] text-[16px]">✓</span>
+                <span>Improve</span>
               </div>
             </div>
+          </div>
 
-            {/* Meetings Row */}
-            <div className="flex items-center gap-3">
-              <div
-                className="w-[55px] h-[55px] rounded-[10.56px] shrink-0 shadow-sm"
-                style={{
-                  background: 'linear-gradient(135deg, #5960DF 0%, #F8CBC0 33%, #D7B5C6 66%, #5960DF 100%)'
-                }}
-              />
-              <div className="flex flex-col text-left">
-                <span className="text-[14px] font-bold text-slate-800 leading-tight">Meetings</span>
-                <span className="text-[10px] text-slate-400 leading-none mt-1">Syncing data</span>
+          {/* Right column */}
+          <div
+            className="w-[243px] h-[224px] border-[1.1px] border-slate-200/60 rounded-[21.12px] shadow-sm relative flex flex-col justify-center px-4"
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.51)',
+              backdropFilter: 'blur(10px)'
+            }}
+          >
+            <Search size={14} className="absolute top-4 right-4 text-slate-400" strokeWidth={2} />
+
+            {/* Blocks */}
+            <div className="flex flex-col gap-4 pt-2">
+              {/* Nurturing Row */}
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-[55px] h-[55px] rounded-[10.56px] shrink-0 shadow-sm"
+                  style={{
+                    background: 'linear-gradient(135deg, #5960DF 0%, #F8CBC0 33%, #D7B5C6 66%, #5960DF 100%)'
+                  }}
+                />
+                <div className="flex flex-col text-left">
+                  <span className="text-[14px] font-bold text-slate-800 leading-tight">Nurturing</span>
+                  <span className="text-[10px] text-slate-400 leading-none mt-1">Automated</span>
+                </div>
+              </div>
+
+              {/* Meetings Row */}
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-[55px] h-[55px] rounded-[10.56px] shrink-0 shadow-sm"
+                  style={{
+                    background: 'linear-gradient(135deg, #5960DF 0%, #F8CBC0 33%, #D7B5C6 66%, #5960DF 100%)'
+                  }}
+                />
+                <div className="flex flex-col text-left">
+                  <span className="text-[14px] font-bold text-slate-800 leading-tight">Meetings</span>
+                  <span className="text-[10px] text-slate-400 leading-none mt-1">Syncing data</span>
+                </div>
               </div>
             </div>
           </div>
@@ -142,7 +146,9 @@ const agents: AgentCard[] = [
     mockupTitle: "sales-exec-agent-main",
     mockupBg: "bg-white",
     bgImage: bg2,
+    link: "/products/follei/sales-executive",
     mockup: <img src={ai2} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Sales dashboard" />
+    
   },
   {
     id: "cs",
@@ -155,6 +161,7 @@ const agents: AgentCard[] = [
     mockupTitle: "cs-health-insights",
     mockupBg: "bg-slate-900",
     bgImage: bg3,
+    link: "/products/follei/customer-success",
     mockup: <img src={ai3} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Customer success dashboard" />
   },
   {
@@ -168,6 +175,7 @@ const agents: AgentCard[] = [
     mockupTitle: "support-routing-core",
     mockupBg: "bg-white",
     bgImage: bg6,
+    link: "/products/follei/support-worker",
     mockup: <img src={ai4} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Support dashboard" />
   },
   {
@@ -181,48 +189,51 @@ const agents: AgentCard[] = [
     mockupTitle: "ops-revenue-billing",
     mockupBg: "bg-transparent",
     bgImage: bg5,
+    link: "/products/follei/collections-worker",
     mockup: (
-      <div
-        className="w-[520px] h-[208px] border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between px-8 py-5 relative z-10 transition-all duration-300 group-hover:scale-[1.02]"
-        style={{
-          backgroundColor: '#FDFDFD'
-        }}
-      >
-        {/* Connector lines SVG */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 520 208" fill="none">
-          =          <line x1="172" y1="104" x2="236" y2="104" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 3" />
-          <circle cx="204" cy="104" r="3" fill="#38BDF8" />
-          <line x1="284" y1="104" x2="378" y2="104" stroke="#84CC16" strokeWidth="1.5" strokeDasharray="3 3" />
-          <circle cx="331" cy="104" r="3" fill="#84CC16" />
-        </svg>
+      <div className="w-full h-full flex items-center justify-center scale-[0.55] sm:scale-[0.7] md:scale-90 lg:scale-100 origin-center">
+        <div
+          className="w-[520px] h-[208px] shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between px-8 py-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
+          style={{
+            backgroundColor: '#FDFDFD'
+          }}
+        >
+          {/* Connector lines SVG */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 520 208" fill="none">
+            =          <line x1="172" y1="104" x2="236" y2="104" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 3" />
+            <circle cx="204" cy="104" r="3" fill="#38BDF8" />
+            <line x1="284" y1="104" x2="378" y2="104" stroke="#84CC16" strokeWidth="1.5" strokeDasharray="3 3" />
+            <circle cx="331" cy="104" r="3" fill="#84CC16" />
+          </svg>
 
-        {/* Left Card - Collections Worker */}
-        <div className="w-[140px] h-[90px] bg-white border border-sky-100 rounded-lg shadow-sm p-3 flex flex-col justify-between z-20">
-          <div className="flex items-center gap-1 bg-sky-50 text-[7px] font-bold text-sky-600 px-1.5 py-0.5 rounded-full w-fit">
-            <span className="w-1 h-1 rounded-full bg-sky-500 animate-pulse" />
-            Collections Worker
+          {/* Left Card - Collections Worker */}
+          <div className="w-[140px] h-[90px] bg-white border border-sky-100 rounded-lg shadow-sm p-3 flex flex-col justify-between z-20">
+            <div className="flex items-center gap-1 bg-sky-50 text-[7px] font-bold text-sky-600 px-1.5 py-0.5 rounded-full w-fit">
+              <span className="w-1 h-1 rounded-full bg-sky-500 animate-pulse" />
+              Collections Worker
+            </div>
+
+            <div className="flex flex-col gap-1.5 mt-1">
+              <div className="h-1.5 w-20 bg-sky-100/60 rounded" />
+              <div className="h-1.5 w-12 bg-sky-100/60 rounded" />
+              <div className="h-1.5 w-16 bg-sky-100/60 rounded" />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-1.5 mt-1">
-            <div className="h-1.5 w-20 bg-sky-100/60 rounded" />
-            <div className="h-1.5 w-12 bg-sky-100/60 rounded" />
-            <div className="h-1.5 w-16 bg-sky-100/60 rounded" />
+          <div className="w-12 h-12 rounded-full bg-white border border-sky-200 flex items-center justify-center shadow-md relative z-20">
+            <img src={folleiLogo} className="w-6 h-6 object-contain rounded-full" alt="Follei" />
           </div>
-        </div>
 
-        <div className="w-12 h-12 rounded-full bg-white border border-sky-200 flex items-center justify-center shadow-md relative z-20">
-          <img src={folleiLogo} className="w-6 h-6 object-contain rounded-full" alt="Follei" />
-        </div>
+          <div className="w-[110px] h-[90px] bg-[#F7FEE7] border border-[#D9F99D] rounded-lg shadow-sm overflow-hidden flex flex-col justify-between z-20">
+            {/* Green Header Bar */}
+            <div className="h-3.5 bg-[#A3E635] w-full flex-shrink-0" />
 
-        <div className="w-[110px] h-[90px] bg-[#F7FEE7] border border-[#D9F99D] rounded-lg shadow-sm overflow-hidden flex flex-col justify-between z-20">
-          {/* Green Header Bar */}
-          <div className="h-3.5 bg-[#A3E635] w-full flex-shrink-0" />
-
-          {/* Body */}
-          <div className="flex-1 p-2 flex flex-col justify-between">
-            <div className="flex flex-col gap-1 mt-0.5">
-              <div className="h-1.5 w-14 bg-[#84CC16]/20 rounded" />
-              <div className="h-1.5 w-10 bg-[#84CC16]/20 rounded" />
+            {/* Body */}
+            <div className="flex-1 p-2 flex flex-col justify-between">
+              <div className="flex flex-col gap-1 mt-0.5">
+                <div className="h-1.5 w-14 bg-[#84CC16]/20 rounded" />
+                <div className="h-1.5 w-10 bg-[#84CC16]/20 rounded" />
+              </div>
             </div>
           </div>
         </div>
@@ -240,11 +251,23 @@ const agents: AgentCard[] = [
     mockupTitle: "account-growth-matrix",
     mockupBg: "bg-slate-900",
     bgImage: bg4,
+    link: "/products/follei/account-manager",
     mockup: <img src={ai1} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Account growth dashboard" />
   }
 ];
 
+const waveStyles = `
+  @keyframes waveBounce {
+    0%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-8px); }
+  }
+  .btn-wave-text:hover .wave-char {
+    animation: waveBounce 0.6s ease-in-out;
+  }
+`;
+
 export const AIWorkforce: React.FC = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsWrapperRef = useRef<HTMLDivElement>(null);
@@ -269,49 +292,35 @@ export const AIWorkforce: React.FC = () => {
         }
       );
 
-      // Card reveals - If not desktop width, use simple scroll trigger
-      if (window.innerWidth < 1024) {
+      const mm = gsap.matchMedia();
+
+      // Mobile Animations
+      mm.add("(max-width: 1023px)", () => {
         const items = gsap.utils.toArray<HTMLElement>(".solution-item");
         items.forEach((item) => {
           gsap.fromTo(item, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: item, start: "top 85%" } });
         });
-        return;
-      }
+      });
 
       // Desktop Pinned Animation (Step by step)
-      const cards = gsap.utils.toArray<HTMLElement>(".solution-item");
-      if (cards.length === 0) return;
+      mm.add("(min-width: 1024px)", () => {
+        const cards = gsap.utils.toArray<HTMLElement>(".solution-item");
+        if (cards.length === 0) return;
 
-      const totalCards = cards.length;
+        const totalCards = cards.length;
 
-      // Faster, distinct animations for text vs image on the first card
-      const firstCardText = cards[0].querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
-      const firstCardImg = cards[0].querySelector(".solution-image-wrapper");
+        // Faster, distinct animations for text vs image on the first card
+        const firstCardText = cards[0].querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
+        const firstCardImg = cards[0].querySelector(".solution-image-wrapper");
 
-      gsap.fromTo(
-        firstCardText,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: cards[0],
-            start: "top 75%",
-          },
-        }
-      );
-
-      if (firstCardImg) {
         gsap.fromTo(
-          firstCardImg,
-          { opacity: 0, scale: 0.95 },
+          firstCardText,
+          { opacity: 0, y: 30 },
           {
             opacity: 1,
-            scale: 1,
-            duration: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
             ease: "power2.out",
             scrollTrigger: {
               trigger: cards[0],
@@ -319,83 +328,98 @@ export const AIWorkforce: React.FC = () => {
             },
           }
         );
-      }
 
-      // Reset initial card locations for subsequent cards
-      cards.forEach((card, index) => {
-        if (index > 0) {
-          gsap.set(card, { y: 650, opacity: 1 });
-
-          // Initial state for inner contents of subsequent cards
-          const innerText = card.querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
-          const innerImg = card.querySelector(".solution-image-wrapper");
-          gsap.set(innerText, { opacity: 0, y: 30 });
-          if (innerImg) gsap.set(innerImg, { opacity: 0, scale: 0.95 });
-        } else {
-          gsap.set(card, { y: 0, opacity: 1 });
+        if (firstCardImg) {
+          gsap.fromTo(
+            firstCardImg,
+            { opacity: 0, scale: 0.95 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: cards[0],
+                start: "top 75%",
+              },
+            }
+          );
         }
-        gsap.set(card, {
-          zIndex: totalCards - index
+
+        // Reset initial card locations for subsequent cards
+        cards.forEach((card, index) => {
+          if (index > 0) {
+            gsap.set(card, { y: 650, opacity: 1 });
+
+            // Initial state for inner contents of subsequent cards
+            const innerText = card.querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
+            const innerImg = card.querySelector(".solution-image-wrapper");
+            gsap.set(innerText, { opacity: 0, y: 30 });
+            if (innerImg) gsap.set(innerImg, { opacity: 0, scale: 0.95 });
+          } else {
+            gsap.set(card, { y: 0, opacity: 1 });
+          }
+          gsap.set(card, {
+            zIndex: totalCards - index
+          });
         });
-      });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: cardsWrapperRef.current,
-          start: "top 15%",
-          end: "+=3200",
-          pin: true,
-          pinSpacing: true,
-          scrub: 1.5,
-        }
-      });
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: cardsWrapperRef.current,
+            start: "top 15%",
+            end: "+=3200",
+            pin: true,
+            pinSpacing: true,
+            scrub: 1.5,
+          }
+        });
 
-      for (let i = 1; i < cards.length; i++) {
-        tl.set(cards[i], { zIndex: totalCards + i }, `step-${i}`);
+        for (let i = 1; i < cards.length; i++) {
+          tl.set(cards[i], { zIndex: totalCards + i }, `step-${i}`);
 
-        // Animate previous card scaling down 
-        tl.to(cards[i - 1], {
-          scale: 0.95,
-          y: -20,
-          opacity: 1,
-          duration: 6,
-          ease: "power1.out"
-        }, `step-${i}`);
-
-        // Simultaneously animate the new card sliding up
-        tl.to(cards[i], {
-          y: 0,
-          opacity: 1,
-          duration: 6,
-          ease: "power1.out"
-        }, `step-${i}`);
-
-        // Animate the inner contents smoothly WITHIN the scrubbed timeline
-        // Reduced duration and stagger to make the animation fast and snappy!
-        const textContents = cards[i].querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
-        const imgWrapper = cards[i].querySelector(".solution-image-wrapper");
-
-        tl.to(textContents, {
-          opacity: 1,
-          y: 0,
-          duration: 8, // Slowed down text duration
-          stagger: 2,  // Slower stagger between text items
-          ease: "power2.out"
-        }, `step-${i}+=1.5`);
-
-        if (imgWrapper) {
-          tl.to(imgWrapper, {
+          // Animate previous card scaling down 
+          tl.to(cards[i - 1], {
+            scale: 0.95,
+            y: -20,
             opacity: 1,
-            scale: 1,
-            duration: 1.2,
+            duration: 6,
+            ease: "power1.out"
+          }, `step-${i}`);
+
+          // Simultaneously animate the new card sliding up
+          tl.to(cards[i], {
+            y: 0,
+            opacity: 1,
+            duration: 6,
+            ease: "power1.out"
+          }, `step-${i}`);
+
+          // Animate the inner contents smoothly WITHIN the scrubbed timeline
+          const textContents = cards[i].querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
+          const imgWrapper = cards[i].querySelector(".solution-image-wrapper");
+
+          tl.to(textContents, {
+            opacity: 1,
+            y: 0,
+            duration: 8,
+            stagger: 2,
             ease: "power2.out"
           }, `step-${i}+=1.5`);
+
+          if (imgWrapper) {
+            tl.to(imgWrapper, {
+              opacity: 1,
+              scale: 1,
+              duration: 1.2,
+              ease: "power2.out"
+            }, `step-${i}+=1.5`);
+          }
+
+          // Pause to hold the current card in view
+          tl.to({}, { duration: 4 });
         }
-
-        // Pause to hold the current card in view
-        tl.to({}, { duration: 4 });
-      }
-
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -403,84 +427,97 @@ export const AIWorkforce: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="section-solution relative w-full bg-white py-16 lg:py-24">
-      <div className="section-space">
-        <div ref={containerRef} className="w-layout-blockcontainer container w-container mx-auto px-6 sm:px-10 md:px-15 max-w-[1300px]">
-          {/* Section Header */}
-          <div className="section-header text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center shrink-0">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
-              <span>AI Workforce</span>
-            </div>
-
-            {/* Heading */}
-            <div className="solution-title-wrapper">
-              <h2 className="section-title text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
-                Meet Your Autonomous <br />
-                <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
-                  AI Workforce
-                </span>
-              </h2>
-            </div>
-
-            {/* Subheading */}
-            <p className="text-[#5A5A5C] text-sm sm:text-[16px] md:text-[17px] font-normal leading-relaxed max-w-2xl mt-2">
-              Six specialized AI workers collaborate across every stage of the customer lifecycle—automating conversations, accelerating decisions, and driving measurable business outcomes.
-            </p>
+      <style>{waveStyles}</style>
+      <div ref={containerRef} className="w-layout-blockcontainer container w-container mx-auto px-6 sm:px-10 md:px-15 ">
+        {/* Section Header */}
+        <div className="section-header text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center shrink-0">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
+            <span>AI Workforce</span>
           </div>
 
-          {/* Stacked Cards Wrapper */}
-          <div ref={cardsWrapperRef} className="solution-list relative w-full max-w-[1300px] h-[550px] sm:h-[520px] lg:h-[481px] flex flex-col gap-12 lg:block">
-            {agents.map((agent) => (
-              <div
-                key={agent.id}
-                className="solution-item relative lg:absolute left-0 lg:top-[20px] mt-10 lg:mt-0 group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1]"
-              >
-                <div className="solution-content w-full lg:w-1/2 flex flex-col items-start text-left">
-                  <div className="solution-icon">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[16px] text-[#000000]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
-                      <span>{agent.badgeText.replace("• ", "")}</span>
-                    </div>
-                  </div>
-                  <div className="solution-title text-[#000000] text-2xl sm:text-3xl lg:text-[35px] font-medium tracking-tight leading-[1.2] mt-6 mb-6">
-                    {agent.title}
-                  </div>
-                  <div className="w-full h-[1px] bg-[#ADADAD] mb-6" />
-                  <p className="solution-text text-[#5A5A5C] text-sm sm:text-[20px] font-normal leading-relaxed">
-                    {agent.description}
-                  </p>
-                  <div className="solution-icon-link mt-8" style={{ backgroundColor: "transparent" }}>
-                    <div className="solution-icon-wrapper">
-                      {/* Placeholder for link arrow if needed */}
-                    </div>
-                    <div className="solution-hover-background"></div>
+          {/* Heading */}
+          <div className="solution-title-wrapper">
+            <h2 className="section-title text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+              Meet Your Autonomous <br />
+              <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
+                AI Workforce
+              </span>
+            </h2>
+          </div>
+
+          {/* Subheading */}
+          <p className="text-[#5A5A5C] text-sm sm:text-[16px] md:text-[17px] font-normal leading-relaxed max-w-2xl mt-2">
+            Six specialized AI workers collaborate across every stage of the customer lifecycle—automating conversations, accelerating decisions, and driving measurable business outcomes.
+          </p>
+        </div>
+
+        {/* Stacked Cards Wrapper */}
+        <div ref={cardsWrapperRef} className="solution-list relative w-full h-auto lg:h-[481px] flex flex-col gap-12 lg:block pb-10 lg:pb-0">
+          {agents.map((agent) => (
+            <div
+              key={agent.id}
+              className="solution-item relative lg:absolute left-0 lg:top-[20px] mt-10 lg:mt-0 group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1]"
+            >
+              <div className="solution-content w-full lg:w-1/2 flex flex-col items-start text-left">
+                <div className="solution-icon">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[16px] text-[#000000]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
+                    <span>{agent.badgeText.replace("• ", "")}</span>
                   </div>
                 </div>
-                <div className={`solution-image-wrapper w-full lg:w-1/2 aspect-[1.4/1] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 ${agent.hoverBorder}`}>
-                  <img
-                    src={agent.bgImage}
-                    loading="lazy"
-                    alt=""
-                    className="image-cover absolute inset-0 w-full h-full object-cover opacity-30"
-                  />
-                  <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-6">
-                    {agent.id === "sdr" ? (
-                      <div className={`w-full h-full rounded-[20px] p-5 flex flex-col overflow-hidden gap-[10px] ${agent.mockupBg}`}>
-                        {agent.mockup}
-                      </div>
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center p-1">
-                        {agent.mockup}
-                      </div>
-                    )}
-                  </div>
+                <div className="solution-title text-[#000000] text-2xl sm:text-3xl lg:text-[35px] font-medium tracking-tight leading-[1.2] mt-6 mb-6">
+                  {agent.title}
+                </div>
+                <div className="w-full h-[1px] bg-[#ADADAD] mb-6" />
+                <p className="solution-text text-[#5A5A5C] text-sm sm:text-[20px] font-normal leading-relaxed">
+                  {agent.description}
+                </p>
+
+                <button 
+                  onClick={() => navigate(agent.link)}
+                  className="btn-wave-text solution-icon-link mt-8 flex items-center gap-2 px-6 py-3 rounded-full bg-[#004370] text-white font-medium text-[16px] transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg group/btn bg-gradient-to-b from-[#004C7F] to-[#00365A] "
+                >
+                  <span className="flex items-center">
+                    {"View More".split("").map((char, i) => (
+                      <span
+                        key={i}
+                        className="wave-char inline-block"
+                        style={{ animationDelay: `${i * 0.03}s` }}
+                      >
+                        {char === " " ? "\u00A0" : char}
+                      </span>
+                    ))}
+                  </span>
+                  <ChevronRight size={18} className="transition-transform group-hover/btn:translate-x-1 duration-500" />
+                </button>
+
+              </div>
+              <div className={`solution-image-wrapper w-full lg:w-1/2 aspect-[1.4/1] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 ${agent.hoverBorder}`}>
+                <img
+                  src={agent.bgImage}
+                  loading="lazy"
+                  alt=""
+                  className="image-cover absolute inset-0 w-full h-full object-cover opacity-30"
+                />
+                <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-6">
+                  {agent.id === "sdr" ? (
+                    <div className={`w-full h-full rounded-[20px] p-5 flex flex-col overflow-hidden gap-[10px] ${agent.mockupBg}`}>
+                      {agent.mockup}
+                    </div>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center p-1">
+                      {agent.mockup}
+                    </div>
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
+
     </section>
   );
 };

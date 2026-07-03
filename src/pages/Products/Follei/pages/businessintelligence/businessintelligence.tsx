@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../../../../../../component/Navbar";
-import Footer from "../../../../../../component/Footer/Footer";
-import SEO from "../../../../../../component/SEO";
-import useScrollAnimations from "../../../../../../hooks/useScrollAnimations";
+import Navbar from "../../../../../component/Navbar";
+import Footer from "../../../../../component/Footer/Footer";
+import SEO from "../../../../../component/SEO";
+import useScrollAnimations from "../../../../../hooks/useScrollAnimations";
 
 // Section Component Imports
 import { HeroSection } from "./HeroSection";
@@ -11,7 +11,7 @@ import { WhatFolleiLearnsSection } from "./WhatFolleiLearnsSection";
 import { TimelineSection } from "./TimelineSection";
 import { WhyItMattersSection } from "./WhyItMattersSection";
 import { BusinessImpactSection } from "./BusinessImpactSection";
-import Faq from "../../Faq";
+// import Faq from "../../../Faq";
 
 const BusinessIntelligence: React.FC = () => {
     useScrollAnimations();
@@ -34,7 +34,7 @@ const BusinessIntelligence: React.FC = () => {
                 <TimelineSection />
                 <WhyItMattersSection />
                 <BusinessImpactSection />
-                <Faq />
+                {/* <Faq /> */}
             </main>
 
             <Footer />

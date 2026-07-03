@@ -1,5 +1,5 @@
 import React from "react";
-import businessIntelligenceImg from "../../../../../../assets/images/products/businessintelligence2.svg";
+import businessIntelligenceImg from "../../../../../assets/images/products/businessintelligence2.svg";
 
 export const HeroSection: React.FC = () => {
     return (
