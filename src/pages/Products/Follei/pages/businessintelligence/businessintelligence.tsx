@@ -13,7 +13,9 @@ import { WhyItMattersSection } from "./WhyItMattersSection";
 import { BusinessImpactSection } from "./BusinessImpactSection";
 
 
+
 // import Faq from "../../../Faq";
+
 
 
 const BusinessIntelligence: React.FC = () => {

@@ -11,18 +11,10 @@ import ServicesWorkFlow from "./section/ServicesWorkFlow";
 const DigitReel = ({ digit, delay }: { digit: number; delay: number }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-50px" });
-    const [yPos, setYPos] = useState(0);
-
     const cycles = 5; // how many times the digits spin
     const allDigits = Array.from({ length: cycles * 10 }, (_, i) => i % 10);
-
-    useEffect(() => {
-        if (isInView) {
-            // Landing index in the last cycle
-            const finalIndex = (cycles - 1) * 10 + digit;
-            setYPos(-finalIndex * (100 / (cycles * 10)));
-        }
-    }, [isInView, digit]);
+    const finalIndex = (cycles - 1) * 10 + digit;
+    const yPos = isInView ? -finalIndex * (100 / (cycles * 10)) : 0;
 
     return (
         <div

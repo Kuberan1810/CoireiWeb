@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, AnimatePresence, useInView } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
@@ -10,15 +10,10 @@ import FAQSection from "../Home/sections/FAQSection";
 const DigitReel = ({ digit, delay }: { digit: number; delay: number }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-50px" });
-    const [yPos, setYPos] = useState(0);
     const cycles = 5;
     const allDigits = Array.from({ length: cycles * 10 }, (_, i) => i % 10);
-    useEffect(() => {
-        if (isInView) {
-            const finalIndex = (cycles - 1) * 10 + digit;
-            setYPos(-finalIndex * (100 / (cycles * 10)));
-        }
-    }, [isInView, digit]);
+    const finalIndex = (cycles - 1) * 10 + digit;
+    const yPos = isInView ? -finalIndex * (100 / (cycles * 10)) : 0;
     return (
         <div ref={ref} className="inline-block overflow-hidden relative" style={{ height: "1.1em", verticalAlign: "bottom" }}>
             <motion.div

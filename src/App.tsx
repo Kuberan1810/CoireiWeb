@@ -34,12 +34,16 @@ import Execa from "./pages/Products/Execa/Execa";
 import Follei from "./pages/Products/Follei/Follei";
 import LMS from "./pages/Products/lms/LMS";
 import BusinessIntelligence from "./pages/Products/Follei/pages/businessintelligence/businessintelligence";
+
 import SDRWorker from "./pages/Products/Follei/pages/SDRWorker/SDRWorker";
 import SalesExecutive from "./pages/Products/Follei/pages/salesexecutive/salesexecutive";
 
 import CustomerSuccess from "./pages/Products/Follei/pages/customersuccess/customersuccess";
 import CollectionsWorker from "./pages/Products/Follei/pages/Collections Worker/CollectionsWorker";
 import AccountManager from "./pages/Products/Follei/pages/Account Manager/AccountManager";
+
+
+import CustomerIntelligence from "./pages/Products/Follei/pages/customerintelligence/customerintelligence";
 
 
 // import Analytics from "./pages/Features/Analytics";
@@ -86,11 +90,15 @@ function App() {
         <Route path="/products/execa" element={<Execa />} />
         <Route path="/products/follei" element={<Follei />} />
         <Route path="/products/follei/business-intelligence" element={<BusinessIntelligence />} />
+
         <Route path="/products/follei/sdr-worker" element={<SDRWorker />} />
         <Route path="/products/follei/sales-executive" element={<SalesExecutive />} />
         <Route path="/products/follei/customer-success" element={<CustomerSuccess />} />
         <Route path="/products/follei/collections-worker" element={<CollectionsWorker />} />
         <Route path="/products/follei/account-manager" element={<AccountManager />} />
+
+        <Route path="/products/follei/customer-intelligence" element={<CustomerIntelligence />} />
+
         <Route path="/products/coireilms" element={<LMS />} />
       </Routes>
     </>

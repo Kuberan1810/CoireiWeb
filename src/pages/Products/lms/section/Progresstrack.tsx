@@ -34,7 +34,7 @@ function ProgressTrack() {
     const containerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             if (!containerRef.current) return;
 
             // Desktop-la mattum dhaan active section tracking venum (Sticky effect)

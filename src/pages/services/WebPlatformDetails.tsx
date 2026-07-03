@@ -127,16 +127,12 @@ const WebPlatformDetails = () => {
     const card5InView = useInView(card5Ref, { once: false, margin: "-30% 0px -30% 0px" });
     const card6InView = useInView(card6Ref, { once: false, margin: "-30% 0px -30% 0px" });
 
-    const [activeCard, setActiveCard] = useState(1);
-
-    useEffect(() => {
-        if (card6InView) setActiveCard(6);
-        else if (card5InView) setActiveCard(5);
-        else if (card4InView) setActiveCard(4);
-        else if (card3InView) setActiveCard(3);
-        else if (card2InView) setActiveCard(2);
-        else if (card1InView) setActiveCard(1);
-    }, [card1InView, card2InView, card3InView, card4InView, card5InView, card6InView]);
+    const activeCard = card6InView ? 6 :
+                       card5InView ? 5 :
+                       card4InView ? 4 :
+                       card3InView ? 3 :
+                       card2InView ? 2 :
+                       card1InView ? 1 : 1;
 
     const cardRefs = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
@@ -204,37 +200,8 @@ const WebPlatformDetails = () => {
                     {/* Horizontal Plain Cards Container (revealing as we scroll, with gaps) */}
                     <div className="flex flex-col md:flex-row gap-6 w-full h-auto md:h-[420px] items-stretch mt-4">
                         {offerings.map((card, index) => {
-                            const Icon = card.icon;
-
                             return (
-                                <motion.div
-                                    key={index}
-                                    className="relative flex flex-col justify-between p-8 rounded-[20px] border border-white/10 bg-[#1E1E1E] transition-all duration-500 overflow-hidden h-[320px] md:h-full w-full md:w-auto md:flex-1"
-                                    style={{
-                                        x: useTransform(offeringsXProgress, (v) => `${v * index * -72}%`),
-                                        borderColor: "rgba(255, 255, 255, 0.1)",
-                                        zIndex: index
-                                    }}
-                                >
-                                    {/* Content Wrapper */}
-                                    <div className="flex flex-col h-full justify-between relative z-10">
-                                        {/* Top Section: Icon */}
-                                        <div className="w-14 h-14 rounded-full flex items-center justify-center border bg-[#161616] border-white/10 text-[#F67300] shrink-0">
-                                            <Icon size={24} strokeWidth={1.5} />
-                                        </div>
-
-                                        {/* Middle Section: Title & Description */}
-                                        <div className="flex flex-col text-left justify-end h-full">
-                                            <h3 className="text-xl md:text-2xl font-medium tracking-tight text-white text-left mb-3">
-                                                {card.title}
-                                            </h3>
-
-                                            <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light text-left">
-                                                {card.desc}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </motion.div>
+                                <OfferingCard key={index} index={index} card={card} offeringsXProgress={offeringsXProgress} />
                             );
                         })}
                     </div>
@@ -621,3 +588,36 @@ const WebPlatformDetails = () => {
 };
 
 export default WebPlatformDetails;
+
+const OfferingCard = ({ index, card, offeringsXProgress }: { index: number, card: any, offeringsXProgress: any }) => {
+    const Icon = card.icon;
+    return (
+        <motion.div
+            className="relative flex flex-col justify-between p-8 rounded-[20px] border border-white/10 bg-[#1E1E1E] transition-all duration-500 overflow-hidden h-[320px] md:h-full w-full md:w-auto md:flex-1"
+            style={{
+                x: useTransform(offeringsXProgress, (v: any) => `${v * index * -72}%`),
+                borderColor: "rgba(255, 255, 255, 0.1)",
+                zIndex: index
+            }}
+        >
+            {/* Content Wrapper */}
+            <div className="flex flex-col h-full justify-between relative z-10">
+                {/* Top Section: Icon */}
+                <div className="w-14 h-14 rounded-full flex items-center justify-center border bg-[#161616] border-white/10 text-[#F67300] shrink-0">
+                    <Icon size={24} strokeWidth={1.5} />
+                </div>
+
+                {/* Middle Section: Title & Description */}
+                <div className="flex flex-col text-left justify-end h-full">
+                    <h3 className="text-xl md:text-2xl font-medium tracking-tight text-white text-left mb-3">
+                        {card.title}
+                    </h3>
+
+                    <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light text-left">
+                        {card.desc}
+                    </p>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
