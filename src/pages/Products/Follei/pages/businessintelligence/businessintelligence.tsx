@@ -12,7 +12,9 @@ import { TimelineSection } from "./TimelineSection";
 import { WhyItMattersSection } from "./WhyItMattersSection";
 import { BusinessImpactSection } from "./BusinessImpactSection";
 
+
 // import Faq from "../../../Faq";
+
 
 const BusinessIntelligence: React.FC = () => {
     useScrollAnimations();

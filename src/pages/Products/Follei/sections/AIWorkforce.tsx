@@ -20,6 +20,7 @@ import {
 
   ChevronRight,
   Users as 
+
   Search,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -439,6 +440,7 @@ export const AIWorkforce: React.FC = () => {
             <span>AI Workforce</span>
           </div>
 
+
           {/* Heading */}
           <div className="solution-title-wrapper">
             <h2 className="section-title text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
@@ -467,6 +469,7 @@ export const AIWorkforce: React.FC = () => {
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[16px] text-[#000000]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
                     <span>{agent.badgeText.replace("• ", "")}</span>
+
                   </div>
                 </div>
                 <div className="solution-title text-[#000000] text-2xl sm:text-3xl lg:text-[35px] font-medium tracking-tight leading-[1.2] mt-6 mb-6">
