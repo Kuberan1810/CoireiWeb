@@ -19,9 +19,9 @@ import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
 import {
 
   ChevronRight,
-  Users as 
+  Users as
 
-  Search,
+    Search,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -151,7 +151,7 @@ const agents: AgentCard[] = [
     bgImage: bg2,
     link: "/products/follei/sales-executive",
     mockup: <img src={ai2} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Sales dashboard" />
-    
+
   },
   {
     id: "cs",
@@ -195,50 +195,72 @@ const agents: AgentCard[] = [
     link: "/products/follei/collections-worker",
     mockup: (
       <div className="w-full h-full flex items-center justify-center scale-[0.55] sm:scale-[0.7] md:scale-90 lg:scale-100 origin-center">
-        <div
-          className="w-[520px] h-[208px] shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between px-8 py-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
-          style={{
-            backgroundColor: '#FDFDFD'
-          }}
-        >
-          {/* Connector lines SVG */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 520 208" fill="none">
-            =          <line x1="172" y1="104" x2="236" y2="104" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 3" />
-            <circle cx="204" cy="104" r="3" fill="#38BDF8" />
-            <line x1="284" y1="104" x2="378" y2="104" stroke="#84CC16" strokeWidth="1.5" strokeDasharray="3 3" />
-            <circle cx="331" cy="104" r="3" fill="#84CC16" />
-          </svg>
+        <div className="bg-white w-[480px] aspect-[2/1] rounded-[16px] shadow-[0_0_10px_rgba(160,160,160,0.2)] border border-slate-200/50 flex items-center justify-between px-3 sm:px-6 relative overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
 
-          {/* Left Card - Collections Worker */}
-          <div className="w-[140px] h-[90px] bg-white border border-sky-100 rounded-lg shadow-sm p-3 flex flex-col justify-between z-20">
-            <div className="flex items-center gap-1 bg-sky-50 text-[7px] font-bold text-sky-600 px-1.5 py-0.5 rounded-full w-fit">
-              <span className="w-1 h-1 rounded-full bg-sky-500 animate-pulse" />
-              Collections Worker
+          {/* Left Card */}
+          <div className="w-[110px] sm:w-[135px] h-[60px] sm:h-[68px] flex-shrink-0 rounded-[4px] border-[1.5px] border-[#BDE0FF] bg-white flex flex-col justify-center gap-1.5 p-2 sm:p-2.5 relative z-10 shadow-sm">
+            <div className="flex items-center gap-1.5 mb-0.5">
+              <div className="w-0.5 h-3 bg-[#3B82F6]"></div>
+              <span className="text-[7px] sm:text-[9px] text-[#3B82F6] font-medium tracking-wide">Type here ......</span>
+            </div>
+            <div className="w-[95%] h-[2.5px] bg-[#BDE0FF] rounded-full"></div>
+            <div className="w-[95%] h-[2.5px] bg-[#BDE0FF] rounded-full"></div>
+            <div className="w-[85%] h-[2.5px] bg-[#BDE0FF] rounded-full"></div>
+          </div>
+
+          <div className="flex-1 h-[2px] relative z-0 -mx-1 flex">
+            <div className="flex-1 h-full bg-[#E2E8F0]"></div>
+            <div className="w-[16px] h-full bg-gradient-to-r from-[#E2E8F0] to-[#3B82F6]"></div>
+          </div>
+
+          {/* Center Circle */}
+          <div className="w-[72px] h-[72px] sm:w-[88px] sm:h-[88px] flex-shrink-0 rounded-full bg-white flex items-center justify-center relative z-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E2E8F0]">
+            <div
+              className="absolute w-[80%] h-[80%] flex items-start justify-center"
+              style={{
+                transform: 'rotate(-146.51deg)'
+              }}
+            >
+              <div
+                className="w-full h-1/2 rounded-t-full bg-gradient-to-b from-[#78A9FF] to-[#B1CBFF]"
+              />
             </div>
 
-            <div className="flex flex-col gap-1.5 mt-1">
-              <div className="h-1.5 w-20 bg-sky-100/60 rounded" />
-              <div className="h-1.5 w-12 bg-sky-100/60 rounded" />
-              <div className="h-1.5 w-16 bg-sky-100/60 rounded" />
+            {/* Inner Logo */}
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#1A56DB] to-[#0D389F] flex items-center justify-center shadow-[0_4px_12px_rgba(26,86,219,0.3)] relative z-10">
+              <img src={folleiLogo} alt="Follei Logo" className="w-7 h-7 object-contain" />
+            </div>
+          </div>
+
+          {/* Connector 2 */}
+          <div className="flex-1 h-[80px] sm:h-[100px] relative z-0 -mx-1 flex items-center">
+            <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+              <defs>
+                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#3B82F6" />
+                  <stop offset="25%" stopColor="#E2E8F0" />
+                  <stop offset="75%" stopColor="#E2E8F0" />
+                  <stop offset="100%" stopColor="#3B82F6" />
+                </linearGradient>
+              </defs>
+              <path d="M 0 50 L 100 15" stroke="url(#lineGrad)" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
+              <path d="M 0 50 L 100 85" stroke="url(#lineGrad)" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
+            </svg>
+          </div>
+
+          {/* Right Card*/}
+          <div className="w-[90px] sm:w-[110px] h-[90px] sm:h-[110px] flex-shrink-0 rounded-[8px] bg-[#EBF5C8] flex flex-col overflow-hidden relative z-10 shadow-sm border-[1.5px] border-[#B3D465]">
+            {/* Card Header */}
+            <div className="h-[28%] bg-[#B3D465] flex items-center px-2.5 gap-1.5">
+              <div className="w-4 h-4 rounded-full bg-white/80"></div>
+              <div className="w-8 h-1.5 rounded-full bg-white/80"></div>
+            </div>
+            {/* Card Body */}
+            <div className="flex-1 p-2 sm:p-2.5">
+              <div className="w-full h-full rounded-[4px] bg-[#D7EAA1]/50 border border-[#B3D465]/30"></div>
             </div>
           </div>
 
-          <div className="w-12 h-12 rounded-full bg-white border border-sky-200 flex items-center justify-center shadow-md relative z-20">
-            <img src={folleiLogo} className="w-6 h-6 object-contain rounded-full" alt="Follei" />
-          </div>
-
-          <div className="w-[110px] h-[90px] bg-[#F7FEE7] border border-[#D9F99D] rounded-lg shadow-sm overflow-hidden flex flex-col justify-between z-20">
-            {/* Green Header Bar */}
-            <div className="h-3.5 bg-[#A3E635] w-full flex-shrink-0" />
-
-            {/* Body */}
-            <div className="flex-1 p-2 flex flex-col justify-between">
-              <div className="flex flex-col gap-1 mt-0.5">
-                <div className="h-1.5 w-14 bg-[#84CC16]/20 rounded" />
-                <div className="h-1.5 w-10 bg-[#84CC16]/20 rounded" />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     )
@@ -437,7 +459,7 @@ export const AIWorkforce: React.FC = () => {
             if (tween) tween.progress(1);
           }
         };
-        
+
         // Check across a few frames to catch the browser's scroll restoration
         requestAnimationFrame(snapScrub);
         setTimeout(snapScrub, 50);
@@ -502,7 +524,7 @@ export const AIWorkforce: React.FC = () => {
                   {agent.description}
                 </p>
 
-                <button 
+                <button
                   onClick={() => navigate(agent.link)}
                   className="btn-wave-text solution-icon-link mt-8 flex items-center gap-2 px-6 py-3 rounded-full bg-[#004370] text-white font-medium text-[16px] hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg group/btn bg-gradient-to-b from-[#004C7F] to-[#00365A]"
                 >
