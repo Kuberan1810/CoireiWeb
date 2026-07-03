@@ -96,9 +96,8 @@ function App() {
         <Route path="/products/follei/customer-success" element={<CustomerSuccess />} />
         <Route path="/products/follei/collections-worker" element={<CollectionsWorker />} />
         <Route path="/products/follei/account-manager" element={<AccountManager />} />
-
+        <Route path="/products/follei/support-worker" element={<CustomerIntelligence />} />
         <Route path="/products/follei/customer-intelligence" element={<CustomerIntelligence />} />
-
         <Route path="/products/coireilms" element={<LMS />} />
       </Routes>
     </>
