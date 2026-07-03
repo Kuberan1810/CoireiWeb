@@ -39,6 +39,7 @@ import SalesExecutive from "./pages/Products/Follei/pages/salesexecutive/salesex
 
 import CustomerSuccess from "./pages/Products/Follei/pages/customersuccess/customersuccess";
 import CollectionsWorker from "./pages/Products/Follei/pages/Collections Worker/CollectionsWorker";
+import AccountManager from "./pages/Products/Follei/pages/Account Manager/AccountManager";
 
 
 // import Analytics from "./pages/Features/Analytics";
@@ -85,16 +86,11 @@ function App() {
         <Route path="/products/execa" element={<Execa />} />
         <Route path="/products/follei" element={<Follei />} />
         <Route path="/products/follei/business-intelligence" element={<BusinessIntelligence />} />
-
-
         <Route path="/products/follei/sdr-worker" element={<SDRWorker />} />
-
         <Route path="/products/follei/sales-executive" element={<SalesExecutive />} />
-
         <Route path="/products/follei/customer-success" element={<CustomerSuccess />} />
         <Route path="/products/follei/collections-worker" element={<CollectionsWorker />} />
-
-
+        <Route path="/products/follei/account-manager" element={<AccountManager />} />
         <Route path="/products/coireilms" element={<LMS />} />
       </Routes>
     </>
