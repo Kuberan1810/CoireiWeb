@@ -172,9 +172,9 @@ const DiscoveryIntelligence: React.FC = () => {
 
                 {/* DESKTOP TIMELINE (Wavy SVG Line + Node Labels) */}
                 <div
-                    style={{ aspectRatio: "1316 / 316" }}
-                    className="hidden md:block w-full max-w-[1300px] relative mx-auto mt-6"
+                    className="hidden md:flex items-center justify-center w-full max-w-[1300px] relative mx-auto mt-6 overflow-visible h-[200px] lg:h-[260px] xl:h-[316px]"
                 >
+                    <div className="absolute w-[1316px] h-[316px] scale-[0.55] lg:scale-[0.75] xl:scale-100 origin-center flex-shrink-0">
 
                     {/* SVG Wavy Line Grid */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1316 316" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -254,16 +254,17 @@ const DiscoveryIntelligence: React.FC = () => {
                     </div>
 
                     {/* Node 4 Label */}
-                    <div className="gsap-timeline-label absolute left-[81.2%] top-[13%] translate-x-[-200px] flex gap-3">
-                        <div className="flex flex-col">
-                            <h3 className="text-[#677C7E] text-[22px] font-bold tracking-tight text-right">Handoff</h3>
-                            <p className="text-[#5A5A5C] text-[18px] leading-[1.2] font-normal mt-1 max-w-[241px] text-right">
+                    <div className="gsap-timeline-label absolute left-[83%] top-[12%] translate-x-[-60px] flex items-center gap-6">
+                        <span className="text-[75px] font-bold text-black/[0.04] leading-none select-none">4</span>
+                        <div className="flex flex-col text-left">
+                            <h3 className="text-[#677C7E] text-[22px] font-bold tracking-tight">Handoff</h3>
+                            <p className="text-[#5A5A5C] text-[18px] leading-[1.2] font-normal mt-1 max-w-[241px]">
                                 Deliver qualified opportunities with complete context.
                             </p>
                         </div>
-                        <span className="text-[75px] font-bold text-black/[0.04] leading-none select-none">4</span>
                     </div>
-
+                    
+                    </div>
                 </div>
 
                 {/* MOBILE TIMELINE (Vertical running line + layout nodes list) */}
