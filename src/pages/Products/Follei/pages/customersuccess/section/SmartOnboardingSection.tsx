@@ -1,5 +1,5 @@
 import React from "react";
-import { TrendingUp, RocketIcon, BlocksIcon, BookOpenText } from "lucide-react";
+import { RocketIcon, BlocksIcon, BookOpenText, ChartNoAxesCombined } from "lucide-react";
 
 export const SmartOnboardingSection: React.FC = () => {
   const features = [
@@ -25,7 +25,7 @@ export const SmartOnboardingSection: React.FC = () => {
       id: "tracking",
       title: "Success Tracking",
       description: "Track onboarding progress, adoption milestones, and customer readiness in real time.",
-      icon: TrendingUp,
+      icon: ChartNoAxesCombined,
     }
   ];
 
