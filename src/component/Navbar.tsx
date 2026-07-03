@@ -44,7 +44,7 @@ function Navbar() {
     const [servicesOpen, setServicesOpen] = useState(false);
 
     const location = useLocation();
-    const isLight = location.pathname === "/products/follei";
+    const isLight = location.pathname === "/products/follei" || location.pathname.startsWith("/products/follei/");
 
     return (
         <header data-ns-animate data-offset="40" data-direction="down" data-duration="1" className={`mx-5 my-6 rounded-lg backdrop-blur-3xl transition-colors duration-300 ${isLight ? 'text-[#04032E]' : 'text-[rgb(212,212,212)]'}`}>

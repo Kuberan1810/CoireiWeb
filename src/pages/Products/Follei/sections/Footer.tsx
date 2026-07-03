@@ -16,7 +16,7 @@ const Footer = () => {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         
-        let ctx = gsap.context(() => {}, footerRef);
+        const ctx = gsap.context(() => {}, footerRef);
 
         const timeout = setTimeout(() => {
             ctx.add(() => {

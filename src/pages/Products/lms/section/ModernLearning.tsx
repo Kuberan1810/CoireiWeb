@@ -282,38 +282,9 @@ const ModernLearning: React.FC = () => {
             }}
           />
 
-          {cards.map((card, idx) => {
-            const startRange = idx * 0.25;
-            const endRange = startRange + 0.2;
-            const opMob = useTransform(scrollYProgress, [startRange, endRange], [0.2, 1]);
-            const borderMob = useTransform(scrollYProgress, [startRange, endRange], ["rgba(255,255,255,0.2)", "#F67300"]);
-
-            return (
-              <motion.div
-                key={idx}
-                style={{ opacity: opMob }}
-                className="relative group"
-              >
-                {/* Number Circle */}
-                <motion.div
-                  style={{ borderColor: borderMob }}
-                  className="absolute -left-[30px] top-[10px] w-[20px] h-[20px] rounded-full bg-[#161616] border flex items-center justify-center text-[11px] font-semibold text-white z-10"
-                >
-                  {card.number}
-                </motion.div>
-
-                {/* Content Card */}
-                <div className="bg-[#1E1E1E]/80 border border-[#747474]/50 border-[1.5px] rounded-[15px] p-[20px] transition-all duration-300 hover:bg-[#252525]/90 hover:border-white/10 shadow-xl flex flex-col gap-[10px]">
-                  <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
-                    {card.title}
-                  </h3>
-                  <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
-                    {card.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+          {cards.map((card, idx) => (
+              <MobileCardItem key={idx} card={card} idx={idx} scrollYProgress={scrollYProgress} />
+          ))}
 
         </div>
 
@@ -323,3 +294,35 @@ const ModernLearning: React.FC = () => {
 };
 
 export default ModernLearning;
+
+const MobileCardItem = ({ card, idx, scrollYProgress }: { card: any, idx: number, scrollYProgress: any }) => {
+  const startRange = idx * 0.25;
+  const endRange = startRange + 0.2;
+  const opMob = useTransform(scrollYProgress, [startRange, endRange], [0.2, 1]);
+  const borderMob = useTransform(scrollYProgress, [startRange, endRange], ["rgba(255,255,255,0.2)", "#F67300"]);
+
+  return (
+    <motion.div
+      style={{ opacity: opMob }}
+      className="relative group"
+    >
+      {/* Number Circle */}
+      <motion.div
+        style={{ borderColor: borderMob }}
+        className="absolute -left-[30px] top-[10px] w-[20px] h-[20px] rounded-full bg-[#161616] border flex items-center justify-center text-[11px] font-semibold text-white z-10"
+      >
+        {card.number}
+      </motion.div>
+
+      {/* Content Card */}
+      <div className="bg-[#1E1E1E]/80 border border-[#747474]/50 border-[1.5px] rounded-[15px] p-[20px] transition-all duration-300 hover:bg-[#252525]/90 hover:border-white/10 shadow-xl flex flex-col gap-[10px]">
+        <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
+          {card.title}
+        </h3>
+        <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
+          {card.description}
+        </p>
+      </div>
+    </motion.div>
+  );
+};
