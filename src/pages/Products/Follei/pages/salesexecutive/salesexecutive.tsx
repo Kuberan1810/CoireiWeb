@@ -8,6 +8,7 @@ import useScrollAnimations from "../../../../../hooks/useScrollAnimations";
 import { HeroSection } from "./HeroSection";
 import { SalesExecutionSection } from "./SalesExecutionSection";
 import { SalesIntelligenceSection } from "./SalesIntelligenceSection";
+import ConnectedContext from "./ConnectedContext";
 import Faq from "../../sections/Faq";
 
 const SalesExecutive: React.FC = () => {
@@ -28,6 +29,7 @@ const SalesExecutive: React.FC = () => {
                 <HeroSection />
                 <SalesIntelligenceSection />
                 <SalesExecutionSection />
+                <ConnectedContext />
                 <Faq />
             </main>
 
