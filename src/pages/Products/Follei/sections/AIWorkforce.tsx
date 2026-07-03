@@ -279,6 +279,9 @@ export const AIWorkforce: React.FC = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
+      // Prevent FOUC (blinking) when navigating back by showing the section only after GSAP is ready
+      gsap.set(sectionRef.current, { visibility: "visible" });
+
       // Title and header reveal animation
       gsap.fromTo(
         ".section-header",
@@ -322,12 +325,12 @@ export const AIWorkforce: React.FC = () => {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
             stagger: 0.15,
-            ease: "power2.out",
             scrollTrigger: {
               trigger: cards[0],
-              start: "top 75%",
+              start: "top 80%",
+              end: "top 50%",
+              scrub: true,
             },
           }
         );
@@ -335,15 +338,17 @@ export const AIWorkforce: React.FC = () => {
         if (firstCardImg) {
           gsap.fromTo(
             firstCardImg,
-            { opacity: 0, scale: 0.95 },
+            { opacity: 0, scale: 0.8, y: 40 },
             {
               opacity: 1,
               scale: 1,
-              duration: 1,
-              ease: "power2.out",
+              y: 0,
+              ease: "power3.out",
               scrollTrigger: {
                 trigger: cards[0],
-                start: "top 75%",
+                start: "top 80%",
+                end: "top 50%",
+                scrub: true,
               },
             }
           );
@@ -358,7 +363,7 @@ export const AIWorkforce: React.FC = () => {
             const innerText = card.querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
             const innerImg = card.querySelector(".solution-image-wrapper");
             gsap.set(innerText, { opacity: 0, y: 30 });
-            if (innerImg) gsap.set(innerImg, { opacity: 0, scale: 0.95 });
+            if (innerImg) gsap.set(innerImg, { opacity: 0, scale: 0.8, y: 40 });
           } else {
             gsap.set(card, { y: 0, opacity: 1 });
           }
@@ -371,10 +376,10 @@ export const AIWorkforce: React.FC = () => {
           scrollTrigger: {
             trigger: cardsWrapperRef.current,
             start: "top 15%",
-            end: "+=3200",
+            end: "+=4500", // increased scroll distance to make it feel less cramped
             pin: true,
             pinSpacing: true,
-            scrub: 1.5,
+            scrub: true, // using instant scrub prevents the delay/blink on back navigation
           }
         });
 
@@ -386,16 +391,16 @@ export const AIWorkforce: React.FC = () => {
             scale: 0.95,
             y: -20,
             opacity: 1,
-            duration: 6,
-            ease: "power1.out"
+            duration: 8,
+            ease: "power2.inOut"
           }, `step-${i}`);
 
           // Simultaneously animate the new card sliding up
           tl.to(cards[i], {
             y: 0,
             opacity: 1,
-            duration: 6,
-            ease: "power1.out"
+            duration: 8,
+            ease: "power2.inOut"
           }, `step-${i}`);
 
           // Animate the inner contents smoothly WITHIN the scrubbed timeline
@@ -405,23 +410,40 @@ export const AIWorkforce: React.FC = () => {
           tl.to(textContents, {
             opacity: 1,
             y: 0,
-            duration: 8,
-            stagger: 2,
+            duration: 6,
+            stagger: 1,
             ease: "power2.out"
-          }, `step-${i}+=1.5`);
+          }, `step-${i}+=4`);
 
           if (imgWrapper) {
             tl.to(imgWrapper, {
               opacity: 1,
               scale: 1,
-              duration: 1.2,
-              ease: "power2.out"
-            }, `step-${i}+=1.5`);
+              y: 0,
+              duration: 4,
+              ease: "power3.out"
+            }, `step-${i}+=4`);
           }
 
           // Pause to hold the current card in view
-          tl.to({}, { duration: 4 });
+          tl.to({}, { duration: 6 });
         }
+
+        // Prevent the scrub animation from playing on mount if the user navigated back
+        // We wait for the browser to restore the scroll position, then force the scrub to instantly finish
+        const snapScrub = () => {
+          if (tl.scrollTrigger) {
+            const tween = tl.scrollTrigger.getTween();
+            if (tween) tween.progress(1);
+          }
+        };
+        
+        // Check across a few frames to catch the browser's scroll restoration
+        requestAnimationFrame(snapScrub);
+        setTimeout(snapScrub, 50);
+        setTimeout(snapScrub, 150);
+        setTimeout(snapScrub, 300);
+
       });
     }, sectionRef);
 
@@ -429,7 +451,7 @@ export const AIWorkforce: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-solution relative w-full bg-white py-16 lg:py-24">
+    <section ref={sectionRef} className="section-solution relative w-full bg-white py-16 lg:py-24" style={{ visibility: "hidden" }}>
       <style>{waveStyles}</style>
       <div ref={containerRef} className="w-layout-blockcontainer container w-container mx-auto px-6 sm:px-10 md:px-15 ">
         {/* Section Header */}
@@ -482,7 +504,7 @@ export const AIWorkforce: React.FC = () => {
 
                 <button 
                   onClick={() => navigate(agent.link)}
-                  className="btn-wave-text solution-icon-link mt-8 flex items-center gap-2 px-6 py-3 rounded-full bg-[#004370] text-white font-medium text-[16px] transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg group/btn bg-gradient-to-b from-[#004C7F] to-[#00365A] "
+                  className="btn-wave-text solution-icon-link mt-8 flex items-center gap-2 px-6 py-3 rounded-full bg-[#004370] text-white font-medium text-[16px] hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg group/btn bg-gradient-to-b from-[#004C7F] to-[#00365A]"
                 >
                   <span className="flex items-center">
                     {"View More".split("").map((char, i) => (
@@ -499,7 +521,7 @@ export const AIWorkforce: React.FC = () => {
                 </button>
 
               </div>
-              <div className={`solution-image-wrapper w-full lg:w-1/2 aspect-[1.4/1] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 ${agent.hoverBorder}`}>
+              <div className={`solution-image-wrapper w-full lg:w-1/2 aspect-[1.4/1] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-colors duration-500 ${agent.hoverBorder}`}>
                 <img
                   src={agent.bgImage}
                   loading="lazy"

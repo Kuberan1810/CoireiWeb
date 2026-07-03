@@ -38,6 +38,7 @@ import SDRWorker from "./pages/Products/Follei/pages/SDRWorker/SDRWorker";
 import SalesExecutive from "./pages/Products/Follei/pages/salesexecutive/salesexecutive";
 
 import CustomerSuccess from "./pages/Products/Follei/pages/customersuccess/customersuccess";
+import CollectionsWorker from "./pages/Products/Follei/pages/Collections Worker/CollectionsWorker";
 
 
 // import Analytics from "./pages/Features/Analytics";
@@ -91,6 +92,8 @@ function App() {
         <Route path="/products/follei/sales-executive" element={<SalesExecutive />} />
 
         <Route path="/products/follei/customer-success" element={<CustomerSuccess />} />
+        <Route path="/products/follei/collections-worker" element={<CollectionsWorker />} />
+
 
         <Route path="/products/coireilms" element={<LMS />} />
       </Routes>

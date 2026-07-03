@@ -1,23 +1,19 @@
-
-import Footer from "./sections/Footer";
-import Navbar from "../../../component/Navbar";
-import SEO from "../../../component/SEO";
-import useScrollAnimations from "../../../hooks/useScrollAnimations";
 import { useEffect } from "react";
-// Sections
-import Hero from "./sections/Hero";
-import AboutFollei from "./sections/AboutFollei";
-import Overview from "./sections/Overview";
-import Folleiplatform from "./sections/Folleiplatform";
-import Automation from "./sections/Automation";
-import AIWorkforce from "./sections/AIWorkforce";
-import Faq from "./sections/Faq";
-import HowWeWork from "./sections/HowWeWorks";
-import Integrations from "./sections/integrations";
+
 
 import Lenis from '@studio-freight/lenis'
+import useScrollAnimations from "../../../../../hooks/useScrollAnimations";
+import Hero from "./section/Hero";
+import Navbar from "../../../../../component/Navbar";
+import SEO from "../../../../../component/SEO";
+import Footer from "../../sections/Footer";
+import Faq from "./section/FAQs";
+import CollectionCapabilities from "./section/CollectionCapabilities";
+import IntelligentCollection from "./section/IntelligentCollection";
+import RevenueAutomation from "./section/RevenueAutomation";
+import RevenueIntelligence from "./section/RevenueIntelligence";
 
-const Follei = () => {
+const CollectionsWorker = () => {
     useScrollAnimations();
 
     useEffect(() => {
@@ -57,13 +53,10 @@ const Follei = () => {
 
             <main>
                 <Hero />
-                <Overview />
-                <AIWorkforce />
-                <AboutFollei />
-                <Automation />
-                <HowWeWork />
-                <Integrations />
-                <Folleiplatform />
+                <IntelligentCollection />
+                <RevenueIntelligence />
+                <CollectionCapabilities />
+                <RevenueAutomation />
                 <Faq />
             </main>
 
@@ -72,4 +65,4 @@ const Follei = () => {
     );
 };
 
-export default Follei;
+export default CollectionsWorker;
