@@ -35,6 +35,7 @@ import Follei from "./pages/Products/Follei/Follei";
 import LMS from "./pages/Products/lms/LMS";
 import BusinessIntelligence from "./pages/Products/Follei/pages/businessintelligence/businessintelligence";
 import SDRWorker from "./pages/Products/Follei/pages/SDRWorker/SDRWorker";
+import SalesExecutive from "./pages/Products/Follei/pages/salesexecutive/salesexecutive";
 
 // import Analytics from "./pages/Features/Analytics";
 // import Integrations from "./pages/Features/Integrations";
@@ -80,7 +81,10 @@ function App() {
         <Route path="/products/execa" element={<Execa />} />
         <Route path="/products/follei" element={<Follei />} />
         <Route path="/products/follei/business-intelligence" element={<BusinessIntelligence />} />
+
         <Route path="/products/follei/sdr-worker" element={<SDRWorker />} />
+
+        <Route path="/products/follei/sales-executive" element={<SalesExecutive />} />
         <Route path="/products/coireilms" element={<LMS />} />
       </Routes>
     </>

@@ -17,8 +17,10 @@ import bg6 from "../../../../assets/images/products/bg6.jpg";
 
 import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
 import {
-  Search,
+
   ChevronRight,
+  Users as 
+  Search,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
