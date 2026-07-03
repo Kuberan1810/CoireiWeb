@@ -17,10 +17,10 @@ import bg6 from "../../../../assets/images/products/bg6.jpg";
 
 import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
 import {
-
   Users as UsersIcon,
   Search,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
@@ -245,6 +245,7 @@ const agents: AgentCard[] = [
 ];
 
 export const AIWorkforce: React.FC = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsWrapperRef = useRef<HTMLDivElement>(null);
@@ -434,7 +435,10 @@ export const AIWorkforce: React.FC = () => {
             {agents.map((agent) => (
               <div
                 key={agent.id}
-                className="solution-item relative lg:absolute left-0 lg:top-[20px] mt-10 lg:mt-0 group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1]"
+                onClick={agent.id === "cs" ? () => navigate("/products/follei/customer-success") : undefined}
+                className={`solution-item relative lg:absolute left-0 lg:top-[20px] mt-10 lg:mt-0 group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1] ${
+                  agent.id === "cs" ? "cursor-pointer hover:bg-[#F9FAFB] transition-all duration-300" : ""
+                }`}
               >
                 <div className="solution-content w-full lg:w-1/2 flex flex-col items-start text-left">
                   <div className="solution-icon">

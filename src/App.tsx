@@ -33,7 +33,8 @@ import UIUXDesignDetails from "./pages/services/UIUXDesignDetails";
 import Execa from "./pages/Products/Execa/Execa";
 import Follei from "./pages/Products/Follei/Follei";
 import LMS from "./pages/Products/lms/LMS";
-import BusinessIntelligence from "./pages/Products/Follei/sections/pages/businessintelligence/businessintelligence";
+import BusinessIntelligence from "./pages/Products/Follei/pages/businessintelligence/businessintelligence";
+import CustomerSuccess from "./pages/Products/Follei/pages/customersuccess/customersuccess";
 
 // import Analytics from "./pages/Features/Analytics";
 // import Integrations from "./pages/Features/Integrations";
@@ -79,6 +80,7 @@ function App() {
         <Route path="/products/execa" element={<Execa />} />
         <Route path="/products/follei" element={<Follei />} />
         <Route path="/products/follei/business-intelligence" element={<BusinessIntelligence />} />
+        <Route path="/products/follei/customer-success" element={<CustomerSuccess />} />
         <Route path="/products/coireilms" element={<LMS />} />
       </Routes>
     </>
