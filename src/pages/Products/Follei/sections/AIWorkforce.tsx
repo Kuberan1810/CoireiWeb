@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
-import bgImage from "../../../../assets/images/products/bg.png";
+// import bgImage from "../../../../assets/images/products/bg.png";
 import ai1 from "../../../../assets/images/products/ai1.png";
 import ai2 from "../../../../assets/images/products/ai2.png";
 import ai3 from "../../../../assets/images/products/a13.png";
@@ -18,7 +18,7 @@ import bg6 from "../../../../assets/images/products/bg6.jpg";
 import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
 import {
 
-  Users as UsersIcon,
+  Users as 
   Search,
 } from "lucide-react";
 
