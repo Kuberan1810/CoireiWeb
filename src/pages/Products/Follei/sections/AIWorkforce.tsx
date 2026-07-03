@@ -17,9 +17,7 @@ import bg6 from "../../../../assets/images/products/bg6.jpg";
 
 import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
 import {
-
-  Users as 
-  Search,
+  Users as Search
 } from "lucide-react";
 
 const gsap: typeof localGsap = (window as any).gsap || localGsap;
