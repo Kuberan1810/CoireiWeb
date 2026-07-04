@@ -9,7 +9,7 @@ import dealContextImg from "../../../../../assets/images/products/dealcontext.sv
 export const SalesIntelligenceSection: React.FC = () => {
     return (
         <section className="relative w-full py-20 overflow-hidden bg-white flex flex-col items-center justify-center">
-            <div className="w-full mx-auto px-6 sm:px-10 md:px-15 relative z-10 max-w-[1300px]">
+            <div className="w-full mx-auto px-6 sm:px-10 md:px-15 relative z-10 ">
                 
                 {/* Section Header */}
                 <div data-ns-animate="true" data-delay="0" className="text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center">

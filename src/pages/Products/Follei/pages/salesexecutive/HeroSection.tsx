@@ -4,7 +4,7 @@ import salesExecHeadImg from "../../../../../assets/images/products/salesexechea
 export const HeroSection: React.FC = () => {
     return (
         <section className="w-full px-6 sm:px-10 md:px-15 pt-[50px] flex justify-center bg-white">
-            <div className="w-full max-w-[1400px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-34 items-center">
+            <div className="w-full  grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-34 items-center">
                 {/* Left Column: Text Content */}
                 <div className="lg:col-span-5 flex flex-col items-start text-left">
                     {/* Premium Capsule Badge */}
@@ -32,7 +32,7 @@ export const HeroSection: React.FC = () => {
                             lineHeight: '26px',
                             color: '#5A5A5C'
                         }}
-                        className="font-normal mb-8 max-w-xl animate-fade-in"
+                        className="font-normal mb-8 max-w-3xl animate-fade-in"
                     >
                         The Sales Executive Worker guides prospects through every stage of the buying journey—delivering personalized product demonstrations, answering complex questions, handling objections, generating proposals, and accelerating deal progression with complete business intelligence.
                     </p>

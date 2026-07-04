@@ -49,7 +49,7 @@ const SalesExecutive: React.FC = () => {
                 <Navbar />
             </div>
 
-            <main className="pt-24 w-full overflow-x-hidden bg-white">
+            <main className="pt-24 w-full  bg-white">
                 <HeroSection />
                 <SalesIntelligenceSection />
                 <SalesExecutionSection />

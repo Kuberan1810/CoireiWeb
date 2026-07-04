@@ -87,26 +87,26 @@ const Footer = () => {
                         <div className="footer-widgets-nav">
                             <div className="footer-title">Quciks links</div>
                             <div className="footer-nav">
-                                <a href="/home-pages/home-v1" aria-current="page" className="footer-text-link w-inline-block w--current">
+                                <a href="/" aria-current="page" className="footer-text-link w-inline-block w--current">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Home </div>
                                         <div className="link-text-hover white">Home</div>
                                     </div>
                                 </a>
 
-                                <a href="/template-pages/about" className="footer-text-link w-inline-block">
+                                <a href="/resources/company" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">About</div>
                                         <div className="link-text-hover white">About</div>
                                     </div>
                                 </a>
-                                <a href="/template-pages/contact-us" className="footer-text-link w-inline-block">
+                                <a href="/contact" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Contact</div>
                                         <div className="link-text-hover white">Contact</div>
                                     </div>
                                 </a>
-                                <a href="/template-pages/features" className="footer-text-link w-inline-block">
+                                <a href="/features" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Features</div>
                                         <div className="link-text-hover white">Features</div>
@@ -117,31 +117,31 @@ const Footer = () => {
                         <div className="footer-widgets-nav">
                             <div className="footer-title">Workers</div>
                             <div className="footer-nav">
-                                <a href="/template-pages/pricing" className="footer-text-link w-inline-block">
+                                <a href="/products/follei/sdr-worker" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">SDR Worker</div>
                                         <div className="link-text-hover white">SDR Worker</div>
                                     </div>
                                 </a>
-                                <a href="https://Follei.webflow.io/product/stater" className="footer-text-link w-inline-block">
+                                <a href="/products/follei/sales-executive" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Sales Executive</div>
                                         <div className="link-text-hover white">Sales Executive</div>
                                     </div>
                                 </a>
-                                <a href="/template-pages/blog" className="footer-text-link w-inline-block">
+                                <a href="/products/follei/customer-success" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Customer Success</div>
                                         <div className="link-text-hover white">Customer Success</div>
                                     </div>
                                 </a>
-                                <a href="https://Follei.webflow.io/post/the-rise-of-digital-health-what-you-need-to-know" className="footer-text-link w-inline-block">
+                                <a href="/products/follei/support-worker" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Support Worker</div>
                                         <div className="link-text-hover white">Support Worker</div>
                                     </div>
                                 </a>
-                                <a href="https://Follei.webflow.io/post/the-rise-of-digital-health-what-you-need-to-know" className="footer-text-link w-inline-block">
+                                <a href="/products/follei/collections-worker" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Collections Worker</div>
                                         <div className="link-text-hover white">Collections Worker</div>
@@ -152,38 +152,38 @@ const Footer = () => {
                         <div className="footer-widgets-nav">
                             <div className="footer-title">Coirei Pages</div>
                             <div className="footer-nav">
-                                <a href="/home-pages/home-v1" aria-current="page" className="footer-text-link w-inline-block w--current">
+                                <a href="/" aria-current="page" className="footer-text-link w-inline-block w--current">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Home</div>
                                         <div className="link-text-hover white">Home</div>
                                     </div>
                                 </a>
 
-                                <a href="/template-pages/about" className="footer-text-link w-inline-block">
+                                <a href="/services" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Services</div>
                                         <div className="link-text-hover white">Services</div>
                                     </div>
                                 </a>
-                                <a href="/template-pages/contact-us" className="footer-text-link w-inline-block">
+                                <a href="/products/follei" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Product</div>
                                         <div className="link-text-hover white">Product</div>
                                     </div>
                                 </a>
-                                <a href="/template-pages/features" className="footer-text-link w-inline-block">
+                                <a href="/resources/blog" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Blog</div>
                                         <div className="link-text-hover white">Blog</div>
                                     </div>
                                 </a>
-                                  <a href="/template-pages/contact-us" className="footer-text-link w-inline-block">
+                                  <a href="/resources/company" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Company</div>
                                         <div className="link-text-hover white">Company</div>
                                     </div>
                                 </a>
-                                <a href="/template-pages/features" className="footer-text-link w-inline-block">
+                                <a href="/contact" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Contact</div>
                                         <div className="link-text-hover white">Contact</div>
@@ -194,13 +194,13 @@ const Footer = () => {
                         <div className="footer-widgets-nav">
                             <div className="footer-title">Coirei Products</div>
                             <div className="footer-nav">
-                                <a href="https://Follei.webflow.io/product/stater" className="footer-text-link w-inline-block">
+                                <a href="/products/follei" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Follei</div>
                                         <div className="link-text-hover white">Follei</div>
                                     </div>
                                 </a>
-                                <a href="/template-pages/pricing" className="footer-text-link w-inline-block">
+                                <a href="/products/coireilms" className="footer-text-link w-inline-block">
 
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Coirei LMS</div>
