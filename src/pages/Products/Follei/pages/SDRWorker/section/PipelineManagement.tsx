@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { 
   Mail, 
@@ -6,6 +6,10 @@ import {
   RefreshCw, 
   CalendarCheck 
 } from 'lucide-react';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const roadmapData = [
   {
@@ -43,6 +47,30 @@ const PipelineManagement: React.FC = () => {
     damping: 30
   });
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      gsap.set(".sdr-pm-tag", { opacity: 0, y: 20 });
+      gsap.set(".sdr-pm-title", { opacity: 0, y: 40 });
+      gsap.set(".sdr-pm-desc", { opacity: 0, y: 20 });
+      gsap.set(".sdr-pm-item", { opacity: 0, y: 40, scale: 0.95 });
+
+      tl.to(".sdr-pm-tag", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" })
+        .to(".sdr-pm-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .to(".sdr-pm-desc", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.6")
+        .to(".sdr-pm-item", { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1, ease: "power3.out" }, "-=0.3");
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section 
       ref={containerRef} 
@@ -50,7 +78,7 @@ const PipelineManagement: React.FC = () => {
     >
       <div className="max-w-[1300px] mx-auto flex flex-col items-center">
         {/* 1. Capsule Badge */}
-        <div className="mb-6 flex justify-center">
+        <div className="sdr-pm-tag opacity-0 mb-6 flex justify-center">
             <div
                 className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-white border border-[#004370]/30 text-[#004370] font-medium text-[16px] font-instrument-sans"
                 style={{
@@ -66,7 +94,7 @@ const PipelineManagement: React.FC = () => {
         </div>
 
         {/* 2. Heading */}
-        <h2 className="text-[#04032E] text-3xl sm:text-5xl md:text-[52px] font-bold tracking-tight leading-[1.15] mb-4 text-center font-instrument-sans">
+        <h2 className="sdr-pm-title opacity-0 text-[#04032E] text-3xl sm:text-5xl md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 text-center font-instrument-sans">
             Every Conversation Moves <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
                 Toward A Decision
@@ -74,7 +102,7 @@ const PipelineManagement: React.FC = () => {
         </h2>
 
         {/* 3. Subheading */}
-        <p className="text-[#5A5A5C] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed mb-20 text-center font-instrument-sans">
+        <p className="sdr-pm-desc opacity-0 text-[#5A5A5C] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed mb-20 text-center font-instrument-sans">
             The SDR Worker keeps conversations active through intelligent follow-ups, timely reminders, and personalized engagement until every opportunity reaches its outcome.
         </p>
 
@@ -96,13 +124,10 @@ const PipelineManagement: React.FC = () => {
           {/* ROADMAP ITEMS */}
           <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-24 lg:gap-0 w-full">
             {roadmapData.map((item, index) => (
-              <div key={index} className="flex flex-col items-center text-center lg:w-1/4 group px-4">
+              <div key={index} className="sdr-pm-item opacity-0 flex flex-col items-center text-center lg:w-1/4 group px-4">
                 
                 {/* ICON BOX */}
                 <div 
-                  data-ns-animate
-                  data-offset="80"
-                  data-delay={index * 0.1}
                   className="w-[56px] h-[56px] rounded-[12px] bg-[#004370] border border-[#004370]/10 flex items-center justify-center mb-8 shadow-md relative z-20 transition-all duration-300 group-hover:bg-[#1079B7] group-hover:border-[#1079B7]/40"
                 >
                   {item.icon}
@@ -110,9 +135,6 @@ const PipelineManagement: React.FC = () => {
 
                 {/* TEXT CONTENT */}
                 <div
-                  data-ns-animate
-                  data-offset="80"
-                  data-delay={(index * 0.1) + 0.05}
                   className="w-full flex flex-col items-center"
                 >
                   <h3 className="text-[20px] font-bold text-[#004370] mb-3 tracking-tight group-hover:text-[#1079B7] transition-colors duration-300 font-instrument-sans">

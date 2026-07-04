@@ -1,24 +1,51 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import bg1 from "../../../../../../assets/images/products/bg1.png";
 import { Search } from "lucide-react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+// Ensure ScrollTrigger is registered
+gsap.registerPlugin(ScrollTrigger);
 
 export const Hero: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+
+      // Initial States
+      gsap.set(".sdr-hero-tag", { opacity: 0, y: 20 });
+      gsap.set(".sdr-hero-title", { opacity: 0, y: 40 });
+      gsap.set(".sdr-hero-desc", { opacity: 0, y: 20 });
+      gsap.set(".sdr-hero-card", { scale: 0.8, opacity: 0, y: 40 });
+
+      // Animation Sequence (Exactly matching main Hero.tsx)
+      tl.to(".sdr-hero-tag", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" })
+        .to(".sdr-hero-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .to(".sdr-hero-desc", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.6")
+        .to(".sdr-hero-card", { scale: 1, opacity: 1, y: 0, duration: 0, ease: "power3.out" }, "-=0.3");
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full px-6 sm:px-10 md:px-15 py-10 flex justify-center bg-white mt-8">
+    <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-10 flex justify-center bg-white mt-8">
       <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between min-h-[481px] group">
 
         {/* Left Column: Content */}
         <div className="w-full lg:w-2/3 flex flex-col items-start text-left">
           {/* Badge Pill */}
           <div
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
+            className="sdr-hero-tag opacity-0 inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
             <span>SDR Worker</span>
           </div>
 
           {/* Title */}
-          <h1 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+          <h1 className="sdr-hero-title opacity-0 text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
             Every Lead Starts With
             <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
@@ -26,27 +53,26 @@ export const Hero: React.FC = () => {
             </span>
           </h1>
 
-
           {/* Description */}
-          <p className="text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
+          <p className="sdr-hero-desc opacity-0 text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
             The SDR Worker engages every prospect with intelligent conversations, qualifies buying intent, nurtures relationships, and schedules meetings automatically—helping your sales team focus on closing deals instead of chasing leads.          </p>
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-sky-500/20">
+        <div className="sdr-hero-card opacity-0 w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-sky-500/20">
           {/* Background Image */}
           <img
             src={bg1}
-            loading="lazy"
+            loading="eager"
             alt=""
-            className="image-cover absolute inset-0 w-full h-[390px] object-cover opacity-30 transition-transform duration-700"
+            className="sdr-hero-bg-img image-cover absolute inset-0 w-full h-[390px] object-cover opacity-30 transition-transform duration-700"
           />
 
           {/* Inner Card Container  */}
           <div className="relative z-10 w-full h-full flex justify-center items-center p-6">
             <div className="w-full h-full flex items-center justify-center scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-center">
               <div
-                className="w-[461px] h-[265px] shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between p-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
+                className="sdr-hero-inner-card w-[461px] h-[265px] shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between p-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
                 style={{ backgroundColor: '#FFFFFF' }}
               >
                 <div className="absolute top-4 left-5 flex gap-1.5">

@@ -1,19 +1,66 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { Users, Send, Repeat1, User } from 'lucide-react';
 import bg from "../../../../../../assets/images/products/sdr.jpg";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const LeadIntelligence: React.FC = () => {
-  const stats = [
-    { value: "95%", label: "Recognizes customer purchase readiness." },
-    { value: "88%", label: "Measures interaction across every channel." },
-    { value: "91%", label: "Evaluates sales and business fit." },
-    { value: "97%", label: "Detects behaviors  conversion intent." },
-    { value: "84%", label: "Measures customer trust and strength." }
+  const sectionRef = useRef<HTMLElement>(null);
 
+  const stats = [
+    { value: 95, suffix: "%", label: "Recognizes customer purchase readiness." },
+    { value: 88, suffix: "%", label: "Measures interaction across every channel." },
+    { value: 91, suffix: "%", label: "Evaluates sales and business fit." },
+    { value: 97, suffix: "%", label: "Detects behaviors  conversion intent." },
+    { value: 84, suffix: "%", label: "Measures customer trust and strength." }
   ];
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      gsap.set(".sdr-li-tag", { opacity: 0, y: 20 });
+      gsap.set(".sdr-li-title", { opacity: 0, y: 40 });
+      gsap.set(".sdr-li-desc", { opacity: 0, y: 20 });
+      gsap.set(".sdr-li-right-card", { scale: 0.8, opacity: 0, y: 40 });
+      gsap.set(".sdr-li-stat-card", { opacity: 0, y: 40, scale: 0.95 });
+
+      tl.to(".sdr-li-tag", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" })
+        .to(".sdr-li-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .to(".sdr-li-desc", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.6")
+        .to(".sdr-li-right-card", { scale: 1, opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, "-=0.3")
+        .to(".sdr-li-stat-card", { opacity: 1, y: 0, scale: 1, duration: 1.2, stagger: 0.1, ease: "power3.out" }, "-=1");
+
+      tl.addLabel("counterStart", "-=0.8");
+      
+      const counters = gsap.utils.toArray<HTMLElement>(".sdr-li-counter");
+      counters.forEach((counter) => {
+        const target = parseFloat(counter.getAttribute("data-target") || "0");
+        const obj = { val: 0 };
+        tl.to(obj, {
+          val: target,
+          duration: 1.5,
+          ease: "power3.out",
+          onUpdate: () => {
+            counter.innerHTML = Math.floor(obj.val).toLocaleString("en-US");
+          }
+        }, "counterStart");
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">
+    <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">
       <div className="w-full flex flex-col group">
 
         {/* Top Part */}
@@ -23,14 +70,14 @@ export const LeadIntelligence: React.FC = () => {
           <div className="w-full lg:w-2/3 flex flex-col items-start text-left">
             {/* Badge Capsule */}
             <div
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
+              className="sdr-li-tag opacity-0 inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
               <span>Lead Intelligence</span>
             </div>
 
             {/* Title */}
-            <h2 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+            <h2 className="sdr-li-title opacity-0 text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
               Every Conversation Creates<br />
               <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
                 Revenue Intelligence
@@ -38,12 +85,12 @@ export const LeadIntelligence: React.FC = () => {
             </h2>
 
             {/* Description */}
-            <p className="text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
+            <p className="sdr-li-desc opacity-0 text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
               Every website form, email, WhatsApp message, voice call, or live chat is handled instantly by the SDR Worker. Every response is personalized using your products, pricing, business policies, and customer context ensuring no lead is ever left waiting.             </p>
           </div>
 
           {/* Right Column */}
-          <div className="w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-sky-500/20">
+          <div className="sdr-li-right-card opacity-0 w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-sky-500/20">
             {/* Background Image */}
             <img
               src={bg}
@@ -69,7 +116,9 @@ export const LeadIntelligence: React.FC = () => {
                     </div>
                     <div className="text-center flex flex-col items-center justify-center mt-1.5 flex-1">
                       <p className="text-[14px] font-semibold text-[#6E6E6E]">Total Customers</p>
-                      <h3 className="text-[32px] font-bold text-[#6693B1] leading-none mt-1">1,284</h3>
+                      <h3 className="text-[32px] font-bold text-[#6693B1] leading-none mt-1">
+                        <span className="sdr-li-counter" data-target="1284">0</span>
+                      </h3>
                     </div>
                     <div className="flex items-center gap-1 text-[12px] font-light mt-2 text-[#008900]">
                       <span>↑</span>
@@ -84,7 +133,9 @@ export const LeadIntelligence: React.FC = () => {
                       <Repeat1 size={16} style={{ color: '#014370' }} />
                     </div>
                     <div className="flex items-baseline gap-1 mt-1">
-                      <span className="text-[24px] font-bold text-[#0B1C30] leading-none">$45,000/years</span>
+                      <span className="text-[24px] font-bold text-[#0B1C30] leading-none">
+                        $<span className="sdr-li-counter" data-target="45000">0</span>/years
+                      </span>
                     </div>
                     <span className="text-[10px] text-[#464555] font-medium">Annual Contract Value (ACV)</span>
                   </div>
@@ -100,7 +151,9 @@ export const LeadIntelligence: React.FC = () => {
                     </div>
                     <div className="flex flex-col gap-1 mt-1">
                       <span className="text-[9px] text-[#64748B] font-medium uppercase tracking-wider">Total Revenue</span>
-                      <span className="text-[24px] font-bold text-[#191C1E] leading-none">25,000</span>
+                      <span className="text-[24px] font-bold text-[#191C1E] leading-none">
+                        <span className="sdr-li-counter" data-target="25000">0</span>
+                      </span>
                     </div>
                     <span className="inline-flex items-center px-1.5 py-0.5 bg-[#F73F55]/5 rounded-full w-fit text-[8px] text-[#F73F55] font-medium absolute top-4 right-3">+12% from last month</span>
                   </div>
@@ -118,7 +171,9 @@ export const LeadIntelligence: React.FC = () => {
                     </div>
                     <div className="text-center flex flex-col items-center justify-center mt-1.5 flex-1">
                       <p className="text-[14px] font-semibold text-[#6E6E6E]">Followed up</p>
-                      <h3 className="text-[32px] font-bold text-[#6693B1] leading-none mt-1">847</h3>
+                      <h3 className="text-[32px] font-bold text-[#6693B1] leading-none mt-1">
+                        <span className="sdr-li-counter" data-target="847">0</span>
+                      </h3>
                     </div>
                     <div className="flex items-center gap-1 text-[12px] font-light mt-2 text-[#008900]">
                       <span>↑</span>
@@ -135,8 +190,11 @@ export const LeadIntelligence: React.FC = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 md:gap-y-0 md:divide-x divide-[#D0D0D0] w-full">
           {stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col text-left px-4 md:px-6 lg:px-8 py-4">
-              <span className="text-3xl sm:text-[60px] text-[#000000] tracking-tight leading-none">{stat.value}</span>
+            <div key={idx} className="sdr-li-stat-card opacity-0 flex flex-col text-left px-4 md:px-6 lg:px-8 py-4">
+              <span className="text-3xl sm:text-[60px] text-[#000000] tracking-tight leading-none">
+                <span className="sdr-li-counter" data-target={stat.value}>0</span>
+                {stat.suffix}
+              </span>
               <span className="text-xs sm:text-[18px] text-[#5A5A5C] mt-3 font-normal leading-snug">{stat.label}</span>
             </div>
           ))}

@@ -1,8 +1,6 @@
 
 import { useEffect } from "react";
 // Sections
-
-
 import Lenis from '@studio-freight/lenis'
 import useScrollAnimations from "../../../../../hooks/useScrollAnimations";
 import Navbar from "../../../../../component/Navbar";

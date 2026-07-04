@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
 
@@ -12,11 +12,28 @@ if (!(window as any).gsap) {
 const DiscoveryIntelligence: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const section = sectionRef.current;
         if (!section) return;
 
         const ctx = gsap.context(() => {
+            // Header animation timeline
+            const headerTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+
+            gsap.set(".sdr-di-tag", { opacity: 0, y: 20 });
+            gsap.set(".sdr-di-title", { opacity: 0, y: 40 });
+            gsap.set(".sdr-di-desc", { opacity: 0, y: 20 });
+
+            headerTl.to(".sdr-di-tag", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" })
+                .to(".sdr-di-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
+                .to(".sdr-di-desc", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.6");
+
             const mm = gsap.matchMedia();
 
             mm.add({
@@ -144,7 +161,7 @@ const DiscoveryIntelligence: React.FC = () => {
             <div className="w-full max-w-[1300px] flex flex-col items-center">
 
                 {/* Premium Capsule Badge */}
-                <div data-ns-animate="true" data-delay="0.1" className="mb-6 flex justify-start">
+                <div className="sdr-di-tag opacity-0 mb-6 flex justify-start">
                     <div
                         style={{
                             borderRadius: '10px',
@@ -160,13 +177,13 @@ const DiscoveryIntelligence: React.FC = () => {
                 </div>
 
                 {/* Heading & Subheading */}
-                <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-3xl sm:text-5xl md:text-[52px] font-bold tracking-tight leading-[1.15] mb-4 text-center max-w-3xl">
+                <h2 className="sdr-di-title opacity-0 text-[#04032E] text-3xl sm:text-5xl md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 text-center max-w-3xl">
                     From First Conversation To <br />
                     <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
                         Qualified Opportunity
                     </span>
                 </h2>
-                <p data-ns-animate="true" data-delay="0.3" className="text-[#5A5A5C] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed mb-16 text-center">
+                <p className="sdr-di-desc opacity-0 text-[#5A5A5C] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed mb-16 text-center">
                     The SDR Worker uncovers customer needs, evaluates buying intent, and builds complete business context before confidently qualifying every opportunity.
                 </p>
 

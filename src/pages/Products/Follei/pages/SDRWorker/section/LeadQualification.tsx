@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { Target, ChartLine, Brain, BadgeCheck } from "lucide-react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const LeadQualification: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
   const features = [
     {
       id: "onboarding",
@@ -29,22 +35,46 @@ export const LeadQualification: React.FC = () => {
     }
   ];
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      gsap.set(".sdr-lq-tag", { opacity: 0, y: 20 });
+      gsap.set(".sdr-lq-title", { opacity: 0, y: 40 });
+      gsap.set(".sdr-lq-desc", { opacity: 0, y: 20 });
+      gsap.set(".sdr-lq-card", { opacity: 0, y: 40, scale: 0.95 });
+
+      tl.to(".sdr-lq-tag", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" })
+        .to(".sdr-lq-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .to(".sdr-lq-desc", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.6")
+        .to(".sdr-lq-card", { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1, ease: "power3.out" }, "-=0.3");
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">
+    <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">
       <div className="w-full flex flex-col items-center">
 
         {/* Header Area */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 flex flex-col items-center">
           {/* Badge Capsule */}
           <div
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
+            className="sdr-lq-tag opacity-0 inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
             <span>Lead Qualification</span>
           </div>
 
           {/* Title */}
-          <h2 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 max-w-none">
+          <h2 className="sdr-lq-title opacity-0 text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 max-w-none">
             Identify High-Value <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               Opportunities Instantly
@@ -52,7 +82,7 @@ export const LeadQualification: React.FC = () => {
           </h2>
 
           {/* Subheading */}
-          <p className="text-[#5A5A5C] text-base sm:text-[16px] font-normal leading-relaxed">
+          <p className="sdr-lq-desc opacity-0 text-[#5A5A5C] text-base sm:text-[16px] font-normal leading-relaxed">
             The SDR Worker evaluates every prospect using business intelligence, customer behavior, engagement history, and buying signals to identify sales-ready opportunities with confidence.          </p>
         </div>
 
@@ -63,7 +93,7 @@ export const LeadQualification: React.FC = () => {
             return (
               <div
                 key={feat.id}
-                className="bg-white rounded-[10px] p-5 text-left flex flex-col justify-between transition-all duration-300"
+                className="sdr-lq-card opacity-0 bg-white rounded-[10px] p-5 text-left flex flex-col justify-between transition-all duration-300"
               >
                 <div>
                   <div className="w-11 h-11 rounded-[8px] flex items-center justify-center mb-20 text-white bg-[#004370]">

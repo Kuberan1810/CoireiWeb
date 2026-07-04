@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface FAQItem {
   question: string;
@@ -31,18 +35,49 @@ const faqData: FAQItem[] = [
 
 const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%", // Trigger when section hits 85% of viewport
+          toggleActions: "play none none none"
+        }
+      });
+
+      // Exactly matches the data-ns-animate default behavior: Blur + Fade + Slide Up
+      tl.fromTo(".sdr-faq-header", 
+        { opacity: 0, y: 60, filter: "blur(16px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power2.out" }
+      )
+      .fromTo(".sdr-faq-item", 
+        { opacity: 0, y: 60, filter: "blur(16px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, stagger: 0.1, ease: "power2.out" }, 
+        "-=0.6"
+      );
+    }, sectionRef);
+
+    // Refresh ScrollTrigger slightly later to account for above sections loading images
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative w-full py-20 md:py-32 bg-[#fafafa] flex flex-col items-center justify-center border-t border-slate-200/50">
+    <section ref={sectionRef} className="relative w-full py-20 md:py-32 bg-[#fafafa] flex flex-col items-center justify-center border-t border-slate-200/50">
       <div className=" px-6 sm:px-10 md:px-15 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          
+
           {/* Left Column: Heading */}
-          <div data-ns-animate className="lg:col-span-5 flex flex-col items-start text-left lg:sticky lg:top-32">
+          <div className="sdr-faq-header lg:col-span-5 flex flex-col items-start text-left lg:sticky lg:top-32">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[16px] text-[#000000] mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
               <span>FAQs</span>
@@ -55,7 +90,7 @@ const FAQSection: React.FC = () => {
                 Asked Questions
               </span>
             </h2>
-            
+
             <p className="mt-6 text-[#5A5A5C] text-sm sm:text-[18px] font-normal leading-relaxed max-w-sm">
               Everything you need to know about Follei and how our AI workforce can transform your business.
             </p>
@@ -65,44 +100,37 @@ const FAQSection: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col gap-5 w-full">
             {faqData.map((item, index) => {
               const isOpen = openIndex === index;
-              const delay = (index * 0.1).toFixed(1);
               return (
                 <div
                   key={index}
-                  data-ns-animate
-                  data-delay={delay}
-                  className={`group bg-white rounded-[24px] transition-all duration-300 border-[1px] ${
-                    isOpen
+                  className={`sdr-faq-item group bg-white rounded-[24px] transition-all duration-300 border-[1px] ${isOpen
                       ? "border-[#1079B7]/40 shadow-[0_12px_40px_rgba(16,121,183,0.08)]"
                       : "border-slate-200/80 hover:border-[#1079B7]/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex items-center justify-between p-6 sm:p-8 text-left focus:outline-hidden"
                   >
                     <span
-                      className={`text-lg sm:text-[22px] font-medium leading-snug transition-colors duration-300 pr-6 ${
-                        isOpen ? "text-[#1079B7]" : "text-[#04032E] group-hover:text-[#1079B7]"
-                      }`}
+                      className={`text-lg sm:text-[22px] font-medium leading-snug transition-colors duration-300 pr-6 ${isOpen ? "text-[#1079B7]" : "text-[#04032E] group-hover:text-[#1079B7]"
+                        }`}
                     >
                       {item.question}
                     </span>
                     <div
-                      className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full transition-all duration-500 ${
-                        isOpen
+                      className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full transition-all duration-500 ${isOpen
                           ? "bg-[#1079B7] text-white rotate-180 shadow-md"
                           : "bg-[#F4F4F4] text-[#04032E] group-hover:bg-[#1079B7]/10 group-hover:text-[#1079B7]"
-                      }`}
+                        }`}
                     >
                       <ChevronDown size={22} strokeWidth={2.5} />
                     </div>
                   </button>
 
                   <div
-                    className={`grid transition-all duration-500 ease-in-out ${
-                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                    }`}
+                    className={`grid transition-all duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
                   >
                     <div className="overflow-hidden">
                       <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-0 text-[#5A5A5C] text-sm sm:text-[17px] leading-relaxed font-normal">

@@ -50,7 +50,7 @@ const SDRWorker: React.FC = () => {
                 <Navbar />
             </div>
 
-            <main className="pt-32 pb-0 w-full overflow-x-hidden bg-white">
+            <main className="pt-32 pb-0 w-full bg-white">
                 <Hero />
                 <LeadQualification />
                 <LeadIntelligence />
