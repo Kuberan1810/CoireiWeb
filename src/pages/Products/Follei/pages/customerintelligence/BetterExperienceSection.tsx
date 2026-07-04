@@ -71,7 +71,7 @@ const BetterExperienceSection: React.FC = () => {
 
                     {/* Left: AI Logo with Concentric Circles */}
                     {/* Centered on mobile and scaled down (scale-[0.65]). Absolute on left on desktop. */}
-                    <div className="relative md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 z-10 flex items-center justify-center scale-[0.65] md:scale-100 w-[200px] h-[200px] -my-10 md:my-0">
+                    <div className="relative md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 z-10 flex items-center justify-center scale-[0.65] md:scale-100 w-[200px] h-[200px] -mt-10 mb-0 md:my-0">
                         {/* Reduced size and opacity of the gradient background 'borders' */}
                         <div className="absolute w-[170px] h-[170px] rounded-full opacity-60" style={{ background: 'linear-gradient(90deg, #FFCCCC 0%, #CDD9FB 100%)' }}></div>
                         <div className="absolute w-[160px] h-[160px] rounded-full transform rotate-[45deg] opacity-60" style={{ background: 'linear-gradient(90deg, #FFCCCC 0%, #CDD9FB 100%)' }}></div>
@@ -81,9 +81,28 @@ const BetterExperienceSection: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* Mobile Vertical Connecting Lines */}
+                    <div className="block md:hidden flex justify-center w-full max-w-[340px] h-[60px] z-0 -mt-2 mb-2">
+                        <svg width="100%" height="100%" viewBox="0 0 300 60" preserveAspectRatio="none" className="overflow-visible pointer-events-none">
+                            <defs>
+                                <marker id="arrowhead-mobile" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+                                    <path d="M 1 1 L 10 6 L 1 11" fill="none" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </marker>
+                            </defs>
+                            {/* Line to Resolve (Left) */}
+                            <path d="M 150 0 Q 150 30 50 60" fill="none" stroke="#000000" strokeWidth="1.5" strokeDasharray="6 6" markerEnd="url(#arrowhead-mobile)" />
+                            
+                            {/* Line to Assist (Middle) */}
+                            <path d="M 150 0 L 150 60" fill="none" stroke="#000000" strokeWidth="1.5" strokeDasharray="6 6" markerEnd="url(#arrowhead-mobile)" />
+                            
+                            {/* Line to Improve (Right) */}
+                            <path d="M 150 0 Q 150 30 250 60" fill="none" stroke="#000000" strokeWidth="1.5" strokeDasharray="6 6" markerEnd="url(#arrowhead-mobile)" />
+                        </svg>
+                    </div>
+
                     {/* Right: The 3 Action Pills as Message Boxes */}
                     {/* Horizontal row on mobile, vertical stack on right on desktop. */}
-                    <div className="relative md:absolute md:right-0 md:top-0 md:bottom-0 w-full md:w-[220px] flex flex-row md:flex-col justify-center md:justify-between z-10 gap-3 md:gap-0 mt-4 md:mt-0 flex-wrap">
+                    <div className="relative md:absolute md:right-0 md:top-0 md:bottom-0 w-full md:w-[220px] flex flex-row md:flex-col justify-center md:justify-between z-10 gap-3 md:gap-0 mt-2 md:mt-0 flex-wrap">
                         
                         {/* Resolve */}
                         <div className="bg-[#F0F4FF] rounded-r-[24px] md:rounded-r-[32px] rounded-tl-[24px] md:rounded-tl-[32px] rounded-bl-[4px] md:rounded-bl-[6px] px-4 md:px-6 flex items-center justify-center shadow-sm w-auto md:w-full h-[48px] md:h-[72px] flex-1 md:flex-none">
