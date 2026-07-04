@@ -45,7 +45,7 @@ const OverviewSection: React.FC = () => {
                             }}
                             className="text-[#0A0E29] text-4xl sm:text-5xl md:text-[60px] font-medium tracking-tight mb-1 font-sans"
                         >
-                            One AI Agent.
+                            Business Intelligence.
                         </h1>
                         <h1
                             data-ns-animate
@@ -56,7 +56,7 @@ const OverviewSection: React.FC = () => {
                             }}
                             className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent text-4xl sm:text-5xl md:text-[60px] font-medium tracking-tight mb-6 font-sans"
                         >
-                            Unlimited Growth.
+                            Autonomous Execution.
                         </h1>
 
                         {/* Description with exact styling */}
@@ -71,7 +71,7 @@ const OverviewSection: React.FC = () => {
                             }}
                             className="font-normal mb-8 max-w-xl animate-fade-in"
                         >
-                            From business intelligence to autonomous AI execution, Follei helps organizations operate smarter, respond faster, and grow without limits.
+                            Intelligence at scale. Follei combines advanced lead analytics with autonomous AI execution to help organizations nurture smarter, sell faster, and achieve limitless growth.
                         </p>
 
                         {/* CTA Buttons */}

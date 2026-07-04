@@ -98,8 +98,8 @@ const Integrations = () => {
                     </h2>
 
                     {/* Subheading */}
-                    <p className="text-[#5A5A5C] text-base sm:text-lg max-w-3xl mx-auto font-normal leading-relaxed text-center">
-                        Follei connects with the platforms your teams already rely on, ensuring AI workers always have the right context.
+                    <p data-ns-animate data-delay="0.2" className="text-[#475569] text-base sm:text-lg max-w-2xl font-normal leading-relaxed text-left lg:text-center mt-2 lg:mx-auto">
+                        Work with what you've got. Follei integrates smoothly with your existing platforms keeping your teams in familiar tools while giving AI workers the context and data they need to operate autonomously and effectively.
                     </p>
                 </div>
 

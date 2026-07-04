@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
                 data-w-id="1f3fa2a0-810f-3cec-5d91-4b86e4ce9e11"
                 className="hero-title lg:text-[60px] md:text-[50px] text-[40px] text-[#04032E] font-semibold max-w-[900px] lg:leading-[66.6px] md:leading-[55px] leading-[45px] lg:tracking-[-2px] tracking-[-1px] text-center mx-auto"
               >
-                Track every Customer interaction with AI Precision
+                Where Business Intelligence Becomes Action
               </h1>
             </div>
 
@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
                 data-w-id="4193467d-a043-aa83-1a71-f72c5d28f53a"
                 className="text-[16px] text-[#5A5A5C] max-w-[740px] mx-auto mt-5 lg:mt-0"
               >
-                Our AI-powered healthcare SaaS platform transforms complex medical data into actionable insights in real time. From predictive analytics
+                Our AI-powered Lead Manager SaaS platform transforms complex Leads data into actionable insights in real time, enabling predictive analytics that nurture leads at every stage of the sales cycle
               </p>
             </div>
 

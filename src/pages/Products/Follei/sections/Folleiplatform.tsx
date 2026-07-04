@@ -157,7 +157,7 @@ export const FolleiPlatformSection: React.FC = () => {
 
                     {/* Subheading */}
                     <p className="gsap-subheading text-[#475569] text-xs sm:text-sm md:text-base max-w-3xl mx-auto font-normal leading-relaxed">
-                        Connect your business once. Follei learns how your company operates, identifies opportunities, deploys AI workers, and continuously improves outcomes across the customer lifecycle.
+                        Intelligence becomes action. Connect your business to Follei once—it learns how you operate, identifies where you can grow, deploys AI workers that truly understand your business, and continuously optimizes every customer interaction.
                     </p>
                 </div>
 

@@ -114,7 +114,7 @@ export const Automation: React.FC = () => {
 
           {/* Subheading */}
           <p data-ns-animate data-delay="0.2" className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto font-normal leading-relaxed text-center">
-            Follei combines business intelligence, autonomous AI workers, and continuous learning into one unified platform that helps organizations operate smarter, faster, and at scale.
+            Every AI decision is backed by six layers of intelligent reasoning. Follei combines data insights, autonomous execution, and adaptive learning into one cohesive system—powering organizations to operate at peak efficiency and scale rapidly.
           </p>
         </div>
 

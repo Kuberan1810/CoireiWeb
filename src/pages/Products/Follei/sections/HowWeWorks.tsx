@@ -39,13 +39,13 @@ export const HowWeWorks: React.FC = () => {
 
                     {/* Heading */}
                     <h2 className="text-[#0A0E29] text-3xl sm:text-5xl md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 text-center max-w-4xl mx-auto">
-                        From Business Discovery To <br />
-                        <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">Autonomous Growth</span>
+                        From Business Knowledge to <br />
+                        <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">Autonomous Execution</span>
                     </h2>
 
                     {/* Subheading */}
                     <p className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto font-normal leading-relaxed text-center">
-                        Every Follei deployment follows a structured journey—from understanding your business to activating AI workers that continuously learn and improve over time.
+                        Smart deployments start with listening. Follei combines deep business discovery, intelligent AI activation, and continuous optimization into a structured journey that transforms how your organization operates and grows.
                     </p>
                 </div>
 
