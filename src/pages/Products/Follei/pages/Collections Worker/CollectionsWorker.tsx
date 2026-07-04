@@ -54,8 +54,8 @@ const CollectionsWorker = () => {
             <main>
                 <Hero />
                 <IntelligentCollection />
-                <RevenueIntelligence />
                 <CollectionCapabilities />
+                <RevenueIntelligence />
                 <RevenueAutomation />
                 <Faq />
             </main>
