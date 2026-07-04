@@ -1,31 +1,31 @@
 import React from "react";
-import { RocketIcon, BlocksIcon, BookOpenText, ChartNoAxesCombined } from "lucide-react";
+import { UserRound, Target, LineChart, HeartPulse } from "lucide-react";
 
 export const AccountIntelligence: React.FC = () => {
   const features = [
     {
-      id: "onboarding",
-      title: "Guided Onboarding",
-      description: "Guide every customer through onboarding milestones with personalized assistance.",
-      icon: RocketIcon,
+      id: "business-relationships",
+      title: "Business Relationships",
+      description: "Strengthen customer partnerships with continuous relationship intelligence.",
+      icon: UserRound,
     },
     {
-      id: "adoption",
-      title: "Product Adoption",
-      description: "Introduce key features and recommended workflows that help customers unlock value faster.",
-      icon: BlocksIcon,
+      id: "growth-intelligence",
+      title: "Growth Intelligence",
+      description: "Identify upsell, cross-sell, and account growth opportunities using AI-powered customer intelligence.",
+      icon: Target,
     },
     {
-      id: "resources",
-      title: "Learning Resources",
-      description: "Recommend knowledge articles, documentation, tutorials, and best practices based on customer needs.",
-      icon: BookOpenText,
+      id: "executive-insights",
+      title: "Executive Insights",
+      description: "Keep decision-makers informed with AI-generated account summaries and performance insights.",
+      icon: LineChart,
     },
     {
-      id: "tracking",
-      title: "Success Tracking",
-      description: "Track onboarding progress, adoption milestones, and customer readiness in real time.",
-      icon: ChartNoAxesCombined,
+      id: "account-health",
+      title: "Account Health",
+      description: "Track relationship strength, customer satisfaction, renewal and overall account performance.",
+      icon: HeartPulse,
     }
   ];
 
@@ -40,20 +40,20 @@ export const AccountIntelligence: React.FC = () => {
             className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
-            <span>Smart Onboarding</span>
+            <span>Account Intelligence</span>
           </div>
 
           {/* Title */}
           <h2 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 max-w-none">
-            Every Customer Starts <br />
+            Every Strategic Account <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
-              With Confidence
+              Grows With Intelligence
             </span>
           </h2>
 
           {/* Subheading */}
           <p className="text-[#5A5A5C] text-base sm:text-[16px] font-normal leading-relaxed">
-            The Customer Success Worker delivers personalized onboarding experiences that accelerate product adoption, guide every customer through setup, and help them realize maximum value from day one.
+            The Account Manager Worker continuously monitors customer relationships, product adoption, executive engagement, and business opportunities to maximize account growth and long-term customer value.
           </p>
         </div>
 
