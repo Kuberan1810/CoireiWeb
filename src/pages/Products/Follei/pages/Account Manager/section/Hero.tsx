@@ -1,5 +1,6 @@
 import React from "react";
-import heroImg from "../../../../../../assets/images/accountsmanager/hero-img.svg";
+
+import ai1 from "../../../../../../assets/images/products/ai1.png";
 import bg3 from "../../../../../../assets/images/products/bg3.jpg";
 
 export const Hero: React.FC = () => {
@@ -45,9 +46,11 @@ export const Hero: React.FC = () => {
           <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-6">
             <div className="w-full h-full flex items-center justify-center p-1">
               <img
-                src={heroImg}
-                className="w-full h-full object-cover rounded-[10px] "
-                alt="Account manager dashboard mockup"
+
+                src={ai1}
+                className="w-full h-full max-w-[300px] max-h-[300px] object-cover rounded-[10px] "
+                alt="Customer success dashboard"
+
               />
             </div>
           </div>

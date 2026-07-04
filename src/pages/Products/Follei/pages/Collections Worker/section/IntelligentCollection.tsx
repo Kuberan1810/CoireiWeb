@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const steps = [
@@ -25,8 +24,6 @@ const steps = [
 ];
 
 const IntelligentCollection = () => {
-  const [activeCard, setActiveCard] = useState<string>("01");
-
   return (
     <section className="w-full px-6 sm:px-10 md:px-15 py-20 flex flex-col items-center bg-white relative">
 
@@ -49,48 +46,36 @@ const IntelligentCollection = () => {
 
       {/* Cards Grid */}
       <div className="w-full max-w-[1400px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
-        {steps.map((step, index) => {
-          const isActive = activeCard === step.id;
+        {steps.map((step) => (
+          <div
+            key={step.id}
+            className="group relative h-[360px] p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer border-[0.5px] border-[#004370]/20 overflow-hidden bg-white hover:bg-[#004370] hover:border-transparent hover:shadow-md"
+          >
+            {/* Top Section */}
+            <div className="flex justify-between items-start w-full">
+              <span className="text-[120px] leading-none tracking-tighter transition-colors duration-300 text-[#004370] group-hover:text-white">
+                {step.id}
+              </span>
+              <ArrowUpRight
+                size={24}
+                strokeWidth={1.5}
+                className="transition-colors duration-300 text-[#004370] group-hover:text-white"
+              />
+            </div>
 
-          return (
-            <div
-              key={step.id}
-              onMouseEnter={() => setActiveCard(step.id)}
-              className={`
-                group relative h-[360px] p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer
-                border-[0.5px] border-[#004370]/20 overflow-hidden
-                ${isActive ? 'bg-[#004370] border-transparent' : 'bg-white hover:border-[#014370]/30 hover:shadow-md'}
-              `}
-            >
-              {/* Top Section */}
-              <div className="flex justify-between items-start w-full">
-                <span className={`text-[120px] leading-none tracking-tighter transition-colors duration-300 ${isActive ? 'text-white' : 'text-[#004370]'}`}>
-                  {step.id}
-                </span>
-                <ArrowUpRight
-                  size={24}
-                  strokeWidth={1.5}
-                  className={`transition-colors duration-300 ${isActive ? 'text-white' : 'text-[#004370]'}`}
-                />
-              </div>
-
-              {/* Bottom Section */}
-              <div className="flex flex-col">
-                <h3 className={`text-[18px] transition-colors duration-300 ${isActive ? 'text-white' : 'text-[#000000]'}`}>
-                  {step.title}
-                </h3>
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-out ${isActive ? 'max-h-32 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'
-                    }`}
-                >
-                  <p className="text-[16px] leading-relaxed text-white/90">
-                    {step.description}
-                  </p>
-                </div>
+            {/* Bottom Section */}
+            <div className="flex flex-col">
+              <h3 className="text-[18px] transition-colors duration-300 text-[#000000] group-hover:text-white">
+                {step.title}
+              </h3>
+              <div className="overflow-hidden transition-all duration-500 ease-out max-h-0 opacity-0 mt-0 group-hover:max-h-32 group-hover:opacity-100 group-hover:mt-3">
+                <p className="text-[16px] leading-relaxed text-white/90">
+                  {step.description}
+                </p>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
     </section>

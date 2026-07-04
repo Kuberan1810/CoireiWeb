@@ -1,31 +1,39 @@
 import React from "react";
-import { UserRound, Target, LineChart, HeartPulse } from "lucide-react";
+
+import { Users, Target, LineChart, Heart } from "lucide-react";
+
 
 export const AccountIntelligence: React.FC = () => {
   const features = [
     {
-      id: "business-relationships",
+
+      id: "business",
       title: "Business Relationships",
       description: "Strengthen customer partnerships with continuous relationship intelligence.",
-      icon: UserRound,
+      icon: Users,
     },
     {
-      id: "growth-intelligence",
+      id: "growth",
+
       title: "Growth Intelligence",
       description: "Identify upsell, cross-sell, and account growth opportunities using AI-powered customer intelligence.",
       icon: Target,
     },
     {
-      id: "executive-insights",
+
+      id: "executive",
+
       title: "Executive Insights",
       description: "Keep decision-makers informed with AI-generated account summaries and performance insights.",
       icon: LineChart,
     },
     {
-      id: "account-health",
+
+      id: "health",
       title: "Account Health",
       description: "Track relationship strength, customer satisfaction, renewal and overall account performance.",
-      icon: HeartPulse,
+      icon: Heart,
+
     }
   ];
 
