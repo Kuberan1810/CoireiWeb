@@ -54,7 +54,7 @@ const agents: AgentCard[] = [
     badgeBg: "bg-sky-50 border-sky-100",
     badgeTextClass: "text-sky-700",
     title: "Every Lead Starts With The Right Conversation",
-    description: "Automatically qualify leads, nurture prospects, answer discovery questions, and schedule meetings using intelligent, context-aware conversations.",
+    description: "Qualify faster. Nurture smarter. Close sooner. Our AI agents engage prospects with context-aware conversations that answer questions, build trust, and schedule the next step automatically.",
     hoverBorder: "group-hover:border-sky-500/20",
     mockupTitle: "follei-sdr-instance-1",
     mockupBg: "bg-transparent",
@@ -144,7 +144,7 @@ const agents: AgentCard[] = [
     badgeBg: "bg-violet-50 border-violet-100",
     badgeTextClass: "text-violet-700",
     title: "Turn Interest Into Revenue",
-    description: "Present products, address objections, generate proposals, and guide every opportunity through the sales pipeline with confidence.",
+    description: "Don't let deals stall. Our AI Sales Executive presents compelling solutions, handles objections before they derail conversations, generates proposals on demand, and accelerates every deal to close.",
     hoverBorder: "group-hover:border-violet-500/20",
     mockupTitle: "sales-exec-agent-main",
     mockupBg: "bg-white",
@@ -159,7 +159,7 @@ const agents: AgentCard[] = [
     badgeBg: "bg-emerald-50 border-emerald-100",
     badgeTextClass: "text-emerald-700",
     title: "Keep Customers Growing",
-    description: "Drive onboarding, improve product adoption, strengthen customer relationships, and prepare accounts for successful renewals.",
+    description: "Turn every customer into a long-term success story. Our AI Customer Success agent streamlines onboarding, accelerates product adoption, strengthens relationships, and uncovers growth opportunities that improve retention and renewals.",
     hoverBorder: "group-hover:border-emerald-500/20",
     mockupTitle: "cs-health-insights",
     mockupBg: "bg-slate-900",
@@ -173,7 +173,7 @@ const agents: AgentCard[] = [
     badgeBg: "bg-indigo-50 border-indigo-100",
     badgeTextClass: "text-indigo-700",
     title: "Resolve Every Customer Request Faster",
-    description: "Provide instant answers, resolve support issues, manage tickets intelligently, and escalate complex cases when needed.",
+    description: "Your customers expect instant support. Our AI Support Worker delivers it—answering questions immediately, resolving issues efficiently, organizing tickets intelligently, and knowing when human expertise is needed.",
     hoverBorder: "group-hover:border-indigo-500/20",
     mockupTitle: "support-routing-core",
     mockupBg: "bg-white",
@@ -187,7 +187,7 @@ const agents: AgentCard[] = [
     badgeBg: "bg-amber-50 border-amber-100",
     badgeTextClass: "text-amber-700",
     title: "Recover Revenue Without Friction",
-    description: "Automate payment reminders, invoice follow-ups, collection conversations, and renewal notifications across every channel.",
+    description: "Collect faster, keep customers happier. Our AI automates reminders tactfully, pursues unpaid invoices professionally, handles collections conversations with finesse, and ensures renewals never get forgotten.",
     hoverBorder: "group-hover:border-amber-500/20",
     mockupTitle: "ops-revenue-billing",
     mockupBg: "bg-transparent",
@@ -271,7 +271,7 @@ const agents: AgentCard[] = [
     badgeBg: "bg-rose-50 border-rose-100",
     badgeTextClass: "text-rose-700",
     title: "Grow Every Customer Relationship",
-    description: "Identify expansion opportunities, strengthen executive relationships, and recommend the next best actions for long-term growth.",
+    description: "Don't leave expansion revenue untapped. Our AI Account Manager spots growth opportunities early, builds stronger executive relationships, and guides strategic next steps for sustainable account expansion.",
     hoverBorder: "group-hover:border-rose-500/20",
     mockupTitle: "account-growth-matrix",
     mockupBg: "bg-slate-900",
@@ -488,7 +488,7 @@ export const AIWorkforce: React.FC = () => {
           {/* Heading */}
           <div className="solution-title-wrapper">
             <h2 className="section-title text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
-              Meet Your Autonomous <br />
+              Meet Your <br />
               <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
                 AI Workforce
               </span>

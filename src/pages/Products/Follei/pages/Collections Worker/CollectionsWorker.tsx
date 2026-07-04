@@ -13,6 +13,9 @@ import IntelligentCollection from "./section/IntelligentCollection";
 import RevenueAutomation from "./section/RevenueAutomation";
 import RevenueIntelligence from "./section/RevenueIntelligence";
 
+import Sample from "./section/Sample";
+
+
 const CollectionsWorker = () => {
     useScrollAnimations();
 
@@ -54,9 +57,12 @@ const CollectionsWorker = () => {
             <main>
                 <Hero />
                 <IntelligentCollection />
-                <CollectionCapabilities />
+
                 <RevenueIntelligence />
-                <RevenueAutomation />
+                <CollectionCapabilities />
+                {/* <RevenueAutomation /> */}
+                <Sample />
+
                 <Faq />
             </main>
 

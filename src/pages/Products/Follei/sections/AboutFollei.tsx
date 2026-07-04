@@ -71,7 +71,7 @@ const AboutFollei: React.FC = () => {
           <h2
             className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none"
           >
-            Building The Future Of Intelligent{" "}
+            The Unified Intelligence Platform For{" "}
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               Business Operations
             </span>
@@ -81,7 +81,7 @@ const AboutFollei: React.FC = () => {
           <p
             className="text-[#5A5A5C] text-sm sm:text-[16px] md:text-[17px] font-normal leading-relaxed max-w-2xl mt-2"
           >
-            Follei combines business intelligence, autonomous AI workers, and continuous learning into one unified platform that helps organizations operate smarter, faster, and at scale.
+            The business landscape is evolving. Follei brings it all together-combining intelligent insights, AI automation, and adaptive learning into one platform designed to help organizations work smarter, move faster, and grow at scale.
           </p>
         </div>
 

@@ -8,16 +8,16 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What is Follei and how does it work?",
-    answer: "Follei is an autonomous AI workforce platform that seamlessly integrates into your existing systems. Instead of simple chatbots, Follei deploys specialized AI workers, like SDRs, Sales Executives, and Support Staff, that understand context, make decisions, and execute complex workflows on their own.",
+    question: "How does Follei learn and understand our business?",
+    answer: "Follei connects to your existing business systems, documents, and knowledge sources to understand your products, services, processes, customers, and workflows. This business context becomes the foundation that enables every AI worker to make accurate, informed decisions.",
   },
   {
-    question: "Will Follei replace my existing human team?",
-    answer: "Not at all. Follei is designed to collaborate with your workforce. Our AI workers handle repetitive, data-heavy, and time-consuming tasks autonomously, freeing up your human team to focus on high-value strategy, relationship building, and creative problem-solving.",
+    question: "Can Follei integrate with our existing business systems?",
+    answer: "Yes. Follei is designed to integrate with the platforms you already use, including CRM, ERP, email, WhatsApp, knowledge bases, cloud storage, and other business applications. This allows AI workers to operate with complete business context without disrupting your existing workflows.",
   },
   {
-    question: "How difficult is it to integrate Follei into our current tools?",
-    answer: "Follei is built for seamless integration. It connects natively with the platforms you already rely on, like your CRM, HRIS, helpdesk, and communication tools. This ensures your AI workforce has instant access to the right context without requiring a massive IT overhaul.",
+    question: "How does Follei keep our business data secure?",
+    answer: "Security is built into every layer of the platform. Your business data is processed using enterprise-grade security practices, controlled access, and permission-based data handling, ensuring your information remains protected while AI workers perform their tasks.",
   },
   {
     question: "Is our company data secure with Follei's AI workers?",

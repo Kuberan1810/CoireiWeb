@@ -4,7 +4,7 @@ import bg5 from "../../../../../../assets/images/products/bg5.jpg";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="w-full px-6 sm:px-10 md:px-15 py-10 flex justify-center bg-white mt-8">
+    <section className="w-full px-6 sm:px-10 md:px-15 py-10 flex justify-center bg-white ">
       <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between min-h-[481px] group">
 
         {/* Left Column: Content */}

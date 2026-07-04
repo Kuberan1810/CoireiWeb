@@ -10,6 +10,7 @@ import Navbar from "../../../../../component/Navbar";
 import SEO from "../../../../../component/SEO";
 import Lenis from '@studio-freight/lenis'
 import useScrollAnimations from "../../../../../hooks/useScrollAnimations";
+import Footer from "../../sections/Footer";
 
 const CustomerSuccess: React.FC = () => {
   useScrollAnimations();
@@ -48,7 +49,7 @@ const CustomerSuccess: React.FC = () => {
       <div className="fixed top-0 left-0 w-full z-50">
         <Navbar />
       </div>
-      <main className="pt-24 w-full overflow-x-hidden bg-white">
+      <main className="pt-24 w-full  bg-white">
         <HeroSection />
         <SmartOnboardingSection />
         <SuccessIntelligenceSection />
@@ -56,6 +57,7 @@ const CustomerSuccess: React.FC = () => {
         <RelationshipsSection />
         <Faq />
       </main>
+      <Footer />
     </div>
   );
 };
