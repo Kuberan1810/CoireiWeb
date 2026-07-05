@@ -409,12 +409,12 @@ export const AIWorkforce: React.FC = () => {
           {agents.map((agent, index) => (
             <div
               key={agent.id}
-              className="solution-item sticky top-[100px] lg:top-[120px] group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1]"
-              style={{ zIndex: index, marginBottom: index === agents.length - 1 ? 0 : '100px' }}
+              className={`solution-item relative md:sticky md:top-[100px] lg:top-[120px] group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1] ${index === agents.length - 1 ? 'mb-0' : 'mb-8 md:mb-[100px]'}`}
+              style={{ zIndex: index }}
             >
               <div className="solution-content w-full lg:w-1/2 flex flex-col items-start text-left">
                 <div className="solution-icon">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[16px] text-[#000000]">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[16px] text-[#000000] bg-white">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
                     <span>{agent.badgeText.replace("• ", "")}</span>
 
