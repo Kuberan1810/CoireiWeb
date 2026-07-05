@@ -89,7 +89,7 @@ export default function ResourcesDropdown({ isLight = false }: { isLight?: boole
                     {[
                         { label: "Blog", to: "/resources/blog" },
                         { label: "Company", to: "/resources/company" },
-                        { label: "Contact", to: "/resources/contact" },
+                        { label: "Contact", to: "/contact" },
                         { label: "Privacy", to: "/resources/privacy" },
                     ].map((item, index) => (
                         <li
