@@ -1,17 +1,58 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import successImg from "../../../../../../assets/images/products/success.png";
 import bg6 from "../../../../../../assets/images/products/bg6.jpg";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const SuccessIntelligenceSection: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
   const stats = [
-    { value: "95%", label: "Customer Health Score" },
-    { value: "24/7", label: "Proactive Customer Engagement" },
-    { value: "99%", label: "Guided Onboarding Experience" },
-    { value: "95%", label: "Feature Utilization" }
+    { value: 95, suffix: "%", label: "Customer Health Score" },
+    { value: 24, suffix: "/7", label: "Proactive Customer Engagement" },
+    { value: 99, suffix: "%", label: "Guided Onboarding Experience" },
+    { value: 95, suffix: "%", label: "Feature Utilization" }
   ];
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      // Animate the opacity of the cards similar to LeadIntelligence
+      gsap.set(".si-stat-card", { opacity: 0, y: 40, scale: 0.95 });
+      tl.to(".si-stat-card", { opacity: 1, y: 0, scale: 1, duration: 1.2, stagger: 0.1, ease: "power3.out" });
+      
+      tl.addLabel("counterStart", "-=0.8");
+
+      const counters = gsap.utils.toArray<HTMLElement>(".si-counter");
+      counters.forEach((counter) => {
+        const target = parseFloat(counter.getAttribute("data-target") || "0");
+        const obj = { val: 0 };
+        
+        tl.to(obj, {
+          val: target,
+          duration: 1.5,
+          ease: "power3.out",
+          onUpdate: () => {
+            counter.innerHTML = Math.floor(obj.val).toLocaleString("en-US");
+          }
+        }, "counterStart");
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">
+    <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">
       <div className="w-full flex flex-col group">
 
         {/* Top Part */}
@@ -76,9 +117,11 @@ export const SuccessIntelligenceSection: React.FC = () => {
           {stats.map((stat, idx) => (
             <div 
               key={idx} 
-              data-ns-animate="true" data-delay={0.5 + idx * 0.1}
-              className="flex flex-col text-left px-4 md:px-12 lg:px-16 py-4">
-              <span className="text-3xl sm:text-[60px] text-[#000000] tracking-tight leading-none">{stat.value}</span>
+              className="si-stat-card opacity-0 flex flex-col text-left px-4 md:px-12 lg:px-16 py-4">
+              <span className="text-3xl sm:text-[60px] text-[#000000] tracking-tight leading-none">
+                <span className="si-counter" data-target={stat.value}>0</span>
+                {stat.suffix}
+              </span>
               <span className="text-xs sm:text-[18px] text-[#5A5A5C] mt-3 font-normal leading-snug whitespace-nowrap">{stat.label}</span>
             </div>
           ))}
