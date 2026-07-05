@@ -90,9 +90,9 @@ const ContentSection = () => {
       gsap.set([headings[2], headings[3], paras[2], paras[3]], { opacity: 0, y: 18 });
       gsap.set([headings[0], headings[1], paras[0], paras[1]], { opacity: 1, y: 0 });
 
-      gsap.set(dots, { backgroundColor: "rgba(255,255,255,0.12)", scale: 1, boxShadow: "none" });
+      gsap.set(dots, { backgroundColor: "rgba(0,0,0,0.12)", scale: 1, boxShadow: "none" });
       gsap.set([dots[0], dots[1]], {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#F67300",
         scale: 1.35,
         boxShadow: "0 0 0 3px rgba(246,115,0,0.3), 0 0 10px 3px rgba(246,115,0,0.5)",
       });
@@ -115,8 +115,8 @@ const ContentSection = () => {
         .to(scrollTrack, { y: -ITEM_H, duration: 0.33, ease: "none" }, 0)
         .to(headings[2], { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, 0.15)
         .to(paras[2], { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, 0.21)
-        .to(dots[0], { backgroundColor: "rgba(246,115,0,0.18)", scale: 1, boxShadow: "none", duration: 0.12, ease: "power2.inOut" }, 0)
-        .to(dots[2], { backgroundColor: "#FFFFFF", scale: 1.35, boxShadow: "0 0 0 3px rgba(246,115,0,0.3), 0 0 10px 3px rgba(246,115,0,0.5)", duration: 0.15, ease: "power2.out" }, 0.12)
+        .to(dots[0], { backgroundColor: "rgba(0,0,0,0.12)", scale: 1, boxShadow: "none", duration: 0.12, ease: "power2.inOut" }, 0)
+        .to(dots[2], { backgroundColor: "#F67300", scale: 1.35, boxShadow: "0 0 0 3px rgba(246,115,0,0.3), 0 0 10px 3px rgba(246,115,0,0.5)", duration: 0.15, ease: "power2.out" }, 0.12)
         .to(line, { scaleY: 0.75, duration: 0.33, ease: "none" }, 0);
 
       tl.to(headings[1], { opacity: 0, y: -16, duration: 0.12, ease: "power2.inOut" }, 0.33)
@@ -124,8 +124,8 @@ const ContentSection = () => {
         .to(scrollTrack, { y: -ITEM_H * 2, duration: 0.33, ease: "none" }, 0.33)
         .to(headings[3], { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, 0.48)
         .to(paras[3], { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, 0.54)
-        .to(dots[1], { backgroundColor: "rgba(246,115,0,0.18)", scale: 1, boxShadow: "none", duration: 0.12, ease: "power2.inOut" }, 0.33)
-        .to(dots[3], { backgroundColor: "#FFFFFF", scale: 1.35, boxShadow: "0 0 0 3px rgba(246,115,0,0.3), 0 0 10px 3px rgba(246,115,0,0.5)", duration: 0.15, ease: "power2.out" }, 0.45)
+        .to(dots[1], { backgroundColor: "rgba(0,0,0,0.12)", scale: 1, boxShadow: "none", duration: 0.12, ease: "power2.inOut" }, 0.33)
+        .to(dots[3], { backgroundColor: "#F67300", scale: 1.35, boxShadow: "0 0 0 3px rgba(246,115,0,0.3), 0 0 10px 3px rgba(246,115,0,0.5)", duration: 0.15, ease: "power2.out" }, 0.45)
         .to(line, { scaleY: 1, duration: 0.33, ease: "none" }, 0.33);
 
       tl.to({}, { duration: 0.33 }, 0.67);
@@ -168,18 +168,18 @@ const ContentSection = () => {
 
         <div
           ref={pinnedRef}
-          className="flex w-full justify-center bg-white px-6 pt-12 pb-0 sm:px-10 md:px-15"
+          className="flex w-full justify-center bg-white px-6 pt-12 pb-16 sm:px-10 md:px-15 md:pb-24"
         >
           <div
-            className="relative mx-auto flex w-full flex-col overflow-hidden border border-[#333333] bg-[#111111] text-left md:flex-row"
+            className="relative mx-auto flex w-full flex-col overflow-hidden bg-white text-left md:flex-row"
             style={{ height: BOX_H }}
           >
-            <div className="relative flex w-full flex-shrink-0 flex-col border-b border-[#333333] md:w-1/2 md:border-b-0 md:border-r">
+            <div className="relative flex w-full flex-shrink-0 flex-col md:w-1/2">
               <div className="flex h-full flex-col p-8 md:p-12 lg:p-16">
-                <h3 className="mb-6 text-3xl font-medium text-white md:text-[36px]">
+                <h3 className="mb-6 text-3xl font-medium text-black md:text-[36px]">
                   Our Ethos
                 </h3>
-                <p className="max-w-[440px] text-lg leading-relaxed text-[#A1A1A1] md:text-[18px]">
+                <p className="max-w-[440px] text-lg leading-relaxed text-gray-600 md:text-[18px]">
                   The principles and vision that drive how we build agentic
                   execution platforms for the future of enterprise software.
                 </p>
@@ -189,7 +189,7 @@ const ContentSection = () => {
             <div className="relative flex w-full flex-row md:w-1/2">
               <div
                 className="relative hidden flex-shrink-0 flex-col items-center md:flex"
-                style={{ width: 1, backgroundColor: "#333333" }}
+                style={{ width: 1, backgroundColor: "#e5e7eb" }}
               >
                 <div
                   ref={lineProgressRef}
@@ -235,16 +235,16 @@ const ContentSection = () => {
                         <div>
                           <h4
                             ref={(el) => { headingRefs.current[i] = el; }}
-                            className="mb-3 text-2xl font-medium text-white md:text-[24px]"
+                            className="mb-3 text-2xl font-medium text-black md:text-[24px]"
                             style={{ willChange: "transform, opacity" }}
                           >
                             {item.heading}
                           </h4>
-                          <div className="h-px w-full bg-[#333333]" />
+                          <div className="h-px w-full bg-gray-200" />
                         </div>
                         <p
                           ref={(el) => { paraRefs.current[i] = el; }}
-                          className="text-lg leading-relaxed text-[#A1A1A1] md:text-[18px]"
+                          className="text-lg leading-relaxed text-gray-600 md:text-[18px]"
                           style={{ willChange: "transform, opacity" }}
                         >
                           {item.description}

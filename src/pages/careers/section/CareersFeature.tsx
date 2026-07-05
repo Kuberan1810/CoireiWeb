@@ -35,7 +35,7 @@ const CareersFeature = () => {
                 <h2 className="font-medium text-[40px] md:text-[52px] leading-[1.2] md:leading-[62.4px] text-[#000000] mb-6 tracking-normal">
                     At <span className="text-[#F67300]">Coirei</span>, You'll Get To
                 </h2>
-                <p className="font-normal text-[16px] md:text-[18px] leading-[1.5] md:leading-[29.25px] text-[#4F4F4F] max-w-[500px]">
+                <p className="font-normal text-[16px]  md:text-[18px] leading-[1.5] md:leading-[29.25px] text-[#4F4F4F] max-w-[500px]">
                     Join a team where innovation meets opportunity. Build AI-powered products, collaborate with talented professionals, and make an impact through meaningful work.
                 </p>
             </motion.div>

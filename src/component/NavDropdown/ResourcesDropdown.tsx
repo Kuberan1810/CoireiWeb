@@ -87,7 +87,7 @@ export default function ResourcesDropdown({ isLight = false }: { isLight?: boole
 
                 <ul className="py-3 relative z-10">
                     {[
-                        { label: "Blog", to: "/resources/blog" },
+                        // { label: "Blog", to: "/resources/blog" },
                         { label: "Company", to: "/resources/company" },
                         { label: "Contact", to: "/resources/contact" },
                         { label: "Privacy", to: "/resources/privacy" },
