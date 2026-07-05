@@ -4,7 +4,7 @@ import heroImg from '../../../../../assets/images/CI-follei/hero-img.svg';
 const HeroSection: React.FC = () => {
     return (
         <section className="relative w-full pt-[200px] pb-20 px-6 sm:px-10 md:px-15 lg:px-20 bg-white">
-            <div className="max-w-[1390px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 
                 {/* Left Content */}
                 <div data-ns-animate className="flex flex-col items-start">
@@ -18,12 +18,12 @@ const HeroSection: React.FC = () => {
                     {/* Heading */}
                     <div className="mb-6">
                         <h1 
-                            className="text-[#0A0E29] font-medium font-sans block text-[40px] md:text-[48px] lg:text-[52px] leading-[1.2] md:leading-[1.1] tracking-tight md:tracking-[-1px]"
+                            className="text-[#0A0E29] font-medium  block text-[40px] md:text-[48px] lg:text-[52px] leading-[1.2] md:leading-[1.1] tracking-tight md:tracking-[-1px]"
                         >
                             Resolve Every Customer
                         </h1>
                         <h1 
-                            className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium font-sans block text-[40px] md:text-[48px] lg:text-[52px] leading-[1.2] md:leading-[1.1] tracking-tight md:tracking-[-1px]"
+                            className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium  block text-[40px] md:text-[48px] lg:text-[52px] leading-[1.2] md:leading-[1.1] tracking-tight "
                         >
                             Issue With Intelligence
                         </h1>
@@ -31,7 +31,7 @@ const HeroSection: React.FC = () => {
 
                     {/* Paragraph */}
                     <p 
-                        className="text-[#5A5A5C] font-normal font-sans text-[16px] md:text-[18px] leading-[140%] md:leading-[1.6]"
+                        className="text-[#5A5A5C] font-normal  text-[16px] md:text-[18px] leading-[140%] md:leading-[1.6]"
                     >
                         Deliver instant, context-aware support across every customer touchpoint. The Support Worker understands every conversation, accesses complete business knowledge, and resolves issues faster with AI-powered assistance.
                     </p>

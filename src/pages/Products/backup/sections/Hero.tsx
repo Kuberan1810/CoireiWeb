@@ -49,7 +49,7 @@
 //     return (
 //         <div ref={containerRef} className="relative w-full h-[170vh]">
 //             {/* Sticky viewport wrapper */}
-//             <div className="sticky top-0 left-0 w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-[#161616]">
+//             <div className="sticky top-0 left-0 w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-white ">
 
 //                 {/* Background Grid & Glow */}
 //                 <div
@@ -76,7 +76,7 @@
 //                         {/* Badge */}
 //                         <div data-ns-animate data-offset="80" className="mb-6">
 //                             <div className="relative inline-flex items-center justify-center p-[1.5px] rounded-full overflow-hidden bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500">
-//                                 <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#161616] text-[#60A5FA] text-xs sm:text-sm font-medium tracking-wide">
+//                                 <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white  text-[#60A5FA] text-xs sm:text-sm font-medium tracking-wide">
 //                                     <Sparkles size={14} className="text-[#3B82F6]" />
 //                                     <span>One Platform. Complete Customer Intelligence.</span>
 //                                 </div>
@@ -176,7 +176,7 @@
 //                                     {/* Badge */}
 //                                     <div className="mb-4">
 //                                         <div className="relative inline-flex items-center justify-center p-[1.5px] rounded-full overflow-hidden bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500">
-//                                             <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#161616] text-[#60A5FA] text-xs font-medium tracking-wide">
+//                                             <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white  text-[#60A5FA] text-xs font-medium tracking-wide">
 //                                                 <Sparkles size={12} className="text-[#3B82F6]" />
 //                                                 <span>One Platform. Complete Customer Intelligence.</span>
 //                                             </div>
@@ -373,15 +373,15 @@ export const Hero = () => {
                         const wrapEl = document.querySelector(".after-banner-wrapper") as HTMLElement;
                         const lleiEls = document.querySelectorAll(".gsap-letter-llei");
                         if (!fEl || !wrapEl || lleiEls.length === 0) return 0;
-                        
+
                         const lastEl = lleiEls[lleiEls.length - 1] as HTMLElement;
-                        
+
                         const x_F = fEl.offsetLeft;
                         const x_wrap = wrapEl.offsetLeft;
                         const x_last = lastEl.offsetLeft;
                         const w_wrap = wrapEl.offsetWidth;
                         const w_last = lastEl.offsetWidth;
-                        
+
                         const offset = (x_last + w_last + x_F - 2 * x_wrap - w_wrap) / 2;
                         return offset;
                     },
@@ -405,7 +405,7 @@ export const Hero = () => {
     return (
         <section ref={containerRef} className="banner-section relative">
             <div className="banner-vh-wrap">
-                <div className="banner-sticky-wrap bg-[#161616]">
+                <div className="banner-sticky-wrap bg-white ">
 
 
 
@@ -464,7 +464,7 @@ export const Hero = () => {
 
                                         <div className="gsap-single-banner-letter gsap-_01 gsap-letter-f relative" style={{ overflow: "visible", flexShrink: 0 }}>
                                             {/* Capsule 1: Real-Time Analytics (Top-Left of F) */}
-                                            <div className="absolute left-0 top-[0%] -translate-x-1/2 translate-y-[-150%] z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                                            <div className="absolute left-0 top-[0%] -translate-x-1/2 translate-y-[-150%] z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white /90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-pulse"></span>
                                                 <span className="text-[10px] sm:text-xs font-mono tracking-wider text-[#E3E3E0] whitespace-nowrap">
                                                     Real-Time Analytics
@@ -489,8 +489,8 @@ export const Hero = () => {
                                                             src={dashbaordollei}
                                                             alt="Banner"
                                                             className="banner-bg-image"
-                                                            style={{ 
-                                                                willChange: "filter, opacity", 
+                                                            style={{
+                                                                willChange: "filter, opacity",
                                                                 objectFit: "contain",
                                                                 width: "100%",
                                                                 height: "100%",
@@ -534,7 +534,7 @@ export const Hero = () => {
 
                                         <div className="gsap-single-banner-letter gsap-_04 gsap-letter-llei relative" style={{ overflow: "visible", flexShrink: 0 }}>
                                             {/* Capsule 2: AI Processing (Bottom-Right of I) */}
-                                            <div className="gsap-capsule-ai absolute right-0 bottom-[0%] translate-x-1/2 translate-y-[150%] z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                                            <div className="gsap-capsule-ai absolute right-0 bottom-[0%] translate-x-1/2 translate-y-[150%] z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white /90 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                                                 <Bot size={12} className="text-[#3b82f6]" />
                                                 <span className="text-[10px] sm:text-xs font-mono tracking-wider text-[#E3E3E0] whitespace-nowrap">
                                                     AI Processing

@@ -10,7 +10,6 @@ import Footer from "../../sections/Footer";
 import Faq from "./section/FAQs";
 import CollectionCapabilities from "./section/CollectionCapabilities";
 import IntelligentCollection from "./section/IntelligentCollection";
-import RevenueAutomation from "./section/RevenueAutomation";
 import RevenueIntelligence from "./section/RevenueIntelligence";
 
 import Sample from "./section/Sample";

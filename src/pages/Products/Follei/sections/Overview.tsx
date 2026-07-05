@@ -43,7 +43,7 @@ const OverviewSection: React.FC = () => {
                                 letterSpacing: '-2.56px',
                                 lineHeight: '1.1'
                             }}
-                            className="text-[#0A0E29] text-4xl sm:text-5xl md:text-[60px] font-medium tracking-tight mb-1 font-sans"
+                            className="text-[#0A0E29] text-4xl sm:text-5xl md:text-[60px] font-medium tracking-tight mb-1 "
                         >
                             Business Intelligence.
                         </h1>
@@ -54,7 +54,7 @@ const OverviewSection: React.FC = () => {
                                 letterSpacing: '-2.56px',
                                 lineHeight: '1.1'
                             }}
-                            className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent text-4xl sm:text-5xl md:text-[60px] font-medium tracking-tight mb-6 font-sans"
+                            className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent text-4xl sm:text-5xl md:text-[60px] font-medium tracking-tight mb-6 "
                         >
                             Autonomous Execution.
                         </h1>

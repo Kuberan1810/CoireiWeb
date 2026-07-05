@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 import "./sample.css"
 import { motion } from 'framer-motion'

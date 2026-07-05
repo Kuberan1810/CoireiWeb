@@ -73,7 +73,7 @@ const ServiceDetails = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-20 w-full bg-[#161616] flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-20 w-full bg-white  flex flex-col items-center">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}

@@ -17,7 +17,7 @@ const navItems = [
 
 const Studentfeature = () => {
     return (
-        <section className="relative text-white bg-[#161616] px-6 md:px-12 overflow-hidden py-10 md:py-20">
+        <section className="relative text-white bg-white  px-6 md:px-12 overflow-hidden py-10 md:py-20">
             {/* <div className="max-w-7xl mx-auto"> */}
 
             <div className="flex flex-col items-center text-center mb-10 md:mb-20">
@@ -113,7 +113,7 @@ const Studentfeature = () => {
                 data-offset="100"
                 className="mt-20 md:mt-32 max-w-7xl mx-auto w-full"
             >
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px_1fr] border border-white/10 rounded-3xl overflow-hidden bg-[#161616]">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px_1fr] border border-white/10 rounded-3xl overflow-hidden bg-white ">
                     {/* Left Column */}
                     <div className="flex flex-col border-b lg:border-b-0">
                         <div className="flex-1 p-8 sm:p-10 border-b border-white/10 flex flex-col justify-center gap-3">
@@ -143,7 +143,7 @@ const Studentfeature = () => {
                     </div>
 
                     {/* Middle Column */}
-                    <div 
+                    <div
                         className="flex flex-col justify-between items-center border-b lg:border-b-0 bg-[#121212]/50 group min-h-[570px]"
                         style={{
                             background: 'linear-gradient(180deg, #121212 0%, rgba(246, 115, 0, 0.15) 100%)',

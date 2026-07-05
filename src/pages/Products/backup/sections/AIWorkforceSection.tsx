@@ -62,12 +62,12 @@ export const AIWorkforceSection: React.FC = () => {
             // Staggered reveal of marquee rows
             tl.fromTo(container.querySelectorAll(".gsap-marquee-row"),
                 { opacity: 0, y: 30 },
-                { 
-                    opacity: 1, 
-                    y: 0, 
-                    stagger: 0.15, 
-                    duration: 0.8, 
-                    ease: "power2.out" 
+                {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    ease: "power2.out"
                 },
                 "-=0.3"
             );
@@ -77,7 +77,7 @@ export const AIWorkforceSection: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative w-full py-24 overflow-hidden bg-[#161616] flex flex-col items-center justify-center text-center">
+        <section ref={sectionRef} className="relative w-full py-24 overflow-hidden bg-white  flex flex-col items-center justify-center text-center">
             {/* Background Decorative Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#3b82f6]/5 rounded-full blur-[120px] pointer-events-none" />
 

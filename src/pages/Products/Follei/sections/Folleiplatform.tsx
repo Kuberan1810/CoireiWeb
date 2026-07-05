@@ -71,8 +71,8 @@ export const FolleiPlatformSection: React.FC = () => {
             mm.add({
                 isDesktop: "(min-width: 1024px)",
                 isMobile: "(max-width: 1023px)"
-            }, (context) => {
-                const { isDesktop } = context.conditions as { isDesktop: boolean };
+            }, () => {
+
 
                 // Entrance animation for content
                 const entranceTimeline = gsap.timeline({
@@ -186,7 +186,7 @@ export const FolleiPlatformSection: React.FC = () => {
 
                     {/* Bottom Interactive Grid Tabs */}
                     <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl w-full mx-auto text-left z-20 relative">
-                        {tabData.map((tab, index) => {
+                        {tabData.map((tab) => {
                             const isActive = tab.id === activeTab;
                             return (
                                 <button

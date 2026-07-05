@@ -128,11 +128,11 @@ const WebPlatformDetails = () => {
     const card6InView = useInView(card6Ref, { once: false, margin: "-30% 0px -30% 0px" });
 
     const activeCard = card6InView ? 6 :
-                       card5InView ? 5 :
-                       card4InView ? 4 :
-                       card3InView ? 3 :
-                       card2InView ? 2 :
-                       card1InView ? 1 : 1;
+        card5InView ? 5 :
+            card4InView ? 4 :
+                card3InView ? 3 :
+                    card2InView ? 2 :
+                        card1InView ? 1 : 1;
 
     const cardRefs = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
@@ -169,7 +169,7 @@ const WebPlatformDetails = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-white  flex flex-col items-center">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}
@@ -208,7 +208,7 @@ const WebPlatformDetails = () => {
                 </div>
 
                 {/* --- WHY WORK WITH COIREI SECTION --- */}
-                <div ref={sectionPinRef} className="relative w-full h-[250vh] bg-[#161616]">
+                <div ref={sectionPinRef} className="relative w-full h-[250vh] bg-white ">
                     <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center overflow-hidden px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
                         <div className="max-w-6xl w-full mx-auto">
                             <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 lg:mb-20 tracking-tight leading-tight shrink-0">
@@ -553,12 +553,12 @@ const WebPlatformDetails = () => {
 
                                         {/* CARD */}
                                         <div className={`relative bg-[#202021] pt-10 pb-15 px-7 md:px-9 flex gap-6  backdrop-blur-md transition-all duration-500 ${isDesktop
-                                                ? (s.step === 1
-                                                    ? "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
-                                                    : s.step === 4
-                                                        ? "rounded-tl-[20px] rounded-b-[20px] rounded-tr-none"
-                                                        : "rounded-[20px]")
-                                                : "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
+                                            ? (s.step === 1
+                                                ? "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
+                                                : s.step === 4
+                                                    ? "rounded-tl-[20px] rounded-b-[20px] rounded-tr-none"
+                                                    : "rounded-[20px]")
+                                            : "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
                                             }`}>
 
                                             <div className="w-[3px] bg-[#F67300] rounded-full shrink-0" />
@@ -603,7 +603,7 @@ const OfferingCard = ({ index, card, offeringsXProgress }: { index: number, card
             {/* Content Wrapper */}
             <div className="flex flex-col h-full justify-between relative z-10">
                 {/* Top Section: Icon */}
-                <div className="w-14 h-14 rounded-full flex items-center justify-center border bg-[#161616] border-white/10 text-[#F67300] shrink-0">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center border bg-white  border-white/10 text-[#F67300] shrink-0">
                     <Icon size={24} strokeWidth={1.5} />
                 </div>
 

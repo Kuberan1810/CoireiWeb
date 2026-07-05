@@ -24,7 +24,7 @@ function Home() {
     useScrollAnimations();
 
     return (
-        <div className="overflow-x-clip bg-[#161616] min-h-screen">
+        <div className="overflow-x-clip bg-white  min-h-screen">
             <SEO
 
                 title="AI Powered Solutions for Businesses | Coirei"

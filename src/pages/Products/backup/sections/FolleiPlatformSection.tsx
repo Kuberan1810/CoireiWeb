@@ -94,7 +94,7 @@ export const FolleiPlatformSection: React.FC = () => {
     // Animate active image change
     const handleTabClick = (tabId: string) => {
         if (tabId === activeTab) return;
-        
+
         const img = imageContainerRef.current?.querySelector("img");
         if (img) {
             gsap.to(img, {
@@ -120,7 +120,7 @@ export const FolleiPlatformSection: React.FC = () => {
     const currentTab = tabData.find(t => t.id === activeTab) || tabData[0];
 
     return (
-        <section ref={sectionRef} className="relative w-full py-16 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616] flex flex-col items-center justify-center text-center">
+        <section ref={sectionRef} className="relative w-full py-16 px-6 sm:px-10 md:px-15 overflow-hidden bg-white  flex flex-col items-center justify-center text-center">
             {/* Background Decorative Glow */}
             <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#3b82f6]/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -180,12 +180,12 @@ export const FolleiPlatformSection: React.FC = () => {
                             >
                                 {/* Top status indicator line */}
                                 <div className={`h-[2px] w-full mb-4 transition-all duration-300 ${isActive ? "bg-white" : "bg-white/10 group-hover:bg-white/30"}`} />
-                                
+
                                 {/* Title */}
                                 <h3 className={`text-xl font-semibold mb-2 transition-colors duration-300 ${isActive ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
                                     {tab.title}
                                 </h3>
-                                
+
                                 {/* Description */}
                                 <p className={`text-sm leading-relaxed transition-colors duration-300 ${isActive ? "text-white/75" : "text-white/40 group-hover:text-white/50 font-light"}`}>
                                     {tab.description}

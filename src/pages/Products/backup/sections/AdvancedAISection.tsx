@@ -261,7 +261,7 @@ export const AdvancedAISection: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative w-full min-h-screen py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616] flex flex-col items-center justify-center text-center">
+        <section ref={sectionRef} className="relative w-full min-h-screen py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-white  flex flex-col items-center justify-center text-center">
             {/* Background Decorative Glows */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-transparent rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-transparent rounded-full blur-[120px] pointer-events-none" />
@@ -310,7 +310,7 @@ export const AdvancedAISection: React.FC = () => {
                         {/* Card 1: Business Intelligence */}
                         <div className="w-full h-[460px] flex items-center justify-center relative">
                             <div className="gsap-bobber-1 w-full h-full flex items-center justify-center relative">
-                                <div 
+                                <div
                                     onClick={() => navigate('/products/follei/business-intelligence')}
                                     className="gsap-card-1 mx-auto relative flex flex-col overflow-hidden border border-white/5 rounded-[20px] cursor-pointer"
                                 >

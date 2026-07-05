@@ -4,7 +4,7 @@ import logoSvg from "../../../../../assets/images/CI-follei/logo.svg";
 const BetterExperienceSection: React.FC = () => {
     return (
         <section className="w-full bg-[#FFFFFF] py-24 px-6 sm:px-10 md:px-15 lg:px-20 overflow-hidden">
-            <div className="max-w-[1390px] w-full mx-auto flex flex-col gap-16 lg:gap-24">
+            <div className="flex flex-col gap-16 lg:gap-24">
                 
                 {/* Top: Header */}
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-center">
@@ -22,14 +22,14 @@ const BetterExperienceSection: React.FC = () => {
                             <h2 
                                 data-ns-animate 
                                 data-delay="0.1" 
-                                className="text-[#0A0E29] font-medium font-sans tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]"
+                                className="text-[#0A0E29] font-medium  tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]"
                             >
                                 Every Customer Issue Ends
                             </h2>
                             <h2 
                                 data-ns-animate 
                                 data-delay="0.2" 
-                                className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium font-sans tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]"
+                                className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium  tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]"
                             >
                                 With A Better Experience
                             </h2>
@@ -41,7 +41,7 @@ const BetterExperienceSection: React.FC = () => {
                         <p 
                             data-ns-animate 
                             data-delay="0.3" 
-                            className="text-[#5A5A5C] font-normal font-sans text-[15px] md:text-[16px] leading-[140%] md:leading-[28.8px] max-w-lg lg:pt-8"
+                            className="text-[#5A5A5C] font-normal  text-[15px] md:text-[16px] leading-[140%] md:leading-[28.8px]  lg:pt-8"
                         >
                             The Support Worker combines customer history, business knowledge, and AI reasoning to resolve issues faster, strengthen customer relationships, and continuously improve every support interaction.
                         </p>
@@ -50,7 +50,7 @@ const BetterExperienceSection: React.FC = () => {
 
                 {/* Bottom: Visual Diagram */}
                 {/* On mobile, this stacks vertically with horizontal pills. On desktop, it is 450px tall with absolute positioning for arrows and elements. */}
-                <div data-ns-animate data-delay="0.4" className="relative w-full max-w-[1250px] mx-auto h-auto md:h-[450px] flex flex-col md:block items-center mt-8 gap-8 md:gap-0">
+                <div data-ns-animate data-delay="0.4" className="relative w-full h-auto md:h-[450px] flex flex-col md:block items-center mt-8 gap-8 md:gap-0">
                     
                     {/* SVG Connecting Arrows */}
                     <div className="absolute inset-0 z-0 hidden md:block">
@@ -106,17 +106,17 @@ const BetterExperienceSection: React.FC = () => {
                         
                         {/* Resolve */}
                         <div className="bg-[#F0F4FF] rounded-r-[24px] md:rounded-r-[32px] rounded-tl-[24px] md:rounded-tl-[32px] rounded-bl-[4px] md:rounded-bl-[6px] px-4 md:px-6 flex items-center justify-center shadow-sm w-auto md:w-full h-[48px] md:h-[72px] flex-1 md:flex-none">
-                            <span className="text-[#000000] font-medium font-sans text-center w-full text-[15px] md:text-[22px] leading-[120%]">Resolve</span>
+                            <span className="text-[#000000] font-medium  text-center w-full text-[15px] md:text-[22px] leading-[120%]">Resolve</span>
                         </div>
                         
                         {/* Assist */}
                         <div className="bg-[#F0F4FF] rounded-r-[24px] md:rounded-r-[32px] rounded-tl-[24px] md:rounded-tl-[32px] rounded-bl-[4px] md:rounded-bl-[6px] px-4 md:px-6 flex items-center justify-center shadow-sm w-auto md:w-full h-[48px] md:h-[72px] flex-1 md:flex-none">
-                            <span className="text-[#000000] font-medium font-sans text-center w-full text-[15px] md:text-[22px] leading-[120%]">Assist</span>
+                            <span className="text-[#000000] font-medium  text-center w-full text-[15px] md:text-[22px] leading-[120%]">Assist</span>
                         </div>
                         
                         {/* Improve */}
                         <div className="bg-[#F0F4FF] rounded-r-[24px] md:rounded-r-[32px] rounded-tl-[24px] md:rounded-tl-[32px] rounded-bl-[4px] md:rounded-bl-[6px] px-4 md:px-6 flex items-center justify-center shadow-sm w-auto md:w-full h-[48px] md:h-[72px] flex-1 md:flex-none">
-                            <span className="text-[#000000] font-medium font-sans text-center w-full text-[15px] md:text-[22px] leading-[120%]">Improve</span>
+                            <span className="text-[#000000] font-medium  text-center w-full text-[15px] md:text-[22px] leading-[120%]">Improve</span>
                         </div>
                     </div>
 

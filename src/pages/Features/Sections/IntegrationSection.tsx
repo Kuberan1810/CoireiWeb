@@ -21,7 +21,7 @@ const IntegrationsSection: React.FC = () => {
 
             {/* TOP */}
             <div className="flex flex-col items-center justify-center mb-20 max-sm:mb-12">
-                <h2 
+                <h2
                     data-ns-animate
                     data-offset="40"
                     className="inline-flex items-center justify-center text-xl max-sm:text-base text-white py-2.5 px-10 max-sm:px-6 bg-[#7B7B7B]/10 backdrop-blur-3xl border border-white/20 rounded-full shadow-[inset_1px_2px_4px_rgba(255,255,255,0.10)] mb-10 max-sm:mb-6"
@@ -29,7 +29,7 @@ const IntegrationsSection: React.FC = () => {
                     Seamless Integrations
                 </h2>
 
-                <p 
+                <p
                     data-ns-animate
                     data-delay="0.2"
                     data-offset="80"
@@ -38,7 +38,7 @@ const IntegrationsSection: React.FC = () => {
                     Native Integrations Across Your Execution Stack
                 </p>
 
-                <p 
+                <p
                     data-ns-animate
                     data-delay="0.4"
                     data-offset="60"
@@ -49,15 +49,15 @@ const IntegrationsSection: React.FC = () => {
             </div>
 
             {/* GRAPH */}
-            <div 
+            <div
                 data-ns-animate
                 data-direction="up"
                 data-offset="100"
                 className="relative w-full flex justify-center items-center"
             >
-               
-                    <IntegrationsMobile />
-            
+
+                <IntegrationsMobile />
+
                 {/* DESKTOP */}
                 <div className="hidden md:flex w-full max-w-240 h-[302px] relative mx-auto">
 
@@ -82,7 +82,7 @@ const IntegrationsSection: React.FC = () => {
 
                         <div className="w-[130px] h-[130px] relative flex items-center justify-center">
 
-                            <div className="bg-[#161616] rounded-full w-[80px] h-[80px] flex items-center justify-center z-1">
+                            <div className="bg-white  rounded-full w-[80px] h-[80px] flex items-center justify-center z-1">
                                 <img src={CoireiLogo} className="w-full h-full object-cover" />
                             </div>
                             <div className="absolute inset-0 border-[3px] border-[#bababa] rounded-full animate-ring1" />

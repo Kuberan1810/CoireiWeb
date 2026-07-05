@@ -136,7 +136,7 @@ const AIChatbot = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-white  flex flex-col items-center">
                 <div className="px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}

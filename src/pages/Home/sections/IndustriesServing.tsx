@@ -11,13 +11,13 @@ const industries = [
 
 const IndustriesServing = () => {
     return (
-        <section className="pt-6 pb-6 sm:pt-8 sm:pb-8 overflow-hidden bg-[#161616] w-full">
+        <section className="pt-6 pb-6 sm:pt-8 sm:pb-8 overflow-hidden bg-white  w-full">
             {/* Section Badge */}
             <div className="flex items-center justify-center w-full mx-auto mb-8 gap-4 px-4">
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] flex-1 bg-linear-to-r from-[#161616] to-white hidden sm:block" 
+                    className="h-[1.5px] flex-1 bg-linear-to-r from-[#161616] to-white hidden sm:block"
                 />
                 <div
                     data-ns-animate
@@ -29,7 +29,7 @@ const IndustriesServing = () => {
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] flex-1 bg-linear-to-l from-[#161616] to-white hidden sm:block" 
+                    className="h-[1.5px] flex-1 bg-linear-to-l from-[#161616] to-white hidden sm:block"
                 />
             </div>
 
@@ -39,15 +39,15 @@ const IndustriesServing = () => {
                     data-ns-animate
                     className="text-[24px] sm:text-[32px] md:text-[40px] font-normal text-[#E3E3E0] leading-tight mb-6 max-w-4xl tracking-tight text-center"
                 >
-                   <span className="text-[#F67300]">Industries </span>
-                   <span className="text-white"> we are serving</span>
+                    <span className="text-[#F67300]">Industries </span>
+                    <span className="text-white"> we are serving</span>
                 </h2>
 
                 <p
                     data-ns-animate
                     className="text-[#FFFFFF] text-[16px] sm:text-[18px] md:text-[20px] max-w-[908px] font-normal leading-relaxed md:leading-[32.5px] text-center"
                 >
-                   At Coirei, our <span className="text-[#F67300]">LMS product</span> is designed to accelerate growth, productivity, and workforce development that empowers business with <span className="text-[#F67300]">AI Solutions.</span>
+                    At Coirei, our <span className="text-[#F67300]">LMS product</span> is designed to accelerate growth, productivity, and workforce development that empowers business with <span className="text-[#F67300]">AI Solutions.</span>
                 </p>
             </div>
 

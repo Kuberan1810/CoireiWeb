@@ -19,7 +19,7 @@ const FooterContact: React.FC<FooterContactProps> = ({
                 className={`relative overflow-hidden p-3 sm:p-4 transition-colors duration-300
                 before:absolute before:inset-0
                 before:-translate-x-full before:transition-transform before:duration-300
-                group-hover:before:translate-x-0 ${isFollei ? "text-black bg-black/5 before:bg-[#161616] group-hover:text-white" : "text-white bg-white/10 before:bg-white group-hover:text-black"}`}
+                group-hover:before:translate-x-0 ${isFollei ? "text-black bg-black/5 before:bg-white  group-hover:text-white" : "text-white bg-white/10 before:bg-white group-hover:text-black"}`}
             >
                 <span className="relative z-10">{icon}</span>
             </div>

@@ -33,7 +33,7 @@ const IntegrationsMobile: React.FC = () => {
                 {/* CENTER LOGO */}
                 <div className="absolute z-2">
                     <div className="relative w-[96px] h-[96px] flex items-center justify-center">
-                        <div className="bg-[#161616] rounded-full w-[64px] h-[64px] flex items-center justify-center ">
+                        <div className="bg-white  rounded-full w-[64px] h-[64px] flex items-center justify-center ">
                             <img src={CoireiLogo} className="w-full h-full object-cover" />
                         </div>
 

@@ -49,7 +49,7 @@ const IntelligentSupportSection: React.FC = () => {
     return (
         <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 lg:px-20 bg-[#FFFFFF] flex flex-col items-center justify-center text-center">
             
-            <div className="max-w-[1390px] w-full mx-auto relative z-10 flex flex-col items-center gap-12">
+            <div className=" relative z-10 flex flex-col items-center gap-12">
                 
                 {/* Header Area */}
                 <div className="flex flex-col items-center">

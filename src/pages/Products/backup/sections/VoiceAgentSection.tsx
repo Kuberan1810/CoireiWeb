@@ -16,14 +16,14 @@ const VoiceAgentSection: React.FC = () => {
     }, []);
 
     return (
-        <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616]">
+        <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-white ">
             {/* Background decorative glows */}
             <div className="absolute top-10 left-1/3 w-80 h-80 bg-transparent rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-transparent rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
+
                     {/* Left Column: Robot Animation */}
                     <div className="lg:col-span-5 flex items-center justify-center relative min-h-[300px]">
                         <div className="w-full max-w-[320px] aspect-square flex items-center justify-center overflow-visible z-10">
@@ -36,10 +36,10 @@ const VoiceAgentSection: React.FC = () => {
                             )}
                         </div>
                     </div>
- 
+
                     {/* Right Column: Content */}
                     <div className="lg:col-span-7 flex flex-col items-start text-left">
-                        
+
                         {/* Badge with gradient glow border and exact styling */}
                         <div className="mb-6 flex justify-start">
                             <div
@@ -73,13 +73,13 @@ const VoiceAgentSection: React.FC = () => {
                         </h2>
 
                         {/* Description with exact styling */}
-                        <p 
-                            style={{ 
-                                fontSize: '20px', 
+                        <p
+                            style={{
+                                fontSize: '20px',
                                 letterSpacing: '0px',
-                                lineHeight: '26px', 
+                                lineHeight: '26px',
                                 color: 'rgba(212, 228, 250, 0.9)',
-                            }} 
+                            }}
                             className="font-normal mb-8 max-w-xl animate-fade-in"
                         >
                             Engage visitors with an intelligent chatbot that does more than just answer questions. Follei qualifies leads, books meetings, and handles support tickets in real-time, providing immediate value to your customers.
@@ -92,7 +92,7 @@ const VoiceAgentSection: React.FC = () => {
 
                         {/* Capabilities Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 w-full">
-                            
+
                             {/* Lead Qualification */}
                             <div className="flex items-center gap-4 group">
                                 <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#6FC5FE] group-hover:text-blue-400 group-hover:border-[#6FC5FE]/30 transition-all duration-300 shrink-0">

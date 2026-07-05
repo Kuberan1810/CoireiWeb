@@ -137,7 +137,7 @@ export const HowItWorks: React.FC = () => {
     };
 
     return (
-        <section ref={containerRef} className="relative w-full py-24 px-6 md:px-12 lg:px-16 bg-[#161616] text-[#E3E3E0] overflow-visible">
+        <section ref={containerRef} className="relative w-full py-24 px-6 md:px-12 lg:px-16 bg-white  text-[#E3E3E0] overflow-visible">
             {/* Background Glows */}
             <div className="absolute top-1/3 left-1/10 w-96 h-96 bg-transparent rounded-full blur-[140px] pointer-events-none" />
             <div className="absolute bottom-1/3 right-1/10 w-96 h-96 bg-transparent rounded-full blur-[140px] pointer-events-none" />

@@ -3,7 +3,7 @@ import salesExecHeadImg from "../../../../../assets/images/products/salesexechea
 
 export const HeroSection: React.FC = () => {
     return (
-        <section className="w-full px-6 sm:px-10 md:px-15 pt-[50px] flex justify-center bg-white">
+        <section className="w-full px-6 sm:px-10 md:px-15 py-10 flex justify-center bg-white mt-8">
             <div className="w-full  grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-34 items-center">
                 {/* Left Column: Text Content */}
                 <div className="lg:col-span-5 flex flex-col items-start text-left">

@@ -60,7 +60,7 @@ const DataDashboardBI = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616] flex flex-col items-center overflow-x-hidden">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-white  flex flex-col items-center overflow-x-hidden">
                 <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full overflow-x-hidden">
 
                     {/* --- HEADER HERO SECTION --- */}
@@ -83,7 +83,7 @@ const DataDashboardBI = () => {
                         <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
                             {/* Card 1: Custom Dashboards */}
                             <div className="bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] flex flex-col justify-start text-center items-center group cursor-default">
-                                <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner transition-transform duration-500 group-hover:scale-110">
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner transition-transform duration-500 group-hover:scale-110">
                                     <LayoutGrid size={28} className="text-[#E3E3E0]" />
                                 </div>
                                 <h3 className="text-2xl font-medium text-white mb-6 tracking-tight transition-colors">
@@ -96,7 +96,7 @@ const DataDashboardBI = () => {
 
                             {/* Card 2: Real-Time Analytics */}
                             <div className="bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] flex flex-col justify-start text-center items-center group cursor-default">
-                                <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner transition-transform duration-500 group-hover:scale-110">
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner transition-transform duration-500 group-hover:scale-110">
                                     <LineChart size={28} className="text-[#E3E3E0]" />
                                 </div>
                                 <h3 className="text-2xl font-medium text-white mb-6 tracking-tight transition-colors">
@@ -109,7 +109,7 @@ const DataDashboardBI = () => {
 
                             {/* Card 3: Predictive Insights */}
                             <div className="bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] flex flex-col justify-start text-center items-center group cursor-default">
-                                <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner transition-transform duration-500 group-hover:scale-110">
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner transition-transform duration-500 group-hover:scale-110">
                                     <TrendingUp size={28} className="text-[#E3E3E0]" />
                                 </div>
                                 <h3 className="text-2xl font-medium text-white mb-6 tracking-tight transition-colors">

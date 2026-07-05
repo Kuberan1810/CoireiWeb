@@ -17,7 +17,7 @@ const BusinessIntelligence: React.FC = () => {
     useScrollAnimations();
 
     return (
-        <div className="overflow-x-clip bg-[#161616] min-h-screen">
+        <div className="overflow-x-clip bg-white  min-h-screen">
             <SEO
                 title="Business Intelligence - Follei - Coirei"
                 description="Understand your business inside and out. Follei Business Intelligence transforms disconnected information into a unified digital understanding."
@@ -27,7 +27,7 @@ const BusinessIntelligence: React.FC = () => {
                 <Navbar />
             </div>
 
-            <main className="pt-32 pb-24 w-full overflow-x-hidden bg-[#161616]">
+            <main className="pt-32 pb-24 w-full overflow-x-hidden bg-white ">
                 <HeroSection />
                 <ConnectedIntelligenceSection />
                 <WhatFolleiLearnsSection />

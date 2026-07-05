@@ -29,12 +29,12 @@ const LmsFaq: React.FC = () => {
   };
 
   return (
-    <section className="relative text-white bg-[#161616] py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
+    <section className="relative text-white bg-white  py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 
+          <h2
             data-ns-animate
             className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15] font-instrument-sans"
           >
@@ -51,11 +51,10 @@ const LmsFaq: React.FC = () => {
                 key={idx}
                 data-ns-animate
                 data-delay={idx * 0.1}
-                className={`border rounded-2xl transition-all duration-300 ${
-                  isOpen 
-                    ? "border-[#F67300]/30 bg-[#1C1C1C]/80 shadow-[0_0_30px_rgba(246,115,0,0.05)]" 
+                className={`border rounded-2xl transition-all duration-300 ${isOpen
+                    ? "border-[#F67300]/30 bg-[#1C1C1C]/80 shadow-[0_0_30px_rgba(246,115,0,0.05)]"
                     : "border-white/10 bg-[#1C1C1C]/40 hover:border-white/20"
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => toggleFaq(idx)}
@@ -65,10 +64,9 @@ const LmsFaq: React.FC = () => {
                     {faq.question}
                   </span>
                   <div className="shrink-0 text-white/70 p-1">
-                    <ChevronDown 
-                      className={`w-6 h-6 transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-[#F67300]" : ""
-                      }`} 
+                    <ChevronDown
+                      className={`w-6 h-6 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#F67300]" : ""
+                        }`}
                     />
                   </div>
                 </button>

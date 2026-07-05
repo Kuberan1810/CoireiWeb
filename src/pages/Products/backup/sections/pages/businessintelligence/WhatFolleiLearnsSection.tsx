@@ -3,7 +3,7 @@ import { Ticket, Users, Target, Receipt, CreditCard, TrendingUp } from "lucide-r
 
 export const WhatFolleiLearnsSection: React.FC = () => {
     return (
-        <section className="w-full px-6 sm:px-10 md:px-15 py-24 flex justify-center bg-[#161616]">
+        <section className="w-full px-6 sm:px-10 md:px-15 py-24 flex justify-center bg-white ">
             <div className="w-full max-w-[1300px] flex flex-col items-center">
 
                 {/* Heading & Subheading */}
@@ -43,7 +43,7 @@ export const WhatFolleiLearnsSection: React.FC = () => {
                                     <div className="absolute right-0 w-28 h-28 border border-white/10 rounded-full bg-white/10" />
 
                                     {/* Center Logo */}
-                                    <div className="absolute w-12 h-12 rounded-full bg-[#161616] border border-white/20 flex items-center justify-center z-10 shadow-lg shadow-blue-500/10">
+                                    <div className="absolute w-12 h-12 rounded-full bg-white  border border-white/20 flex items-center justify-center z-10 shadow-lg shadow-blue-500/10">
                                         <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white font-bold text-xs select-none">
                                             F
                                         </div>

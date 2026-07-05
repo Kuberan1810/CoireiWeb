@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import cjImg from "../../../../../../assets/images/products/CJ.png";
 import cj1Img from "../../../../../../assets/images/products/CJ 1.png";
 
 export const RelationshipsSection: React.FC = () => {

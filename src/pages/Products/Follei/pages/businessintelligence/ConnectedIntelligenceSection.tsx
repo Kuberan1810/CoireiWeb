@@ -126,7 +126,7 @@ export const ConnectedIntelligenceSection: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-12 flex justify-center bg-[#161616]">
+        <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-12 flex justify-center bg-white ">
             <div className="w-full max-w-[1300px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 {/* Left Column: Text Content */}
                 <div className="lg:col-span-5 flex flex-col items-start text-left lg:sticky lg:top-32">
@@ -183,7 +183,7 @@ export const ConnectedIntelligenceSection: React.FC = () => {
                         return (
                             <div
                                 key={idx}
-                                className="gsap-stacked-card w-full lg:absolute lg:top-0 lg:left-0 flex items-center gap-6 py-6 border-b border-white/10 h-[160px] bg-[#161616]"
+                                className="gsap-stacked-card w-full lg:absolute lg:top-0 lg:left-0 flex items-center gap-6 py-6 border-b border-white/10 h-[160px] bg-white "
                             >
                                 {/* Icon Wrapper (w-20 h-20, no bg, size 40) */}
                                 <div className="shrink-0 w-20 h-20 rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30">

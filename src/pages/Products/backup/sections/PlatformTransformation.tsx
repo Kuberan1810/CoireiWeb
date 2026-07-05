@@ -53,7 +53,7 @@ export const PlatformTransformation: React.FC = () => {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative w-full min-h-screen py-16 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616] flex flex-col items-center justify-center">
+        <section ref={containerRef} className="relative w-full min-h-screen py-16 px-6 sm:px-10 md:px-15 overflow-hidden bg-white  flex flex-col items-center justify-center">
 
 
             <div className="max-w-5xl w-full mx-auto relative z-10 flex flex-col items-center">

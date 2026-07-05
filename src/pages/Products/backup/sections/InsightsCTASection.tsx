@@ -12,12 +12,12 @@ const InsightsCTASection = () => {
     ];
 
     return (
-        <section className="relative w-full py-20 lg:py-28 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616]">
+        <section className="relative w-full py-20 lg:py-28 px-6 sm:px-10 md:px-15 overflow-hidden bg-white ">
             <div className="max-w-6xl mx-auto relative z-10">
                 {/* Insights Panel Card */}
                 <div className="w-full mb-28">
                     {/* Dark Pill Header */}
-                    <div 
+                    <div
                         style={{
                             backgroundColor: 'rgba(28, 43, 60, 0.4)',
                         }}
@@ -41,8 +41,8 @@ const InsightsCTASection = () => {
                         <div className="lg:col-span-6 flex flex-col gap-8">
                             <div className="grid grid-cols-2 gap-6 sm:gap-8">
                                 <div className="flex flex-col gap-2">
-                                    <span 
-                                        style={{ 
+                                    <span
+                                        style={{
                                             fontWeight: 400,
                                             fontSize: '16px',
                                             lineHeight: '24px',
@@ -52,8 +52,8 @@ const InsightsCTASection = () => {
                                     >
                                         Automated Resolution
                                     </span>
-                                    <span 
-                                        style={{ 
+                                    <span
+                                        style={{
                                             fontWeight: 400,
                                             fontSize: '36px',
                                             lineHeight: '40px',
@@ -65,8 +65,8 @@ const InsightsCTASection = () => {
                                     </span>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <span 
-                                        style={{ 
+                                    <span
+                                        style={{
                                             fontWeight: 400,
                                             fontSize: '16px',
                                             lineHeight: '24px',
@@ -76,8 +76,8 @@ const InsightsCTASection = () => {
                                     >
                                         Avg. Response Time
                                     </span>
-                                    <span 
-                                        style={{ 
+                                    <span
+                                        style={{
                                             fontWeight: 400,
                                             fontSize: '36px',
                                             lineHeight: '40px',
@@ -89,8 +89,8 @@ const InsightsCTASection = () => {
                                     </span>
                                 </div>
                             </div>
-                            <p 
-                                style={{ 
+                            <p
+                                style={{
                                     fontWeight: 400,
                                     fontSize: '16px',
                                     lineHeight: '24px',
@@ -114,18 +114,17 @@ const InsightsCTASection = () => {
                                         style={
                                             bar.isActive
                                                 ? {
-                                                      backgroundColor: '#004370',
-                                                      boxShadow: '0 0 10px rgba(255, 255, 255, 0.4)',
-                                                  }
+                                                    backgroundColor: '#004370',
+                                                    boxShadow: '0 0 10px rgba(255, 255, 255, 0.4)',
+                                                }
                                                 : {
-                                                      backgroundColor: 'rgba(16, 79, 122, 0.3)',
-                                                  }
+                                                    backgroundColor: 'rgba(16, 79, 122, 0.3)',
+                                                }
                                         }
-                                        className={`w-full rounded-t-[2px] transition-colors duration-300 ${
-                                            bar.isActive
+                                        className={`w-full rounded-t-[2px] transition-colors duration-300 ${bar.isActive
                                                 ? ''
                                                 : 'border-t border-[#004370] hover:bg-[rgba(16,79,122,0.45)]'
-                                        }`}
+                                            }`}
                                     />
                                 </div>
                             ))}

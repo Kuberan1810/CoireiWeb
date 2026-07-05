@@ -30,7 +30,7 @@ const ConfidentResolutionSection: React.FC = () => {
             
             {/* Header Area - Scrolls normally! Will never get cut off by pinning. */}
             <div className="w-full pt-16 md:pt-20 pb-8 md:pb-10 px-6 sm:px-10 md:px-15 lg:px-20 flex justify-center">
-                <div className="max-w-[1390px] w-full flex flex-col items-center">
+                <div className=" flex flex-col items-center">
                     {/* Pill */}
                     <div className="mb-6 flex justify-center">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[14px] md:text-[16px] text-[#000000]">

@@ -30,7 +30,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ isFollei = false }) => {
     return (
-        <footer className={`mx-6 sm:mx-10 md:mx-15 pt-16 sm:pt-20 transition-colors duration-300 ${isFollei ? "bg-white text-black border-t border-black/10" : "bg-[#161616] text-white"}`}>
+        <footer className={`mx-6 sm:mx-10 md:mx-15 pt-16 sm:pt-20 transition-colors duration-300 ${isFollei ? "bg-white text-black border-t border-black/10" : "bg-white  text-white"}`}>
 
             {/* TOP BAR */}
             <div data-ns-animate data-offset="60" data-duration="1" data-direction="up" className="relative overflow-hidden">
@@ -63,7 +63,7 @@ const Footer: React.FC<FooterProps> = ({ isFollei = false }) => {
 
                     <form data-ns-animate data-delay="0.3" data-offset="60" data-direction="up" className="mt-8 sm:mt-10 flex flex-col sm:flex-row">
                         <input type="email" placeholder="Enter your email" className={`flex-1 bg-transparent px-4 py-3 outline-none text-sm sm:text-base border ${isFollei ? "text-black border-black/20 placeholder-black/40" : "text-white border-white/20 placeholder-white/40"}`} />
-                        <button className={`px-15 py-3 text-sm font-medium sm:mt-0 mt-5 transition-colors duration-300 ${isFollei ? "bg-[#161616] text-white hover:bg-black" : "bg-white text-black hover:bg-[#eaeaea]"}`}>
+                        <button className={`px-15 py-3 text-sm font-medium sm:mt-0 mt-5 transition-colors duration-300 ${isFollei ? "bg-white  text-white hover:bg-black" : "bg-white text-black hover:bg-[#eaeaea]"}`}>
                             SUBMIT
                         </button>
                     </form>

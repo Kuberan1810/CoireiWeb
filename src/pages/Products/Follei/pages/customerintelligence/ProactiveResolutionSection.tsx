@@ -95,7 +95,7 @@ const ProactiveResolutionSection: React.FC = () => {
 
     return (
         <section className="w-full bg-[#FFFFFF] py-20 md:py-24 px-6 sm:px-10 md:px-15 lg:px-20 border-t border-[#E8E8E8]/50">
-            <div className="max-w-[1390px] w-full mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-24">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-24">
                 
                 {/* Left: Sticky Content */}
                 <div className="relative">
@@ -113,14 +113,14 @@ const ProactiveResolutionSection: React.FC = () => {
                             <h2 
                                 data-ns-animate 
                                 data-delay="0.1" 
-                                className="text-[#0A0E29] font-medium font-sans tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]"
+                                className="text-[#0A0E29] font-medium  tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]"
                             >
                                 Resolve Issues Before
                             </h2>
                             <h2 
                                 data-ns-animate 
                                 data-delay="0.2" 
-                                className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium font-sans tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]"
+                                className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium  tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]"
                             >
                                 They Become Problems
                             </h2>
@@ -130,7 +130,7 @@ const ProactiveResolutionSection: React.FC = () => {
                         <p 
                             data-ns-animate 
                             data-delay="0.3" 
-                            className="text-[#5A5A5C] font-normal font-sans text-[15px] md:text-[16px] leading-[140%] md:leading-[1.6] max-w-lg"
+                            className="text-[#5A5A5C] font-normal  text-[15px] md:text-[16px] leading-[140%] md:leading-[1.6] max-w-lg"
                         >
                             Every website form, email, WhatsApp message, voice call, or live chat is handled instantly by the SDR Worker. Every response is personalized using your products, pricing, business policies, and customer context ensuring no lead is ever left waiting.
                         </p>

@@ -3,7 +3,7 @@ import { Zap, Target, MessageSquare, TrendingUp } from "lucide-react";
 
 export const WhyItMattersSection: React.FC = () => {
     return (
-        <section className="w-full px-6 sm:px-10 md:px-15 pt-4 pb-24 flex justify-center bg-[#161616]">
+        <section className="w-full px-6 sm:px-10 md:px-15 pt-4 pb-24 flex justify-center bg-white ">
             <div className="w-full max-w-[1300px] flex flex-col items-center">
 
                 {/* Premium Capsule Badge */}
@@ -23,7 +23,7 @@ export const WhyItMattersSection: React.FC = () => {
                         <div className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 border-t border-r border-white/40 pointer-events-none" />
                         {/* Bottom-Left Corner Line */}
                         <div className="absolute -bottom-1.5 -left-1.5 w-3.5 h-3.5 border-b border-l border-white/40 pointer-events-none" />
-                        
+
                         <span className="text-sm tracking-wide text-white">
                             Why It Matters
                         </span>
@@ -46,7 +46,7 @@ export const WhyItMattersSection: React.FC = () => {
                         data-delay="0.4"
                         className="w-full rounded-[24px] border border-white/8 bg-[#1a1a1a]/40 p-8 flex flex-col items-center text-center group transition-all duration-300 hover:border-blue-500/20 hover:shadow-[0_20px_50px_rgba(59,130,246,0.05)]"
                     >
-                        <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30 bg-[#161616] shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.05)]">
+                        <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30 bg-white  shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.05)]">
                             <Zap size={24} className="text-[#E3E3E0] group-hover:text-[#3b82f6] transition-colors duration-300" strokeWidth={1.5} />
                         </div>
                         <h3 className="text-white text-xl sm:text-2xl font-bold tracking-tight mb-3">
@@ -63,7 +63,7 @@ export const WhyItMattersSection: React.FC = () => {
                         data-delay="0.5"
                         className="w-full rounded-[24px] border border-white/8 bg-[#1a1a1a]/40 p-8 flex flex-col items-center text-center group transition-all duration-300 hover:border-blue-500/20 hover:shadow-[0_20px_50px_rgba(59,130,246,0.05)]"
                     >
-                        <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30 bg-[#161616] shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.05)]">
+                        <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30 bg-white  shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.05)]">
                             <Target size={24} className="text-[#E3E3E0] group-hover:text-[#3b82f6] transition-colors duration-300" strokeWidth={1.5} />
                         </div>
                         <h3 className="text-white text-xl sm:text-2xl font-bold tracking-tight mb-3">
@@ -80,7 +80,7 @@ export const WhyItMattersSection: React.FC = () => {
                         data-delay="0.6"
                         className="w-full rounded-[24px] border border-white/8 bg-[#1a1a1a]/40 p-8 flex flex-col items-center text-center group transition-all duration-300 hover:border-blue-500/20 hover:shadow-[0_20px_50px_rgba(59,130,246,0.05)]"
                     >
-                        <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30 bg-[#161616] shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.05)]">
+                        <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30 bg-white  shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.05)]">
                             <MessageSquare size={24} className="text-[#E3E3E0] group-hover:text-[#3b82f6] transition-colors duration-300" strokeWidth={1.5} />
                         </div>
                         <h3 className="text-white text-xl sm:text-2xl font-bold tracking-tight mb-3">
@@ -97,7 +97,7 @@ export const WhyItMattersSection: React.FC = () => {
                         data-delay="0.7"
                         className="w-full rounded-[24px] border border-white/8 bg-[#1a1a1a]/40 p-8 flex flex-col items-center text-center group transition-all duration-300 hover:border-blue-500/20 hover:shadow-[0_20px_50px_rgba(59,130,246,0.05)]"
                     >
-                        <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30 bg-[#161616] shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.05)]">
+                        <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden transition-colors duration-300 group-hover:border-[#3b82f6]/30 bg-white  shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.05)]">
                             <TrendingUp size={24} className="text-[#E3E3E0] group-hover:text-[#3b82f6] transition-colors duration-300" strokeWidth={1.5} />
                         </div>
                         <h3 className="text-white text-xl sm:text-2xl font-bold tracking-tight mb-3">

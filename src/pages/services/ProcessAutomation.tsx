@@ -136,7 +136,7 @@ const ProcessAutomation = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-[#161616]">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-white ">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER HERO SECTION --- */}
@@ -262,7 +262,7 @@ const ProcessAutomation = () => {
                                     zIndex: 0
                                 }}
                             >
-                                <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner">
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner">
                                     <Sliders size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
                                 </div>
                                 <h3 className="text-xl md:text-[22px] font-medium text-white mb-6 tracking-tight">
@@ -282,7 +282,7 @@ const ProcessAutomation = () => {
                                     zIndex: 1
                                 }}
                             >
-                                <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner">
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner">
                                     <ShieldCheck size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
                                 </div>
                                 <h3 className="text-xl md:text-[22px] font-medium text-white mb-6 tracking-tight">
@@ -302,7 +302,7 @@ const ProcessAutomation = () => {
                                     zIndex: 2
                                 }}
                             >
-                                <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner">
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner">
                                     <Cpu size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
                                 </div>
                                 <h3 className="text-xl md:text-[22px] font-medium text-white mb-6 tracking-tight">
@@ -322,7 +322,7 @@ const ProcessAutomation = () => {
                                     zIndex: 3
                                 }}
                             >
-                                <div className="w-[72px] h-[72px] rounded-full bg-[#161616] border border-white/10 flex items-center justify-center mb-8 shadow-inner">
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner">
                                     <Handshake size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
                                 </div>
                                 <h3 className="text-xl md:text-[22px] font-medium text-white mb-6 tracking-tight">
@@ -344,7 +344,7 @@ const ProcessAutomation = () => {
                         <div data-ns-animate="true" className="w-full flex flex-col xl:flex-row justify-between items-center gap-12 xl:gap-8">
                             {/* Left: Logo + Text */}
                             <div className="flex flex-col gap-6 xl:gap-[30px] max-w-[450px] w-full">
-                                <div className="w-[100px] h-[100px] rounded-[20px] bg-[#161616] border border-white/10 flex items-center justify-center p-[20px] shrink-0">
+                                <div className="w-[100px] h-[100px] rounded-[20px] bg-white  border border-white/10 flex items-center justify-center p-[20px] shrink-0">
                                     <img src={coireiLogo} alt="Coirei Logo" className="w-full h-full object-contain" />
                                 </div>
                                 <p className="text-white/70 text-[16px] leading-[1.7] font-light">

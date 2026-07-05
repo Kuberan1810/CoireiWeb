@@ -140,7 +140,7 @@ export const TimelineSection: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-24 flex justify-center bg-[#161616]">
+        <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-24 flex justify-center bg-white ">
             <div className="w-full max-w-[1300px] flex flex-col items-center">
 
                 {/* Premium Capsule Badge */}
@@ -176,7 +176,7 @@ export const TimelineSection: React.FC = () => {
                 </p>
 
                 {/* DESKTOP TIMELINE (Wavy SVG Line + Node Labels) */}
-                <div 
+                <div
                     style={{ aspectRatio: "1316 / 316" }}
                     className="hidden md:block w-full max-w-[1300px] relative mx-auto mt-6"
                 >

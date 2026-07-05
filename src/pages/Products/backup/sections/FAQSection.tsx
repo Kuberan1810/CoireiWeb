@@ -29,10 +29,9 @@ const ToggleIcon: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
     return (
         <div className="relative w-6 h-6 flex items-center justify-center shrink-0">
             {/* Top line */}
-            <motion.div 
-                className={`absolute h-[2px] rounded-full transition-colors duration-200 ${
-                    isOpen ? 'bg-white' : 'bg-zinc-400 group-hover:bg-white'
-                }`}
+            <motion.div
+                className={`absolute h-[2px] rounded-full transition-colors duration-200 ${isOpen ? 'bg-white' : 'bg-zinc-400 group-hover:bg-white'
+                    }`}
                 animate={{
                     width: isOpen ? "16px" : "12px",
                     rotate: isOpen ? 45 : 0,
@@ -42,10 +41,9 @@ const ToggleIcon: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
             />
             {/* Bottom line */}
-            <motion.div 
-                className={`absolute h-[2px] rounded-full transition-colors duration-200 ${
-                    isOpen ? 'bg-white' : 'bg-zinc-400 group-hover:bg-white'
-                }`}
+            <motion.div
+                className={`absolute h-[2px] rounded-full transition-colors duration-200 ${isOpen ? 'bg-white' : 'bg-zinc-400 group-hover:bg-white'
+                    }`}
                 animate={{
                     width: isOpen ? "16px" : "12px",
                     rotate: isOpen ? -45 : 0,
@@ -66,10 +64,10 @@ const FAQSection: React.FC = () => {
     };
 
     return (
-        <section className="relative w-full py-20 lg:py-28 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#161616]">
+        <section className="relative w-full py-20 lg:py-28 px-6 sm:px-10 md:px-15 overflow-hidden bg-white ">
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                    
+
                     {/* Left Column: Heading & Badge */}
                     <div className="lg:col-span-5 flex flex-col items-start text-left">
                         {/* Pill Badge with exact capsule styling and default blue text */}
@@ -109,7 +107,7 @@ const FAQSection: React.FC = () => {
                         {faqs.map((faq, index) => {
                             const isOpen = openIndex === index;
                             return (
-                                <div 
+                                <div
                                     key={index}
                                     className="border-b border-dashed border-white/20"
                                 >
@@ -119,15 +117,15 @@ const FAQSection: React.FC = () => {
                                     >
                                         <div className="flex items-start gap-6">
                                             {/* Gradient Number (Poppins font, top-to-bottom blue-to-white gradient) */}
-                                            <span 
+                                            <span
                                                 className="w-[50px] sm:w-[60px] font-poppins text-[24px] sm:text-[30px] font-normal leading-[1.2] text-transparent bg-clip-text bg-linear-to-b from-[#014370] to-[#FFFFFF] shrink-0 pt-0.5 select-none"
-                                                style={{ 
+                                                style={{
                                                     fontFamily: "'Poppins', sans-serif"
                                                 }}
                                             >
                                                 Q {index + 1}
                                             </span>
-                                            
+
                                             {/* Question Text */}
                                             <span className="text-white text-[18px] sm:text-[22px] font-medium leading-snug group-hover:text-white/90 transition-colors duration-200">
                                                 {faq.question}

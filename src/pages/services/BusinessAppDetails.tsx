@@ -153,7 +153,7 @@ const BusinessAppDetails = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-20 w-full bg-[#161616] flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-20 w-full bg-white  flex flex-col items-center">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}
@@ -184,7 +184,7 @@ const BusinessAppDetails = () => {
                                     zIndex: 0
                                 }}
                             >
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#161616] border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white  border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Workflow size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -203,7 +203,7 @@ const BusinessAppDetails = () => {
                                     zIndex: 1
                                 }}
                             >
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#161616] border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white  border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <AnalyticsIcon />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -222,7 +222,7 @@ const BusinessAppDetails = () => {
                                     zIndex: 2
                                 }}
                             >
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#161616] border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white  border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <IntegrationsIcon />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
@@ -241,7 +241,7 @@ const BusinessAppDetails = () => {
                                     zIndex: 3
                                 }}
                             >
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#161616] border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white  border border-white/10 mb-[53px] group-hover:bg-[#202020] group-hover:border-white/20 transition-colors duration-300 text-[#F67300]">
                                     <Smartphone size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-[53px]">
