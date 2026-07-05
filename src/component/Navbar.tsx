@@ -92,7 +92,7 @@ function Navbar() {
                         to="/contact"
                         className={`rounded-lg py-3 px-4.5 text-[14px] font-medium transition-all duration-300 ${isLight ? 'bg-linear-to-r from-[#1E62A6] to-[#0F4275] text-white hover:from-[#17508B] hover:to-[#0B345D] shadow-[0_4px_12px_rgba(30,98,166,0.15)]' : 'bg-white text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-white'}`}
                     >
-                        Contact Us
+                        Contact sales
                     </Link>
                 </div>
 
@@ -219,7 +219,7 @@ function Navbar() {
                                     onClick={() => setOpen(false)}
                                     className={`mt-4 text-center rounded-lg py-3  font-medium transition-all duration-300 ${isLight ? 'bg-[#04032E] text-white hover:bg-[#1b1a1f]' : 'bg-white text-black hover:bg-white/90'}`}
                                 >
-                                    Contact Us
+                                    Contact sales
                                 </Link>
 
                             </ul>

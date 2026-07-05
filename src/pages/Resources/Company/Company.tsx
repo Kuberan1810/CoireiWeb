@@ -1,7 +1,6 @@
 import SEO from "../../../component/SEO";
 import Footer from "../../../component/Footer/Footer";
 import Navbar from "../../../component/Navbar";
-import CTABanner from "../../ContactUs/section/CTABanner";
 import ContentSection from "./section/ContentSection";
 import JoinUs from "./section/joinUs";
 import HeroSection from "./section/HeroSection";
