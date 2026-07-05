@@ -141,40 +141,40 @@ const ProcessAutomation = () => {
 
                     {/* --- HEADER HERO SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight mb-8 max-w-4xl tracking-tight">
+                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight mb-8 max-w-4xl tracking-tight">
                             Streamline Your Business with <span className="text-[#F67300]">Automation & Integration</span>
                         </h1>
-                        <p data-ns-animate="true" data-delay="0.2" className="text-white/70 text-lg md:text-xl leading-relaxed max-w-3xl mb-24 font-light">
+                        <p data-ns-animate="true" data-delay="0.2" className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-24 font-light">
                             Unlock efficiency by automating key processes and integrating your business systems seamlessly.
                         </p>
                     </div>
 
                     {/* --- WHAT WE DO FOR YOU SECTION --- */}
                     <div className="flex flex-col items-center text-center w-full mb-16">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#E3E3E0] tracking-tight mb-16">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight mb-16">
                             What we do for you?
                         </h2>
 
                         {/* HIGH-FIDELITY GRID LAYOUT */}
-                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 w-full max-w-7xl border border-[#5D5D5D] bg-transparent text-white overflow-hidden ">
+                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 w-full max-w-7xl border border-[#5D5D5D] bg-transparent text-gray-900 overflow-hidden ">
 
                             {/* Cell 1: Automate Repetitive Tasks */}
-                            <div className="p-8 md:p-12 border-b md:border-r border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-white/5 transition-all duration-300 group">
-                                <div className="w-14 h-14 rounded-full bg-[#202020] border border-white/10 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
+                            <div className="p-8 md:p-12 border-b md:border-r border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
+                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
                                     <FileText size={24} className="text-[#F67300]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-medium text-[#E3E3E0] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
                                         Automate Repetitive Tasks
                                     </h3>
-                                    <p className="text-white/70 text-base leading-relaxed font-light">
+                                    <p className="text-gray-600 text-base leading-relaxed font-light">
                                         We streamline your daily operations by eliminating manual processes. This frees your team to focus on high-value tasks.
                                     </p>
                                 </div>
                             </div>
 
                             {/* Cell 2: Middle Column (Spans 2 rows) */}
-                            <div className="row-span-2 border-b md:border-b-0 md:border-r border-[#5D5D5D] bg-linear-to-b from-[#FF7700]/15 via-black/40 to-black p-8 md:p-12 flex flex-col justify-between items-center text-center min-h-[500px] md:min-h-[760px] group">
+                            <div className="row-span-2 border-b md:border-b-0 md:border-r border-[#5D5D5D] bg-linear-to-b from-[#FF7700]/10 via-gray-50 to-gray-100 p-8 md:p-12 flex flex-col justify-between items-center text-center min-h-[500px] md:min-h-[760px] group">
                                 {/* Center Coirei Logo */}
                                 <div className="w-full flex items-center justify-center py-6 mt-4 relative">
                                     <div className="absolute w-[200px] h-[200px] rounded-full shadow-[0_0_50px_rgba(246,115,0,0.15)] bg-[#F67300]/5 mix-blend-screen animate-pulse"></div>
@@ -187,57 +187,57 @@ const ProcessAutomation = () => {
                                 </div>
                                 {/* Customize Workflows */}
                                 <div className="flex flex-col items-center w-full">
-                                    <div className="w-14 h-14 rounded-full bg-[#202020] border border-white/10 flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110">
+                                    <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110">
                                         <Workflow size={24} className="text-[#F67300]" />
                                     </div>
-                                    <h3 className="text-2xl font-medium text-[#E3E3E0] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
                                         Customize Workflows
                                     </h3>
-                                    <p className="text-white/70 text-base leading-relaxed font-light max-w-sm">
+                                    <p className="text-gray-600 text-base leading-relaxed font-light max-w-sm">
                                         We tailor workflows to fit your exact business needs, ensuring that every process aligns with your goals.
                                     </p>
                                 </div>
                             </div>
                             {/* Cell 3: Synchronize Data Across Platforms */}
-                            <div className="p-8 md:p-12 border-b border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-white/5 transition-all duration-300 group">
-                                <div className="w-14 h-14 rounded-full bg-[#202020] border border-white/10 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
+                            <div className="p-8 md:p-12 border-b border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
+                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
                                     <RefreshCw size={24} className="text-[#F67300]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-medium text-[#E3E3E0] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
                                         Synchronize Data Across Platforms
                                     </h3>
-                                    <p className="text-white/70 text-base leading-relaxed font-light">
+                                    <p className="text-gray-600 text-base leading-relaxed font-light">
                                         We ensure your data is up-to-date across all tools, reducing errors and enabling real-time decision-making.
                                     </p>
                                 </div>
                             </div>
 
                             {/* Cell 4: Integrate CRM and ERP Systems */}
-                            <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-white/5 transition-all duration-300 group">
-                                <div className="w-14 h-14 rounded-full bg-[#202020] border border-white/10 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
+                            <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
+                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
                                     <GitFork size={24} className="text-[#F67300]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-medium text-[#E3E3E0] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
                                         Integrate CRM and ERP Systems
                                     </h3>
-                                    <p className="text-white/70 text-base leading-relaxed font-light">
+                                    <p className="text-gray-600 text-base leading-relaxed font-light">
                                         We connect your key business systems, ensuring data flows smoothly between departments. This creates a unified, reliable data environment.
                                     </p>
                                 </div>
                             </div>
 
                             {/* Cell 5: Provide Real-Time Analytics */}
-                            <div className="p-8 md:p-12 flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-white/5 transition-all duration-300 group">
-                                <div className="w-14 h-14 rounded-full bg-[#202020] border border-white/10 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
+                            <div className="p-8 md:p-12 flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
+                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
                                     <TrendingUp size={24} className="text-[#F67300]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-medium text-[#E3E3E0] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
                                         Provide Real-Time Analytics
                                     </h3>
-                                    <p className="text-white/70 text-base leading-relaxed font-light">
+                                    <p className="text-gray-600 text-base leading-relaxed font-light">
                                         We deliver instant insights from your data, helping you make informed decisions quickly. Our dashboards keep you updated with the latest performance metrics.
                                     </p>
                                 </div>
@@ -248,7 +248,7 @@ const ProcessAutomation = () => {
 
                     {/* --- WHY CHOOSE US SECTION --- */}
                     <div ref={whyChooseScrollRef} className="w-full mt-24">
-                        <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                        <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                             Why Choose <span className="text-[#F67300]">Coirei</span>
                         </h2>
 
@@ -256,19 +256,19 @@ const ProcessAutomation = () => {
                             {/* Card 1 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.1"
-                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group"
+                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] justify-start group"
                                 style={{
                                     x: useTransform(whyChooseXProgress, (v) => `${v * 0 * -72}%`),
                                     zIndex: 0
                                 }}
                             >
-                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner">
-                                    <Sliders size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-gray-200 flex items-center justify-center mb-8 shadow-inner">
+                                    <Sliders size={28} strokeWidth={1.5} className="text-[#262626]" />
                                 </div>
-                                <h3 className="text-xl md:text-[22px] font-medium text-white mb-6 tracking-tight">
+                                <h3 className="text-xl md:text-[22px] font-medium text-gray-900 mb-6 tracking-tight">
                                     Custom-Fit Strategies
                                 </h3>
-                                <p className="text-white/50 text-[14px] leading-relaxed font-light px-2">
+                                <p className="text-gray-900/50 text-[14px] leading-relaxed font-light px-2">
                                     We design custom automation and integration solutions that fit your exact industry challenges. Every solution is built with your business in mind.
                                 </p>
                             </motion.div>
@@ -276,19 +276,19 @@ const ProcessAutomation = () => {
                             {/* Card 2 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.2"
-                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group"
+                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] justify-start group"
                                 style={{
                                     x: useTransform(whyChooseXProgress, (v) => `${v * 1 * -72}%`),
                                     zIndex: 1
                                 }}
                             >
-                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner">
-                                    <ShieldCheck size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-gray-200 flex items-center justify-center mb-8 shadow-inner">
+                                    <ShieldCheck size={28} strokeWidth={1.5} className="text-[#262626]" />
                                 </div>
-                                <h3 className="text-xl md:text-[22px] font-medium text-white mb-6 tracking-tight">
+                                <h3 className="text-xl md:text-[22px] font-medium text-gray-900 mb-6 tracking-tight">
                                     Proven Track Record
                                 </h3>
-                                <p className="text-white/50 text-[14px] leading-relaxed font-light px-2">
+                                <p className="text-gray-900/50 text-[14px] leading-relaxed font-light px-2">
                                     Our clients see real results, with measurable ROI and efficiency improvements. We've helped hundreds of businesses thrive.
                                 </p>
                             </motion.div>
@@ -296,19 +296,19 @@ const ProcessAutomation = () => {
                             {/* Card 3 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.3"
-                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group"
+                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] justify-start group"
                                 style={{
                                     x: useTransform(whyChooseXProgress, (v) => `${v * 2 * -72}%`),
                                     zIndex: 2
                                 }}
                             >
-                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner">
-                                    <Cpu size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-gray-200 flex items-center justify-center mb-8 shadow-inner">
+                                    <Cpu size={28} strokeWidth={1.5} className="text-[#262626]" />
                                 </div>
-                                <h3 className="text-xl md:text-[22px] font-medium text-white mb-6 tracking-tight">
+                                <h3 className="text-xl md:text-[22px] font-medium text-gray-900 mb-6 tracking-tight">
                                     Cutting Edge Technology
                                 </h3>
-                                <p className="text-white/50 text-[14px] leading-relaxed font-light px-2">
+                                <p className="text-gray-900/50 text-[14px] leading-relaxed font-light px-2">
                                     We leverage the latest tools and innovations to keep you ahead in a fast-changing market. Your business benefits from every advancement.
                                 </p>
                             </motion.div>
@@ -316,19 +316,19 @@ const ProcessAutomation = () => {
                             {/* Card 4 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.4"
-                                className="flex flex-col items-center text-center bg-[#1A1A1A] border border-white/10 rounded-[24px] p-8 md:p-10 hover:bg-[#222222] hover:border-white/20 transition-all duration-300 min-h-[380px] justify-start group"
+                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] justify-start group"
                                 style={{
                                     x: useTransform(whyChooseXProgress, (v) => `${v * 3 * -72}%`),
                                     zIndex: 3
                                 }}
                             >
-                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-white/10 flex items-center justify-center mb-8 shadow-inner">
-                                    <Handshake size={28} strokeWidth={1.5} className="text-[#E3E3E0]" />
+                                <div className="w-[72px] h-[72px] rounded-full bg-white  border border-gray-200 flex items-center justify-center mb-8 shadow-inner">
+                                    <Handshake size={28} strokeWidth={1.5} className="text-[#262626]" />
                                 </div>
-                                <h3 className="text-xl md:text-[22px] font-medium text-white mb-6 tracking-tight">
+                                <h3 className="text-xl md:text-[22px] font-medium text-gray-900 mb-6 tracking-tight">
                                     Dedicated Support
                                 </h3>
-                                <p className="text-white/50 text-[14px] leading-relaxed font-light px-2">
+                                <p className="text-gray-900/50 text-[14px] leading-relaxed font-light px-2">
                                     Our team is with you every step, providing ongoing support and scalable solutions as your business grows.
                                 </p>
                             </motion.div>
@@ -337,17 +337,17 @@ const ProcessAutomation = () => {
 
                     {/* --- ABOUT COIREI SECTION --- */}
                     <div className="w-full mt-24">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#E3E3E0] text-center mb-12 tracking-tight">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-12 tracking-tight">
                             About Coirei
                         </h2>
 
                         <div data-ns-animate="true" className="w-full flex flex-col xl:flex-row justify-between items-center gap-12 xl:gap-8">
                             {/* Left: Logo + Text */}
                             <div className="flex flex-col gap-6 xl:gap-[30px] max-w-[450px] w-full">
-                                <div className="w-[100px] h-[100px] rounded-[20px] bg-white  border border-white/10 flex items-center justify-center p-[20px] shrink-0">
+                                <div className="w-[100px] h-[100px] rounded-[20px] bg-white  border border-gray-200 flex items-center justify-center p-[20px] shrink-0">
                                     <img src={coireiLogo} alt="Coirei Logo" className="w-full h-full object-contain" />
                                 </div>
-                                <p className="text-white/70 text-[16px] leading-[1.7] font-light">
+                                <p className="text-gray-600 text-[16px] leading-[1.7] font-light">
                                     At Coirei, we are passionate about innovation. With years of experience, we help businesses transform operations through intelligent automation and seamless integration.
                                 </p>
                             </div>
@@ -365,7 +365,7 @@ const ProcessAutomation = () => {
 
                     {/* --- TECHNOLOGY STACK SECTION --- */}
                     <div className="w-full mt-24 mb-4">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#E3E3E0] text-center mb-12 tracking-tight">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-12 tracking-tight">
                             Technology Stack
                         </h2>
 
@@ -374,10 +374,10 @@ const ProcessAutomation = () => {
                             <div className="h-px w-full bg-white/10" />
                             <div data-ns-animate="true" className="flex flex-col gap-3 py-8 px-2">
                                 <div className="flex items-center gap-3">
-                                    <Wrench size={22} className="text-white/50 shrink-0" />
-                                    <h3 className="text-xl font-medium text-[#E3E3E0]">RPA Tools</h3>
+                                    <Wrench size={22} className="text-gray-900/50 shrink-0" />
+                                    <h3 className="text-xl font-medium text-[#262626]">RPA Tools</h3>
                                 </div>
-                                <p className="text-white/60 text-base leading-relaxed font-light">
+                                <p className="text-gray-500 text-base leading-relaxed font-light">
                                     We use top RPA platforms like UiPath and Automation Anywhere to drive efficiency.
                                 </p>
                             </div>
@@ -386,10 +386,10 @@ const ProcessAutomation = () => {
                             <div className="h-px w-full bg-white/10" />
                             <div data-ns-animate="true" data-delay="0.1" className="flex flex-col gap-3 py-8 px-2">
                                 <div className="flex items-center gap-3">
-                                    <BarChart3 size={22} className="text-white/50 shrink-0" />
-                                    <h3 className="text-xl font-medium text-[#E3E3E0]">Analytics Tools</h3>
+                                    <BarChart3 size={22} className="text-gray-900/50 shrink-0" />
+                                    <h3 className="text-xl font-medium text-[#262626]">Analytics Tools</h3>
                                 </div>
-                                <p className="text-white/60 text-base leading-relaxed font-light">
+                                <p className="text-gray-500 text-base leading-relaxed font-light">
                                     We harness advanced analytics platforms to provide real-time insights for better decision-making.
                                 </p>
                             </div>
@@ -398,10 +398,10 @@ const ProcessAutomation = () => {
                             <div className="h-px w-full bg-white/10" />
                             <div data-ns-animate="true" data-delay="0.2" className="flex flex-col gap-3 py-8 px-2">
                                 <div className="flex items-center gap-3">
-                                    <Cpu size={22} className="text-white/50 shrink-0" />
-                                    <h3 className="text-xl font-medium text-[#E3E3E0]">Cloud Infrastructure</h3>
+                                    <Cpu size={22} className="text-gray-900/50 shrink-0" />
+                                    <h3 className="text-xl font-medium text-[#262626]">Cloud Infrastructure</h3>
                                 </div>
-                                <p className="text-white/60 text-base leading-relaxed font-light">
+                                <p className="text-gray-500 text-base leading-relaxed font-light">
                                     We leverage cloud solutions like AWS and Azure for scalability and flexibility.
                                 </p>
                             </div>
@@ -416,7 +416,7 @@ const ProcessAutomation = () => {
                         style={{ height: "300vh" }}
                     >
                         <div className="sticky top-[20vh] w-full h-fit flex flex-col items-center">
-                            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-10 md:mb-12 tracking-tight leading-tight">
+                            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-10 md:mb-12 tracking-tight leading-tight">
                                 How We Work (The Process)
                             </h2>
 
@@ -430,11 +430,11 @@ const ProcessAutomation = () => {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: -15 }}
                                             transition={{ duration: 0.3 }}
-                                            className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#E3E3E0] tracking-tight text-center lg:text-left flex flex-col items-center lg:items-start"
+                                            className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#262626] tracking-tight text-center lg:text-left flex flex-col items-center lg:items-start"
                                         >
                                             <span>{steps[activeStep].title}</span>
                                             {steps[activeStep].subtitle && (
-                                                <span className="text-xl md:text-2xl text-[#B5B4B2] mt-2 font-normal">
+                                                <span className="text-xl md:text-2xl text-gray-500 mt-2 font-normal">
                                                     {steps[activeStep].subtitle}
                                                 </span>
                                             )}
@@ -453,7 +453,7 @@ const ProcessAutomation = () => {
                                                 cy="230"
                                                 r="220"
                                                 fill="none"
-                                                stroke="#3d2b1f"
+                                                stroke="#FF7A0030"
                                                 strokeWidth="12"
                                             />
                                             {/* Active Segment (Orange) */}
@@ -482,7 +482,7 @@ const ProcessAutomation = () => {
                                                 >
                                                     {/* Top Pill & Pointer */}
                                                     <div className="absolute top-[22%] md:top-[28%] left-[6%] md:left-[12%] flex items-center gap-1.5 md:gap-3">
-                                                        <div className="bg-[#4d3a2d] text-[#E3E3E0] px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap">
+                                                        <div className="bg-[] text-[#262626] px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap shadow-[0_0_15px_rgba(255,122,0,0.3)]">
                                                             {steps[activeStep].topPill}
                                                         </div>
                                                         <motion.svg
@@ -511,13 +511,13 @@ const ProcessAutomation = () => {
                                                     </div>
 
                                                     {/* Center Text */}
-                                                    <p className="text-[#E3E3E0] text-[13px] md:text-xl text-center leading-relaxed font-light max-w-[200px] md:max-w-[320px]">
+                                                    <p className="text-[#262626] text-[13px] md:text-xl text-center leading-relaxed font-light max-w-[200px] md:max-w-[320px]">
                                                         {steps[activeStep].description}
                                                     </p>
 
                                                     {/* Bottom Pill & Pointer */}
                                                     <div className="absolute bottom-[18%] md:bottom-[22%] right-[6%] md:right-[12%] flex flex-row-reverse items-center gap-1.5 md:gap-3">
-                                                        <div className="bg-[#FF7A00] text-white px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap shadow-[0_0_15px_rgba(255,122,0,0.3)]">
+                                                        <div className="bg-[] text-gray-900 px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap shadow-[0_0_15px_rgba(255,122,0,0.3)]">
                                                             {steps[activeStep].bottomPill}
                                                         </div>
                                                         <motion.svg
@@ -558,7 +558,7 @@ const ProcessAutomation = () => {
                     {/* Section Badge */}
                     <div className="flex items-center justify-center w-full mx-auto mb-8 gap-4 px-4">
                         <div className="h-[1.5px] flex-1 bg-linear-to-r from-[#161616] to-white hidden sm:block opacity-20" />
-                        <div className="px-6 py-2 border border-white/10 rounded-xl bg-transparent text-white text-[16px] sm:text-[22px] whitespace-nowrap shrink-0">
+                        <div className="px-6 py-2 border border-gray-200 rounded-xl bg-transparent text-gray-900 text-[16px] sm:text-[22px] whitespace-nowrap shrink-0">
                             AI Solutions Across Global
                         </div>
                         <div className="h-[1.5px] flex-1 bg-linear-to-l from-[#161616] to-white hidden sm:block opacity-20" />
@@ -568,7 +568,7 @@ const ProcessAutomation = () => {
                     <div className="flex flex-col items-center text-center px-6 mb-12">
                         <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
                             <span className="text-[#F67300]">Impact </span>
-                            <span className="text-white"> Across Industries</span>
+                            <span className="text-gray-900"> Across Industries</span>
                         </h2>
                     </div>
 
@@ -587,12 +587,12 @@ const ProcessAutomation = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-50px" }}
                                     transition={{ duration: 0.5, delay: idx * 0.08 }}
-                                    className="flex items-center gap-4 sm:gap-6 px-5 py-4 bg-[#1E1E1E] border-[0.5px] border-white/15 rounded-[12px] w-full max-w-[420px] h-[96px] sm:h-[110px] cursor-pointer transition-all hover:scale-[1.02] hover:border-[#F67300]/30"
+                                    className="flex items-center gap-4 sm:gap-6 px-5 py-4 bg-white border-[0.5px] border-gray-200 rounded-[12px] w-full max-w-[420px] h-[96px] sm:h-[110px] cursor-pointer transition-all hover:scale-[1.02] hover:border-[#F67300]/30"
                                 >
-                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[26px] bg-white/5 border border-white/15 flex items-center justify-center text-[#F67300] shrink-0">
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[26px] bg-gray-50 border border-gray-200 flex items-center justify-center text-[#F67300] shrink-0">
                                         {item.icon}
                                     </div>
-                                    <span className="text-white text-[18px] sm:text-[22px] md:text-[24px] font-medium tracking-tight leading-tight">
+                                    <span className="text-gray-900 text-[18px] sm:text-[22px] md:text-[24px] font-medium tracking-tight leading-tight">
                                         {item.name}
                                     </span>
                                 </motion.div>

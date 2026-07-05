@@ -165,27 +165,27 @@ export default function TestimonialSection() {
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] w-full bg-linear-to-r from-transparent to-white hidden sm:block"
+                    className="h-[1.5px] w-full bg-linear-to-r from-transparent to-gray-300 hidden sm:block"
                 ></div>
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="px-5 py-1.5 border border-white/10 rounded-md bg-transparent text-white text-[16px] sm:text-[22px] whitespace-nowrap"
+                    className="px-5 py-1.5 border border-gray-200 rounded-md bg-transparent text-gray-900 text-[16px] sm:text-[22px] whitespace-nowrap"
                 >
                     Testimonial
                 </div>
                 <div
                     data-ns-animate
                     data-offset="80"
-                    className="h-[1.5px] w-full bg-linear-to-l from-transparent to-white hidden sm:block"
+                    className="h-[1.5px] w-full bg-linear-to-l from-transparent to-gray-300 hidden sm:block"
                 ></div>
             </div>
 
                     <div className="flex items-start justify-center  flex-wrap gap-4 mb-16">
                         <div className="w-full">
-                            <h2 className="text-[#FFFFFF] text-[20px] sm:text-[40px] font-normal leading-[30px] md:leading-[40px] text-center w-full mx-auto">
-                                <span className="text-white">What <span className="text-[#F67300]">clients</span> say about</span>
-                                <span className="text-white"> our <span className="text-[#F67300]">AI solutions?</span></span>
+                            <h2 className="text-gray-900 text-[20px] sm:text-[40px] font-normal leading-[30px] md:leading-[40px] text-center w-full mx-auto">
+                                <span className="text-gray-900">What <span className="text-[#F67300]">clients</span> say about</span>
+                                <span className="text-gray-900"> our <span className="text-[#F67300]">AI solutions?</span></span>
                             </h2>
                         </div>
                         
@@ -207,10 +207,10 @@ export default function TestimonialSection() {
                 <div className="relative">
                     {/* Left fade */}
                     <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none hidden md:block"
-                        style={{ background: "linear-gradient(to right, #161616 0%, transparent 100%)" }} />
+                        style={{ background: "linear-gradient(to right, #ffffff 0%, transparent 100%)" }} />
                     {/* Right fade */}
                     <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none hidden md:block"
-                        style={{ background: "linear-gradient(to left, #161616 0%, transparent 100%)" }} />
+                        style={{ background: "linear-gradient(to left, #ffffff 0%, transparent 100%)" }} />
 
                     <div className="overflow-hidden">
                         <div
@@ -226,33 +226,33 @@ export default function TestimonialSection() {
                             {[left, cur, right].map((t, idx) => (
                                 <div
                                     key={`${t.id}-${idx}`}
-                                    className={`rounded-[20px] p-6 flex flex-col justify-between border border-white/[0.07] select-none glass
+                                    className={`rounded-[20px] p-6 flex flex-col justify-between border border-gray-200 select-none bg-gray-50 shadow-sm
                                                ${idx === 1 ? 'flex-1 min-w-0' : 'hidden md:flex md:flex-1 md:min-w-0'}`}
 
                                 >
                                     <div className="">
                                         <div className="flex items-center gap-3 mb-10">
                                             <img src={t.avatar} alt={t.name}
-                                                className="w-14 h-14 rounded-full object-cover ring-1 ring-white/10" />
+                                                className="w-14 h-14 rounded-full object-cover ring-1 ring-gray-200" />
                                             <div>
-                                                <p className="font-medium  text-[18px] text-white leading-tight">{t.name}</p>
-                                                <p className="text-[14px] text-white/60 font-regular ">{t.role}</p>
+                                                <p className="font-medium  text-[18px] text-gray-900 leading-tight">{t.name}</p>
+                                                <p className="text-[14px] text-gray-500 font-regular ">{t.role}</p>
                                             </div>
                                         </div>
 
                                         <div className="mb-20">
-                                            <p className="text-[18px] text-white font-medium  leading-snug mb-1">
+                                            <p className="text-[18px] text-gray-900 font-medium  leading-snug mb-1">
                                                 "{t.quote.split(" ").slice(0, 6).join(" ")}"
                                             </p>
-                                            <p className="text-[16px] text-white/70 leading-relaxed">
+                                            <p className="text-[16px] text-gray-600 leading-relaxed">
                                                 {t.quote.split(" ").slice(6).join(" ")}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/6">
+                                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-200">
                                         <Stars count={t.rating} />
-                                        <span className="text-[12px] text-white/60">{t.date}</span>
+                                        <span className="text-[12px] text-gray-500">{t.date}</span>
                                     </div>
                                 </div>
                             ))}
@@ -267,8 +267,8 @@ export default function TestimonialSection() {
                         onClick={handlePrev}
                         aria-label="Previous testimonial"
                         className="w-11 h-11 rounded-full flex items-center justify-center text-xl
-                                   bg-white/5 border border-white/10 text-[#777]
-                                   hover:bg-white/10 hover:text-white hover:border-white/20
+                                   bg-white border border-gray-200 text-[#777]
+                                   hover:bg-gray-100 hover:text-gray-900 hover:border-gray-300
                                    transition-all duration-200 cursor-pointer leading-none"
                     >
                         ‹
@@ -277,8 +277,8 @@ export default function TestimonialSection() {
                         onClick={handleNext}
                         aria-label="Next testimonial"
                         className="w-11 h-11 rounded-full flex items-center justify-center text-xl
-                                   bg-white/5 border border-white/10 text-[#777]
-                                   hover:bg-white/10 hover:text-white hover:border-white/20
+                                   bg-white border border-gray-200 text-[#777]
+                                   hover:bg-gray-100 hover:text-gray-900 hover:border-gray-300
                                    transition-all duration-200 cursor-pointer leading-none"
                     >
                         ›
