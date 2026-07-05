@@ -3,9 +3,9 @@ import door from "../../../assets/images/pricing/door.png";
 const PrivacySecurity = () => {
     return (
         <section className="max-w-7xl mx-auto mt-24 px-6">
-            <div 
-                data-ns-animate 
-                data-offset="100" 
+            <div
+                data-ns-animate
+                data-offset="100"
                 className="mb-17"
             >
                 <p className="text-orange-500 text-6xl mb-2">
@@ -25,9 +25,9 @@ const PrivacySecurity = () => {
                 <section className="bg-[#0b0b0b] text-white max-w-6xl mx-auto px-6 h-auto">
                     <div className="border-t border-gray-700 h-full flex flex-col justify-between">
                         {/* Row 1 */}
-                        <div 
-                            data-ns-animate 
-                            data-offset="40" 
+                        <div
+                            data-ns-animate
+                            data-offset="40"
                             className="grid grid-cols-2 gap-10 py-6 border-b border-gray-700"
                         >
                             <h3 className="text-lg font-medium">
@@ -49,9 +49,9 @@ const PrivacySecurity = () => {
                         </div>
 
                         {/* Row 2 */}
-                        <div 
-                            data-ns-animate 
-                            data-offset="40" 
+                        <div
+                            data-ns-animate
+                            data-offset="40"
                             className="grid grid-cols-2 gap-10 py-6 border-b border-gray-700"
                         >
                             <h3 className="text-lg font-medium">
