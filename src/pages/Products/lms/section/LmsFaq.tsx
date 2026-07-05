@@ -29,14 +29,14 @@ const LmsFaq: React.FC = () => {
   };
 
   return (
-    <section className="relative text-white bg-white  py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
+    <section className="relative text-[#04032E] bg-white  py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
 
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2
             data-ns-animate
-            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15]  "
+            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-[#04032E] tracking-tight leading-[1.15]  "
           >
             Frequently Asked <span className="text-[#F67300]">Questions</span>
           </h2>
@@ -52,18 +52,18 @@ const LmsFaq: React.FC = () => {
                 data-ns-animate
                 data-delay={idx * 0.1}
                 className={`border rounded-2xl transition-all duration-300 ${isOpen
-                  ? "border-[#F67300]/30 bg-[#1C1C1C]/80 shadow-[0_0_30px_rgba(246,115,0,0.05)]"
-                  : "border-white/10 bg-[#1C1C1C]/40 hover:border-white/20"
+                  ? "border-[#F67300]/30 bg-white shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)]"
+                  : "border-[#E9ECFF] bg-[#FAFAFA] hover:border-gray-300"
                   }`}
               >
                 <button
                   onClick={() => toggleFaq(idx)}
                   className="w-full flex items-center justify-between p-6 sm:p-8 text-left cursor-pointer focus:outline-none"
                 >
-                  <span className="text-[18px] sm:text-[22px] font-light pr-8 text-white  ">
+                  <span className="text-[18px] sm:text-[22px] font-light pr-8 text-[#04032E]  ">
                     {faq.question}
                   </span>
-                  <div className="shrink-0 text-white/70 p-1">
+                  <div className="shrink-0 text-[#04032E]/70 p-1">
                     <ChevronDown
                       className={`w-6 h-6 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#F67300]" : ""
                         }`}
@@ -79,8 +79,8 @@ const LmsFaq: React.FC = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 sm:px-8 pb-6 sm:pb-8 flex flex-col gap-4 border-t border-white/5 pt-4">
-                        <p className="text-[#B5B4B2] text-[15px] sm:text-[17px] font-light leading-relaxed">
+                      <div className="px-6 sm:px-8 pb-6 sm:pb-8 flex flex-col gap-4 border-t border-[#E9ECFF] pt-4">
+                        <p className="text-[#5A5A5C] text-[15px] sm:text-[17px] font-light leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

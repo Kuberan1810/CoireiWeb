@@ -2,7 +2,7 @@ import React from "react";
 
 const CareersHero = () => {
     return (
-        <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center overflow-hidden pt-32 pb-20 px-6 bg-[#FFFFFF]">
+        <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20 px-6 bg-[#FFFFFF]">
             
             {/* Top Oval Glow - Anchored strictly to the very top edge */}
             <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[70%] h-[200px] rounded-[100%] bg-[#F67300] blur-[120px] opacity-[0.25] pointer-events-none" />

@@ -12,22 +12,22 @@ import {
 
 const roadmapData = [
   {
-    icon: <GraduationCap style={{ width: '28px', height: '23px' }} className="text-zinc-100" />,
+    icon: <GraduationCap style={{ width: '28px', height: '23px' }} className="text-[#04032E]" />,
     title: "Learn",
     desc: "Deliver structured and engaging learning content."
   },
   {
-    icon: <Snowflake style={{ width: '28px', height: '23px' }} className="text-zinc-100" />, 
+    icon: <Snowflake style={{ width: '28px', height: '23px' }} className="text-[#04032E]" />, 
     title: "Organize ",
     desc: "Manage courses and users efficiently"
   },
   {
-    icon: <SearchCode style={{ width: '28px', height: '23px' }} className="text-zinc-100" />, 
+    icon: <SearchCode style={{ width: '28px', height: '23px' }} className="text-[#04032E]" />, 
     title: "Track",
     desc: "Monitor progress and performance in real time"
   },
   {
-    icon: <Trophy style={{ width: '28px', height: '23px' }} className="text-zinc-100" />, 
+    icon: <Trophy style={{ width: '28px', height: '23px' }} className="text-[#04032E]" />, 
     title: "Improve",
     desc: "Continuously enhance learning outcomes."
   }
@@ -54,7 +54,7 @@ const LmsRoadmap: React.FC = () => {
       <div className=" relative">
         
         {/* PROGRESS LINE: Adjusted top to match new 80px box center (40px) */}
-        <div className="absolute lg:top-[40px] top-[40px] lg:left-[12.5%] lg:right-[12.5%] left-1/2 -translate-x-1/2 lg:translate-x-0 w-[1px] lg:w-[75%] h-[calc(100%-180px)] lg:h-[1px] bg-zinc-900 z-0">
+        <div className="absolute lg:top-[40px] top-[40px] lg:left-[12.5%] lg:right-[12.5%] left-1/2 -translate-x-1/2 lg:translate-x-0 w-[1px] lg:w-[75%] h-[calc(100%-180px)] lg:h-[1px] bg-[#E9ECFF] z-0">
           <motion.div 
             style={{ 
               scaleX: typeof window !== 'undefined' && window.innerWidth > 1024 ? scaleProgress : 1,
@@ -76,7 +76,7 @@ const LmsRoadmap: React.FC = () => {
                 data-ns-animate
                 data-offset="80"
                 data-delay={index * 0.1}
-                className="w-[80px] h-[80px] rounded-[12px] bg-[#292929] border border-zinc-800/80 flex items-center justify-center mb-8 shadow-2xl relative z-20 transition-colors duration-500"
+                className="w-[80px] h-[80px] rounded-[12px] bg-[#FAFAFA] border border-[#E9ECFF] flex items-center justify-center mb-8 shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] relative z-20 transition-colors duration-500"
               >
                 {item.icon}
               </div>
@@ -88,10 +88,10 @@ const LmsRoadmap: React.FC = () => {
                 data-delay={(index * 0.1) + 0.05}
                 className="w-[250px] min-h-[76px] flex flex-col items-center "
               >
-                <h3 className="text-[20px] font-medium text-white mb-2 tracking-tight">
+                <h3 className="text-[20px] font-medium text-[#04032E] mb-2 tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-[14px] md:text-base text-white/80 leading-[1.4] font-medium">
+                <p className="text-[14px] md:text-base text-[#5A5A5C] leading-[1.4] font-medium">
                   {item.desc}
                 </p>
               </div>

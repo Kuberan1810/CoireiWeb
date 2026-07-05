@@ -58,13 +58,13 @@ function ProgressTrack() {
     }, []);
 
     return (
-        <section ref={containerRef} className="text-white relative py-20">
+        <section ref={containerRef} className="text-[#04032E] relative py-20 bg-white">
             {/* Header Section */}
             <div className="flex flex-col justify-center items-center text-center px-6">
                 <span 
                     data-ns-animate
                     data-offset="80"
-                    className="text-zinc-400 text-[14px] font-medium tracking-wide backdrop-blur-md border border-white/20 rounded-xl py-2 px-4 max-w-fit text-sm sm:text-base mb-5"
+                    className="text-[#5A5A5C] text-[14px] font-medium tracking-wide border border-[#E9ECFF] bg-[#FAFAFA] rounded-xl py-2 px-4 max-w-fit text-sm sm:text-base mb-5"
                 >
                     Learning that evolves you
                 </span>
@@ -72,7 +72,7 @@ function ProgressTrack() {
                     data-ns-animate
                     data-offset="80"
                     data-delay="0.1"
-                    className="max-w-[849px] text-[36px] md:text-[60px] font-medium text-center leading-[1.2] md:leading-[68px] text-white "
+                    className="max-w-[849px] text-[36px] md:text-[60px] font-medium text-center leading-[1.2] md:leading-[68px] text-[#04032E] "
                 >
                    Track Learner Progress Without  <br className="hidden md:block" /> Losing Context
                 </h2>
@@ -103,14 +103,14 @@ function ProgressTrack() {
                                     <img 
                                         src={item.image} 
                                         alt={item.title} 
-                                        className="w-full h-auto rounded-2xl border border-white/10 shadow-lg"
+                                        className="w-full h-auto rounded-2xl border border-[#E9ECFF] shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)]"
                                     />
                                 </div>
 
-                                <h3 className="text-[28px] md:text-[46px] font-semibold mb-6 tracking-tight leading-tight">
+                                <h3 className="text-[28px] md:text-[46px] font-semibold mb-6 tracking-tight leading-tight text-[#04032E]">
                                     {item.title}
                                 </h3>
-                                <p className="text-[16px] md:text-[20px] text-[#A1A1AA] leading-relaxed">
+                                <p className="text-[16px] md:text-[20px] text-[#5A5A5C] leading-relaxed">
                                     {item.description}
                                 </p>
                             </div>
@@ -131,7 +131,7 @@ function ProgressTrack() {
                                     animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                                     exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
                                     transition={{ duration: 0.6, ease: "easeOut" }}
-                                    className="absolute inset-0 w-full h-full  rounded-2xl border border-white/10 shadow-2xl"
+                                    className="absolute inset-0 w-full h-full  rounded-2xl border border-[#E9ECFF] shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)]"
                                 />
                             </AnimatePresence>
                         </div>
