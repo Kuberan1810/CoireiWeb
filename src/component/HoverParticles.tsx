@@ -41,7 +41,7 @@ const HoverParticles: React.FC<HoverParticlesProps> = ({ className }) => {
     
     const color = new THREE.Color();
     // Vibrant colors matching the brand
-    const colorsList = ['#3186FF', '#FC413D', '#00B95C', '#FBBC04', '#749BFF'];
+    const colorsList = ['#F78014', '#FED607', '#9BE0AA', '#0F4275', '#262626'];
 
     // Generate a 3D ball (Fibonacci sphere for even distribution)
     const sphereRadius = 18; // Size of the 3D ball
