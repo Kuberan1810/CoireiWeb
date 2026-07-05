@@ -9,7 +9,7 @@ const LmsAnalytics: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
           <h2
             data-ns-animate
-            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15] font-instrument-sans"
+            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15]  "
           >
             Powerful Features for <br className="hidden sm:block" /> Modern Learning Management.
           </h2>
@@ -29,7 +29,7 @@ const LmsAnalytics: React.FC = () => {
             </div>
 
             {/* Title */}
-            <h3 className="text-[32px] sm:text-[40px] font-medium text-white tracking-tight leading-tight mb-6 font-instrument-sans">
+            <h3 className="text-[32px] sm:text-[40px] font-medium text-white tracking-tight leading-tight mb-6  ">
               Learning Analytics
             </h3>
 
@@ -72,7 +72,7 @@ const LmsAnalytics: React.FC = () => {
 
               {/* Outer thin ring Layer (250px diameter -> 125px radius) */}
               <circle cx="382" cy="157" r="125" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" fill="url(#center-circle-gradient)" />
-              
+
               {/* Inner thin ring Layer (112px diameter -> 56px radius) */}
               <circle cx="382" cy="157" r="56" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" fill="none" />
             </svg>
@@ -83,7 +83,7 @@ const LmsAnalytics: React.FC = () => {
             </div>
 
             {/* Nodes on Left */}
-            
+
             {/* Top Left: Calendar */}
             <div className="absolute left-[11.78%] top-[22.29%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center z-20 shadow-md">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
@@ -140,9 +140,9 @@ const LmsAnalytics: React.FC = () => {
                 <line x1="9" y1="16" x2="10" y2="16" />
                 <line x1="14" y1="16" x2="15" y2="16" />
               </svg>
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
       </div>
     </section>
   );

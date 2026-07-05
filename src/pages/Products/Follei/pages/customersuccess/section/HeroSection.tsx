@@ -11,6 +11,7 @@ export const HeroSection: React.FC = () => {
         <div className="w-full lg:w-2/3 flex flex-col items-start text-left">
           {/* Badge Pill */}
           <div
+            data-ns-animate="true" data-delay="0.1"
             className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
@@ -18,7 +19,9 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+          <h1 
+            data-ns-animate="true" data-delay="0.2"
+            className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
             Helping Every Customer <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               Achieve Long-Term Success
@@ -27,13 +30,17 @@ export const HeroSection: React.FC = () => {
 
 
           {/* Description */}
-          <p className="text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
+          <p 
+            data-ns-animate="true" data-delay="0.3"
+            className="text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
             The Customer Success Worker proactively guides onboarding, drives product adoption, monitors customer health, identifies growth opportunities, and strengthens every customer relationship through intelligent, continuous engagement.
           </p>
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-emerald-500/20">
+        <div 
+          data-ns-animate="true" data-delay="0.4"
+          className="w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-emerald-500/20">
           {/* Background Image */}
           <img
             src={bg3}

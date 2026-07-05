@@ -32,13 +32,16 @@ export const CustomerJourneySection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 flex flex-col items-center">
           {/* Badge Capsule */}
           <div
+            data-ns-animate="true" data-delay="0.1"
             className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
             <span>Customer Journey</span>
           </div>
 
-          <h2 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6">
+          <h2 
+            data-ns-animate="true" data-delay="0.2"
+            className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6">
             Building Success At Every Stage Of{" "}
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               The Customer Journey
@@ -46,7 +49,9 @@ export const CustomerJourneySection: React.FC = () => {
           </h2>
 
           {/* Subheading */}
-          <p className="text-[#5A5A5C] text-base sm:text-[16px] font-normal leading-relaxed max-w-3xl">
+          <p 
+            data-ns-animate="true" data-delay="0.3"
+            className="text-[#5A5A5C] text-base sm:text-[16px] font-normal leading-relaxed max-w-3xl">
             The Customer Success Worker continuously guides every customer from onboarding to long-term success by driving adoption, monitoring account health, and creating opportunities for sustainable growth.
           </p>
         </div>
@@ -56,7 +61,10 @@ export const CustomerJourneySection: React.FC = () => {
           {/* Grid Columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-0 w-full pb-16">
             {steps.map((node, index) => (
-              <div key={index} className="flex flex-col items-start text-left px-0 lg:px-8 first:pl-0 last:pr-0">
+              <div 
+                key={index} 
+                data-ns-animate="true" data-delay={0.4 + index * 0.1}
+                className="flex flex-col items-start text-left px-0 lg:px-8 first:pl-0 last:pr-0">
                 <span className="text-[22px] text-[#5A5A5C] mb-12">{node.step}</span>
 
                 {/* Step Title */}

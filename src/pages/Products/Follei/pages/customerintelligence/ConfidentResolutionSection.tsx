@@ -32,7 +32,7 @@ const ConfidentResolutionSection: React.FC = () => {
             <div className="w-full pt-16 md:pt-20 pb-8 md:pb-10 px-6 sm:px-10 md:px-15 lg:px-20 flex justify-center">
                 <div className=" flex flex-col items-center">
                     {/* Pill */}
-                    <div className="mb-6 flex justify-center">
+                    <div data-ns-animate data-delay="0.1" className="mb-6 flex justify-center">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] border-[0.5px] border-[#004370] font-medium text-[14px] md:text-[16px] text-[#000000]">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
                             <span>Support Workflow</span>
@@ -41,16 +41,16 @@ const ConfidentResolutionSection: React.FC = () => {
 
                     {/* Heading */}
                     <div className="mb-4 text-center">
-                        <h2 className="text-[#0A0E29] font-medium tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]">
+                        <h2 data-ns-animate data-delay="0.2" className="text-[#0A0E29] font-medium tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]">
                             From Customer Issues To
                         </h2>
-                        <h2 className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]">
+                        <h2 data-ns-animate data-delay="0.3" className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]">
                             Confident Resolution
                         </h2>
                     </div>
 
                     {/* Subheading */}
-                    <p className="text-[#5A5A5C] font-normal text-center max-w-4xl mx-auto text-[16px] leading-[140%] md:leading-[25.6px]">
+                    <p data-ns-animate data-delay="0.4" className="text-[#5A5A5C] font-normal text-center max-w-4xl mx-auto text-[16px] leading-[140%] md:leading-[25.6px]">
                         Every support request is intelligently analyzed, prioritized, resolved, and continuously optimized—ensuring faster resolutions, happier customers, and stronger long-term relationships.
                     </p>
                 </div>

@@ -5,9 +5,9 @@ import LmsHeroimg from '../../../../assets/images/products/lmshero.png';
 import { useNavigate } from 'react-router-dom';
 
 const LmsHero: React.FC = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    
+
     /* font-inter-sans applied for the whole section to match typography */
     <section className="mt-28 sm:mt-36 lg:mt-40 mb-10 md:mb-20 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20">
 
@@ -33,7 +33,7 @@ const LmsHero: React.FC = () => {
                 data-ns-animate
                 data-offset="80"
                 data-delay="0.1"
-                className="flex flex-col text-[24px] md:text-[38px] lg:text-[42px] font-medium text-white tracking-tight leading-[1.2] md:leading-[1.1] mb-6 md:mb-10 font-instrument-sans"
+                className="flex flex-col text-[24px] md:text-[38px] lg:text-[42px] font-medium text-white tracking-tight leading-[1.2] md:leading-[1.1] mb-6 md:mb-10  "
               >
                 <span className="max-w-2xl">Scalable Learning Infrastructure for Modern Institutes</span>
               </h1>

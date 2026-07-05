@@ -47,7 +47,7 @@ const RunLearningPrograms: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-20">
           <h2
             data-ns-animate
-            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15] font-instrument-sans"
+            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15]  "
           >
             Everything You Need <br /> To Run Learning Programs
           </h2>
@@ -65,7 +65,7 @@ const RunLearningPrograms: React.FC = () => {
               {/* Left Side: Number, Glowing Box */}
               <div className="w-[120px] shrink-0 relative z-20 h-full min-h-[200px]">
                 {/* Number 01 / 02 / 03 - Centered */}
-                <span className="absolute left-0 w-[120px] text-center top-[30px] text-[48px] font-semibold text-white leading-none tracking-tight select-none z-10 font-instrument-sans">
+                <span className="absolute left-0 w-[120px] text-center top-[30px] text-[48px] font-semibold text-white leading-none tracking-tight select-none z-10  ">
                   {step.number}
                 </span>
 
@@ -136,7 +136,7 @@ const RunLearningPrograms: React.FC = () => {
                   className="relative z-10 bg-[#1E1E1E]/80 border border-white/5 rounded-[15px] p-[15px] hover:bg-[#252525]/90 hover:border-white/10 transition-all duration-300 shadow-xl w-[280px] h-[135px] flex flex-col justify-center gap-[15px]"
                   style={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}
                 >
-                  <h3 className="text-lg font-semibold text-white font-instrument-sans leading-none">
+                  <h3 className="text-lg font-semibold text-white   leading-none">
                     {step.title}
                   </h3>
                   <p className="text-zinc-400 text-[13px] leading-relaxed font-light">

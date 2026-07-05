@@ -16,6 +16,7 @@ import HowWeWork from "./sections/HowWeWorks";
 import Integrations from "./sections/integrations";
 
 import Lenis from '@studio-freight/lenis'
+import Sample2 from "./pages/sample2";
 
 const Follei = () => {
     useScrollAnimations();
@@ -56,6 +57,8 @@ const Follei = () => {
             </div>
 
             <main>
+                {/* <Sample2/> */}
+
                 <Hero />
                 <Overview />
                 <AIWorkforce />

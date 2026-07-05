@@ -116,7 +116,7 @@ const ModernLearning: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-12 lg:mb-16">
           <h2
             data-ns-animate
-            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15] font-instrument-sans"
+            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15]  "
           >
             Built For Modern Learning <br /> Management
           </h2>
@@ -164,7 +164,7 @@ const ModernLearning: React.FC = () => {
               style={{ borderColor: borderCard1, boxShadow: shadowCard1 }}
               className="bg-[#1E1E1E]/80 border-[1.5px] rounded-[15px] p-[20px] transition-[background-color] duration-300 hover:bg-[#252525]/90 min-h-[120px] flex flex-col justify-center gap-[10px]"
             >
-              <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
+              <h3 className="text-[17px] font-semibold text-white  ">
                 {cards[0].title}
               </h3>
               <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
@@ -192,7 +192,7 @@ const ModernLearning: React.FC = () => {
               style={{ borderColor: borderCard2, boxShadow: shadowCard2 }}
               className="bg-[#1E1E1E]/80 border-[1.5px] rounded-[15px] p-[20px] transition-[background-color] duration-300 hover:bg-[#252525]/90 min-h-[120px] flex flex-col justify-center gap-[10px]"
             >
-              <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
+              <h3 className="text-[17px] font-semibold text-white  ">
                 {cards[1].title}
               </h3>
               <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
@@ -220,7 +220,7 @@ const ModernLearning: React.FC = () => {
               style={{ borderColor: borderCard3, boxShadow: shadowCard3 }}
               className="bg-[#1E1E1E]/80 border-[1.5px] rounded-[15px] p-[20px] transition-[background-color] duration-300 hover:bg-[#252525]/90 min-h-[120px] flex flex-col justify-center gap-[10px]"
             >
-              <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
+              <h3 className="text-[17px] font-semibold text-white  ">
                 {cards[2].title}
               </h3>
               <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
@@ -248,7 +248,7 @@ const ModernLearning: React.FC = () => {
               style={{ borderColor: borderCard4, boxShadow: shadowCard4 }}
               className="bg-[#1E1E1E]/80 border-[1.5px] rounded-[15px] p-[20px] transition-[background-color] duration-300 hover:bg-[#252525]/90 min-h-[120px] flex flex-col justify-center gap-[10px]"
             >
-              <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
+              <h3 className="text-[17px] font-semibold text-white  ">
                 {cards[3].title}
               </h3>
               <p className="text-zinc-400 text-[13px] leading-relaxed font-light">
@@ -316,7 +316,7 @@ const MobileCardItem = ({ card, idx, scrollYProgress }: { card: any, idx: number
 
       {/* Content Card */}
       <div className="bg-[#1E1E1E]/80 border border-[#747474]/50 border-[1.5px] rounded-[15px] p-[20px] transition-all duration-300 hover:bg-[#252525]/90 hover:border-white/10 shadow-xl flex flex-col gap-[10px]">
-        <h3 className="text-[17px] font-semibold text-white font-instrument-sans">
+        <h3 className="text-[17px] font-semibold text-white  ">
           {card.title}
         </h3>
         <p className="text-zinc-400 text-[13px] leading-relaxed font-light">

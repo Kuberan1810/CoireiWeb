@@ -12,7 +12,9 @@ export const RelationshipsSection: React.FC = () => {
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 flex flex-col items-center">
 
-          <h2 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+          <h2 
+            data-ns-animate="true" data-delay="0.1"
+            className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
             Smarter Customer Success, <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               Stronger Relationships
@@ -23,7 +25,9 @@ export const RelationshipsSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full items-stretch">
 
           {/* Card 1: Customer Journey */}
-          <div className="flex flex-col items-end">
+          <div 
+            data-ns-animate="true" data-delay="0.2"
+            className="flex flex-col items-end">
             <div className="w-full max-w-[539px] lg:h-[600px] bg-[#FDFDFD] rounded-[10px] pt-[80px] pb-[112px] px-10 flex flex-col justify-between text-left relative">
               {/* Header  */}
               <img src={cj1Img} alt="Customer Journey Header" className="w-full h-auto mb-4 select-none pointer-events-none" />
@@ -81,7 +85,9 @@ export const RelationshipsSection: React.FC = () => {
           </div>
 
           {/* Card 2: Monitoring Customer Health */}
-          <div className="flex flex-col items-start">
+          <div 
+            data-ns-animate="true" data-delay="0.3"
+            className="flex flex-col items-start">
             <div className="w-full max-w-[539px] lg:h-[600px] bg-transparent rounded-[10px] pt-[80px] pb-[112px] px-10 flex flex-col justify-between text-left relative">
 
               <div className="w-full max-w-[448.74px] aspect-[448.74/446.9] bg-gradient-to-b from-[#F5F5F5] to-[#FDFDFD] border border-slate-200/80 rounded-[24px] px-3.5 py-6 shadow-sm flex flex-col justify-between text-left relative">

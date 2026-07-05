@@ -36,7 +36,7 @@ const LmsFaq: React.FC = () => {
         <div className="text-center mb-16">
           <h2
             data-ns-animate
-            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15] font-instrument-sans"
+            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15]  "
           >
             Frequently Asked <span className="text-[#F67300]">Questions</span>
           </h2>
@@ -52,15 +52,15 @@ const LmsFaq: React.FC = () => {
                 data-ns-animate
                 data-delay={idx * 0.1}
                 className={`border rounded-2xl transition-all duration-300 ${isOpen
-                    ? "border-[#F67300]/30 bg-[#1C1C1C]/80 shadow-[0_0_30px_rgba(246,115,0,0.05)]"
-                    : "border-white/10 bg-[#1C1C1C]/40 hover:border-white/20"
+                  ? "border-[#F67300]/30 bg-[#1C1C1C]/80 shadow-[0_0_30px_rgba(246,115,0,0.05)]"
+                  : "border-white/10 bg-[#1C1C1C]/40 hover:border-white/20"
                   }`}
               >
                 <button
                   onClick={() => toggleFaq(idx)}
                   className="w-full flex items-center justify-between p-6 sm:p-8 text-left cursor-pointer focus:outline-none"
                 >
-                  <span className="text-[18px] sm:text-[22px] font-light pr-8 text-white font-instrument-sans">
+                  <span className="text-[18px] sm:text-[22px] font-light pr-8 text-white  ">
                     {faq.question}
                   </span>
                   <div className="shrink-0 text-white/70 p-1">

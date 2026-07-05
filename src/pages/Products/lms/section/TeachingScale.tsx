@@ -39,7 +39,7 @@ const TeachingScale: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
           <h2
             data-ns-animate
-            className="text-[36px] md:text-[48px] lg:text-[60px] font-medium leading-[1.1] text-white tracking-tight font-instrument-sans"
+            className="text-[36px] md:text-[48px] lg:text-[60px] font-medium leading-[1.1] text-white tracking-tight  "
           >
             Teaching should scale.<br />
             Not stay manual.
@@ -69,7 +69,7 @@ const TeachingScale: React.FC = () => {
 
               {/* Text contents: Title and Description */}
               <div className="flex flex-col gap-3 px-1 transition-all duration-300 group-hover:translate-y-[-4px]">
-                <h3 className="text-lg lg:text-[22px] font-medium text-white leading-tight font-instrument-sans">
+                <h3 className="text-lg lg:text-[22px] font-medium text-white leading-tight  ">
                   {card.title}
                 </h3>
                 <p className="text-[14px] lg:text-[15px] text-zinc-400 font-light leading-relaxed">

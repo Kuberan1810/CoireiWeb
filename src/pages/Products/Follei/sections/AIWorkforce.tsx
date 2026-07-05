@@ -322,150 +322,53 @@ export const AIWorkforce: React.FC = () => {
 
       const mm = gsap.matchMedia();
 
-      // Mobile Animations
-      mm.add("(max-width: 1023px)", () => {
-        const items = gsap.utils.toArray<HTMLElement>(".solution-item");
-        items.forEach((item) => {
-          gsap.fromTo(item, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: item, start: "top 85%" } });
-        });
-      });
-
-      // Desktop Pinned Animation (Step by step)
-      mm.add("(min-width: 1024px)", () => {
+      // Smooth scroll animation for all devices
+      mm.add("all", () => {
         const cards = gsap.utils.toArray<HTMLElement>(".solution-item");
-        if (cards.length === 0) return;
+        
+        cards.forEach((card, index) => {
+          // Animate inner contents ultra smoothly one by one (staggered) inside the card when it enters
+          const textContents = card.querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
+          const imgWrapper = card.querySelector(".solution-image-wrapper");
 
-        const totalCards = cards.length;
-
-        // Faster, distinct animations for text vs image on the first card
-        const firstCardText = cards[0].querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
-        const firstCardImg = cards[0].querySelector(".solution-image-wrapper");
-
-        gsap.fromTo(
-          firstCardText,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: cards[0],
-              start: "top 80%",
-              end: "top 50%",
-              scrub: true,
-            },
-          }
-        );
-
-        if (firstCardImg) {
           gsap.fromTo(
-            firstCardImg,
-            { opacity: 0, scale: 0.8, y: 40 },
+            textContents,
+            { opacity: 0, y: 40 },
             {
               opacity: 1,
-              scale: 1,
               y: 0,
+              stagger: 0.2, // increased stagger for smoother flow
+              duration: 1.5, // much smoother and slower
               ease: "power3.out",
+              delay: 0.1,
               scrollTrigger: {
-                trigger: cards[0],
+                trigger: card,
                 start: "top 80%",
-                end: "top 50%",
-                scrub: true,
-              },
+                toggleActions: "play none none reverse"
+              }
             }
           );
-        }
-
-        // Reset initial card locations for subsequent cards
-        cards.forEach((card, index) => {
-          if (index > 0) {
-            gsap.set(card, { y: 650, opacity: 1 });
-
-            // Initial state for inner contents of subsequent cards
-            const innerText = card.querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
-            const innerImg = card.querySelector(".solution-image-wrapper");
-            gsap.set(innerText, { opacity: 0, y: 30 });
-            if (innerImg) gsap.set(innerImg, { opacity: 0, scale: 0.8, y: 40 });
-          } else {
-            gsap.set(card, { y: 0, opacity: 1 });
-          }
-          gsap.set(card, {
-            zIndex: totalCards - index
-          });
-        });
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: cardsWrapperRef.current,
-            start: "top 15%",
-            end: "+=4500", // increased scroll distance to make it feel less cramped
-            pin: true,
-            pinSpacing: true,
-            scrub: true, // using instant scrub prevents the delay/blink on back navigation
-          }
-        });
-
-        for (let i = 1; i < cards.length; i++) {
-          tl.set(cards[i], { zIndex: totalCards + i }, `step-${i}`);
-
-          // Animate previous card scaling down 
-          tl.to(cards[i - 1], {
-            scale: 0.95,
-            y: -20,
-            opacity: 1,
-            duration: 8,
-            ease: "power2.inOut"
-          }, `step-${i}`);
-
-          // Simultaneously animate the new card sliding up
-          tl.to(cards[i], {
-            y: 0,
-            opacity: 1,
-            duration: 8,
-            ease: "power2.inOut"
-          }, `step-${i}`);
-
-          // Animate the inner contents smoothly WITHIN the scrubbed timeline
-          const textContents = cards[i].querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
-          const imgWrapper = cards[i].querySelector(".solution-image-wrapper");
-
-          tl.to(textContents, {
-            opacity: 1,
-            y: 0,
-            duration: 6,
-            stagger: 1,
-            ease: "power2.out"
-          }, `step-${i}+=4`);
 
           if (imgWrapper) {
-            tl.to(imgWrapper, {
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              duration: 4,
-              ease: "power3.out"
-            }, `step-${i}+=4`);
+            gsap.fromTo(
+              imgWrapper,
+              { opacity: 0, scale: 0.95, y: 30 },
+              {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 1.8,
+                ease: "power3.out",
+                delay: 0.3,
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 80%",
+                  toggleActions: "play none none reverse"
+                }
+              }
+            );
           }
-
-          // Pause to hold the current card in view
-          tl.to({}, { duration: 6 });
-        }
-
-        // Prevent the scrub animation from playing on mount if the user navigated back
-        // We wait for the browser to restore the scroll position, then force the scrub to instantly finish
-        const snapScrub = () => {
-          if (tl.scrollTrigger) {
-            const tween = tl.scrollTrigger.getTween();
-            if (tween) tween.progress(1);
-          }
-        };
-
-        // Check across a few frames to catch the browser's scroll restoration
-        requestAnimationFrame(snapScrub);
-        setTimeout(snapScrub, 50);
-        setTimeout(snapScrub, 150);
-        setTimeout(snapScrub, 300);
-
+        });
       });
     }, sectionRef);
 
@@ -502,11 +405,12 @@ export const AIWorkforce: React.FC = () => {
         </div>
 
         {/* Stacked Cards Wrapper */}
-        <div ref={cardsWrapperRef} className="solution-list relative w-full h-auto lg:h-[481px] flex flex-col gap-12 lg:block pb-10 lg:pb-0">
-          {agents.map((agent) => (
+        <div ref={cardsWrapperRef} className="solution-list relative w-full flex flex-col pb-10 lg:pb-32">
+          {agents.map((agent, index) => (
             <div
               key={agent.id}
-              className="solution-item relative lg:absolute left-0 lg:top-[20px] mt-10 lg:mt-0 group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1]"
+              className="solution-item sticky top-[100px] lg:top-[120px] group w-full min-h-[481px] rounded-[20px] p-6 sm:p-8 lg:p-[50px] flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between bg-[#F1F1F1]"
+              style={{ zIndex: index, marginBottom: index === agents.length - 1 ? 0 : '100px' }}
             >
               <div className="solution-content w-full lg:w-1/2 flex flex-col items-start text-left">
                 <div className="solution-icon">

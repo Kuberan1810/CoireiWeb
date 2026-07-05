@@ -43,9 +43,9 @@ function Navbar() {
     const [productsOpen, setProductsOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
 
-    const location = useLocation();
+    // const location = useLocation();
 
-    const isLight = location.pathname.startsWith("/products/follei");
+    const isLight = true;
 
 
 

@@ -9,7 +9,7 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delay }) => {
   return (
-    <div 
+    <div
       data-ns-animate
       data-delay={delay}
       className="flex flex-col items-center text-center p-8 rounded-3xl border border-white/5 bg-[#1C1C1C]/60 hover:bg-[#252525]/80 hover:border-[#F67300]/30 transition-all duration-500 group shadow-lg hover:shadow-[0_0_30px_rgba(246,115,0,0.08)]"
@@ -19,7 +19,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
           {icon}
         </div>
       </div>
-      <h3 className="text-xl sm:text-[22px] font-medium text-white tracking-tight leading-tight mb-4 font-instrument-sans transition-colors duration-500">
+      <h3 className="text-xl sm:text-[22px] font-medium text-white tracking-tight leading-tight mb-4   transition-colors duration-500">
         {title}
       </h3>
       <p className="text-zinc-400 text-[15px] sm:text-base leading-relaxed font-light">
@@ -94,12 +94,12 @@ const LmsFeatures: React.FC = () => {
   return (
     <section className="relative py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 font-inter-sans overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* Section Heading */}
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
-          <h2 
+          <h2
             data-ns-animate
-            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15] font-instrument-sans"
+            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15]  "
           >
             Powerful Features for <br className="hidden sm:block" /> Modern Learning Management.
           </h2>
@@ -108,7 +108,7 @@ const LmsFeatures: React.FC = () => {
         {/* Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {features.map((feature, idx) => (
-            <FeatureCard 
+            <FeatureCard
               key={idx}
               icon={feature.icon}
               title={feature.title}

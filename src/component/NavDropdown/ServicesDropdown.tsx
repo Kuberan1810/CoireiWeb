@@ -83,10 +83,7 @@ export default function ServicesDropdown({ isLight = false }: { isLight?: boolea
                         : undefined
                 }}
             >
-                {/* Premium Gradient Top Border for Light Theme */}
-                {isLight && (
-                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] rounded-t-xl opacity-90" />
-                )}
+
 
                 <ul className="py-3 relative z-10">
                     {[

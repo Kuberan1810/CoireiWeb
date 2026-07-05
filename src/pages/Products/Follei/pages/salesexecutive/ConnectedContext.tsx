@@ -62,7 +62,7 @@ const OrbitItem: React.FC<OrbitItemProps> = ({
                         <span className="flex items-center justify-center w-6 h-6 rounded-md bg-[#004370] text-white">
                             {icon}
                         </span>
-                        <span className="text-[#04032E] text-base font-medium tracking-tight font-instrument-sans">{label}</span>
+                        <span className="text-[#04032E] text-base font-medium tracking-tight ">{label}</span>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@ export const ConnectedContext: React.FC = () => {
                             borderRadius: '10px',
                             overflow: 'visible'
                         }}
-                        className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-white border border-[#004370]/30 text-[#004370] font-medium text-[16px] font-instrument-sans"
+                        className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-white border border-[#004370]/30 text-[#004370] font-medium text-[16px] "
                     >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
                         <span className="tracking-wide">
@@ -92,18 +92,24 @@ export const ConnectedContext: React.FC = () => {
                 </div>
 
                 {/* Heading & Subheading */}
-                <h2 className="text-[#04032E] text-3xl sm:text-5xl font-bold tracking-tight leading-[1.15] mb-4 text-center font-instrument-sans max-w-4xl">
+                <h2
+                    data-ns-animate="true" data-delay="0.1"
+                    className="text-[#04032E] text-3xl sm:text-5xl font-medium tracking-tight leading-[1.15] mb-4 text-center  max-w-4xl">
                     Every Recommendation Starts With <br />
                     <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
                         Complete Context
                     </span>
                 </h2>
-                <p className="text-[#5A5A5C] text-base sm:text-lg max-w-4xl mx-auto font-light leading-relaxed mb-16 text-center font-instrument-sans">
+                <p
+                    data-ns-animate="true" data-delay="0.1"
+                    className="text-[#5A5A5C] text-base sm:text-lg max-w-4xl mx-auto font-light leading-relaxed mb-16 text-center ">
                     The Sales Executive Worker combines customer context, product knowledge, pricing, commercial policies, and operational intelligence to deliver recommendations that are accurate, relevant, and tailored to every opportunity.
                 </p>
 
                 {/* Orbit Ring Layout Container */}
-                <div className="w-full flex items-center justify-center relative select-none mt-8 font-instrument-sans" style={{ height: "650px" }}>
+                <div
+                    data-ns-animate="true" data-delay="0.1"
+                    className="w-full flex items-center justify-center relative select-none mt-8 " style={{ height: "650px" }}>
                     <style>{`
                         @keyframes orbit-clockwise {
                             from {

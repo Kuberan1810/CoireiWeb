@@ -95,7 +95,7 @@ const FAQSection: React.FC = () => {
                         </div>
 
                         {/* Title */}
-                        <h2 className="text-white text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-tight max-w-sm font-instrument-sans">
+                        <h2 className="text-white text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-tight max-w-sm  ">
                             Frequently <br />
                             Asked <br />
                             Questions
