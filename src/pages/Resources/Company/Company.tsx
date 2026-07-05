@@ -3,14 +3,15 @@ import Footer from "../../../component/Footer/Footer";
 import Navbar from "../../../component/Navbar";
 import CTABanner from "../../ContactUs/section/CTABanner";
 import ContentSection from "./section/ContentSection";
+import JoinUs from "./section/joinUs";
 import HeroSection from "./section/HeroSection";
 import useScrollAnimations from "../../../hooks/useScrollAnimations";
 
 const Company = () => {
     useScrollAnimations();
     return (
-        <div className="overflow-hidden">
-            <SEO 
+        <div className="overflow-x-hidden">
+            <SEO
                 title="About Coirei Technologies | AI & Software Innovation Company"
                 description="Learn about Coirei Technologies, a technology company focused on AI development, custom software solutions and digital innovation for modern businesses."
                 keywords="technology company, AI software company, custom software development company, web development company"
@@ -25,7 +26,7 @@ const Company = () => {
             </div>
             <HeroSection />
             <ContentSection />
-            <CTABanner />
+            <JoinUs />
             <Footer />
         </div>
     );
