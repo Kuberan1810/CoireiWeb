@@ -92,20 +92,48 @@ export const RelationshipsSection: React.FC = () => {
 
               <div className="w-full max-w-[448.74px] aspect-[448.74/446.9] bg-gradient-to-b from-[#F5F5F5] to-[#FDFDFD] border border-slate-200/80 rounded-[24px] px-3.5 py-6 shadow-sm flex flex-col justify-between text-left relative">
                 {/* Header Capsule -*/}
-                <div className="w-full bg-[#E8E8E8] rounded-[12px] py-3.5 px-6 flex items-center relative text-left overflow-hidden mb-3">
+                <div className="w-full bg-[#E8E8E8] rounded-[12px] h-[48px] flex items-center relative overflow-hidden mb-3">
                   <motion.div
-                    animate={{ width: ["0%", "100%", "0%"] }}
-                    transition={{ duration: 4, ease: "easeInOut", repeat: Infinity }}
-                    className="absolute left-0 top-0 bottom-0 bg-[#FF2A2A]/20 rounded-[12px]"
+                    animate={{
+                      width: ["0%", "100%", "100%", "100%", "0%", "0%"],
+                      backgroundColor: [
+                        "rgba(255, 42, 42, 0.2)",
+                        "rgba(255, 42, 42, 0.2)",
+                        "rgba(209, 250, 223, 1)",
+                        "rgba(209, 250, 223, 1)",
+                        "rgba(255, 42, 42, 0)",
+                        "rgba(255, 42, 42, 0.2)"
+                      ]
+                    }}
+                    transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, times: [0, 0.75, 0.78, 0.9375, 0.96, 1] }}
+                    className="absolute left-0 top-0 bottom-0 rounded-[12px] z-0"
                   />
-                  <span className="text-[#04032E] font-medium text-sm pl-2 relative z-10">Monitoring Customer Health...</span>
+                  <div className="absolute inset-0 flex items-center w-full pointer-events-none z-10">
+                    <motion.span
+                      animate={{ opacity: [1, 1, 0, 0, 0, 1] }}
+                      transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, times: [0, 0.75, 0.78, 0.9375, 0.96, 1] }}
+                      className="text-[#04032E] font-medium text-sm absolute left-8"
+                    >
+                      Monitoring Customer Health...
+                    </motion.span>
+                    <motion.span
+                      animate={{ opacity: [0, 0, 1, 1, 0, 0] }}
+                      transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, times: [0, 0.75, 0.78, 0.9375, 0.96, 1] }}
+                      className="text-[#039855] font-medium text-sm absolute w-full left-0 text-center"
+                    >
+                      Completed
+                    </motion.span>
+                  </div>
                 </div>
 
                 <div className="w-full flex-1 bg-gradient-to-b from-[#EFEFEF] to-[#FDFDFD] border border-[#E6E6E6]/60 rounded-[20px] p-6 shadow-sm flex flex-col justify-between text-left relative overflow-hidden">
 
                   <motion.div
-                    animate={{ top: ["0%", "92%", "0%"] }}
-                    transition={{ duration: 4, ease: "linear", repeat: Infinity }}
+                    animate={{
+                      top: ["0%", "92%", "0%", "92%", "0%", "0%", "0%", "0%"],
+                      opacity: [1, 1, 1, 1, 1, 0, 0, 1]
+                    }}
+                    transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, times: [0, 0.1875, 0.375, 0.5625, 0.75, 0.78, 0.9375, 1] }}
                     className="absolute left-4 right-4 h-[25.55px] bg-[#D82B2B]/15 rounded-[50%] blur-[1px] pointer-events-none z-10"
                   />
 
@@ -120,8 +148,8 @@ export const RelationshipsSection: React.FC = () => {
                   <div className="space-y-3 mb-1 w-full relative py-1 z-0">
                     <div className="flex justify-between gap-4 w-full relative z-0">
                       <motion.div
-                        animate={{ backgroundColor: ["#FF2A2A", "#EFEFEF", "#EFEFEF", "#FF2A2A"] }}
-                        transition={{ duration: 4, ease: "linear", times: [0, 0.1, 0.9, 1], repeat: Infinity }}
+                        animate={{ backgroundColor: ["#EFEFEF", "#FF2A2A", "#EFEFEF", "#EFEFEF", "#FF2A2A", "#EFEFEF", "#EFEFEF", "#FF2A2A", "#FF2A2A", "#EFEFEF", "#EFEFEF"] }}
+                        transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, times: [0, 0.05, 0.1, 0.4, 0.45, 0.5, 0.75, 0.78, 0.9375, 0.96, 1] }}
                         className="w-[35%] h-[8px] rounded-full"
                       />
                       <div className="w-[60%] h-[8px] bg-[#EFEFEF] rounded-full" />
@@ -131,8 +159,8 @@ export const RelationshipsSection: React.FC = () => {
                     <div className="flex justify-between gap-4 w-full relative z-0">
                       <div className="w-[65%] h-[8px] bg-[#EFEFEF] rounded-full" />
                       <motion.div
-                        animate={{ backgroundColor: ["#EFEFEF", "#FF2A2A", "#EFEFEF", "#FF2A2A", "#EFEFEF"] }}
-                        transition={{ duration: 4, ease: "linear", times: [0, 0.25, 0.5, 0.75, 1], repeat: Infinity }}
+                        animate={{ backgroundColor: ["#EFEFEF", "#FF2A2A", "#EFEFEF", "#EFEFEF", "#FF2A2A", "#EFEFEF", "#EFEFEF", "#FF2A2A", "#FF2A2A", "#EFEFEF", "#EFEFEF"] }}
+                        transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, times: [0, 0.15, 0.2, 0.5, 0.55, 0.6, 0.75, 0.78, 0.9375, 0.96, 1] }}
                         className="w-[30%] h-[8px] rounded-full"
                       />
                     </div>
@@ -141,8 +169,8 @@ export const RelationshipsSection: React.FC = () => {
                     <div className="w-[85%] h-[8px] bg-[#EFEFEF] rounded-full relative z-0" />
                     <div className="flex justify-between gap-4 w-full relative z-0">
                       <motion.div
-                        animate={{ backgroundColor: ["#EFEFEF", "#EFEFEF", "#FF2A2A", "#EFEFEF", "#EFEFEF"] }}
-                        transition={{ duration: 4, ease: "linear", times: [0, 0.4, 0.5, 0.6, 1], repeat: Infinity }}
+                        animate={{ backgroundColor: ["#EFEFEF", "#FF2A2A", "#EFEFEF", "#EFEFEF", "#FF2A2A", "#EFEFEF", "#EFEFEF", "#FF2A2A", "#FF2A2A", "#EFEFEF", "#EFEFEF"] }}
+                        transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, times: [0, 0.25, 0.3, 0.6, 0.65, 0.7, 0.75, 0.78, 0.9375, 0.96, 1] }}
                         className="w-[25%] h-[8px] rounded-full"
                       />
                       <div className="w-[70%] h-[8px] bg-[#EFEFEF] rounded-full" />
