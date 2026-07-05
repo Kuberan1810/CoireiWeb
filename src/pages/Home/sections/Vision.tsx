@@ -1,6 +1,7 @@
 import React from "react";
 import zoomImg from "../../../assets/images/homepage/zoom.svg";
 import handshakeImg from "../../../assets/images/homepage/handshake.svg";
+import TypewriterHeading from "../../../component/TypewriterHeading";
 
 const Vision = () => {
     return (
@@ -10,9 +11,9 @@ const Vision = () => {
                 {/* Heading */}
                 <h2 
                     data-ns-animate 
-                    className="font-semibold text-[40px] md:text-[68px] leading-[1.2] md:leading-[28px] text-[#000000] uppercase mb-20 text-center"
+                    className="font-semibold text-[40px] md:text-[68px] leading-[1.2] md:leading-[28px] text-[#000000] uppercase mb-20 text-center min-h-[82px]"
                 >
-                    Vision & Mission
+                    <TypewriterHeading text="Vision & Mission" />
                 </h2>
 
                 {/* Grid Container */}

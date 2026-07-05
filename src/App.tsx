@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import ParticleBackground from "./component/ParticleBackground";
 import { OrgSchema } from "./component/StructuredData";
 
@@ -49,7 +49,57 @@ import CustomerIntelligence from "./pages/Products/Follei/pages/customerintellig
 // import Analytics from "./pages/Features/Analytics";
 // import Integrations from "./pages/Features/Integrations";
 
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
+
+declare global {
+  interface Window {
+    lenis: any;
+  }
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Native fallback
+    window.scrollTo(0, 0);
+    // Tell Lenis to reset the scroll position immediately
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    }
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
+  useEffect(() => {
+    // Initialize Lenis smooth scroll globally
+    const lenis = new Lenis({
+      duration: 1.8, // Ultra smooth duration (increased from 1.2)
+      easing: (t) => 1 - Math.pow(1 - t, 4), // Quartic ease-out for a buttery gliding feel
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 0.8, // Slightly softer wheel step to enhance smoothness
+      touchMultiplier: 1.5,
+    });
+
+    window.lenis = lenis;
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+      window.lenis = undefined;
+    };
+  }, []);
   return (
     <>
       {/* Global Organization + WebSite JSON-LD schema */}
@@ -57,6 +107,7 @@ function App() {
       {/* Global white particle background — visible across all pages */}
       <ParticleBackground />
 
+      <ScrollToTop />
       <Routes>
         {/* MAIN PAGES */}
         <Route path="/" element={<Home />} />

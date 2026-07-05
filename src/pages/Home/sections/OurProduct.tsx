@@ -1,7 +1,9 @@
-import follei from "../../../assets/videos/follei.mp4";
+import React from "react";
+import follei from "../../../assets/videos/Follei.mp4";
 import lmsImg from "../../../assets/images/products/LMSdashboard.svg";
 import veleiImg from "../../../assets/images/products/Analytics Dashboard.svg";
 import Tasie from "./Animation/Tasie";
+import TypewriterHeading from "../../../component/TypewriterHeading";
 
 const products = [
     {
@@ -44,6 +46,100 @@ const products = [
     }
 ];
 
+const ProductCard = ({ product, index }: { product: any, index: number }) => {
+    const [isTypingDone, setIsTypingDone] = React.useState(false);
+
+    return (
+        <div
+            className="group grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center "
+        >
+            {/* Text Content */}
+            <div
+                data-ns-animate="true"
+                data-delay={`${0.1 + index * 0.05}`}
+                data-offset="50"
+                className="lg:col-span-5 flex flex-col items-start max-w-[530px]"
+            >
+                {/* Product Title */}
+                <h3 className="text-3xl md:text-[30px] font-bold text-[#14182C] tracking-tight mb-2 min-h-[45px]">
+                    <TypewriterHeading text={product.name} delay={40} />
+                    {product.upcomming && (
+                        <span className="text-lg text-[#5B6280] font-medium">
+                            <TypewriterHeading text={` ${product.upcomming}`} delay={30} />
+                        </span>
+                    )}
+                </h3>
+
+                {/* Category Subtitle */}
+                <span className="text-[12px] font-medium text-[#878FAA] tracking-wider uppercase mb-4 min-h-[18px] block">
+                    <TypewriterHeading text={product.category} delay={20} />
+                </span>
+
+                {/* Description */}
+                <p className="text-[#5B6280] text-base md:text-[18px] leading-relaxed mb-5 font-light min-h-[81px]">
+                    <TypewriterHeading 
+                        text={product.description} 
+                        delay={10} 
+                        onComplete={() => setIsTypingDone(true)}
+                    />
+                </p>
+
+                {/* Pills */}
+                {product.pills && product.pills.length > 0 && (
+                    <div className={`flex flex-wrap gap-2 transition-all duration-700 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                        {product.pills.map((pill: string) => (
+                            <span
+                                key={pill}
+                                className="px-4 py-2.5 border border-[#DEE3EE] rounded-full text-xs md:text-[14px] text-[#5B6280] hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
+                            >
+                                {pill}
+                            </span>
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            {/* Image Container */}
+            <div
+                data-ns-animate="true"
+                data-delay={`${0.15 + index * 0.05}`}
+                data-offset="60"
+                className="lg:col-span-7 w-full"
+            >
+                <div className="block relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-50/50 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
+                    {product.mediaType === "video" && (
+                        <video
+                            src={product.src}
+                            className="w-full h-full object-cover"
+                            playsInline
+                            muted
+                            autoPlay
+                            loop
+                            preload="metadata"
+                            controls={false}
+                            disablePictureInPicture
+                            disableRemotePlayback
+                        />
+                    )}
+                    {product.mediaType === "image" && (
+                        <img
+                            src={product.src}
+                            alt={`${product.name} interface`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    )}
+                    {product.mediaType === "component" && (
+                        <div className="w-full h-full flex items-center justify-center bg-linear-to-r from-green-50 to-indigo-100">
+                            {product.component}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const OurProduct = () => {
     return (
         <section className="relative GlobalPadding">
@@ -55,9 +151,9 @@ const OurProduct = () => {
                         data-ns-animate="true"
                         data-delay="0.1"
                         data-offset="40"
-                        className="text-5xl md:text-[52px] font-medium text-black "
+                        className="text-5xl md:text-[52px] font-medium text-black min-h-[78px]"
                     >
-                        Our Products
+                        <TypewriterHeading text="Our Products" />
                     </h2>
                 </div>
 
@@ -65,85 +161,7 @@ const OurProduct = () => {
                 <div className="flex flex-col gap-12 md:gap-20">
                     {products.map((product, index) => {
                         return (
-                            <div
-                                key={product.id}
-                                className="group grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center "
-                            >
-                                {/* Text Content */}
-                                <div
-                                    data-ns-animate="true"
-                                    data-delay={`${0.1 + index * 0.05}`}
-                                    data-offset="50"
-                                    className="lg:col-span-5 flex flex-col items-start max-w-[530px]"
-                                >
-                                    {/* Product Title */}
-                                    <h3 className="text-3xl md:text-[30px] font-bold text-[#14182C] tracking-tight mb-2">
-                                        {product.name} <span className="text-lg text-[#5B6280] font-medium"> {product.upcomming}</span>
-                                    </h3>
-
-                                    {/* Category Subtitle */}
-                                    <span className="text-[12px] font-medium text-[#878FAA] tracking-wider uppercase mb-4">
-                                        {product.category}
-                                    </span>
-
-                                    {/* Description */}
-                                    <p className="text-[#5B6280] text-base md:text-[18px] leading-relaxed  mb-5 font-light">
-                                        {product.description}
-                                    </p>
-
-                                    {/* Pills */}
-                                    {product.pills && product.pills.length > 0 && (
-                                        <div className="flex flex-wrap gap-2">
-                                            {product.pills.map((pill) => (
-                                                <span
-                                                    key={pill}
-                                                    className="px-4 py-2.5 border border-[#DEE3EE] rounded-full text-xs md:text-[14px] text-[#5B6280] hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
-                                                >
-                                                    {pill}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Image Container */}
-                                <div
-                                    data-ns-animate="true"
-                                    data-delay={`${0.15 + index * 0.05}`}
-                                    data-offset="60"
-                                    className="lg:col-span-7 w-full"
-                                >
-                                    <div className="block relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-50/50 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
-                                        {product.mediaType === "video" && (
-                                            <video
-                                                src={product.src}
-                                                className="w-full h-full object-cover"
-                                                playsInline
-                                                muted
-                                                autoPlay
-                                                loop
-                                                preload="metadata"
-                                                controls={false}
-                                                disablePictureInPicture
-                                                disableRemotePlayback
-                                            />
-                                        )}
-                                        {product.mediaType === "image" && (
-                                            <img
-                                                src={product.src}
-                                                alt={`${product.name} interface`}
-                                                className="w-full h-full object-cover"
-                                                loading="lazy"
-                                            />
-                                        )}
-                                        {product.mediaType === "component" && (
-                                            <div className="w-full h-full flex items-center justify-center bg-linear-to-r from-green-50 to-indigo-100">
-                                                {product.component}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
+                            <ProductCard key={product.id} product={product} index={index} />
                         );
                     })}
                 </div>

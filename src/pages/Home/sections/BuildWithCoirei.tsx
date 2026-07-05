@@ -1,7 +1,8 @@
 import  { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import TypewriterHeading from '../../../component/TypewriterHeading';
 
-const TypewriterText = ({ text }: { text: string }) => {
+const TypewriterText = ({ text, onComplete }: { text: string, onComplete?: () => void }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const containerRef = useRef<HTMLParagraphElement>(null);
@@ -30,9 +31,12 @@ const TypewriterText = ({ text }: { text: string }) => {
       }, 30);
       return () => clearTimeout(timeout);
     } else if (displayedText.length === text.length) {
-      setIsTyping(false);
+      if (isTyping) {
+        setIsTyping(false);
+        if (onComplete) onComplete();
+      }
     }
-  }, [displayedText, isTyping, text]);
+  }, [displayedText, isTyping, text, onComplete]);
 
   return (
     <p 
@@ -54,6 +58,7 @@ const TypewriterText = ({ text }: { text: string }) => {
 };
 
 const BuildWithCoirei = () => {
+  const [isTypingDone, setIsTypingDone] = useState(false);
   const services = [
     { name: "AI Solutions & Integrations", path: "/services/ai-chatbot-development" },
     { name: "Enterprise Applications & SaaS", path: "/services/custom-business-application-development" },
@@ -65,9 +70,9 @@ const BuildWithCoirei = () => {
 
   return (
     <section className="GlobalPadding">
-      <h2 data-ns-animate className="text-5xl md:text-[52px] font-medium text-black mb-15">
-        Build With Coirei
-      </h2>
+      <h2 data-ns-animate className="text-5xl md:text-[52px] font-semibold text-black mb-15 min-h-[82px]">
+                <TypewriterHeading text="Build With Coirei" />
+            </h2>
       
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-center">
         {/* Left Card */}
@@ -94,9 +99,12 @@ const BuildWithCoirei = () => {
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
             
-            <TypewriterText text="A multidisciplinary team designs and builds intelligent technology solutions tailored to your business — beyond our own products." />
+            <TypewriterText 
+              text="A multidisciplinary team designs and builds intelligent technology solutions tailored to your business — beyond our own products." 
+              onComplete={() => setIsTypingDone(true)}
+            />
             
-            <div className="flex flex-wrap gap-3">
+            <div className={`flex flex-wrap gap-3 transition-all duration-700 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               {['AI Engineers', 'Product Architects', 'Cloud & DevOps', 'UI/UX Designers'].map((badge) => (
                 <span key={badge} className="font-mono text-xs text-[#5B6280] px-3 py-1.5 border border-[#DEE3EE] rounded">
                   {badge}

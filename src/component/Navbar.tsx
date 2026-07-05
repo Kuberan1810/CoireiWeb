@@ -43,14 +43,12 @@ function Navbar() {
     const [productsOpen, setProductsOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
 
-    // const location = useLocation();
-
+    const location = useLocation();
+    const isFollei = location.pathname.startsWith("/products/follei");
     const isLight = true;
 
-
-
     return (
-        <header data-ns-animate data-offset="40" data-direction="down" data-duration="1" className={`mx-5 my-6 rounded-lg backdrop-blur-3xl transition-colors duration-300 ${isLight ? 'text-[#04032E]' : 'text-[rgb(212,212,212)]'}`}>
+        <header data-ns-animate data-offset="40" data-direction="down" data-duration="1" className={`mx-5 my-6 rounded-2xl backdrop-blur-3xl transition-colors duration-300 ${isLight ? 'text-[#04032E]' : 'text-[rgb(212,212,212)]'}`}>
             <nav className={`flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-300 ${isLight ? 'bg-white/90 border border-black/[0.04] shadow-[0_8px_30px_rgba(0,0,0,0.03),_0_1px_2px_rgba(0,0,0,0.02)]' : 'glass'}`}>
 
                 {/* LEFT */}
@@ -71,7 +69,7 @@ function Navbar() {
                         <ResourcesDropdown isLight={isLight} />
 
                         <li>
-                            <Link to="/careers" className={`px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-300 ${isLight ? 'text-[#595959] hover:text-[#04032E] hover:bg-black/[0.03]' : 'hover:bg-[#7B7B7B20] text-inherit'}`}>
+                            <Link to="/careers" className={`px-3 py-2 rounded-lg  font-medium transition-all duration-300 ${isLight ? 'text-[#04032E]/80 hover:text-[#04032E] hover:bg-black/[0.03]' : 'hover:bg-[#7B7B7B20] text-inherit'}`}>
                                 Careers
                             </Link>
                         </li>
@@ -90,7 +88,13 @@ function Navbar() {
                 <div data-ns-animate data-delay="0.25" className="hidden md:block">
                     <Link
                         to="/contact"
-                        className={`rounded-lg py-3 px-4.5 text-[14px] font-medium transition-all duration-300 ${isLight ? 'bg-linear-to-r from-[#1E62A6] to-[#0F4275] text-white hover:from-[#17508B] hover:to-[#0B345D] shadow-[0_4px_12px_rgba(30,98,166,0.15)]' : 'bg-white text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-white'}`}
+                        className={`rounded-lg py-3 px-4.5 text-[14px] font-medium transition-all duration-300 text-white shadow-md ${
+                            !isLight 
+                                ? 'bg-white text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-white' 
+                                : isFollei
+                                    ? 'bg-gradient-to-r from-[#1E62A6] to-[#0F4275] hover:from-[#17508B] hover:to-[#0B345D]' 
+                                    : 'bg-gradient-to-r from-[#F48120] to-[#FA9A4A] hover:from-[#E07104] hover:to-[#DE8235]'
+                        }`}
                     >
                         Contact sales
                     </Link>

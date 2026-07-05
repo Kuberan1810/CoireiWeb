@@ -12,10 +12,11 @@ import LmsAnalytics from "./section/LmsAnalytics";
 import RunLearningPrograms from "./section/RunLearningPrograms";
 import ModernLearning from "./section/ModernLearning";
 import LmsFaq from "./section/LmsFaq";
+import Lenis from "@studio-freight/lenis";
+import { useEffect } from "react";
 
 function Lms() {
     useScrollAnimations();
-
     return (
         <div className="relative">
             <SEO

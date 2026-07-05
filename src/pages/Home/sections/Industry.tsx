@@ -1,4 +1,6 @@
 
+import TypewriterHeading from "../../../component/TypewriterHeading";
+
 const row1 = [
   "Manufacturing",
   "Healthcare",
@@ -62,16 +64,21 @@ const Industry = () => {
           data-ns-animate="true"
           data-delay="0.1"
           data-offset="50"
-          className="text-4xl md:text-[60px] font-medium tracking-tight text-white leading-[1.2]"
+          className="text-4xl md:text-[60px] font-semibold tracking-tight text-white leading-[1.2] min-h-[144px]"
         >
-          Intelligent systems adapted to your industry's own workflow.
+          <TypewriterHeading text="Intelligent systems adapted to your industry's own workflow." />
         </h2>
       </div>
 
       {/* Marquee Rows */}
-      <div className="w-full flex flex-col gap-4 md:gap-5 relative z-10 overflow-hidden">
+      <div 
+      data-ns-animate="true"
+          data-delay="0.1"
+          data-offset="50"
+      className="w-full flex flex-col gap-4 md:gap-5 relative z-10 overflow-hidden">
         <div className="w-full overflow-hidden relative flex py-1">
-          <div className="marquee-container-right">
+          <div
+           className="marquee-container-right">
             {[...row1, ...row1, ...row1, ...row1].map((pill, idx) => (
               <div
                 key={`row1-${idx}`}
@@ -85,7 +92,11 @@ const Industry = () => {
           </div>
         </div>
 
-        <div className="w-full overflow-hidden relative flex py-1">
+        <div
+        data-ns-animate="true"
+          data-delay="0.1"
+          data-offset="50"
+        className="w-full overflow-hidden relative flex py-1">
           <div className="marquee-container-left">
             {[...row2, ...row2, ...row2, ...row2].map((pill, idx) => (
               <div

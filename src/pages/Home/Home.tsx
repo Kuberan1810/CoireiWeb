@@ -12,10 +12,13 @@ import Ceo from "./sections/Ceo";
 import Cta from "./sections/Cta";
 import Hero from "./sections/Hero";
 import IndustrialAITraining from "./sections/IndustrialAITraining";
+import { useEffect, useState } from "react";
+import Lenis from "@studio-freight/lenis";
 
 
 function Home() {
     useScrollAnimations();
+    const [isHeroTypingDone, setIsHeroTypingDone] = useState(false);
 
     return (
         <div className="overflow-x-clip bg-white  min-h-screen">
@@ -27,11 +30,11 @@ function Home() {
             <FaqSchema />
 
 
-            <div className="fixed top-0 left-0 w-full z-50">
+            <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-out transform ${isHeroTypingDone ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
                 <Navbar />
             </div>
 
-            <Hero />
+            <Hero onTypingComplete={() => setIsHeroTypingDone(true)} />
             <About />
             <OurProducts />
             <BuildWithCoirei />

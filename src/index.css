@@ -86,7 +86,29 @@ html {
   height: 100%;
 }
 
-
 .GlobalPadding {
   padding: 60px;
+}
+
+
+
+/* Tablet */
+@media (max-width: 992px) {
+  .GlobalPadding {
+    padding: 50px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .GlobalPadding {
+    padding: 40px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .GlobalPadding {
+    padding: 24px;
+  }
 }

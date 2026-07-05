@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import Sky from "../../../assets/images/homepage/sky.svg"
-import SkyDark from "../../../assets/images/homepage/skydark.png"
-
-
 import HoverParticles from '../../../component/HoverParticles';
-import { ArrowRight } from 'lucide-react';
 
-const Hero = () => {
+
+interface HeroProps {
+    onTypingComplete?: () => void;
+}
+
+const Hero = ({ onTypingComplete }: HeroProps) => {
     const fullText = "AI that thinks. Learns. Executes.";
     const [displayedText, setDisplayedText] = useState("");
     const [index, setIndex] = useState(0);
@@ -39,8 +40,9 @@ const Hero = () => {
         } else {
             // Typing is complete, trigger the reveal animations
             setIsTypingDone(true);
+            if (onTypingComplete) onTypingComplete();
         }
-    }, [index, fullText]);
+    }, [index, fullText, onTypingComplete]);
 
     return (
         <section className="group relative w-full min-h-screen flex flex-col items-center justify-center bg-slate-50 overflow-hidden py-20">
@@ -144,7 +146,7 @@ const Hero = () => {
                     </button>
                     <button
                         type="button"
-                        className="flex items-center justify-center gap-2 bg-transparent hover:bg-gray-50 text-[#14182C] border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
+                        className="flex items-center justify-center gap-2 bg-[#B7BFD910] hover:bg-gray-50 text-[#14182C] border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
                     >
                         Partner With Us
                     </button>

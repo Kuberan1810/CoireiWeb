@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import TypewriterHeading from '../../../component/TypewriterHeading';
 
-const TypewriterText = ({ text }: { text: string }) => {
+const TypewriterText = ({ text, onComplete }: { text: string, onComplete?: () => void }) => {
     const [displayedText, setDisplayedText] = useState("");
     const [isTyping, setIsTyping] = useState(false);
     const containerRef = useRef<HTMLParagraphElement>(null);
@@ -29,9 +30,12 @@ const TypewriterText = ({ text }: { text: string }) => {
             }, 30);
             return () => clearTimeout(timeout);
         } else if (displayedText.length === text.length) {
-            setIsTyping(false);
+            if (isTyping) {
+                setIsTyping(false);
+                if (onComplete) onComplete();
+            }
         }
-    }, [displayedText, isTyping, text]);
+    }, [displayedText, isTyping, text, onComplete]);
 
     return (
         <p
@@ -53,6 +57,7 @@ const TypewriterText = ({ text }: { text: string }) => {
 };
 
 const IndustrialAITraining = () => {
+    const [isTypingDone, setIsTypingDone] = useState(false);
     const courses = [
         { title: "Generative AI & Prompt Engineering", tag: "Applied" },
         { title: "AI Agents & Automation", tag: "Applied" },
@@ -69,8 +74,8 @@ const IndustrialAITraining = () => {
 
     return (
         <section className="GlobalPadding">
-            <h2 data-ns-animate className="text-5xl md:text-[52px] font-medium text-black mb-15">
-                Industrial AI Training
+            <h2 data-ns-animate className="text-5xl md:text-[52px] font-semibold text-black mb-15 min-h-[78px]">
+                <TypewriterHeading text="Industrial AI Training" />
             </h2>
 
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-center">
@@ -119,9 +124,12 @@ const IndustrialAITraining = () => {
                             <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
 
-                        <TypewriterText text="Industrial AI training programs for students, professionals, educational institutions, and organizations building real-world AI capability" />
+                        <TypewriterText 
+                            text="Industrial AI training programs for students, professionals, educational institutions, and organizations building real-world AI capability" 
+                            onComplete={() => setIsTypingDone(true)}
+                        />
 
-                        <div className="flex flex-wrap gap-4 mt-8 pt-4 border-t border-transparent">
+                        <div className={`flex flex-wrap gap-4 mt-8 pt-4 border-t border-transparent transition-all duration-700 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                             {partners.map((partner, index) => (
                                 <span
                                     key={index}
