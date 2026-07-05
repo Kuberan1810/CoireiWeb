@@ -78,11 +78,11 @@ function Navbar() {
 
                         <ServicesDropdown isLight={isLight} />
 
-                        <li>
+                        {/* <li>
                             <Link to="/Learning" className={`px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-300 ${isLight ? 'text-[#595959] hover:text-[#04032E] hover:bg-black/[0.03]' : 'hover:bg-[#7B7B7B20] text-inherit'}`}>
                                 Learning
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
 
@@ -152,7 +152,6 @@ function Navbar() {
 
                                     <div className={`overflow-hidden transition-all duration-300 ${resourcesOpen ? "max-h-75 opacity-100" : "max-h-0 opacity-0"}`}>
                                         {[
-                                            { label: "Blog", to: "/resources/blog" },
                                             { label: "Company", to: "/resources/company" },
                                             { label: "Contact", to: "/resources/contact" },
                                             { label: "Privacy", to: "/resources/privacy" },
@@ -208,12 +207,12 @@ function Navbar() {
                                         ))}
                                     </div>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link to="/learning" onClick={() => setOpen(false)} className={`flex items-center justify-between text-lg px-4 py-3 rounded-lg transition-colors duration-250 ${isLight ? 'hover:bg-black/5' : 'hover:bg-white/5'}`}>
                                         <span>Learning</span>
                                         <ChevronRight size={16} className="opacity-40" />
                                     </Link>
-                                </li>
+                                </li> */}
                                 <Link
                                     to="/contact"
                                     onClick={() => setOpen(false)}

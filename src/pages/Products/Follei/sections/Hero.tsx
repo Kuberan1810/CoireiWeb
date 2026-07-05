@@ -21,9 +21,6 @@ const Hero: React.FC = () => {
       gsap.set(".hero-button-group", { opacity: 0, scale: 0.95 });
 
       gsap.set(".hero-gallery-card", { scale: 0.8, opacity: 0, y: 40 });
-      gsap.set(".hero-gallery-left", { y: -80 }); // Parallax start state
-      gsap.set(".hero-gallery-right", { y: 80 }); // Parallax start state
-      
       gsap.set(".hero-gallery-left .hero-gallery-image", { opacity: 0, scale: 0.9, x: -20 });
       gsap.set(".hero-gallery-right .hero-gallery-image", { opacity: 0, scale: 0.9, x: 20 });
 
@@ -36,27 +33,38 @@ const Hero: React.FC = () => {
         .to(".hero-gallery-left .hero-gallery-image", { opacity: 1, scale: 1, x: 0, duration: 1, stagger: 0.15, ease: "power2.out" }, "-=1")
         .to(".hero-gallery-right .hero-gallery-image", { opacity: 1, scale: 1, x: 0, duration: 1, stagger: 0.15, ease: "power2.out" }, "-=1");
 
-      // Scroll Parallax for Side Galleries
-      gsap.to(".hero-gallery-left", {
-        y: 80, // Moves down as you scroll down
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero-gallery",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
+      let mm = gsap.matchMedia();
+
+      mm.add("(min-width: 992px)", () => {
+        gsap.set(".hero-gallery-left", { y: -80 });
+        gsap.set(".hero-gallery-right", { y: 80 });
+        
+        gsap.to(".hero-gallery-left", {
+          y: 80,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero-gallery-wrapper",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+
+        gsap.to(".hero-gallery-right", {
+          y: -80,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero-gallery-wrapper",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        });
       });
 
-      gsap.to(".hero-gallery-right", {
-        y: -80, // Moves up as you scroll down
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero-gallery",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
+      mm.add("(max-width: 991px)", () => {
+        gsap.set(".hero-gallery-left", { y: 0 });
+        gsap.set(".hero-gallery-right", { y: 0 });
       });
     });
 
@@ -265,19 +273,19 @@ const Hero: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="hero-gallery-info-wrap flex">
-                    <div className="hero-gallery-info-details-wrap mg-bottom-0px">
-                      <h2 className="hero-gallery-info-details-name text-[#04032E]! text-2xl! font-semibold!">
+                  <div className="hero-gallery-info-wrap flex flex-col md:flex-row items-start md:items-center justify-between text-left w-full">
+                    <div className="hero-gallery-info-details-wrap mg-bottom-0px text-left">
+                      <h2 className="hero-gallery-info-details-name text-[#04032E]! text-2xl! font-semibold! text-left!">
                         Follei Mitra
                       </h2>
 
-                      <div className="hero-gallery-info-details-designation text-[#5A5A5C]! text-base! -mt-2!">
+                      <div className="hero-gallery-info-details-designation text-[#5A5A5C]! text-base! -mt-2! text-left!">
                         AI Phone Agent
                       </div>
                     </div>
 
                     <div
-                      className="hero-gallery-sound-wrap"
+                      className="hero-gallery-sound-wrap self-start md:self-auto"
                       dangerouslySetInnerHTML={{
                         __html: `<dotlottie-player src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69d4f9b42c1076c70d862198_Jencare%20Home%201%20voice.lottie" autoplay loop style="width: 100%; height: 100%;"></dotlottie-player>`
                       }}
