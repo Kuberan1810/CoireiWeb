@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import  { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const TypewriterText = ({ text }: { text: string }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -54,17 +55,17 @@ const TypewriterText = ({ text }: { text: string }) => {
 
 const BuildWithCoirei = () => {
   const services = [
-    "AI Solutions & Integrations",
-    "Enterprise Applications & SaaS",
-    "Web & Mobile Products",
-    "CRM & ERP Platforms",
-    "Business Automation Systems",
-    "Custom Enterprise Platforms"
+    { name: "AI Solutions & Integrations", path: "/services/ai-chatbot-development" },
+    { name: "Enterprise Applications & SaaS", path: "/services/custom-business-application-development" },
+    { name: "Web & Mobile Products", path: "/services/custom-web-platform-development" },
+    { name: "CRM & ERP Platforms", path: "/services/process-automation-system-integration" },
+    { name: "Business Automation Systems", path: "/services/process-automation-system-integration" },
+    { name: "Custom Enterprise Platforms", path: "/services" }
   ];
 
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto">
-      <h2 data-ns-animate className="text-5xl md:text-6xl font-medium text-black mb-12">
+    <section className="GlobalPadding">
+      <h2 data-ns-animate className="text-5xl md:text-[52px] font-medium text-black mb-15">
         Build With Coirei
       </h2>
       
@@ -108,12 +109,16 @@ const BuildWithCoirei = () => {
         {/* Right List */}
         <div data-ns-animate data-delay="0.2" className="w-full lg:w-[40%] flex flex-col">
           {services.map((service, index) => (
-            <div 
+            <Link 
+              to={service.path}
               key={index} 
-              className={`py-5 ${index !== services.length - 1 ? 'border-b border-gray-50' : ''}`}
+              className={`px-2 py-5 border-b border-[#EEF1F6] flex justify-between items-center group hover:border-[#51566C50] transition-colors duration-300 hover:bg-gray-50 `}
             >
-              <span className="text-[#5B6280] text-sm md:text-base font-medium">{service}</span>
-            </div>
+              <span className="text-[#5B6280] text-sm md:text-base font-medium group-hover:font-medium group-hover:text-[#51566C] transition-colors duration-300">{service.name}</span>
+              <svg className="w-5 h-5 text-gray-300 group-hover:text-[#6e6e6e] transform group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           ))}
         </div>
       </div>

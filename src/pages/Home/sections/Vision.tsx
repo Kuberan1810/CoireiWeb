@@ -4,7 +4,7 @@ import handshakeImg from "../../../assets/images/homepage/handshake.svg";
 
 const Vision = () => {
     return (
-        <section className="w-full bg-[#FFFFFF] py-24 px-6 sm:px-10 md:px-15">
+        <section className="w-full GlobalPadding">
             <div className="max-w-[1400px] mx-auto flex flex-col items-center">
                 
                 {/* Heading */}
@@ -38,7 +38,7 @@ const Vision = () => {
                                 Our Vision
                             </h3>
                             <p className="font-normal text-[18px] md:text-[21px] leading-[1.5] md:leading-[31px] text-[#D8D8D8]">
-                                To become a global leader in enterprise artificial intelligence — building intelligent products that transform how organizations sell, learn, hire, and build software.
+                                To become a global leader in enterprise artificial intelligence  building intelligent products that transform how organizations sell, learn, hire, and build software.
                             </p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ const Vision = () => {
                                 Our Mission
                             </h3>
                             <p className="font-normal text-[18px] md:text-[21px] leading-[1.5] md:leading-[31px] text-[#D8D8D8]">
-                                To become a global leader in enterprise artificial intelligence — building intelligent products that transform how organizations sell, learn, hire, and build software.
+                                To become a global leader in enterprise artificial intelligence  building intelligent products that transform how organizations sell, learn, hire, and build software.
                             </p>
                         </div>
                     </div>

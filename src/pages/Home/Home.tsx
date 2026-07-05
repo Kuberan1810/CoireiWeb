@@ -40,6 +40,7 @@ function Home() {
             <Vision />
             <Ceo />
             <Cta />
+       
             <Footer />
 
         </div>

@@ -56,13 +56,13 @@ const Industry = () => {
         }
       `}</style>
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 xl:px-0 relative z-10 mb-10 md:mb-15">
+      <div className="GlobalPadding relative z-10 ">
         {/* Heading */}
         <h2
           data-ns-animate="true"
           data-delay="0.1"
           data-offset="50"
-          className="text-4xl md:text-[60px] font-semibold tracking-tight text-white leading-[1.2]"
+          className="text-4xl md:text-[60px] font-medium tracking-tight text-white leading-[1.2]"
         >
           Intelligent systems adapted to your industry's own workflow.
         </h2>

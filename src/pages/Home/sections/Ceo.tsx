@@ -52,26 +52,26 @@ const TypewriterText = ({ text, delay = 35 }: { text: string; delay?: number }) 
 
 const Ceo = () => {
     return (
-        <section className="relative w-full mt-24 mb-32 overflow-x-hidden">
-            {/* Grey Background Band - Anchored to the bottom of the section */}
-            <div className="absolute left-0 right-0 top-[60px] md:top-[80px] bottom-0 bg-[#F9F9F9] z-0" />
+        <section className="relative w-full m-[60px] overflow-x-hidden flex justify-center">
+            {/* Grey Background Band - Anchored strictly to the bottom of the section */}
+            <div className="absolute left-0 right-0 bottom-0 bg-[#F9F9F9] z-0 h-[180px] md:h-[200px]" />
             
-            <div className="relative z-10 max-w-[1200px] mx-auto w-full flex flex-col md:flex-row px-6 md:px-12">
+            <div className="relative z-10 max-w-[1200px] mx-auto w-full flex flex-col md:flex-row px-6 md:px-12 items-end">
                 
                 {/* Image Section (Left) */}
                 <div 
                     data-ns-animate 
-                    className="w-full md:w-[40%] flex justify-center md:justify-start items-end pt-8"
+                    className="w-full md:w-[40%] flex justify-center md:justify-start items-end"
                 >
                     <div className="relative w-[257px] h-[327px] shrink-0">
                         {/* Clipped Orange Circle Behind Image */}
                         <div 
-                            className="absolute rounded-full bg-[#F67300] -z-10" 
+                            className="absolute rounded-full bg-[#F48120] -z-10" 
                             style={{
-                                width: '250px',
-                                height: '250px',
-                                top: '30px',
-                                right: '-55px',
+                                width: '260px',
+                                height: '260px',
+                                top: '25px',
+                                right: '-65px',
                                 clipPath: 'polygon(22% 0, 100% 0, 100% 100%, 22% 100%)'
                             }}
                         />
@@ -79,18 +79,18 @@ const Ceo = () => {
                         <img 
                             src={ceoImg} 
                             alt="Naveenkumar S. - Founder & CEO" 
-                            className="w-full h-full object-contain relative z-10"
+                            className="w-full h-full object-contain object-bottom relative z-10"
                         />
                     </div>
                 </div>
 
                 {/* Content Section (Right) */}
-                <div className="w-full md:w-[60%] py-12 md:py-16 md:pl-10 lg:pl-16 flex flex-col justify-center">
+                <div className="w-full md:w-[60%] h-[180px] md:h-[200px] flex flex-col justify-center pb-4 md:pb-0">
                     
                     <div 
                         data-ns-animate 
                         data-delay="0.2"
-                        className="font-normal text-[18px] md:text-[20px] leading-[1.6] md:leading-[28px] text-[#000000] mb-8 pr-4"
+                        className="font-medium text-[16px] md:text-[20px] leading-relaxed text-[#333333] mb-6 pr-4"
                     >
                         <TypewriterText 
                             text='"Our focus is on creating practical AI systems that help organizations automate, innovate, and grow through enterprise-ready artificial intelligence."' 
@@ -102,7 +102,7 @@ const Ceo = () => {
                         <h4 className="font-bold text-[15.5px] leading-[24px] text-[#14182C]">
                             Naveenkumar S.
                         </h4>
-                        <p className="font-normal text-[13px] leading-[20px] text-[#14182C] mt-0.5">
+                        <p className="font-normal text-[13px] leading-[20px] text-[#5B6280] mt-0.5">
                             Founder & CEO, COIREI.
                         </p>
                     </div>
