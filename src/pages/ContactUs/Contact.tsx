@@ -1,14 +1,14 @@
+import React from "react";
 import SEO from "../../component/SEO";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
-import ContactHero from "./section/ContactHero";
-import CTABanner from "./section/CTABanner";
+import ContactMain from "./section/ContactMain";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 
 function Contact() {
     useScrollAnimations();
     return (
-        <>
+        <div className="bg-white min-h-screen">
             <SEO 
                 title="Contact Coirei Technologies | Get a Quote for AI & Software Development"
                 description="Contact Coirei Technologies for AI development, custom software, web development and automation solutions. Get a free consultation today"
@@ -19,16 +19,17 @@ function Contact() {
                 ]}
             />
 
-            <div className="fixed w-full top-0 z-10">
+            <div className="fixed w-full top-0 z-50">
                 <Navbar />
             </div>
-            <ContactHero />
-            <CTABanner />
+            
+            <main>
+                <ContactMain />
+            </main>
+            
             <Footer />
-        </>
+        </div>
     )
-
 }
-
 
 export default Contact;
