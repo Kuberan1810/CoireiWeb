@@ -31,8 +31,8 @@ const FAQSection = () => {
                 {/* LEFT SIDE */}
                 <div className="lg:col-span-5 w-full text-left lg:self-center">
                     <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-tight tracking-tight">
-                        <span className="text-white">Frequently </span>
-                        <span className="text-white">Asked</span>
+                        <span className="text-gray-900">Frequently </span>
+                        <span className="text-gray-900">Asked</span>
                         <br />
                         <span className="text-[#FF6B00]">Questions.</span>
                     </h2>
@@ -45,26 +45,26 @@ const FAQSection = () => {
                             key={index}
                             data-ns-animate
                             data-delay={0.1 * index}
-                            className={`group border rounded-2xl transition-all duration-300 ${openFaq === index ? 'border-white/20 bg-white/5 shadow-[0_0_30px_rgba(246,115,0,0.05)]' : 'border-white/10 bg-transparent hover:border-white/20'
+                            className={`group border rounded-2xl transition-all duration-300 ${openFaq === index ? 'border-gray-300 bg-gray-50 shadow-sm' : 'border-gray-200 bg-transparent hover:border-gray-300'
                                 }`}
                         >
                             <button
                                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
                                 className="w-full flex items-center justify-between p-6 sm:p-8 text-left cursor-pointer"
                             >
-                                <span className="text-[18px] sm:text-[22px] font-medium pr-8 transition-colors duration-300 text-white">
+                                <span className="text-[18px] sm:text-[22px] font-medium pr-8 transition-colors duration-300 text-gray-900">
                                     {faq.question}
                                 </span>
 
-                                <ChevronDown className="text-white/70 shrink-0" />
+                                <ChevronDown className="text-gray-900/70 shrink-0" />
 
                             </button>
 
                             <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === index ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
                                 }`}>
-                                <div className="p-8 pt-0 flex gap-4 border-t border-white/5">
+                                <div className="p-8 pt-0 flex gap-4 ">
 
-                                    <div className="text-[#B5B4B2] text-[16px] sm:text-[18px] font-light leading-relaxed">
+                                    <div className="text-gray-600 text-[16px] sm:text-[18px] font-light leading-relaxed">
                                         {faq.answer}
                                     </div>
                                 </div>

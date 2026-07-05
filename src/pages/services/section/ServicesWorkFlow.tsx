@@ -34,12 +34,12 @@ const steps = [
 
 const ServicesWorkFlow = () => {
   return (
-    <section className="text-white pt-2 pb-10 sm:pt-4 sm:pb-20 mx-15 max-sm:pt-2 max-sm:pb-16 max-sm:mx-5">
+    <section className="text-gray-900 pt-2 pb-10 sm:pt-4 sm:pb-20 mx-15 max-sm:pt-2 max-sm:pb-16 max-sm:mx-5">
       <div className="">
 
         {/* HEADER */}
         <div className="flex flex-col items-center text-center px-6 mb-16">
-          <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] tracking-tight leading-tight md:leading-[68px]">
+          <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] tracking-tight leading-tight md:leading-[68px]">
             Our Proven <span className="text-[#F67300]">Work Process</span>
           </h2>
         </div>
@@ -61,11 +61,11 @@ const ServicesWorkFlow = () => {
 
                 {/* CONNECTOR LINE (desktop only) */}
                 {index !== steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-[42px] right-[-35%] px-20 h-px bg-white/20" />
+                  <div className="hidden lg:block absolute top-[42px] right-[-35%] px-20 h-px bg-gray-200" />
                 )}
 
                 {/* ICON CIRCLE */}
-                <div className="relative mx-auto w-20 h-20 max-sm:w-16 max-sm:h-16 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.08)]">
+                <div className="relative mx-auto w-20 h-20 max-sm:w-16 max-sm:h-16 rounded-full flex items-center justify-center bg-gray-50 backdrop-blur-xl border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
                   <Icon size={28} className="text-[#F67300] max-sm:hidden" />
                   <Icon size={22} className="text-[#F67300] hidden max-sm:block" />
 
@@ -80,7 +80,7 @@ const ServicesWorkFlow = () => {
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-center text-[16px] text-white/70 leading-relaxed max-w-xs mx-auto">
+                <p className="mt-3 text-center text-[16px] text-gray-600 leading-relaxed max-w-xs mx-auto">
                   {item.desc}
                 </p>
               </div>

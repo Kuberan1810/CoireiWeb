@@ -136,18 +136,18 @@ const AIChatbot = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-white  flex flex-col items-center">
+            <main className="min-h-screen pt-32 pb-6 w-full bg-white flex flex-col items-center">
                 <div className="px-6 md:px-10 flex flex-col items-center w-full">
 
                     {/* --- HEADER SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
                         {/* Main Title */}
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight mb-8 max-w-4xl tracking-tight">
+                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#262626] leading-tight mb-8 max-w-4xl tracking-tight">
                             Enhance Your Business with <span className="text-[#F67300]">AI Chat</span> and <span className="text-[#F67300]">Virtual Assistance</span>
                         </h1>
 
                         {/* Subtitle / Description */}
-                        <p data-ns-animate="true" data-delay="0.2" className="text-white/70 text-lg md:text-xl leading-relaxed max-w-4xl mb-24 font-light text-center">
+                        <p data-ns-animate="true" data-delay="0.2" className="text-[#262626] text-lg md:text-xl leading-relaxed max-w-4xl mb-24 font-light text-center">
                             Welcome to the future of business communication. Coirei AI chatbot and virtual assistant are designed to help you automate customer support, streamline operations, and engage with your audience like never before.
                         </p>
                     </div>
@@ -155,15 +155,15 @@ const AIChatbot = () => {
 
                 {/* --- FEATURES SECTION --- */}
                 <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
-                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                         Features of <span className="text-[#F67300]">Coirei AI Chatbot</span>
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-16 w-full">
                         {/* Feature 1 */}
                         <div data-ns-animate="true" data-start="top 80%" className="flex flex-col">
-                            <div className="h-px w-full bg-white/20 mb-8"></div>
-                            <div className="mb-8 text-white">
+                            <div className="h-px w-full bg-gray-200 mb-8"></div>
+                            <div className="mb-8 text-gray-900">
                                 {/* Temporary basic icon for 24/7 */}
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
@@ -174,17 +174,17 @@ const AIChatbot = () => {
                                 <h3 className="text-2xl font-medium text-[#F67300]">
                                     24/7 Customer Support
                                 </h3>
-                                <ArrowUpRight size={24} className="text-white/70 group-hover:text-white transition-colors" />
+                                <ArrowUpRight size={24} className="text-gray-600 group-hover:text-gray-900 transition-colors" />
                             </div>
-                            <p className="text-white/70 text-lg leading-relaxed font-light pr-4">
+                            <p className="text-gray-600 text-lg leading-relaxed font-light pr-4">
                                 Our chatbot never sleeps. It's there for your customers at any hour, answering questions, solving problems, and offering guidance so you never miss a lead.
                             </p>
                         </div>
 
                         {/* Feature 2: Easy Integration */}
                         <div data-ns-animate="true" data-start="top 80%" className="flex flex-col">
-                            <div className="h-px w-full bg-white/20 mb-8"></div>
-                            <div className="mb-8 text-white">
+                            <div className="h-px w-full bg-gray-200 mb-8"></div>
+                            <div className="mb-8 text-gray-900">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                     <circle cx="6" cy="6" r="3" />
                                     <circle cx="6" cy="18" r="3" />
@@ -197,17 +197,17 @@ const AIChatbot = () => {
                                 <h3 className="text-2xl font-medium text-[#F67300]">
                                     Easy Integration
                                 </h3>
-                                <ArrowUpRight size={24} className="text-white/70 group-hover:text-white transition-colors" />
+                                <ArrowUpRight size={24} className="text-gray-600 group-hover:text-gray-900 transition-colors" />
                             </div>
-                            <p className="text-white/70 text-lg leading-relaxed font-light pr-4">
+                            <p className="text-gray-600 text-lg leading-relaxed font-light pr-4">
                                 Connect the chatbot effortlessly with your CRM, website, or other business tools, making your workflow smoother than ever.
                             </p>
                         </div>
 
                         {/* Feature 3: Personalized User Interactions */}
                         <div data-ns-animate="true" data-start="top 80%" className="flex flex-col">
-                            <div className="h-px w-full bg-white/20 mb-8"></div>
-                            <div className="mb-8 text-white">
+                            <div className="h-px w-full bg-gray-200 mb-8"></div>
+                            <div className="mb-8 text-gray-900">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                                     <circle cx="9" cy="7" r="4" />
@@ -219,17 +219,17 @@ const AIChatbot = () => {
                                 <h3 className="text-2xl font-medium text-[#F67300]">
                                     Personalized User Interactions
                                 </h3>
-                                <ArrowUpRight size={24} className="text-white/70 group-hover:text-white transition-colors" />
+                                <ArrowUpRight size={24} className="text-gray-600 group-hover:text-gray-900 transition-colors" />
                             </div>
-                            <p className="text-white/70 text-lg leading-relaxed font-light pr-4">
+                            <p className="text-gray-600 text-lg leading-relaxed font-light pr-4">
                                 The AI learns and adapts to each user, offering tailored responses that make every interaction feel personal and valuable.
                             </p>
                         </div>
 
                         {/* Feature 4: Advanced Analytics */}
                         <div data-ns-animate="true" data-start="top 80%" className="flex flex-col">
-                            <div className="h-px w-full bg-white/20 mb-8"></div>
-                            <div className="mb-8 text-white">
+                            <div className="h-px w-full bg-gray-200 mb-8"></div>
+                            <div className="mb-8 text-gray-900">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
                                     <polyline points="16 7 22 7 22 13" />
@@ -239,9 +239,9 @@ const AIChatbot = () => {
                                 <h3 className="text-2xl font-medium text-[#F67300]">
                                     Advanced Analytics
                                 </h3>
-                                <ArrowUpRight size={24} className="text-white/70 group-hover:text-white transition-colors" />
+                                <ArrowUpRight size={24} className="text-gray-600 group-hover:text-gray-900 transition-colors" />
                             </div>
-                            <p className="text-white/70 text-lg leading-relaxed font-light pr-4">
+                            <p className="text-gray-600 text-lg leading-relaxed font-light pr-4">
                                 Track user interactions, measure engagement, and discover insights that help you refine your customer strategy.
                             </p>
                         </div>
@@ -250,13 +250,13 @@ const AIChatbot = () => {
 
                 {/* --- HOW IT WORKS SECTION --- */}
                 <div className="w-full mt-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
-                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                         How <span className="text-[#F67300]">Coirei AI Virtual Assistant</span> Works
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 border-b border-white/20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 border-b border-gray-200">
                         {/* Step 1 */}
-                        <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-white/20 py-10">
+                        <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-gray-200 py-10">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="text-[#F67300]">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -264,17 +264,17 @@ const AIChatbot = () => {
                                         <path d="m21 21-4.3-4.3" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-medium text-white">
+                                <h3 className="text-2xl font-medium text-gray-900">
                                     Identify Customer Needs
                                 </h3>
                             </div>
-                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                            <p className="text-gray-600 text-[17px] leading-relaxed font-light">
                                 Right from the first interaction, Coirei AI spots what your customers need and responds accordingly.
                             </p>
                         </div>
 
                         {/* Step 2 */}
-                        <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-white/20 py-10">
+                        <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-gray-200 py-10">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="text-[#F67300]">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -283,17 +283,17 @@ const AIChatbot = () => {
                                         <path d="m7 5 4-4 4 4" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-medium text-white">
+                                <h3 className="text-2xl font-medium text-gray-900">
                                     Natural Language Processing
                                 </h3>
                             </div>
-                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                            <p className="text-gray-600 text-[17px] leading-relaxed font-light">
                                 Using advanced NLP, the assistant understands and engages in real, human-like conversation.
                             </p>
                         </div>
 
                         {/* Step 3 */}
-                        <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-white/20 py-10">
+                        <div data-ns-animate="true" data-direction="right" className="flex flex-col border-t border-gray-200 py-10">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="text-[#F67300]">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -302,17 +302,17 @@ const AIChatbot = () => {
                                         <path d="M6.5 10v3a2 2 0 0 0 2 2h5.5" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-medium text-white">
+                                <h3 className="text-2xl font-medium text-gray-900">
                                     Custom Workflows
                                 </h3>
                             </div>
-                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                            <p className="text-gray-600 text-[17px] leading-relaxed font-light">
                                 Every business is unique so we tailor the chatbot to guide users step by step, ensuring they get exactly what they need.
                             </p>
                         </div>
 
                         {/* Step 4 */}
-                        <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-white/20 py-10">
+                        <div data-ns-animate="true" data-direction="left" data-delay="0.1" className="flex flex-col border-t border-gray-200 py-10">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="text-[#F67300]">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -321,11 +321,11 @@ const AIChatbot = () => {
                                         <path d="M8 11h8" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-medium text-white">
+                                <h3 className="text-2xl font-medium text-gray-900">
                                     Ongoing Learning
                                 </h3>
                             </div>
-                            <p className="text-white/70 text-[17px] leading-relaxed font-light">
+                            <p className="text-gray-600 text-[17px] leading-relaxed font-light">
                                 Coirei AI keeps improving. With each conversation, it learns, ensuring smarter, more accurate responses over time.
                             </p>
                         </div>
@@ -340,29 +340,29 @@ const AIChatbot = () => {
 
                     {/* --- WHY CHOOSE US SECTION --- */}
                     <div className="w-full mt-10">
-                        <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                        <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                             Why Choose <span className="text-[#F67300]">Coirei AI</span> Chatbot for Your Business
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl mx-auto px-4 md:px-0">
                             {/* Card 1 */}
-                            <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-[#292929] border border-white/15 rounded-[20px] p-10 hover:bg-[#323232] hover:border-white/25 transition-all duration-300 min-h-[580px] justify-between group">
-                                <div className="w-[250px] h-[250px] flex items-center justify-center text-white/80 group-hover:text-white transition-colors duration-300">
-                                    <HandCoins size={250} strokeWidth={0.5} className="text-white/80 group-hover:text-white transition-colors duration-300" />
+                            <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-gray-50 border border-gray-200 rounded-[20px] p-10 hover:bg-gray-100 hover:border-gray-300 transition-all duration-300 min-h-[580px] justify-between group">
+                                <div className="w-[250px] h-[250px] flex items-center justify-center text-gray-500 group-hover:text-gray-900 transition-colors duration-300">
+                                    <HandCoins size={250} strokeWidth={0.5} className="text-gray-500 group-hover:text-gray-900 transition-colors duration-300" />
                                 </div>
                                 <div className="flex flex-col items-center gap-[53px]">
                                     <h3 className="text-[22px] md:text-[24px] font-medium text-[#F67300] tracking-tight">
                                         Reduce Operational Cost
                                     </h3>
-                                    <p className="text-white/60 text-base md:text-lg leading-relaxed font-light">
+                                    <p className="text-gray-500 text-base md:text-lg leading-relaxed font-light">
                                         Automate routine tasks and support queries, so you save time and money on manual processes.
                                     </p>
                                 </div>
                             </div>
 
                             {/* Card 2 */}
-                            <div data-ns-animate="true" data-delay="0.2" className="flex flex-col items-center text-center bg-[#292929] border border-white/15 rounded-[20px] p-10 hover:bg-[#323232] hover:border-white/25 transition-all duration-300 min-h-[580px] justify-between group">
-                                <div className="w-[250px] h-[250px] flex items-center justify-center text-white/80 group-hover:text-white transition-colors duration-300">
+                            <div data-ns-animate="true" data-delay="0.2" className="flex flex-col items-center text-center bg-gray-50 border border-gray-200 rounded-[20px] p-10 hover:bg-gray-100 hover:border-gray-300 transition-all duration-300 min-h-[580px] justify-between group">
+                                <div className="w-[250px] h-[250px] flex items-center justify-center text-gray-500 group-hover:text-gray-900 transition-colors duration-300">
                                     <svg width="250" height="250" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <circle cx="48" cy="30" r="14" />
                                         <path d="M22 75 C22 58, 32 54, 48 54 C64 54, 74 58, 74 75" />
@@ -374,15 +374,15 @@ const AIChatbot = () => {
                                     <h3 className="text-[22px] md:text-[24px] font-medium text-[#F67300] tracking-tight">
                                         Improve Customer Engagement
                                     </h3>
-                                    <p className="text-white/60 text-base md:text-lg leading-relaxed font-light">
+                                    <p className="text-gray-500 text-base md:text-lg leading-relaxed font-light">
                                         Offer instant, personalized responses that keep customers happy and engaged.
                                     </p>
                                 </div>
                             </div>
 
                             {/* Card 3 */}
-                            <div data-ns-animate="true" data-delay="0.3" className="flex flex-col items-center text-center bg-[#292929] border border-white/15 rounded-[20px] p-10 hover:bg-[#323232] hover:border-white/25 transition-all duration-300 min-h-[580px] justify-between group">
-                                <div className="w-[250px] h-[250px] flex items-center justify-center text-white/80 group-hover:text-white transition-colors duration-300">
+                            <div data-ns-animate="true" data-delay="0.3" className="flex flex-col items-center text-center bg-gray-50 border border-gray-200 rounded-[20px] p-10 hover:bg-gray-100 hover:border-gray-300 transition-all duration-300 min-h-[580px] justify-between group">
+                                <div className="w-[250px] h-[250px] flex items-center justify-center text-gray-500 group-hover:text-gray-900 transition-colors duration-300">
                                     <svg width="250" height="250" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <circle cx="30" cy="30" r="6" />
                                         <circle cx="80" cy="70" r="6" />
@@ -394,7 +394,7 @@ const AIChatbot = () => {
                                     <h3 className="text-[22px] md:text-[24px] font-medium text-[#F67300] tracking-tight">
                                         Scale Effortlessly
                                     </h3>
-                                    <p className="text-white/60 text-base md:text-lg leading-relaxed font-light">
+                                    <p className="text-gray-500 text-base md:text-lg leading-relaxed font-light">
                                         Whether you have 100 customers or 10,000, Coirei AI scales with you, no extra effort required.
                                     </p>
                                 </div>
@@ -404,7 +404,7 @@ const AIChatbot = () => {
 
                     {/* --- PROVEN IMPACT TEXT --- */}
                     <div className="w-full mt-24 text-center">
-                        <p data-ns-animate="true" className="text-white text-2xl md:text-3xl font-light tracking-wide">
+                        <p data-ns-animate="true" className="text-gray-900 text-2xl md:text-3xl font-light tracking-wide">
                             Proven Impact, Measurable Results
                         </p>
                     </div>
@@ -412,22 +412,22 @@ const AIChatbot = () => {
                     {/* --- STATS GRID --- */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mt-16 max-w-5xl mx-auto w-full mb-16">
                         <div data-ns-animate="true" data-delay="0.1">
-                            <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">
+                            <h4 className="text-5xl md:text-6xl font-normal text-gray-900 mb-2">
                                 <JackpotNumber value="50+" />
                             </h4>
-                            <p className="text-white/60 text-base md:text-[18px] font-light">Companies Trust Us</p>
+                            <p className="text-gray-500 text-base md:text-[18px] font-light">Companies Trust Us</p>
                         </div>
                         <div data-ns-animate="true" data-delay="0.2">
-                            <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">
+                            <h4 className="text-5xl md:text-6xl font-normal text-gray-900 mb-2">
                                 <JackpotNumber value="10+" />
                             </h4>
-                            <p className="text-white/60 text-base md:text-[18px] font-light">Industries Served</p>
+                            <p className="text-gray-500 text-base md:text-[18px] font-light">Industries Served</p>
                         </div>
                         <div data-ns-animate="true" data-delay="0.3">
-                            <h4 className="text-5xl md:text-6xl font-normal text-white mb-2">
+                            <h4 className="text-5xl md:text-6xl font-normal text-gray-900 mb-2">
                                 <JackpotNumber value="99%" />
                             </h4>
-                            <p className="text-white/60 text-base md:text-[18px] font-light">Customer Satisfaction</p>
+                            <p className="text-gray-500 text-base md:text-[18px] font-light">Customer Satisfaction</p>
                         </div>
                     </div>
 
@@ -435,22 +435,22 @@ const AIChatbot = () => {
 
                 {/* --- CTA SECTION --- */}
                 <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
-                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#E3E3E0] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
+                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                         Get Started with <span className="text-[#F67300]">Coirei AI</span> Virtual Assistant
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 md:items-center items-start w-full mb-10">
                         {/* Left Content */}
                         <div data-ns-animate="true" data-direction="right" className="flex flex-col gap-4 items-start text-left">
-                            <h3 className="text-3xl md:text-[35px] font-medium text-white leading-tight">
+                            <h3 className="text-3xl md:text-[35px] font-medium text-gray-900 leading-tight">
                                 Ready to transform your business?
                             </h3>
-                            <p className="text-white/70 text-lg font-light leading-relaxed mb-2">
+                            <p className="text-gray-600 text-lg font-light leading-relaxed mb-2">
                                 We'll customize the chatbot to fit your needs.
                             </p>
                             <button
                                 onClick={() => navigate("/contactsales")}
-                                className="text-[#252525] py-2.5 px-6 bg-[#FAF9F6] rounded-md font-semibold border border-transparent hover:bg-[#F67300] hover:text-white hover:border-[#F67300] transition-all duration-500 ease-out cursor-pointer text-xs sm:text-sm w-fit"
+                                className="text-[#252525] py-2.5 px-6 bg-[#FAF9F6] rounded-md font-semibold border border-transparent hover:bg-[#F67300] hover:text-gray-900 hover:border-[#F67300] transition-all duration-500 ease-out cursor-pointer text-xs sm:text-sm w-fit"
                             >
                                 Book a Consultation
                             </button>
@@ -461,7 +461,7 @@ const AIChatbot = () => {
                             <div className="space-y-6">
                                 {/* Name */}
                                 <div>
-                                    <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                    <label className="block text-[15px] font-medium text-gray-700 mb-2">
                                         Name
                                     </label>
                                     <input
@@ -469,13 +469,13 @@ const AIChatbot = () => {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full h-12 bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg px-4 text-base text-white/90 focus:outline-none focus:border-white/20 transition"
+                                        className="w-full h-12 bg-white border border-gray-300 rounded-lg px-4 text-base text-gray-900 focus:outline-none focus:border-gray-200 transition"
                                     />
                                 </div>
 
                                 {/* Company */}
                                 <div>
-                                    <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                    <label className="block text-[15px] font-medium text-gray-700 mb-2">
                                         Company
                                     </label>
                                     <input
@@ -483,7 +483,7 @@ const AIChatbot = () => {
                                         name="company"
                                         value={formData.company}
                                         onChange={handleChange}
-                                        className="w-full h-12 bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg px-4 text-base text-white/90 focus:outline-none focus:border-white/20 transition"
+                                        className="w-full h-12 bg-white border border-gray-300 rounded-lg px-4 text-base text-gray-900 focus:outline-none focus:border-gray-200 transition"
                                     />
                                 </div>
 
@@ -491,16 +491,16 @@ const AIChatbot = () => {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     {/* Phone */}
                                     <div>
-                                        <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                        <label className="block text-[15px] font-medium text-gray-700 mb-2">
                                             Phone
                                         </label>
-                                        <div className="flex items-center h-12 bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg overflow-visible focus-within:border-white/20 transition relative">
+                                        <div className="flex items-center h-12 bg-white border border-gray-300 rounded-lg overflow-visible focus-within:border-gray-200 transition relative">
                                             {/* Dropdown */}
                                             <div ref={dropdownRef} className="relative h-full">
                                                 <button
                                                     type="button"
                                                     onClick={() => setCountryOpen(!countryOpen)}
-                                                    className="flex items-center gap-2 px-3 h-full border-r border-[#2d2d2d] text-white/80 text-[14px] bg-[#202020] rounded-l-lg cursor-pointer"
+                                                    className="flex items-center gap-2 px-3 h-full border-r border-gray-300 text-gray-500 text-[14px] bg-gray-50 rounded-l-lg cursor-pointer"
                                                 >
                                                     <img
                                                         src={selectedCountry.flagUrl}
@@ -518,7 +518,7 @@ const AIChatbot = () => {
                                                         strokeWidth="2"
                                                         strokeLinecap="round"
                                                         strokeLinejoin="round"
-                                                        className={`text-white/40 transition ${countryOpen ? "rotate-180" : ""}`}
+                                                        className={`text-gray-400 transition ${countryOpen ? "rotate-180" : ""}`}
                                                     >
                                                         <path d="m6 9 6 6 6-6" />
                                                     </svg>
@@ -526,7 +526,7 @@ const AIChatbot = () => {
 
                                                 {/* Dropdown Menu */}
                                                 {countryOpen && (
-                                                    <div className="absolute top-14 left-0 w-[130px] bg-[#1A1A1A] border border-[#2d2d2d] rounded-xl overflow-hidden z-50 shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
+                                                    <div className="absolute top-14 left-0 w-[130px] bg-white border border-gray-300 rounded-xl overflow-hidden z-50 shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
                                                         {countryCodes.map((country) => (
                                                             <button
                                                                 key={country.code}
@@ -535,7 +535,7 @@ const AIChatbot = () => {
                                                                     setSelectedCountry(country);
                                                                     setCountryOpen(false);
                                                                 }}
-                                                                className="w-full flex items-center gap-3 px-4 py-3 text-white/80 hover:bg-white/5 transition cursor-pointer"
+                                                                className="w-full flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-100 transition cursor-pointer"
                                                             >
                                                                 <img
                                                                     src={country.flagUrl}
@@ -556,14 +556,14 @@ const AIChatbot = () => {
                                                 value={formData.phone}
                                                 onChange={handleChange}
                                                 placeholder="98765 43210"
-                                                className="flex-1 h-full bg-transparent px-4 text-base text-white/90 placeholder:text-white/20 focus:outline-none"
+                                                className="flex-1 h-full bg-transparent px-4 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none"
                                             />
                                         </div>
                                     </div>
 
                                     {/* Email */}
                                     <div>
-                                        <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                        <label className="block text-[15px] font-medium text-gray-700 mb-2">
                                             Email
                                         </label>
                                         <input
@@ -571,14 +571,14 @@ const AIChatbot = () => {
                                             name="email"
                                             value={formData.email}
                                             onChange={handleChange}
-                                            className="w-full h-12 bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg px-4 text-base text-white/90 focus:outline-none focus:border-white/20 transition"
+                                            className="w-full h-12 bg-white border border-gray-300 rounded-lg px-4 text-base text-gray-900 focus:outline-none focus:border-gray-200 transition"
                                         />
                                     </div>
                                 </div>
 
                                 {/* Message */}
                                 <div>
-                                    <label className="block text-[15px] font-medium text-[#8a8a8a] mb-2">
+                                    <label className="block text-[15px] font-medium text-gray-700 mb-2">
                                         Message
                                     </label>
                                     <textarea
@@ -586,14 +586,14 @@ const AIChatbot = () => {
                                         value={formData.message}
                                         onChange={handleChange}
                                         rows={5}
-                                        className="w-full bg-[#1a1a1a] border border-[#2d2d2d] rounded-lg px-4 py-3 text-base text-white/90 resize-none focus:outline-none focus:border-white/20 transition"
+                                        className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-base text-gray-900 resize-none focus:outline-none focus:border-gray-200 transition"
                                     />
                                 </div>
 
                                 {/* Submit Button */}
                                 <button
                                     onClick={handleSubmitForm}
-                                    className="w-full h-12 bg-[#F67300] text-white rounded-lg text-lg font-medium transition-all duration-300 ease-out hover:brightness-95 hover:shadow-[0_0_0_3px_rgba(246,115,0,0.25)] active:scale-[0.98] cursor-pointer"
+                                    className="w-full h-12 bg-[#F67300] text-gray-900 rounded-lg text-lg font-medium transition-all duration-300 ease-out hover:brightness-95 hover:shadow-[0_0_0_3px_rgba(246,115,0,0.25)] active:scale-[0.98] cursor-pointer"
                                 >
                                     Get in touch
                                 </button>

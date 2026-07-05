@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 import coireiLogo from "../../assets/images/products/coirei-logo.svg";
-import cardTopCurve from "../../assets/images/services/cardtopcurve.svg";
+import cardTopCurve from "../../assets/images/services/cardtopcurve-light.svg";
 
 
 
@@ -175,13 +175,13 @@ const WebPlatformDetails = () => {
                     {/* --- HEADER SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
                         {/* Main Title */}
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-8 max-w-5xl tracking-tight">
+                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#262626] leading-tight mb-8 max-w-5xl tracking-tight">
                             Your Business Idea <br>
                             </br> <span className="text-[#F67300]">Engineered for Scale.</span>
                         </h1>
 
                         {/* Subtitle / Description */}
-                        <p data-ns-animate="true" data-delay="0.2" className="text-white/70 text-lg md:text-xl leading-relaxed max-w-4xl mb-24 font-light">
+                        <p data-ns-animate="true" data-delay="0.2" className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-4xl mb-24 font-light">
                             From dynamic web platforms to enterprise-grade applications, we build robust digital ecosystems that drive engagement and operational efficiency.
                         </p>
                     </div>
@@ -189,11 +189,11 @@ const WebPlatformDetails = () => {
 
                 {/* --- SERVICE OFFERINGS SECTION --- */}
                 <div ref={offeringsScrollRef} className="w-full px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
-                    <h2 data-ns-animate="true" className="text-3xl md:text-5xl lg:text-[56px] font-semibold text-[#E3E3E0] text-center mb-6 tracking-tight leading-tight">
+                    <h2 data-ns-animate="true" className="text-3xl md:text-5xl lg:text-[56px] font-medium text-[#262626] text-center mb-6 tracking-tight leading-tight">
                         <span className="text-[#F67300]">Coirei Core</span> Service Offerings
                     </h2>
 
-                    <p data-ns-animate="true" className="text-white/60 text-base md:text-lg max-w-3xl text-center mb-16 font-light">
+                    <p data-ns-animate="true" className="text-gray-600 text-base md:text-lg max-w-3xl text-center mb-16 font-light">
                         End-to-end engineered platforms optimized for performance, security, and true scalability.
                     </p>
 
@@ -211,8 +211,8 @@ const WebPlatformDetails = () => {
                 <div ref={sectionPinRef} className="relative w-full h-[250vh] bg-white ">
                     <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center overflow-hidden px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
                         <div className="max-w-6xl w-full mx-auto">
-                            <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-16 lg:mb-20 tracking-tight leading-tight shrink-0">
-                                Why Work With <span className="text-[#F67300]">Coirei</span>?
+                            <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#000000] text-center mb-16 lg:mb-20 tracking-tight leading-tight shrink-0">
+                                Why Work With <span className="text-[#F67300]">Coirei?</span>
                             </h2>
 
                             <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-16 lg:gap-24">
@@ -222,11 +222,11 @@ const WebPlatformDetails = () => {
                                         {/* Concentric static orbit lines */}
                                         <div className="absolute w-[260px] h-[260px] md:w-[480px] md:h-[480px] lg:w-[500px] lg:h-[500px] rounded-full">
                                             {/* Orbit line 1 (Outer) */}
-                                            <div className="absolute inset-0 border border-[#F67300]/15 rounded-full" />
+                                            <div className="absolute inset-0 border border-[#F67300]/40 rounded-full" />
                                             {/* Orbit line 2 (Middle) */}
-                                            <div className="absolute inset-[10%] border border-[#F67300]/15 rounded-full" />
+                                            <div className="absolute inset-[10%] border border-[#F67300]/40 rounded-full" />
                                             {/* Orbit line 3 (Inner) */}
-                                            <div className="absolute inset-[20%] border border-[#F67300]/15 rounded-full" />
+                                            <div className="absolute inset-[20%] border border-[#F67300]/40 rounded-full" />
 
                                             {/* Top-left node (Document/Checkmark) on Outer Ring */}
                                             <motion.div
@@ -244,12 +244,12 @@ const WebPlatformDetails = () => {
                                                         x: "-50%",
                                                         y: "-50%",
                                                         borderColor: activeSection === 1 ? "rgba(246, 115, 0, 0.5)" : "rgba(255, 255, 255, 0.15)",
-                                                        color: activeSection === 1 ? "#F67300" : "#ffffff",
+                                                        color: activeSection === 1 ? "#F67300" : "#111827",
                                                         boxShadow: activeSection === 1 ? "0 0 30px rgba(246, 115, 0, 0.3)" : "0 0 15px rgba(255, 255, 255, 0.05)"
                                                     }}
                                                     transition={{ duration: 1.2, ease: "easeOut" }}
                                                     style={{ left: "50%", top: "0" }}
-                                                    className="absolute w-14 h-14 md:w-20 md:h-20 lg:w-[96px] lg:h-[96px] rounded-full bg-[#1e1e1e] border flex items-center justify-center pointer-events-auto"
+                                                    className="absolute w-14 h-14 md:w-20 md:h-20 lg:w-[96px] lg:h-[96px] rounded-full bg-white border flex items-center justify-center pointer-events-auto"
                                                 >
                                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
                                                         <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
@@ -275,12 +275,12 @@ const WebPlatformDetails = () => {
                                                         x: "-50%",
                                                         y: "-50%",
                                                         borderColor: activeSection === 3 ? "rgba(246, 115, 0, 0.5)" : "rgba(255, 255, 255, 0.15)",
-                                                        color: activeSection === 3 ? "#F67300" : "#ffffff",
+                                                        color: activeSection === 3 ? "#F67300" : "#111827",
                                                         boxShadow: activeSection === 3 ? "0 0 30px rgba(246, 115, 0, 0.3)" : "0 0 15px rgba(255, 255, 255, 0.05)"
                                                     }}
                                                     transition={{ duration: 1.2, ease: "easeOut" }}
                                                     style={{ left: "50%", top: "0" }}
-                                                    className="absolute w-14 h-14 md:w-20 md:h-20 lg:w-[96px] lg:h-[96px] rounded-full bg-[#1e1e1e] border flex items-center justify-center pointer-events-auto"
+                                                    className="absolute w-14 h-14 md:w-20 md:h-20 lg:w-[96px] lg:h-[96px] rounded-full bg-white border flex items-center justify-center pointer-events-auto"
                                                 >
                                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
                                                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -306,12 +306,12 @@ const WebPlatformDetails = () => {
                                                         x: "-50%",
                                                         y: "-50%",
                                                         borderColor: activeSection === 2 ? "rgba(246, 115, 0, 0.5)" : "rgba(255, 255, 255, 0.15)",
-                                                        color: activeSection === 2 ? "#F67300" : "#ffffff",
+                                                        color: activeSection === 2 ? "#F67300" : "#111827",
                                                         boxShadow: activeSection === 2 ? "0 0 30px rgba(246, 115, 0, 0.3)" : "0 0 15px rgba(255, 255, 255, 0.05)"
                                                     }}
                                                     transition={{ duration: 1.2, ease: "easeOut" }}
                                                     style={{ left: "50%", top: "0" }}
-                                                    className="absolute w-14 h-14 md:w-20 md:h-20 lg:w-[96px] lg:h-[96px] rounded-full bg-[#1e1e1e] border flex items-center justify-center pointer-events-auto"
+                                                    className="absolute w-14 h-14 md:w-20 md:h-20 lg:w-[96px] lg:h-[96px] rounded-full bg-white border flex items-center justify-center pointer-events-auto"
                                                 >
                                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
                                                         <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h16z" />
@@ -359,7 +359,7 @@ const WebPlatformDetails = () => {
                                         <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
                                             Integrated Architecture
                                         </h3>
-                                        <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
+                                        <p className="text-gray-600 text-base md:text-lg leading-relaxed font-light">
                                             We don’t just build code; we build for visibility. Your platform is structured to be "search-engine friendly" from the first commit.
                                         </p>
                                     </motion.div>
@@ -378,7 +378,7 @@ const WebPlatformDetails = () => {
                                         <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
                                             Security by Design
                                         </h3>
-                                        <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
+                                        <p className="text-gray-600 text-base md:text-lg leading-relaxed font-light">
                                             We build with a "zero-trust" approach, implementing robust encryption, role-based access control, and proactive vulnerability scanning.
                                         </p>
                                     </motion.div>
@@ -397,7 +397,7 @@ const WebPlatformDetails = () => {
                                         <h3 className="text-2xl md:text-3xl font-medium text-[#F67300]">
                                             True Scalability
                                         </h3>
-                                        <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
+                                        <p className="text-gray-600 text-base md:text-lg leading-relaxed font-light">
                                             Our modular development approach allows your platform to grow as your user base expands, without needing a full rebuild.
                                         </p>
                                     </motion.div>
@@ -411,7 +411,7 @@ const WebPlatformDetails = () => {
                 <div className="w-full mb-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto relative">
                     <div className="max-w-6xl mx-auto">
                         {/* Section Heading */}
-                        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center mb-24 tracking-tight leading-tight">
+                        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-24 tracking-tight leading-tight">
                             Our Service for <span className="text-[#F67300]">Industries</span>
                         </h2>
 
@@ -419,7 +419,7 @@ const WebPlatformDetails = () => {
                             {/* Left Column: Sticky Single Header */}
                             <div className="flex flex-col w-full lg:w-1/3 gap-4 lg:sticky lg:top-[30vh] z-10">
                                 <div className="w-full text-left py-4 relative">
-                                    <span className="text-xl md:text-2xl font-medium tracking-wider text-white">
+                                    <span className="text-xl md:text-2xl font-medium tracking-wider text-gray-900">
                                         INDUSTRIES
                                     </span>
                                     {/* Divider / brand orange line underneath */}
@@ -428,7 +428,7 @@ const WebPlatformDetails = () => {
                             </div>
 
                             {/* Right Column: Tabular rows with Spotlight Fade Effect */}
-                            <div className="w-full lg:w-2/3 flex flex-col border-t border-white/10">
+                            <div className="w-full lg:w-2/3 flex flex-col border-t border-gray-200">
                                 {serviceDetails.INDUSTRIES.map((item, idx) => {
                                     const isFocused = activeCard >= (idx + 1);
                                     const ref = cardRefs[idx];
@@ -443,24 +443,24 @@ const WebPlatformDetails = () => {
                                                 y: 0
                                             }}
                                             transition={{ duration: 0.3, ease: "easeOut" }}
-                                            className="border-b border-white/10 py-10 md:py-12 px-2 cursor-default transition-all duration-500 w-full flex gap-6 md:gap-8 items-start"
+                                            className="border-b border-gray-200 py-10 md:py-12 px-2 cursor-default transition-all duration-500 w-full flex gap-6 md:gap-8 items-start"
                                         >
                                             {/* Industry Icon */}
                                             <IconComponent
                                                 size={32}
                                                 strokeWidth={1.2}
-                                                className={`transition-colors duration-500 shrink-0 mt-1 ${isFocused ? "text-white" : "text-white/20"}`}
+                                                className={`transition-colors duration-500 shrink-0 mt-1 ${isFocused ? "text-gray-900" : "text-gray-300"}`}
                                             />
 
                                             {/* Content Block */}
                                             <div className="flex flex-col gap-3 text-left">
                                                 {/* Industry Title */}
-                                                <h4 className="text-xl md:text-2xl font-semibold text-white leading-snug">
+                                                <h4 className="text-xl md:text-2xl font-semibold text-gray-900 leading-snug">
                                                     {item.title}
                                                 </h4>
 
                                                 {/* Industry Description */}
-                                                <p className={`text-[15px] md:text-base font-light leading-relaxed transition-colors duration-300 ${isFocused ? "text-white/90" : "text-white/40"}`}>
+                                                <p className={`text-[15px] md:text-base font-light leading-relaxed transition-colors duration-300 ${isFocused ? "text-gray-800" : "text-gray-500"}`}>
                                                     {item.description}
                                                 </p>
                                             </div>
@@ -476,7 +476,7 @@ const WebPlatformDetails = () => {
                     <div className="w-full">
 
                         {/* TITLE */}
-                        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#E3E3E0] text-center md-10 md:mb-20 tracking-tight leading-tight ">
+                        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center md-10 md:mb-20 tracking-tight leading-tight ">
                             How We Work?
                         </h2>
 
@@ -484,7 +484,7 @@ const WebPlatformDetails = () => {
 
                             {/* LEFT SIDE */}
                             <div className="lg:col-span-5 text-left lg:sticky lg:top-[22vh] h-auto">
-                                <h3 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-white leading-tight tracking-tight">
+                                <h3 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-[#262626] leading-tight tracking-tight">
                                     A Transparent Process<br className="hidden lg:block" />
                                     Built for
                                     <span className="text-[#F67300]"> Fast & Reliable</span><br />
@@ -541,7 +541,7 @@ const WebPlatformDetails = () => {
                                             <img
                                                 src={cardTopCurve}
                                                 alt={`Step ${s.step} Tab`}
-                                                className="w-full h-full object-fill"
+                                                className="w-full h-full object-fill drop-shadow-[0_-1px_0_rgba(113,113,113,0.4)]"
                                             />
 
                                             <div className="absolute inset-0 flex items-center justify-center pt-2 md:pt-4">
@@ -552,7 +552,7 @@ const WebPlatformDetails = () => {
                                         </div>
 
                                         {/* CARD */}
-                                        <div className={`relative bg-[#202021] pt-10 pb-15 px-7 md:px-9 flex gap-6  backdrop-blur-md transition-all duration-500 ${isDesktop
+                                        <div className={`relative bg-gray-50 pt-10 pb-15 px-7 md:px-9 flex gap-6  backdrop-blur-md transition-all duration-500 border border-gray-200 ${isDesktop
                                             ? (s.step === 1
                                                 ? "rounded-tr-[20px] rounded-b-[20px] rounded-tl-none"
                                                 : s.step === 4
@@ -563,10 +563,10 @@ const WebPlatformDetails = () => {
 
                                             <div className="w-[3px] bg-[#F67300] rounded-full shrink-0" />
                                             <div className="flex flex-col gap-2 relative z-10 text-left">
-                                                <h4 className="text-lg md:text-2xl font-medium text-white">
+                                                <h4 className="text-lg md:text-2xl font-medium text-gray-900">
                                                     {s.title}
                                                 </h4>
-                                                <p className="text-white/70 text-[14px] md:text-[17px] leading-relaxed font-light">
+                                                <p className="text-gray-600 text-[14px] md:text-[17px] leading-relaxed font-light">
                                                     {s.desc}
                                                 </p>
                                             </div>
@@ -593,27 +593,27 @@ const OfferingCard = ({ index, card, offeringsXProgress }: { index: number, card
     const Icon = card.icon;
     return (
         <motion.div
-            className="relative flex flex-col justify-between p-8 rounded-[20px] border border-white/10 bg-[#1E1E1E] transition-all duration-500 overflow-hidden h-[320px] md:h-full w-full md:w-auto md:flex-1"
+            className="relative flex flex-col justify-between p-8 rounded-[20px] border border-gray-200 bg-gray-50 transition-all duration-500 overflow-hidden h-[320px] md:h-full w-full md:w-auto md:flex-1"
             style={{
                 x: useTransform(offeringsXProgress, (v: any) => `${v * index * -72}%`),
-                borderColor: "rgba(255, 255, 255, 0.1)",
+                borderColor: "rgba(0, 0, 0, 0.1)",
                 zIndex: index
             }}
         >
             {/* Content Wrapper */}
             <div className="flex flex-col h-full justify-between relative z-10">
                 {/* Top Section: Icon */}
-                <div className="w-14 h-14 rounded-full flex items-center justify-center border bg-white  border-white/10 text-[#F67300] shrink-0">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center border bg-white  border-gray-200 text-[#F67300] shrink-0">
                     <Icon size={24} strokeWidth={1.5} />
                 </div>
 
                 {/* Middle Section: Title & Description */}
                 <div className="flex flex-col text-left justify-end h-full">
-                    <h3 className="text-xl md:text-2xl font-medium tracking-tight text-white text-left mb-3">
+                    <h3 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 text-left mb-3">
                         {card.title}
                     </h3>
 
-                    <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed font-light text-left">
+                    <p className="text-gray-600 text-[14px] md:text-[15px] leading-relaxed font-light text-left">
                         {card.desc}
                     </p>
                 </div>
