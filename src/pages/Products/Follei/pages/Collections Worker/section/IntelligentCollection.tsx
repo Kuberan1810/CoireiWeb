@@ -28,27 +28,29 @@ const IntelligentCollection = () => {
     <section className="w-full px-6 sm:px-10 md:px-15 py-20 flex flex-col items-center bg-white relative">
 
       {/* Badge */}
-      <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#004370] rounded-[10px] text-[#04032E] font-medium text-[12px] sm:text-[14px] mb-6">
+      <div data-ns-animate="true" data-delay="0.1" className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#004370] rounded-[10px] text-[#04032E] font-medium text-[12px] sm:text-[14px] mb-6">
         <span className="w-1.5 h-1.5 rounded-full bg-[#004370]"></span>
         Intelligent Collection
       </div>
 
       {/* Title */}
-      <h2 className="text-[#04032E] text-3xl sm:text-[60px] md:text-5xl font-medium text-center mb-6 max-w-4xl leading-tight">
+      <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-3xl sm:text-[60px] md:text-5xl font-medium text-center mb-6 max-w-4xl leading-tight">
         Every Payment Journey Ends <br />
         <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">With Revenue Recovered</span>
       </h2>
 
       {/* Subtitle */}
-      <p className="text-[#6E6E6E] text-sm sm:text-[16px] text-center max-w-3xl mb-16 leading-relaxed">
+      <p data-ns-animate="true" data-delay="0.3" className="text-[#6E6E6E] text-sm sm:text-[16px] text-center max-w-3xl mb-16 leading-relaxed">
         Follei intelligently manages every stage of the collections lifecycle—from invoice monitoring to successful payment recovery—helping businesses improve cash flow while maintaining trusted customer relationships.
       </p>
 
       {/* Cards Grid */}
       <div className="w-full max-w-[1400px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
-        {steps.map((step) => (
+        {steps.map((step, index) => (
           <div
             key={step.id}
+            data-ns-animate="true"
+            data-delay={0.4 + index * 0.1}
             className="group relative h-[360px] p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer border-[0.5px] border-[#004370]/20 overflow-hidden bg-white hover:bg-[#004370] hover:border-transparent hover:shadow-md"
           >
             {/* Top Section */}

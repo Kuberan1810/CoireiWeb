@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import follei from "../../../assets/videos/Follei.mp4";
 import lmsImg from "../../../assets/images/products/LMSdashboard.svg";
 import veleiImg from "../../../assets/images/products/Analytics Dashboard.svg";
 import Tasie from "./Animation/Tasie";
 import TypewriterHeading from "../../../component/TypewriterHeading";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const products = [
     {
@@ -13,7 +15,8 @@ const products = [
         description: "An end-to-end AI sales automation platform that manages the complete customer journey  from first contact to long-term customer success  as a coordinated workforce of specialized agents, not a single chatbot.",
         pills: ["Voice", "WhatsApp", "Email", "Web Chat"],
         mediaType: "video",
-        src: follei
+        src: follei,
+        link: "/products/follei"
     },
     {
         id: "lms",
@@ -22,7 +25,8 @@ const products = [
         description: "An intelligent learning platform for schools, colleges, universities, and corporate training  combining modern learning infrastructure with AI across student, faculty, admin, and super admin portals.",
         pills: ["Student Portal", "Faculty Portal", "Admin Portal", "Super Portal"],
         mediaType: "image",
-        src: lmsImg
+        src: lmsImg,
+        link: "/products/coireilms"
     },
     {
         id: "velei",
@@ -77,9 +81,9 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
 
                 {/* Description */}
                 <p className="text-[#5B6280] text-base md:text-[18px] leading-relaxed mb-5 font-light min-h-[81px]">
-                    <TypewriterHeading 
-                        text={product.description} 
-                        delay={10} 
+                    <TypewriterHeading
+                        text={product.description}
+                        delay={10}
                         onComplete={() => setIsTypingDone(true)}
                     />
                 </p>
@@ -97,7 +101,28 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
                         ))}
                     </div>
                 )}
+
+                {/* View More Button */}
+                {product.link && (
+                    <div
+                        className={`mt-8 transform transition-all duration-700 ease-out ${isTypingDone
+                                ? "translate-y-0 opacity-100"
+                                : "translate-y-8 opacity-0"
+                            }`}
+                    >
+                        <Link
+                            to={product.link}
+                            className="group/btn inline-flex w-full cursor-pointer items-center justify-center gap-2 border border-[#E5E5E5] bg-[#B7BFD910] px-7 py-3 font-medium text-[#14182C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-50 hover:shadow-sm sm:w-auto"
+                        >
+                            <span>View More</span>
+
+                            <ChevronRight className="h-5 w-5 transition-transform duration-300 ease-in-out group-hover/btn:translate-x-2" />
+                        </Link>
+                    </div>
+                )}
             </div>
+
+
 
             {/* Image Container */}
             <div

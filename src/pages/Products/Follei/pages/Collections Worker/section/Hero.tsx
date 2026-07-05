@@ -1,24 +1,50 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import folleiLogo from "../../../../../../assets/images/products/folleilogo.svg";
 import bg5 from "../../../../../../assets/images/products/bg5.jpg";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Hero: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+
+      // Initial States
+      gsap.set(".cw-hero-tag", { opacity: 0, y: 20 });
+      gsap.set(".cw-hero-title", { opacity: 0, y: 40 });
+      gsap.set(".cw-hero-desc", { opacity: 0, y: 20 });
+      gsap.set(".cw-hero-card", { scale: 0.8, opacity: 0, y: 40 });
+
+      // Animation Sequence
+      tl.to(".cw-hero-tag", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" })
+        .to(".cw-hero-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .to(".cw-hero-desc", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.6")
+        .to(".cw-hero-card", { scale: 1, opacity: 1, y: 0, duration: 0, ease: "power3.out" }, "-=0.3");
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full px-6 sm:px-10 md:px-15 py-10 flex justify-center bg-white ">
-      <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between min-h-[481px] group">
+    <section ref={sectionRef} className="w-full GlobalPadding bg-white mt-18">
+      <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between ">
 
         {/* Left Column: Content */}
         <div className="w-full lg:w-2/3 flex flex-col items-start text-left">
           {/* Badge Pill */}
           <div
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
+            className="cw-hero-tag opacity-0 inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
             <span>Collections Worker</span>
           </div>
 
           {/* Title */}
-          <h1 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+          <h1 className="cw-hero-title opacity-0 text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
             Turn Outstanding Payments <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               Into Revenue
@@ -27,16 +53,16 @@ export const Hero: React.FC = () => {
 
 
           {/* Description */}
-          <p className="text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
+          <p className="cw-hero-desc opacity-0 text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
             Deliver instant, context-aware support across every customer touchpoint. The Support Worker understands every conversation, accesses complete business knowledge, and resolves issues faster with AI-powered assistance.Deliver instant, context-aware support across every customer touchpoint. The Support Worker understands every conversation, accesses complete business knowledge, and resolves issues faster with AI-powered assistance.          </p>
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-emerald-500/20">
+        <div className="cw-hero-card opacity-0 w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-emerald-500/20">
           {/* Background Image */}
           <img
             src={bg5}
-            loading="lazy"
+            loading="eager"
             alt=""
             className="image-cover absolute inset-0 w-full h-[390px] object-cover opacity-30 transition-transform duration-700 "
           />

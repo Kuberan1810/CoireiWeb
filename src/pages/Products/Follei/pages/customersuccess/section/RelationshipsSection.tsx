@@ -67,7 +67,7 @@ export const RelationshipsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 justify-start items-center w-full max-w-[539px] ml-8 mt-12">
+            {/* <div className="flex gap-4 justify-start items-center w-full max-w-[539px] ml-8 mt-12">
               <span
                 onMouseEnter={() => setIsJourneyHovered(true)}
                 onMouseLeave={() => setIsJourneyHovered(false)}
@@ -80,7 +80,7 @@ export const RelationshipsSection: React.FC = () => {
               >
                 Engagement Insights
               </span>
-            </div>
+            </div> */}
 
           </div>
 
@@ -181,14 +181,14 @@ export const RelationshipsSection: React.FC = () => {
             </div>
 
 
-            <div className="flex gap-4 justify-start items-center w-full max-w-[448.74px] mt-8">
+            {/* <div className="flex gap-4 justify-start items-center w-full max-w-[448.74px] mt-8">
               <span className="px-8 py-6 rounded-[14px] text-[16px] font-medium bg-[#000215] text-white select-none cursor-default">
                 AI Guidance
               </span>
               <span className="px-8 py-6 rounded-[14px] text-[16px] font-medium text-[#878787] select-none cursor-default">
                 Health Analysis
               </span>
-            </div>
+            </div> */}
 
           </div>
         </div>
