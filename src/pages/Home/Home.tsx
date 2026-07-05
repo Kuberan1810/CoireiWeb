@@ -12,8 +12,7 @@ import Ceo from "./sections/Ceo";
 import Cta from "./sections/Cta";
 import Hero from "./sections/Hero";
 import IndustrialAITraining from "./sections/IndustrialAITraining";
-import { useEffect, useState } from "react";
-import Lenis from "@studio-freight/lenis";
+import { useState } from "react";
 
 
 function Home() {

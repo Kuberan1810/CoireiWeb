@@ -12,7 +12,6 @@ const TypewriterHeading: React.FC<TypewriterHeadingProps> = ({
     text, 
     className = "", 
     delay = 30,
-    cursorClassName = "inline-block w-[3px] h-[1em] bg-gradient-to-r from-orange-500 to-amber-400 ml-2 align-middle animate-pulse",
     onComplete
 }) => {
     const [displayedText, setDisplayedText] = useState("");

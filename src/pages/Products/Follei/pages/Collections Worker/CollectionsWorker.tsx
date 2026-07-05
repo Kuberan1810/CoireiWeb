@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 
 
-import Lenis from '@studio-freight/lenis'
 import useScrollAnimations from "../../../../../hooks/useScrollAnimations";
 import Hero from "./section/Hero";
 import Navbar from "../../../../../component/Navbar";

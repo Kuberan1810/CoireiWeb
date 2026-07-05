@@ -1,4 +1,3 @@
-import React from "react";
 import zoomImg from "../../../assets/images/homepage/zoom.svg";
 import handshakeImg from "../../../assets/images/homepage/handshake.svg";
 import TypewriterHeading from "../../../component/TypewriterHeading";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import TypewriterHeading from '../../../component/TypewriterHeading';
 
 const TypewriterText = ({ text, onComplete }: { text: string, onComplete?: () => void }) => {

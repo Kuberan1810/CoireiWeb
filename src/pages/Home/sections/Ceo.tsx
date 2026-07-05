@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import ceoImg from "../../../assets/images/homepage/ceo-new.svg";
 
 // Custom Typewriter Component that types text out when scrolled into view

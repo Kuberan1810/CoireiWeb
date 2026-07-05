@@ -1,4 +1,3 @@
-import React from 'react';
 import illust from '../../../assets/images/contact/illust.svg';
 import { Lock, ChevronDown } from 'lucide-react';
 

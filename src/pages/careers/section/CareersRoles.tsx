@@ -1,4 +1,3 @@
-import React from "react";
 import { Zap, PenTool, Code, Percent } from "lucide-react";
 
 const roles = [

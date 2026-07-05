@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Navbar from "../../../../../component/Navbar";
 import Footer from "../../sections/Footer";
 import Faq from "../../sections/Faq";

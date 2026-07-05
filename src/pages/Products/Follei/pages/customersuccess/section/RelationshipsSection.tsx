@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import cj1Img from "../../../../../../assets/images/products/CJ 1.png";
 
 export const RelationshipsSection: React.FC = () => {
-  const [isJourneyHovered, setIsJourneyHovered] = React.useState(false);
+  const [isJourneyHovered] = React.useState(false);
 
   return (
     <section className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">

@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
-import * as THREE from 'three';
+import { useEffect, useState } from 'react';
 
 import HoverParticles from '../../../component/HoverParticles';
 import Sample2Logo from '../../Products/Follei/pages/Sample2Logo';

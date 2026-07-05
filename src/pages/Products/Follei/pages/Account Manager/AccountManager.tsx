@@ -1,5 +1,4 @@
 
-import { useEffect } from "react";
 // Sections
 import useScrollAnimations from "../../../../../hooks/useScrollAnimations";
 import Navbar from "../../../../../component/Navbar";

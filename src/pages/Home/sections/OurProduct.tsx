@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import follei from "../../../assets/videos/Follei.mp4";
 import Lms from "../../../assets/videos/lms.mp4";
-import veleiImg from "../../../assets/images/products/Analytics Dashboard.svg";
 import Tasie from "./Animation/Tasie";
 import Velei from "./Animation/Velei";
 import TypewriterHeading from "../../../component/TypewriterHeading";

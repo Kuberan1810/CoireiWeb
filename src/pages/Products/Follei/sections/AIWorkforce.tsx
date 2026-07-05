@@ -326,7 +326,7 @@ export const AIWorkforce: React.FC = () => {
       mm.add("all", () => {
         const cards = gsap.utils.toArray<HTMLElement>(".solution-item");
         
-        cards.forEach((card, index) => {
+        cards.forEach((card) => {
           // Animate inner contents ultra smoothly one by one (staggered) inside the card when it enters
           const textContents = card.querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");
           const imgWrapper = card.querySelector(".solution-image-wrapper");
