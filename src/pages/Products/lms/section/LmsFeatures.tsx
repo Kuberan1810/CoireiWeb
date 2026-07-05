@@ -12,17 +12,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
     <div
       data-ns-animate
       data-delay={delay}
-      className="flex flex-col items-center text-center p-8 rounded-3xl border border-white/5 bg-[#1C1C1C]/60 hover:bg-[#252525]/80 hover:border-[#F67300]/30 transition-all duration-500 group shadow-lg hover:shadow-[0_0_30px_rgba(246,115,0,0.08)]"
+      className="flex flex-col items-center text-center p-8 rounded-3xl border border-[#E9ECFF] bg-white hover:bg-gray-50 hover:border-[#F67300]/30 transition-all duration-500 group shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(246,115,0,0.15)]"
     >
-      <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#292929] border border-white/10 mb-6 group-hover:scale-110 group-hover:bg-[#F67300]/10 group-hover:border-[#F67300]/20 transition-all duration-500">
-        <div className="text-white group-hover:text-[#F67300] transition-colors duration-500">
+      <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#FAFAFA] border border-[#E9ECFF] mb-6 group-hover:scale-110 group-hover:bg-[#F67300]/10 group-hover:border-[#F67300]/20 transition-all duration-500">
+        <div className="text-[#04032E] group-hover:text-[#F67300] transition-colors duration-500">
           {icon}
         </div>
       </div>
-      <h3 className="text-xl sm:text-[22px] font-medium text-white tracking-tight leading-tight mb-4   transition-colors duration-500">
+      <h3 className="text-xl sm:text-[22px] font-medium text-[#04032E] tracking-tight leading-tight mb-4   transition-colors duration-500">
         {title}
       </h3>
-      <p className="text-zinc-400 text-[15px] sm:text-base leading-relaxed font-light">
+      <p className="text-[#5A5A5C] text-[15px] sm:text-base leading-relaxed font-light">
         {description}
       </p>
     </div>
@@ -99,7 +99,7 @@ const LmsFeatures: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
           <h2
             data-ns-animate
-            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.15]  "
+            className="text-[32px] md:text-[48px] lg:text-[56px] font-medium text-[#04032E] tracking-tight leading-[1.15]  "
           >
             Powerful Features for <br className="hidden sm:block" /> Modern Learning Management.
           </h2>

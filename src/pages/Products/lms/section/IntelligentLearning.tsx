@@ -1,6 +1,6 @@
 import React from 'react';
 import LMSdashboard from '../../../../assets/images/products/LMSdashboard.svg';
-import bgcurveee from '../../../../assets/images/products/bgcurveee.png';
+
 import { useNavigate } from 'react-router-dom';
 
 const IntelligentLearning: React.FC = () => {
@@ -32,11 +32,7 @@ const IntelligentLearning: React.FC = () => {
       `}</style>
 
       {/* Background Curve Image */}
-      <img
-        src={bgcurveee}
-        alt="Background Curve"
-        className="absolute top-0 right-70 w-[70%] md:w-[60%] h-auto pointer-events-none -z-10 opacity-90 object-contain"
-      />
+
 
       <div className="w-full flex flex-col items-center justify-center relative z-10 max-w-7xl mx-auto">
 
@@ -53,7 +49,7 @@ const IntelligentLearning: React.FC = () => {
 
           <h2
             data-ns-animate
-            className="text-[36px] md:text-[50px] lg:text-[56px] font-medium text-white tracking-tight leading-[1.2] mb-6  "
+            className="text-[36px] md:text-[50px] lg:text-[56px] font-medium text-[#04032E] tracking-tight leading-[1.2] mb-6  "
           >
             Intelligent Learning <br className="hidden md:block" /> Infrastructure
           </h2>
@@ -61,7 +57,7 @@ const IntelligentLearning: React.FC = () => {
           <p
             data-ns-animate
             data-delay="0.1"
-            className="text-[16px] sm:text-[17px] text-zinc-300/80 leading-relaxed max-w-[700px] mb-10"
+            className="text-[16px] sm:text-[17px] text-[#5A5A5C] leading-relaxed max-w-[700px] mb-10"
           >
             Coirei LMS is an AI-powered learning system that adapts, tracks, and evolves with every learner — delivering personalized experiences at scale.
           </p>
@@ -79,7 +75,7 @@ const IntelligentLearning: React.FC = () => {
             </button>
             <button
               onClick={() => navigate('/contact-sales')}
-              className="bg-[#292929] border border-white/10 hover:border-white/20 text-[#F66F00] py-2.5 px-8 rounded transition-colors font-medium text-[15px]"
+              className="bg-white border border-[#E9ECFF] hover:border-gray-300 text-[#04032E] py-2.5 px-8 rounded transition-colors font-medium text-[15px]"
             >
               Contact us
             </button>
@@ -98,14 +94,14 @@ const IntelligentLearning: React.FC = () => {
         {/* Badges Container - Absolutely positioned relative to the full hero content area */}
         <div className="relative w-full h-[60px] mt-8 mb-20 hidden md:block">
           {/* Left Badge */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-3 bg-[#292929] border border-white/10 px-5 py-3 rounded z-20 shadow-lg w-[230px] justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-3 bg-[#FAFAFA] border border-[#E9ECFF] px-5 py-3 rounded z-20 shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] w-[230px] justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#04032E]"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
             <span className="text-[#F66F00] text-[15px] font-medium">All-in-One LMS</span>
           </div>
 
           {/* Right Badge */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-3 bg-[#292929] border border-white/10 px-5 py-3 rounded z-20 shadow-lg w-[230px] justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M21.21 15.89A10 10 0 1 1 8 2.83" /><path d="M22 12A10 10 0 0 0 12 2v10z" /></svg>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-3 bg-[#FAFAFA] border border-[#E9ECFF] px-5 py-3 rounded z-20 shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] w-[230px] justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#04032E]"><path d="M21.21 15.89A10 10 0 1 1 8 2.83" /><path d="M22 12A10 10 0 0 0 12 2v10z" /></svg>
             <span className="text-[#F66F00] text-[15px] font-medium">Real-Time Analytics</span>
           </div>
         </div>
@@ -169,8 +165,12 @@ const IntelligentLearning: React.FC = () => {
           </div>
 
           {/* Dashboard Image */}
-          <div className="rounded-2xl border border-white/10 p-1.5 bg-[#1C1C1C] relative z-10 w-full overflow-hidden shadow-2xl shadow-black/80">
-            <div className="rounded-xl overflow-hidden border border-white/5 bg-[#141414]">
+          <div 
+            data-ns-animate 
+            data-delay="0.3"
+            className="rounded-2xl border border-[#E9ECFF] p-1.5 bg-[#FAFAFA] relative z-10 w-full overflow-hidden shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)]"
+          >
+            <div className="rounded-xl overflow-hidden border border-[#E9ECFF] bg-white">
               <img src={LMSdashboard} alt="Intelligent Learning Infrastructure Dashboard" className="w-full h-auto object-cover opacity-90" />
             </div>
           </div>

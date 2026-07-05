@@ -69,7 +69,7 @@ const CareersFeature = () => {
                         >
                             <div 
                                 className="bg-[#F3F4F7] rounded-[16px] p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-center w-full"
-                                style={{ border: "0.2px solid #F67300" }}
+                                style={{ border: "0.5px solid #93939320" }}
                             >
                                 {/* Icon Container */}
                                 <div 

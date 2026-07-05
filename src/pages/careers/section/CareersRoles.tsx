@@ -66,7 +66,7 @@ const CareersRoles = () => {
                         data-ns-animate
                         data-delay={0.1 * index}
                         className="bg-[#F3F4F7] rounded-[16px] p-6 sm:p-8 flex flex-col w-full relative"
-                        style={{ border: "0.2px solid #F67300" }}
+                        style={{ border: "0.5px solid #93939320" }}
                     >
                         {/* Top Row: Icon and Internship Type */}
                         <div className="flex justify-between items-start mb-6">
