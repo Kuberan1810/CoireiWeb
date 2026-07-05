@@ -1,86 +1,113 @@
-import { Terminal, Rocket, Puzzle } from "lucide-react";
+import React from "react";
+import { Rocket, Handshake, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 
-const CareerFeature = () => {
-  return (
-    <section className="text-white  mb-10 sm:mb-15 md:mb-15 mx-6 sm:mx-10 md:mx-15">
-      <div>
+const features = [
+    {
+        title: "Build Meaningful AI Solutions",
+        desc: "Work on core infrastructure that defines how modern software is planned, built, and shipped.",
+        icon: Rocket
+    },
+    {
+        title: "Collaborate with Great Minds",
+        desc: "Contribute directly to a growing platform where your work shapes the product used by real teams.",
+        icon: Handshake
+    },
+    {
+        title: "Accelerate Your Career",
+        desc: "Be part of a thoughtful, inclusive team that values ownership, clarity, and long-term thinking.",
+        icon: TrendingUp
+    }
+];
 
-        {/* TOP HORIZONTAL LINE */}
-        <div className="h-px w-full bg-white/20 mb-12 sm:mb-16 md:mb-20 lg:mb-24" />
+const CareersFeature = () => {
+    return (
+        <section className="w-full max-w-[1600px] mx-auto px-6 sm:px-10 md:px-15 py-20 flex flex-col md:flex-row gap-16 md:gap-8 bg-[#FFFFFF]">
+            
+            {/* Left Column: Heading and Subtext */}
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="w-full md:w-1/2 flex flex-col items-start pt-10"
+            >
+                <h2 className="font-medium text-[40px] md:text-[52px] leading-[1.2] md:leading-[62.4px] text-[#000000] mb-6 tracking-normal">
+                    At <span className="text-[#F67300]">Coirei</span>, You'll Get To
+                </h2>
+                <p className="font-normal text-[16px] md:text-[18px] leading-[1.5] md:leading-[29.25px] text-[#4F4F4F] max-w-[500px]">
+                    Join a team where innovation meets opportunity. Build AI-powered products, collaborate with talented professionals, and make an impact through meaningful work.
+                </p>
+            </motion.div>
 
-        {/* HEADING */}
-        <h2 
-          data-ns-animate 
-          data-offset="80" 
-          className="text-center font-medium text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mb-10 sm:mb-12 md:mb-14 lg:mb-15"
-        >
-          At Coirei, you’ll get to:
-        </h2>
+            {/* Right Column: Cards Stack */}
+            <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                    hidden: {},
+                    visible: { transition: { staggerChildren: 0.1 } }
+                }}
+                className="w-full md:w-1/2 flex flex-col gap-6"
+            >
+                {features.map((feature, index) => {
+                    const yOffset = index === 0 ? 0 : index === 1 ? -130 : -260;
+                    const zIndex = 30 - (index * 10);
+                    const opacityStart = index === 0 ? 0.6 : index === 1 ? 0.35 : 0.15;
+                    const scaleStart = index === 0 ? 0.98 : index === 1 ? 0.94 : 0.90;
 
-        {/* CONTENT GRID */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
+                    return (
+                        <motion.div 
+                            key={index}
+                            variants={{
+                                hidden: { y: yOffset, opacity: opacityStart, scale: scaleStart },
+                                visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.7 + (index * 0.05), ease: "easeOut" } }
+                            }}
+                            className="relative"
+                            style={{ zIndex }}
+                        >
+                            <div 
+                                className="bg-[#F3F4F7] rounded-[16px] p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-center w-full"
+                                style={{ border: "0.2px solid #F67300" }}
+                            >
+                                {/* Icon Container */}
+                                <div 
+                                    className="rounded-[24px] p-[1.5px] shrink-0"
+                                    style={{ background: "linear-gradient(145deg, #5960DF 36.85%, #F8CBC0 69.28%)" }}
+                                >
+                                    {/* Layer 2: White Background */}
+                                    <div className="rounded-[22.5px] bg-white p-2 sm:p-3">
+                                        {/* Layer 3: Soft Purple Icon Background */}
+                                        <div 
+                                            className="rounded-[14px] w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] flex items-center justify-center"
+                                            style={{ 
+                                                background: "linear-gradient(0deg, rgba(89, 96, 223, 0.08), rgba(89, 96, 223, 0.08)), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%)" 
+                                            }}
+                                        >
+                                            <feature.icon className="w-7 h-7 sm:w-8 sm:h-8" style={{ color: "#5A6FD8", strokeWidth: 1.5 }} />
+                                        </div>
+                                    </div>
+                                </div>
 
-          {/* COLUMN 1 */}
-          <div 
-            data-ns-animate 
-            data-delay="0.1" 
-            data-offset="40" 
-            className="flex flex-col items-start text-left px-4 sm:px-8 md:px-12 lg:px-16"
-          >
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#1a1a1a] flex items-center justify-center mb-5 sm:mb-6">
-              <Terminal size={22} className="text-white" />
-            </div>
+                                {/* Text Content */}
+                                <div className="flex flex-col w-full">
+                                    <h3 className="font-normal text-[22px] sm:text-[30.72px] leading-[1.2] sm:leading-[38.4px] tracking-[-1.54px] text-[#000000] pb-3">
+                                        {feature.title}
+                                    </h3>
+                                    <div className="w-full border-b-[0.5px] border-[#000000]" />
+                                    <p className="font-normal text-[16px] sm:text-[18.43px] leading-[1.5] sm:leading-[26.11px] text-[#000000] pt-4">
+                                        {feature.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    );
+                })}
+            </motion.div>
 
-            <p className="text-base sm:text-lg text-white/70 md:max-w-full lg:max-w-xs leading-relaxed">
-              Work on core infrastructure that defines how modern software is planned, built, and shipped.
-            </p>
-          </div>
-
-          {/* VERTICAL DIVIDER 1 */}
-          <div className="hidden md:block absolute left-1/3 top-0 bottom-0 w-px bg-white/20" />
-
-          {/* COLUMN 2 */}
-          <div 
-            data-ns-animate 
-            data-delay="0.2" 
-            data-offset="40" 
-            className="flex flex-col items-start text-left px-4 sm:px-8 md:px-12 lg:px-16"
-          >
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#1a1a1a] flex items-center justify-center mb-5 sm:mb-6">
-              <Rocket size={22} className="text-white" />
-            </div>
-
-            <p className="text-base sm:text-lg text-white/70 md:max-w-full lg:max-w-xs leading-relaxed">
-              Contribute directly to a growing platform where your work shapes the product used by real teams.
-            </p>
-          </div>
-
-          {/* VERTICAL DIVIDER 2 */}
-          <div className="hidden md:block absolute left-2/3 top-0 bottom-0 w-px bg-white/20" />
-
-          {/* COLUMN 3 */}
-          <div 
-            data-ns-animate 
-            data-delay="0.3" 
-            data-offset="40" 
-            className="flex flex-col items-start text-left px-4 sm:px-8 md:px-12 lg:px-16"
-          >
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#1a1a1a] flex items-center justify-center mb-5 sm:mb-6">
-              <Puzzle size={22} className="text-white" />
-            </div>
-
-            <p className="text-base sm:text-lg text-white/70 md:max-w-full lg:max-w-xs leading-relaxed">
-              Be part of a thoughtful, inclusive team that values ownership, clarity, and long-term thinking.
-            </p>
-          </div>
-        </div>
-
-        {/* BOTTOM HORIZONTAL LINE */}
-        <div className="h-px w-full bg-white/20 mt-12 sm:mt-16 md:mt-20 lg:mt-24" />
-
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
-export default CareerFeature;
+export default CareersFeature;

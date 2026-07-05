@@ -2,8 +2,9 @@ import SEO from "../../component/SEO";
 import Footer from "../../component/Footer/Footer";
 import CareersHero from "./section/CareersHero";
 import CareersFeature from "./section/CareersFeature";
-import CareersWorkFlow from "./section/CareersWorkFlow";
+import CareersFAQ from "./section/CareersFAQ";
 import CareersRoles from "./section/CareersRoles";
+import CareersCTA from "./section/CareersCTA";
 import Navbar from "../../component/Navbar";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 
@@ -25,8 +26,9 @@ function Careers() {
             </div>
             <CareersHero />
             <CareersFeature />
-            <CareersWorkFlow />
             <CareersRoles />
+            <CareersFAQ />
+            <CareersCTA />
             <Footer />
         </>
     );
