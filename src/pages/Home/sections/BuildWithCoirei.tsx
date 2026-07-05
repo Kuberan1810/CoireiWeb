@@ -97,7 +97,7 @@ const BuildWithCoirei = () => {
             
             <div className="flex flex-wrap gap-3">
               {['AI Engineers', 'Product Architects', 'Cloud & DevOps', 'UI/UX Designers'].map((badge) => (
-                <span key={badge} className="font-mono text-xs text-gray-400 px-3 py-1.5 border border-gray-100 rounded">
+                <span key={badge} className="font-mono text-xs text-[#5B6280] px-3 py-1.5 border border-[#DEE3EE] rounded">
                   {badge}
                 </span>
               ))}
@@ -112,7 +112,7 @@ const BuildWithCoirei = () => {
               key={index} 
               className={`py-5 ${index !== services.length - 1 ? 'border-b border-gray-50' : ''}`}
             >
-              <span className="text-gray-500 text-sm md:text-base font-medium">{service}</span>
+              <span className="text-[#5B6280] text-sm md:text-base font-medium">{service}</span>
             </div>
           ))}
         </div>

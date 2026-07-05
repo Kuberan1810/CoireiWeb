@@ -121,7 +121,7 @@ const IndustrialAITraining = () => {
               {partners.map((partner, index) => (
                 <span 
                   key={index} 
-                  className="text-[#8B9DB4] font-semibold text-xs md:text-sm"
+                  className="text-[#878FAA] font-semibold text-xs md:text-sm"
                 >
                   {partner}
                 </span>
