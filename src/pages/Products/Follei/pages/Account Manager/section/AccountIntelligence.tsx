@@ -45,6 +45,7 @@ export const AccountIntelligence: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 flex flex-col items-center">
           {/* Badge Capsule */}
           <div
+            data-ns-animate="true" data-delay="0.1"
             className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider mb-6 relative"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#004370]" />
@@ -52,7 +53,7 @@ export const AccountIntelligence: React.FC = () => {
           </div>
 
           {/* Title */}
-          <h2 className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 max-w-none">
+          <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 max-w-none">
             Every Strategic Account <br />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               Grows With Intelligence
@@ -60,7 +61,7 @@ export const AccountIntelligence: React.FC = () => {
           </h2>
 
           {/* Subheading */}
-          <p className="text-[#5A5A5C] text-base sm:text-[16px] font-normal leading-relaxed">
+          <p data-ns-animate="true" data-delay="0.3" className="text-[#5A5A5C] text-base sm:text-[16px] font-normal leading-relaxed">
             The Account Manager Worker continuously monitors customer relationships, product adoption, executive engagement, and business opportunities to maximize account growth and long-term customer value.
           </p>
         </div>
@@ -72,6 +73,7 @@ export const AccountIntelligence: React.FC = () => {
             return (
               <div
                 key={feat.id}
+                data-ns-animate="true" data-delay={`${0.2 + (Number(feat.id === "business" ? 0 : feat.id === "growth" ? 1 : feat.id === "executive" ? 2 : 3) * 0.1)}`}
                 className="bg-white rounded-[10px] p-5 text-left flex flex-col justify-between transition-all duration-300"
               >
                 <div>

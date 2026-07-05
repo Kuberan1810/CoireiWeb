@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import follei from "../../../assets/videos/Follei.mp4";
-import lmsImg from "../../../assets/images/products/LMSdashboard.svg";
+import Lms from "../../../assets/videos/lms.mp4";
 import veleiImg from "../../../assets/images/products/Analytics Dashboard.svg";
 import Tasie from "./Animation/Tasie";
+import Velei from "./Animation/Velei";
 import TypewriterHeading from "../../../component/TypewriterHeading";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {  ChevronRight } from "lucide-react";
 
 const products = [
     {
@@ -24,8 +25,8 @@ const products = [
         category: "AI-POWERED LEARNING MANAGEMENT PLATFORM",
         description: "An intelligent learning platform for schools, colleges, universities, and corporate training  combining modern learning infrastructure with AI across student, faculty, admin, and super admin portals.",
         pills: ["Student Portal", "Faculty Portal", "Admin Portal", "Super Portal"],
-        mediaType: "image",
-        src: lmsImg,
+        mediaType: "video",
+        src: Lms,
         link: "/products/coireilms"
     },
     {
@@ -35,8 +36,8 @@ const products = [
         category: "THE FUTURE OF AI RECRUITMENT",
         description: "Recruitment based on skills, not just resumes. Velei runs autonomous AI interviews and delivers structured candidate assessments in place of manual resume review.",
         pills: [],
-        mediaType: "image",
-        src: veleiImg
+        mediaType: "component",
+        component: <Velei />
     },
     {
         id: "tasie",
@@ -167,7 +168,7 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
 
 const OurProduct = () => {
     return (
-        <section className="relative GlobalPadding">
+        <section id="our-products" className="relative GlobalPadding">
             <div className="">
 
                 {/* Section Header */}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CareersCTA = () => {
     return (
@@ -26,13 +27,14 @@ const CareersCTA = () => {
                     Join thousands writing faster and better with us.
                 </p>
 
-                <button 
+                <Link 
+                    to={"/contact"}
                     data-ns-animate data-delay="0.3"
                     className="bg-[#272727] text-white font-normal text-[20px] md:text-[22px] leading-[33px] px-10 py-3 rounded-[8px] hover:bg-[#1a1a1a] transition-colors duration-300 shadow-lg"
                     style={{ borderTop: "1px solid #000000" }}
                 >
                     Contact us
-                </button>
+                </Link>
             </div>
         </section>
     );

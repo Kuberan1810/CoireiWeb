@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -6,6 +6,49 @@ import heartAnimation from "../../../../assets/js/heart_animation.json";
 import stepsAnimation from "../../../../assets/js/steps_animation.json";
 import { Link } from "react-router-dom";
 import FolleiMitra from "../../../../assets/images/products/FolleiMitra.svg"
+import HeroPart from "../../../../assets/images/products/hero-part.svg"
+import { Users, TrendingUp } from "lucide-react";
+
+// Helper component to animate numbers
+const AnimatedNumber = ({ end, duration = 2000, decimals = 0, prefix = "", suffix = "" }: { end: number, duration?: number, decimals?: number, prefix?: string, suffix?: string }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTimestamp: number | null = null;
+    let animationFrameId: number;
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      // Easing function: easeOutExpo
+      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setCount(easeProgress * end);
+      
+      if (progress < 1) {
+        animationFrameId = window.requestAnimationFrame(step);
+      }
+    };
+    
+    // Add a slight delay for better effect when page loads
+    const timeoutId = setTimeout(() => {
+        animationFrameId = window.requestAnimationFrame(step);
+    }, 500);
+
+    return () => {
+        clearTimeout(timeoutId);
+        if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
+    };
+  }, [end, duration]);
+
+  const formattedCount = count.toLocaleString('en-US', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  });
+
+  return <span>{prefix}{formattedCount}{suffix}</span>;
+};
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +64,7 @@ const Hero: React.FC = () => {
       gsap.set(".hero-button-group", { opacity: 0, scale: 0.95 });
 
       gsap.set(".hero-gallery-card", { scale: 0.8, opacity: 0, y: 40 });
+      gsap.set(".hero-floating-pill", { scale: 0.8, opacity: 0, y: 30 });
       gsap.set(".hero-gallery-left .hero-gallery-image", { opacity: 0, scale: 0.9, x: -20 });
       gsap.set(".hero-gallery-right .hero-gallery-image", { opacity: 0, scale: 0.9, x: 20 });
 
@@ -30,6 +74,7 @@ const Hero: React.FC = () => {
         .to(".hero-home-one-text-wrapper", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.6")
         .to(".hero-button-group", { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.5)" }, "-=0.5")
         .to(".hero-gallery-card", { scale: 1, opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, "-=0.3")
+        .to(".hero-floating-pill", { scale: 1, opacity: 1, y: 0, duration: 1.2, stagger: 0.2, ease: "power3.out" }, "<")
         .to(".hero-gallery-left .hero-gallery-image", { opacity: 1, scale: 1, x: 0, duration: 1, stagger: 0.15, ease: "power2.out" }, "-=1")
         .to(".hero-gallery-right .hero-gallery-image", { opacity: 1, scale: 1, x: 0, duration: 1, stagger: 0.15, ease: "power2.out" }, "-=1");
 
@@ -86,8 +131,34 @@ const Hero: React.FC = () => {
   return (
     <div className="main-wrapper">
       <section className="section-hero">
-        <div className="hero-space">
-          <div className="hero-area text-center">
+        <div className="hero-space relative">
+          <div className="hero-area text-center relative w-full">
+            {/* Floating Left Pill - Glassmorphism UI */}
+            <div className="hero-floating-pill absolute left-0 lg:left-[5%] bottom-[10%] xl:bottom-[10%] hidden md:flex items-center gap-4 bg-white/40 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 ring-1 ring-white/40 rounded-[24px] py-3 px-5 z-10 hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-[50px] h-[50px] flex items-center justify-center bg-[#E5F0FF]/90 backdrop-blur-sm rounded-[14px]">
+                <Users className="w-6 h-6 text-[#143265]" strokeWidth={2.5} />
+              </div>
+              <div className="flex flex-col text-left">
+                <div className="text-[12px] font-bold tracking-wider text-[#1F1F1F] uppercase mb-0.5">Active Users</div>
+                <div className="text-[28px] font-bold text-[#1D1B44] leading-none font-sans">
+                  <AnimatedNumber end={1284} duration={2500} />
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Right Pill - Glassmorphism UI */}
+            <div className="hero-floating-pill absolute right-0 lg:right-[5%] bottom-[10%] xl:bottom-[20%] hidden md:flex items-center gap-4 bg-white/40 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 ring-1 ring-white/40 rounded-[24px] py-3 px-5 z-10 hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-[50px] h-[50px] flex items-center justify-center bg-[#E2F7E6]/90 backdrop-blur-sm rounded-[14px]">
+                <TrendingUp className="w-6 h-6 text-[#22A559]" strokeWidth={3} />
+              </div>
+              <div className="flex flex-col text-left">
+                <div className="text-[12px] font-bold tracking-wider text-[#1F1F1F] uppercase mb-0.5">Conversion</div>
+                <div className="text-[28px] font-bold text-[#1D1B44] leading-none font-sans">
+                  <AnimatedNumber end={64.8} decimals={1} duration={2500} prefix="+" suffix="%" />
+                </div>
+              </div>
+            </div>
+
             <div
               data-w-id="4dd23dca-4618-a5f0-d798-0a1ac785ca0a"
               className="hero-tag"
@@ -163,7 +234,7 @@ const Hero: React.FC = () => {
                 className="hero-gallery-image"
               >
                 <img
-                  src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69b2ff4aa4ddd75b551c8ff2_Frame%202085666452.avif"
+                  src={HeroPart}
                   loading="eager"
                   width={469}
                   height={116}

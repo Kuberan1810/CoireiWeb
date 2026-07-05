@@ -106,10 +106,10 @@ export const ConnectedContext: React.FC = () => {
                     The Sales Executive Worker combines customer context, product knowledge, pricing, commercial policies, and operational intelligence to deliver recommendations that are accurate, relevant, and tailored to every opportunity.
                 </p>
 
-                {/* Orbit Ring Layout Container */}
+                {/* DESKTOP VERSION: Orbit Ring Layout Container */}
                 <div
                     data-ns-animate="true" data-delay="0.1"
-                    className="w-full flex items-center justify-center relative select-none mt-8 " style={{ height: "650px" }}>
+                    className="hidden md:flex w-full items-center justify-center relative select-none mt-8" style={{ height: "650px" }}>
                     <style>{`
                         @keyframes orbit-clockwise {
                             from {
@@ -243,10 +243,41 @@ export const ConnectedContext: React.FC = () => {
 
                 </div>
 
+                {/* MOBILE VERSION: Clean Grid Layout */}
+                <div className="flex md:hidden flex-col items-center w-full mt-10 relative z-10 px-2">
+                    <div data-ns-animate="true" data-delay="0.1" className="w-24 h-24 rounded-full border border-orange-500/35 flex items-center justify-center bg-white shadow-[0_0_30px_rgba(10,102,245,0.15)] mb-10 relative">
+                        {/* Connecting Line to Grid */}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[1.5px] h-10 bg-gradient-to-b from-[#4181CA]/50 to-transparent"></div>
+                        <img
+                            src={folleiLogo}
+                            alt="Coirei Logo Processor"
+                            className="w-16 h-16 object-contain"
+                        />
+                    </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                        {[
+                            { label: "Products", icon: <Boxes size={18} /> },
+                            { label: "Business Knowledge", icon: <BookOpen size={18} /> },
+                            { label: "Business Processes", icon: <Cog size={18} /> },
+                            { label: "Customer Context", icon: <CircleUser size={18} /> },
+                            { label: "Pricing Intelligence", icon: <DollarSign size={18} /> },
+                            { label: "Commercial Policies", icon: <ClipboardCheck size={18} /> },
+                        ].map((item, idx) => (
+                            <div key={idx} data-ns-animate="true" data-delay={(idx * 0.1).toFixed(1)} className="flex items-center gap-3 p-4 border border-[#045F9D]/15 rounded-xl bg-[#F1F1F1] shadow-[inset_0_2px_10px_0_rgba(100,201,255,0.15)] relative">
+                                <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#004370] text-white shrink-0">
+                                    {item.icon}
+                                </span>
+                                <span className="text-[#04032E] text-[15px] font-medium tracking-tight">{item.label}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
 
             {/* Bottom Gradient Fade/Blur Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/75 to-transparent pointer-events-none z-30 backdrop-blur-[3px]" />
+            <div className="hidden md:block absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/75 to-transparent pointer-events-none z-30 backdrop-blur-[3px]" />
         </section>
     );
 };

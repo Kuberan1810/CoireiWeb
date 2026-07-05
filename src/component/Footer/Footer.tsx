@@ -8,18 +8,18 @@ import FooterContact from "./FooterContact";
 const footerLinksData = [
     [
         { label: "Home", href: "/" },
-        { label: "Features", href: "/features" },
-        { label: "Contact Sales", href: "/contactsales" },
-        { label: "Services", href: "/services" },
+        // { label: "Features", href: "/features" },
+        { label: "Contact ", href: "/contact" },
+        // { label: "Services", href: "/services" },
         { label: "Careers", href: "/careers" },
     ],
     [
 
-        { label: "Blog", href: "/resources/blog" },
+        // { label: "Blog", href: "/resources/blog" },
         { label: "Company", href: "/resources/company" },
         { label: "Privacy", href: "/resources/privacy" },
-        { label: "Contact", href: "/resources/contact" },
-        { label: "Learning", href: "/learning" },
+        // { label: "Contact", href: "/resources/contact" },
+        // { label: "Learning", href: "/learning" },
 
     ]
 ];

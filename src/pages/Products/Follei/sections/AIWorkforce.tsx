@@ -63,7 +63,7 @@ const agents: AgentCard[] = [
     mockup: (
       <div className="w-full h-full flex items-center justify-center scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-center">
         <div
-          className="w-[461px] h-[265px] shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between p-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
+          className="h-full w-full shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between p-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
           style={{
             backgroundColor: '#FFFFFF',
           }}
@@ -195,7 +195,7 @@ const agents: AgentCard[] = [
     link: "/products/follei/collections-worker",
     mockup: (
       <div className="w-full h-full flex items-center justify-center scale-[0.55] sm:scale-[0.7] md:scale-90 lg:scale-100 origin-center">
-        <div className="bg-white w-[480px] aspect-[2/1] rounded-[16px] shadow-[0_0_10px_rgba(160,160,160,0.2)] border border-slate-200/50 flex items-center justify-between px-3 sm:px-6 relative overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+        <div className="bg-white h-full w-full  rounded-[16px] shadow-[0_0_10px_rgba(160,160,160,0.2)] border border-slate-200/50 flex items-center justify-between px-3 sm:px-6 relative overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
 
           {/* Left Card */}
           <div className="w-[110px] sm:w-[135px] h-[60px] sm:h-[68px] flex-shrink-0 rounded-[4px] border-[1.5px] border-[#BDE0FF] bg-white flex flex-col justify-center gap-1.5 p-2 sm:p-2.5 relative z-10 shadow-sm">
@@ -456,7 +456,7 @@ export const AIWorkforce: React.FC = () => {
                 />
                 <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-6">
                   {agent.id === "sdr" ? (
-                    <div className={`w-full h-full rounded-[20px] p-5 flex flex-col overflow-hidden gap-[10px] ${agent.mockupBg}`}>
+                    <div className={`w-full h-full rounded-[20px]  flex flex-col overflow-hidden gap-[10px] ${agent.mockupBg}`}>
                       {agent.mockup}
                     </div>
                   ) : (

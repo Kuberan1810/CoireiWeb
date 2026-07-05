@@ -8,7 +8,7 @@ const ContactMain = () => {
             
             {/* Header */}
             <div className="flex flex-col items-center justify-center mb-16 md:mb-20">
-                <span data-ns-animate className="font-medium text-[16px] md:text-[22px] leading-[20px] tracking-[0.7px] text-[#464555] uppercase text-center mb-4">
+                <span data-ns-animate className=" font-medium text-[16px] md:text-[22px] leading-[20px] tracking-[0.7px] text-[#464555] uppercase text-center mb-4">
                     CONTACT US
                 </span>
                 <h1 data-ns-animate data-delay="0.1" className="font-medium text-[40px] md:text-[51px] leading-[1.1] md:leading-[60px] tracking-[-1.5px] text-center text-[#14182C] max-w-[800px]">

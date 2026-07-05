@@ -96,7 +96,7 @@ function Navbar() {
                                     : 'bg-gradient-to-r from-[#F48120] to-[#FA9A4A] hover:from-[#E07104] hover:to-[#DE8235]'
                         }`}
                     >
-                        Contact sales
+                        Contact Us
                     </Link>
                 </div>
 
@@ -133,13 +133,15 @@ function Navbar() {
                                             { label: "Follei", to: "/products/follei" },
                                             { label: "CoireiLMS", to: "/products/coireilms" },
                                         ].map((item, index) => (
-                                            <div
+                                            <Link
                                                 key={item.label}
-                                                className={`flex items-center justify-between px-4 py-3 text-[15px] cursor-default transition-colors duration-250 ${isLight ? 'text-[#3E3E3E]/90 hover:bg-black/5' : 'text-white/90 hover:bg-white/5'} ${index !== 0 ? (isLight ? "border-t border-black/5" : "border-t border-white/10") : ""}`}
+                                                to={item.to}
+                                                onClick={() => setOpen(false)}
+                                                className={`flex items-center justify-between px-4 py-3 text-[15px] cursor-pointer transition-colors duration-250 ${isLight ? 'text-[#3E3E3E]/90 hover:bg-black/5' : 'text-white/90 hover:bg-white/5'} ${index !== 0 ? (isLight ? "border-t border-black/5" : "border-t border-white/10") : ""}`}
                                             >
                                                 <span>{item.label}</span>
                                                 <ChevronRight size={14} className="opacity-40" />
-                                            </div>
+                                            </Link>
                                         ))}
                                     </div>
                                 </li>

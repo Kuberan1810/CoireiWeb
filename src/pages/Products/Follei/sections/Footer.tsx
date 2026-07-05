@@ -85,33 +85,44 @@ const Footer = () => {
                 <div className="container-fluid">
                     <div className="footer-widgets-area">
                         <div className="footer-widgets-nav">
-                            <div className="footer-title">Quciks links</div>
+                            <div className="footer-title">Quick Links</div>
                             <div className="footer-nav">
-                                <a href="/" aria-current="page" className="footer-text-link w-inline-block w--current">
+                                <button onClick={() => document.getElementById('overview')?.scrollIntoView({ behavior: 'smooth' })} className="footer-text-link w-inline-block text-left bg-transparent border-none p-0 cursor-pointer">
                                     <div className="text-link-wrapper">
-                                        <div className="link-text">Home </div>
-                                        <div className="link-text-hover white">Home</div>
+                                        <div className="link-text">Overview</div>
+                                        <div className="link-text-hover white">Overview</div>
                                     </div>
-                                </a>
-
-                                <a href="/resources/company" className="footer-text-link w-inline-block">
+                                </button>
+                                <button onClick={() => document.getElementById('workforce')?.scrollIntoView({ behavior: 'smooth' })} className="footer-text-link w-inline-block text-left bg-transparent border-none p-0 cursor-pointer">
                                     <div className="text-link-wrapper">
-                                        <div className="link-text">About</div>
-                                        <div className="link-text-hover white">About</div>
+                                        <div className="link-text">AI Workforce</div>
+                                        <div className="link-text-hover white">AI Workforce</div>
                                     </div>
-                                </a>
-                                <a href="/contact" className="footer-text-link w-inline-block">
+                                </button>
+                                <button onClick={() => document.getElementById('automation')?.scrollIntoView({ behavior: 'smooth' })} className="footer-text-link w-inline-block text-left bg-transparent border-none p-0 cursor-pointer">
                                     <div className="text-link-wrapper">
-                                        <div className="link-text">Contact</div>
-                                        <div className="link-text-hover white">Contact</div>
+                                        <div className="link-text">Automation</div>
+                                        <div className="link-text-hover white">Automation</div>
                                     </div>
-                                </a>
-                                <a href="/features" className="footer-text-link w-inline-block">
+                                </button>
+                                <button onClick={() => document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' })} className="footer-text-link w-inline-block text-left bg-transparent border-none p-0 cursor-pointer">
                                     <div className="text-link-wrapper">
-                                        <div className="link-text">Features</div>
-                                        <div className="link-text-hover white">Features</div>
+                                        <div className="link-text">How We Work</div>
+                                        <div className="link-text-hover white">How We Work</div>
                                     </div>
-                                </a>
+                                </button>
+                                <button onClick={() => document.getElementById('platform')?.scrollIntoView({ behavior: 'smooth' })} className="footer-text-link w-inline-block text-left bg-transparent border-none p-0 cursor-pointer">
+                                    <div className="text-link-wrapper">
+                                        <div className="link-text">Platform</div>
+                                        <div className="link-text-hover white">Platform</div>
+                                    </div>
+                                </button>
+                                <button onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })} className="footer-text-link w-inline-block text-left bg-transparent border-none p-0 cursor-pointer">
+                                    <div className="text-link-wrapper">
+                                        <div className="link-text">FAQ</div>
+                                        <div className="link-text-hover white">FAQ</div>
+                                    </div>
+                                </button>
                             </div>
                         </div>
                         <div className="footer-widgets-nav">
@@ -147,43 +158,45 @@ const Footer = () => {
                                         <div className="link-text-hover white">Collections Worker</div>
                                     </div>
                                 </a>
+
+                              
+                                <a href="/products/follei/account-manager" className="footer-text-link w-inline-block">
+                                    <div className="text-link-wrapper">
+                                        <div className="link-text">Account Manager</div>
+                                        <div className="link-text-hover white">Account Manager</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         <div className="footer-widgets-nav">
                             <div className="footer-title">Coirei Pages</div>
                             <div className="footer-nav">
-                                <a href="/" aria-current="page" className="footer-text-link w-inline-block w--current">
+                                 <a href="/" aria-current="page" className="footer-text-link w-inline-block w--current">
                                     <div className="text-link-wrapper">
-                                        <div className="link-text">Home</div>
+                                        <div className="link-text">Home </div>
                                         <div className="link-text-hover white">Home</div>
                                     </div>
                                 </a>
 
-                                <a href="/services" className="footer-text-link w-inline-block">
+                                <a href="/careers" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
-                                        <div className="link-text">Services</div>
-                                        <div className="link-text-hover white">Services</div>
+                                        <div className="link-text">Careers</div>
+                                        <div className="link-text-hover white">Careers</div>
                                     </div>
                                 </a>
-                                <a href="/products/follei" className="footer-text-link w-inline-block">
-                                    <div className="text-link-wrapper">
-                                        <div className="link-text">Product</div>
-                                        <div className="link-text-hover white">Product</div>
-                                    </div>
-                                </a>
-                                <a href="/resources/blog" className="footer-text-link w-inline-block">
-                                    <div className="text-link-wrapper">
-                                        <div className="link-text">Blog</div>
-                                        <div className="link-text-hover white">Blog</div>
-                                    </div>
-                                </a>
-                                  <a href="/resources/company" className="footer-text-link w-inline-block">
+                                <a href="/resources/company" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Company</div>
                                         <div className="link-text-hover white">Company</div>
                                     </div>
                                 </a>
-                                <a href="/contact" className="footer-text-link w-inline-block">
+                                  <a href="/resources/privacy" className="footer-text-link w-inline-block">
+                                    <div className="text-link-wrapper">
+                                        <div className="link-text">Privacy</div>
+                                        <div className="link-text-hover white">Privacy</div>
+                                    </div>
+                                </a>
+                                  <a href="/contact" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Contact</div>
                                         <div className="link-text-hover white">Contact</div>

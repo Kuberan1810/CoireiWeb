@@ -125,7 +125,21 @@ const Hero = ({ onTypingComplete }: HeroProps) => {
                     {/* Typed Header */}
                     <div className="flex items-center justify-center pointer-events-none">
                         <h1 className="text-[32px] md:text-[92px] font-medium tracking-tight text-center leading-tight">
-                            {displayedText}
+                            {(() => {
+                                const baseText = "AI that thinks. Learns. ";
+                                if (displayedText.length <= baseText.length) {
+                                    return displayedText;
+                                } else {
+                                    const firstPart = displayedText.substring(0, baseText.length);
+                                    const secondPart = displayedText.substring(baseText.length);
+                                    return (
+                                        <>
+                                            {firstPart}
+                                            <span className="text-[#ff7b00]">{secondPart}</span>
+                                        </>
+                                    );
+                                }
+                            })()}
                             <span className="inline-block w-[3px] h-[1em] bg-gradient-to-r from-orange-500 to-amber-400 ml-2 cursor-blink align-middle"></span>
                         </h1>
                     </div>
@@ -140,6 +154,14 @@ const Hero = ({ onTypingComplete }: HeroProps) => {
                 <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 w-full transition-all duration-1000 delay-300 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                     <button
                         type="button"
+                        onClick={() => {
+                            const section = document.getElementById('our-products');
+                            if (section && (window as any).lenis) {
+                                (window as any).lenis.scrollTo(section, { offset: -50, duration: 1.5 });
+                            } else if (section) {
+                                section.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
                         className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
                     >
                         Explore Our Products 

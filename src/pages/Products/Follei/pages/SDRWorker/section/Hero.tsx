@@ -69,10 +69,10 @@ export const Hero: React.FC = () => {
           />
 
           {/* Inner Card Container  */}
-          <div className="relative z-10 w-full h-full flex justify-center items-center p-6">
+          <div className="relative z-10 w-full h-full flex justify-center items-center p-10">
             <div className="w-full h-full flex items-center justify-center scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-center">
               <div
-                className="sdr-hero-inner-card w-[461px] h-[265px] shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between p-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
+                className="sdr-hero-inner-card w-full h-full shrink-0 border border-slate-200/50 rounded-[19.2px] shadow-[0_0_10px_rgba(160,160,160,0.2)] flex items-center justify-between p-5 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
                 style={{ backgroundColor: '#FFFFFF' }}
               >
                 <div className="absolute top-4 left-5 flex gap-1.5">
@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
                 </div>
 
                 {/* Left column - Tasks */}
-                <div className="flex flex-col gap-3 pl-2.5 text-left justify-center h-full mt-4">
+                <div className="flex flex-col gap-3 pl-2.5 text-left justify-center h-full mt-4 flex-1">
                   <div className="text-slate-800 font-extrabold text-[15px] tracking-wide shrink-0">Tasks :</div>
                   <div className="flex flex-col gap-3 font-medium text-xs text-slate-500">
                     <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
@@ -102,15 +102,15 @@ export const Hero: React.FC = () => {
 
                 {/* Right column */}
                 <div
-                  className="w-[243px] h-[224px] border-[1.1px] border-slate-200/60 rounded-[21.12px] shadow-sm relative flex flex-col justify-center px-4"
+                  className="flex-1 p-5 border-[1.1px] border-slate-200/60 rounded-[21.12px] shadow-sm relative flex flex-col justify-center px-4 "
                   style={{ backgroundColor: 'rgba(255, 255, 255, 0.51)', backdropFilter: 'blur(10px)' }}
                 >
                   <Search size={14} className="absolute top-4 right-4 text-slate-400" strokeWidth={2} />
 
                   {/* Blocks */}
-                  <div className="flex flex-col gap-4 pt-2">
+                  <div className="flex flex-col gap-4 pt-2 w-full">
                     {/* Nurturing Row */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 flex-1 w-full">
                       <div
                         className="w-[55px] h-[55px] rounded-[10.56px] shrink-0 shadow-sm"
                         style={{ background: 'linear-gradient(135deg, #5960DF 0%, #F8CBC0 33%, #D7B5C6 66%, #5960DF 100%)' }}
@@ -122,7 +122,7 @@ export const Hero: React.FC = () => {
                     </div>
 
                     {/* Meetings Row */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 w-full flex-1">
                       <div
                         className="w-[55px] h-[55px] rounded-[10.56px] shrink-0 shadow-sm"
                         style={{ background: 'linear-gradient(135deg, #5960DF 0%, #F8CBC0 33%, #D7B5C6 66%, #5960DF 100%)' }}

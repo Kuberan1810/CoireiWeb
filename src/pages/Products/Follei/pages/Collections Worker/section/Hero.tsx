@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
 
           {/* Description */}
           <p className="cw-hero-desc opacity-0 text-[#5A5A5C] text-sm sm:text-[22px] font-normal leading-relaxed">
-            Deliver instant, context-aware support across every customer touchpoint. The Support Worker understands every conversation, accesses complete business knowledge, and resolves issues faster with AI-powered assistance.Deliver instant, context-aware support across every customer touchpoint. The Support Worker understands every conversation, accesses complete business knowledge, and resolves issues faster with AI-powered assistance.          </p>
+            Deliver instant, context-aware support across every customer touchpoint. The Support Worker understands every conversation, accesses complete business knowledge, and resolves issues faster with AI-powered assistance.       </p>
         </div>
 
         {/* Right Column */}
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
 
           {/* Inner Dashboard Mockup */}
           <div className="relative z-10 w-full h-full flex justify-center items-center p-4 sm:p-6 lg:p-10">
-            <div className="bg-white w-full max-w-[480px] aspect-[2/1] rounded-[16px] shadow-lg flex items-center justify-between px-3 sm:px-6 relative overflow-hidden">
+            <div className="bg-white w-full rounded-[16px] md:h-[400px] h-[200px] shadow-lg flex items-center justify-between px-3 sm:px-6 relative overflow-hidden">
 
               {/* Left Card */}
               <div className="w-[110px] sm:w-[135px] h-[60px] sm:h-[68px] flex-shrink-0 rounded-[4px] border-[1.5px] border-[#BDE0FF] bg-white flex flex-col justify-center gap-1.5 p-2 sm:p-2.5 relative z-10 shadow-sm">

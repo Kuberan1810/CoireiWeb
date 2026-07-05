@@ -43,7 +43,7 @@ import CollectionsWorker from "./pages/Products/Follei/pages/Collections Worker/
 import AccountManager from "./pages/Products/Follei/pages/Account Manager/AccountManager";
 
 
-import CustomerIntelligence from "./pages/Products/Follei/pages/customerintelligence/customerintelligence";
+import SupportWorker from "./pages/Products/Follei/pages/Support Worker/SupportWorker";
 
 
 // import Analytics from "./pages/Features/Analytics";
@@ -147,8 +147,8 @@ function App() {
         <Route path="/products/follei/customer-success" element={<CustomerSuccess />} />
         <Route path="/products/follei/collections-worker" element={<CollectionsWorker />} />
         <Route path="/products/follei/account-manager" element={<AccountManager />} />
-        <Route path="/products/follei/support-worker" element={<CustomerIntelligence />} />
-        <Route path="/products/follei/customer-intelligence" element={<CustomerIntelligence />} />
+        <Route path="/products/follei/support-worker" element={<SupportWorker />} />
+        <Route path="/products/follei/customer-intelligence" element={<SupportWorker />} />
         <Route path="/products/coireilms" element={<LMS />} />
       </Routes>
     </>

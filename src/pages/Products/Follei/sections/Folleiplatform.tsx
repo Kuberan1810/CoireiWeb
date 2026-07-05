@@ -18,7 +18,7 @@ const tabData = [
         id: "connect",
         title: "Connect",
         description: "Bring together your CRM, emails, WhatsApp, ERP, and customer conversations one intelligence layer.",
-        graphic: group1
+        graphic: group4
     },
     {
         id: "understand",
@@ -36,7 +36,7 @@ const tabData = [
         id: "improve",
         title: "Improve",
         description: "every interaction becomes a learning signal, helping Follei continuously optimize performance and outcomes.",
-        graphic: group4
+        graphic: group1
     }
 ];
 

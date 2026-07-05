@@ -93,19 +93,19 @@ const BusinessImpact = () => {
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full py-16">
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#004370]/30 rounded-[10px] text-[#04032E] font-medium text-[12px] sm:text-[14px] mb-6">
+        <div data-ns-animate="true" data-delay="0.1" className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#004370]/30 rounded-[10px] text-[#04032E] font-medium text-[12px] sm:text-[14px] mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#004370]"></span>
           Business Impact
         </div>
 
         {/* Title */}
-        <h2 className="text-[#04032E] text-3xl sm:text-[50px] md:text-5xl font-medium text-center mb-6 max-w-4xl leading-tight">
+        <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-3xl sm:text-[50px] md:text-5xl font-medium text-center mb-6 max-w-4xl leading-tight">
           Every Relationship Drives <br />
           <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">Long-Term Growth</span>
         </h2>
 
         {/* Subtitle */}
-        <p className="text-[#6E6E6E] text-sm sm:text-[16px] text-center max-w-4xl mb-16 leading-relaxed">
+        <p data-ns-animate="true" data-delay="0.3" className="text-[#6E6E6E] text-sm sm:text-[16px] text-center max-w-4xl mb-16 leading-relaxed">
           The Account Manager Worker transforms customer relationships into measurable business growth by continuously strengthening engagement, identifying expansion opportunities, and improving lifetime value.
         </p>
 

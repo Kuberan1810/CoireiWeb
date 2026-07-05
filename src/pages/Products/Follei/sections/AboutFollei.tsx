@@ -90,7 +90,7 @@ const AboutFollei: React.FC = () => {
           {/* Card 1*/}
           <div
             data-ns-animate data-delay="0.1"
-            className="relative bg-gradient-to-br from-[#1E293B] to-[#0A111F] text-white rounded-[10px] p-5 flex flex-col justify-between w-full mx-auto overflow-hidden"
+            className="relative bg-gradient-to-br from-[#1E293B] to-[#0A111F] text-white rounded-[10px] p-5 flex flex-col justify-between h-full overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all duration-500" />
 
@@ -121,7 +121,7 @@ const AboutFollei: React.FC = () => {
           {/* Card 2: Built For Modern Enterprises */}
           <div
             data-ns-animate data-delay="0.2"
-            className="relative bg-[#F2F2F2] rounded-[16px] p-5 flex flex-col justify-between w-full mx-auto hover:bg-[#F3F4F6]/90 transition-all duration-500"
+            className="relative bg-[#F2F2F2] rounded-[16px] p-5 flex flex-col justify-between h-full hover:bg-[#F3F4F6]/90 transition-all duration-500"
           >
             <div className="flex items-start justify-between">
               <h3 className="text-[18px] tracking-tight text-[#000000] leading-tight">
@@ -145,12 +145,12 @@ const AboutFollei: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 w-full max-w-[423px] lg:h-[300px] justify-between mx-auto">
+          <div className="flex flex-col gap-4 h-full justify-between">
 
             {/* Card 3: Connected Ecosystem */}
             <div
               data-ns-animate data-delay="0.3"
-              className="relative bg-[#D7FD76] text-[#0B0F19] rounded-[16px] p-5 flex flex-col justify-between hover:brightness-105 transition-all duration-500"
+              className="relative bg-[#D7FD76] text-[#0B0F19] rounded-[16px] p-5 flex flex-col justify-between flex-1 hover:brightness-105 transition-all duration-500"
             >
               <div>
                 <h3 className="text-[18px] tracking-tight leading-tight">

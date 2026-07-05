@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Lenis from '@studio-freight/lenis';
 import Navbar from "../../../../../component/Navbar";
 import Footer from "../../sections/Footer";
 import Faq from "../../sections/Faq";
@@ -13,46 +12,13 @@ import ConfidentResolutionSection from "./ConfidentResolutionSection";
 import ProactiveResolutionSection from "./ProactiveResolutionSection";
 import BetterExperienceSection from "./BetterExperienceSection";
 
-const CustomerIntelligence = () => {
+const SupportWorker = () => {
     useScrollAnimations();
-
-    useEffect(() => {
-        // Initialize Lenis smooth scroll
-        const lenis = new Lenis({
-            duration: 1.8, 
-            easing: (t) => 1 - Math.pow(1 - t, 4), 
-            orientation: 'vertical',
-            gestureOrientation: 'vertical',
-            smoothWheel: true,
-            wheelMultiplier: 0.8,
-            touchMultiplier: 1.5,
-        });
-
-        function raf(time: number) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // Force a single page reload if not refreshed recently (to ensure GSAP/Lenis calculates perfectly)
-        const lastRefresh = sessionStorage.getItem("ci-refresh-time");
-        const now = Date.now();
-        const recentlyRefreshed = lastRefresh && (now - parseInt(lastRefresh, 10) < 10000);
-
-        if (!recentlyRefreshed) {
-            sessionStorage.setItem("ci-refresh-time", now.toString());
-            window.location.reload();
-        }
-
-        return () => {
-            lenis.destroy();
-        };
-    }, []);
 
     return (
         <div className="overflow-x-clip bg-[#FFFFFF] min-h-screen">
             <SEO
-                title="Customer Intelligence - Follei"
+                title="Support Worker - Follei"
                 description="Resolve every customer issue with intelligence."
             />
 
@@ -74,4 +40,4 @@ const CustomerIntelligence = () => {
     );
 };
 
-export default CustomerIntelligence;
+export default SupportWorker;

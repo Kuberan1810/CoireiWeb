@@ -156,7 +156,7 @@ const Integrations = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-24 lg:py-20 overflow-hidden bg-[#fafcff] relative w-full">
+        <section ref={sectionRef} className="h-screen overflow-hidden bg-[#fafcff] relative w-full">
             {/* Subtle background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -175,7 +175,7 @@ const Integrations = () => {
                             className="inline-flex items-center bg-white/80 backdrop-blur-sm"
                         >
                             <span className="w-1.5 h-1.5 rounded-full bg-[#1079B7]"></span>
-                            <span className="text-sm font-medium text-[#0A0E29]">How We Work</span>
+                            <span className="text-sm font-medium text-[#0A0E29]">Integrations</span>
                         </div>
                     </div>
 

@@ -1,4 +1,5 @@
-import React from "react";
+
+import { Link } from "react-router-dom";
 
 const CareersHero = () => {
     return (
@@ -21,9 +22,11 @@ const CareersHero = () => {
                 </p>
                 
                 {/* CTA Button */}
-                <button data-ns-animate data-delay="0.3" className="font-normal text-[18px] md:text-[22px] leading-[33px] text-white bg-[#272727] border-t border-[#000000] rounded-[8px] px-10 py-3 hover:bg-[#1a1a1a] transition-colors duration-300 shadow-md cursor-pointer">
+                <Link
+                to="/careers"
+                data-ns-animate data-delay="0.3" className="font-normal text-[18px] md:text-[22px] leading-[33px] text-white bg-[#272727] border-t border-[#000000] rounded-[8px] px-10 py-3 hover:bg-[#1a1a1a] transition-colors duration-300 shadow-md cursor-pointer">
                     Join Our Team
-                </button>
+                </Link>
 
             </div>
 
