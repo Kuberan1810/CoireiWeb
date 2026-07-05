@@ -8,10 +8,10 @@ import {
 } from "framer-motion";
 
 /* ---------------- LAZY IMPORTS ---------------- */
-const CollaborateFeature = lazy(() => import("./Animation/ColabrationCard"));
-const OrchestrationCard = lazy(() => import("./Animation/OrchestrationCard"));
-const Traceability = lazy(() => import("./Animation/Traceability"));
-const Intelligence = lazy(() => import("./Animation/IntelligenceCard"));
+const CollaborateFeature = lazy(() => import("../Animation/ColabrationCard"));
+const OrchestrationCard = lazy(() => import("../Animation/OrchestrationCard"));
+const Traceability = lazy(() => import("../Animation/Traceability"));
+const Intelligence = lazy(() => import("../Animation/IntelligenceCard"));
 
 /* ---------------- TYPES ---------------- */
 interface TabContent {

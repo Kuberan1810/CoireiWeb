@@ -2,23 +2,17 @@ import SEO from "../../component/SEO";
 import { FaqSchema } from "../../component/StructuredData";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
-
-import NewHero from "./sections/NewHero";
-import AboutUs from "./sections/AboutUs";
-import WhatWeDo from "./sections/WhatWeDo";
-import SmartJourney from "./sections/SmartJourney";
-import WhyChooseUs from "./sections/WhyChooseUs";
+import Industry from "./sections/Industry";
+import Vision from "./sections/Vision";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
-import { CeoSection } from "./sections/CeoSection";
+import About from "./sections/About";
+import OurProducts from "./sections/OurProduct";
+import BuildWithCoirei from "./sections/BuildWithCoirei";
+import Ceo from "./sections/Ceo";
+import Cta from "./sections/Cta";
+import Hero from "./sections/Hero";
+import IndustrialAITraining from "./sections/IndustrialAITraining";
 
-import OurProducts from "./sections/OurProducts";
-import TestimonialSection from "./sections/Testimonal";
-import HomeContact from "./sections/HomeContact";
-
-import ValuesSection from "./sections/ValuesSection";
-import IndustriesServing from "./sections/IndustriesServing";
-import OurMission from "./sections/OurMission";
-import FAQSection from "./sections/FAQSection";
 
 function Home() {
     useScrollAnimations();
@@ -37,19 +31,15 @@ function Home() {
                 <Navbar />
             </div>
 
-            <NewHero />
-            <AboutUs />
-            <OurMission />
-            <WhatWeDo />
-            <SmartJourney />
-            <WhyChooseUs />
+            <Hero />
+            <About />
             <OurProducts />
-            <ValuesSection />
-            <IndustriesServing />
-            <TestimonialSection />
-            <CeoSection />
-            <HomeContact />
-            <FAQSection />
+            <BuildWithCoirei />
+            <IndustrialAITraining />
+            <Industry />
+            <Vision />
+            <Ceo />
+            <Cta />
             <Footer />
 
         </div>

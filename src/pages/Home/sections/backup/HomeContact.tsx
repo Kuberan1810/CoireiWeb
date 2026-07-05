@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import useScrollReveal from "../../../hooks/useScrollReveal";
+import useScrollReveal from "../../../../hooks/useScrollReveal";
 
 const countryCodes = [
   { flagUrl: "https://flagcdn.com/w20/in.png", code: "+91", alt: "India" },
@@ -213,11 +213,10 @@ const HomeContact = () => {
                           strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className={`text-white/40 transition ${
-                            countryOpen
+                          className={`text-white/40 transition ${countryOpen
                               ? "rotate-180"
                               : ""
-                          }`}
+                            }`}
                         >
                           <path d="m6 9 6 6 6-6" />
                         </svg>

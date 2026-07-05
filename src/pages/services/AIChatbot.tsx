@@ -4,7 +4,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 import { ArrowUpRight, HandCoins } from "lucide-react";
-import FAQSection from "../Home/sections/FAQSection";
+import FAQSection from "../Home/sections/backup/FAQSection";
 import { motion, useInView } from "framer-motion";
 import ServicesWorkFlow from "./section/ServicesWorkFlow";
 

@@ -1,4 +1,4 @@
-import imageFile from "../../..//assets/images/homepage/team-missing.png";
+import imageFile from "../../../..//assets/images/homepage/team-missing.png";
 
 function ProblemSection() {
     return (

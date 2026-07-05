@@ -4,8 +4,8 @@ import { motion, useTransform, useMotionValue, animate } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
-import FAQSection from "../Home/sections/FAQSection";
-import TestimonialSection from "../Home/sections/Testimonal";
+import FAQSection from "../Home/sections/backup/FAQSection";
+import TestimonialSection from "../Home/sections/backup/Testimonal";
 import { LayoutGrid, LineChart, TrendingUp, Handshake, Network, Bot, Scan, Coins, Stethoscope, Factory, PhoneCall, Truck, Monitor, GraduationCap } from "lucide-react";
 
 const DataDashboardBI = () => {

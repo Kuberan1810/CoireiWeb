@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, Animat
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
-import TestimonialSection from "../Home/sections/Testimonal";
+import TestimonialSection from "../Home/sections/backup/Testimonal";
 import { FileText, RefreshCw, GitFork, TrendingUp, Workflow, ShieldCheck, Cpu, Sliders, Handshake, Wrench, Plug, Bot, BarChart3, Receipt, Hospital, Scan, Factory } from "lucide-react";
 import coireiLogo from "../../assets/images/products/coirei-logo.svg";
 import aboutusservice from "../../assets/images/services/aboutusservice.png";

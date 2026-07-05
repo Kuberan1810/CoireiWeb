@@ -8,7 +8,7 @@ const CareersHero = () => {
             <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[70%] h-[200px] rounded-[100%] bg-[#F67300] blur-[120px] opacity-[0.25] pointer-events-none" />
             
             {/* Content Container */}
-            <div className="flex flex-col items-center relative z-10 max-w-[900px] mx-auto text-center mt-24">
+            <div className="flex flex-col items-center relative max-w-[900px] mx-auto text-center mt-24">
                 
                 {/* Headline */}
                 <h1 data-ns-animate data-delay="0.1" className="font-bold text-[36px] sm:text-[44px] md:text-[52px] leading-[1.2] md:leading-[57.2px] text-[#000000] mb-8 tracking-normal">

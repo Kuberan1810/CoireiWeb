@@ -4,7 +4,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 import { Workflow, Smartphone, Settings, Building2 } from "lucide-react";
-import FAQSection from "../Home/sections/FAQSection";
+import FAQSection from "../Home/sections/backup/FAQSection";
 
 // --- Slot machine number reel ---
 const DigitReel = ({ digit, delay }: { digit: number; delay: number }) => {
@@ -383,7 +383,7 @@ const BusinessAppDetails = () => {
                                                     <div className="absolute top-[22%] md:top-[28%] left-[6%] md:left-[12%] flex items-center gap-1.5 md:gap-3">
                                                         <div className="bg-[] text-gray-900 px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap shadow-[0_0_15px_rgba(255,122,0,0.3)]">
                                                             {steps[activeStep].topPill}
-                                                       </div>
+                                                        </div>
                                                         <motion.svg
                                                             width="20"
                                                             height="20"

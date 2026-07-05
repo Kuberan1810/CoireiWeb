@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Star } from "lucide-react";
-import Image from "../../../assets/images/homepage/image.png";
-import TestimonialImage2 from "../../../assets/images/homepage/pfp.png";
-import TestimonialImage3 from "../../../assets/images/homepage/priyanka.png";
-import TestimonialImage4 from "../../../assets/images/homepage/confident-indian-business-woman.jpg";
+import Image from "../../../../assets/images/homepage/image.png";
+import TestimonialImage2 from "../../../../assets/images/homepage/pfp.png";
+import TestimonialImage3 from "../../../../assets/images/homepage/priyanka.png";
+import TestimonialImage4 from "../../../../assets/images/homepage/confident-indian-business-woman.jpg";
 
 const TESTIMONIALS = [
     {

@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
-import FAQSection from "../Home/sections/FAQSection";
+import FAQSection from "../Home/sections/backup/FAQSection";
 
 const servicesData: Record<string, { title: string; subtitle: string; desc: string; features: string[] }> = {
     "custom-web-platform-development": {

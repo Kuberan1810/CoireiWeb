@@ -5,8 +5,8 @@ import { Globe, Contact, Image } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import TestimonialSection from "../Home/sections/Testimonal";
-import FAQSection from "../Home/sections/FAQSection";
+import TestimonialSection from "../Home/sections/backup/Testimonal";
+import FAQSection from "../Home/sections/backup/FAQSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
