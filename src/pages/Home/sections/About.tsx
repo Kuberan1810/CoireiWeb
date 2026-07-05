@@ -2,12 +2,12 @@
 
 const About = () => {
     return (
-        <section className="relative w-full py-10 md:py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#FAFAFC]">
+        <section className="relative w-full GlobalPadding bg-[#FAFAFC]">
             
             {/* Blurred Background Layer (Matches Vector 41 in Figma) */}
             <div className="absolute top-1/2 right-[-10%] -translate-y-1/2 w-[800px] h-[400px] bg-[#B1BBFF50] opacity-100 blur-[1000px] rounded-full pointer-events-none -rotate-12"></div>
 
-            <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col md:flex-row gap-10 md:gap-20 items-start justify-between">
+            <div className="relative z-10 flex flex-col md:flex-row gap-10 md:gap-20 items-start justify-between">
                 
                 {/* Left Column: Heading */}
                 <div className="w-full md:w-1/2 shrink-0 pt-2">

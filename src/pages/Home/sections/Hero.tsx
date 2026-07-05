@@ -4,13 +4,14 @@ import SkyDark from "../../../assets/images/homepage/skydark.png"
 
 
 import HoverParticles from '../../../component/HoverParticles';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
     const fullText = "AI that thinks. Learns. Executes.";
     const [displayedText, setDisplayedText] = useState("");
     const [index, setIndex] = useState(0);
     const [isTypingDone, setIsTypingDone] = useState(false);
-    
+
     // Parallax mouse state
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -45,7 +46,7 @@ const Hero = () => {
         <section className="group relative w-full min-h-screen flex flex-col items-center justify-center bg-slate-50 overflow-hidden py-20">
 
             {/* Sky Background with Parallax */}
-            <div 
+            <div
                 className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[600ms] ease-out"
                 style={{ transform: `translate(${mousePos.x * -15}px, ${mousePos.y * -15}px) scale(1.05)` }}
             >
@@ -53,7 +54,7 @@ const Hero = () => {
             </div>
 
             {/* Cloud Animation with Parallax */}
-            <div 
+            <div
                 className="clouds transition-transform duration-[400ms] ease-out"
                 style={{ transform: `translate(${mousePos.x * -35}px, ${mousePos.y * -35}px) scale(1.1)` }}
             >
@@ -126,7 +127,7 @@ const Hero = () => {
                             <span className="inline-block w-[3px] h-[1em] bg-gradient-to-r from-orange-500 to-amber-400 ml-2 cursor-blink align-middle"></span>
                         </h1>
                     </div>
-                    
+
                     {/* Paragraph animating in after typing */}
                     <p className={`mt-5 text-xl text-[#5B6280] text-center max-w-5xl mx-auto transition-all duration-1000 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                         COIREI  builds intelligent AI products that transform how businesses sell, educate, hire, and build software  practical automation, autonomous decision-making, and enterprise-grade engineering.
@@ -137,13 +138,13 @@ const Hero = () => {
                 <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 w-full transition-all duration-1000 delay-300 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                     <button
                         type="button"
-                        className="flex items-center justify-center gap-2 bg-[#FC7C04] hover:bg-[#E07104] text-white px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer"
+                        className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
                     >
-                        Explore Our Products <span> </span>
+                        Explore Our Products 
                     </button>
                     <button
                         type="button"
-                        className="flex items-center justify-center gap-2 bg-transparent hover:bg-gray-50 text-[#14182C] border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer"
+                        className="flex items-center justify-center gap-2 bg-transparent hover:bg-gray-50 text-[#14182C] border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
                     >
                         Partner With Us
                     </button>
