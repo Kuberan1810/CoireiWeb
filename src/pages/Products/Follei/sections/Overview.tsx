@@ -4,7 +4,7 @@ import oneAiAgent from '../../../../assets/images/products/folleinewdashboard.sv
 
 const OverviewSection: React.FC = () => {
     return (
-        <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#FFFFFF]">
+        <section className="relative w-full GlobalPadding overflow-hidden bg-[#FFFFFF]">
             {/* Background decorative glows */}
             <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-transparent rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-transparent rounded-full blur-[100px] pointer-events-none" />

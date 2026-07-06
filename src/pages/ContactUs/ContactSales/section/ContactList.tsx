@@ -7,7 +7,7 @@ const ContactList = () => {
   const [showRequestDemo, setShowRequestDemo] = useState(false);
 
   return (
-    <section className="pt-20 px-6 sm:px-10 md:px-15  py-10 sm:py-16 md:py-18 lg:py-20  mt-20 sm:mt-24 lg:mt-40 ">
+    <section className="GlobalPadding">
       <div className="flex flex-col lg:flex-col justify-between gap-12 lg:gap-16">
 
         {/* LEFT CONTENT */}

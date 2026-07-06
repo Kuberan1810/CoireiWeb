@@ -25,7 +25,7 @@ const steps = [
 
 const IntelligentCollection = () => {
   return (
-    <section className="w-full px-6 sm:px-10 md:px-15 py-20 flex flex-col items-center bg-white relative">
+    <section className="w-full GlobalPadding flex flex-col items-center bg-white relative">
 
       {/* Badge */}
       <div data-ns-animate="true" data-delay="0.1" className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#004370] rounded-[10px] text-[#04032E] font-medium text-[12px] sm:text-[14px] mb-6">

@@ -49,7 +49,7 @@ const LmsRoadmap: React.FC = () => {
   return (
     <section 
       ref={containerRef} 
-      className="relative w-full py-15 md:py-30 px-6 "
+      className="relative w-full GlobalPadding "
     >
       <div className=" relative">
         

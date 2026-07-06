@@ -92,7 +92,7 @@ const LmsFeatures: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 font-inter-sans overflow-hidden bg-transparent">
+    <section className="relative GlobalPadding font-inter-sans overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Section Heading */}

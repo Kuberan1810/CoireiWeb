@@ -47,7 +47,7 @@ const AnimatedNumber: React.FC<{ value: number; suffix?: string; prefix?: string
 
 const AboutFollei: React.FC = () => {
   return (
-    <section className="relative w-full py-20 md:py-32 overflow-hidden bg-white flex flex-col items-center justify-center">
+    <section className="relative w-full GlobalPadding overflow-hidden bg-white flex flex-col items-center justify-center">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: `url(${bgImage})` }}
@@ -56,7 +56,7 @@ const AboutFollei: React.FC = () => {
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="w-full mx-auto px-6 sm:px-10 md:px-15 relative z-10">
+      <div className="w-full mx-auto relative z-10">
 
         {/* Section Header */}
         <div data-ns-animate data-delay="0" className="text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center">

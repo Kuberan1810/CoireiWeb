@@ -89,8 +89,8 @@ const BusinessImpact = () => {
   }, []);
 
   return (
-    <section className="w-full flex flex-col items-center mt-24 mb-16 relative business-impact-statics-section bg-white overflow-x-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full py-16">
+    <section className="w-full flex flex-col items-center relative business-impact-statics-section bg-white overflow-x-hidden GlobalPadding">
+      <div className="max-w-[1440px] mx-auto flex flex-col items-center w-full">
 
         {/* Badge */}
         <div data-ns-animate="true" data-delay="0.1" className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#004370]/30 rounded-[10px] text-[#04032E] font-medium text-[12px] sm:text-[14px] mb-6">

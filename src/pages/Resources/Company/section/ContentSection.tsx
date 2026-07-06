@@ -143,7 +143,7 @@ const ContentSection = () => {
 
   return (
     <>
-      <section className="relative z-10 bg-white px-6 pt-8 pb-0 sm:px-10 md:px-15">
+      <section className="relative z-10 bg-white GlobalPadding">
         <div className="flex w-full flex-col items-center">
           <div
             data-ns-animate="true"

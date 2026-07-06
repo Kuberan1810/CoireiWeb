@@ -245,7 +245,7 @@ const AccountEvolution = () => {
             {/* Desktop View with Scroll Animation */}
             <section ref={containerRef} className="hidden md:block w-full bg-[#FFFFFF] relative h-[350vh]">
                 
-                <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-6 sm:px-10 md:px-15 py-8 lg:py-10">
+                <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden GlobalPadding">
                     {/* Header Area */}
                     <div className="text-center max-w-4xl mx-auto mb-16 sm:mb-24 flex flex-col items-center">
                         {/* Badge Capsule */}
@@ -302,8 +302,8 @@ const AccountEvolution = () => {
             </section>
 
             {/* Mobile View with Vertical Accordion */}
-            <section className="block md:hidden w-full bg-[#FFFFFF] relative py-16">
-                <div className="w-full flex flex-col items-center justify-center px-6 sm:px-10">
+            <section className="block md:hidden w-full bg-[#FFFFFF] relative GlobalPadding">
+                <div className="w-full flex flex-col items-center justify-center">
                     {/* Header Area */}
                     <div className="text-center max-w-4xl mx-auto mb-10 flex flex-col items-center">
                         {/* Badge Capsule */}

@@ -39,7 +39,7 @@ const Steps = [
 const existingPartners = {
   title: "Our Existing Partners",
   desc: "We are proud to collaborate with organizations that support practical, industry-focused learning experiences.",
-  logos: [Img2,Img3,Skillpoint] as string[],
+  logos: [Img2, Img3, Skillpoint] as string[],
 };
 
 const partnerWithUs = {
@@ -122,28 +122,27 @@ const LearningSection = () => {
   }, []);
 
   return (
-    <section className="instrument-sans text-white pt-24 sm:pt-28 md:pt-42 ">
+    <div className="instrument-sans text-white">
 
-      <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 md:mb-24 px-4 py-20">
-        <h1
-          data-ns-animate
-          data-direction="up"
-          data-offset="80"
-          className="text-[28px] sm:text-4xl md:text-[50px] font-normal text-transparent bg-clip-text bg-linear-to-r from-white to-[#999999] leading-tight mb-4"
-        >
-          Learning & Collaboration Ecosystem <br className="hidden md:block" />for Modern Development
-        </h1>
-        <p
-          data-ns-animate
-          data-delay="0.15"
-          data-offset="80"
-          className="text-base sm:text-xl md:text-[24px] text-white/80 leading-relaxed font-medium">
-          Coirei delivers practical learning to master  workflows and build career-ready skills.
-        </p>
-      </div>
+      <section className=" flex flex-col items-center justify-center">
+        <div className="max-w-4xl mx-auto text-center pt-30 sm:pt-34 md:pt-42">
+          <h1
+            data-ns-animate
+            data-direction="up"
+            data-offset="80"
+            className="text-[28px] sm:text-4xl md:text-[50px] font-normal text-transparent bg-clip-text bg-linear-to-r from-white to-[#999999] leading-tight mb-4"
+          >
+            Learning & Collaboration Ecosystem <br className="hidden md:block" />for Modern Development
+          </h1>
+          <p
+            data-ns-animate
+            data-delay="0.15"
+            data-offset="80"
+            className="text-base sm:text-xl md:text-[24px] text-white/80 leading-relaxed font-medium">
+            Coirei delivers practical learning to master  workflows and build career-ready skills.
+          </p>
+        </div>
 
-      {/* ── Collaborate Section ── */}
-      <div className="px-6 md:px-10 lg:px-15 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div
             data-ns-animate
@@ -154,7 +153,7 @@ const LearningSection = () => {
               Collaborate with <span className="text-[#F18D37]">Coirei</span>
             </h2>
             <p className="text-[#B5B4B2] text-base sm:text-[20px] md:text-[25px] leading-relaxed mb-10 ">
-               We collaborate with industry leaders, training organizations, and enterprises to deliver high-quality, outcome-driven learning experiences. Partner with Coirei to empower learners with practical knowledge and career-ready skills aligned with real-world demands.
+              We collaborate with industry leaders, training organizations, and enterprises to deliver high-quality, outcome-driven learning experiences. Partner with Coirei to empower learners with practical knowledge and career-ready skills aligned with real-world demands.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-8 mb-20 lg:mb-0">
@@ -183,13 +182,13 @@ const LearningSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ── GSAP Pinned: Our Collaboration Network ── */}
-      {/* The outer div is the scroll trigger / pin wrapper */}
-      <div ref={pinnedRef} className="relative mt-8 ">
+      {/* The outer section is the scroll trigger / pin wrapper */}
+      <section ref={pinnedRef} className="relative mt-8">
         {/* This inner div is what gets pinned (it IS the sticky content) */}
-        <div className="p-4 sm:p-8 md:p-14 ">
+        <div className="GlobalPadding">
           <h3
             data-ns-animate
             data-direction="up"
@@ -208,7 +207,7 @@ const LearningSection = () => {
             We actively partner with a diverse ecosystem to bridge the gap between academic learning and industry requirements.
           </p>
 
-          <div 
+          <div
             data-ns-animate
             data-direction="up"
             data-offset="80"
@@ -257,7 +256,7 @@ const LearningSection = () => {
           </div>
 
           {/* Active step description */}
-          <div 
+          <div
             data-ns-animate
             data-direction="up"
             data-offset="80"
@@ -271,7 +270,7 @@ const LearningSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="absolute inset-0 " 
+                className="absolute inset-0 "
               >
                 <h4 className="text-[22px] sm:text-[30px] md:text-[40px] font-semibold text-[#E3E3E0] mb-3">
                   {Steps[activeIndex].title}:
@@ -283,7 +282,7 @@ const LearningSection = () => {
             </AnimatePresence>
           </div>
         </div>
-      </div>
+      </section>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -291,7 +290,7 @@ const LearningSection = () => {
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="px-6 md:px-10 lg:px-15 mb-24 py-10 md:py-50 text-center">
+        <section className="GlobalPadding text-center bg-transparent">
           <h3
             data-ns-animate
             data-direction="up"
@@ -321,9 +320,9 @@ const LearningSection = () => {
               />
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="px-6 md:px-10 lg:px-15 mb-28">
+        <section className="GlobalPadding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div
               className="rounded-2xl overflow-hidden"
@@ -371,9 +370,9 @@ const LearningSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="px-6 md:px-10 lg:px-15 mb-4">
+        <section className="GlobalPadding">
           <div className="rounded-2xl border border-[#444444] bg-[#2A2A2A] px-5 sm:pl-8 md:pl-[87px] sm:pr-5 py-5 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-10">
             <div
               data-ns-animate
@@ -409,10 +408,10 @@ const LearningSection = () => {
               />
             </div>
           </div>
-        </div>
+        </section>
 
       </motion.div>
-    </section >
+    </div>
   );
 };
 

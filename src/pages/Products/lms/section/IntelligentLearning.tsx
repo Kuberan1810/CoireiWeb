@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const IntelligentLearning: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative pt-24 pb-10 md:pb-20 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 font-inter-sans overflow-hidden bg-transparent">
+    <section className="relative GlobalPadding font-inter-sans overflow-hidden bg-transparent">
       {/* Glow Animation Style Block */}
       <style>{`
         @keyframes glow-flow {

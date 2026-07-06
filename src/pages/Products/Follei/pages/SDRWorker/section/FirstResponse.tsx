@@ -33,7 +33,7 @@ const FirstResponse: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 pt-20 md:pt-32 pb-8 md:pb-12 flex justify-center bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="w-full GlobalPadding flex justify-center bg-white relative overflow-hidden">
       <div className="w-full  grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
         {/* Left Column: Text Content */}
         <div className="lg:col-span-6 flex flex-col items-start text-left">

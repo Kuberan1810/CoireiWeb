@@ -6,7 +6,7 @@ import { Bell, DollarSign, TrendingUp } from 'lucide-react'
 
 const RevenueAutomation = () => {
   return (
-         <section className="section">
+         <section className="section GlobalPadding">
                     <div className="container">
                         <div className="grid-cols">
                             <motion.div

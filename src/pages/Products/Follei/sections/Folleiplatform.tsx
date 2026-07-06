@@ -122,7 +122,7 @@ export const FolleiPlatformSection: React.FC = () => {
     };
 
     return (
-        <section ref={sectionRef} className="relative w-full pt-16 pb-20 md:pb-24 lg:pt-24 px-6 sm:px-10 md:px-15 overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#FFF7F0] flex flex-col items-center justify-start text-center">
+        <section ref={sectionRef} className="relative w-full GlobalPadding overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#FFF7F0] flex flex-col items-center justify-start text-center">
             {/* Background Decorative Glow */}
             <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#1079B7]/5 rounded-full blur-[100px] pointer-events-none" />
 

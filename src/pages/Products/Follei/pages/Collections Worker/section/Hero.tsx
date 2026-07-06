@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full GlobalPadding bg-white mt-18">
+    <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-10 flex justify-center bg-white mt-18">
       <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-[71px] items-center justify-between ">
 
         {/* Left Column: Content */}

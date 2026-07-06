@@ -11,8 +11,8 @@ import folleiLogo from "../../../../../assets/images/products/folleilogo.svg";
 
 export const SalesExecutionSection: React.FC = () => {
     return (
-        <section className="relative w-full py-24 overflow-hidden bg-white flex flex-col items-center justify-center">
-            <div className="w-full mx-auto px-6 sm:px-10 md:px-15 relative z-10 max-w-[1400px]">
+        <section className="relative w-full GlobalPadding overflow-hidden bg-white flex flex-col items-center justify-center">
+            <div className="w-full mx-auto relative z-10 max-w-[1400px]">
 
                 {/* Section Header */}
                 <div data-ns-animate="true" data-delay="0" className="text-center max-w-4xl mx-auto mb-20 flex flex-col items-center">

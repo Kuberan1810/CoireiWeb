@@ -47,7 +47,7 @@ const row2Cards: CardData[] = [
 
 const IntelligentSupportSection: React.FC = () => {
     return (
-        <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 lg:px-20 bg-[#FFFFFF] flex flex-col items-center justify-center text-center">
+        <section className="relative w-full GlobalPadding bg-[#FFFFFF] flex flex-col items-center justify-center text-center">
             
             <div className=" relative z-10 flex flex-col items-center gap-12">
                 

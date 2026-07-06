@@ -37,8 +37,8 @@ const Faq: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full py-20 md:py-32 bg-[#fafafa] flex flex-col items-center justify-center border-t border-slate-200/50">
-      <div className=" px-6 sm:px-10 md:px-15 relative z-10">
+    <section className="relative w-full GlobalPadding bg-[#fafafa] flex flex-col items-center justify-center border-t border-slate-200/50">
+      <div className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Left Column: Heading */}

@@ -17,7 +17,7 @@ const navItems = [
 
 const Studentfeature = () => {
     return (
-        <section className="relative text-[#04032E] bg-white  px-6 md:px-12 overflow-hidden py-10 md:py-20">
+        <section className="relative text-[#04032E] bg-white GlobalPadding overflow-hidden">
             {/* <div className="max-w-7xl mx-auto"> */}
 
             <div className="flex flex-col items-center text-center mb-10 md:mb-20">

@@ -3,7 +3,7 @@ import groupImage from "../../../assets/images/services/group_images.png";
 
 const ServiceAbout = () => {
   return (
-    <section className="bg-[#1C1B1B] py-16 sm:py-20 px-5 sm:px-10 lg:px-15">
+    <section className="bg-[#1C1B1B] GlobalPadding">
       <div className="flex flex-col md:flex-row  md:items-center">
 
         {/* Image */}

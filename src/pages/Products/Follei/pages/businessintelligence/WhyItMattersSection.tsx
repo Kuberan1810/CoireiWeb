@@ -3,7 +3,7 @@ import { Zap, Target, MessageSquare, TrendingUp } from "lucide-react";
 
 export const WhyItMattersSection: React.FC = () => {
     return (
-        <section className="w-full px-6 sm:px-10 md:px-15 pt-4 pb-24 flex justify-center bg-white ">
+        <section className="w-full GlobalPadding flex justify-center bg-white ">
             <div className="w-full max-w-[1300px] flex flex-col items-center">
 
                 {/* Premium Capsule Badge */}

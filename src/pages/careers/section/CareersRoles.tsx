@@ -25,7 +25,7 @@ const roles = [
 
 const CareersRoles = () => {
     return (
-        <section id="roles" className="w-full mx-auto px-6 sm:px-10 md:px-15 py-20 bg-[#FFFFFF]">
+        <section id="roles" className="w-full GlobalPadding bg-[#FFFFFF]">
             
             {/* Top Divider & Pill */}
             <div data-ns-animate className="w-full max-w-[1400px] mx-auto flex items-center justify-center gap-6 mb-24">

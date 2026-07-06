@@ -29,7 +29,7 @@ const cards = [
 
 const Instructorfeature = () => {
     return (
-        <section className="relative text-white bg-white  py-16 md:py-24 px-6 sm:px-10 md:px-15 lg:px-20 overflow-hidden">
+        <section className="relative text-white bg-white  GlobalPadding overflow-hidden">
             <div className="">
 
                 <div className="flex flex-col items-center text-center mb-16">

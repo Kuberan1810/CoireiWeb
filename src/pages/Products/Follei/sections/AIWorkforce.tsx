@@ -376,9 +376,9 @@ export const AIWorkforce: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-solution relative w-full bg-white py-16 lg:py-24" style={{ visibility: "hidden" }}>
+    <section ref={sectionRef} className="section-solution relative w-full bg-white GlobalPadding" style={{ visibility: "hidden" }}>
       <style>{waveStyles}</style>
-      <div ref={containerRef} className="w-layout-blockcontainer container w-container mx-auto px-6 sm:px-10 md:px-15 ">
+      <div ref={containerRef} className="w-layout-blockcontainer container w-container mx-auto ">
         {/* Section Header */}
         <div className="section-header text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center shrink-0">
           {/* Badge */}

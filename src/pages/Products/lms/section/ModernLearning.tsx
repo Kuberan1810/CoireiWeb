@@ -108,7 +108,7 @@ const ModernLearning: React.FC = () => {
   const shadowCard4 = useTransform(smoothProgress, [0.75, 0.9], ["0px 0px 16px rgba(0,0,0,0.08)", "0px 0px 15px rgba(246, 115, 0, 0.15)"]);
 
   return (
-    <section ref={containerRef} className="relative text-[#04032E] bg-white  lg:h-screen flex items-center justify-center py-20 lg:py-0 px-6 overflow-hidden">
+    <section ref={containerRef} className="relative text-[#04032E] bg-white  lg:h-screen flex items-center justify-center GlobalPadding overflow-hidden">
       <div className="w-full max-w-7xl mx-auto relative z-10">
 
         {/* Section Title */}

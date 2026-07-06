@@ -3,8 +3,8 @@ import { Lock, ChevronDown } from 'lucide-react';
 
 const ContactMain = () => {
     return (
-        <section className="w-full bg-white pt-32 md:pt-40 pb-20 px-4 md:px-8 overflow-hidden">
-            
+        <section className="w-full bg-white GlobalPadding overflow-hidden">
+
             {/* Header */}
             <div className="flex flex-col items-center justify-center mb-16 md:mb-20">
                 <span data-ns-animate className=" font-medium text-[16px] md:text-[22px] leading-[20px] tracking-[0.7px] text-[#464555] uppercase text-center mb-4">
@@ -16,7 +16,7 @@ const ContactMain = () => {
             </div>
 
             <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-24 items-start">
-                
+
                 {/* Left Column - Contact Details & Illustration */}
                 <div data-ns-animate data-direction="left" className="flex flex-col">
                     <h2 className="font-medium text-[24px] md:text-[30px] leading-[1.2] md:leading-[36px] text-[#14182C] mb-4">
@@ -25,10 +25,10 @@ const ContactMain = () => {
                     <p className="font-normal text-[16px] md:text-[18px] leading-[1.6] md:leading-[29.25px] text-[#464555] max-w-[450px] mb-12">
                         We're ready to answer your questions, explore your ideas, and create solutions that drive your business forward.
                     </p>
-                    
-                    <img 
-                        src={illust} 
-                        alt="Contact Illustration" 
+
+                    <img
+                        src={illust}
+                        alt="Contact Illustration"
                         className="w-full max-w-[320px] object-contain"
                     />
                 </div>
@@ -45,13 +45,13 @@ const ContactMain = () => {
                     </div>
 
                     <form className="flex flex-col gap-6">
-                        
+
                         {/* Name */}
                         <div className="flex flex-col gap-1">
                             <label className="font-semibold text-[14px] leading-[20px] text-[#4B5563]">Name</label>
-                            <input 
-                                type="text" 
-                                placeholder="Enter your name" 
+                            <input
+                                type="text"
+                                placeholder="Enter your name"
                                 className="w-full bg-transparent border-b border-[#E9ECFF] py-2 text-[16px] text-[#14182C] placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#F67300] transition-colors"
                             />
                         </div>
@@ -59,9 +59,9 @@ const ContactMain = () => {
                         {/* Company */}
                         <div className="flex flex-col gap-1">
                             <label className="font-semibold text-[14px] leading-[20px] text-[#4B5563]">Company</label>
-                            <input 
-                                type="text" 
-                                placeholder="Enter your company name" 
+                            <input
+                                type="text"
+                                placeholder="Enter your company name"
                                 className="w-full bg-transparent border-b border-[#E9ECFF] py-2 text-[16px] text-[#14182C] placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#F67300] transition-colors"
                             />
                         </div>
@@ -69,9 +69,9 @@ const ContactMain = () => {
                         {/* Work Email */}
                         <div className="flex flex-col gap-1">
                             <label className="font-semibold text-[14px] leading-[20px] text-[#4B5563]">Work Email</label>
-                            <input 
-                                type="email" 
-                                placeholder="Enter your work email" 
+                            <input
+                                type="email"
+                                placeholder="Enter your work email"
                                 className="w-full bg-transparent border-b border-[#E9ECFF] py-2 text-[16px] text-[#14182C] placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#F67300] transition-colors"
                             />
                         </div>
@@ -85,8 +85,8 @@ const ContactMain = () => {
                                     <ChevronDown size={14} className="text-[#64748B]" />
                                     <span className="text-[15px] text-[#4B5563] ml-0.5 font-medium">+91</span>
                                 </div>
-                                <input 
-                                    type="tel" 
+                                <input
+                                    type="tel"
                                     maxLength={10}
                                     className="w-full py-1 text-[16px] text-[#14182C] focus:outline-none bg-transparent"
                                     onInput={(e) => {
@@ -99,21 +99,21 @@ const ContactMain = () => {
                         {/* Let's Discuss Your Vision */}
                         <div className="flex flex-col gap-1 mb-2">
                             <label className="font-semibold text-[14px] leading-[20px] text-[#4B5563]">Let's Discuss Your Vision</label>
-                            <textarea 
-                                placeholder="Tell us more about your needs....." 
+                            <textarea
+                                placeholder="Tell us more about your needs....."
                                 rows={4}
                                 className="w-full bg-transparent border border-[#E9ECFF] rounded-md px-4 py-3 mt-1 text-[16px] text-[#14182C] placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#F67300] transition-colors resize-none"
                             ></textarea>
                         </div>
 
                         {/* Submit Button */}
-                        <button 
+                        <button
                             type="button"
                             className="w-full bg-[#F67300] hover:bg-[#e06900] text-white font-bold text-[16px] leading-[24px] rounded-[12px] py-3.5 transition-colors flex items-center justify-center gap-2"
                         >
                             Submit <span></span>
                         </button>
-                        
+
                         {/* Privacy text */}
                         <div className="flex items-center justify-center gap-1.5 mt-1">
                             <Lock size={12} className="text-[#94A3B8]" />

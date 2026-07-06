@@ -3,7 +3,7 @@ import coirei from "../../../assets/images/pricing/Coirei.png"
 
 const Modelsection = () => {
     return (
-        <section className="mx-15 mt-24 px-6 grid md:grid-cols-2 gap-10 items-center">
+        <section className="GlobalPadding grid md:grid-cols-2 gap-10 items-center">
             <div 
                 data-ns-animate 
                 data-direction="left" 
