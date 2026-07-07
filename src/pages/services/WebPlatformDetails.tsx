@@ -476,7 +476,7 @@ const WebPlatformDetails = () => {
                     <div className="w-full">
 
                         {/* TITLE */}
-                        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center md-10 md:mb-20 tracking-tight leading-tight ">
+                        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-10 md:mb-20 tracking-tight leading-tight ">
                             How We Work?
                         </h2>
 
