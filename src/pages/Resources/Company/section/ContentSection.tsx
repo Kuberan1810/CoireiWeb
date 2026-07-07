@@ -158,7 +158,7 @@ const ContentSection = () => {
             data-ns-animate="true"
             data-delay="0.1"
             data-offset="60"
-            className="mb-16 max-w-[900px] text-center text-4xl font-medium leading-[1.2] tracking-tight text-[#04032E] sm:text-5xl md:text-[52px]"
+            className="mb-8 sm:mb-12 md:mb-16 max-w-[900px] text-center text-4xl font-medium leading-[1.2] tracking-tight text-[#04032E] sm:text-5xl md:text-[52px]"
           >
             We're building the{" "}
             <span className="text-[#F67300]">platform for agentic</span> software execution
@@ -168,7 +168,7 @@ const ContentSection = () => {
 
         <div
           ref={pinnedRef}
-          className="flex w-full justify-center bg-white px-6 pt-12 pb-16 sm:px-10 md:px-15 md:pb-24"
+          className="flex w-full justify-center bg-white px-6 pt-4 sm:pt-8 md:pt-12 pb-16 sm:px-10 md:px-15 md:pb-24"
         >
           <div
             className="relative mx-auto flex w-full flex-col md:overflow-hidden bg-white text-left md:flex-row h-auto md:h-[400px]"
