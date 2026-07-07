@@ -2,8 +2,8 @@ import { LayoutDashboard, BookOpen, FileText, Users, MessageSquare, ClipboardLis
 
 import bgImage from "../../../../assets/images/products/bg.svg";
 import coireiLogo from "../../../../assets/images/homepage/coirei-logo.png";
-import circleLogo from "../../../../assets/images/Features/coirei-cirlce-logo.png";
-import LMSdashboard from "../../../../assets/images/products/LMSdashboard.svg";
+import circleLogo from "../../../../assets/images/products/coirei-logo.svg";
+import LMSdashboard from "../../../../assets/images/products/dashboard2themelight.svg";
 
 const navItems = [
     { icon: LayoutDashboard, label: 'Dashboard', active: true },
@@ -49,7 +49,12 @@ const Studentfeature = () => {
                         <div className="relative z-10 p-[30px]">
 
                             <div className="bg-white border border-[#E9ECFF] shadow-sm rounded-[20px] px-4 py-4 mb-3 flex items-center">
-                                <img src={coireiLogo} alt="coirei" className="h-6 w-auto filter grayscale opacity-80" />
+                                <img 
+                                    src={circleLogo} 
+                                    alt="coirei" 
+                                    className="h-6 w-auto"
+                                        style={{ filter: "invert(46%) sepia(97%) saturate(2227%) hue-rotate(360deg) brightness(99%) contrast(104%)" }} 
+                                />
                             </div>
 
                             <div className="bg-white border border-[#E9ECFF] shadow-sm rounded-[20px] p-[20px]">
@@ -161,11 +166,11 @@ const Studentfeature = () => {
                         </div>
 
                         {/* Bottom: Dashboard mockup */}
-                        <div className="w-full px-6 pb-6">
+                        <div className="w-full ">
                             <img
                                 src={LMSdashboard}
                                 alt="Coirei Dashboard Mockup"
-                                className="w-full h-auto object-cover rounded-2xl shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] border border-[#E9ECFF]"
+                                className="w-full h-auto object-cover  shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] border border-[#E9ECFF]"
                             />
                         </div>
                     </div>

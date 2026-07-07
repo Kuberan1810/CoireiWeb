@@ -1,5 +1,5 @@
 import React from 'react';
-import coireiLogo from '../../../../assets/images/Features/coirei-cirlce-logo.png';
+import coireiLogo from '../../../../assets/images/products/coirei-logo.svg';
 
 const LmsAnalytics: React.FC = () => {
   return (

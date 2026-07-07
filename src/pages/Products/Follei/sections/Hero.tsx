@@ -130,31 +130,53 @@ const Hero: React.FC = () => {
 
   return (
     <div className="main-wrapper">
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+          }
+          .animate-float {
+            animation: float 5s ease-in-out infinite;
+          }
+          .animate-float-delayed {
+            animation: float 5s ease-in-out 2.5s infinite;
+          }
+        `
+      }} />
       <section className="section-hero">
         <div className="hero-space relative">
           <div className="hero-area text-center relative w-full">
             {/* Floating Left Pill - Glassmorphism UI */}
-            <div className="hero-floating-pill absolute left-0 lg:left-[5%] bottom-[10%] xl:bottom-[10%] hidden md:flex items-center gap-4 bg-white/40 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 ring-1 ring-white/40 rounded-[24px] py-3 px-5 z-10 hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-[50px] h-[50px] flex items-center justify-center bg-[#E5F0FF]/90 backdrop-blur-sm rounded-[14px]">
-                <Users className="w-6 h-6 text-[#143265]" strokeWidth={2.5} />
-              </div>
-              <div className="flex flex-col text-left">
-                <div className="text-[12px] font-bold tracking-wider text-[#1F1F1F] uppercase mb-0.5">Active Users</div>
-                <div className="text-[28px] font-bold text-[#1D1B44] leading-none font-sans">
-                  <AnimatedNumber end={1284} duration={2500} />
+            <div className="hero-floating-pill absolute left-0 lg:left-[5%] bottom-[10%] xl:bottom-[10%] hidden md:block z-10">
+              <div className="animate-float">
+                <div className="flex items-center gap-4 bg-white/40 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 ring-1 ring-white/40 rounded-[24px] py-3 px-5 hover:-translate-y-2 transition-transform duration-300">
+                  <div className="w-[50px] h-[50px] flex items-center justify-center bg-[#E5F0FF]/90 backdrop-blur-sm rounded-[14px]">
+                    <Users className="w-6 h-6 text-[#143265]" strokeWidth={2.5} />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <div className="text-[12px] font-bold tracking-wider text-[#1F1F1F] uppercase mb-0.5">Active Users</div>
+                    <div className="text-[28px] font-bold text-[#1D1B44] leading-none font-sans">
+                      <AnimatedNumber end={1284} duration={2500} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Floating Right Pill - Glassmorphism UI */}
-            <div className="hero-floating-pill absolute right-0 lg:right-[5%] bottom-[10%] xl:bottom-[20%] hidden md:flex items-center gap-4 bg-white/40 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 ring-1 ring-white/40 rounded-[24px] py-3 px-5 z-10 hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-[50px] h-[50px] flex items-center justify-center bg-[#E2F7E6]/90 backdrop-blur-sm rounded-[14px]">
-                <TrendingUp className="w-6 h-6 text-[#22A559]" strokeWidth={3} />
-              </div>
-              <div className="flex flex-col text-left">
-                <div className="text-[12px] font-bold tracking-wider text-[#1F1F1F] uppercase mb-0.5">Conversion</div>
-                <div className="text-[28px] font-bold text-[#1D1B44] leading-none font-sans">
-                  <AnimatedNumber end={64.8} decimals={1} duration={2500} prefix="+" suffix="%" />
+            <div className="hero-floating-pill absolute right-0 lg:right-[5%] bottom-[10%] xl:bottom-[20%] hidden md:block z-10">
+              <div className="animate-float-delayed">
+                <div className="flex items-center gap-4 bg-white/40 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 ring-1 ring-white/40 rounded-[24px] py-3 px-5 hover:-translate-y-2 transition-transform duration-300">
+                  <div className="w-[50px] h-[50px] flex items-center justify-center bg-[#E2F7E6]/90 backdrop-blur-sm rounded-[14px]">
+                    <TrendingUp className="w-6 h-6 text-[#22A559]" strokeWidth={3} />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <div className="text-[12px] font-bold tracking-wider text-[#1F1F1F] uppercase mb-0.5">Conversion</div>
+                    <div className="text-[28px] font-bold text-[#1D1B44] leading-none font-sans">
+                      <AnimatedNumber end={64.8} decimals={1} duration={2500} prefix="+" suffix="%" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
