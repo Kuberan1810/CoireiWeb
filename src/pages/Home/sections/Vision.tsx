@@ -10,7 +10,7 @@ const Vision = () => {
                 {/* Heading */}
                 <h2 
                     data-ns-animate 
-                    className="font-semibold text-[40px] md:text-[68px] leading-[1.2] md:leading-[28px] text-[#000000] uppercase mb-20 text-center min-h-[82px]"
+                    className="font-semibold text-[30px] sm:text-[40px] md:text-[52px] lg:text-[68px] leading-[1.2] md:leading-tight text-[#000000] uppercase mb-12 sm:mb-20 text-center min-h-[45px] sm:min-h-[82px]"
                 >
                     <TypewriterHeading text="Vision & Mission" />
                 </h2>
@@ -37,7 +37,7 @@ const Vision = () => {
                             <h3 className="font-semibold text-[24px] leading-[28px] text-[#FFFFFF] mb-6 mt-2">
                                 Our Vision
                             </h3>
-                            <p className="font-normal text-[18px] md:text-[21px] leading-[1.5] md:leading-[31px] text-[#D8D8D8]">
+                            <p className="font-normal text-sm sm:text-base md:text-[18px] lg:text-[21px] leading-[1.5] md:leading-[31px] text-[#D8D8D8]">
                                 To become a global leader in enterprise artificial intelligence  building intelligent products that transform how organizations sell, learn, hire, and build software.
                             </p>
                         </div>
@@ -62,8 +62,8 @@ const Vision = () => {
                             <h3 className="font-semibold text-[24px] leading-[28px] text-[#FFFFFF] mb-6 mt-2">
                                 Our Mission
                             </h3>
-                            <p className="font-normal text-[18px] md:text-[21px] leading-[1.5] md:leading-[31px] text-[#D8D8D8]">
-                                To become a global leader in enterprise artificial intelligence  building intelligent products that transform how organizations sell, learn, hire, and build software.
+                            <p className="font-normal text-sm sm:text-base md:text-[18px] lg:text-[21px] leading-[1.5] md:leading-[31px] text-[#D8D8D8]">
+                                To empower businesses worldwide by engineering secure, scalable, and practical AI ecosystems that solve real-world problems and drive operational excellence.
                             </p>
                         </div>
                     </div>

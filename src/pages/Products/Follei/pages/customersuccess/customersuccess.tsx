@@ -54,7 +54,9 @@ const CustomerSuccess: React.FC = () => {
         <SmartOnboardingSection />
         <SuccessIntelligenceSection />
         <CustomerJourneySection />
-        <RelationshipsSection />
+        <div className="hidden sm:block">
+          <RelationshipsSection />
+        </div>
         <Faq />
       </main>
       <Footer />

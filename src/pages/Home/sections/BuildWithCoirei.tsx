@@ -41,15 +41,7 @@ const TypewriterText = ({ text, onComplete }: { text: string, onComplete?: () =>
   return (
     <p 
       ref={containerRef}
-      style={{
-        fontFamily: "'Cascadia Code', monospace",
-        fontWeight: 350,
-        fontSize: '16px',
-        lineHeight: '35px',
-        color: '#000000',
-        minHeight: '105px' // To prevent layout shift while typing
-      }}
-      className="mb-8"
+      className="font-mono font-light text-[16px] leading-[35px] text-black min-h-[140px] sm:min-h-[105px] mb-8"
     >
       {displayedText}
       <span className={`inline-block w-2 h-4 ml-1 bg-black ${!isTyping && displayedText.length === text.length ? 'animate-pulse' : ''}`}></span>
@@ -70,7 +62,7 @@ const BuildWithCoirei = () => {
 
   return (
     <section className="GlobalPadding">
-      <h2 data-ns-animate className="text-5xl md:text-[52px] font-semibold text-black mb-15 min-h-[82px]">
+      <h2 data-ns-animate className="text-[30px] sm:text-[40px] md:text-[52px] font-semibold text-black mb-15 min-h-[45px] sm:min-h-[82px]">
                 <TypewriterHeading text="Build With Coirei" />
             </h2>
       
@@ -78,15 +70,9 @@ const BuildWithCoirei = () => {
         {/* Left Card */}
         <div data-ns-animate data-delay="0.1" className="w-full lg:w-[60%] bg-[#F7F7F3] p-8 md:p-12 rounded-[20px]">
           <div 
-            className="mb-10 font-semibold"
-            style={{ 
-              fontFamily: "'Cascadia Code', monospace", 
-              fontSize: '24px', 
-              lineHeight: '58px', 
-              color: '#585858' 
-            }}
+            className="mb-10 font-semibold font-mono text-lg sm:text-[24px] leading-relaxed sm:leading-[58px] text-[#585858]"
           >
-            Our engineering partner, from <br />
+            Our engineering partner, from <br className="hidden sm:block" />
             <span className="bg-[#F48120] text-gray-800 px-2 py-1">
               concept to deployment.
             </span>

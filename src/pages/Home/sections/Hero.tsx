@@ -124,7 +124,7 @@ const Hero = ({ onTypingComplete }: HeroProps) => {
                     `}</style>
                     {/* Typed Header */}
                     <div className="flex items-center justify-center pointer-events-none">
-                        <h1 className="text-[32px] md:text-[92px] font-medium tracking-tight text-center leading-tight">
+                        <h1 className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[80px] xl:text-[92px] font-medium tracking-tight text-center leading-tight">
                             {(() => {
                                 const baseText = "AI that thinks. Learns. ";
                                 if (displayedText.length <= baseText.length) {
@@ -145,7 +145,7 @@ const Hero = ({ onTypingComplete }: HeroProps) => {
                     </div>
 
                     {/* Paragraph animating in after typing */}
-                    <p className={`mt-5 text-xl text-[#5B6280] text-center max-w-5xl mx-auto transition-all duration-1000 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                    <p className={`mt-5 text-sm sm:text-base md:text-lg lg:text-xl text-[#5B6280] text-center max-w-5xl mx-auto transition-all duration-1000 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                         COIREI  builds intelligent AI products that transform how businesses sell, educate, hire, and build software  practical automation, autonomous decision-making, and enterprise-grade engineering.
                     </p>
                 </div>
