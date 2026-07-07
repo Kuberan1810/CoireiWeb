@@ -1,5 +1,5 @@
 import React from 'react';
-import LMSdashboard from '../../../../assets/images/products/LMSdashboard.svg';
+import LMSdashboard from '../../../../assets/images/products/dashboardlighttheme.svg';
 
 import { useNavigate } from 'react-router-dom';
 
