@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef } from "react";
-import successImg from "../../../../../../assets/images/products/success.png";
-import bg6 from "../../../../../../assets/images/products/bg6.jpg";
+import React, { useLayoutEffect, useRef, useState } from "react";
+import bg6 from "../../../../../../assets/images/products/graphbg.png";
+import ScopeChart from "./ScopeChart";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const SuccessIntelligenceSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [startChartAnimation, setStartChartAnimation] = useState(false);
 
   const stats = [
     { value: 95, suffix: "%", label: "Customer Health Score" },
@@ -22,14 +23,20 @@ export const SuccessIntelligenceSection: React.FC = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
-          toggleActions: "play none none none"
+          toggleActions: "play none none none",
+          onEnter: () => setStartChartAnimation(true)
         }
       });
 
       // Animate the opacity of the cards similar to LeadIntelligence
+      // Animate the opacity of the cards similar to LeadIntelligence
       gsap.set(".si-stat-card", { opacity: 0, y: 40, scale: 0.95 });
       tl.to(".si-stat-card", { opacity: 1, y: 0, scale: 1, duration: 1.2, stagger: 0.1, ease: "power3.out" });
-      
+
+      // Animate the right column (ScopeChart container)
+      gsap.set(".si-right-col", { opacity: 0, x: 50 });
+      tl.to(".si-right-col", { opacity: 1, x: 0, duration: 1.2, ease: "power3.out" }, "-=1");
+
       tl.addLabel("counterStart", "-=0.8");
 
       const counters = gsap.utils.toArray<HTMLElement>(".si-counter");
@@ -90,23 +97,19 @@ export const SuccessIntelligenceSection: React.FC = () => {
           {/* Right Column */}
           <div 
             data-ns-animate="true" data-delay="0.4"
-            className="w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-emerald-500/20">
+            className="si-right-col w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-emerald-500/20">
             {/* Background Image */}
             <img
               src={bg6}
               loading="lazy"
               alt=""
-              className="image-cover absolute inset-0 w-full h-[390px] object-cover opacity-30 transition-transform duration-700 "
+              className="image-cover absolute inset-0 w-full h-full object-cover transition-transform duration-700 "
             />
 
             {/* Inner Card Container */}
             <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-6">
               <div className="w-full h-full flex items-center justify-center p-1">
-                <img
-                  src={successImg}
-                  className="w-full h-full object-cover rounded-[10px] "
-                  alt="Success Intelligence graph"
-                />
+                <ScopeChart animate={startChartAnimation} />
               </div>
             </div>
           </div>
