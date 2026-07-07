@@ -7,7 +7,7 @@ const Sample = () => {
     <section className="w-full GlobalPadding relative overflow-hidden">
       <div className="w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 relative">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -21,13 +21,13 @@ const Sample = () => {
                 <div>Revenue Automation</div>
               </div>
             </div>
-            
+
             <div className="mb-6">
-              <h2 className="text-[#04032E] text-3xl sm:text-[40px] md:text-5xl font-medium leading-tight">
+              <h2 className="text-[#04032E] text-[30px] sm:text-[40px] md:text-[48px] lg:text-[60px] font-medium leading-tight">
                 Built To Protect Every <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">Revenue Opportunity</span>
               </h2>
             </div>
-            
+
             <div className="max-w-[24.375rem] mx-auto lg:mx-0 mb-16 lg:mb-0">
               <p className="text-[#6E6E6E] text-sm sm:text-[16px] leading-relaxed">
                 The Collections Worker continuously monitors invoices, automates payment follow-ups, and protects recurring revenue with intelligent, context-aware collections.
@@ -35,7 +35,7 @@ const Sample = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
@@ -45,7 +45,7 @@ const Sample = () => {
             }}
             className="flex flex-col gap-4 relative z-10 w-full  lg:mx-0"
           >
-            <motion.div 
+            <motion.div
               variants={{
                 hidden: { y: 0, opacity: 0.6, scale: 0.98 },
                 visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.7, ease: "easeOut" } }
@@ -62,8 +62,8 @@ const Sample = () => {
                 </div>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               variants={{
                 hidden: { y: -130, opacity: 0.35, scale: 0.94 },
                 visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.75, ease: "easeOut" } }
@@ -81,7 +81,7 @@ const Sample = () => {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               variants={{
                 hidden: { y: -260, opacity: 0.15, scale: 0.90 },
                 visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
@@ -107,17 +107,17 @@ const Sample = () => {
           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 67 693" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
             <g clipPath="url(#clip0_249_58393)">
               <mask id="path-1-inside-1_249_58393" fill="white">
-                <path d="M0 0H67V693H0V0Z"/>
+                <path d="M0 0H67V693H0V0Z" />
               </mask>
-              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 5.32031 922.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2"/>
-              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 19.3594 926.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2"/>
-              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 33.3984 930.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2"/>
-              <line opacity="0.06" x1="66.5" y1="2.18557e-08" x2="66.4999" y2="1440" stroke="#1F2A47" strokeDasharray="2 2"/>
+              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 5.32031 922.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2" />
+              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 19.3594 926.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2" />
+              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 33.3984 930.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2" />
+              <line opacity="0.06" x1="66.5" y1="2.18557e-08" x2="66.4999" y2="1440" stroke="#1F2A47" strokeDasharray="2 2" />
             </g>
-            <path d="M67 0V-1H66.0147V0V1H67V0ZM64.0441 0V-1H62.0735V0V1H64.0441V0ZM60.1029 0V-1H58.1324V0V1H60.1029V0Z" fill="#1F2A47" fillOpacity="0.08" mask="url(#path-1-inside-1_249_58393)"/>
+            <path d="M67 0V-1H66.0147V0V1H67V0ZM64.0441 0V-1H62.0735V0V1H64.0441V0ZM60.1029 0V-1H58.1324V0V1H60.1029V0Z" fill="#1F2A47" fillOpacity="0.08" mask="url(#path-1-inside-1_249_58393)" />
             <defs>
               <clipPath id="clip0_249_58393">
-                <path d="M0 0H67V693H0V0Z" fill="white"/>
+                <path d="M0 0H67V693H0V0Z" fill="white" />
               </clipPath>
             </defs>
           </svg>
@@ -126,17 +126,17 @@ const Sample = () => {
           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 67 693" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
             <g clipPath="url(#clip0_249_58393)">
               <mask id="path-1-inside-1_249_58393" fill="white">
-                <path d="M0 0H67V693H0V0Z"/>
+                <path d="M0 0H67V693H0V0Z" />
               </mask>
-              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 5.32031 922.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2"/>
-              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 19.3594 926.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2"/>
-              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 33.3984 930.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2"/>
-              <line opacity="0.06" x1="66.5" y1="2.18557e-08" x2="66.4999" y2="1440" stroke="#1F2A47" strokeDasharray="2 2"/>
+              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 5.32031 922.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2" />
+              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 19.3594 926.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2" />
+              <line opacity="0.28" x1="0.5" y1="-0.5" x2="1468.57" y2="-0.5" transform="matrix(-0.5 -0.866025 0.612522 0.790453 33.3984 930.184)" stroke="#1F2A47" strokeLinecap="round" strokeDasharray="2 2" />
+              <line opacity="0.06" x1="66.5" y1="2.18557e-08" x2="66.4999" y2="1440" stroke="#1F2A47" strokeDasharray="2 2" />
             </g>
-            <path d="M67 0V-1H66.0147V0V1H67V0ZM64.0441 0V-1H62.0735V0V1H64.0441V0ZM60.1029 0V-1H58.1324V0V1H60.1029V0Z" fill="#1F2A47" fillOpacity="0.08" mask="url(#path-1-inside-1_249_58393)"/>
+            <path d="M67 0V-1H66.0147V0V1H67V0ZM64.0441 0V-1H62.0735V0V1H64.0441V0ZM60.1029 0V-1H58.1324V0V1H60.1029V0Z" fill="#1F2A47" fillOpacity="0.08" mask="url(#path-1-inside-1_249_58393)" />
             <defs>
               <clipPath id="clip0_249_58393">
-                <path d="M0 0H67V693H0V0Z" fill="white"/>
+                <path d="M0 0H67V693H0V0Z" fill="white" />
               </clipPath>
             </defs>
           </svg>

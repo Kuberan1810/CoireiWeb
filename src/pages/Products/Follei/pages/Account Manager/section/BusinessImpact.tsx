@@ -99,8 +99,8 @@ const BusinessImpact = () => {
         </div>
 
         {/* Title */}
-        <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-3xl sm:text-[50px] md:text-5xl font-medium text-center mb-6 max-w-4xl leading-tight">
-          Every Relationship Drives <br />
+        <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-[30px] sm:text-[40px] md:text-[48px] lg:text-[60px] font-medium text-center mb-6 max-w-4xl leading-tight">
+          Every Relationship Drives <br className="hidden lg:block" />
           <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">Long-Term Growth</span>
         </h2>
 

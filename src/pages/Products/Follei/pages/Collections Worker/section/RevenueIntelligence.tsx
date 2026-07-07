@@ -91,7 +91,7 @@ export const RevenueIntelligence: React.FC = () => {
             </div>
 
             {/* Title */}
-            <h2 className="revenue-intell-title opacity-0 text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+            <h2 className="revenue-intell-title opacity-0 text-[#04032E] text-[30px] sm:text-[40px] md:text-[48px] lg:text-[60px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
               Recover Revenue With <br />
               <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
                 Complete Confidence
@@ -115,22 +115,22 @@ export const RevenueIntelligence: React.FC = () => {
             />
 
             <div className="relative z-10 w-full h-full flex justify-center items-center p-4 sm:p-6">
-              <div className="relative w-full h-full flex items-center justify-center scale-[0.65] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-center">
+              <div className="relative w-full h-full flex items-center justify-center scale-[0.95] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-center">
                 <img
                   src={revenueImg}
-                  className="absolute left-[0%] top-[8%] w-[24%] h-auto rounded-[8px] shadow-[0_12px_24px_rgba(0,0,0,0.4)] border border-white/10 hover:scale-105 transition-transform duration-300 z-30"
+                  className="absolute left-[0%] top-[8%] w-[27%] sm:w-[24%] h-auto rounded-[8px] shadow-[0_12px_24px_rgba(0,0,0,0.4)] border border-white/10 hover:scale-105 transition-transform duration-300 z-30"
                   alt="Net Revenue"
                 />
 
                 <img
                   src={analyticsImg}
-                  className="absolute w-[50%] h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[10px] shadow-2xl border border-white/5 opacity-90 z-20"
+                  className="absolute w-[45%] sm:w-[50%] h-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[10px] shadow-2xl border border-white/5 opacity-90 z-20"
                   alt="Analytics Dashboard"
                 />
 
                 <img
                   src={revenue1Img}
-                  className="absolute right-[0%] bottom-[8%] w-[24%] h-auto rounded-[8px] shadow-[0_12px_24px_rgba(0,0,0,0.4)] border border-white/10 hover:scale-105 transition-transform duration-300 z-10"
+                  className="absolute right-[0%] bottom-[8%] w-[27%] sm:w-[24%] h-auto rounded-[8px] shadow-[0_12px_24px_rgba(0,0,0,0.4)] border border-white/10 hover:scale-105 transition-transform duration-300 z-10"
                   alt="Total Sales"
                 />
               </div>

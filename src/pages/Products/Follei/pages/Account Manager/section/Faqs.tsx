@@ -49,8 +49,8 @@ const Faq: React.FC = () => {
             </div>
 
             {/* Title */}
-            <h2 className="text-[#04032E] text-4xl sm:text-[52px] lg:text-[60px] font-medium tracking-tight leading-[1.15]">
-              Frequently <br />
+            <h2 className="text-[#04032E] text-[30px] sm:text-[40px] md:text-[48px] lg:text-[60px] font-medium tracking-tight leading-[1.15]">
+              Frequently <br className="hidden lg:block" />
               <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
                 Asked Questions
               </span>

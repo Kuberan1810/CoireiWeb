@@ -46,8 +46,8 @@ export const Hero: React.FC = () => {
 
           {/* Title */}
           <h1 
-            className="am-hero-title opacity-0 text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
-            Grow Every Customer <br />
+            className="am-hero-title opacity-0 text-[#04032E] text-[30px] sm:text-[40px] md:text-[48px] lg:text-[60px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+            Grow Every Customer <br className="hidden lg:block" />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               Relationship Intelligently
             </span>
