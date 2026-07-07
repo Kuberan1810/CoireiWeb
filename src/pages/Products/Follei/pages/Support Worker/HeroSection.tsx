@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImg from '../../../../../assets/images/CI-follei/hero-img.svg';
+import AnimatedSupportGraphic from './AnimatedSupportGraphic';
 
 const HeroSection: React.FC = () => {
     return (
@@ -41,12 +41,10 @@ const HeroSection: React.FC = () => {
                 </div>
 
                 {/* Right Image */}
-                <div data-ns-animate data-direction="left" data-delay="0.5" className="flex justify-center lg:justify-end w-full">
-                    <img
-                        src={heroImg}
-                        alt="Support Worker Dashboard"
-                        className="w-full object-contain"
-                    />
+
+                <div data-ns-animate data-direction="left" data-delay="0.5" className="flex justify-center lg:justify-end w-full lg:w-11/12 mx-auto">
+                    <AnimatedSupportGraphic />
+
                 </div>
             </div>
         </section>

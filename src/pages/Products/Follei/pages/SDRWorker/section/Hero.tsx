@@ -1,11 +1,60 @@
 import React, { useLayoutEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import bg1 from "../../../../../../assets/images/products/bg1.png";
-import { Search } from "lucide-react";
+import { Search, Check, RefreshCw } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 // Ensure ScrollTrigger is registered
 gsap.registerPlugin(ScrollTrigger);
+
+const AnimatedTaskItem = ({ text, stepIndex }: { text: string, stepIndex: number }) => {
+  const [visible, setVisible] = React.useState(false);
+  const [status, setStatus] = React.useState<"sync" | "tick">("sync");
+
+  React.useEffect(() => {
+    let appearTimer: ReturnType<typeof setTimeout>;
+    let tickTimer: ReturnType<typeof setTimeout>;
+    let cycleInterval: ReturnType<typeof setInterval>;
+
+    const startCycle = () => {
+      setVisible(false);
+      setStatus("sync");
+      
+      appearTimer = setTimeout(() => {
+        setVisible(true);
+        tickTimer = setTimeout(() => {
+          setStatus("tick");
+        }, 1200); 
+      }, stepIndex * 1200);
+    };
+
+    const initialDelay = setTimeout(() => {
+      startCycle();
+      cycleInterval = setInterval(startCycle, 7000);
+    }, 2500);
+
+    return () => {
+      clearTimeout(initialDelay);
+      clearTimeout(appearTimer);
+      clearTimeout(tickTimer);
+      clearInterval(cycleInterval);
+    };
+  }, [stepIndex]);
+
+  return (
+    <div className={`flex items-center gap-2 transition-all duration-500 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-3'}`}>
+      <div className="w-[16px] h-[16px] flex items-center justify-center text-[#9C9C9C]">
+        {status === "sync" ? (
+          <RefreshCw size={14} className="animate-spin text-sky-500" />
+        ) : (
+          <Check size={16} className="text-[#9C9C9C]" />
+        )}
+      </div>
+      <span className="hover:text-slate-800 transition-colors">{text}</span>
+    </div>
+  );
+};
 
 export const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -76,27 +125,18 @@ export const Hero: React.FC = () => {
                 style={{ backgroundColor: '#FFFFFF' }}
               >
                 <div className="absolute top-4 left-5 flex gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5960DF]" />
+                  <span className="w-2 h-2 rounded-full bg-[#FF5F56]" />
+                  <span className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
+                  <span className="w-2 h-2 rounded-full bg-[#27C93F]" />
                 </div>
 
                 {/* Left column - Tasks */}
                 <div className="flex flex-col gap-3 pl-2.5 text-left justify-center h-full mt-4 flex-1">
                   <div className="text-slate-800 font-extrabold text-[15px] tracking-wide shrink-0">Tasks :</div>
                   <div className="flex flex-col gap-3 font-medium text-xs text-slate-500">
-                    <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
-                      <span className="text-[#9C9C9C] text-[16px]">✓</span>
-                      <span>Automate</span>
-                    </div>
-                    <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
-                      <span className="text-[#9C9C9C] text-[16px]">✓</span>
-                      <span>Reduce</span>
-                    </div>
-                    <div className="flex items-center gap-2 hover:text-slate-800 transition-colors">
-                      <span className="text-[#9C9C9C] text-[16px]">✓</span>
-                      <span>Improve</span>
-                    </div>
+                    <AnimatedTaskItem text="Automate" stepIndex={0} />
+                    <AnimatedTaskItem text="Reduce" stepIndex={1} />
+                    <AnimatedTaskItem text="Improve" stepIndex={2} />
                   </div>
                 </div>
 
@@ -110,28 +150,40 @@ export const Hero: React.FC = () => {
                   {/* Blocks */}
                   <div className="flex flex-col gap-4 pt-2 w-full">
                     {/* Nurturing Row */}
-                    <div className="flex items-center gap-3 flex-1 w-full">
-                      <div
+                    <motion.div 
+                      className="flex items-center gap-3 flex-1 w-full"
+                      animate={{ y: [0, -4, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <motion.div
                         className="w-[55px] h-[55px] rounded-[10.56px] shrink-0 shadow-sm"
-                        style={{ background: 'linear-gradient(135deg, #5960DF 0%, #F8CBC0 33%, #D7B5C6 66%, #5960DF 100%)' }}
+                        style={{ background: 'linear-gradient(to right, #5960DF, #F8CBC0, #D7B5C6, #5960DF)', backgroundSize: '300% 100%' }}
+                        animate={{ backgroundPosition: ['100% 0%', '0% 0%'] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                       />
                       <div className="flex flex-col text-left">
                         <span className="text-[14px] font-bold text-slate-800 leading-tight">Nurturing</span>
                         <span className="text-[10px] text-slate-400 leading-none mt-1">Automated</span>
                       </div>
-                    </div>
+                    </motion.div>
 
                     {/* Meetings Row */}
-                    <div className="flex items-center gap-3 w-full flex-1">
-                      <div
+                    <motion.div 
+                      className="flex items-center gap-3 w-full flex-1"
+                      animate={{ y: [0, -4, 0] }}
+                      transition={{ duration: 4, delay: 2, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <motion.div
                         className="w-[55px] h-[55px] rounded-[10.56px] shrink-0 shadow-sm"
-                        style={{ background: 'linear-gradient(135deg, #5960DF 0%, #F8CBC0 33%, #D7B5C6 66%, #5960DF 100%)' }}
+                        style={{ background: 'linear-gradient(to right, #5960DF, #F8CBC0, #D7B5C6, #5960DF)', backgroundSize: '300% 100%' }}
+                        animate={{ backgroundPosition: ['100% 0%', '0% 0%'] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                       />
                       <div className="flex flex-col text-left">
                         <span className="text-[14px] font-bold text-slate-800 leading-tight">Meetings</span>
                         <span className="text-[10px] text-slate-400 leading-none mt-1">Syncing data</span>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>

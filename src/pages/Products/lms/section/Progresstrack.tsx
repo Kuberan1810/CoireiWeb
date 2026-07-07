@@ -5,10 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import studenttracking from "../../../../assets/images/products/replace1.svg"
-import instructorperformance from "../../../../assets/images/products/replace2.svg"
-import adminoperator from "../../../../assets/images/products/replace3.svg"
-import superadmin from "../../../../assets/images/products/replace4.svg"
+import staticbgglobal from "../../../../assets/images/products/staticbgglobal.svg"
+import img1 from "../../../../assets/images/products/1.svg"
+import img2 from "../../../../assets/images/products/2.svg"
+import img3 from "../../../../assets/images/products/3.svg"
+import img4 from "../../../../assets/images/products/4.svg"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,22 +17,22 @@ const stickyContent = [
     {
         title: "Student Success Tracking",
         description: "Monitor every learner's journey with real-time insights into course progress, assessments, attendance, certifications, and skill development—all from a personalized learning dashboard.",
-        image: studenttracking,
+        overlayImage: img1,
     },
     {
         title: "Instructor Performance Hub",
         description: "Create engaging courses, manage live sessions, evaluate assignments, monitor learner engagement, and deliver personalized feedback to maximize student success.",
-        image: instructorperformance,
+        overlayImage: img2,
     },
     {
         title: "Admin Operations Center",
         description: "Simplify academic operations with centralized control over users, batches, courses, reports, attendance, assessments, and platform-wide learning analytics.",
-        image: adminoperator,
+        overlayImage: img3,
     },
     {
         title: "Super Admin Command Center",
         description: "Manage multiple organizations, configure global platform settings, oversee administrators, monitor system health, ensure security, and access enterprise-level insights from a single dashboard.",
-        image: superadmin,
+        overlayImage: img4,
     }
 ];
 
@@ -104,11 +105,16 @@ function ProgressTrack() {
                                 }`}
                             >
                                 {/* Mobile-la Image Title-ku mela stacked-ah varum */}
-                                <div className="block md:hidden w-full mb-8">
+                                <div className="block md:hidden w-full mb-8 relative aspect-[4/3] rounded-[20px] overflow-hidden flex items-center justify-center shadow-lg">
                                     <img 
-                                        src={item.image} 
+                                        src={staticbgglobal} 
+                                        alt="Background" 
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    />
+                                    <img 
+                                        src={item.overlayImage} 
                                         alt={item.title} 
-                                        className="w-full h-auto object-contain"
+                                        className="relative z-10 w-[85%] h-auto shadow-2xl rounded-xl"
                                     />
                                 </div>
 
@@ -126,17 +132,21 @@ function ProgressTrack() {
                 {/* Right Side: Sticky Image Viewer (Desktop Only) */}
                 <div className="hidden md:block w-full md:w-7/12 sticky top-0 h-screen">
                     <div className="h-full w-full flex items-center justify-center pl-12">
-                        <div className="relative w-full aspect-[4/3]">
+                        <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden flex items-center justify-center shadow-lg bg-gray-50">
+                            {/* Static Background that never changes */}
+                            <img src={staticbgglobal} alt="Background" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+                            
+                            {/* Inner Image that smoothly transitions */}
                             <AnimatePresence mode="popLayout">
                                 <motion.img
                                     key={activeSection}
-                                    src={stickyContent[activeSection].image}
+                                    src={stickyContent[activeSection].overlayImage}
                                     alt={stickyContent[activeSection].title}
-                                    initial={{ opacity: 0, scale: 1.05, filter: "blur(4px)" }}
-                                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                                    exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
-                                    transition={{ duration: 0.6, ease: "easeOut" }}
-                                    className="absolute inset-0 w-full h-full object-contain"
+                                    initial={{ opacity: 0, scale: 1.02, filter: "blur(8px)", y: 15 }}
+                                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)", y: 0 }}
+                                    exit={{ opacity: 0, scale: 0.98, filter: "blur(8px)", y: -15 }}
+                                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                                    className="relative z-10 w-[85%] h-auto shadow-2xl rounded-xl"
                                 />
                             </AnimatePresence>
                         </div>

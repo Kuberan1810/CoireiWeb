@@ -134,7 +134,7 @@ export const LeadIntelligence: React.FC = () => {
                     </div>
                     <div className="flex items-baseline gap-1 mt-1">
                       <span className="text-[24px] font-bold text-[#0B1C30] leading-none">
-                        $<span className="sdr-li-counter" data-target="45000">0</span>/years
+                        ₹<span className="sdr-li-counter" data-target="45000">0</span>/year
                       </span>
                     </div>
                     <span className="text-[10px] text-[#464555] font-medium">Annual Contract Value (ACV)</span>

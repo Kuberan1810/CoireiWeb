@@ -2,14 +2,16 @@ import React from "react";
 import { UserCircle2, BotMessageSquare, Search, ArrowLeftRight } from "lucide-react";
 
 // Image Imports from assets/images/products (using similar ones to the design)
-import unifiedResolutionImg from "../../../../../assets/images/CI-follei/righttop.svg";
 import workflowImg from "../../../../../assets/images/CI-follei/leftbootm.svg";
+import AnimatedResolutionEngine from "./AnimatedResolutionEngine";
+import AnimatedResolutionWorkflow from "./AnimatedResolutionWorkflow";
 
 interface CardData {
     id: number;
     title: string;
     description: string;
     graphic?: string;
+    graphicComponent?: React.ReactNode;
     icon: React.ComponentType<any>;
 }
 
@@ -24,7 +26,7 @@ const row1Cards: CardData[] = [
         id: 1,
         title: "Unified Resolution Engine",
         description: "The Support Worker combines customer history, business knowledge, product documentation, support policies, previous tickets, and AI reasoning into one intelligent resolution engine.",
-        graphic: unifiedResolutionImg,
+        graphicComponent: <AnimatedResolutionEngine />,
         icon: BotMessageSquare,
     }
 ];
@@ -34,7 +36,7 @@ const row2Cards: CardData[] = [
         id: 2,
         title: "Intelligent Resolution Workflow",
         description: "Every issue follows an intelligent workflow—from understanding the request to retrieving knowledge, resolving the issue, and confirming customer satisfaction.",
-        graphic: workflowImg,
+        graphicComponent: <AnimatedResolutionWorkflow />,
         icon: Search,
     },
     {
@@ -101,7 +103,7 @@ const IntelligentSupportSection: React.FC = () => {
                         {row1Cards.map((card) => (
                             <div
                                 key={card.id}
-                                className={`w-full border border-slate-100 bg-[#FFFFFF] p-[24px] md:p-[30px] flex flex-col justify-between text-left h-auto min-h-[280px] md:min-h-[320px] rounded-[10px] relative overflow-hidden ${card.graphic ? "md:flex-[2.1_1_0%]" : "md:flex-[1_1_0%]"}`}
+                                className={`w-full border border-slate-100 bg-[#FFFFFF] p-[24px] md:p-[30px] flex flex-col justify-between text-left h-auto min-h-[280px] md:min-h-[320px] rounded-[10px] relative overflow-hidden ${(card.graphic || card.graphicComponent) ? "md:flex-[2.1_1_0%]" : "md:flex-[1_1_0%]"}`}
                             >
                                 <div className="flex flex-col justify-start gap-3 md:gap-4 w-full h-full">
                                     
@@ -121,13 +123,19 @@ const IntelligentSupportSection: React.FC = () => {
                                     </div>
 
                                     {/* Bottom Graphic Content */}
-                                    {card.graphic && (
-                                        <div className="w-full flex items-end justify-center mt-6">
-                                            <img
-                                                src={card.graphic}
-                                                alt={card.title}
-                                                className="w-full h-auto object-contain object-bottom"
-                                            />
+                                    {(card.graphic || card.graphicComponent) && (
+                                        <div className="w-full flex items-end justify-center mt-6 h-full flex-1 min-h-[200px]">
+                                            {card.graphicComponent ? (
+                                                <div className="w-full h-full flex items-center justify-center">
+                                                    {card.graphicComponent}
+                                                </div>
+                                            ) : (
+                                                <img
+                                                    src={card.graphic}
+                                                    alt={card.title}
+                                                    className="w-full h-auto object-contain object-bottom"
+                                                />
+                                            )}
                                         </div>
                                     )}
                                 </div>
@@ -144,7 +152,7 @@ const IntelligentSupportSection: React.FC = () => {
                         {row2Cards.map((card) => (
                             <div
                                 key={card.id}
-                                className={`w-full border border-slate-100 bg-[#FFFFFF] p-[24px] md:p-[30px] flex flex-col justify-between text-left h-auto min-h-[280px] md:min-h-[320px] rounded-[10px] relative overflow-hidden ${card.graphic ? "md:flex-[2.1_1_0%]" : "md:flex-[1_1_0%]"}`}
+                                className={`w-full border border-slate-100 bg-[#FFFFFF] p-[24px] md:p-[30px] flex flex-col justify-between text-left h-auto min-h-[280px] md:min-h-[320px] rounded-[10px] relative overflow-hidden ${(card.graphic || card.graphicComponent) ? "md:flex-[2.1_1_0%]" : "md:flex-[1_1_0%]"}`}
                             >
                                 <div className="flex flex-col justify-start gap-3 md:gap-4 w-full h-full">
                                     
@@ -164,13 +172,19 @@ const IntelligentSupportSection: React.FC = () => {
                                     </div>
 
                                     {/* Bottom Graphic Content */}
-                                    {card.graphic && (
-                                        <div className="w-full flex items-end justify-center mt-6">
-                                            <img
-                                                src={card.graphic}
-                                                alt={card.title}
-                                                className="w-full h-auto object-contain object-bottom"
-                                            />
+                                    {(card.graphic || card.graphicComponent) && (
+                                        <div className="w-full flex items-end justify-center mt-6 h-full flex-1 min-h-[200px]">
+                                            {card.graphicComponent ? (
+                                                <div className="w-full h-full flex items-center justify-center">
+                                                    {card.graphicComponent}
+                                                </div>
+                                            ) : (
+                                                <img
+                                                    src={card.graphic}
+                                                    alt={card.title}
+                                                    className="w-full h-auto object-contain object-bottom"
+                                                />
+                                            )}
                                         </div>
                                     )}
                                 </div>

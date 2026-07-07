@@ -50,10 +50,9 @@ const Studentfeature = () => {
 
                             <div className="bg-white border border-[#E9ECFF] shadow-sm rounded-[20px] px-4 py-4 mb-3 flex items-center">
                                 <img 
-                                    src={circleLogo} 
+                                    src={coireiLogo} 
                                     alt="coirei" 
                                     className="h-6 w-auto"
-                                        style={{ filter: "invert(46%) sepia(97%) saturate(2227%) hue-rotate(360deg) brightness(99%) contrast(104%)" }} 
                                 />
                             </div>
 
