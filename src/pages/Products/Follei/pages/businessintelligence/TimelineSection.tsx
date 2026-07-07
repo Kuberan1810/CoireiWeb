@@ -140,7 +140,7 @@ export const TimelineSection: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-24 flex justify-center bg-white ">
+        <section ref={sectionRef} className="w-full GlobalPadding flex justify-center bg-white ">
             <div className="w-full max-w-[1300px] flex flex-col items-center">
 
                 {/* Premium Capsule Badge */}

@@ -14,10 +14,10 @@ const Pricingsection = ({ isAnnual }: PricingsectionProps) => {
     ];
 
     return (
-        <section className="relative mt-24 px-6 py-5 overflow-hidden">
+        <section className="relative GlobalPadding overflow-hidden">
 
            
-            <div className="relative mx-20 grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch ">
+            <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch ">
 
                 {/* STARTER */}
                 <div 

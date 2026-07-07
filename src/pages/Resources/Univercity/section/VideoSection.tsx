@@ -46,7 +46,7 @@ const VideoSection = () => {
   }, []);
 
   return (
-    <section className="mx-20">
+    <section className="GlobalPadding">
       <div className="bg-[#292929] rounded-2xl p-10 mb-14 border border-white/10">
         <h2 className="text-[40px] font-medium mb-2 text-white">
           Getting started

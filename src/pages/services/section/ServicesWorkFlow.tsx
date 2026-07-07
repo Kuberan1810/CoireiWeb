@@ -34,7 +34,7 @@ const steps = [
 
 const ServicesWorkFlow = () => {
   return (
-    <section className="text-gray-900 pt-2 pb-10 sm:pt-4 sm:pb-20 mx-15 max-sm:pt-2 max-sm:pb-16 max-sm:mx-5">
+    <section className="text-gray-900 GlobalPadding">
       <div className="">
 
         {/* HEADER */}

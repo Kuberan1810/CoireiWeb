@@ -5,7 +5,7 @@ import { ShieldCheck } from 'lucide-react';
 
 const LmsData: React.FC = () => {
   return (
-    <section className="relative w-full py-24 lg:py-32 px-6 overflow-hidden">
+    <section className="relative w-full GlobalPadding overflow-hidden">
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
         
         {/* SHIELD ICON - Figma Specs: 64x64, 12px Radius, 10% White Bg, 20% White Border */}

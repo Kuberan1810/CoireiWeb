@@ -29,7 +29,7 @@ const LmsFaq: React.FC = () => {
   };
 
   return (
-    <section className="relative text-[#04032E] bg-white  py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
+    <section className="relative text-[#04032E] bg-white  GlobalPadding overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
 
         {/* Section Header */}

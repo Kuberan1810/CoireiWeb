@@ -21,10 +21,10 @@ const features = [
 
 const CareersFeature = () => {
     return (
-        <section className="w-full max-w-[1600px] mx-auto px-6 sm:px-10 md:px-15 py-20 flex flex-col md:flex-row gap-16 md:gap-8 bg-[#FFFFFF]">
-            
+        <section className="w-full max-w-[1600px] GlobalPadding flex flex-col md:flex-row gap-16 md:gap-8 bg-[#FFFFFF]">
+
             {/* Left Column: Heading and Subtext */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -40,7 +40,7 @@ const CareersFeature = () => {
             </motion.div>
 
             {/* Right Column: Cards Stack */}
-            <motion.div 
+            <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
@@ -57,7 +57,7 @@ const CareersFeature = () => {
                     const scaleStart = index === 0 ? 0.98 : index === 1 ? 0.94 : 0.90;
 
                     return (
-                        <motion.div 
+                        <motion.div
                             key={index}
                             variants={{
                                 hidden: { y: yOffset, opacity: opacityStart, scale: scaleStart },
@@ -66,22 +66,22 @@ const CareersFeature = () => {
                             className="relative"
                             style={{ zIndex }}
                         >
-                            <div 
+                            <div
                                 className="bg-[#F3F4F7] rounded-[16px] p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-center w-full"
                                 style={{ border: "0.5px solid #93939320" }}
                             >
                                 {/* Icon Container */}
-                                <div 
+                                <div
                                     className="rounded-[24px] p-[1.5px] shrink-0"
                                     style={{ background: "linear-gradient(145deg, #5960DF 36.85%, #F8CBC0 69.28%)" }}
                                 >
                                     {/* Layer 2: White Background */}
                                     <div className="rounded-[22.5px] bg-white p-2 sm:p-3">
                                         {/* Layer 3: Soft Purple Icon Background */}
-                                        <div 
+                                        <div
                                             className="rounded-[14px] w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] flex items-center justify-center"
-                                            style={{ 
-                                                background: "linear-gradient(0deg, rgba(89, 96, 223, 0.08), rgba(89, 96, 223, 0.08)), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%)" 
+                                            style={{
+                                                background: "linear-gradient(0deg, rgba(89, 96, 223, 0.08), rgba(89, 96, 223, 0.08)), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%)"
                                             }}
                                         >
                                             <feature.icon className="w-7 h-7 sm:w-8 sm:h-8" style={{ color: "#5A6FD8", strokeWidth: 1.5 }} />

@@ -3,11 +3,11 @@ import BlogCtaImg from "../../../../assets/images/Resourses/blog-cta-code.png";
 
 const BlogCTA: React.FC = () => {
   return (
-    <section className="relative pt-24 mb-15 overflow-hidden">
+    <section className="relative GlobalPadding overflow-hidden">
       
       <div className="absolute inset-0 bg-linear-to-b  from-[#161616] via-[#7C4817] to-[#161616] " />
 
-      <div className="relative max-w-5xl mx-auto px-6 text-center text-white">
+      <div className="relative max-w-5xl mx-auto text-center text-white">
       
         <p className="text-xl font-medium text-white mb-7.5">
           Trusted by hundreds of thousands of professional developers

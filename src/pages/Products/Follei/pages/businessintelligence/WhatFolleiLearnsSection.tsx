@@ -3,7 +3,7 @@ import { Ticket, Users, Target, Receipt, CreditCard, TrendingUp } from "lucide-r
 
 export const WhatFolleiLearnsSection: React.FC = () => {
     return (
-        <section className="w-full px-6 sm:px-10 md:px-15 py-24 flex justify-center bg-white ">
+        <section className="w-full GlobalPadding flex justify-center bg-white ">
             <div className="w-full max-w-[1300px] flex flex-col items-center">
 
                 {/* Heading & Subheading */}

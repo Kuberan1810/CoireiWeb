@@ -58,7 +58,7 @@ function ProgressTrack() {
     }, []);
 
     return (
-        <section ref={containerRef} className="text-[#04032E] relative py-20 bg-white">
+        <section ref={containerRef} className="text-[#04032E] relative GlobalPadding bg-white">
             {/* Header Section */}
             <div className="flex flex-col justify-center items-center text-center px-6">
                 <span 

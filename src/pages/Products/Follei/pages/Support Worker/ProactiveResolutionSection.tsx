@@ -94,7 +94,7 @@ const ProactiveResolutionSection: React.FC = () => {
     });
 
     return (
-        <section className="w-full bg-[#FFFFFF] py-20 md:py-24 px-6 sm:px-10 md:px-15 lg:px-20 border-t border-[#E8E8E8]/50">
+        <section className="w-full bg-[#FFFFFF] GlobalPadding border-t border-[#E8E8E8]/50">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-24">
                 
                 {/* Left: Sticky Content */}

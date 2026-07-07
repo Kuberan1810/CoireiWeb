@@ -3,7 +3,7 @@ import { Shield } from 'lucide-react';
 
 const YouUseFollei: React.FC = () => {
     return (
-        <section className="relative w-full py-24 bg-white flex flex-col items-center justify-center">
+        <section className="relative w-full GlobalPadding bg-white flex flex-col items-center justify-center">
             {/* Container with side borders to match the screenshot's faint vertical lines */}
             <div className="w-full max-w-6xl mx-auto px-6 sm:px-10 md:px-15 border-x border-red-500/10 py-16 flex flex-col items-center text-center">
 

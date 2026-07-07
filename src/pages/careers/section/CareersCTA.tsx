@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const CareersCTA = () => {
     return (
-        <section className="relative w-full min-h-[500px] flex flex-col items-center justify-center py-24 px-6 overflow-hidden bg-[#FFFFFF]">
+        <section className="relative w-full min-h-[500px] flex flex-col items-center justify-center GlobalPadding overflow-hidden bg-[#FFFFFF]">
             
             {/* Background Grid Layer */}
             <div 

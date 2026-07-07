@@ -50,7 +50,7 @@ const services = [
 const OurServices = () => {
   const navigate = useNavigate();
   return (
-    <section className="text-white mx-6 sm:mx-10 md:mx-15 py-10 sm:py-20">
+    <section className="text-white GlobalPadding">
       <div className="">
 
         {/* HEADER */}

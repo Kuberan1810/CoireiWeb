@@ -24,7 +24,7 @@ const CareersFAQ = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(0);
 
     return (
-        <section className="mx-6 sm:mx-10 md:mx-20 pt-2 md:pt-4  md:pb-6 ">
+        <section className="GlobalPadding">
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start w-full">
 

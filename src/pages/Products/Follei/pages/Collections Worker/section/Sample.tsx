@@ -4,8 +4,8 @@ import { Bell, DollarSign, TrendingUp } from 'lucide-react'
 
 const Sample = () => {
   return (
-    <section className="w-full py-16 md:py-20 relative overflow-hidden">
-      <div className="w-full  px-6 md:px-24 mx-auto">
+    <section className="w-full GlobalPadding relative overflow-hidden">
+      <div className="w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 relative">
           
           <motion.div

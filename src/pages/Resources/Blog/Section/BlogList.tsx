@@ -6,8 +6,8 @@ const BlogList: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="md:py-20 py-0 ">
-      <div className="mx-6 sm:mx-10 md:mx-15 py-16 sm:py-20">
+    <section className="GlobalPadding">
+      <div className="">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-5">
           {blogs.map((blog, index) => (
             <article

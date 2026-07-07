@@ -3,7 +3,7 @@ import logoSvg from "../../../../../assets/images/CI-follei/logo.svg";
 
 const BetterExperienceSection: React.FC = () => {
     return (
-        <section className="w-full bg-[#FFFFFF] py-24 px-6 sm:px-10 md:px-15 lg:px-20 overflow-hidden">
+        <section className="w-full bg-[#FFFFFF] GlobalPadding overflow-hidden">
             <div className="flex flex-col gap-16 lg:gap-24">
                 
                 {/* Top: Header */}

@@ -1,6 +1,6 @@
 const ContactContent = () => {
     return (
-        <section className="px-6 sm:px-10 md:px-15 py-10 md:py-20">
+        <section className="GlobalPadding">
             <div>
 
                 {/* HEADING */}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const JoinUs = () => {
   return (
-    <section className="w-full bg-white pt-0 pb-24 md:pt-0 md:pb-32 px-6 flex flex-col items-center justify-center relative z-10">
+    <section className="w-full bg-white GlobalPadding flex flex-col items-center justify-center relative z-10">
 
       {/* Pill */}
       <div

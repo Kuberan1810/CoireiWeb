@@ -26,7 +26,7 @@ const RunLearningPrograms: React.FC = () => {
   ];
 
   return (
-    <section className="relative text-[#04032E] bg-white  py-20 lg:py-28 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
+    <section className="relative text-[#04032E] bg-white  GlobalPadding overflow-hidden">
       <style dangerouslySetInnerHTML={{
         __html: `
         @keyframes borderFlow {

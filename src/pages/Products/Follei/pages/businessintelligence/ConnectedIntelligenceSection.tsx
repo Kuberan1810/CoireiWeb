@@ -126,7 +126,7 @@ export const ConnectedIntelligenceSection: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-12 flex justify-center bg-white ">
+        <section ref={sectionRef} className="w-full GlobalPadding flex justify-center bg-white ">
             <div className="w-full max-w-[1300px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 {/* Left Column: Text Content */}
                 <div className="lg:col-span-5 flex flex-col items-start text-left lg:sticky lg:top-32">

@@ -72,7 +72,7 @@ const OrbitItem: React.FC<OrbitItemProps> = ({
 
 export const ConnectedContext: React.FC = () => {
     return (
-        <section className="relative w-full px-6 sm:px-10 md:px-15 py-24 flex justify-center bg-white overflow-hidden">
+        <section className="relative w-full GlobalPadding flex justify-center bg-white overflow-hidden">
             <div className="w-full max-w-[1300px] flex flex-col items-center">
 
                 {/* Badge Header */}

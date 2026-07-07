@@ -74,7 +74,7 @@ const PipelineManagement: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full py-16 md:py-24 px-6 bg-white overflow-hidden"
+      className="relative w-full GlobalPadding bg-white overflow-hidden"
     >
       <div className="max-w-[1300px] mx-auto flex flex-col items-center">
         {/* 1. Capsule Badge */}

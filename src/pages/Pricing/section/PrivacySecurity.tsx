@@ -2,7 +2,7 @@ import door from "../../../assets/images/pricing/door.png";
 
 const PrivacySecurity = () => {
     return (
-        <section className="max-w-7xl mx-auto mt-24 px-6">
+        <section className="max-w-7xl mx-auto GlobalPadding">
             <div
                 data-ns-animate
                 data-offset="100"
@@ -22,7 +22,7 @@ const PrivacySecurity = () => {
                     <img src={door} alt="Security" className="rounded-xl object-cover" />
                 </div>
 
-                <section className="bg-[#0b0b0b] text-white max-w-6xl mx-auto px-6 h-auto">
+                <section className="bg-[#0b0b0b] text-white max-w-6xl mx-auto GlobalPadding h-auto">
                     <div className="border-t border-gray-700 h-full flex flex-col justify-between">
                         {/* Row 1 */}
                         <div

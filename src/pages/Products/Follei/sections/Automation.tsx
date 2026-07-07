@@ -77,7 +77,7 @@ export const Automation: React.FC = () => {
   const [activeRow2, setActiveRow2] = useState<number>(5);
 
   return (
-    <section className="relative w-full py-20 px-6 sm:px-10 md:px-15 overflow-hidden bg-[#FFFFFF] flex flex-col items-center justify-center text-center">
+    <section className="relative w-full GlobalPadding overflow-hidden bg-[#FFFFFF] flex flex-col items-center justify-center text-center">
       {/* Background Decorative Glows */}
       <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#1079B7]/3 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#8E2884]/2 rounded-full blur-[120px] pointer-events-none" />

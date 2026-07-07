@@ -45,7 +45,7 @@ const CollectionCapabilities: React.FC = () => {
     const [activeId, setActiveId] = useState<string | null>(null);
 
     return (
-        <section className="w-full bg-[#FFFFFF] py-20 md:py-24 px-6 sm:px-10 md:px-15 lg:px-20 flex flex-col items-center">
+        <section className="w-full bg-[#FFFFFF] GlobalPadding flex flex-col items-center">
             
             {/* Header Area */}
             <div className="flex flex-col items-center mb-12 md:mb-16 max-w-4xl w-full">

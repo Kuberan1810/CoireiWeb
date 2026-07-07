@@ -29,7 +29,7 @@ const ConfidentResolutionSection: React.FC = () => {
         <section className="relative w-full bg-[#FFFFFF] border-t border-[#E8E8E8]/50">
             
             {/* Header Area - Scrolls normally! Will never get cut off by pinning. */}
-            <div className="w-full pt-16 md:pt-20 pb-8 md:pb-10 px-6 sm:px-10 md:px-15 lg:px-20 flex justify-center">
+            <div className="w-full GlobalPadding flex justify-center">
                 <div className=" flex flex-col items-center">
                     {/* Pill */}
                     <div data-ns-animate data-delay="0.1" className="mb-6 flex justify-center">
@@ -63,7 +63,7 @@ const ConfidentResolutionSection: React.FC = () => {
                     Pinned Steps Grid 
                     top-[15vh] ensures the entire 450px grid fits perfectly on the screen when it pins on desktop.
                 */}
-                <div className="relative md:sticky top-0 md:top-[15vh] w-full px-6 sm:px-10 md:px-15 lg:px-20 pb-12">
+                <div className="relative md:sticky top-0 md:top-[15vh] w-full GlobalPadding">
                     {/* 4 Column Curved Timeline UI */}
                     <div className="w-full relative h-auto md:h-[450px]">
                         

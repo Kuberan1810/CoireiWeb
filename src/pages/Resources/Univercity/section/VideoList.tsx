@@ -32,7 +32,7 @@ const VideoList = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="mx-20">
+    <section className="GlobalPadding">
       <div className="space-y-4">
         {accordionItems.map((item, index) => (
           <div
