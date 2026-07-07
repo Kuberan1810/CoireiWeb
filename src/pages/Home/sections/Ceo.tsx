@@ -52,7 +52,7 @@ const TypewriterText = ({ text, delay = 35 }: { text: string; delay?: number }) 
 
 const Ceo = () => {
     return (
-        <section className="relative w-full m-[60px] overflow-x-hidden flex justify-center">
+        <section className="relative w-full mt-12 md:mt-16 mb-8 md:mb-16 overflow-x-hidden flex justify-center">
             {/* Grey Background Band - Anchored strictly to the bottom of the section */}
             <div className="absolute left-0 right-0 bottom-0 bg-[#F9F9F9] z-0 h-[180px] md:h-[200px]" />
             
@@ -85,7 +85,7 @@ const Ceo = () => {
                 </div>
 
                 {/* Content Section (Right) */}
-                <div className="w-full md:w-[60%] h-[180px] md:h-[200px] flex flex-col justify-center pb-4 md:pb-0">
+                <div className="w-full md:w-[60%] min-h-[180px] md:h-[200px] flex flex-col justify-center pb-4 md:pb-0">
                     
                     <div 
                         data-ns-animate 

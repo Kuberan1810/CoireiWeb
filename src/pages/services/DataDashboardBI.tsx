@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useTransform, useMotionValue, animate } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
@@ -10,6 +10,7 @@ import { LayoutGrid, LineChart, TrendingUp, Handshake, Network, Bot, Scan, Coins
 
 const DataDashboardBI = () => {
     useScrollAnimations();
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     // Time-linked continuous animation progress for Our Working Process (3s duration, repeats in a very fast loop)
     const processAnimProgress = useMotionValue(0);
@@ -131,15 +132,15 @@ const DataDashboardBI = () => {
                         <div className="flex flex-col w-full border-t border-gray-200">
                             {/* Row 1: AI Expertise */}
                             {/* Row 1: AI Expertise */}
-                            <div data-ns-animate="true" data-delay="0.1" className="flex flex-col py-10 border-b border-gray-200 relative group cursor-pointer">
+                            <div data-ns-animate="true" data-delay="0.1" onClick={() => setOpenIndex(openIndex === 0 ? null : 0)} className="flex flex-col py-10 border-b border-gray-200 relative group cursor-pointer">
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-gray-400 font-light text-lg mt-1 shrink-0">01</span>
-                                        <div className="flex flex-col gap-0 group-hover:gap-4 transition-all duration-500">
+                                        <div className={`flex flex-col transition-all duration-500 ${openIndex === 0 ? 'gap-4' : 'gap-0 lg:group-hover:gap-4'}`}>
                                             <h3 className="text-2xl md:text-3xl font-medium text-[#F67300] tracking-tight">
                                                 AI Expertise
                                             </h3>
-                                            <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 ease-in-out flex flex-col gap-4">
+                                            <div className={`overflow-hidden transition-all duration-500 ease-in-out flex flex-col gap-4 ${openIndex === 0 ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 lg:group-hover:max-h-[500px] lg:group-hover:opacity-100'}`}>
                                                 <p className="text-gray-600 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
                                                     Our team of experienced AI specialists combines deep industry knowledge with advanced analytics to deliver intelligent, data-driven solutions.
                                                 </p>
@@ -156,15 +157,15 @@ const DataDashboardBI = () => {
                             </div>
 
                             {/* Row 2: Scalable Solutions */}
-                            <div data-ns-animate="true" data-delay="0.2" className="flex flex-col py-10 border-b border-gray-200 relative group cursor-pointer">
+                            <div data-ns-animate="true" data-delay="0.2" onClick={() => setOpenIndex(openIndex === 1 ? null : 1)} className="flex flex-col py-10 border-b border-gray-200 relative group cursor-pointer">
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-gray-400 font-light text-lg mt-1 shrink-0">02</span>
-                                        <div className="flex flex-col gap-0 group-hover:gap-4 transition-all duration-500">
+                                        <div className={`flex flex-col transition-all duration-500 ${openIndex === 1 ? 'gap-4' : 'gap-0 lg:group-hover:gap-4'}`}>
                                             <h3 className="text-2xl md:text-3xl font-medium text-[#F67300] tracking-tight">
                                                 Scalable Solutions
                                             </h3>
-                                            <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 ease-in-out flex flex-col gap-4">
+                                            <div className={`overflow-hidden transition-all duration-500 ease-in-out flex flex-col gap-4 ${openIndex === 1 ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 lg:group-hover:max-h-[500px] lg:group-hover:opacity-100'}`}>
                                                 <p className="text-gray-600 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
                                                     Whether you are a growing startup or a large global enterprise, our solutions are built to scale alongside your business needs.
                                                 </p>
@@ -181,15 +182,15 @@ const DataDashboardBI = () => {
                             </div>
 
                             {/* Row 3: Customer-Centric Approach */}
-                            <div data-ns-animate="true" data-delay="0.3" className="flex flex-col py-10 border-b border-gray-200 relative group cursor-pointer">
+                            <div data-ns-animate="true" data-delay="0.3" onClick={() => setOpenIndex(openIndex === 2 ? null : 2)} className="flex flex-col py-10 border-b border-gray-200 relative group cursor-pointer">
                                 <div className="flex justify-between items-start w-full">
                                     <div className="flex items-start gap-6">
                                         <span className="text-gray-400 font-light text-lg mt-1 shrink-0">03</span>
-                                        <div className="flex flex-col gap-0 group-hover:gap-4 transition-all duration-500">
+                                        <div className={`flex flex-col transition-all duration-500 ${openIndex === 2 ? 'gap-4' : 'gap-0 lg:group-hover:gap-4'}`}>
                                             <h3 className="text-2xl md:text-3xl font-medium text-[#F67300] tracking-tight">
                                                 Customer-Centric Approach
                                             </h3>
-                                            <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 ease-in-out flex flex-col gap-4">
+                                            <div className={`overflow-hidden transition-all duration-500 ease-in-out flex flex-col gap-4 ${openIndex === 2 ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 lg:group-hover:max-h-[500px] lg:group-hover:opacity-100'}`}>
                                                 <p className="text-gray-600 text-[15px] md:text-base leading-relaxed font-light max-w-2xl">
                                                     At Coirei, we work closely with every client to understand their unique challenges, objectives, and long-term vision.
                                                 </p>

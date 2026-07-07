@@ -171,8 +171,7 @@ const ContentSection = () => {
           className="flex w-full justify-center bg-white px-6 pt-12 pb-16 sm:px-10 md:px-15 md:pb-24"
         >
           <div
-            className="relative mx-auto flex w-full flex-col overflow-hidden bg-white text-left md:flex-row"
-            style={{ height: BOX_H }}
+            className="relative mx-auto flex w-full flex-col md:overflow-hidden bg-white text-left md:flex-row h-auto md:h-[400px]"
           >
             <div className="relative flex w-full flex-shrink-0 flex-col md:w-1/2">
               <div className="flex h-full flex-col p-8 md:p-12 lg:p-16">
@@ -219,7 +218,7 @@ const ContentSection = () => {
                 ))}
               </div>
 
-              <div className="flex-1 overflow-hidden">
+              <div className="flex-1 overflow-visible md:overflow-hidden">
                 <div
                   ref={scrollTrackRef}
                   className="flex w-full flex-col"
@@ -228,8 +227,7 @@ const ContentSection = () => {
                   {ETHOS_ITEMS.map((item, i) => (
                     <div
                       key={item.index}
-                      className="group relative w-full flex-shrink-0"
-                      style={{ height: ITEM_H }}
+                      className="group relative w-full flex-shrink-0 h-auto md:h-[200px]"
                     >
                       <div className="flex h-full flex-col justify-center gap-5 p-[15px]">
                         <div>
