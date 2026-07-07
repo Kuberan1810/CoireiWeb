@@ -2,7 +2,7 @@ import { Settings } from "lucide-react";
 
 const PrivacySection = () => {
   return (
-    <section className="text-black mx-6 sm:mx-10 md:mx-15 pt-24 sm:pt-28 md:pt-32 pb-16">
+    <section className="text-black mx-6 sm:mx-10 md:mx-15 pt-32 sm:pt-36 md:pt-40 pb-16">
       {/* Hero */}
       <div
         data-ns-animate

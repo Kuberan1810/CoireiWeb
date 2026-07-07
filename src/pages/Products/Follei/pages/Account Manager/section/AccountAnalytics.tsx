@@ -1,9 +1,61 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import stats from "../../../../../../assets/images/products/accountAnalytics.svg";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import analytic from "../../../../../../assets/images/products/analyticsbg.jpg";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export const AccountAnalytics: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Counter animation
+      const counters = gsap.utils.toArray(".counter-num") as HTMLElement[];
+      counters.forEach((counter) => {
+        const targetStr = counter.getAttribute("data-target") || "0";
+        const isFloat = targetStr.includes(".");
+        const target = parseFloat(targetStr);
+        
+        ScrollTrigger.create({
+          trigger: ".analytic-cards-container",
+          start: "top 85%",
+          once: true,
+          onEnter: () => {
+            gsap.to(counter, {
+              innerHTML: target,
+              duration: 2.5,
+              ease: "power3.out",
+              snap: { innerHTML: isFloat ? 0.1 : 1 },
+              onUpdate: function() {
+                if (isFloat) {
+                  counter.innerHTML = Number(this.targets()[0].innerHTML).toFixed(1);
+                }
+              }
+            });
+          }
+        });
+      });
+      
+      // Animate the cards themselves
+      gsap.from(".analytic-card", {
+        scrollTrigger: {
+          trigger: ".analytic-cards-container",
+          start: "top 85%",
+          once: true
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "back.out(1.2)"
+      });
+      
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
   const progressBars = [
     { id: "01", title: "Account Health — Relationship Strength", percentage: 83, label: "/HEALTH" },
     { id: "02", title: "Expansion Potential — Growth Opportunity", percentage: 50, label: "/EXPANSION" },
@@ -11,7 +63,7 @@ export const AccountAnalytics: React.FC = () => {
   ];
 
   return (
-    <section className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">
+    <section ref={sectionRef} className="w-full px-6 sm:px-10 md:px-15 py-8 lg:py-10 flex justify-center bg-white">
       <div className="w-full flex flex-col group">
 
         {/* Top Part */}
@@ -43,23 +95,46 @@ export const AccountAnalytics: React.FC = () => {
           </div>
 
           {/* Right Column */}
-          <div data-ns-animate="true" data-delay="0.4" className="w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-emerald-500/20">
+          <div data-ns-animate="true" data-delay="0.4" className="w-full lg:w-1/2 lg:min-h-[460px] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 shadow-xl border border-gray-800">
             {/* Background Image */}
             <img
               src={analytic}
               loading="lazy"
               alt=""
-              className="image-cover absolute inset-0 w-full h-[390px] object-cover opacity-30 transition-transform duration-700 "
+              className="image-cover absolute inset-0 w-full h-[460px] object-cover opacity-30 transition-transform duration-700 "
             />
 
             {/* Inner Card Container */}
-            <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center ">
-              <div className="w-full h-full flex items-center justify-center p-10">
-                <img
-                  src={stats}
-                  className="w-full h-full object-cover rounded-[10px] "
-                  alt="Success Intelligence graph"
-                />
+            <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-6 sm:p-10">
+              <div className="w-full max-w-[480px] analytic-cards-container">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                  {/* Metric 1 */}
+                  <div className="analytic-card bg-white rounded-[20px] shadow-lg p-5 sm:p-6 flex flex-col items-start justify-between text-left relative group hover:-translate-y-1 transition-transform duration-300 h-full">
+                    <span className="text-[#8E93A6] text-[9px] sm:text-[10px] font-bold tracking-wider mb-2 leading-tight uppercase">TOTAL RENEWALS DUE</span>
+                    <span className="text-[#04032E] text-3xl sm:text-[38px] font-bold mb-2 counter-num" data-target="245">0</span>
+                    <span className="bg-[#E8F5E9] text-[#2E7D32] text-[10px] sm:text-[11px] font-bold px-2 py-1 rounded-[6px] mt-auto">+12.4%</span>
+                  </div>
+                  {/* Metric 2 */}
+                  <div className="analytic-card bg-white rounded-[20px] shadow-lg p-5 sm:p-6 flex flex-col items-start justify-between text-left relative group hover:-translate-y-1 transition-transform duration-300 h-full">
+                    <span className="text-[#8E93A6] text-[9px] sm:text-[10px] font-bold tracking-wider mb-2 leading-tight uppercase">DUE THIS WEEK</span>
+                    <span className="text-[#04032E] text-3xl sm:text-[38px] font-bold mb-2 counter-num" data-target="12">0</span>
+                    <span className="bg-[#EEEDFC] text-[#6B5AED] text-[10px] sm:text-[11px] font-bold px-2 py-1 rounded-[6px] mt-auto">Urgent</span>
+                  </div>
+                  {/* Metric 3 */}
+                  <div className="analytic-card bg-white rounded-[20px] shadow-lg p-5 sm:p-6 flex flex-col items-start justify-between text-left relative group hover:-translate-y-1 transition-transform duration-300 h-full">
+                    <span className="text-[#8E93A6] text-[9px] sm:text-[10px] font-bold tracking-wider mb-2 leading-tight uppercase">RENEWAL REVENUE</span>
+                    <div className="flex items-baseline text-[#04032E] text-3xl sm:text-[38px] font-bold mb-2">
+                       <span className="text-xl sm:text-2xl mr-1">₹</span><span className="counter-num" data-target="4.2">0</span><span className="text-xl sm:text-2xl ml-0.5">M</span>
+                    </div>
+                    <span className="bg-[#E8F5E9] text-[#2E7D32] text-[10px] sm:text-[11px] font-bold px-2 py-1 rounded-[6px] mt-auto">Target</span>
+                  </div>
+                  {/* Metric 4 */}
+                  <div className="analytic-card bg-white rounded-[20px] shadow-lg p-5 sm:p-6 flex flex-col items-start justify-between text-left relative group hover:-translate-y-1 transition-transform duration-300 h-full">
+                    <span className="text-[#8E93A6] text-[9px] sm:text-[10px] font-bold tracking-wider mb-2 leading-tight uppercase">CHURN RISK</span>
+                    <span className="text-[#04032E] text-3xl sm:text-[38px] font-bold mb-2 counter-num" data-target="8">0</span>
+                    <span className="bg-[#FFEBEE] text-[#C62828] text-[10px] sm:text-[11px] font-bold px-2 py-1 rounded-[6px] mt-auto">Risk</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

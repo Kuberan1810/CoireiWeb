@@ -163,60 +163,80 @@ const AnimatedStep = ({
     );
 };
 
-const MobileAccountEvolution = () => {
-    // Uses useState to handle accordion interactions natively without scrolling
-    const [activeStep, setActiveStep] = React.useState<number | null>(0);
+const MobileAnimatedStep = ({ step, index }: { step: any, index: number }) => {
+    return (
+        <motion.div 
+            className="relative mb-10 last:mb-0 group" 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
+        >
+            {/* Interactive Circle Dot */}
+            <motion.div 
+                className="absolute -left-[40px] top-1.5 w-[14px] h-[14px] rounded-full border-[2px] border-[#0068AD] z-10" 
+                variants={{
+                    hidden: { backgroundColor: '#FFFFFF' },
+                    visible: { backgroundColor: '#1C99ED' }
+                }}
+                transition={{ duration: 0.3 }}
+            />
+            
+            {/* Step Pill */}
+            <div 
+                className="inline-flex items-center justify-center px-5 py-1.5 rounded-lg mb-4 relative overflow-hidden" 
+                style={{ boxShadow: '2px 2px 8px 0px #00000030', backgroundColor: '#FFFFFF' }}
+            >
+                <motion.div 
+                    className="absolute inset-0 rounded-lg" 
+                    style={{ background: 'linear-gradient(90deg, rgba(53, 82, 102, 0.2) 0%, rgba(0, 67, 112, 0.2) 100%)' }} 
+                    variants={{
+                        hidden: { opacity: 0.4 },
+                        visible: { opacity: 1 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                />
+                <motion.span 
+                    className="text-[#004370] relative z-10 font-medium text-[18px]"
+                    variants={{
+                        hidden: { opacity: 0.4 },
+                        visible: { opacity: 1 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                >
+                    {step.id}
+                </motion.span>
+            </div>
 
+            {/* Accordion Expandable Content */}
+            <motion.div
+                variants={{
+                    hidden: { height: 0, opacity: 0 },
+                    visible: { height: 'auto', opacity: 1 }
+                }}
+                className="overflow-hidden"
+                transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+            >
+                <div className="text-[#000000] mb-3 mt-2">
+                    <step.icon size={26} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-[#000000] mb-2 font-normal text-[22px] leading-snug">
+                    {step.title}
+                </h3>
+                <p className="text-[#5A5A5C] font-normal text-[15px] leading-relaxed pb-4">
+                    {step.description}
+                </p>
+            </motion.div>
+        </motion.div>
+    );
+};
+
+const MobileAccountEvolution = () => {
     return (
         <div className="w-full flex flex-col max-w-[600px] mx-auto mt-4">
             <div className="relative border-l-[2px] border-[#E8E8E8] ml-4 pl-8 py-2">
-                {evolutionSteps.map((step, index) => {
-                    const isActive = activeStep === index;
-                    return (
-                        <div 
-                            key={step.id} 
-                            className="relative mb-10 last:mb-0 cursor-pointer group" 
-                            onClick={() => setActiveStep(isActive ? null : index)}
-                        >
-                            {/* Interactive Circle Dot */}
-                            <div 
-                                className={`absolute -left-[40px] top-1.5 w-[14px] h-[14px] rounded-full border-[2px] border-[#0068AD] transition-colors duration-300 z-10 ${isActive ? 'bg-[#1C99ED]' : 'bg-[#FFFFFF]'}`} 
-                            />
-                            
-                            {/* Step Pill */}
-                            <div 
-                                className="inline-flex items-center justify-center px-5 py-1.5 rounded-lg mb-4 relative" 
-                                style={{ boxShadow: '2px 2px 8px 0px #00000030', backgroundColor: '#FFFFFF' }}
-                            >
-                                <div 
-                                    className={`absolute inset-0 rounded-lg transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`} 
-                                    style={{ background: 'linear-gradient(90deg, rgba(53, 82, 102, 0.2) 0%, rgba(0, 67, 112, 0.2) 100%)' }} 
-                                />
-                                <span className={`text-[#004370] relative z-10 font-medium text-[18px] transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-40'}`}>
-                                    {step.id}
-                                </span>
-                            </div>
-
-                            {/* Accordion Expandable Content */}
-                            <motion.div
-                                initial={false}
-                                animate={{ height: isActive ? 'auto' : 0, opacity: isActive ? 1 : 0 }}
-                                className="overflow-hidden"
-                                transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                            >
-                                <div className="text-[#000000] mb-3 mt-2">
-                                    <step.icon size={26} strokeWidth={1.5} />
-                                </div>
-                                <h3 className="text-[#000000] mb-2 font-normal text-[22px] leading-snug">
-                                    {step.title}
-                                </h3>
-                                <p className="text-[#5A5A5C] font-normal text-[15px] leading-relaxed pb-4">
-                                    {step.description}
-                                </p>
-                            </motion.div>
-                        </div>
-                    );
-                })}
+                {evolutionSteps.map((step, index) => (
+                    <MobileAnimatedStep key={step.id} step={step} index={index} />
+                ))}
             </div>
         </div>
     );
