@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import logoSvg from "../../../../../assets/images/CI-follei/logo.svg";
 
 const BetterExperienceSection: React.FC = () => {
@@ -72,9 +73,30 @@ const BetterExperienceSection: React.FC = () => {
                     {/* Left: AI Logo with Concentric Circles */}
                     {/* Centered on mobile and scaled down (scale-[0.65]). Absolute on left on desktop. */}
                     <div className="relative md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 z-10 flex items-center justify-center scale-[0.65] md:scale-100 w-[200px] h-[200px] -mt-10 mb-0 md:my-0">
-                        {/* Reduced size and opacity of the gradient background 'borders' */}
-                        <div className="absolute w-[170px] h-[170px] rounded-full opacity-60" style={{ background: 'linear-gradient(90deg, #FFCCCC 0%, #CDD9FB 100%)' }}></div>
-                        <div className="absolute w-[160px] h-[160px] rounded-full transform rotate-[45deg] opacity-60" style={{ background: 'linear-gradient(90deg, #FFCCCC 0%, #CDD9FB 100%)' }}></div>
+                        {/* Ripple Animations */}
+                        <style>
+                            {`
+                            @keyframes ripple-wave {
+                                0% { transform: scale(1); opacity: 0.6; }
+                                100% { transform: scale(1.4); opacity: 0; }
+                            }
+                            .animate-ripple {
+                                animation: ripple-wave 2s ease-out infinite;
+                            }
+                            .delay-1000 {
+                                animation-delay: 1s;
+                            }
+                            `}
+                        </style>
+                        <div 
+                            className="absolute w-[140px] h-[140px] rounded-full animate-ripple" 
+                            style={{ background: 'linear-gradient(90deg, #FFCCCC 0%, #CDD9FB 100%)' }}
+                        />
+                        <div 
+                            className="absolute w-[140px] h-[140px] rounded-full animate-ripple delay-1000" 
+                            style={{ background: 'linear-gradient(90deg, #FFCCCC 0%, #CDD9FB 100%)' }}
+                        />
+                        
                         <div className="absolute w-[150px] h-[150px] rounded-full bg-[#FFFFFF]"></div>
                         <div className="relative w-[140px] h-[140px] rounded-full flex items-center justify-center z-20">
                             <img src={logoSvg} alt="AI Support Engine Logo" className="w-full h-full object-contain" />

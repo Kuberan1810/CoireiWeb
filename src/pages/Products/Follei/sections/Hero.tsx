@@ -20,24 +20,24 @@ const AnimatedNumber = ({ end, duration = 2000, decimals = 0, prefix = "", suffi
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
+
       // Easing function: easeOutExpo
       const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setCount(easeProgress * end);
-      
+
       if (progress < 1) {
         animationFrameId = window.requestAnimationFrame(step);
       }
     };
-    
+
     // Add a slight delay for better effect when page loads
     const timeoutId = setTimeout(() => {
-        animationFrameId = window.requestAnimationFrame(step);
+      animationFrameId = window.requestAnimationFrame(step);
     }, 500);
 
     return () => {
-        clearTimeout(timeoutId);
-        if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
+      clearTimeout(timeoutId);
+      if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
     };
   }, [end, duration]);
 
@@ -83,7 +83,7 @@ const Hero: React.FC = () => {
       mm.add("(min-width: 992px)", () => {
         gsap.set(".hero-gallery-left", { y: -80 });
         gsap.set(".hero-gallery-right", { y: 80 });
-        
+
         gsap.to(".hero-gallery-left", {
           y: 80,
           ease: "none",
@@ -366,13 +366,13 @@ const Hero: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="hero-gallery-info-wrap flex flex-col md:flex-row items-start md:items-center justify-between text-left w-full">
-                    <div className="hero-gallery-info-details-wrap mg-bottom-0px text-left">
-                      <h2 className="hero-gallery-info-details-name text-[#04032E]! text-2xl! font-semibold! text-left!">
+                  <div className="hero-gallery-info-wrap flex flex-col md:flex-row !items-start md:!items-center justify-between text-left w-full">
+                    <div className="hero-gallery-info-details-wrap mg-bottom-0px text-left w-full">
+                      <h2 className="hero-gallery-info-details-name text-[#04032E] text-2xl font-semibold !text-left">
                         Follei Mitra
                       </h2>
 
-                      <div className="hero-gallery-info-details-designation text-[#5A5A5C]! text-base! -mt-2! text-left!">
+                      <div className="hero-gallery-info-details-designation text-[#5A5A5C] text-base -mt-2 !text-left">
                         AI Phone Agent
                       </div>
                     </div>
@@ -420,7 +420,7 @@ const Hero: React.FC = () => {
               https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69b2f490e1d92f420d1a6112_image%2067.avif 1920w
             "
                 sizes="(max-width: 1919px) 100vw, 1920px"
-                className="image-cover"
+                className="image-cover absolute inset-0 w-full h-full object-cover"
               />
 
               <img

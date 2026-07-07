@@ -75,21 +75,21 @@ const Integrations = () => {
     const gridRef = useRef<HTMLDivElement>(null);
 
     const row1 = [
-        { empty: true, opacityClass: "opacity-[0.05]" }, { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-40" },
+        { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40" },
         { icon: callIcon }, { icon: gmailIcon }, { icon: whatsappIcon }, { icon: documentIcon },
-        { empty: true, opacityClass: "opacity-40" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-[0.05]" }
+        { empty: true, opacityClass: "opacity-40" }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }
     ];
 
     const row2 = [
-        { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-40" },
+        { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40", hideOnMobile: true },
         { icon: filesIcon }, { icon: recordIcon }, { icon: folleiIcon, active: true }, { icon: robot2Icon }, { icon: callOutIcon },
-        { empty: true, opacityClass: "opacity-40" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-10" }
+        { empty: true, opacityClass: "opacity-40", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }
     ];
 
     const row3 = [
-        { empty: true, opacityClass: "opacity-[0.05]" }, { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-40" },
+        { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40" },
         { icon: httpsIcon }, { icon: chatIcon }, { icon: robotIcon }, { icon: rectangleIcon },
-        { empty: true, opacityClass: "opacity-40" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-[0.05]" }
+        { empty: true, opacityClass: "opacity-40" }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }
     ];
 
     useLayoutEffect(() => {
@@ -197,7 +197,7 @@ const Integrations = () => {
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
                     }}
                 >
-                    <div ref={gridRef} className="relative flex flex-col items-center justify-center min-w-max mx-auto px-4">
+                    <div ref={gridRef} className="relative left-1/2 -translate-x-1/2 flex flex-col items-center justify-center w-max">
                         {/* 
                             Spacing Math for perfect hexagons: 
                             Base: w=70, h=81, gap=8. dy=67.55. mt = -13.5px

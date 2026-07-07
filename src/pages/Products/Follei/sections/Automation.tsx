@@ -158,12 +158,12 @@ export const Automation: React.FC = () => {
                     {/* Right Graphic content - smooth reveal */}
                     <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden flex items-center justify-center bg-slate-50/20 border border-slate-100 rounded-xl ${isExpanded
                       ? "w-full md:w-[48%] opacity-100 p-4 min-h-[160px] md:min-h-full"
-                      : "w-0 h-0 md:h-auto opacity-0 p-0 border-none"
+                      : "w-full min-h-[160px] p-4 opacity-100 md:w-0 md:h-auto md:opacity-0 md:p-0 md:border-none"
                       }`}>
                       <img
                         src={card.graphic}
                         alt={card.title}
-                        className={`max-h-[140px] md:max-h-[180px] w-auto object-contain transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? "scale-100 rotate-0" : "scale-95 -rotate-2"
+                        className={`max-h-[140px] md:max-h-[180px] w-auto object-contain transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? "scale-100 rotate-0" : "scale-100 rotate-0 md:scale-95 md:-rotate-2"
                           }`}
                       />
                     </div>
@@ -209,12 +209,12 @@ export const Automation: React.FC = () => {
                     {/* Left Graphic content - smooth reveal */}
                     <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden flex items-center justify-center bg-slate-50/20 border border-slate-100 rounded-xl ${isExpanded
                       ? "w-full md:w-[48%] opacity-100 p-4 min-h-[160px] md:min-h-full"
-                      : "w-0 h-0 md:h-auto opacity-0 p-0 border-none"
+                      : "w-full min-h-[160px] p-4 opacity-100 md:w-0 md:h-auto md:opacity-0 md:p-0 md:border-none"
                       }`}>
                       <img
                         src={card.graphic}
                         alt={card.title}
-                        className={`max-h-[140px] md:max-h-[180px] w-auto object-contain transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? "scale-100 rotate-0" : "scale-95 rotate-2"
+                        className={`max-h-[140px] md:max-h-[180px] w-auto object-contain transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? "scale-100 rotate-0" : "scale-100 rotate-0 md:scale-95 md:rotate-2"
                           }`}
                       />
                     </div>

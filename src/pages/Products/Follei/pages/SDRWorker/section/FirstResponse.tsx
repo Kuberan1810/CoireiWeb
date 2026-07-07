@@ -73,8 +73,37 @@ const FirstResponse: React.FC = () => {
             <img
               src={overlay1Img}
               alt="First Response Interaction Overlay"
-              className="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500"
+              className="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500 relative z-10"
             />
+            {/* Animated Data Flow Lines Overlay */}
+            <svg viewBox="0 0 600 393" className="absolute top-0 left-0 w-full h-full pointer-events-none transform group-hover:scale-[1.02] transition-transform duration-500 z-20">
+              <style>
+                {`
+                @keyframes dataFlow {
+                  0% { stroke-dashoffset: 40; opacity: 0; }
+                  20% { opacity: 1; }
+                  80% { opacity: 1; }
+                  100% { stroke-dashoffset: 0; opacity: 0; }
+                }
+                .animate-flow {
+                  stroke-dasharray: 10 30;
+                  animation: dataFlow 1.5s linear infinite;
+                  stroke: #1079B7;
+                  stroke-width: 3.5;
+                  stroke-linecap: round;
+                }
+                .flow-delay-1 { animation-delay: 0.5s; }
+                .flow-delay-2 { animation-delay: 1.0s; }
+                `}
+              </style>
+              {/* Curved paths from outer icons to the center logo */}
+              <path d="M 246,118 Q 257,125 268,151" fill="none" className="animate-flow" />
+              <path d="M 202,197 L 244,197" fill="none" className="animate-flow flow-delay-1" />
+              <path d="M 246,275 Q 257,268 268,243" fill="none" className="animate-flow flow-delay-2" />
+              <path d="M 355,117 Q 344,125 331,151" fill="none" className="animate-flow flow-delay-1" />
+              <path d="M 400,197 L 356,197" fill="none" className="animate-flow flow-delay-2" />
+              <path d="M 355,276 Q 344,268 332,242" fill="none" className="animate-flow" />
+            </svg>
           </div>
         </div>
       </div>
