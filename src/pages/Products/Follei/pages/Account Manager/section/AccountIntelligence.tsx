@@ -53,8 +53,8 @@ export const AccountIntelligence: React.FC = () => {
           </div>
 
           {/* Title */}
-          <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 max-w-none">
-            Every Strategic Account <br />
+          <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-[30px] sm:text-[40px] md:text-[48px] lg:text-[60px] font-medium tracking-tight leading-[1.15] mb-4 max-w-none">
+            Every Strategic Account <br className="hidden lg:block" />
             <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
               Grows With Intelligence
             </span>

@@ -15,8 +15,8 @@ const YouUseFollei: React.FC = () => {
                    
 
                     {/* Heading */}
-                    <h2 className="text-[#0A0E29] text-3xl sm:text-5xl md:text-[52px] font-medium tracking-tight leading-[1.15] mb-4 text-center max-w-4xl mx-auto">
-                        The More You Use Follei,  <br />
+                    <h2 className="text-[#0A0E29] text-[30px] sm:text-[40px] md:text-[48px] lg:text-[60px] font-medium tracking-tight leading-[1.15] mb-4 text-center max-w-4xl mx-auto">
+                        The More You Use Follei,  <br className="hidden lg:block" />
                         <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">The Better It Gets</span>
                     </h2>
 

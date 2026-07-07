@@ -41,10 +41,10 @@ const ConfidentResolutionSection: React.FC = () => {
 
                     {/* Heading */}
                     <div className="mb-4 text-center">
-                        <h2 data-ns-animate data-delay="0.2" className="text-[#0A0E29] font-medium tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]">
+                        <h2 data-ns-animate data-delay="0.2" className="text-[#0A0E29] font-medium tracking-tight text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[1.2] md:leading-[1.1]">
                             From Customer Issues To
                         </h2>
-                        <h2 data-ns-animate data-delay="0.3" className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium tracking-tight text-[36px] md:text-[48px] leading-[1.2] md:leading-[1.1]">
+                        <h2 data-ns-animate data-delay="0.3" className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent font-medium tracking-tight text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[1.2] md:leading-[1.1]">
                             Confident Resolution
                         </h2>
                     </div>

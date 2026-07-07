@@ -5,9 +5,9 @@ import analytic from "../../../../../../assets/images/products/analyticsbg.jpg";
 
 export const AccountAnalytics: React.FC = () => {
   const progressBars = [
-    { id: "01", title: "Account Health — Relationship Strength", percentage: 83, label: "/HEALTH" },
-    { id: "02", title: "Expansion Potential — Growth Opportunity", percentage: 50, label: "/EXPANSION" },
-    { id: "03", title: "Executive Engagement — Strategic Alignment", percentage: 66, label: "/ENGAGEMENT" }
+    { id: "01", shortTitle: "Account Health", subTitle: "Relationship Strength", percentage: 83, label: "/HEALTH" },
+    { id: "02", shortTitle: "Expansion Potential", subTitle: "Growth Opportunity", percentage: 50, label: "/EXPANSION" },
+    { id: "03", shortTitle: "Executive Engagement", subTitle: "Strategic Alignment", percentage: 66, label: "/ENGAGEMENT" }
   ];
 
   return (
@@ -29,8 +29,8 @@ export const AccountAnalytics: React.FC = () => {
             </div>
 
             {/* Title */}
-            <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-4xl sm:text-[60px] md:text-[52px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
-              Measure Every Relationship. <br />
+            <h2 data-ns-animate="true" data-delay="0.2" className="text-[#04032E] text-[30px] sm:text-[40px] md:text-[48px] lg:text-[60px] font-medium tracking-tight leading-[1.15] mb-6 max-w-none">
+              Measure Every Relationship. <br className="hidden lg:block" />
               <span className="bg-gradient-to-r from-[#1079B7] via-[#8E2884] to-[#004370] bg-clip-text text-transparent">
                 Grow Every Account.
               </span>
@@ -66,7 +66,6 @@ export const AccountAnalytics: React.FC = () => {
 
         </div>
 
-        {/* Progress Bars Section */}
         <div className="w-full mt-4 border-[0.5px] border-[#626262] bg-[#F0F4FF]">
           {progressBars.map((bar, idx) => (
             <div
@@ -74,9 +73,16 @@ export const AccountAnalytics: React.FC = () => {
               className="relative w-full h-[50px] sm:h-[60px] md:h-[68px] border-b-[0.5px] border-[#626262] last:border-b-0"
             >
               {/* Background Label */}
-              <div className="absolute inset-0 flex items-end justify-end px-4 sm:px-6 pb-1.5 z-0">
+              <div className="absolute inset-0 hidden sm:flex items-end justify-end px-4 sm:px-6 pb-1.5 z-0">
                 <span className="text-[#5A5A5C] text-[10px] sm:text-xs tracking-[0.1em] uppercase">
                   {bar.label}
+                </span>
+              </div>
+
+              {/* Percentage Badge  */}
+              <div className="absolute right-4 top-0 h-full flex items-center z-20 sm:hidden">
+                <span className="bg-white text-[#004370] text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">
+                  +{bar.percentage}%
                 </span>
               </div>
 
@@ -84,14 +90,18 @@ export const AccountAnalytics: React.FC = () => {
                 initial={{ width: "0%" }}
                 whileInView={{ width: `${bar.percentage}%` }}
                 transition={{ duration: 1.5, ease: "easeOut", delay: idx * 0.2 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 className="absolute top-0 left-0 h-full bg-[#91C1F8] overflow-hidden z-10"
               >
-                <div className="absolute left-4 sm:left-8 h-full flex items-center whitespace-nowrap text-white text-sm md:text-[24px] font-medium tracking-wide">
-                  {bar.id}/  {bar.title}
+                {/* Responsive text layout */}
+                <div className="absolute left-4 sm:left-8 h-full flex items-center text-white text-sm md:text-[24px] font-medium tracking-wide pr-0 sm:pr-28">
+                  <span className="whitespace-nowrap">{bar.id}/  {bar.shortTitle}</span>
+                  <span className="hidden sm:inline whitespace-nowrap">&nbsp;— {bar.subTitle}</span>
                 </div>
-                <div className="absolute right-4 h-full flex items-center">
-                  <span className="bg-white text-[#004370] text-xs sm:text-[22px] font-medium p-2 rounded-full ">
+
+                {/* Percentage Badge */}
+                <div className="absolute right-4 h-full flex items-center hidden sm:flex">
+                  <span className="bg-white text-[#004370] text-xs sm:text-[22px] font-medium p-2 rounded-full">
                     +{bar.percentage}%
                   </span>
                 </div>
