@@ -1,4 +1,5 @@
-import React, { useLayoutEffect, useRef } from "react";
+
+import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
@@ -49,6 +50,7 @@ interface AgentCard {
   link: string;
 }
 
+
 const AnimatedTaskItem = ({ text, stepIndex }: { text: string, stepIndex: number }) => {
   const [visible, setVisible] = React.useState(false);
   const [status, setStatus] = React.useState<"sync" | "tick">("sync");
@@ -93,6 +95,182 @@ const AnimatedTaskItem = ({ text, stepIndex }: { text: string, stepIndex: number
         )}
       </div>
       <span className="hover:text-slate-800 transition-colors">{text}</span>
+    </div>
+  );
+};
+
+const CollectionsWorkerMockup: React.FC = () => {
+  const [phase, setPhase] = useState<"idle" | "typing" | "sending" | "processing" | "revealed">("idle");
+  const [typedText, setTypedText] = useState("");
+
+  const targetText = "Overdue invoice #4081. Send reminder.";
+
+  useEffect(() => {
+    let active = true;
+
+    const runLoop = async () => {
+      while (active) {
+        // 1. Idle phase
+        setPhase("idle");
+        setTypedText("");
+        await new Promise((r) => setTimeout(r, 1000));
+        if (!active) break;
+
+        // 2. Typing phase
+        setPhase("typing");
+        for (let i = 0; i <= targetText.length; i++) {
+          if (!active) return;
+          setTypedText(targetText.slice(0, i));
+          await new Promise((r) => setTimeout(r, 50 + Math.random() * 40));
+        }
+        await new Promise((r) => setTimeout(r, 800));
+        if (!active) break;
+
+        // 3. Sending phase
+        setPhase("sending");
+        await new Promise((r) => setTimeout(r, 1500));
+        if (!active) break;
+
+        // 4. Processing phase
+        setPhase("processing");
+        await new Promise((r) => setTimeout(r, 2200));
+        if (!active) break;
+
+        // 5. Revealed phase
+        setPhase("revealed");
+        await new Promise((r) => setTimeout(r, 4000));
+      }
+    };
+
+    runLoop();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  return (
+    <div className="w-full h-full flex items-center justify-center scale-[0.55] sm:scale-[0.7] md:scale-90 lg:scale-100 origin-center">
+      <div className="bg-white h-full w-full rounded-[16px] shadow-[0_0_10px_rgba(160,160,160,0.2)] border border-slate-200/50 flex items-center justify-between px-3 sm:px-6 relative overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+
+        {/* Left Card */}
+        <div className="w-[110px] sm:w-[135px] h-[60px] sm:h-[68px] flex-shrink-0 rounded-[4px] border-[1.5px] border-[#BDE0FF] bg-white flex flex-col justify-center gap-1.5 p-2 sm:p-2.5 relative z-10 shadow-sm">
+          <div className="flex items-center gap-1.5 mb-0.5">
+            <div className="w-0.5 h-3 bg-[#3B82F6]"></div>
+            <span className="text-[7px] sm:text-[9px] text-[#3B82F6] font-medium tracking-wide flex items-center">
+              {typedText || "Type here ......"}
+              {(phase === "idle" || phase === "typing") && (
+                <span className="inline-block w-[1.5px] h-[8px] bg-[#3B82F6] ml-0.5 cursor-blink">|</span>
+              )}
+            </span>
+          </div>
+          <div className={`w-[95%] h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
+          <div className={`w-[95%] h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
+          <div className={`w-[85%] h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
+        </div>
+
+        {/* Connector 1 */}
+        <div className="flex-1 h-[2px] relative z-0 -mx-1 flex items-center justify-start">
+          <div className="flex-1 h-full bg-[#E2E8F0] relative">
+            {phase === "sending" && (
+              <div className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-[#3B82F6] shadow-[0_0_8px_#3B82F6] animate-flow-right" />
+            )}
+          </div>
+          <div className="w-[16px] h-full bg-gradient-to-r from-[#E2E8F0] to-[#3B82F6]"></div>
+        </div>
+
+        {/* Center Circle */}
+        <div className="w-[72px] h-[72px] sm:w-[88px] sm:h-[88px] flex-shrink-0 rounded-full bg-white flex items-center justify-center relative z-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E2E8F0]">
+          <div
+            className="absolute w-[80%] h-[80%] flex items-start justify-center"
+            style={{
+              transform: 'rotate(-146.51deg)',
+              animation: (phase === "processing" || phase === "sending" || phase === "revealed")
+                ? 'spin-slow 6s linear infinite'
+                : 'spin-slow 20s linear infinite'
+            }}
+          >
+            <div
+              className="w-full h-1/2 rounded-t-full bg-gradient-to-b from-[#78A9FF] to-[#B1CBFF]"
+            />
+          </div>
+
+          {/* Inner Logo */}
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#1A56DB] to-[#0D389F] flex items-center justify-center shadow-[0_4px_12px_rgba(26,86,219,0.3)] relative z-10">
+            <img src={folleiLogo} alt="Follei Logo" className="w-7 h-7 object-contain" />
+          </div>
+        </div>
+
+        {/* Connector 2 */}
+        <div className="flex-1 h-[80px] sm:h-[100px] relative z-0 -mx-1 flex items-center">
+          <svg className="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#3B82F6" />
+                <stop offset="25%" stopColor="#E2E8F0" />
+                <stop offset="75%" stopColor="#E2E8F0" />
+                <stop offset="100%" stopColor="#3B82F6" />
+              </linearGradient>
+            </defs>
+            <path d="M 0 50 L 100 15" stroke="url(#lineGrad)" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
+            <path d="M 0 50 L 100 85" stroke="url(#lineGrad)" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
+
+            {/* Flowing Dot 1 */}
+            {phase === "processing" && (
+              <circle r="4" fill="#3B82F6" className="shadow-[0_0_8px_#3B82F6]">
+                <animate attributeName="cx" from="0" to="100" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="cy" from="50" to="15" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="1.5s" repeatCount="indefinite" />
+              </circle>
+            )}
+
+            {/* Flowing Dot 2 */}
+            {phase === "processing" && (
+              <circle r="4" fill="#3B82F6" className="shadow-[0_0_8px_#3B82F6]">
+                <animate attributeName="cx" from="0" to="100" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="cy" from="50" to="85" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="1.5s" repeatCount="indefinite" />
+              </circle>
+            )}
+          </svg>
+        </div>
+
+        {/* Right Card*/}
+        <div className="w-[90px] sm:w-[110px] h-[90px] sm:h-[110px] flex-shrink-0 rounded-[8px] bg-[#EBF5C8] flex flex-col overflow-hidden relative z-10 shadow-sm border-[1.5px] border-[#B3D465]">
+          {/* Card Header */}
+          <div className="h-[28%] bg-[#B3D465] flex items-center px-2.5 gap-1.5">
+            {phase === "revealed" ? (
+              <div className="w-2.5 h-2.5 sm:w-4 sm:h-4 rounded-full bg-emerald-600 flex items-center justify-center text-[5px] sm:text-[8px] text-white font-bold">✓</div>
+            ) : (
+              <div className="w-2.5 h-2.5 sm:w-4 sm:h-4 rounded-full bg-white/80"></div>
+            )}
+            <div className="w-8 h-1.5 rounded-full bg-white/80"></div>
+          </div>
+          {/* Card Body */}
+          <div className="flex-1 p-2 sm:p-2.5 flex flex-col gap-1 sm:gap-1.5 justify-center">
+            {phase === "revealed" ? (
+              <div className="w-full h-full flex flex-col justify-center items-start text-left gap-0.5 sm:gap-1 text-[#4D7C0F]">
+                <span className="text-[5px] sm:text-[9px] font-bold leading-tight">Reminder Sent!</span>
+                <span className="text-[4px] sm:text-[7px] font-medium leading-none text-[#5B6D26]">Client Paid: $4,081</span>
+              </div>
+            ) : phase === "processing" ? (
+              <>
+                <div className="w-[60%] h-[3px] sm:h-[6px] rounded-full animate-shimmer" />
+                <div className="w-full h-[2px] sm:h-[4px] rounded-full animate-shimmer" />
+                <div className="w-[85%] h-[2px] sm:h-[4px] rounded-full animate-shimmer" />
+              </>
+            ) : (
+              <>
+                <div className="w-[60%] h-[3px] sm:h-[6px] bg-[#D7EAA1] rounded-full" />
+                <div className="w-full h-[2px] sm:h-[4px] bg-[#D7EAA1] rounded-full" />
+                <div className="w-[85%] h-[2px] sm:h-[4px] bg-[#D7EAA1] rounded-full" />
+              </>
+            )}
+          </div>
+        </div>
+
+      </div>
+
     </div>
   );
 };
@@ -246,77 +424,7 @@ const agents: AgentCard[] = [
     mockupBg: "bg-transparent",
     bgImage: bg5,
     link: "/products/follei/collections-worker",
-    mockup: (
-      <div className="w-full h-full flex items-center justify-center scale-[0.55] sm:scale-[0.7] md:scale-90 lg:scale-100 origin-center">
-        <div className="bg-white h-full w-full  rounded-[16px] shadow-[0_0_10px_rgba(160,160,160,0.2)] border border-slate-200/50 flex items-center justify-between px-3 sm:px-6 relative overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
-
-          {/* Left Card */}
-          <div className="w-[110px] sm:w-[135px] h-[60px] sm:h-[68px] flex-shrink-0 rounded-[4px] border-[1.5px] border-[#BDE0FF] bg-white flex flex-col justify-center gap-1.5 p-2 sm:p-2.5 relative z-10 shadow-sm">
-            <div className="flex items-center gap-1.5 mb-0.5">
-              <div className="w-0.5 h-3 bg-[#3B82F6]"></div>
-              <span className="text-[7px] sm:text-[9px] text-[#3B82F6] font-medium tracking-wide">Type here ......</span>
-            </div>
-            <div className="w-[95%] h-[2.5px] bg-[#BDE0FF] rounded-full"></div>
-            <div className="w-[95%] h-[2.5px] bg-[#BDE0FF] rounded-full"></div>
-            <div className="w-[85%] h-[2.5px] bg-[#BDE0FF] rounded-full"></div>
-          </div>
-
-          <div className="flex-1 h-[2px] relative z-0 -mx-1 flex">
-            <div className="flex-1 h-full bg-[#E2E8F0]"></div>
-            <div className="w-[16px] h-full bg-gradient-to-r from-[#E2E8F0] to-[#3B82F6]"></div>
-          </div>
-
-          {/* Center Circle */}
-          <div className="w-[72px] h-[72px] sm:w-[88px] sm:h-[88px] flex-shrink-0 rounded-full bg-white flex items-center justify-center relative z-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E2E8F0]">
-            <div
-              className="absolute w-[80%] h-[80%] flex items-start justify-center"
-              style={{
-                transform: 'rotate(-146.51deg)'
-              }}
-            >
-              <div
-                className="w-full h-1/2 rounded-t-full bg-gradient-to-b from-[#78A9FF] to-[#B1CBFF]"
-              />
-            </div>
-
-            {/* Inner Logo */}
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#1A56DB] to-[#0D389F] flex items-center justify-center shadow-[0_4px_12px_rgba(26,86,219,0.3)] relative z-10">
-              <img src={folleiLogo} alt="Follei Logo" className="w-7 h-7 object-contain" />
-            </div>
-          </div>
-
-          {/* Connector 2 */}
-          <div className="flex-1 h-[80px] sm:h-[100px] relative z-0 -mx-1 flex items-center">
-            <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
-              <defs>
-                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#3B82F6" />
-                  <stop offset="25%" stopColor="#E2E8F0" />
-                  <stop offset="75%" stopColor="#E2E8F0" />
-                  <stop offset="100%" stopColor="#3B82F6" />
-                </linearGradient>
-              </defs>
-              <path d="M 0 50 L 100 15" stroke="url(#lineGrad)" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
-              <path d="M 0 50 L 100 85" stroke="url(#lineGrad)" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
-            </svg>
-          </div>
-
-          {/* Right Card*/}
-          <div className="w-[90px] sm:w-[110px] h-[90px] sm:h-[110px] flex-shrink-0 rounded-[8px] bg-[#EBF5C8] flex flex-col overflow-hidden relative z-10 shadow-sm border-[1.5px] border-[#B3D465]">
-            {/* Card Header */}
-            <div className="h-[28%] bg-[#B3D465] flex items-center px-2.5 gap-1.5">
-              <div className="w-4 h-4 rounded-full bg-white/80"></div>
-              <div className="w-8 h-1.5 rounded-full bg-white/80"></div>
-            </div>
-            {/* Card Body */}
-            <div className="flex-1 p-2 sm:p-2.5">
-              <div className="w-full h-full rounded-[4px] bg-[#D7EAA1]/50 border border-[#B3D465]/30"></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    )
+    mockup: <CollectionsWorkerMockup />
   },
   {
     id: "account",
@@ -345,6 +453,49 @@ const waveStyles = `
   }
   .btn-wave-text:hover .wave-char {
     animation: waveBounce 0.6s ease-in-out;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .cursor-blink {
+    animation: blink 0.8s infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, rgba(215,234,161,0.5) 25%, rgba(235,245,200,0.8) 50%, rgba(215,234,161,0.5) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite linear;
+  }
+  .animate-shimmer-blue {
+    background: linear-gradient(90deg, rgba(189,224,255,0.6) 25%, rgba(235,245,255,0.9) 50%, rgba(189,224,255,0.6) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite linear;
+  }
+  @keyframes flowRight {
+    0% { left: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  .animate-flow-right {
+    animation: flowRight 1.5s ease-in-out infinite;
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -40;
+    }
+  }
+  .animate-dash {
+    stroke-dasharray: 8, 12;
+    animation: dash 1s linear infinite;
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 `;
 
