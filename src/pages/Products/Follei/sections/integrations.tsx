@@ -20,24 +20,24 @@ const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
 
 if (!(window as any).gsap) {
-  localGsap.registerPlugin(ScrollTrigger);
+    localGsap.registerPlugin(ScrollTrigger);
 }
 
 const HexItem = ({ icon, active, empty, hideOnMobile, delay, opacityClass }: { icon?: string, active?: boolean, empty?: boolean, hideOnMobile?: boolean, delay?: number, opacityClass?: string }) => {
     return (
-        <div 
-            className={`hex-item group relative w-[70px] h-[81px] sm:w-[110px] sm:h-[127px] md:w-[130px] md:h-[150px] flex items-center justify-center shrink-0  
+        <div
+            className={`hex-item group relative w-[70px] h-[81px] sm:w-[110px] sm:h-[127px] md:w-[120px] md:h-[150px] flex items-center justify-center shrink-0  
             ${empty ? (opacityClass || 'opacity-30 hover:opacity-50') : 'hover:z-20 cursor-pointer'} 
-            ${hideOnMobile ? 'hidden sm:flex' : 'flex'} transition-all duration-300 ease-out`}
+            ${hideOnMobile ? 'hidden lg:flex' : 'flex'} transition-all duration-300 ease-out`}
             data-delay={delay}
         >
             <div className={`absolute inset-0 transition-transform duration-300 ease-out ${!empty && 'group-hover:scale-105'}`}>
-                <svg viewBox="0 0 100 116" className="w-full h-full transition-all duration-300" 
-                     style={{ 
-                         filter: active 
-                             ? 'drop-shadow(0px 12px 35px rgba(59, 130, 246, 0.45)) drop-shadow(0px 0px 15px rgba(16, 121, 183, 0.6))' 
-                             : 'drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.04)) drop-shadow(0px 2px 6px rgba(0,0,0,0.02))' 
-                     }}>
+                <svg viewBox="0 0 100 116" className="w-full h-full transition-all duration-300"
+                    style={{
+                        filter: active
+                            ? 'drop-shadow(0px 12px 35px rgba(59, 130, 246, 0.45)) drop-shadow(0px 0px 15px rgba(16, 121, 183, 0.6))'
+                            : 'drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.04)) drop-shadow(0px 2px 6px rgba(0,0,0,0.02))'
+                    }}>
                     {active ? (
                         <>
                             <defs>
@@ -50,11 +50,11 @@ const HexItem = ({ icon, active, empty, hideOnMobile, delay, opacityClass }: { i
                             <polygon points="50,0 100,29 100,87 50,116 0,87 0,29" fill="url(#hexGradActive)" stroke="#ffffff" strokeWidth="1.5" />
                         </>
                     ) : (
-                        <polygon 
-                            points="50,0 100,29 100,87 50,116 0,87 0,29" 
-                            fill="white" 
-                            stroke="#f1f5f9" 
-                            strokeWidth="2" 
+                        <polygon
+                            points="50,0 100,29 100,87 50,116 0,87 0,29"
+                            fill="white"
+                            stroke="#f1f5f9"
+                            strokeWidth="2"
                             className="transition-colors duration-300 group-hover:stroke-[#e2e8f0]"
                         />
                     )}
@@ -75,21 +75,21 @@ const Integrations = () => {
     const gridRef = useRef<HTMLDivElement>(null);
 
     const row1 = [
-        { empty: true, opacityClass: "opacity-[0.05]" }, { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-40" },
+        { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40", hideOnMobile: true },
         { icon: callIcon }, { icon: gmailIcon }, { icon: whatsappIcon }, { icon: documentIcon },
-        { empty: true, opacityClass: "opacity-40" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-[0.05]" }
+        { empty: true, opacityClass: "opacity-40", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }
     ];
 
     const row2 = [
-        { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-40" },
+        { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40", hideOnMobile: true },
         { icon: filesIcon }, { icon: recordIcon }, { icon: folleiIcon, active: true }, { icon: robot2Icon }, { icon: callOutIcon },
-        { empty: true, opacityClass: "opacity-40" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-10" }
+        { empty: true, opacityClass: "opacity-40", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }
     ];
 
     const row3 = [
-        { empty: true, opacityClass: "opacity-[0.05]" }, { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-40" },
+        { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40", hideOnMobile: true },
         { icon: httpsIcon }, { icon: chatIcon }, { icon: robotIcon }, { icon: rectangleIcon },
-        { empty: true, opacityClass: "opacity-40" }, { empty: true, opacityClass: "opacity-20" }, { empty: true, opacityClass: "opacity-10" }, { empty: true, opacityClass: "opacity-[0.05]" }
+        { empty: true, opacityClass: "opacity-40", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }
     ];
 
     useLayoutEffect(() => {
@@ -99,9 +99,9 @@ const Integrations = () => {
                 ".integration-header",
                 { opacity: 0, y: 40 },
                 {
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 1.2, 
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: ".integration-header",
@@ -112,7 +112,7 @@ const Integrations = () => {
 
             // Hexagons entrance animation
             const hexItems = gsap.utils.toArray<HTMLElement>(".hex-item");
-            
+
             gsap.fromTo(
                 hexItems,
                 { opacity: 0, scale: 0.3, y: 40, rotation: -5 },
@@ -156,12 +156,12 @@ const Integrations = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="h-screen overflow-hidden bg-[#fafcff] relative w-full GlobalPadding">
+        <section ref={sectionRef} className="relative w-full bg-[#fafcff] overflow-hidden flex flex-col justify-start items-center GlobalPadding">
             {/* Subtle background glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] bg-blue-400/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="w-full relative z-10">
-                <div className="integration-header flex flex-col items-center mb-16 md:mb-28 px-4 sm:px-6 lg:px-8">
+                <div className="integration-header flex flex-col items-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 px-4 sm:px-6 lg:px-8">
                     <div className="mb-8 flex justify-center">
                         <div
                             style={{
@@ -190,14 +190,14 @@ const Integrations = () => {
                 </div>
 
                 {/* Grid Wrapper that hides horizontal overflow and applies the edge fade */}
-                <div 
+                <div
                     className="relative w-full overflow-hidden pb-10"
                     style={{
                         maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
                     }}
                 >
-                    <div ref={gridRef} className="relative flex flex-col items-center justify-center min-w-max mx-auto px-4">
+                    <div ref={gridRef} className="relative flex flex-col items-center justify-center min-w-max mx-auto ">
                         {/* 
                             Spacing Math for perfect hexagons: 
                             Base: w=70, h=81, gap=8. dy=67.55. mt = -13.5px
