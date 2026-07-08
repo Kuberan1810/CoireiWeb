@@ -68,6 +68,12 @@ function ScrollToTop() {
     if (window.lenis) {
       window.lenis.scrollTo(0, { immediate: true });
     }
+
+    if (pathname.startsWith('/products/follei')) {
+      document.body.classList.add('follei-theme');
+    } else {
+      document.body.classList.remove('follei-theme');
+    }
   }, [pathname]);
 
   return null;

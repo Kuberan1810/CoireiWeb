@@ -75,12 +75,12 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
                 </h3>
 
                 {/* Category Subtitle */}
-                <span className="text-[12px] font-medium text-[#878FAA] tracking-wider uppercase mb-4 min-h-[18px] block">
+                <span className="text-[12px] font-semibold text-[#004370]/80 tracking-wider uppercase mb-4 min-h-[18px] block p-2.5 bg-gray-200 rounded-2xl">
                     <TypewriterHeading text={product.category} delay={20} />
                 </span>
 
                 {/* Description */}
-                <p className="text-[#5B6280] text-sm sm:text-base md:text-[18px] leading-relaxed mb-5 font-light min-h-[50px] sm:min-h-[81px]">
+                <p className=" text-[#878FAA] text-sm sm:text-base md:text-[18px] leading-relaxed mb-5 font-light min-h-[50px] sm:min-h-[81px]">
                     <TypewriterHeading
                         text={product.description}
                         delay={10}
@@ -112,17 +112,20 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
                     >
                         <Link
                             to={product.link}
-                            className="group/btn inline-flex w-full cursor-pointer items-center justify-center gap-2 border border-[#E5E5E5] bg-[#B7BFD910] px-7 py-3 font-medium text-[#14182C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-50 hover:shadow-sm sm:w-auto"
+                            className="group/btn relative inline-flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full border border-slate-200/80 bg-slate-50/50 px-6 py-2.5 text-sm font-medium text-slate-800 shadow-sm backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-slate-300 hover:bg-white hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.12)]  sm:w-auto"
                         >
-                            <span>View More</span>
-
-                            <ChevronRight className="h-5 w-5 transition-transform duration-300 ease-in-out group-hover/btn:translate-x-2" />
+                            <span className="relative z-10 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/btn:-translate-x-2">
+                                View More
+                            </span>
+                            <div className="absolute right-3.5 top-1/2 z-10 -translate-y-1/2 translate-x-4 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/btn:translate-x-0 group-hover/btn:opacity-100">
+                                <ChevronRight size={16} className="text-slate-700" strokeWidth={2.5} />
+                            </div>
                         </Link>
                     </div>
                 )}
             </div>
 
-
+                        
 
             {/* Image Container */}
             <div

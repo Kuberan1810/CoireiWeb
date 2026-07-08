@@ -175,7 +175,7 @@ const WebPlatformDetails = () => {
                     {/* --- HEADER SECTION --- */}
                     <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
                         {/* Main Title */}
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#262626] leading-tight mb-8 max-w-5xl tracking-tight">
+                        <h1 data-ns-animate="true" data-delay="0.1" className="text-[92px] font-medium text-[#262626] leading-tight mb-8 max-w-5xl tracking-tight">
                             Your Business Idea <br>
                             </br> <span className="text-[#F67300]">Engineered for Scale.</span>
                         </h1>

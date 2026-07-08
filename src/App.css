@@ -589,14 +589,3 @@ fieldset[disabled]:not(.w-input-disabled) .w-select {
 
 
 
-
-
-::selection {
-  background: #004370;
-  color: #fff;
-}
-
-::-moz-selection {
-  background: #004370;
-  color: #fff;
-}
