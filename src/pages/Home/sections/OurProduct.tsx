@@ -65,7 +65,7 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
                 className="lg:col-span-5 flex flex-col items-start max-w-[530px]"
             >
                 {/* Product Title */}
-                <h3 className="text-3xl md:text-[30px] font-bold text-[#14182C] tracking-tight mb-2 min-h-[45px]">
+                <h3 className="text-2xl sm:text-[30px] font-bold text-[#14182C] tracking-tight mb-2 min-h-[35px] sm:min-h-[45px]">
                     <TypewriterHeading text={product.name} delay={40} />
                     {product.upcomming && (
                         <span className="text-lg text-[#5B6280] font-medium">
@@ -80,7 +80,7 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
                 </span>
 
                 {/* Description */}
-                <p className="text-[#5B6280] text-base md:text-[18px] leading-relaxed mb-5 font-light min-h-[81px]">
+                <p className="text-[#5B6280] text-sm sm:text-base md:text-[18px] leading-relaxed mb-5 font-light min-h-[50px] sm:min-h-[81px]">
                     <TypewriterHeading
                         text={product.description}
                         delay={10}
@@ -176,7 +176,7 @@ const OurProduct = () => {
                         data-ns-animate="true"
                         data-delay="0.1"
                         data-offset="40"
-                        className="text-5xl md:text-[52px] font-medium text-black min-h-[78px]"
+                        className="text-[30px] sm:text-[40px] md:text-[52px] font-medium text-black min-h-[45px] sm:min-h-[78px]"
                     >
                         <TypewriterHeading text="Our Products" />
                     </h2>

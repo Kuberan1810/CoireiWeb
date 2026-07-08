@@ -10,7 +10,7 @@ const Cta = () => {
                 </span>
             </div>
 
-            <h2 data-ns-animate data-delay="0.1" className="font-semibold text-[32px] md:text-[42px] leading-[1.2] md:leading-[68px] tracking-[1px] text-center text-[#14182C] max-w-[800px] mb-12">
+            <h2 data-ns-animate data-delay="0.1" className="font-semibold text-[22px] sm:text-[32px] md:text-[42px] leading-[1.2] md:leading-snug tracking-[1px] text-center text-[#14182C] max-w-[800px] mb-12">
                 Deploy enterprise AI, build a custom <br className="hidden md:block" /> platform, or train your workforce <br className="hidden md:block" /> COIREI is ready to partner with you.
             </h2>
 
