@@ -164,7 +164,7 @@ const Hero = ({ onTypingComplete }: HeroProps) => {
                         }}
                         className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
                     >
-                        Explore Our Products 
+                        Explore Our Products
                     </button>
                     <button
                         type="button"

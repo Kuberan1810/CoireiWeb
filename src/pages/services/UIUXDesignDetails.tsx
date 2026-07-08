@@ -2,16 +2,50 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 import { Globe, Contact, Image } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import TestimonialSection from "../Home/sections/backup/Testimonal";
 import FAQSection from "../Home/sections/backup/FAQSection";
+import Sky from "../../assets/images/homepage/sky.svg";
+import HoverParticles from "../../component/HoverParticles";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const UIUXDesignDetails = () => {
     useScrollAnimations();
+
+    const navigate = useNavigate();
+
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const fullText = "Elevate Your Brand with Exceptional UX/UI Design";
+    const [displayedText, setDisplayedText] = useState("");
+    const [typingIndex, setTypingIndex] = useState(0);
+    const [isTypingDone, setIsTypingDone] = useState(false);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            setMousePos({ x, y });
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
+    useEffect(() => {
+        if (typingIndex < fullText.length) {
+            const delay = typingIndex === 0 ? 1000 : 30;
+            const timeout = setTimeout(() => {
+                setDisplayedText((prev) => prev + fullText[typingIndex]);
+                setTypingIndex(typingIndex + 1);
+            }, delay);
+            return () => clearTimeout(timeout);
+        } else {
+            setIsTypingDone(true);
+        }
+    }, [typingIndex, fullText]);
 
     const clipRectRef = useRef<SVGRectElement>(null);
     const dot1Ref = useRef<HTMLDivElement>(null);
@@ -100,25 +134,129 @@ const UIUXDesignDetails = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-20 w-full bg-white flex flex-col items-center overflow-x-hidden">
-                <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full overflow-x-hidden">
-
-                    {/* --- HEADER HERO SECTION --- */}
-                    <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full mb-20">
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight mb-8 max-w-4xl tracking-tight">
-                            Elevate Your Brand with <span className="text-[#F67300]">Exceptional UX/UI Design</span>
-                        </h1>
-                        <p data-ns-animate="true" data-delay="0.2" className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-12 font-light">
-                            Unlock the Potential of Exceptional UX/UI Design to Elevate Your Brand's Digital Presence
-                        </p>
+            <main className="min-h-screen w-full bg-white flex flex-col items-center overflow-x-hidden">
+                {/* --- HERO SECTION --- */}
+                <section className="group relative w-full min-h-[75vh] flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
+                    {/* Sky Background with Parallax */}
+                    <div
+                        className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[600ms] ease-out"
+                        style={{ transform: `translate(${mousePos.x * -15}px, ${mousePos.y * -15}px) scale(1.05)` }}
+                    >
+                        <img src={Sky} alt="sky background" className="w-full h-full object-cover" />
                     </div>
 
+                    {/* Cloud Animation with Parallax */}
+                    <div
+                        className="clouds transition-transform duration-[400ms] ease-out"
+                        style={{ transform: `translate(${mousePos.x * -35}px, ${mousePos.y * -35}px) scale(1.1)` }}
+                    >
+                        <div className="cloud-layer clouds-1"></div>
+                        <div className="cloud-layer clouds-2"></div>
+                        <div className="cloud-layer clouds-3"></div>
+                    </div>
+
+                    {/* Three.js Background Container */}
+                    {/* <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${isTypingDone ? 'opacity-0 group-hover:opacity-100' : 'opacity-0'}`}>
+                        <HoverParticles className="absolute inset-0 w-full h-full pointer-events-none opacity-30" />
+                    </div> */}
+
+                    {/* Welcome Section */}
+                    <div className="relative z-10 flex flex-col items-center w-full px-6 md:px-10 text-center max-w-[1440px] mx-auto">
+                        <style>{`
+                            @keyframes terminalBlink {
+                                0%, 49% { opacity: 1; }
+                                50%, 100% { opacity: 0; }
+                            }
+                            .cursor-blink {
+                                animation: terminalBlink 1s infinite;
+                            }
+
+                            @keyframes clouds-loop-1 { to { background-position: -1000px 0; } }
+                            @keyframes clouds-loop-2 { to { background-position: -1000px 0; } }
+                            @keyframes clouds-loop-3 { to { background-position: -1579px 0; } }
+
+                            .clouds {
+                                opacity: 0.6;
+                                pointer-events: none;
+                                position: absolute;
+                                overflow: hidden;
+                                top: 0; left: 0; right: 0;
+                                height: 100%;
+                                z-index: 1;
+                            }
+
+                            .cloud-layer {
+                                background-repeat: repeat-x;
+                                position: absolute;
+                                top: 0; right: 0; left: 0;
+                                height: 500px;
+                                filter: brightness(0) invert(1);
+                            }
+
+                            .clouds-1 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_2.png");
+                                animation: clouds-loop-1 20s infinite linear;
+                            }
+
+                            .clouds-2 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_1.png");
+                                animation: clouds-loop-2 15s infinite linear;
+                            }
+
+                            .clouds-3 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_3.png");
+                                animation: clouds-loop-3 17s infinite linear;
+                            }
+                        `}</style>
+
+                        <h1 className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[72px] font-medium tracking-tight text-center leading-tight text-gray-900 max-w-5xl mb-6 min-h-[1.2em]">
+                            {(() => {
+                                const baseText = "Elevate Your Brand with ";
+                                if (displayedText.length <= baseText.length) {
+                                    return displayedText;
+                                } else {
+                                    const firstPart = displayedText.substring(0, baseText.length);
+                                    const secondPart = displayedText.substring(baseText.length);
+                                    return (
+                                        <>
+                                            {firstPart}
+                                            <span className="text-[#F67300]">{secondPart}</span>
+                                        </>
+                                    );
+                                }
+                            })()}
+                            <span className="inline-block w-[3px] h-[1em] bg-gradient-to-r from-orange-500 to-amber-400 ml-2 cursor-blink align-middle"></span>
+                        </h1>
+                        <p className={`text-[#5B6280] text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-3xl mx-auto mb-10 leading-relaxed font-light transition-all duration-1000 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                            Unlock the Potential of Exceptional UX/UI Design to Elevate Your Brand's Digital Presence
+                        </p>
+
+                        <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 w-full transition-all duration-1000 delay-300 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                            {/* <button
+                                type="button"
+                                className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300 shadow-[0_4px_14px_rgba(255,123,0,0.3)]"
+                            >
+                                Explore Our Products
+                            </button> */}
+                            <button
+                                type="button"
+                                onClick={() => navigate("/contact")}
+                                className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
+                            >
+                                Get Started
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <div className="max-w-[1440px] mx-auto flex flex-col items-center w-full GlobalPadding">
+
                     {/* --- OUR UX/UI APPROACH --- */}
-                    <div className="flex flex-col items-center text-center w-full mb-10">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight mb-6">
+                    <div className="flex flex-col items-center text-center w-full ">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight">
                             Our UX/UI Approach
                         </h2>
-                        <p data-ns-animate="true" className="text-gray-600 text-base md:text-lg max-w-4xl text-center mb-24 font-light leading-relaxed">
+                        <p data-ns-animate="true" className="text-gray-600 text-base md:text-lg mb-5 max-w-4xl text-center font-light leading-relaxed">
                             We focus on human-centered design, ensuring every interaction is seamless and every visual element reflects your brand's essence.
                         </p>
 
@@ -169,9 +307,9 @@ const UIUXDesignDetails = () => {
                     </div> {/* Close parent max-w-1440px container to let Statics go full screen */}
 
                     {/* --- STATICS SECTION --- */}
-                    <div className="w-full flex flex-col items-center mt-24 mb-16 relative statics-section">
-                        <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full">
-                            <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-20 text-center">
+                    <div className="w-full flex flex-col items-center relative statics-section">
+                        <div className="max-w-[1440px] mx-auto flex flex-col items-center w-full GlobalPadding">
+                            <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-10 text-center">
                                 Statics
                             </h2>
                         </div>
@@ -230,7 +368,7 @@ const UIUXDesignDetails = () => {
                         </div>
 
                         {/* MOBILE VERTICAL TIMELINE */}
-                        <div className="md:hidden w-full max-w-md px-6 mt-6">
+                        <div className="md:hidden w-full max-w-md ps">
                             <div className="relative pl-8 border-l-2 border-dashed border-[#FF7A00]/30 ml-4 flex flex-col gap-12 py-2">
                                 {/* Mobile Item 1 */}
                                 <div className="relative flex flex-col items-start mobile-timeline-item">
@@ -273,9 +411,9 @@ const UIUXDesignDetails = () => {
                 </div> {/* Close Statics section wrapper */}
 
                 {/* Re-open parent max-w-1440px container for Why Choose Us */}
-                <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+                <div className="max-w-[1440px] mx-auto flex flex-col items-center w-full GlobalPadding">
                     {/* --- WHY CHOOSE US --- */}
-                    <div className="w-full flex flex-col items-center mt-28 mb-10 max-w-6xl">
+                    <div className="w-full flex flex-col items-center max-w-6xl">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-20 text-center">
                             Why Choose Us?
                         </h2>

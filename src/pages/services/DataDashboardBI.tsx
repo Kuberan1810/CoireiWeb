@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { motion, useTransform, useMotionValue, animate } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
@@ -7,10 +7,45 @@ import useScrollAnimations from "../../hooks/useScrollAnimations";
 import FAQSection from "../Home/sections/backup/FAQSection";
 import TestimonialSection from "../Home/sections/backup/Testimonal";
 import { LayoutGrid, LineChart, TrendingUp, Handshake, Network, Bot, Scan, Coins, Stethoscope, Factory, PhoneCall, Truck, Monitor, GraduationCap } from "lucide-react";
+import Sky from "../../assets/images/homepage/sky.svg";
+import HoverParticles from "../../component/HoverParticles";
+import { useNavigate } from "react-router-dom";
 
 const DataDashboardBI = () => {
     useScrollAnimations();
+
+    const navigate = useNavigate();
+
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const fullText = "Unlock the Power of AI-Driven Business Intelligence";
+    const [displayedText, setDisplayedText] = useState("");
+    const [typingIndex, setTypingIndex] = useState(0);
+    const [isTypingDone, setIsTypingDone] = useState(false);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            setMousePos({ x, y });
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
+    useEffect(() => {
+        if (typingIndex < fullText.length) {
+            const delay = typingIndex === 0 ? 1000 : 30;
+            const timeout = setTimeout(() => {
+                setDisplayedText((prev) => prev + fullText[typingIndex]);
+                setTypingIndex(typingIndex + 1);
+            }, delay);
+            return () => clearTimeout(timeout);
+        } else {
+            setIsTypingDone(true);
+        }
+    }, [typingIndex, fullText]);
 
     // Time-linked continuous animation progress for Our Working Process (3s duration, repeats in a very fast loop)
     const processAnimProgress = useMotionValue(0);
@@ -54,28 +89,131 @@ const DataDashboardBI = () => {
     const y3 = useTransform(processAnimProgress, [0.76, 0.91], [20, 0]);
 
 
-
     return (
         <>
             <div className="fixed w-full top-0 z-50">
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-white flex flex-col items-center overflow-x-hidden">
-                <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center w-full overflow-x-hidden">
-
-                    {/* --- HEADER HERO SECTION --- */}
-                    <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight mb-8 max-w-4xl tracking-tight">
-                            Unlock the Power of <span className="text-[#F67300]">AI-Driven Business Intelligence</span>
-                        </h1>
-                        <p data-ns-animate="true" data-delay="0.2" className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-24 font-light">
-                            Coirei empowers your business with advanced analytics, helping you turn raw data into smart decisions.
-                        </p>
+            <main className="min-h-screen w-full bg-white flex flex-col items-center overflow-x-hidden">
+                {/* --- HERO SECTION --- */}
+                <section className="group relative w-full min-h-[75vh] flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
+                    {/* Sky Background with Parallax */}
+                    <div
+                        className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[600ms] ease-out"
+                        style={{ transform: `translate(${mousePos.x * -15}px, ${mousePos.y * -15}px) scale(1.05)` }}
+                    >
+                        <img src={Sky} alt="sky background" className="w-full h-full object-cover" />
                     </div>
 
+                    {/* Cloud Animation with Parallax */}
+                    <div
+                        className="clouds transition-transform duration-[400ms] ease-out"
+                        style={{ transform: `translate(${mousePos.x * -35}px, ${mousePos.y * -35}px) scale(1.1)` }}
+                    >
+                        <div className="cloud-layer clouds-1"></div>
+                        <div className="cloud-layer clouds-2"></div>
+                        <div className="cloud-layer clouds-3"></div>
+                    </div>
+
+                    {/* Three.js Background Container
+                    <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${isTypingDone ? 'opacity-0 group-hover:opacity-100' : 'opacity-0'}`}>
+                        <HoverParticles className="absolute inset-0 w-full h-full pointer-events-none opacity-30" />
+                    </div> */}
+
+                    {/* Welcome Section */}
+                    <div className="relative z-10 flex flex-col items-center w-full px-6 md:px-10 text-center max-w-[1440px] mx-auto">
+                        <style>{`
+                            @keyframes terminalBlink {
+                                0%, 49% { opacity: 1; }
+                                50%, 100% { opacity: 0; }
+                            }
+                            .cursor-blink {
+                                animation: terminalBlink 1s infinite;
+                            }
+
+                            @keyframes clouds-loop-1 { to { background-position: -1000px 0; } }
+                            @keyframes clouds-loop-2 { to { background-position: -1000px 0; } }
+                            @keyframes clouds-loop-3 { to { background-position: -1579px 0; } }
+
+                            .clouds {
+                                opacity: 0.6;
+                                pointer-events: none;
+                                position: absolute;
+                                overflow: hidden;
+                                top: 0; left: 0; right: 0;
+                                height: 100%;
+                                z-index: 1;
+                            }
+
+                            .cloud-layer {
+                                background-repeat: repeat-x;
+                                position: absolute;
+                                top: 0; right: 0; left: 0;
+                                height: 500px;
+                                filter: brightness(0) invert(1);
+                            }
+
+                            .clouds-1 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_2.png");
+                                animation: clouds-loop-1 20s infinite linear;
+                            }
+
+                            .clouds-2 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_1.png");
+                                animation: clouds-loop-2 15s infinite linear;
+                            }
+
+                            .clouds-3 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_3.png");
+                                animation: clouds-loop-3 17s infinite linear;
+                            }
+                        `}</style>
+
+                        <h1 className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[72px] font-medium tracking-tight text-center leading-tight text-gray-900 max-w-5xl mb-6 min-h-[1.2em]">
+                            {(() => {
+                                const baseText = "Unlock the Power of ";
+                                if (displayedText.length <= baseText.length) {
+                                    return displayedText;
+                                } else {
+                                    const firstPart = displayedText.substring(0, baseText.length);
+                                    const secondPart = displayedText.substring(baseText.length);
+                                    return (
+                                        <>
+                                            {firstPart}
+                                            <span className="text-[#F67300]">{secondPart}</span>
+                                        </>
+                                    );
+                                }
+                            })()}
+                            <span className="inline-block w-[3px] h-[1em] bg-gradient-to-r from-orange-500 to-amber-400 ml-2 cursor-blink align-middle"></span>
+                        </h1>
+                        <p className={`text-[#5B6280] text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-3xl mx-auto mb-10 leading-relaxed font-light transition-all duration-1000 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                            Coirei empowers your business with advanced analytics, helping you turn raw data into smart decisions.
+                        </p>
+
+                        <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 w-full transition-all duration-1000 delay-300 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                            {/* <button
+                                type="button"
+                                className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300 shadow-[0_4px_14px_rgba(255,123,0,0.3)]"
+                            >
+                                Explore Our Products
+                            </button> */}
+                            <button
+                                type="button"
+                                onClick={() => navigate("/contact")}
+                                className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
+                            >
+                                Get Started
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <div className="max-w-[1440px] flex flex-col items-center w-full overflow-x-hidden GlobalPadding">
+
                     {/* --- WHAT WE DO FOR YOU SECTION --- */}
-                    <div className="flex flex-col items-center text-center w-full mb-32">
+                    <div className="flex flex-col items-center text-center w-full ">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight mb-16">
                             What We Do for You?
                         </h2>
@@ -124,8 +262,8 @@ const DataDashboardBI = () => {
                     </div>
 
                     {/* --- WHY COIREI IS BEST SECTION --- */}
-                    <div className="w-full max-w-4xl mb-32 flex flex-col items-center">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-20 tracking-tight">
+                    <div className="w-full max-w-4xl flex flex-col items-center GlobalPadding">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center tracking-tight">
                             Why Coirei is Best?
                         </h2>
 
@@ -209,7 +347,7 @@ const DataDashboardBI = () => {
                     </div>
 
                     {/* --- WORKING PROCESS SECTION --- */}
-                    <div className="w-full mb-31 flex flex-col items-center select-none overflow-visible py-16">
+                    <div className="w-full GlobalPadding flex flex-col items-center select-none overflow-visible py-16">
                         <h2 className="text-3xl md:text-5xl font-medium text-[#262626] text-center mb-24 tracking-tight leading-tight">
                             Our Working Process
                         </h2>
@@ -423,10 +561,9 @@ const DataDashboardBI = () => {
 
 
                     {/* Header Section */}
-                    <div className="flex flex-col items-center text-center px-6 mb-3">
+                    <div className="flex flex-col items-center text-center GlobalPadding">
                         <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
-                            <span className="text-[#F67300]">Industries </span>
-                            <span className="text-gray-900">We Serve</span>
+                            <span className="text-gray-900">Industries We Serve</span>
                         </h2>
                     </div>
 

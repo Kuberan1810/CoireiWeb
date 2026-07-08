@@ -15,6 +15,7 @@ import bg4 from "../../../../assets/images/products/bg4.jpg";
 
 import bg5 from "../../../../assets/images/products/bg5.jpg";
 import bg6 from "../../../../assets/images/products/bg6.jpg";
+import SalesExecutiveAnimation from "./salesExecutiveAnimation";
 
 
 import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
@@ -63,12 +64,12 @@ const AnimatedTaskItem = ({ text, stepIndex }: { text: string, stepIndex: number
     const startCycle = () => {
       setVisible(false);
       setStatus("sync");
-      
+
       appearTimer = setTimeout(() => {
         setVisible(true);
         tickTimer = setTimeout(() => {
           setStatus("tick");
-        }, 1200); 
+        }, 1200);
       }, stepIndex * 1200);
     };
 
@@ -325,7 +326,7 @@ const agents: AgentCard[] = [
             {/* Blocks */}
             <div className="flex flex-col gap-4 pt-2">
               {/* Nurturing Row */}
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-3"
                 animate={{ y: [0, -4, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -343,7 +344,7 @@ const agents: AgentCard[] = [
               </motion.div>
 
               {/* Meetings Row */}
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-3"
                 animate={{ y: [0, -4, 0] }}
                 transition={{ duration: 4, delay: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -377,7 +378,7 @@ const agents: AgentCard[] = [
     mockupBg: "bg-white",
     bgImage: bg2,
     link: "/products/follei/sales-executive",
-    mockup: <img src={ai2} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Sales dashboard" />
+    mockup: < SalesExecutiveAnimation />
 
   },
   {
@@ -533,7 +534,7 @@ export const AIWorkforce: React.FC = () => {
       // Smooth scroll animation for all devices
       mm.add("all", () => {
         const cards = gsap.utils.toArray<HTMLElement>(".solution-item");
-        
+
         cards.forEach((card) => {
           // Animate inner contents ultra smoothly one by one (staggered) inside the card when it enters
           const textContents = card.querySelectorAll(".solution-icon, .solution-title, .solution-text, .solution-icon-link");

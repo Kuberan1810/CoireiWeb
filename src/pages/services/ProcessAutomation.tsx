@@ -9,6 +9,8 @@ import TestimonialSection from "../Home/sections/backup/Testimonal";
 import { FileText, RefreshCw, GitFork, TrendingUp, Workflow, ShieldCheck, Cpu, Sliders, Handshake, Wrench, Plug, Bot, BarChart3, Receipt, Hospital, Scan, Factory } from "lucide-react";
 import coireiLogo from "../../assets/images/products/coirei-logo.svg";
 import aboutusservice from "../../assets/images/services/aboutusservice.png";
+import Sky from "../../assets/images/homepage/sky.svg";
+import HoverParticles from "../../component/HoverParticles";
 
 const countryCodes = [
     { flagUrl: "https://flagcdn.com/w20/in.png", code: "+91", alt: "India" },
@@ -55,6 +57,35 @@ const steps = [
 const ProcessAutomation = () => {
     useScrollAnimations();
     const navigate = useNavigate();
+
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const fullText = "Streamline Your Business with Automation & Integration";
+    const [displayedText, setDisplayedText] = useState("");
+    const [typingIndex, setTypingIndex] = useState(0);
+    const [isTypingDone, setIsTypingDone] = useState(false);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            setMousePos({ x, y });
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
+    useEffect(() => {
+        if (typingIndex < fullText.length) {
+            const delay = typingIndex === 0 ? 1000 : 30;
+            const timeout = setTimeout(() => {
+                setDisplayedText((prev) => prev + fullText[typingIndex]);
+                setTypingIndex(typingIndex + 1);
+            }, delay);
+            return () => clearTimeout(timeout);
+        } else {
+            setIsTypingDone(true);
+        }
+    }, [typingIndex, fullText]);
 
     const containerRef = useRef<HTMLDivElement>(null);
     const [activeStep, setActiveStep] = useState(0);
@@ -136,21 +167,125 @@ const ProcessAutomation = () => {
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-white ">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
-
-                    {/* --- HEADER HERO SECTION --- */}
-                    <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight mb-8 max-w-4xl tracking-tight">
-                            Streamline Your Business with <span className="text-[#F67300]">Automation & Integration</span>
-                        </h1>
-                        <p data-ns-animate="true" data-delay="0.2" className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-24 font-light">
-                            Unlock efficiency by automating key processes and integrating your business systems seamlessly.
-                        </p>
+            <main className="min-h-screen w-full bg-white flex flex-col items-center overflow-x-hidden">
+                {/* --- HERO SECTION --- */}
+                <section className="group relative w-full min-h-[75vh] flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
+                    {/* Sky Background with Parallax */}
+                    <div
+                        className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[600ms] ease-out"
+                        style={{ transform: `translate(${mousePos.x * -15}px, ${mousePos.y * -15}px) scale(1.05)` }}
+                    >
+                        <img src={Sky} alt="sky background" className="w-full h-full object-cover" />
                     </div>
 
+                    {/* Cloud Animation with Parallax */}
+                    <div
+                        className="clouds transition-transform duration-[400ms] ease-out"
+                        style={{ transform: `translate(${mousePos.x * -35}px, ${mousePos.y * -35}px) scale(1.1)` }}
+                    >
+                        <div className="cloud-layer clouds-1"></div>
+                        <div className="cloud-layer clouds-2"></div>
+                        <div className="cloud-layer clouds-3"></div>
+                    </div>
+
+                    {/* Three.js Background Container */}
+                    {/* <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${isTypingDone ? 'opacity-0 group-hover:opacity-100' : 'opacity-0'}`}>
+                        <HoverParticles className="absolute inset-0 w-full h-full pointer-events-none opacity-30" />
+                    </div> */}
+
+                    {/* Welcome Section */}
+                    <div className="relative z-10 flex flex-col items-center w-full px-6 md:px-10 text-center max-w-[1440px] mx-auto">
+                        <style>{`
+                            @keyframes terminalBlink {
+                                0%, 49% { opacity: 1; }
+                                50%, 100% { opacity: 0; }
+                            }
+                            .cursor-blink {
+                                animation: terminalBlink 1s infinite;
+                            }
+
+                            @keyframes clouds-loop-1 { to { background-position: -1000px 0; } }
+                            @keyframes clouds-loop-2 { to { background-position: -1000px 0; } }
+                            @keyframes clouds-loop-3 { to { background-position: -1579px 0; } }
+
+                            .clouds {
+                                opacity: 0.6;
+                                pointer-events: none;
+                                position: absolute;
+                                overflow: hidden;
+                                top: 0; left: 0; right: 0;
+                                height: 100%;
+                                z-index: 1;
+                            }
+
+                            .cloud-layer {
+                                background-repeat: repeat-x;
+                                position: absolute;
+                                top: 0; right: 0; left: 0;
+                                height: 500px;
+                                filter: brightness(0) invert(1);
+                            }
+
+                            .clouds-1 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_2.png");
+                                animation: clouds-loop-1 20s infinite linear;
+                            }
+
+                            .clouds-2 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_1.png");
+                                animation: clouds-loop-2 15s infinite linear;
+                            }
+
+                            .clouds-3 {
+                                background-image: url("https://s.cdpn.io/15514/clouds_3.png");
+                                animation: clouds-loop-3 17s infinite linear;
+                            }
+                        `}</style>
+
+                        <h1 className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[72px] font-medium tracking-tight text-center leading-tight text-gray-900 max-w-5xl mb-6 min-h-[1.2em]">
+                            {(() => {
+                                const baseText = "Streamline Your Business with ";
+                                if (displayedText.length <= baseText.length) {
+                                    return displayedText;
+                                } else {
+                                    const firstPart = displayedText.substring(0, baseText.length);
+                                    const secondPart = displayedText.substring(baseText.length);
+                                    return (
+                                        <>
+                                            {firstPart}
+                                            <span className="text-[#F67300]">{secondPart}</span>
+                                        </>
+                                    );
+                                }
+                            })()}
+                            <span className="inline-block w-[3px] h-[1em] bg-gradient-to-r from-orange-500 to-amber-400 ml-2 cursor-blink align-middle"></span>
+                        </h1>
+                        <p className={`text-[#5B6280] text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-3xl mx-auto mb-10 leading-relaxed font-light transition-all duration-1000 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                            Unlock efficiency by automating key processes and integrating your business systems seamlessly.
+                        </p>
+
+                        <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 w-full transition-all duration-1000 delay-300 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                            {/* <button
+                                type="button"
+                                className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300 shadow-[0_4px_14px_rgba(255,123,0,0.3)]"
+                            >
+                                Explore Our Products
+                            </button> */}
+                            <button
+                                type="button"
+                                onClick={() => navigate("/contact")}
+                                className="flex items-center justify-center gap-2 bg-[#ff7b00] hover:bg-[#ff8b17] text-white border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
+                            >
+                                Get Started
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <div className="max-w-7xl mx-auto GlobalPadding flex flex-col items-center w-full">
+
                     {/* --- WHAT WE DO FOR YOU SECTION --- */}
-                    <div className="flex flex-col items-center text-center w-full mb-16">
+                    <div className="flex flex-col items-center text-center w-full ">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight mb-16">
                             What we do for you?
                         </h2>
@@ -247,7 +382,7 @@ const ProcessAutomation = () => {
                     </div>
 
                     {/* --- WHY CHOOSE US SECTION --- */}
-                    <div ref={whyChooseScrollRef} className="w-full mt-24">
+                    <div ref={whyChooseScrollRef} className="w-full GlobalPadding">
                         <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
                             Why Choose <span className="text-[#F67300]">Coirei</span>
                         </h2>
@@ -336,7 +471,7 @@ const ProcessAutomation = () => {
                     </div>
 
                     {/* --- ABOUT COIREI SECTION --- */}
-                    <div className="w-full mt-24">
+                    <div className="w-full GlobalPadding">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-12 tracking-tight">
                             About Coirei
                         </h2>
@@ -364,7 +499,7 @@ const ProcessAutomation = () => {
                     </div>
 
                     {/* --- TECHNOLOGY STACK SECTION --- */}
-                    <div className="w-full mt-24 mb-4">
+                    <div className="w-full GlobalPadding">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-12 tracking-tight">
                             Technology Stack
                         </h2>
@@ -412,8 +547,7 @@ const ProcessAutomation = () => {
                     {/* --- HOW WE WORK SECTION --- */}
                     <div
                         ref={containerRef}
-                        className="relative w-full mb-32 mt-32"
-                        style={{ height: "300vh" }}
+                        className="relative w-full GlobalPadding"
                     >
                         <div className="sticky top-[20vh] w-full h-fit flex flex-col items-center">
                             <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-10 md:mb-12 tracking-tight leading-tight">
@@ -422,7 +556,7 @@ const ProcessAutomation = () => {
 
                             <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl gap-12 lg:gap-16">
                                 {/* Left Side */}
-                                <div className="lg:w-1/2 flex justify-center lg:justify-start min-h-[80px] md:min-h-[120px]">
+                                <div className="lg:w-1/2 flex justify-center lg:justify-start ">
                                     <AnimatePresence mode="wait">
                                         <motion.h3
                                             key={activeStep}
@@ -554,7 +688,7 @@ const ProcessAutomation = () => {
                     </div>
                 </div>
                 {/* --- INDUSTRIES WE SERVE SECTION --- */}
-                <div className="w-full mt-24 mb-16 bg-transparent">
+                <div className="w-full GlobalPadding bg-transparent">
                     {/* Section Badge */}
                     <div className="flex items-center justify-center w-full mx-auto mb-8 gap-4 px-4">
                         <div className="h-[1.5px] flex-1 bg-linear-to-r from-[#161616] to-white hidden sm:block opacity-20" />
@@ -567,8 +701,7 @@ const ProcessAutomation = () => {
                     {/* Header Section */}
                     <div className="flex flex-col items-center text-center px-6 mb-12">
                         <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
-                            <span className="text-[#F67300]">Impact </span>
-                            <span className="text-gray-900"> Across Industries</span>
+                            <span className="text-gray-900">Impact Across Industries</span>
                         </h2>
                     </div>
 
