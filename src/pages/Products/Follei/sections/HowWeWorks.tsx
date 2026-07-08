@@ -2,11 +2,23 @@ import React from "react";
 
 // Image Imports from assets/images/products
 import builddiscoveryImg from "../../../../assets/images/products/builddiscovery.svg";
-import buildintelligenceImg from "../../../../assets/images/products/buildintelligence.svg";
 import deployaiworkersImg from "../../../../assets/images/products/deployaiworkers.svg";
 import learnimproveImg from "../../../../assets/images/products/learn&improve.svg";
 
+import layer1Img from "../../../../assets/images/homepage/layer1.svg";
+import layer2Img from "../../../../assets/images/homepage/layer2.svg";
+import layer3Img from "../../../../assets/images/homepage/layer3.svg";
+import folleilogoImg from "../../../../assets/images/products/folleilogo.svg";
+import useScrollReveal from "../../../../hooks/useScrollReveal";
+
+import sdrworkerImg from "../../../../assets/images/products/sdrworker.svg";
+import adminoperatorImg from "../../../../assets/images/products/adminoperator.svg";
+import customerintelligenceImg from "../../../../assets/images/products/customerintelligence.svg";
+import aiworkforceImg from "../../../../assets/images/products/aiworkforce.svg";
+
 export const HowWeWorks: React.FC = () => {
+    const { ref: stackRef, isVisible } = useScrollReveal(0.2);
+
     return (
         <section className="relative w-full GlobalPadding overflow-hidden bg-[#FFFFFF] flex flex-col items-center justify-center text-center">
             {/* Background Decorative Glows */}
@@ -79,11 +91,30 @@ export const HowWeWorks: React.FC = () => {
                     {/* Step-02 Image */}
                     <div data-ns-animate data-delay="0.1" className="md:col-start-1 md:row-start-2 order-4 flex flex-col">
                         <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
-                            <img
-                                src={buildintelligenceImg}
-                                alt="Build Intelligence"
-                                className="max-h-[160px] w-auto object-contain transform hover:scale-105 transition-transform duration-500"
-                            />
+                            <div className="relative w-full h-[160px] flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
+                                <style>{`
+                                    @keyframes float-layer {
+                                        0%, 100% { transform: translateY(0px); }
+                                        50% { transform: translateY(-8px); }
+                                    }
+                                    .animate-float-1 { animation: float-layer 10s ease-in-out infinite; }
+                                    .animate-float-2 { animation: float-layer 10s ease-in-out 1s infinite; }
+                                    .animate-float-3 { animation: float-layer 10s ease-in-out 0.8s infinite; }
+                                    .animate-float-logo { animation: float-layer 10s ease-in-out 1.2s infinite; }
+                                `}</style>
+                                <div ref={stackRef} className="absolute w-[80%] flex justify-center z-0 transition-transform duration-[1500ms] delay-[200ms] ease-in-out" style={{ transform: isVisible ? "translateY(20px)" : "translateY(45px)" }}>
+                                    <img src={layer3Img} alt="Layer 1" className="max-h-[160px] object-contain animate-float-1" />
+                                </div>
+                                <div className="absolute w-[80%] flex justify-center z-10 transition-transform duration-[1500ms] delay-[200ms] ease-in-out" style={{ transform: "translateY(0px)" }}>
+                                    <img src={layer2Img} alt="Layer 2" className="max-h-[160px] object-contain animate-float-2" />
+                                </div>
+                                <div className="absolute w-[80%] flex justify-center z-20 transition-transform duration-[1500ms] delay-[200ms] ease-in-out" style={{ transform: isVisible ? "translateY(-20px)" : "translateY(-45px)" }}>
+                                    <img src={layer1Img} alt="Layer 3" className="max-h-[160px] object-contain animate-float-3" />
+                                </div>
+                                <div className="absolute w-[20%] flex justify-center z-30 transition-transform duration-[1500ms] delay-[200ms] ease-in-out" style={{ transform: isVisible ? "translateY(-29px)" : "translateY(-70px)" }}>
+                                    <img src={folleilogoImg} alt="Follei Logo" className="max-h-[60px] object-contain drop-shadow-md animate-float-logo" />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -116,11 +147,57 @@ export const HowWeWorks: React.FC = () => {
                     {/* Step-03 Image */}
                     <div data-ns-animate data-delay="0.3" className="md:col-start-3 md:row-start-2 order-6 flex flex-col">
                         <div className="w-full border-[0.2px] border-[#E3E3E3]/30 bg-[#FFFFFF] p-[20px] flex items-center justify-center h-[220px] rounded-none shadow-none overflow-hidden">
-                            <img
-                                src={deployaiworkersImg}
-                                alt="Deploy AI Workers"
-                                className="max-h-[160px] w-auto object-contain transform hover:scale-105 transition-transform duration-500"
-                            />
+                            
+                            {/* Circular UI Container */}
+                            <div className="relative w-full max-w-[200px] h-[180px] flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
+                                
+                                {/* Ring 3: Outer */}
+                                <div className="absolute w-[170px] h-[170px] rounded-full border-[1.5px] border-[#5960DF]/20 bg-gradient-to-b from-[#5960DF]/5 to-transparent">
+                                    {/* Node 1: Left Outer */}
+                                    <div className="absolute left-[-10px] top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center border border-[#E3E3E3]/50 z-20">
+                                        <img src={adminoperatorImg} alt="Admin" className="w-3.5 h-3.5 object-contain" />
+                                    </div>
+                                    {/* Node 4: Right Outer */}
+                                    <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center border border-[#E3E3E3]/50 z-20">
+                                        <img src={aiworkforceImg} alt="Workforce" className="w-3.5 h-3.5 object-contain" />
+                                    </div>
+                                </div>
+                                
+                                {/* Ring 2: Middle */}
+                                <div className="absolute w-[125px] h-[125px] rounded-full border-[1.5px] border-[#5960DF]/30 bg-gradient-to-b from-[#5960DF]/10 to-transparent">
+                                    {/* Node 2: Left Inner */}
+                                    <div className="absolute left-[-10px] top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center border border-[#E3E3E3]/50 z-20">
+                                        <img src={sdrworkerImg} alt="SDR" className="w-3.5 h-3.5 object-contain" />
+                                    </div>
+                                    {/* Node 3: Right Inner */}
+                                    <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center border border-[#E3E3E3]/50 z-20">
+                                        <img src={customerintelligenceImg} alt="Success" className="w-3.5 h-3.5 object-contain" />
+                                    </div>
+                                </div>
+
+                                {/* Ring 1: Inner */}
+                                <div className="absolute w-[85px] h-[85px] rounded-full border-[1.5px] border-[#5960DF]/50 bg-gradient-to-b from-[#5960DF]/15 to-transparent">
+                                    {/* Top/Bottom Dots on Inner Ring */}
+                                    <div className="absolute left-1/2 -top-[3px] -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#5960DF] border-[1px] border-white z-10" />
+                                    <div className="absolute left-1/2 -bottom-[3px] -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#5960DF] border-[1px] border-white z-10" />
+                                </div>
+
+                                {/* Center Icon */}
+                                <div className="absolute w-[40px] h-[40px] rounded-full shadow-lg z-10 flex items-center justify-center overflow-hidden bg-white">
+                                    <img src={folleilogoImg} alt="Follei Center" className="w-full h-full object-contain scale-110" />
+                                </div>
+
+                                {/* Connecting Bracket to Pill */}
+                                <svg className="absolute top-[calc(50%+42px)] w-[80px] h-[20px] z-0" viewBox="0 0 80 20" fill="none">
+                                    <path d="M40 0 v3 Q40 12, 20 12 T5 20 M40 0 v3 Q40 12, 60 12 T75 20" stroke="#5960DF" strokeOpacity="0.3" strokeWidth="1" fill="none" />
+                                </svg>
+
+                                {/* Bottom Pill */}
+                                <div className="absolute top-[calc(50%+60px)] bg-white rounded-full px-3 py-1 shadow-md border border-[#E3E3E3]/80 z-30">
+                                    <span className="text-[9px] font-medium text-[#475569]">Intelligence layer</span>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
