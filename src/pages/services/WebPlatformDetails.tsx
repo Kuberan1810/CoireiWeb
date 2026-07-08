@@ -82,8 +82,12 @@ const offerings = [
     }
 ];
 
+import WebPlatformHero from "./sections/WebPlatformHero";
+
 const WebPlatformDetails = () => {
     useScrollAnimations();
+
+    const [isHeroTypingDone, setIsHeroTypingDone] = useState(false);
 
     const offeringsScrollRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress: offeringsScrollY } = useScroll({
@@ -160,37 +164,20 @@ const WebPlatformDetails = () => {
         useTransform(scrollYProgress, [0.05, 0.75], [750, 0])
     ];
 
-
-
-
     return (
-        <>
-            <div className="fixed w-full top-0 z-50">
+        <div className="overflow-x-clip w-full bg-white min-h-screen">
+            <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-out transform ${isHeroTypingDone ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-white  flex flex-col items-center">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+            <WebPlatformHero onTypingComplete={() => setIsHeroTypingDone(true)} />
 
-                    {/* --- HEADER SECTION --- */}
-                    <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
-                        {/* Main Title */}
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#262626] leading-tight mb-8 max-w-5xl tracking-tight">
-                            Your Business Idea <br>
-                            </br> <span className="text-[#F67300]">Engineered for Scale.</span>
-                        </h1>
-
-                        {/* Subtitle / Description */}
-                        <p data-ns-animate="true" data-delay="0.2" className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-4xl mb-24 font-light">
-                            From dynamic web platforms to enterprise-grade applications, we build robust digital ecosystems that drive engagement and operational efficiency.
-                        </p>
-                    </div>
-                </div>
+            <main className="pt-24 md:pt-32 w-full bg-white flex flex-col items-center">
 
                 {/* --- SERVICE OFFERINGS SECTION --- */}
-                <div ref={offeringsScrollRef} className="w-full px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
+                <div ref={offeringsScrollRef} className="w-full GlobalPadding max-w-7xl mx-auto flex flex-col items-center">
                     <h2 data-ns-animate="true" className="text-3xl md:text-5xl lg:text-[56px] font-medium text-[#262626] text-center mb-6 tracking-tight leading-tight">
-                        <span className="text-[#F67300]">Coirei Core</span> Service Offerings
+                        Coirei Core Service Offerings
                     </h2>
 
                     <p data-ns-animate="true" className="text-gray-600 text-base md:text-lg max-w-3xl text-center mb-16 font-light">
@@ -209,10 +196,10 @@ const WebPlatformDetails = () => {
 
                 {/* --- WHY WORK WITH COIREI SECTION --- */}
                 <div ref={sectionPinRef} className="relative w-full h-[250vh] bg-white ">
-                    <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center overflow-hidden px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                    <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center overflow-hidden GlobalPadding max-w-[1920px] mx-auto">
                         <div className="max-w-6xl w-full mx-auto">
                             <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#000000] text-center mb-16 lg:mb-20 tracking-tight leading-tight shrink-0">
-                                Why Work With <span className="text-[#F67300]">Coirei?</span>
+                                Why Work With Coirei?
                             </h2>
 
                             <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-16 lg:gap-24">
@@ -408,11 +395,11 @@ const WebPlatformDetails = () => {
                 </div>
 
                 {/* --- OUR SERVICES FOR INDUSTRIES SECTION --- */}
-                <div className="w-full mb-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto relative">
+                <div className="w-full GlobalPadding max-w-[1920px] mx-auto relative">
                     <div className="max-w-6xl mx-auto">
                         {/* Section Heading */}
                         <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-24 tracking-tight leading-tight">
-                            Our Service for <span className="text-[#F67300]">Industries</span>
+                            Our Service for Industries
                         </h2>
 
                         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start w-full relative">
@@ -472,7 +459,7 @@ const WebPlatformDetails = () => {
                     </div>
                 </div>
                 {/* --- HOW WE WORK SECTION --- */}
-                <div className="relative w-full mb-10 px-6 md:px-16 lg:px-24 xl:px-32">
+                <div className="relative w-full GlobalPadding">
                     <div className="w-full">
 
                         {/* TITLE */}
@@ -487,7 +474,7 @@ const WebPlatformDetails = () => {
                                 <h3 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-[#262626] leading-tight tracking-tight">
                                     A Transparent Process<br className="hidden lg:block" />
                                     Built for
-                                    <span className="text-[#F67300]"> Fast & Reliable</span><br />
+                                    Fast & Reliable<br />
                                     Delivery.
                                 </h3>
                             </div>
@@ -583,7 +570,7 @@ const WebPlatformDetails = () => {
 
 
             <Footer />
-        </>
+        </div>
     );
 };
 

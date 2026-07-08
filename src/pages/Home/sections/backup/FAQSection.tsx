@@ -30,11 +30,10 @@ const FAQSection = () => {
 
                 {/* LEFT SIDE */}
                 <div className="lg:col-span-5 w-full text-left lg:self-center">
-                    <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-tight tracking-tight">
-                        <span className="text-gray-900">Frequently </span>
-                        <span className="text-gray-900">Asked</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-tight tracking-tight text-gray-900">
+                        Frequently Asked
                         <br />
-                        <span className="text-[#FF6B00]">Questions.</span>
+                        Questions.
                     </h2>
                 </div>
 
@@ -44,7 +43,7 @@ const FAQSection = () => {
                         <div
                             key={index}
                             data-ns-animate
-                            data-delay={0.1 * index}
+                            data-delay="0"
                             className={`group border rounded-2xl transition-all duration-300 ${openFaq === index ? 'border-gray-300 bg-gray-50 shadow-sm' : 'border-gray-200 bg-transparent hover:border-gray-300'
                                 }`}
                         >

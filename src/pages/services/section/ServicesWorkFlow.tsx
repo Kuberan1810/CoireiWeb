@@ -40,7 +40,7 @@ const ServicesWorkFlow = () => {
         {/* HEADER */}
         <div className="flex flex-col items-center text-center px-6 mb-16">
           <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] tracking-tight leading-tight md:leading-[68px]">
-            Our Proven <span className="text-[#F67300]">Work Process</span>
+            Our Proven Work Process
           </h2>
         </div>
 

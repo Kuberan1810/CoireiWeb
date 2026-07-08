@@ -7,6 +7,7 @@ import { ArrowUpRight, HandCoins } from "lucide-react";
 import FAQSection from "../Home/sections/backup/FAQSection";
 import { motion, useInView } from "framer-motion";
 import ServicesWorkFlow from "./section/ServicesWorkFlow";
+import AIChatbotHero from "./sections/AIChatbotHero";
 
 const DigitReel = ({ digit, delay }: { digit: number; delay: number }) => {
     const ref = useRef(null);
@@ -85,6 +86,7 @@ const AIChatbot = () => {
     useScrollAnimations();
     const navigate = useNavigate();
 
+    const [isHeroTypingDone, setIsHeroTypingDone] = useState(false);
     const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]);
     const [countryOpen, setCountryOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
@@ -131,32 +133,20 @@ const AIChatbot = () => {
     }, []);
 
     return (
-        <>
-            <div className="fixed w-full top-0 z-50">
+        <div className="overflow-x-clip w-full bg-white min-h-screen">
+            <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-out transform ${isHeroTypingDone ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-6 w-full bg-white flex flex-col items-center">
-                <div className="px-6 md:px-10 flex flex-col items-center w-full">
+            <AIChatbotHero onTypingComplete={() => setIsHeroTypingDone(true)} />
 
-                    {/* --- HEADER SECTION --- */}
-                    <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
-                        {/* Main Title */}
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#262626] leading-tight mb-8 max-w-4xl tracking-tight">
-                            Enhance Your Business with <span className="text-[#F67300]">AI Chat</span> and <span className="text-[#F67300]">Virtual Assistance</span>
-                        </h1>
+            <main className="pt-32 w-full bg-white flex flex-col items-center">
 
-                        {/* Subtitle / Description */}
-                        <p data-ns-animate="true" data-delay="0.2" className="text-[#262626] text-lg md:text-xl leading-relaxed max-w-4xl mb-24 font-light text-center">
-                            Welcome to the future of business communication. Coirei AI chatbot and virtual assistant are designed to help you automate customer support, streamline operations, and engage with your audience like never before.
-                        </p>
-                    </div>
-                </div>
 
                 {/* --- FEATURES SECTION --- */}
-                <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                <div className="w-full GlobalPadding max-w-[1920px] mx-auto">
                     <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
-                        Features of <span className="text-[#F67300]">Coirei AI Chatbot</span>
+                        Features of Coirei AI Chatbot
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-16 w-full">
@@ -249,9 +239,9 @@ const AIChatbot = () => {
                 </div>
 
                 {/* --- HOW IT WORKS SECTION --- */}
-                <div className="w-full mt-32 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
-                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
-                        How <span className="text-[#F67300]">Coirei AI Virtual Assistant</span> Works
+                <div className="w-full GlobalPadding max-w-[1920px] mx-auto">
+                    <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-16 tracking-tight leading-tight">
+                        How Coirei AI Virtual Assistant Works
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 border-b border-gray-200">
@@ -332,16 +322,16 @@ const AIChatbot = () => {
                     </div>
                 </div>
 
-                <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                <div className="w-full max-w-[1920px] mx-auto">
                     <ServicesWorkFlow />
                 </div>
 
-                <div className="px-6 md:px-10 flex flex-col items-center w-full">
+                <div className="flex flex-col items-center w-full">
 
                     {/* --- WHY CHOOSE US SECTION --- */}
-                    <div className="w-full mt-10">
-                        <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
-                            Why Choose <span className="text-[#F67300]">Coirei AI</span> Chatbot for Your Business
+                    <div className="w-full GlobalPadding">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-12 tracking-tight leading-tight">
+                            Why Choose Coirei AI Chatbot for Your Business
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl mx-auto px-4 md:px-0">
@@ -434,9 +424,9 @@ const AIChatbot = () => {
                 </div>
 
                 {/* --- CTA SECTION --- */}
-                <div className="w-full mt-10 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
-                    <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
-                        Get Started with <span className="text-[#F67300]">Coirei AI</span> Virtual Assistant
+                <div className="w-full GlobalPadding max-w-[1920px] mx-auto">
+                    <h2 data-ns-animate="true" className="text-[32px] md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-8 tracking-tight leading-tight">
+                        Get Started with Coirei AI Virtual Assistant
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 md:items-center items-start w-full mb-10">
@@ -607,7 +597,7 @@ const AIChatbot = () => {
             <FAQSection />
 
             <Footer />
-        </>
+        </div>
     );
 };
 

@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import TypewriterHeading from '../../../component/TypewriterHeading';
+import logo1 from '../../../assets/images/homepage/logo1.svg';
+import logo2 from '../../../assets/images/homepage/logo2.svg';
+import logo3 from '../../../assets/images/homepage/logo3.svg';
+import logo4 from '../../../assets/images/homepage/logo4.svg';
 
 const TypewriterText = ({ text, onComplete }: { text: string, onComplete?: () => void }) => {
     const [displayedText, setDisplayedText] = useState("");
@@ -57,12 +61,6 @@ const IndustrialAITraining = () => {
         { title: "Hands-on Projects & Workshops", tag: "Practical" }
     ];
 
-    const partners = [
-        "ProDAC Solutions",
-        "Network Rhinos",
-        "SkillPoint",
-        "+ 2 more partners"
-    ];
 
     return (
         <section className="GlobalPadding">
@@ -115,15 +113,11 @@ const IndustrialAITraining = () => {
                             onComplete={() => setIsTypingDone(true)}
                         />
 
-                        <div className={`flex flex-wrap gap-4 mt-8 pt-4 border-t border-transparent transition-all duration-700 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                            {partners.map((partner, index) => (
-                                <span
-                                    key={index}
-                                    className="text-[#878FAA] font-semibold text-xs md:text-sm"
-                                >
-                                    {partner}
-                                </span>
-                            ))}
+                        <div className={`flex flex-wrap items-center justify-center gap-4 md:gap-8 mt-8 pt-4 border-t border-transparent transition-all duration-700 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                            <img src={logo1} alt="Partner 1" className="h-6 md:h-7 object-contain" />
+                            <img src={logo2} alt="Partner 2" className="h-6 md:h-7 object-contain" />
+                            <img src={logo3} alt="Partner 3" className="h-8 md:h-10 object-contain" />
+                            <img src={logo4} alt="Partner 4" className="h-12 md:h-16 object-contain" />
                         </div>
                     </div>
                 </div>
