@@ -1,43 +1,37 @@
-import React, { useLayoutEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useLayoutEffect, useRef, useEffect } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import analytic from "../../../../../../assets/images/products/analyticsbg.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const Counter = ({ value, isFloat = false }: { value: number, isFloat?: boolean }) => {
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(nodeRef, { once: true, margin: "0px 0px -100px 0px" });
+
+  useEffect(() => {
+    if (isInView && nodeRef.current) {
+      const node = nodeRef.current;
+      const controls = animate(0, value, {
+        duration: 2.5,
+        ease: "easeOut",
+        onUpdate(val) {
+          node.textContent = isFloat ? val.toFixed(1) : Math.round(val).toString();
+        }
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, value, isFloat]);
+
+  return <span ref={nodeRef} className="font-bold mb-2 text-[#04032E] text-3xl sm:text-[38px]">0</span>;
+};
+
 export const AccountAnalytics: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Counter animation
-      const counters = gsap.utils.toArray(".counter-num") as HTMLElement[];
-      counters.forEach((counter) => {
-        const targetStr = counter.getAttribute("data-target") || "0";
-        const isFloat = targetStr.includes(".");
-        const target = parseFloat(targetStr);
-        
-        ScrollTrigger.create({
-          trigger: ".analytic-cards-container",
-          start: "top 85%",
-          once: true,
-          onEnter: () => {
-            gsap.to(counter, {
-              innerHTML: target,
-              duration: 2.5,
-              ease: "power3.out",
-              snap: { innerHTML: isFloat ? 0.1 : 1 },
-              onUpdate: function() {
-                if (isFloat) {
-                  counter.innerHTML = Number(this.targets()[0].innerHTML).toFixed(1);
-                }
-              }
-            });
-          }
-        });
-      });
-      
       // Animate the cards themselves
       gsap.from(".analytic-card", {
         scrollTrigger: {
@@ -113,27 +107,27 @@ export const AccountAnalytics: React.FC = () => {
                   {/* Metric 1 */}
                   <div className="analytic-card bg-white rounded-[20px] shadow-lg p-5 sm:p-6 flex flex-col items-start justify-between text-left relative group hover:-translate-y-1 transition-transform duration-300 h-full">
                     <span className="text-[#8E93A6] text-[9px] sm:text-[10px] font-bold tracking-wider mb-2 leading-tight uppercase">TOTAL RENEWALS DUE</span>
-                    <span className="text-[#04032E] text-3xl sm:text-[38px] font-bold mb-2 counter-num" data-target="245">0</span>
+                    <Counter value={245} />
                     <span className="bg-[#E8F5E9] text-[#2E7D32] text-[10px] sm:text-[11px] font-bold px-2 py-1 rounded-[6px] mt-auto">+12.4%</span>
                   </div>
                   {/* Metric 2 */}
                   <div className="analytic-card bg-white rounded-[20px] shadow-lg p-5 sm:p-6 flex flex-col items-start justify-between text-left relative group hover:-translate-y-1 transition-transform duration-300 h-full">
                     <span className="text-[#8E93A6] text-[9px] sm:text-[10px] font-bold tracking-wider mb-2 leading-tight uppercase">DUE THIS WEEK</span>
-                    <span className="text-[#04032E] text-3xl sm:text-[38px] font-bold mb-2 counter-num" data-target="12">0</span>
+                    <Counter value={12} />
                     <span className="bg-[#EEEDFC] text-[#6B5AED] text-[10px] sm:text-[11px] font-bold px-2 py-1 rounded-[6px] mt-auto">Urgent</span>
                   </div>
                   {/* Metric 3 */}
                   <div className="analytic-card bg-white rounded-[20px] shadow-lg p-5 sm:p-6 flex flex-col items-start justify-between text-left relative group hover:-translate-y-1 transition-transform duration-300 h-full">
                     <span className="text-[#8E93A6] text-[9px] sm:text-[10px] font-bold tracking-wider mb-2 leading-tight uppercase">RENEWAL REVENUE</span>
                     <div className="flex items-baseline text-[#04032E] text-3xl sm:text-[38px] font-bold mb-2">
-                       <span className="text-xl sm:text-2xl mr-1">₹</span><span className="counter-num" data-target="4.2">0</span><span className="text-xl sm:text-2xl ml-0.5">M</span>
+                       <span className="text-xl sm:text-2xl mr-1">₹</span><Counter value={4.2} isFloat={true} /><span className="text-xl sm:text-2xl ml-0.5">M</span>
                     </div>
                     <span className="bg-[#E8F5E9] text-[#2E7D32] text-[10px] sm:text-[11px] font-bold px-2 py-1 rounded-[6px] mt-auto">Target</span>
                   </div>
                   {/* Metric 4 */}
                   <div className="analytic-card bg-white rounded-[20px] shadow-lg p-5 sm:p-6 flex flex-col items-start justify-between text-left relative group hover:-translate-y-1 transition-transform duration-300 h-full">
                     <span className="text-[#8E93A6] text-[9px] sm:text-[10px] font-bold tracking-wider mb-2 leading-tight uppercase">CHURN RISK</span>
-                    <span className="text-[#04032E] text-3xl sm:text-[38px] font-bold mb-2 counter-num" data-target="8">0</span>
+                    <Counter value={8} />
                     <span className="bg-[#FFEBEE] text-[#C62828] text-[10px] sm:text-[11px] font-bold px-2 py-1 rounded-[6px] mt-auto">Risk</span>
                   </div>
                 </div>
