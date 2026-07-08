@@ -17,6 +17,8 @@ import bg6 from "../../../../assets/images/products/bg6.jpg";
 
 
 import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
+import { CustomerSuccessMockup } from "./mockups/CustomerSuccessMockup";
+import { AccountManagerMockup } from "./mockups/AccountManagerMockup";
 import {
   ChevronRight,
   Search,
@@ -212,7 +214,11 @@ const agents: AgentCard[] = [
     mockupBg: "bg-slate-900",
     bgImage: bg3,
     link: "/products/follei/customer-success",
-    mockup: <img src={ai3} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Customer success dashboard" />
+    mockup: (
+      <div className="w-full h-full bg-slate-900 rounded-[20px] overflow-hidden">
+        <CustomerSuccessMockup />
+      </div>
+    )
   },
   {
     id: "support",
@@ -324,7 +330,11 @@ const agents: AgentCard[] = [
     mockupBg: "bg-slate-900",
     bgImage: bg4,
     link: "/products/follei/account-manager",
-    mockup: <img src={ai1} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Account growth dashboard" />
+    mockup: (
+      <div className="w-full h-full bg-slate-900 rounded-[20px] overflow-hidden">
+        <AccountManagerMockup />
+      </div>
+    )
   }
 ];
 
