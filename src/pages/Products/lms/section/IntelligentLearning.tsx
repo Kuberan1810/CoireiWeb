@@ -31,13 +31,23 @@ const IntelligentLearning: React.FC = () => {
         }
       `}</style>
 
-      {/* Background Curve Image */}
-
+      {/* Background Glowing Ellipses */}
+      <div 
+        className="absolute rounded-full pointer-events-none z-0"
+        style={{
+          width: '100px',
+          height: '100px',
+          backgroundColor: '#F67300',
+          filter: 'blur(200px)',
+          top: '367px',
+          left: '68px'
+        }}
+      />
 
       <div className="w-full flex flex-col items-center justify-center relative z-10 max-w-7xl mx-auto">
 
         {/* Top Text Content with Corner Brackets */}
-        <div className="relative text-center max-w-4xl mb-8 flex flex-col items-center z-10 pt-10">
+        <div className="relative text-center max-w-4xl mt-[80px] mb-20 flex flex-col items-center z-10 pt-10">
           {/* Top Left Corner Bracket */}
           <div
             className="absolute top-2 -left-12 w-10 h-10 border-t-2 border-l-2 border-[#F66F00] hidden md:block"
@@ -69,13 +79,13 @@ const IntelligentLearning: React.FC = () => {
           >
             <button
               onClick={() => navigate('/contactsales')}
-              className="bg-[#F66F00] text-white py-2.5 px-8 rounded hover:bg-[#d55e00] transition-colors font-medium text-[15px]"
+              className="bg-[#F66F00] text-white px-6 py-3!  hover:bg-[#d55e00] transition-colors font-medium text-[15px]"
             >
-              Get Start
+              Get Started
             </button>
             <button
               onClick={() => navigate('/contact-sales')}
-              className="bg-white border border-[#E9ECFF] hover:border-gray-300 text-[#04032E] py-2.5 px-8 rounded transition-colors font-medium text-[15px]"
+              className="flex items-center justify-center gap-2 bg-[#B7BFD910] hover:bg-gray-50 text-[#14182C] border! border-[#E5E5E5]! px-6 py-3  font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300 hover:bg-gray-100"
             >
               Contact us
             </button>
@@ -90,80 +100,8 @@ const IntelligentLearning: React.FC = () => {
             ></div>
           </div>
         </div>
-
-        {/* Badges Container - Absolutely positioned relative to the full hero content area */}
-        <div className="relative w-full h-[60px] mt-8 mb-20 hidden md:block">
-          {/* Left Badge */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-3 bg-[#FAFAFA] border border-[#E9ECFF] px-5 py-3 rounded z-20 shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] w-[230px] justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#04032E]"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
-            <span className="text-[#F66F00] text-[15px] font-medium">All-in-One LMS</span>
-          </div>
-
-          {/* Right Badge */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-3 bg-[#FAFAFA] border border-[#E9ECFF] px-5 py-3 rounded z-20 shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] w-[230px] justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#04032E]"><path d="M21.21 15.89A10 10 0 1 1 8 2.83" /><path d="M22 12A10 10 0 0 0 12 2v10z" /></svg>
-            <span className="text-[#F66F00] text-[15px] font-medium">Real-Time Analytics</span>
-          </div>
-        </div>
-
         {/* Dashboard Image & Dashed Lines container */}
         <div className="relative w-full  flex justify-center">
-          {/* Top Left Corner Dashed Lines */}
-          <div className="absolute left-[-40px] top-0 flex flex-col gap-[14px] hidden md:flex z-0">
-            {[0, 1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className="w-[5px] h-[51px] rounded-[5px] animate-glow-dash"
-                style={{
-                  '--base-opacity': 1 - idx * 0.25,
-                  animationDelay: `${(3 - idx) * 0.2}s`
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
-
-          {/* Bottom Left Corner Dashed Lines */}
-          <div className="absolute left-[-40px] bottom-0 flex flex-col gap-[14px] hidden md:flex z-0">
-            {[0, 1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className="w-[5px] h-[51px] rounded-[5px] animate-glow-dash"
-                style={{
-                  '--base-opacity': 0.25 + idx * 0.25,
-                  animationDelay: `${(3 - idx) * 0.2}s`
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
-
-          {/* Top Right Corner Dashed Lines */}
-          <div className="absolute right-[-40px] top-0 flex flex-col gap-[14px] hidden md:flex z-0">
-            {[0, 1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className="w-[5px] h-[51px] rounded-[5px] animate-glow-dash"
-                style={{
-                  '--base-opacity': 1 - idx * 0.25,
-                  animationDelay: `${(3 - idx) * 0.2}s`
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
-
-          {/* Bottom Right Corner Dashed Lines */}
-          <div className="absolute right-[-40px] bottom-0 flex flex-col gap-[14px] hidden md:flex z-0">
-            {[0, 1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className="w-[5px] h-[51px] rounded-[5px] animate-glow-dash"
-                style={{
-                  '--base-opacity': 0.25 + idx * 0.25,
-                  animationDelay: `${(3 - idx) * 0.2}s`
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
-
           {/* Dashboard Image */}
           <div 
             data-ns-animate 

@@ -124,3 +124,20 @@ html {
     padding: 24px;
   }
 }
+
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-levitate {
+  animation: levitate 4s ease-in-out infinite;
+}
+
+.animate-levitate-delayed {
+  animation: levitate 4s ease-in-out 2s infinite;
+}

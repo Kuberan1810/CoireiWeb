@@ -79,7 +79,7 @@ const LmsAnalytics: React.FC = () => {
 
             {/* Central Node */}
             <div className="group absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full flex items-center justify-center z-20 cursor-pointer bg-transparent">
-              <img src={coireiLogo} alt="Coirei Logo" className="w-20 h-20 object-contain transition-transform duration-1000 ease-in-out group-hover:rotate-[360deg] filter drop-shadow-[0_0_12px_rgba(246,115,0,0.4)]" />
+              <img src={coireiLogo} alt="Coirei Logo" className="w-20 h-20 object-contain transition-transform duration-1000 ease-in-out filter drop-shadow-[0_0_12px_rgba(246,115,0,0.4)]" />
             </div>
 
             {/* Nodes on Left */}
