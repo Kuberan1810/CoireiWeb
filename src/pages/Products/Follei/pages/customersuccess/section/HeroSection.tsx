@@ -111,7 +111,7 @@ export const HeroSection: React.FC = () => {
               
               {/* Header */}
               <div className="flex justify-between items-center mb-10 sm:mb-14">
-                <h3 className="user-research-title opacity-0 text-[#111111] text-3xl sm:text-4xl lg:text-[42px] font-light tracking-tight leading-none">User Research</h3>
+                <h3 className="user-research-title opacity-0 text-[#111111] text-3xl sm:text-4xl lg:text-[42px] font-light tracking-tight leading-none">Customer Success</h3>
                 <div className="user-research-badge opacity-0 bg-[#B4F481] text-[#222222] text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-[6px]">
                   3 Section
                 </div>
