@@ -103,7 +103,7 @@ const ProcessAutomation = () => {
     const whyChooseXProgress = useTransform(whyChooseScrollY, [0.05, 0.55], [1, 0]);
 
     const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 80,
+        stiffness: 100,
         damping: 30,
         restDelta: 0.001
     });
@@ -162,14 +162,14 @@ const ProcessAutomation = () => {
     }, []);
 
     return (
-        <>
+        <div className="overflow-x-clip w-full bg-white min-h-screen">
             <div className="fixed w-full top-0 z-50">
                 <Navbar />
             </div>
 
-            <main className="min-h-screen w-full bg-white flex flex-col items-center overflow-x-hidden">
+            <main className="min-h-screen w-full bg-white flex flex-col items-center">
                 {/* --- HERO SECTION --- */}
-                <section className="group relative w-full min-h-[75vh] flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
+                <section className="group relative w-full min-h-screen flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
                     {/* Sky Background with Parallax */}
                     <div
                         className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[600ms] ease-out"
@@ -282,19 +282,19 @@ const ProcessAutomation = () => {
                     </div>
                 </section>
 
-                <div className="max-w-7xl mx-auto GlobalPadding flex flex-col items-center w-full">
+                <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
 
                     {/* --- WHAT WE DO FOR YOU SECTION --- */}
-                    <div className="flex flex-col items-center text-center w-full ">
+                    <div className="flex flex-col items-center text-center w-full GlobalPadding">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight mb-16">
                             What we do for you?
                         </h2>
 
                         {/* HIGH-FIDELITY GRID LAYOUT */}
-                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 w-full max-w-7xl border border-[#5D5D5D] bg-transparent text-gray-900 overflow-hidden ">
+                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 w-full max-w-7xl border border-[#E9ECFF] rounded-3xl bg-transparent text-gray-900 overflow-hidden ">
 
                             {/* Cell 1: Automate Repetitive Tasks */}
-                            <div className="p-8 md:p-12 border-b md:border-r border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
+                            <div className="p-8 md:p-12 border-b md:border-r border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
                                 <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
                                     <FileText size={24} className="text-[#F67300]" />
                                 </div>
@@ -309,7 +309,7 @@ const ProcessAutomation = () => {
                             </div>
 
                             {/* Cell 2: Middle Column (Spans 2 rows) */}
-                            <div className="row-span-2 border-b md:border-b-0 md:border-r border-[#5D5D5D] bg-linear-to-b from-[#FF7700]/10 via-gray-50 to-gray-100 p-8 md:p-12 flex flex-col justify-between items-center text-center min-h-[500px] md:min-h-[760px] group">
+                            <div className="row-span-2 border-b md:border-b-0 md:border-r border-[#E9ECFF] bg-linear-to-b from-[#FF7700]/10 via-gray-50 to-gray-100 p-8 md:p-12 flex flex-col justify-between items-center text-center min-h-[500px] md:min-h-[760px] group">
                                 {/* Center Coirei Logo */}
                                 <div className="w-full flex items-center justify-center py-6 mt-4 relative">
                                     <div className="absolute w-[200px] h-[200px] rounded-full shadow-[0_0_50px_rgba(246,115,0,0.15)] bg-[#F67300]/5 mix-blend-screen animate-pulse"></div>
@@ -334,7 +334,7 @@ const ProcessAutomation = () => {
                                 </div>
                             </div>
                             {/* Cell 3: Synchronize Data Across Platforms */}
-                            <div className="p-8 md:p-12 border-b border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
+                            <div className="p-8 md:p-12 border-b border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
                                 <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
                                     <RefreshCw size={24} className="text-[#F67300]" />
                                 </div>
@@ -349,7 +349,7 @@ const ProcessAutomation = () => {
                             </div>
 
                             {/* Cell 4: Integrate CRM and ERP Systems */}
-                            <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#5D5D5D] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
+                            <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
                                 <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
                                     <GitFork size={24} className="text-[#F67300]" />
                                 </div>
@@ -383,11 +383,11 @@ const ProcessAutomation = () => {
 
                     {/* --- WHY CHOOSE US SECTION --- */}
                     <div ref={whyChooseScrollRef} className="w-full GlobalPadding">
-                        <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-20 tracking-tight leading-tight md:leading-[68px]">
-                            Why Choose <span className="text-[#F67300]">Coirei</span>
+                        <h2 data-ns-animate="true" className="text-[20px] sm:text-[20px] md:text-[40px] font-medium text-[#262626] text-center mb-6 tracking-tight leading-tight md:leading-[68px]">
+                            Why Choose Coirei
                         </h2>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto px-4 md:px-0">
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-7xl mx-auto px-4 md:px-0">
                             {/* Card 1 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.1"
@@ -472,7 +472,7 @@ const ProcessAutomation = () => {
 
                     {/* --- ABOUT COIREI SECTION --- */}
                     <div className="w-full GlobalPadding">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-12 tracking-tight">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-6 tracking-tight">
                             About Coirei
                         </h2>
 
@@ -488,7 +488,7 @@ const ProcessAutomation = () => {
                             </div>
 
                             {/* Right: Dashboard Image */}
-                            <div className="overflow-hidden rounded-[20px] w-full md:w-[673px] h-[424px] shrink-0">
+                            <div className="overflow-hidden rounded-[20px] w-full md:w-[673px] shrink-0">
                                 <img
                                     src={aboutusservice}
                                     alt="about us service"
@@ -500,7 +500,7 @@ const ProcessAutomation = () => {
 
                     {/* --- TECHNOLOGY STACK SECTION --- */}
                     <div className="w-full GlobalPadding">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-12 tracking-tight">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-6 tracking-tight">
                             Technology Stack
                         </h2>
 
@@ -545,18 +545,16 @@ const ProcessAutomation = () => {
                     </div>
 
                     {/* --- HOW WE WORK SECTION --- */}
-                    <div
-                        ref={containerRef}
-                        className="relative w-full GlobalPadding"
-                    >
-                        <div className="sticky top-[20vh] w-full h-fit flex flex-col items-center">
-                            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-10 md:mb-12 tracking-tight leading-tight">
+                    <div ref={containerRef} className="relative w-full h-[300vh] mb-32">
+                        {/* Sticky container */}
+                        <div className="sticky top-[16vh] w-full h-fit flex flex-col items-center">
+                            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-10 md:mb-16 tracking-tight leading-tight">
                                 How We Work (The Process)
                             </h2>
 
-                            <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl gap-12 lg:gap-16">
+                            <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl gap-12 lg:gap-8">
                                 {/* Left Side */}
-                                <div className="lg:w-1/2 flex justify-center lg:justify-start ">
+                                <div className="lg:w-1/2 flex justify-center lg:justify-start min-h-[80px] md:min-h-[120px]">
                                     <AnimatePresence mode="wait">
                                         <motion.h3
                                             key={activeStep}
@@ -616,7 +614,7 @@ const ProcessAutomation = () => {
                                                 >
                                                     {/* Top Pill & Pointer */}
                                                     <div className="absolute top-[22%] md:top-[28%] left-[6%] md:left-[12%] flex items-center gap-1.5 md:gap-3">
-                                                        <div className="bg-[] text-[#262626] px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap shadow-[0_0_15px_rgba(255,122,0,0.3)]">
+                                                        <div className="bg-[] text-gray-900 px-3 py-1 md:px-5 md:py-2 rounded-full text-[10px] md:text-sm font-medium whitespace-nowrap shadow-[0_0_15px_rgba(255,122,0,0.3)]">
                                                             {steps[activeStep].topPill}
                                                         </div>
                                                         <motion.svg
@@ -700,7 +698,7 @@ const ProcessAutomation = () => {
 
                     {/* Header Section */}
                     <div className="flex flex-col items-center text-center px-6 mb-12">
-                        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
+                        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight max-w-4xl tracking-tight text-center">
                             <span className="text-gray-900">Impact Across Industries</span>
                         </h2>
                     </div>
@@ -738,7 +736,7 @@ const ProcessAutomation = () => {
                 <TestimonialSection />
             </main>
             <Footer />
-        </>
+        </div>
     );
 };
 

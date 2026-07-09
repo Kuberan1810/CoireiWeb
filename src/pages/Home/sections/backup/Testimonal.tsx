@@ -34,7 +34,7 @@ const TESTIMONIALS = [
         rating: 5,
         quote: 'Working with Coirei was a Game-changer. They delivered ahead of schedule and the quality is unmatched.',
         avatar: TestimonialImage2,
-        
+
     },
     {
         id: 3,
@@ -162,34 +162,33 @@ export default function TestimonialSection() {
 
                 {/* ── Header row ── */}
                 <div className="flex items-center justify-center w-full mx-auto mb-12 gap-4">
-                <div
-                    data-ns-animate
-                    data-offset="80"
-                    className="h-[1.5px] w-full bg-linear-to-r from-transparent to-gray-300 hidden sm:block"
-                ></div>
-                <div
-                    data-ns-animate
-                    data-offset="80"
-                    className="px-5 py-1.5 border border-gray-200 rounded-md bg-transparent text-gray-900 text-[16px] sm:text-[22px] whitespace-nowrap"
-                >
-                    Testimonial
-                </div>
-                <div
-                    data-ns-animate
-                    data-offset="80"
-                    className="h-[1.5px] w-full bg-linear-to-l from-transparent to-gray-300 hidden sm:block"
-                ></div>
-            </div>
-
-                    <div className="flex items-start justify-center  flex-wrap gap-4 mb-16">
-                        <div className="w-full">
-                            <h2 className="text-gray-900 text-[20px] sm:text-[40px] font-normal leading-[30px] md:leading-[40px] text-center w-full mx-auto">
-                                <span className="text-gray-900">What <span className="text-[#F67300]">clients</span> say about</span>
-                                <span className="text-gray-900"> our <span className="text-[#F67300]">AI solutions?</span></span>
-                            </h2>
-                        </div>
-                        
+                    <div
+                        data-ns-animate
+                        data-offset="80"
+                        className="h-[1.5px] w-full bg-linear-to-r from-transparent to-gray-300 hidden sm:block"
+                    ></div>
+                    <div
+                        data-ns-animate
+                        data-offset="80"
+                        className="px-5 py-1.5 border border-gray-200 rounded-md bg-transparent text-gray-900 text-[16px] sm:text-[22px] whitespace-nowrap"
+                    >
+                        Testimonial
                     </div>
+                    <div
+                        data-ns-animate
+                        data-offset="80"
+                        className="h-[1.5px] w-full bg-linear-to-l from-transparent to-gray-300 hidden sm:block"
+                    ></div>
+                </div>
+
+                <div className="flex items-start justify-center  flex-wrap gap-4 mb-16">
+                    <div className="w-full">
+                        <h2 className="text-gray-900 text-[20px] sm:text-[40px] font-normal leading-[30px] md:leading-[40px] text-center w-full mx-auto">
+                            <span className="text-gray-900">What clients say our AI solutions?</span>
+                        </h2>
+                    </div>
+
+                </div>
 
                 {/* Shake keyframe */}
                 <style>{`
@@ -284,7 +283,7 @@ export default function TestimonialSection() {
                         ›
                     </button>
                 </div>
-                
+
             </div>
         </section>
     );

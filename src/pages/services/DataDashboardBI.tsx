@@ -97,7 +97,7 @@ const DataDashboardBI = () => {
 
             <main className="min-h-screen w-full bg-white flex flex-col items-center overflow-x-hidden">
                 {/* --- HERO SECTION --- */}
-                <section className="group relative w-full min-h-[75vh] flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
+                <section className="group relative w-full min-h-screen flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
                     {/* Sky Background with Parallax */}
                     <div
                         className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[600ms] ease-out"
@@ -263,7 +263,7 @@ const DataDashboardBI = () => {
 
                     {/* --- WHY COIREI IS BEST SECTION --- */}
                     <div className="w-full max-w-4xl flex flex-col items-center GlobalPadding">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center tracking-tight">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-6 tracking-tight">
                             Why Coirei is Best?
                         </h2>
 
@@ -347,7 +347,7 @@ const DataDashboardBI = () => {
                     </div>
 
                     {/* --- WORKING PROCESS SECTION --- */}
-                    <div className="w-full GlobalPadding flex flex-col items-center select-none overflow-visible py-16">
+                    <div className="w-full GlobalPadding flex flex-col items-center select-none overflow-visible">
                         <h2 className="text-3xl md:text-5xl font-medium text-[#262626] text-center mb-24 tracking-tight leading-tight">
                             Our Working Process
                         </h2>
@@ -562,7 +562,7 @@ const DataDashboardBI = () => {
 
                     {/* Header Section */}
                     <div className="flex flex-col items-center text-center GlobalPadding">
-                        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight mb-6 max-w-4xl tracking-tight text-center">
+                        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-normal leading-tight max-w-4xl tracking-tight text-center">
                             <span className="text-gray-900">Industries We Serve</span>
                         </h2>
                     </div>
