@@ -136,7 +136,7 @@ const UIUXDesignDetails = () => {
 
             <main className="min-h-screen w-full bg-white flex flex-col items-center overflow-x-hidden">
                 {/* --- HERO SECTION --- */}
-                <section className="group relative w-full min-h-[75vh] flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
+                <section className="group relative w-full min-h-screen flex flex-col items-center justify-center bg-slate-50 overflow-hidden pt-36 pb-20">
                     {/* Sky Background with Parallax */}
                     <div
                         className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[600ms] ease-out"
@@ -253,12 +253,12 @@ const UIUXDesignDetails = () => {
 
                     {/* --- OUR UX/UI APPROACH --- */}
                     <div className="flex flex-col items-center text-center w-full ">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight">
+                        {/* <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight">
                             Our UX/UI Approach
                         </h2>
                         <p data-ns-animate="true" className="text-gray-600 text-base md:text-lg mb-5 max-w-4xl text-center font-light leading-relaxed">
                             We focus on human-centered design, ensuring every interaction is seamless and every visual element reflects your brand's essence.
-                        </p>
+                        </p> */}
 
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-16">
                             What we do for your brand?
@@ -307,8 +307,8 @@ const UIUXDesignDetails = () => {
                     </div> {/* Close parent max-w-1440px container to let Statics go full screen */}
 
                     {/* --- STATICS SECTION --- */}
-                    <div className="w-full flex flex-col items-center relative statics-section">
-                        <div className="max-w-[1440px] mx-auto flex flex-col items-center w-full GlobalPadding">
+                    <div className="w-full flex flex-col items-center GlobalPadding relative statics-section">
+                        <div className="max-w-[1440px] flex flex-col items-center w-full ">
                             <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-10 text-center">
                                 Statics
                             </h2>
@@ -411,10 +411,10 @@ const UIUXDesignDetails = () => {
                 </div> {/* Close Statics section wrapper */}
 
                 {/* Re-open parent max-w-1440px container for Why Choose Us */}
-                <div className="max-w-[1440px] mx-auto flex flex-col items-center w-full GlobalPadding">
+                <div className="max-w-[1440px] flex flex-col items-center w-full">
                     {/* --- WHY CHOOSE US --- */}
                     <div className="w-full flex flex-col items-center max-w-6xl">
-                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-20 text-center">
+                        <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-6 text-center">
                             Why Choose Us?
                         </h2>
 
