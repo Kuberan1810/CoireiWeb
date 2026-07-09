@@ -1,12 +1,13 @@
 import React from "react";
-import salesExecHeadImg from "../../../../../assets/images/products/salesexechead.svg";
+import SalesExecutiveAnimation from "../../sections/salesExecutiveAnimation";
+import bg3 from "../../../../../assets/images/products/bg3.jpg";
 
 export const HeroSection: React.FC = () => {
     return (
         <section className="w-full px-6 sm:px-10 md:px-15 py-10 flex justify-center bg-white mt-8">
-            <div className="w-full  grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-34 items-center">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-34 items-center">
                 {/* Left Column: Text Content */}
-                <div className="lg:col-span-5 flex flex-col items-start text-left">
+                <div className="lg:col-span-6 flex flex-col items-start text-left">
                     {/* Premium Capsule Badge */}
                     <div data-ns-animate="true" data-delay="0.1" className="mb-6 flex justify-start">
                         <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border-[0.5px] border-[#004370] rounded-[10px] text-[#000000] font-medium text-[16px] tracking-wider relative">
@@ -38,15 +39,21 @@ export const HeroSection: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Right Column: Graphic Display */}
-                <div data-ns-animate="true" data-delay="0.4" data-direction="left" className="lg:col-span-7 flex items-center justify-end relative">
-                    <div className="w-full max-w-[780px] rounded-[24px] border border-black/[0.05] overflow-hidden relative group bg-white">
-                        <div className="absolute inset-0 bg-transparent transition-colors duration-300 pointer-events-none" />
+                <div data-ns-animate="true" data-delay="0.4" data-direction="left" className="lg:col-span-5 flex items-center justify-end w-full relative">
+                    <div
+                        className="w-full bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 hover:border-violet-500/20 shadow-2xl">
+                        {/* Background Image */}
                         <img
-                            src={salesExecHeadImg}
-                            alt="Sales Executive Dashboard Mockup"
-                            className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-500"
+                            src={bg3}
+                            loading="eager"
+                            alt=""
+                            className="image-cover absolute inset-0 w-full h-full object-cover opacity-30 transition-transform duration-700 "
                         />
+
+                        {/* Inner Card Container */}
+                        <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-4 sm:p-6 lg:p-8">
+                            <SalesExecutiveAnimation />
+                        </div>
                     </div>
                 </div>
             </div>

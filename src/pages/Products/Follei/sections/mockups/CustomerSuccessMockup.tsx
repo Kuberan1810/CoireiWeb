@@ -29,7 +29,7 @@ export const CustomerSuccessMockup: React.FC = () => {
         .to(".research-col", { opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power3.out" }, "-=0.3")
         .to(".research-bar-fill", { scaleX: 1, duration: 1.5, ease: "power3.out", stagger: 0.15 }, "-=0.5")
         .to(".research-bar-right", { opacity: 1, duration: 0.5, stagger: 0.15 }, "-=1.3");
-        
+
       // Counters
       const counters = gsap.utils.toArray(".research-counter") as HTMLElement[];
       counters.forEach((counter) => {
@@ -39,7 +39,7 @@ export const CustomerSuccessMockup: React.FC = () => {
           duration: 1.5,
           ease: "power3.out",
           snap: { innerHTML: 1 },
-          onUpdate: function() {
+          onUpdate: function () {
             counter.innerHTML = Math.round(Number(this.targets()[0].innerHTML)).toString();
           }
         }, "-=1.5");
@@ -61,7 +61,7 @@ export const CustomerSuccessMockup: React.FC = () => {
   return (
     <div ref={containerRef} className="solution-inner-card-wrapper floating-dashboard relative z-10 w-full h-full flex justify-center items-center p-4 sm:p-6 lg:p-8 scale-[0.65] sm:scale-75 md:scale-90 lg:scale-100 origin-center">
       <div className="w-[120%] sm:w-full bg-[#F6F7F9] rounded-[24px] shadow-2xl flex flex-col p-6 sm:p-8 lg:p-10 relative overflow-hidden">
-        
+
         {/* Header */}
         <div className="flex justify-between items-center mb-10 sm:mb-14">
           <h3 className="user-research-title opacity-0 text-[#111111] text-3xl sm:text-4xl lg:text-[42px] font-light tracking-tight leading-none">Customer Success</h3>
@@ -72,7 +72,7 @@ export const CustomerSuccessMockup: React.FC = () => {
 
         {/* Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 h-full">
-          
+
           {/* Column 1 */}
           <div className="research-col opacity-0 flex flex-col">
             <div className="flex justify-between text-[#8E93A6] text-[9px] sm:text-[10px] font-bold mb-1 relative px-1">
@@ -82,7 +82,7 @@ export const CustomerSuccessMockup: React.FC = () => {
             </div>
             <div className="w-full h-6 sm:h-7 flex items-center mb-6 relative">
               <div className="h-full w-[83%] relative bg-gray-200 rounded-l-full overflow-hidden">
-                  <div className="research-bar-fill absolute inset-0 bg-gradient-to-r from-[#FF8D80] to-[#FFB84C] origin-left scale-x-0"></div>
+                <div className="research-bar-fill absolute inset-0 bg-gradient-to-r from-[#FF8D80] to-[#FFB84C] origin-left scale-x-0"></div>
               </div>
               <div className="w-[1.5px] h-[120%] bg-gray-300 mx-[1.5px] z-10"></div>
               <div className="research-bar-right h-full flex-1 rounded-r-full bg-[#F6D365]"></div>
@@ -106,7 +106,7 @@ export const CustomerSuccessMockup: React.FC = () => {
             </div>
             <div className="w-full h-6 sm:h-7 flex items-center mb-6 relative">
               <div className="h-full w-[58%] relative bg-gray-200 rounded-l-full overflow-hidden">
-                  <div className="research-bar-fill absolute inset-0 bg-gradient-to-r from-[#F9D423] to-[#A1D352] origin-left scale-x-0"></div>
+                <div className="research-bar-fill absolute inset-0 bg-gradient-to-r from-[#F9D423] to-[#A1D352] origin-left scale-x-0"></div>
               </div>
               <div className="w-[1.5px] h-[120%] bg-gray-300 mx-[1.5px] z-10"></div>
               <div className="research-bar-right h-full flex-1 rounded-r-full bg-[#56CCF2]"></div>
@@ -130,7 +130,7 @@ export const CustomerSuccessMockup: React.FC = () => {
             </div>
             <div className="w-full h-6 sm:h-7 flex items-center mb-6 relative">
               <div className="h-full w-[47%] relative bg-gray-200 rounded-l-full overflow-hidden">
-                  <div className="research-bar-fill absolute inset-0 bg-gradient-to-r from-[#56CCF2] to-[#38E0B5] origin-left scale-x-0"></div>
+                <div className="research-bar-fill absolute inset-0 bg-gradient-to-r from-[#56CCF2] to-[#38E0B5] origin-left scale-x-0"></div>
               </div>
               <div className="w-[1.5px] h-[120%] bg-gray-300 mx-[1.5px] z-10"></div>
               <div className="research-bar-right h-full flex-1 rounded-r-full bg-[#A8E063]"></div>

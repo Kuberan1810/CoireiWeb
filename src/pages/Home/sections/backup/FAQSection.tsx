@@ -44,7 +44,6 @@ const FAQSection = () => {
                         <div
                             key={index}
                             data-ns-animate
-                            data-delay={0.1 * index}
                             className={`group border rounded-2xl transition-all duration-300 ${openFaq === index ? 'border-gray-300 bg-gray-50 shadow-sm' : 'border-gray-200 bg-transparent hover:border-gray-300'
                                 }`}
                         >
