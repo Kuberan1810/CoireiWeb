@@ -90,14 +90,14 @@ const BetterExperienceSection: React.FC = () => {
                         </style>
                         <div 
                             className="absolute w-[140px] h-[140px] rounded-full animate-ripple" 
-                            style={{ background: 'linear-gradient(90deg, #FFCCCC 0%, #CDD9FB 100%)' }}
+                            style={{ background: 'linear-gradient(90deg, #78A9FF 0%, #B1CBFF 100%)' }}
                         />
                         <div 
                             className="absolute w-[140px] h-[140px] rounded-full animate-ripple delay-1000" 
-                            style={{ background: 'linear-gradient(90deg, #FFCCCC 0%, #CDD9FB 100%)' }}
+                            style={{ background: 'linear-gradient(90deg, #78A9FF 0%, #B1CBFF 100%)' }}
                         />
                         
-                        <div className="absolute w-[150px] h-[150px] rounded-full bg-[#FFFFFF]"></div>
+
                         <div className="relative w-[140px] h-[140px] rounded-full flex items-center justify-center z-20">
                             <img src={logoSvg} alt="AI Support Engine Logo" className="w-full h-full object-contain" />
                         </div>

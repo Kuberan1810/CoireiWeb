@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import LMSdashboard from '../../../../assets/images/products/dashboardlighttheme.svg';
+import LMSdashboard from '../../../../assets/images/products/dashboarddarkmode.svg';
 import cloudsBg from '../../../../assets/images/products/cloudsbg.svg';
 
 import { useNavigate } from 'react-router-dom';
@@ -31,9 +31,9 @@ const IntelligentLearning: React.FC = () => {
     <section className="relative GlobalPadding    overflow-hidden bg-transparent">
       {/* Background Cloud SVG */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
-        <img 
-          src={cloudsBg} 
-          alt="clouds background" 
+        <img
+          src={cloudsBg}
+          alt="clouds background"
           className="w-full h-full object-cover object-top"
         />
       </div>
@@ -63,7 +63,7 @@ const IntelligentLearning: React.FC = () => {
       `}</style>
 
       {/* Background Glowing Ellipses */}
-      <div 
+      <div
         className="absolute rounded-full pointer-events-none z-0"
         style={{
           width: '100px',
@@ -133,73 +133,16 @@ const IntelligentLearning: React.FC = () => {
         </div>
         {/* Dashboard Image & Dashed Lines container */}
         <div ref={containerRef} className="relative w-full  flex justify-center">
-          {/* Top Left Corner Dashed Lines */}
-          <div className="absolute left-[-20px] lg:left-[-40px] top-0 flex flex-col gap-[14px] hidden md:flex z-20">
-            {[0, 1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className={`w-[5px] h-[51px] rounded-[5px] bg-[#F67300] ${inView ? 'animate-glow-dash' : ''}`}
-                style={{
-                  '--base-opacity': 1 - idx * 0.25,
-                  opacity: inView ? undefined : 0.2,
-                  animationDelay: inView ? `${1.6 + (3 - idx) * 0.4}s` : undefined
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
 
-          {/* Bottom Left Corner Dashed Lines */}
-          <div className="absolute left-[-20px] lg:left-[-40px] bottom-0 flex flex-col gap-[14px] hidden md:flex z-20">
-            {[0, 1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className={`w-[5px] h-[51px] rounded-[5px] bg-[#F67300] ${inView ? 'animate-glow-dash' : ''}`}
-                style={{
-                  '--base-opacity': 0.25 + idx * 0.25,
-                  opacity: inView ? undefined : 0.2,
-                  animationDelay: inView ? `${(3 - idx) * 0.4}s` : undefined
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
 
-          {/* Top Right Corner Dashed Lines */}
-          <div className="absolute right-[-20px] lg:right-[-40px] top-0 flex flex-col gap-[14px] hidden md:flex z-20">
-            {[0, 1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className={`w-[5px] h-[51px] rounded-[5px] bg-[#F67300] ${inView ? 'animate-glow-dash' : ''}`}
-                style={{
-                  '--base-opacity': 1 - idx * 0.25,
-                  opacity: inView ? undefined : 0.2,
-                  animationDelay: inView ? `${1.6 + (3 - idx) * 0.4}s` : undefined
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
-
-          {/* Bottom Right Corner Dashed Lines */}
-          <div className="absolute right-[-20px] lg:right-[-40px] bottom-0 flex flex-col gap-[14px] hidden md:flex z-20">
-            {[0, 1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className={`w-[5px] h-[51px] rounded-[5px] bg-[#F67300] ${inView ? 'animate-glow-dash' : ''}`}
-                style={{
-                  '--base-opacity': 0.25 + idx * 0.25,
-                  opacity: inView ? undefined : 0.2,
-                  animationDelay: inView ? `${(3 - idx) * 0.4}s` : undefined
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
 
           {/* Dashboard Image */}
-          <div 
-            data-ns-animate 
+          <div
+            data-ns-animate
             data-delay="0.3"
-            className="rounded-2xl border border-[#E9ECFF] p-1.5 bg-[#FAFAFA] relative z-10 w-full overflow-hidden shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)]"
+            className="rounded-2xl  p-1.5  relative z-10 w-full overflow-hidden shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)]"
           >
-            <div className="rounded-xl overflow-hidden border border-[#E9ECFF] bg-white">
+            <div className="rounded-xl">
               <img src={LMSdashboard} alt="Intelligent Learning Infrastructure Dashboard" className="w-full h-auto object-cover opacity-90" />
             </div>
           </div>

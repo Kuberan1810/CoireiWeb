@@ -130,15 +130,12 @@ export const ConnectedContext: React.FC = () => {
                     `}</style>
 
                     {/* Bottom Gradient Fade Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 h-[280px] bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none z-20" />
+                    <div className="absolute bottom-0 left-0 right-0 h-[280px] pointer-events-none z-20" />
 
                     {/* Central Coirei Logo Dashboard Core */}
                     <div className="flex items-center justify-center relative z-30 flex-shrink-0">
                         <div
-                            className="w-28 h-28 rounded-full flex items-center justify-center bg-white relative transition-transform duration-500 hover:scale-105"
-                            style={{
-                                boxShadow: "0 0 50px rgba(10, 102, 245, 0.15)"
-                            }}
+                            className="w-28 h-28 rounded-full flex items-center justify-center relative transition-transform duration-500 hover:scale-105"
                         >
                             <img
                                 src={folleiLogo}
@@ -147,7 +144,7 @@ export const ConnectedContext: React.FC = () => {
                             />
                         </div>
                     </div>
-
+                        
                     {/* Orbit Rings (Static Visual Paths) */}
                     {/* Inner Ring (280px) */}
                     <div
@@ -245,7 +242,7 @@ export const ConnectedContext: React.FC = () => {
 
                 {/* MOBILE VERSION: Clean Grid Layout */}
                 <div className="flex md:hidden flex-col items-center w-full mt-10 relative z-10 px-2">
-                    <div data-ns-animate="true" data-delay="0.1" className="w-24 h-24 rounded-full flex items-center justify-center bg-white shadow-[0_0_30px_rgba(10,102,245,0.15)] mb-10 relative">
+                    <div data-ns-animate="true" data-delay="0.1" className="w-24 h-24 rounded-full flex items-center justify-center mb-10 relative">
                         {/* Connecting Line to Grid */}
                         <div className="absolute top-full left-1/2 -translate-x-1/2 w-[1.5px] h-10 bg-gradient-to-b from-[#4181CA]/50 to-transparent"></div>
                         <img
@@ -254,7 +251,7 @@ export const ConnectedContext: React.FC = () => {
                             className="w-16 h-16 object-contain"
                         />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                         {[
                             { label: "Products", icon: <Boxes size={18} /> },

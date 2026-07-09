@@ -2,42 +2,38 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Bell, MessageSquareText } from 'lucide-react';
 import staticbgglobal from '../../../../../assets/images/products/staticbgglobal.svg';
-// Using the PNG which is perfectly cropped to ensure the logo is visually centered!
-import logo from '../../../../../assets/images/homepage/coirei-logo.png';
+import logo from '../../../../../assets/images/products/folleinew.svg';
 
 const AnimatedSupportGraphic: React.FC = () => {
     // Layout grid: 500 x 343 virtual canvas (matches the reference crop)
     const centerPoint = { x: 250, y: 300 };
 
     const pfpNodes = [
-        { id: 1, x: 109, y: 172, img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces', ring: '#5B5FD9', side: 'left' as const },
-        { id: 2, x: 205, y: 96, img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=faces', ring: '#F4BCAE', side: 'left' as const },
-        { id: 3, x: 301, y: 96, img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=faces', ring: '#5B5FD9', side: 'right' as const },
-        { id: 4, x: 398, y: 172, img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=faces', ring: '#0A0E29', side: 'right' as const },
+        { id: 1, x: 130, y: 210, img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces', ring: '#5B5FD9', side: 'left' as const },
+        { id: 2, x: 167, y: 175, img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=faces', ring: '#F4BCAE', side: 'left' as const },
+        { id: 3, x: 333, y: 175, img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=faces', ring: '#5B5FD9', side: 'right' as const },
+        { id: 4, x: 370, y: 210, img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=faces', ring: '#0A0E29', side: 'right' as const },
     ];
 
     const nodeOuterRadius = 21; // outer ring radius on the 500x343 grid
 
-    // Builds an elbow / circuit-style connector: diagonal drop -> vertical -> horizontal -> into center
+    // Builds a single straight radial line connecting the PFP node directly to the central logo
     const buildConnector = (node: typeof pfpNodes[number]) => {
         const start = { x: node.x, y: node.y + nodeOuterRadius };
-        const dir = node.side === 'left' ? 1 : -1;
+        const dx = centerPoint.x - start.x;
+        const dy = centerPoint.y - start.y;
+        const dist = Math.hypot(dx, dy);
 
-        const bend1 = { x: start.x + dir * 18, y: start.y + 22 };
-        const railY = start.y + 55;
-        const bend2 = { x: bend1.x, y: railY };
-        const bend3 = { x: centerPoint.x + dir * 14, y: railY };
-        const end = { x: bend3.x, y: centerPoint.y - 40 };
+        // Terminate the line at the edge of the center logo (approx 45px radius)
+        const end = {
+            x: centerPoint.x - (dx / dist) * 45,
+            y: centerPoint.y - (dy / dist) * 45
+        };
 
-        const d = `M ${start.x} ${start.y} L ${bend1.x} ${bend1.y} L ${bend2.x} ${bend2.y} L ${bend3.x} ${bend3.y} L ${end.x} ${end.y}`;
+        const d = `M ${start.x} ${start.y} L ${end.x} ${end.y}`;
+        const length = Math.hypot(end.x - start.x, end.y - start.y);
 
-        const length =
-            Math.hypot(bend1.x - start.x, bend1.y - start.y) +
-            Math.hypot(bend2.x - bend1.x, bend2.y - bend1.y) +
-            Math.hypot(bend3.x - bend2.x, bend3.y - bend2.y) +
-            Math.hypot(end.x - bend3.x, end.y - bend3.y);
-
-        return { d, bend1, bend2, mid: { x: (bend2.x + bend3.x) / 2, y: railY }, length };
+        return { d, length };
     };
 
     return (
@@ -72,7 +68,7 @@ const AnimatedSupportGraphic: React.FC = () => {
                     <circle cx={centerPoint.x} cy={centerPoint.y} r={100} fill="url(#logoGlow)" />
 
                     {pfpNodes.map((node, index) => {
-                        const { d, bend1, bend2, mid, length } = buildConnector(node);
+                        const { d, length } = buildConnector(node);
                         return (
                             <g key={`group-${node.id}`}>
                                 <path d={d} fill="none" stroke="#E8EEF2" strokeWidth="1.5" strokeDasharray="3 4" />
@@ -97,45 +93,9 @@ const AnimatedSupportGraphic: React.FC = () => {
                                     initial={{ opacity: 0 }}
                                     animate={{ strokeDashoffset: [0, -length], opacity: [0, 1, 1, 0] }}
                                     transition={{
-                                        strokeDashoffset: { duration: 1.8, ease: 'linear', repeat: Infinity },
-                                        opacity: { duration: 3, repeat: Infinity, repeatDelay: 1, delay: 1.6 + index * 0.4 },
+                                        strokeDashoffset: { duration: 4, ease: 'linear', repeat: Infinity },
+                                        opacity: { duration: 5, repeat: Infinity, repeatDelay: 1.5, delay: 1.6 + index * 0.4 },
                                     }}
-                                />
-
-                                <motion.rect
-                                    x={bend1.x - 3}
-                                    y={bend1.y - 3}
-                                    width="6"
-                                    height="6"
-                                    fill="white"
-                                    stroke={node.ring}
-                                    strokeWidth="1.5"
-                                    transform={`rotate(45 ${bend1.x} ${bend1.y})`}
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 1 + index * 0.25, duration: 0.4 }}
-                                />
-
-                                <motion.circle
-                                    cx={bend2.x}
-                                    cy={bend2.y}
-                                    r="3"
-                                    fill="white"
-                                    stroke="#B7BEE0"
-                                    strokeWidth="1.5"
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 1.1 + index * 0.25, duration: 0.4 }}
-                                />
-
-                                <motion.circle
-                                    cx={mid.x}
-                                    cy={mid.y}
-                                    r="2.5"
-                                    fill="#5B5FD9"
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 1.2 + index * 0.25, duration: 0.4 }}
                                 />
                             </g>
                         );
@@ -143,8 +103,8 @@ const AnimatedSupportGraphic: React.FC = () => {
                 </svg>
 
                 <motion.div
-                    className="absolute w-[72px] h-[72px] bg-white rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-[4px] border-white flex items-center justify-center z-20"
-                    style={{ left: `${(centerPoint.x / 500) * 100}%`, top: `${(centerPoint.y / 343) * 100}%`, transform: 'translate(-50%, -50%)' }}
+                    className="absolute w-[72px] h-[72px] bg-white rounded-full border-[4px] border-white flex items-center justify-center z-20"
+                    style={{ left: `${(centerPoint.x / 500) * 100}%`, top: `${(centerPoint.y / 343) * 100}%`, marginLeft: '-36px', marginTop: '-36px' }}
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring', bounce: 0.5, duration: 0.8 }}
@@ -161,7 +121,8 @@ const AnimatedSupportGraphic: React.FC = () => {
                         style={{
                             left: `${(node.x / 500) * 100}%`,
                             top: `${(node.y / 343) * 100}%`,
-                            transform: 'translate(-50%, -50%)',
+                            marginLeft: '-21px',
+                            marginTop: '-21px',
                         }}
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
