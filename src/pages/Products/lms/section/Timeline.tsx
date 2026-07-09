@@ -69,7 +69,7 @@ const Timeline: React.FC = () => {
   const indicatorY = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} className="relative w-full GlobalPadding overflow-x-hidden font-inter-sans">
+    <section ref={containerRef} className="relative w-full GlobalPadding overflow-x-hidden   ">
       
       {/* CENTRAL LINE: Placed at z-0 to stay behind cards on mobile */}
       <div className="absolute left-1/2 top-20 lg:top-40 bottom-20 lg:bottom-40 w-[1px] bg-zinc-900 -translate-x-1/2 z-0">

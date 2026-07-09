@@ -3,7 +3,7 @@ import coireiLogo from '../../../../assets/images/products/coirei-logo.svg';
 
 const LmsAnalytics: React.FC = () => {
   return (
-    <section className="relative GlobalPadding font-inter-sans overflow-hidden bg-transparent">
+    <section className="relative GlobalPadding    overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Heading */}
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">

@@ -111,7 +111,7 @@ function App() {
       {/* Global Organization + WebSite JSON-LD schema */}
       <OrgSchema />
       {/* Global white particle background — visible across all pages */}
-      <ParticleBackground />
+      {/* <ParticleBackground /> */}
 
       <ScrollToTop />
       <Routes>

@@ -202,7 +202,7 @@ const LearningSection = () => {
             data-direction="up"
             data-offset="80"
             data-delay="0.1"
-            className="text-[#B5B4B2] font-instrumental-Sans text-base sm:text-[20px] md:text-[25px] leading-relaxed max-w-3xl mb-12 sm:mb-16 md:mb-20"
+            className="text-[#B5B4B2]    text-base sm:text-[20px] md:text-[25px] leading-relaxed max-w-3xl mb-12 sm:mb-16 md:mb-20"
           >
             We actively partner with a diverse ecosystem to bridge the gap between academic learning and industry requirements.
           </p>

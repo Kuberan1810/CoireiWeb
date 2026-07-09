@@ -8,7 +8,7 @@ const LmsHero: React.FC = () => {
   const navigate = useNavigate();
   return (
 
-    /* font-inter-sans applied for the whole section to match typography */
+    /*    applied for the whole section to match typography */
     <section className="mt-28 sm:mt-36 lg:mt-40 mb-10 md:mb-20 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-20">
 
 

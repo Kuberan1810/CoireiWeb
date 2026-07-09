@@ -115,7 +115,7 @@ const AnimatedResolutionEngine: React.FC = () => {
                         <Users size={20} className="text-[#014370]" />
                     </div>
                     <span className="text-[13px] text-[#64748B] font-bold mb-1">Total leads</span>
-                    <div className="text-[32px] font-bold text-[#6693B1] leading-none mb-3 font-urbanist">
+                    <div className="text-[32px] font-bold text-[#6693B1] leading-none mb-3   ">
                         <AnimatedCounter value={1284} inView={inView} />
                     </div>
                     <div className="text-[#10B981] text-[11px] font-medium flex items-center gap-1">
@@ -171,7 +171,7 @@ const AnimatedResolutionEngine: React.FC = () => {
                         <UserCheck size={20} className="text-[#014370]" />
                     </div>
                     <span className="text-[13px] text-[#64748B] font-bold mb-1">Converted</span>
-                    <div className="text-[32px] font-bold text-[#6693B1] leading-none mb-3 font-urbanist">
+                    <div className="text-[32px] font-bold text-[#6693B1] leading-none mb-3   ">
                         <AnimatedCounter value={58} inView={inView} />
                     </div>
                     <div className="text-[#10B981] text-[11px] font-medium flex items-center gap-1">

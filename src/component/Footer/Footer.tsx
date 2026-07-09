@@ -30,7 +30,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ isFollei = false }) => {
     return (
-        <footer className={`mx-6 sm:mx-10 md:mx-15 pt-16 sm:pt-20 transition-colors duration-300 ${isFollei ? "bg-white text-black border-t border-black/10" : "bg-white text-gray-900"}`}>
+        <footer className={`mx-6 sm:mx-10 md:mx-15 pt-16 sm:pt-20  transition-colors duration-300 ${isFollei ? "bg-white text-black border-t border-black/10" : "bg-white text-gray-900"}`}>
 
             {/* TOP BAR */}
             <div data-ns-animate data-offset="60" data-duration="1" data-direction="up" className="relative overflow-hidden">
@@ -40,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({ isFollei = false }) => {
                 <div className="group flex items-center justify-between py-6">
                     <img src={logo} alt="Logo" className="w-10 sm:w-12 transition-transform duration-500 ease-out" />
 
-                    <a href="/careers" className={`flex items-center gap-2 text-xs sm:text-sm tracking-wide transition-all duration-300 ${isFollei ? "text-black/70 hover:text-black" : "text-gray-600 hover:text-gray-900"}`}>
+                    <a href="/careers" className={`flex items-center gap-2 text-xs sm:text-sm tracking-wide transition-all duration-300 pr-3 ${isFollei ? "text-black/70 hover:text-black" : "text-gray-600 hover:text-gray-900"}`}>
                         JOIN OUR TEAM
                         <span className={`flex items-center transition-all duration-300 ease-out group-hover:translate-x-2 ${isFollei ? "text-black/40 group-hover:text-black" : "text-gray-400 group-hover:text-gray-900"}`}>
                             <ChevronRight size={16} />

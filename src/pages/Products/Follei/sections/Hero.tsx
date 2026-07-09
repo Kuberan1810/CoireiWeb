@@ -156,7 +156,7 @@ const Hero: React.FC = () => {
                   </div>
                   <div className="flex flex-col text-left">
                     <div className="text-[12px] font-bold tracking-wider text-[#1F1F1F] uppercase mb-0.5">Active Users</div>
-                    <div className="text-[28px] font-bold text-[#1D1B44] leading-none font-sans">
+                    <div className="text-[28px] font-bold text-[#1D1B44] leading-none  ">
                       <AnimatedNumber end={1284} duration={2500} />
                     </div>
                   </div>
@@ -173,7 +173,7 @@ const Hero: React.FC = () => {
                   </div>
                   <div className="flex flex-col text-left">
                     <div className="text-[12px] font-bold tracking-wider text-[#1F1F1F] uppercase mb-0.5">Conversion</div>
-                    <div className="text-[28px] font-bold text-[#1D1B44] leading-none font-sans">
+                    <div className="text-[28px] font-bold text-[#1D1B44] leading-none  ">
                       <AnimatedNumber end={64.8} decimals={1} duration={2500} prefix="+" suffix="%" />
                     </div>
                   </div>

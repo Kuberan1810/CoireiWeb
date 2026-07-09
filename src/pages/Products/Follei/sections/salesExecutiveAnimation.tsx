@@ -46,7 +46,7 @@ const CountUpNumber = ({
     }, [end, duration, delay, isInView]);
 
     return (
-        <span ref={containerRef} className="font-sans font-semibold tracking-tight tabular-nums">
+        <span ref={containerRef} className="  font-semibold tracking-tight tabular-nums">
             {count.toLocaleString("en-US")}
         </span>
     );
