@@ -1,17 +1,17 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import ParticleBackground from "./component/ParticleBackground";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import Lenis from "@studio-freight/lenis";
+import { useEffect, useRef } from "react";
+
 import { OrgSchema } from "./component/StructuredData";
 
 import Home from "./pages/Home/Home";
 import Pricing from "./pages/Pricing/Pricing";
 import Contact from "./pages/ContactUs/Contact";
+import NotFound from "./pages/NotFound/NotFound";
 
 // Resources pages
 import Blog from "./pages/Resources/Blog/Blog";
 import BlogDetails from "./pages/Resources/Blog/BlogDetails";
-// import Docs from "./pages/Resources/Docs";
-// import University from "./pages/Resources/Univercity/University";
-// import Changelog from "./pages/Resources/Changelog";
 
 // Features pages
 import Features from "./pages/Features/Features";
@@ -34,61 +34,62 @@ import Execa from "./pages/Products/Execa/Execa";
 import Follei from "./pages/Products/Follei/Follei";
 import LMS from "./pages/Products/lms/LMS";
 import BusinessIntelligence from "./pages/Products/Follei/pages/businessintelligence/businessintelligence";
-
 import SDRWorker from "./pages/Products/Follei/pages/SDRWorker/SDRWorker";
 import SalesExecutive from "./pages/Products/Follei/pages/salesexecutive/salesexecutive";
-
 import CustomerSuccess from "./pages/Products/Follei/pages/customersuccess/customersuccess";
 import CollectionsWorker from "./pages/Products/Follei/pages/Collections Worker/CollectionsWorker";
 import AccountManager from "./pages/Products/Follei/pages/Account Manager/AccountManager";
-
-
 import SupportWorker from "./pages/Products/Follei/pages/Support Worker/SupportWorker";
-
-
-// import Analytics from "./pages/Features/Analytics";
-// import Integrations from "./pages/Features/Integrations";
-
-import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
 
 declare global {
   interface Window {
-    lenis: any;
+    lenis: Lenis | undefined;
   }
 }
+
+const FOLLEI_PATH_PREFIX = "/products/follei";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Native fallback
-    window.scrollTo(0, 0);
-    // Tell Lenis to reset the scroll position immediately
-    if (window.lenis) {
-      window.lenis.scrollTo(0, { immediate: true });
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      window.lenis?.scrollTo(0, { immediate: true });
+    };
+
+    // Trigger immediately, then again shortly after so it catches the
+    // page fully rendering (fixes occasional partial-scroll bug).
+    scrollToTop();
+    const timeout1 = setTimeout(scrollToTop, 10);
+    const timeout2 = setTimeout(scrollToTop, 50);
+
+    if (pathname.startsWith(FOLLEI_PATH_PREFIX)) {
+      document.body.classList.add("follei-theme");
+    } else {
+      document.body.classList.remove("follei-theme");
     }
 
-    if (pathname.startsWith('/products/follei')) {
-      document.body.classList.add('follei-theme');
-    } else {
-      document.body.classList.remove('follei-theme');
-    }
+    return () => {
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+    };
   }, [pathname]);
 
   return null;
 }
 
 function App() {
+  const rafIdRef = useRef<number | null>(null);
+
   useEffect(() => {
-    // Initialize Lenis smooth scroll globally
     const lenis = new Lenis({
-      duration: 1.8, // Ultra smooth duration (increased from 1.2)
-      easing: (t) => 1 - Math.pow(1 - t, 4), // Quartic ease-out for a buttery gliding feel
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
+      duration: 1.8,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.8, // Slightly softer wheel step to enhance smoothness
+      wheelMultiplier: 0.8,
       touchMultiplier: 1.5,
     });
 
@@ -96,22 +97,23 @@ function App() {
 
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafIdRef.current = requestAnimationFrame(raf);
     }
-
-    requestAnimationFrame(raf);
+    rafIdRef.current = requestAnimationFrame(raf);
 
     return () => {
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current);
+      }
       lenis.destroy();
       window.lenis = undefined;
     };
   }, []);
+
   return (
     <>
       {/* Global Organization + WebSite JSON-LD schema */}
       <OrgSchema />
-      {/* Global white particle background — visible across all pages */}
-      {/* <ParticleBackground /> */}
 
       <ScrollToTop />
       <Routes>
@@ -128,34 +130,40 @@ function App() {
         <Route path="/services/process-automation-system-integration" element={<ProcessAutomation />} />
         <Route path="/services/business-intelligence-dashboard-development" element={<DataDashboardBI />} />
         <Route path="/services/ui-ux-branding-product-design" element={<UIUXDesignDetails />} />
+        {/* Keep this generic slug route LAST among /services/* so specific routes above take priority */}
         <Route path="/services/:slug" element={<ServiceDetails />} />
         <Route path="/learning" element={<Learning />} />
-        {/* RESOURCES (NO parent page) */}
+
+        {/* RESOURCES */}
         <Route path="/resources/blog" element={<Blog />} />
         <Route path="/resources/blog/:slug" element={<BlogDetails />} />
         <Route path="/resources/company" element={<Company />} />
-        {/* <Route path="/resources/university" element={<University />} /> */}
-        <Route path="/contactsales" element={<ContactSales />} />
         <Route path="/resources/privacy" element={<Privacy />} />
-        <Route path="/resources/contact" element={<Contact />} />
-        <Route path="/resources/careers" element={<Careers />} />
 
-        {/* FEATURES (NO parent page) */}
+        {/* Legacy/alias paths — redirect to canonical routes instead of duplicate-rendering */}
+        <Route path="/contactsales" element={<Navigate to="/contact-sales" replace />} />
+        <Route path="/resources/contact" element={<Navigate to="/contact" replace />} />
+        <Route path="/resources/careers" element={<Navigate to="/careers" replace />} />
+
+        {/* FEATURES */}
         <Route path="/features" element={<Features />} />
 
         {/* PRODUCTS */}
         <Route path="/products/execa" element={<Execa />} />
         <Route path="/products/follei" element={<Follei />} />
         <Route path="/products/follei/business-intelligence" element={<BusinessIntelligence />} />
-
         <Route path="/products/follei/sdr-worker" element={<SDRWorker />} />
         <Route path="/products/follei/sales-executive" element={<SalesExecutive />} />
         <Route path="/products/follei/customer-success" element={<CustomerSuccess />} />
         <Route path="/products/follei/collections-worker" element={<CollectionsWorker />} />
         <Route path="/products/follei/account-manager" element={<AccountManager />} />
         <Route path="/products/follei/support-worker" element={<SupportWorker />} />
+        {/* TODO: verify whether this should be its own component/content, not a SupportWorker duplicate */}
         <Route path="/products/follei/customer-intelligence" element={<SupportWorker />} />
         <Route path="/products/coireilms" element={<LMS />} />
+
+        {/* 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

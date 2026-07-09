@@ -23,12 +23,12 @@ if (!(window as any).gsap) {
     localGsap.registerPlugin(ScrollTrigger);
 }
 
-const HexItem = ({ icon, active, empty, hideOnMobile, delay, opacityClass }: { icon?: string, active?: boolean, empty?: boolean, hideOnMobile?: boolean, delay?: number, opacityClass?: string }) => {
+const HexItem = ({ icon, active, empty, hiddenClass, delay, opacityClass }: { icon?: string, active?: boolean, empty?: boolean, hiddenClass?: string, delay?: number, opacityClass?: string }) => {
     return (
         <div
-            className={`hex-item group relative w-[70px] h-[81px] sm:w-[110px] sm:h-[127px] md:w-[120px] md:h-[150px] flex items-center justify-center shrink-0  
+            className={`hex-item group relative w-[70px] h-[81px] sm:w-[90px] sm:h-[104px] md:w-[110px] md:h-[127px] lg:w-[120px] lg:h-[139px] xl:w-[130px] xl:h-[150px] flex items-center justify-center shrink-0  
             ${empty ? (opacityClass || 'opacity-30 hover:opacity-50') : 'hover:z-20 cursor-pointer'} 
-            ${hideOnMobile ? 'hidden lg:flex' : 'flex'} transition-all duration-300 ease-out`}
+            ${hiddenClass ? hiddenClass : 'flex'} transition-all duration-300 ease-out`}
             data-delay={delay}
         >
             <div className={`absolute inset-0 transition-transform duration-300 ease-out ${!empty && 'group-hover:scale-105'}`}>
@@ -75,25 +75,37 @@ const Integrations = () => {
     const gridRef = useRef<HTMLDivElement>(null);
 
     const row1 = [
-
-        { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40", hideOnMobile: true },
+        { empty: true, opacityClass: "opacity-[0.05]", hiddenClass: "hidden 2xl:flex" }, 
+        { empty: true, opacityClass: "opacity-10", hiddenClass: "hidden xl:flex" }, 
+        { empty: true, opacityClass: "opacity-20", hiddenClass: "hidden lg:flex" }, 
+        { empty: true, opacityClass: "opacity-40", hiddenClass: "hidden md:flex" },
         { icon: callIcon }, { icon: gmailIcon }, { icon: whatsappIcon }, { icon: documentIcon },
-        { empty: true, opacityClass: "opacity-40", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }
-
+        { empty: true, opacityClass: "opacity-40", hiddenClass: "hidden md:flex" }, 
+        { empty: true, opacityClass: "opacity-20", hiddenClass: "hidden lg:flex" }, 
+        { empty: true, opacityClass: "opacity-10", hiddenClass: "hidden xl:flex" }, 
+        { empty: true, opacityClass: "opacity-[0.05]", hiddenClass: "hidden 2xl:flex" }
     ];
 
     const row2 = [
-        { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40", hideOnMobile: true },
+        { empty: true, opacityClass: "opacity-10", hiddenClass: "hidden xl:flex" }, 
+        { empty: true, opacityClass: "opacity-20", hiddenClass: "hidden lg:flex" }, 
+        { empty: true, opacityClass: "opacity-40", hiddenClass: "hidden md:flex" },
         { icon: filesIcon }, { icon: recordIcon }, { icon: folleiIcon, active: true }, { icon: robot2Icon }, { icon: callOutIcon },
-        { empty: true, opacityClass: "opacity-40", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }
+        { empty: true, opacityClass: "opacity-40", hiddenClass: "hidden md:flex" }, 
+        { empty: true, opacityClass: "opacity-20", hiddenClass: "hidden lg:flex" }, 
+        { empty: true, opacityClass: "opacity-10", hiddenClass: "hidden xl:flex" }
     ];
 
     const row3 = [
-
-        { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-40", hideOnMobile: true },
+        { empty: true, opacityClass: "opacity-[0.05]", hiddenClass: "hidden 2xl:flex" }, 
+        { empty: true, opacityClass: "opacity-10", hiddenClass: "hidden xl:flex" }, 
+        { empty: true, opacityClass: "opacity-20", hiddenClass: "hidden lg:flex" }, 
+        { empty: true, opacityClass: "opacity-40", hiddenClass: "hidden md:flex" },
         { icon: httpsIcon }, { icon: chatIcon }, { icon: robotIcon }, { icon: rectangleIcon },
-        { empty: true, opacityClass: "opacity-40", hideOnMobile: true }, { empty: true, opacityClass: "opacity-20", hideOnMobile: true }, { empty: true, opacityClass: "opacity-10", hideOnMobile: true }, { empty: true, opacityClass: "opacity-[0.05]", hideOnMobile: true }
-
+        { empty: true, opacityClass: "opacity-40", hiddenClass: "hidden md:flex" }, 
+        { empty: true, opacityClass: "opacity-20", hiddenClass: "hidden lg:flex" }, 
+        { empty: true, opacityClass: "opacity-10", hiddenClass: "hidden xl:flex" }, 
+        { empty: true, opacityClass: "opacity-[0.05]", hiddenClass: "hidden 2xl:flex" }
     ];
 
     useLayoutEffect(() => {
@@ -195,14 +207,13 @@ const Integrations = () => {
 
                 {/* Grid Wrapper that hides horizontal overflow and applies the edge fade */}
                 <div
-                    className="relative w-full overflow-hidden pb-10"
+                    className="relative w-full overflow-hidden pt-10 pb-10 flex justify-center"
                     style={{
                         maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
                     }}
                 >
-
-                    <div ref={gridRef} className="relative flex flex-col items-center justify-center min-w-max mx-auto ">
+                    <div ref={gridRef} className="relative flex flex-col items-center justify-center w-max">
 
                         {/* 
                             Spacing Math for perfect hexagons: 
@@ -216,13 +227,13 @@ const Integrations = () => {
                             ))}
                         </div>
 
-                        <div className="flex gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center -mt-[14px] sm:-mt-[21px] md:-mt-[24px]">
+                        <div className="flex gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center -mt-[14px] sm:-mt-[18px] md:-mt-[22px] lg:-mt-[24px] xl:-mt-[26px]">
                             {row2.map((item, idx) => (
                                 <HexItem key={`r2-${idx}`} {...item} delay={idx + 10} />
                             ))}
                         </div>
 
-                        <div className="flex gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center -mt-[14px] sm:-mt-[21px] md:-mt-[24px]">
+                        <div className="flex gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center -mt-[14px] sm:-mt-[18px] md:-mt-[22px] lg:-mt-[24px] xl:-mt-[26px]">
                             {row3.map((item, idx) => (
                                 <HexItem key={`r3-${idx}`} {...item} delay={idx + 20} />
                             ))}

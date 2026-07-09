@@ -148,14 +148,14 @@ const HoverParticles: React.FC<HoverParticlesProps> = ({ className }) => {
     };
     window.addEventListener('resize', handleResize);
 
-    const clock = new THREE.Clock();
+    const startTime = performance.now();
     let animationFrameId: number;
 
     // Give it a static slight tilt so the 3D sphere nature is visible without spinning
     particles.rotation.set(0.3, 0.4, 0);
 
     const animate = () => {
-      const time = clock.getElapsedTime();
+      const time = (performance.now() - startTime) / 1000;
 
       // (Rotation removed as requested)
 

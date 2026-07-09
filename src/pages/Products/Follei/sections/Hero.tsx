@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Lottie from "lottie-react";
+import { OptimizedLottie } from "../../../../component/OptimizedLottie";
+import { OptimizedDotLottie } from "../../../../component/OptimizedDotLottie";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import heartAnimation from "../../../../assets/js/heart_animation.json";
@@ -270,7 +271,7 @@ const Hero: React.FC = () => {
                 data-w-id="f8e191a9-dcfd-89d2-1e25-4010046d1033"
                 className="hero-gallery-image"
               >
-                <Lottie animationData={heartAnimation} loop autoplay style={{ width: "100%", height: "100%" }} />
+                <OptimizedLottie animationData={heartAnimation} loop style={{ width: "100%", height: "100%" }} />
               </div>
 
 
@@ -378,12 +379,9 @@ const Hero: React.FC = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hero-gallery-sound-wrap self-start md:self-auto"
-                      dangerouslySetInnerHTML={{
-                        __html: `<dotlottie-player src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69d4f9b42c1076c70d862198_Jencare%20Home%201%20voice.lottie" autoplay loop style="width: 100%; height: 100%;"></dotlottie-player>`
-                      }}
-                    />
+                    <div className="hero-gallery-sound-wrap self-start md:self-auto">
+                      <OptimizedDotLottie src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69d4f9b42c1076c70d862198_Jencare%20Home%201%20voice.lottie" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -395,16 +393,15 @@ const Hero: React.FC = () => {
               <div
                 data-w-id="28a5ca84-bbee-f054-d99c-f25d72c42ea3"
                 className="hero-gallery-image one-five"
-                dangerouslySetInnerHTML={{
-                  __html: `<dotlottie-player src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69ca8a180edee35748d22709_Efficiency%20Boosted.lottie" autoplay loop style="width: 100%; height: 100%;"></dotlottie-player>`
-                }}
-              />
+              >
+                <OptimizedDotLottie src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69ca8a180edee35748d22709_Efficiency%20Boosted.lottie" />
+              </div>
 
               <div
                 data-w-id="9a4b6b79-d734-d184-5390-e4e99e61013c"
                 className="hero-gallery-image"
               >
-                <Lottie animationData={stepsAnimation} loop autoplay style={{ width: "100%", height: "100%" }} />
+                <OptimizedLottie animationData={stepsAnimation} loop style={{ width: "100%", height: "100%" }} />
               </div>
             </div>
 

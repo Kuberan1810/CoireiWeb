@@ -94,7 +94,7 @@ const Tasie = () => {
                     --neon-glow: rgba(61, 220, 132, 0.55);
 
                     width: 100%;
-                    min-height: 100vh;
+                    height: 100%;
                     font-family: 'Share Tech Mono', monospace;
         
                     display: flex;
@@ -102,11 +102,32 @@ const Tasie = () => {
                     align-items: center;
                     justify-content: center;
                     gap: 2.5rem;
-                    padding: 2rem 1rem 8rem;
+                    padding: 0;
                     perspective: 300rem;
                     overflow: hidden;
                     position: relative;
-                    
+                }
+
+                /* Progressive scaling for laptops (1024px - 1536px) where it's 7/12 cols */
+                @media (max-width: 1536px) {
+                    #tasie-root .keyboard { transform: scale(0.85) rotateX(60deg) rotateZ(45deg) !important; }
+                }
+                @media (max-width: 1440px) {
+                    #tasie-root .keyboard { transform: scale(0.7) rotateX(60deg) rotateZ(45deg) !important; }
+                }
+                @media (max-width: 1280px) {
+                    #tasie-root .keyboard { transform: scale(0.55) rotateX(60deg) rotateZ(45deg) !important; }
+                }
+                
+                /* Below 1024px it switches to 1 column, so the container actually gets wider again! */
+                @media (max-width: 1024px) {
+                    #tasie-root .keyboard { transform: scale(0.75) rotateX(60deg) rotateZ(45deg) !important; }
+                }
+                @media (max-width: 768px) {
+                    #tasie-root .keyboard { transform: scale(0.55) rotateX(60deg) rotateZ(45deg) !important; }
+                }
+                @media (max-width: 480px) {
+                    #tasie-root .keyboard { transform: scale(0.4) rotateX(60deg) rotateZ(45deg) !important; }
                 }
 
                 #tasie-root * {
