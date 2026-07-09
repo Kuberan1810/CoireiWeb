@@ -210,16 +210,16 @@ const DataDashboardBI = () => {
                     </div>
                 </section>
 
-                <div className="max-w-[1440px] flex flex-col items-center w-full overflow-x-hidden GlobalPadding">
+                <div className=" flex flex-col items-center w-full overflow-x-hidden">
 
                     {/* --- WHAT WE DO FOR YOU SECTION --- */}
-                    <div className="flex flex-col items-center text-center w-full ">
+                    <div className="flex flex-col items-center text-center w-full GlobalPadding">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight mb-16">
                             What We Do for You?
                         </h2>
 
                         {/* HIGH-FIDELITY GRID LAYOUT */}
-                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                             {/* Card 1: Custom Dashboards */}
                             <div className="bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] flex flex-col justify-start text-center items-center group cursor-default">
                                 <div className="w-[72px] h-[72px] rounded-full bg-white  border border-gray-200 flex items-center justify-center mb-8 shadow-inner transition-transform duration-500 group-hover:scale-110">
@@ -262,7 +262,7 @@ const DataDashboardBI = () => {
                     </div>
 
                     {/* --- WHY COIREI IS BEST SECTION --- */}
-                    <div className="w-full max-w-4xl flex flex-col items-center GlobalPadding">
+                    <div className="w-full flex flex-col items-center GlobalPadding">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] text-center mb-6 tracking-tight">
                             Why Coirei is Best?
                         </h2>
@@ -568,7 +568,7 @@ const DataDashboardBI = () => {
                     </div>
 
                     {/* Industries Grid */}
-                    <div className="flex justify-center px-6 py-10 w-full max-w-[1400px] mx-auto">
+                    <div className="flex justify-center px-6 py-10 w-full">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full justify-items-center">
                             {[
                                 { name: "E-Commerce & Retail", icon: <Scan size={20} /> },
@@ -604,7 +604,7 @@ const DataDashboardBI = () => {
                 <TestimonialSection />
                 <FAQSection />
 
-            </main>
+            </main >
             <Footer />
         </>
     );

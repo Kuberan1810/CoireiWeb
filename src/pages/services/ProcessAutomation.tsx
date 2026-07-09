@@ -11,6 +11,7 @@ import coireiLogo from "../../assets/images/products/coirei-logo.svg";
 import aboutusservice from "../../assets/images/services/aboutusservice.png";
 import Sky from "../../assets/images/homepage/sky.svg";
 import HoverParticles from "../../component/HoverParticles";
+import FAQSection from "../Home/sections/backup/FAQSection";
 
 const countryCodes = [
     { flagUrl: "https://flagcdn.com/w20/in.png", code: "+91", alt: "India" },
@@ -282,7 +283,7 @@ const ProcessAutomation = () => {
                     </div>
                 </section>
 
-                <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
+                <div className="flex flex-col items-center w-full">
 
                     {/* --- WHAT WE DO FOR YOU SECTION --- */}
                     <div className="flex flex-col items-center text-center w-full GlobalPadding">
@@ -291,15 +292,15 @@ const ProcessAutomation = () => {
                         </h2>
 
                         {/* HIGH-FIDELITY GRID LAYOUT */}
-                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 w-full max-w-7xl border border-[#E9ECFF] rounded-3xl bg-transparent text-gray-900 overflow-hidden ">
+                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 w-full border border-[#E9ECFF] rounded-3xl bg-transparent text-gray-900 overflow-hidden ">
 
                             {/* Cell 1: Automate Repetitive Tasks */}
-                            <div className="p-8 md:p-12 border-b md:border-r border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
-                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
+                            <div className="p-8 md:p-12 border-b md:border-r border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px] transition-all duration-300 group">
+                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 ">
                                     <FileText size={24} className="text-[#F67300]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight ">
                                         Automate Repetitive Tasks
                                     </h3>
                                     <p className="text-gray-600 text-base leading-relaxed font-light">
@@ -316,16 +317,16 @@ const ProcessAutomation = () => {
                                     <img
                                         src={coireiLogo}
                                         alt="Coirei Logo"
-                                        className="w-[200px] h-[200px] object-contain relative z-10 transition-transform duration-700 group-hover:rotate-360"
+                                        className="w-[200px] h-[200px] object-contain relative z-10 transition-transform duration-700"
                                         style={{ imageRendering: '-webkit-optimize-contrast' }}
                                     />
                                 </div>
                                 {/* Customize Workflows */}
                                 <div className="flex flex-col items-center w-full">
-                                    <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110">
+                                    <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-8">
                                         <Workflow size={24} className="text-[#F67300]" />
                                     </div>
-                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight">
                                         Customize Workflows
                                     </h3>
                                     <p className="text-gray-600 text-base leading-relaxed font-light max-w-sm">
@@ -334,12 +335,12 @@ const ProcessAutomation = () => {
                                 </div>
                             </div>
                             {/* Cell 3: Synchronize Data Across Platforms */}
-                            <div className="p-8 md:p-12 border-b border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
-                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
+                            <div className="p-8 md:p-12 border-b border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px]">
+                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10">
                                     <RefreshCw size={24} className="text-[#F67300]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight">
                                         Synchronize Data Across Platforms
                                     </h3>
                                     <p className="text-gray-600 text-base leading-relaxed font-light">
@@ -349,12 +350,12 @@ const ProcessAutomation = () => {
                             </div>
 
                             {/* Cell 4: Integrate CRM and ERP Systems */}
-                            <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
-                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
+                            <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#E9ECFF] flex flex-col justify-between items-start text-left min-h-[380px] ">
+                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10">
                                     <GitFork size={24} className="text-[#F67300]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight">
                                         Integrate CRM and ERP Systems
                                     </h3>
                                     <p className="text-gray-600 text-base leading-relaxed font-light">
@@ -364,12 +365,12 @@ const ProcessAutomation = () => {
                             </div>
 
                             {/* Cell 5: Provide Real-Time Analytics */}
-                            <div className="p-8 md:p-12 flex flex-col justify-between items-start text-left min-h-[380px] hover:bg-gray-100 transition-all duration-300 group">
-                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110">
+                            <div className="p-8 md:p-12 flex flex-col justify-between items-start text-left min-h-[380px]">
+                                <div className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mb-10">
                                     <TrendingUp size={24} className="text-[#F67300]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight group-hover:text-[#F67300] transition-colors">
+                                    <h3 className="text-2xl font-medium text-[#262626] mb-4 tracking-tight">
                                         Provide Real-Time Analytics
                                     </h3>
                                     <p className="text-gray-600 text-base leading-relaxed font-light">
@@ -387,11 +388,11 @@ const ProcessAutomation = () => {
                             Why Choose Coirei
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-7xl mx-auto px-4 md:px-0">
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full px-4 md:px-0">
                             {/* Card 1 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.1"
-                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] justify-start group"
+                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 min-h-[380px] justify-start group"
                                 style={{
                                     x: useTransform(whyChooseXProgress, (v) => `${v * 0 * -72}%`),
                                     zIndex: 0
@@ -411,7 +412,7 @@ const ProcessAutomation = () => {
                             {/* Card 2 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.2"
-                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] justify-start group"
+                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 min-h-[380px] justify-start group"
                                 style={{
                                     x: useTransform(whyChooseXProgress, (v) => `${v * 1 * -72}%`),
                                     zIndex: 1
@@ -431,7 +432,7 @@ const ProcessAutomation = () => {
                             {/* Card 3 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.3"
-                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] justify-start group"
+                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 min-h-[380px] justify-start group"
                                 style={{
                                     x: useTransform(whyChooseXProgress, (v) => `${v * 2 * -72}%`),
                                     zIndex: 2
@@ -451,7 +452,7 @@ const ProcessAutomation = () => {
                             {/* Card 4 */}
                             <motion.div
                                 data-ns-animate="true" data-delay="0.4"
-                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] justify-start group"
+                                className="flex flex-col items-center text-center bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 min-h-[380px] justify-start group"
                                 style={{
                                     x: useTransform(whyChooseXProgress, (v) => `${v * 3 * -72}%`),
                                     zIndex: 3
@@ -552,7 +553,7 @@ const ProcessAutomation = () => {
                                 How We Work (The Process)
                             </h2>
 
-                            <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl gap-12 lg:gap-8">
+                            <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-[1440px] gap-12 lg:gap-8">
                                 {/* Left Side */}
                                 <div className="lg:w-1/2 flex justify-center lg:justify-start min-h-[80px] md:min-h-[120px]">
                                     <AnimatePresence mode="wait">
@@ -688,7 +689,7 @@ const ProcessAutomation = () => {
                 {/* --- INDUSTRIES WE SERVE SECTION --- */}
                 <div className="w-full GlobalPadding bg-transparent">
                     {/* Section Badge */}
-                    <div className="flex items-center justify-center w-full mx-auto mb-8 gap-4 px-4">
+                    <div className="flex items-center justify-center w-full mb-8 gap-4 px-4">
                         <div className="h-[1.5px] flex-1 bg-linear-to-r from-[#161616] to-white hidden sm:block opacity-20" />
                         <div className="px-6 py-2 border border-gray-200 rounded-xl bg-transparent text-gray-900 text-[16px] sm:text-[22px] whitespace-nowrap shrink-0">
                             AI Solutions Across Global
@@ -704,7 +705,7 @@ const ProcessAutomation = () => {
                     </div>
 
                     {/* Industries Grid */}
-                    <div className="flex justify-center px-6 py-10 w-full max-w-[1400px] mx-auto">
+                    <div className="flex justify-center px-6 py-10 w-full">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full justify-items-center">
                             {[
                                 { name: "Finance", icon: <Receipt size={20} /> },
@@ -734,6 +735,9 @@ const ProcessAutomation = () => {
 
                 {/* --- CLIENT TESTIMONIALS SECTION --- */}
                 <TestimonialSection />
+
+                <FAQSection />
+
             </main>
             <Footer />
         </div>
