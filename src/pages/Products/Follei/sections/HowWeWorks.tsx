@@ -1,21 +1,10 @@
 import React from "react";
 
-// Image Imports from assets/images/products
-import builddiscoveryImg from "../../../../assets/images/products/builddiscovery.svg";
-import deployaiworkersImg from "../../../../assets/images/products/deployaiworkers.svg";
-import learnimproveImg from "../../../../assets/images/products/learn&improve.svg";
-
 import layer1Img from "../../../../assets/images/homepage/layer1.svg";
 import layer2Img from "../../../../assets/images/homepage/layer2.svg";
 import layer3Img from "../../../../assets/images/homepage/layer3.svg";
 import folleilogoImg from "../../../../assets/images/products/folleinew.svg";
-import useScrollReveal from "../../../../hooks/useScrollReveal";
-
-import sdrworkerImg from "../../../../assets/images/products/sdrworker.svg";
-import adminoperatorImg from "../../../../assets/images/products/adminoperator.svg";
-import customerintelligenceImg from "../../../../assets/images/products/customerintelligence.svg";
-import aiworkforceImg from "../../../../assets/images/products/aiworkforce.svg";
-
+import useScrollReveal from "../../../../hooks/useScrollReveal"
 import ringSvg from "../../../../assets/images/products/ring.svg";
 import ring1Svg from "../../../../assets/images/products/ring1.svg";
 import ring2Svg from "../../../../assets/images/products/ring2.svg";

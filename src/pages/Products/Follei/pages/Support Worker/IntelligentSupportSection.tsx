@@ -2,7 +2,6 @@ import React from "react";
 import { UserCircle2, BotMessageSquare, Search, ArrowLeftRight } from "lucide-react";
 
 // Image Imports from assets/images/products (using similar ones to the design)
-import workflowImg from "../../../../../assets/images/CI-follei/leftbootm.svg";
 import AnimatedResolutionEngine from "./AnimatedResolutionEngine";
 import AnimatedResolutionWorkflow from "./AnimatedResolutionWorkflow";
 

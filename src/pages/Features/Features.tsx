@@ -11,6 +11,7 @@ import "./Features.css"
 import IntegrationSection from "./Sections/IntegrationSection";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
 
+
 function Features() {
     useScrollAnimations();
     return (

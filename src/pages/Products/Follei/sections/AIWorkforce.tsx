@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
 // import bgImage from "../../../../assets/images/products/bg.png";
+
 import ai4 from "../../../../assets/images/products/ai4.png";
 import bg1 from "../../../../assets/images/products/bg1.png";
 import bg2 from "../../../../assets/images/products/bg2.jpg";
