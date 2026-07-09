@@ -4,7 +4,6 @@ import HeroSection from "./section/HeroSection";
 import SmartOnboardingSection from "./section/SmartOnboardingSection";
 import SuccessIntelligenceSection from "./section/SuccessIntelligenceSection";
 import CustomerJourneySection from "./section/CustomerJourneySection";
-import RelationshipsSection from "./section/RelationshipsSection";
 import Faq from "../../sections/Faq";
 import Navbar from "../../../../../component/Navbar";
 import SEO from "../../../../../component/SEO";
@@ -54,9 +53,6 @@ const CustomerSuccess: React.FC = () => {
         <SmartOnboardingSection />
         <SuccessIntelligenceSection />
         <CustomerJourneySection />
-        <div className="hidden sm:block">
-          <RelationshipsSection />
-        </div>
         <Faq />
       </main>
       <Footer />

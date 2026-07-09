@@ -166,111 +166,111 @@ const ContentSection = () => {
         </div>
       </section>
 
+      <div
+        ref={pinnedRef}
+        className="flex w-full justify-center bg-white px-6 pt-4 sm:pt-8 md:pt-12 pb-16 sm:px-10 md:px-15 md:pb-24"
+      >
         <div
-          ref={pinnedRef}
-          className="flex w-full justify-center bg-white px-6 pt-4 sm:pt-8 md:pt-12 pb-16 sm:px-10 md:px-15 md:pb-24"
+          className="relative mx-auto flex w-full flex-col md:overflow-hidden bg-white text-left md:flex-row h-auto md:h-[400px]"
         >
-          <div
-            className="relative mx-auto flex w-full flex-col md:overflow-hidden bg-white text-left md:flex-row h-auto md:h-[400px]"
-          >
-            <div className="relative flex w-full flex-shrink-0 flex-col md:w-1/2">
-              <div className="flex h-full flex-col p-8 md:p-12 lg:p-16">
-                <h3 className="mb-6 text-3xl font-medium text-black md:text-[36px]">
-                  Our Ethos
-                </h3>
-                <p className="max-w-[440px] text-lg leading-relaxed text-gray-600 md:text-[18px]">
-                  The principles and vision that drive how we build agentic
-                  execution platforms for the future of enterprise software.
-                </p>
-              </div>
+          <div className="relative flex w-full flex-shrink-0 flex-col md:w-1/2">
+            <div className="flex h-full flex-col p-8 md:p-12 lg:p-16">
+              <h3 className="mb-6 text-3xl font-medium text-black md:text-[36px]">
+                Our Ethos
+              </h3>
+              <p className="max-w-[440px] text-lg leading-relaxed text-gray-600 md:text-[18px]">
+                The principles and vision that drive how we build agentic
+                execution platforms for the future of enterprise software.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative flex w-full flex-row md:w-1/2">
+            <div
+              className="relative hidden flex-shrink-0 flex-col items-center md:flex"
+              style={{ width: 1, backgroundColor: "#e5e7eb" }}
+            >
+              <div
+                ref={lineProgressRef}
+                className="absolute left-0 top-0 h-full w-full origin-top rounded-full"
+                style={{
+                  background: "linear-gradient(to bottom, #F67300, rgba(246,115,0,0.35))",
+                  transform: "scaleY(0)",
+                }}
+              />
+
+              {ETHOS_ITEMS.map((item, i) => (
+                <div
+                  key={item.index}
+                  className="absolute flex items-center justify-center"
+                  style={{
+                    top: i * ITEM_H + ITEM_H / 2 - 4.5,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                  }}
+                >
+                  <div
+                    ref={(el) => { dotRefs.current[i] = el; }}
+                    className="rounded-full"
+                    style={{ width: 9, height: 9 }}
+                  />
+                </div>
+              ))}
             </div>
 
-            <div className="relative flex w-full flex-row md:w-1/2">
+            <div className="flex-1 overflow-visible md:overflow-hidden">
               <div
-                className="relative hidden flex-shrink-0 flex-col items-center md:flex"
-                style={{ width: 1, backgroundColor: "#e5e7eb" }}
+                ref={scrollTrackRef}
+                className="flex w-full flex-col"
+                style={{ willChange: "transform" }}
               >
-                <div
-                  ref={lineProgressRef}
-                  className="absolute left-0 top-0 h-full w-full origin-top rounded-full"
-                  style={{
-                    background: "linear-gradient(to bottom, #F67300, rgba(246,115,0,0.35))",
-                    transform: "scaleY(0)",
-                  }}
-                />
-
                 {ETHOS_ITEMS.map((item, i) => (
                   <div
                     key={item.index}
-                    className="absolute flex items-center justify-center"
-                    style={{
-                      top: i * ITEM_H + ITEM_H / 2 - 4.5,
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                    }}
+                    className="group relative w-full flex-shrink-0 h-auto md:h-[200px]"
                   >
+                    <div className="flex h-full flex-col justify-center gap-5 p-[15px]">
+                      <div>
+                        <h4
+                          ref={(el) => { headingRefs.current[i] = el; }}
+                          className="mb-3 text-2xl font-medium text-black md:text-[24px]"
+                          style={{ willChange: "transform, opacity" }}
+                        >
+                          {item.heading}
+                        </h4>
+                        <div className="h-px w-full bg-gray-200" />
+                      </div>
+                      <p
+                        ref={(el) => { paraRefs.current[i] = el; }}
+                        className="text-lg leading-relaxed text-gray-600 md:text-[18px]"
+                        style={{ willChange: "transform, opacity" }}
+                      >
+                        {item.description}
+                      </p>
+                    </div>
+
                     <div
-                      ref={(el) => { dotRefs.current[i] = el; }}
-                      className="rounded-full"
-                      style={{ width: 9, height: 9 }}
+                      className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, transparent, rgba(246,115,0,0.025), transparent)",
+                      }}
                     />
                   </div>
                 ))}
               </div>
-
-              <div className="flex-1 overflow-visible md:overflow-hidden">
-                <div
-                  ref={scrollTrackRef}
-                  className="flex w-full flex-col"
-                  style={{ willChange: "transform" }}
-                >
-                  {ETHOS_ITEMS.map((item, i) => (
-                    <div
-                      key={item.index}
-                      className="group relative w-full flex-shrink-0 h-auto md:h-[200px]"
-                    >
-                      <div className="flex h-full flex-col justify-center gap-5 p-[15px]">
-                        <div>
-                          <h4
-                            ref={(el) => { headingRefs.current[i] = el; }}
-                            className="mb-3 text-2xl font-medium text-black md:text-[24px]"
-                            style={{ willChange: "transform, opacity" }}
-                          >
-                            {item.heading}
-                          </h4>
-                          <div className="h-px w-full bg-gray-200" />
-                        </div>
-                        <p
-                          ref={(el) => { paraRefs.current[i] = el; }}
-                          className="text-lg leading-relaxed text-gray-600 md:text-[18px]"
-                          style={{ willChange: "transform, opacity" }}
-                        >
-                          {item.description}
-                        </p>
-                      </div>
-
-                      <div
-                        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                        style={{
-                          background:
-                            "linear-gradient(90deg, transparent, rgba(246,115,0,0.025), transparent)",
-                        }}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
-
-            <div
-              className="pointer-events-none absolute right-0 top-0 h-48 w-48"
-              style={{
-                background:
-                  "radial-gradient(circle at top right, rgba(246,115,0,0.05), transparent 65%)",
-              }}
-            />
           </div>
+
+          <div
+            className="pointer-events-none absolute right-0 top-0 h-48 w-48"
+            style={{
+              background:
+                "radial-gradient(circle at top right, rgba(246,115,0,0.05), transparent 65%)",
+            }}
+          />
         </div>
+      </div>
     </>
   );
 };

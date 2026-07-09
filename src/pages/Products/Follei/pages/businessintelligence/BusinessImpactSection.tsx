@@ -94,7 +94,7 @@ export const BusinessImpactSection: React.FC = () => {
                 originX: 0,
                 originY: 0
               }}
-              className="absolute inset-0 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.6)] h-px lg:h-0.5"
+              className="absolute inset-0 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.6)] h-full"
             />
           </div>
 

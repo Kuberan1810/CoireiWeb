@@ -58,27 +58,6 @@ declare global {
   }
 }
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    // Native fallback
-    window.scrollTo(0, 0);
-    // Tell Lenis to reset the scroll position immediately
-    if (window.lenis) {
-      window.lenis.scrollTo(0, { immediate: true });
-    }
-
-    if (pathname.startsWith('/products/follei')) {
-      document.body.classList.add('follei-theme');
-    } else {
-      document.body.classList.remove('follei-theme');
-    }
-  }, [pathname]);
-
-  return null;
-}
-
 function App() {
   useEffect(() => {
     // Initialize Lenis smooth scroll globally
@@ -113,7 +92,6 @@ function App() {
       {/* Global white particle background — visible across all pages */}
       {/* <ParticleBackground /> */}
 
-      <ScrollToTop />
       <Routes>
         {/* MAIN PAGES */}
         <Route path="/" element={<Home />} />
