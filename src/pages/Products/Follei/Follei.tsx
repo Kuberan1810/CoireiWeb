@@ -75,14 +75,14 @@ const Follei = () => {
                         key={link.id}
                         className="group relative flex items-center justify-end"
                     >
-                        
+
                         <div className="absolute right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none pr-2">
                             <div className="bg-[#04032E] text-white text-xs font-medium py-1 px-2.5 rounded shadow-md whitespace-nowrap">
                                 {link.label}
                             </div>
                         </div>
 
-                      
+
                         <button
                             onClick={() => scrollToSection(link.id)}
                             className="w-3 h-3 rounded-full transition-all duration-300 outline-none hover:scale-150"
@@ -104,9 +104,8 @@ const Follei = () => {
                 <AboutFollei />
                 <div id="automation"><Automation /></div>
                 <div id="how-we-work"><HowWeWork /></div>
-                 <div id="integration"> <Integrations /></div>
-               
                 <div id="platform"><Folleiplatform /></div>
+                <div id="integration"> <Integrations /></div>
                 <div id="faq"><Faq /></div>
             </main>
 

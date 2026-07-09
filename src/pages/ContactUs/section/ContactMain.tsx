@@ -3,7 +3,7 @@ import { Lock, ChevronDown } from 'lucide-react';
 
 const ContactMain = () => {
     return (
-        <section className="w-full bg-white GlobalPadding overflow-hidden">
+        <section className="relative pt-32 sm:pt-36 lg:pt-48 pb-8 md:pb-12 overflow-hidden bg-white ">
 
             {/* Header */}
             <div className="flex flex-col items-center justify-center mb-16 md:mb-20">

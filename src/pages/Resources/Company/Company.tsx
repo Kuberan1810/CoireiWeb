@@ -9,7 +9,7 @@ import useScrollAnimations from "../../../hooks/useScrollAnimations";
 const Company = () => {
     useScrollAnimations();
     return (
-        <div className="overflow-x-hidden">
+        <div className="">
             <SEO
                 title="About Coirei Technologies | AI & Software Innovation Company"
                 description="Learn about Coirei Technologies, a technology company focused on AI development, custom software solutions and digital innovation for modern businesses."

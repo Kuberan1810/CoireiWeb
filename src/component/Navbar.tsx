@@ -53,7 +53,17 @@ function Navbar() {
 
                 {/* LEFT */}
                 <div className="flex gap-6 items-center">
-                    <Link to="/" data-ns-animate data-delay="0.1">
+                    <Link 
+                        to="/" 
+                        data-ns-animate 
+                        data-delay="0.1"
+                        onClick={(e) => {
+                            if (location.pathname === "/") {
+                                e.preventDefault();
+                                window.location.reload();
+                            }
+                        }}
+                    >
                         <img src={logo} alt="Coirei Logo" className="w-20 h-7 transition-transform duration-500 hover:scale-105" />
                     </Link>
 

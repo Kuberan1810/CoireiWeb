@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import follei from "../../../assets/videos/Follei.mp4";
 import Lms from "../../../assets/videos/lms.mp4";
+import Velei from "../../../assets/videos/velei.mp4";
 import Tasie from "./Animation/Tasie";
-import Velei from "./Animation/Velei";
+// import  from "./Animation/Velei";
 import TypewriterHeading from "../../../component/TypewriterHeading";
 import {  ChevronRight } from "lucide-react";
 
@@ -35,8 +36,9 @@ const products = [
         category: "THE FUTURE OF AI RECRUITMENT",
         description: "Recruitment based on skills, not just resumes. Velei runs autonomous AI interviews and delivers structured candidate assessments in place of manual resume review.",
         pills: [],
-        mediaType: "component",
-        component: <Velei />
+        mediaType: "video",
+        src: Velei,
+        // link: "/products/velei"
     },
     {
         id: "tasie",

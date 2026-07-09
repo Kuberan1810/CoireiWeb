@@ -35,16 +35,16 @@ const HexItem = ({ icon, active, empty, hiddenClass, delay, opacityClass }: { ic
                 <svg viewBox="0 0 100 116" className="w-full h-full transition-all duration-300"
                     style={{
                         filter: active
-                            ? 'drop-shadow(0px 12px 35px rgba(59, 130, 246, 0.45)) drop-shadow(0px 0px 15px rgba(16, 121, 183, 0.6))'
+                            ? 'drop-shadow(0px 12px 30px rgba(59, 130, 246, 0.25)) drop-shadow(0px 0px 15px rgba(16, 121, 183, 0.1))'
                             : 'drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.04)) drop-shadow(0px 2px 6px rgba(0,0,0,0.02))'
                     }}>
                     {active ? (
                         <>
                             <defs>
                                 <linearGradient id="hexGradActive" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stopColor="#e0e8ff" />
-                                    <stop offset="50%" stopColor="#c7d4ff" />
-                                    <stop offset="100%" stopColor="#a3bcf5" />
+                                    <stop offset="0%" stopColor="#f8faff" />
+                                    <stop offset="50%" stopColor="#eef4ff" />
+                                    <stop offset="100%" stopColor="#dce8ff" />
                                 </linearGradient>
                             </defs>
                             <polygon points="50,0 100,29 100,87 50,116 0,87 0,29" fill="url(#hexGradActive)" stroke="#ffffff" strokeWidth="1.5" />
@@ -52,10 +52,9 @@ const HexItem = ({ icon, active, empty, hiddenClass, delay, opacityClass }: { ic
                     ) : (
                         <polygon
                             points="50,0 100,29 100,87 50,116 0,87 0,29"
-                            fill="white"
                             stroke="#f1f5f9"
                             strokeWidth="2"
-                            className="transition-colors duration-300 group-hover:stroke-[#e2e8f0]"
+                            className="fill-white transition-colors duration-300 group-hover:stroke-[#e2e8f0]"
                         />
                     )}
                 </svg>

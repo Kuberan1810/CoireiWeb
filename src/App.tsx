@@ -5,26 +5,20 @@ import { useEffect, useRef } from "react";
 import { OrgSchema } from "./component/StructuredData";
 
 import Home from "./pages/Home/Home";
-import Pricing from "./pages/Pricing/Pricing";
 import Contact from "./pages/ContactUs/Contact";
 import NotFound from "./pages/NotFound/NotFound";
 
-// Resources pages
-import Blog from "./pages/Resources/Blog/Blog";
-import BlogDetails from "./pages/Resources/Blog/BlogDetails";
 
 // Features pages
 import Features from "./pages/Features/Features";
 import Careers from "./pages/careers/Careers";
 import Privacy from "./pages/Resources/Privacy/Privacy";
-import ContactSales from "./pages/ContactUs/ContactSales/ContactSales";
 import Company from "./pages/Resources/Company/Company";
 import Services from "./pages/services/Services";
 import ServiceDetails from "./pages/services/ServiceDetails";
 import BusinessAppDetails from "./pages/services/BusinessAppDetails";
 import AIChatbot from "./pages/services/AIChatbot";
 import WebPlatformDetails from "./pages/services/WebPlatformDetails";
-import Learning from "./pages/Learning/Learning";
 import ProcessAutomation from "./pages/services/ProcessAutomation";
 import DataDashboardBI from "./pages/services/DataDashboardBI";
 import UIUXDesignDetails from "./pages/services/UIUXDesignDetails";
@@ -47,33 +41,38 @@ declare global {
   }
 }
 
+import { useNavigationType } from "react-router-dom";
+
 const FOLLEI_PATH_PREFIX = "/products/follei";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+  const navigationType = useNavigationType();
 
   useEffect(() => {
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      window.lenis?.scrollTo(0, { immediate: true });
-    };
+    if (navigationType !== "POP") {
+      const scrollToTop = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        window.lenis?.scrollTo(0, { immediate: true });
+      };
 
-    // Trigger immediately, then again shortly after so it catches the
-    // page fully rendering (fixes occasional partial-scroll bug).
-    scrollToTop();
-    const timeout1 = setTimeout(scrollToTop, 10);
-    const timeout2 = setTimeout(scrollToTop, 50);
+      scrollToTop();
+      const timeout1 = setTimeout(scrollToTop, 10);
+      const timeout2 = setTimeout(scrollToTop, 50);
 
+      return () => {
+        clearTimeout(timeout1);
+        clearTimeout(timeout2);
+      };
+    }
+  }, [pathname, navigationType]);
+
+  useEffect(() => {
     if (pathname.startsWith(FOLLEI_PATH_PREFIX)) {
       document.body.classList.add("follei-theme");
     } else {
       document.body.classList.remove("follei-theme");
     }
-
-    return () => {
-      clearTimeout(timeout1);
-      clearTimeout(timeout2);
-    };
   }, [pathname]);
 
   return null;
@@ -120,9 +119,7 @@ function App() {
         {/* MAIN PAGES */}
         <Route path="/" element={<Home />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contact-sales" element={<ContactSales />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/custom-business-application-development" element={<BusinessAppDetails />} />
         <Route path="/services/ai-chatbot-development" element={<AIChatbot />} />
@@ -132,11 +129,8 @@ function App() {
         <Route path="/services/ui-ux-branding-product-design" element={<UIUXDesignDetails />} />
         {/* Keep this generic slug route LAST among /services/* so specific routes above take priority */}
         <Route path="/services/:slug" element={<ServiceDetails />} />
-        <Route path="/learning" element={<Learning />} />
 
         {/* RESOURCES */}
-        <Route path="/resources/blog" element={<Blog />} />
-        <Route path="/resources/blog/:slug" element={<BlogDetails />} />
         <Route path="/resources/company" element={<Company />} />
         <Route path="/resources/privacy" element={<Privacy />} />
 

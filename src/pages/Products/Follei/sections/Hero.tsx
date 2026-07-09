@@ -392,9 +392,11 @@ const Hero: React.FC = () => {
             <div className="hero-gallery-right">
               <div
                 data-w-id="28a5ca84-bbee-f054-d99c-f25d72c42ea3"
-                className="hero-gallery-image one-five"
+                className="hero-gallery-image one-five relative flex items-center justify-center overflow-hidden"
               >
-                <OptimizedDotLottie src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69ca8a180edee35748d22709_Efficiency%20Boosted.lottie" />
+                <div className="w-full h-full transform scale-[1.25] translate-y-[4%]">
+                  <OptimizedDotLottie src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69ca8a180edee35748d22709_Efficiency%20Boosted.lottie" />
+                </div>
               </div>
 
               <div
