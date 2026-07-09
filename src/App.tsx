@@ -82,32 +82,32 @@ function App() {
   const rafIdRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.8,
-      easing: (t) => 1 - Math.pow(1 - t, 4),
-      orientation: "vertical",
-      gestureOrientation: "vertical",
-      smoothWheel: true,
-      wheelMultiplier: 0.8,
-      touchMultiplier: 1.5,
-    });
+  const lenis = new Lenis({
+    duration: 1.4,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+    orientation: "vertical",
+    gestureOrientation: "vertical",
+    smoothWheel: true,
+    wheelMultiplier: 1.0,
+    touchMultiplier: 1.5,
+  });
 
-    window.lenis = lenis;
+  window.lenis = lenis;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      rafIdRef.current = requestAnimationFrame(raf);
-    }
+  function raf(time: number) {
+    lenis.raf(time);
     rafIdRef.current = requestAnimationFrame(raf);
+  }
+  rafIdRef.current = requestAnimationFrame(raf);
 
-    return () => {
-      if (rafIdRef.current !== null) {
-        cancelAnimationFrame(rafIdRef.current);
-      }
-      lenis.destroy();
-      window.lenis = undefined;
-    };
-  }, []);
+  return () => {
+    if (rafIdRef.current !== null) {
+      cancelAnimationFrame(rafIdRef.current);
+    }
+    lenis.destroy();
+    window.lenis = undefined;
+  };
+}, []);
 
   return (
     <>

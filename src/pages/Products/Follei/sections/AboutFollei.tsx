@@ -21,7 +21,7 @@ const AnimatedNumber: React.FC<{ value: number; suffix?: string; prefix?: string
     
     const tween = gsap.to(obj, {
       val: value,
-      duration: 2.5,
+      duration: 1.0,
       delay: 0.2, // Slight delay so the user sees it start after scrolling
       ease: "power3.out", // Premium, cinematic deceleration
       scrollTrigger: {
