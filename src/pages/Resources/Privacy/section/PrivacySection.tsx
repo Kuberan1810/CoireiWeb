@@ -64,8 +64,8 @@ const PrivacySection = () => {
         className="border-t border-b border-gray-200"
       >
         <div className="text-center max-w-4xl mx-auto py-12 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium leading-8 pb-5 text-black">
-            Our philosophy is built on transparency, minimal data collection,
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium leading-11 pb-5 text-black">
+            Our philosophy is built on transparency, minimal data <br></br>collection
             and explicit control
           </h2>
           <p className="mt-4 text-base md:text-lg text-gray-600 text-left md:text-center">

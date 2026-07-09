@@ -183,14 +183,15 @@ const Hero: React.FC = () => {
 
             <div
               data-w-id="4dd23dca-4618-a5f0-d798-0a1ac785ca0a"
-              className="hero-tag"
+              className="hero-tag mx-auto mt-4 md:mt-0 w-auto max-w-[90%] sm:max-w-fit shadow-sm flex items-center justify-center gap-2 !px-4 !py-2 sm:!px-4 sm:!py-2"
             >
               <img
                 src="https://cdn.prod.website-files.com/69b04e74db26548f38cdf097/69b2fb8354eee153a987756d_mingcute_bulb-ai-fill.svg"
                 loading="lazy"
                 alt="bulb-ai"
+                className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0"
               />
-              <div>One platform. Complete customer Intelligence</div>
+              <div className="text-xs sm:text-[15px] font-medium leading-tight whitespace-nowrap sm:whitespace-normal truncate sm:overflow-visible">One platform. Complete customer Intelligence</div>
             </div>
 
             <div className="hero-home-one-title-wrapper">

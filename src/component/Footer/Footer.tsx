@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({ isFollei = false }) => {
                 <span className={`pointer-events-none absolute bottom-0 left-0 h-px w-full bg-linear-to-r ${isFollei ? "from-transparent via-black/10 to-transparent" : "from-transparent via-gray-300 to-transparent"}`} />
 
                 <div className="group flex items-center justify-between py-6">
-                    <img src={logo} alt="Logo" className="w-10 sm:w-12 transition-transform duration-500 ease-out group-hover:rotate-180" />
+                    <img src={logo} alt="Logo" className="w-10 sm:w-12 transition-transform duration-500 ease-out" />
 
                     <a href="/careers" className={`flex items-center gap-2 text-xs sm:text-sm tracking-wide transition-all duration-300 ${isFollei ? "text-black/70 hover:text-black" : "text-gray-600 hover:text-gray-900"}`}>
                         JOIN OUR TEAM

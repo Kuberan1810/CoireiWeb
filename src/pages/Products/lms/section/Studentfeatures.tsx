@@ -2,8 +2,10 @@ import { LayoutDashboard, BookOpen, FileText, Users, MessageSquare, ClipboardLis
 
 import bgImage from "../../../../assets/images/products/bg.svg";
 import coireiLogo from "../../../../assets/images/homepage/coirei-logo.png";
-import circleLogo from "../../../../assets/images/products/coirei-logo.svg";
-import LMSdashboard from "../../../../assets/images/products/dashboard2themelight.svg";
+import circleLogo from "../../../../assets/images/Features/coirei-cirlce-logo.png";
+import LMSdashboard from "../../../../assets/images/products/LMSdashboard.svg";
+import levitatingCard1 from "../../../../assets/images/products/levitatingcard1.svg";
+import levitatingCard2 from "../../../../assets/images/products/levitatingcard2.svg";
 
 const navItems = [
     { icon: LayoutDashboard, label: 'Dashboard', active: true },
@@ -17,7 +19,7 @@ const navItems = [
 
 const Studentfeature = () => {
     return (
-        <section className="relative text-[#04032E] bg-white GlobalPadding overflow-hidden">
+        <section className="relative text-[#04032E] bg-white  px-6 md:px-12 overflow-hidden py-10 md:py-20">
             {/* <div className="max-w-7xl mx-auto"> */}
 
             <div className="flex flex-col items-center text-center mb-10 md:mb-20">
@@ -49,11 +51,7 @@ const Studentfeature = () => {
                         <div className="relative z-10 p-[30px]">
 
                             <div className="bg-white border border-[#E9ECFF] shadow-sm rounded-[20px] px-4 py-4 mb-3 flex items-center">
-                                <img 
-                                    src={coireiLogo} 
-                                    alt="coirei" 
-                                    className="h-6 w-auto"
-                                />
+                                <img src={coireiLogo} alt="coirei" className="h-6 w-auto filter grayscale opacity-80" />
                             </div>
 
                             <div className="bg-white border border-[#E9ECFF] shadow-sm rounded-[20px] p-[20px]">
@@ -150,26 +148,31 @@ const Studentfeature = () => {
                     <div
                         className="flex flex-col justify-between items-center border-b lg:border-b-0 border-[#E9ECFF] bg-white group min-h-[570px] border-x"
                         style={{
-                            background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(246, 115, 0, 0.05) 100%)',
+                            background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(246, 115, 0, 0.15) 100%)',
                         }}
                     >
-                        {/* Top: Logo */}
-                        <div className="flex-1 flex items-center justify-center pt-12 pb-6">
-                            <div className="relative flex items-center justify-center">
+                        {/* Top: Levitating Cards */}
+                        <div className="flex-1 w-full relative min-h-[250px] pt-26 pb-4 flex justify-center">
+                            <div className="relative w-[390px] h-full">
                                 <img
-                                    src={circleLogo}
-                                    alt="Coirei Circle Logo"
-                                    className="w-32 h-32 object-contain relative z-10 transition-transform duration-1000 ease-in-out group-hover:rotate-[360deg]"
+                                    src={levitatingCard1}
+                                    alt="Course Progress Card"
+                                    className="absolute top-0 left-0 w-[210px]  z-10 animate-levitate"
+                                />
+                                <img
+                                    src={levitatingCard2}
+                                    alt="Join Class Card"
+                                    className="absolute top-[120px] right-0 w-[180px]  z-20 animate-levitate-delayed"
                                 />
                             </div>
                         </div>
 
                         {/* Bottom: Dashboard mockup */}
-                        <div className="w-full ">
+                        <div className="w-full px-6 pb-6    ">
                             <img
                                 src={LMSdashboard}
                                 alt="Coirei Dashboard Mockup"
-                                className="w-full h-auto object-cover  shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] border border-[#E9ECFF]"
+                                className="w-full h-auto object-cover rounded-2xl shadow-[0px_0px_16px_0px_rgba(0,0,0,0.08)] border border-[#E9ECFF]"
                             />
                         </div>
                     </div>

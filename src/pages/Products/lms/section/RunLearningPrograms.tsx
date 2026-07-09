@@ -26,7 +26,7 @@ const RunLearningPrograms: React.FC = () => {
   ];
 
   return (
-    <section className="relative text-[#04032E] bg-white  GlobalPadding overflow-hidden">
+    <section className="relative text-[#04032E] bg-white GlobalPadding overflow-hidden">
       <style dangerouslySetInnerHTML={{
         __html: `
         @keyframes borderFlow {
@@ -81,14 +81,13 @@ const RunLearningPrograms: React.FC = () => {
                 <div
                   className="absolute left-[17.5px] top-[110px] w-[85px] h-[85px] rounded-[15px] p-[10px] flex items-center justify-center z-10 bg-[#FAFAFA] border border-[#E9ECFF] transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(246,115,0,0.15)] group-hover:border-[#FBA961]/40"
                 >
-                  {/* Inner 65x65 container enclosing the blurred orange gradient */}
+                  {/* Inner 65x65 container enclosing the orange gradient */}
                   <div className="w-[65px] h-[65px] rounded-[10px] overflow-hidden flex items-center justify-center">
                     <div
-                      className="w-full h-full animate-blob"
+                      className="w-full h-full"
                       style={{
                         background: `linear-gradient(135deg, ${step.gradientFrom} 0%, ${step.gradientTo} 100%)`,
-                        filter: 'blur(12px)',
-                        animationDelay: `${idx * -2.5}s`
+                        filter: 'blur(10px)'
                       }}
                     />
                   </div>
@@ -102,8 +101,8 @@ const RunLearningPrograms: React.FC = () => {
                   <svg className="w-full h-full overflow-visible" fill="none">
                     <defs>
                       <linearGradient id={`grad-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor={step.gradientFrom} stopOpacity="0.8" />
-                        <stop offset="50%" stopColor={step.gradientFrom} stopOpacity="0.3" />
+                        <stop offset="0%" stopColor="#FBA961" stopOpacity="0.8" />
+                        <stop offset="50%" stopColor="#FBA961" stopOpacity="0.3" />
                         <stop offset="100%" stopColor="rgba(0,0,0,0.05)" stopOpacity="0.1" />
                       </linearGradient>
                     </defs>
@@ -129,12 +128,12 @@ const RunLearningPrograms: React.FC = () => {
                       width="278.5"
                       height="133.5"
                       rx="14.25"
-                      stroke={step.gradientFrom}
+                      stroke="#FBA961"
                       strokeWidth="2"
                       strokeDasharray="100 280"
                       className="animate-border-flow transition-all duration-500 opacity-80 group-hover:opacity-100"
                       style={{
-                        filter: `drop-shadow(0 0 6px ${step.gradientFrom})`
+                        filter: `drop-shadow(0 0 6px #FBA961)`
                       }}
                     />
                   </svg>
@@ -143,7 +142,7 @@ const RunLearningPrograms: React.FC = () => {
                 {/* Main Content Card */}
                 <div
                   className="relative z-10 bg-white/80 border border-[#E9ECFF] rounded-[15px] p-[15px] group-hover:-translate-y-1 group-hover:bg-white group-hover:border-[#FBA961]/40 group-hover:shadow-[0_12px_30px_rgba(246,115,0,0.12)] transition-all duration-500 shadow-[0px_0px_16px_0px_rgba(0,0,0,0.06)] w-[280px] h-[135px] flex flex-col justify-center gap-[15px]"
-                  style={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}
+                  style={{ backdropFilter: 'blur(px)', WebkitBackdropFilter: 'blur(89px)' }}
                 >
                   <h3 className="text-lg font-semibold text-[#04032E]   leading-none">
                     {step.title}
