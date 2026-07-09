@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Sky from "../../../assets/images/homepage/sky.svg"
 import HoverParticles from '../../../component/HoverParticles';
 
@@ -166,12 +167,12 @@ const Hero = ({ onTypingComplete }: HeroProps) => {
                     >
                         Explore Our Products
                     </button>
-                    <button
-                        type="button"
+                    <Link
+                        to="/contact"
                         className="flex items-center justify-center gap-2 bg-[#B7BFD910] hover:bg-gray-50 text-[#14182C] border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer duration-300"
                     >
                         Partner With Us
-                    </button>
+                    </Link>
                 </div>
             </div>
 

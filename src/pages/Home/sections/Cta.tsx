@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 
 const Cta = () => {
     return (
@@ -18,17 +19,25 @@ const Cta = () => {
                 <button
                 data-ns-animate data-delay="0.2"
                     type="button"
+                    onClick={() => {
+                        const section = document.getElementById('our-products');
+                        if (section && (window as any).lenis) {
+                            (window as any).lenis.scrollTo(section, { offset: -50, duration: 1.5 });
+                        } else if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }}
                     className="flex items-center justify-center gap-2 bg-[#FC7C04] hover:bg-[#E07104] text-white px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer"
                 >
                     Explore Our Products <span> </span>
                 </button>
-                <button
+                <Link
+                to="/contact"
                 data-ns-animate data-delay="0.2"
-                    type="button"
                     className="flex items-center justify-center gap-2 bg-transparent hover:bg-gray-50 text-[#14182C] border! border-[#E5E5E5]! px-6 py-3 font-medium transition-colors w-full sm:w-auto cursor-pointer"
                 >
                     Partner With Us
-                </button>
+                </Link>
             </div>
         </section>
     );

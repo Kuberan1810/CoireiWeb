@@ -174,7 +174,7 @@ const WebPlatformDetails = () => {
             <WebPlatformHero onTypingComplete={() => setIsHeroTypingDone(true)} />
 
 
-            <main className="pt-24 md:pt-32 w-full bg-white flex flex-col items-center">
+            <main className="w-full bg-white flex flex-col items-center">
 
 
                 {/* --- SERVICE OFFERINGS SECTION --- */}

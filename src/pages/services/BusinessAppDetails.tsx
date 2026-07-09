@@ -164,7 +164,7 @@ const BusinessAppDetails = () => {
 
             <BusinessAppHero onTypingComplete={() => setIsHeroTypingDone(true)} />
 
-            <main className="pt-32 w-full bg-white flex flex-col items-center">
+            <main className="w-full bg-white flex flex-col items-center">
 
                 <div className="flex flex-col items-center w-full">
 

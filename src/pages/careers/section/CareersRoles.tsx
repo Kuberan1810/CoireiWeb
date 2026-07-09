@@ -2,22 +2,22 @@ import { Zap, PenTool, Code, Percent } from "lucide-react";
 
 const roles = [
     {
-        title: "AI / ML Intern",
+        title: "AI / ML Engineering",
         desc: "Build intelligent AI models, automate workflows, and work on real-world machine learning projects",
         icon: Zap
     },
     {
-        title: "UI / UX Intern",
+        title: "UI / UX Designer",
         desc: "Design intuitive user experiences and modern interfaces for next-generation AI products.",
         icon: PenTool
     },
     {
-        title: "Frontend & Full Stack Intern",
+        title: "Frontend & Full Stack Developer",
         desc: "Develop scalable web applications using modern technologies and collaborate with our AI engineering team.",
         icon: Code
     },
     {
-        title: "Digital Marketing Intern",
+        title: "Digital Marketing",
         desc: "Drive brand growth through digital campaigns, content strategy, SEO, and performance marketing.",
         icon: Percent
     }
