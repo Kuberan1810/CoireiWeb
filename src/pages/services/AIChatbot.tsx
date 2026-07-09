@@ -140,7 +140,7 @@ const AIChatbot = () => {
 
             <AIChatbotHero onTypingComplete={() => setIsHeroTypingDone(true)} />
 
-            <main className="pt-32 w-full bg-white flex flex-col items-center">
+            <main className="w-full bg-white flex flex-col items-center">
 
 
                 {/* --- FEATURES SECTION --- */}
