@@ -62,7 +62,7 @@ const LmsRoadmap: React.FC = () => {
               originX: 0,
               originY: 0
             }}
-            className="absolute inset-0 bg-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.4)] h-0.5"
+            className="absolute inset-0 bg-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.4)] h-full"
           />
         </div>
 

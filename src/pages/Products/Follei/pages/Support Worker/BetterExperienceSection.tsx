@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logoSvg from "../../../../../assets/images/CI-follei/logo.svg";
+import logoSvg from "../../../../../assets/images/products/folleinew.svg";
 
 const BetterExperienceSection: React.FC = () => {
     return (

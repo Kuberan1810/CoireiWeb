@@ -1,6 +1,6 @@
 import React from "react";
 import { Boxes, Cog, ClipboardCheck, BookOpen, CircleUser, DollarSign } from "lucide-react";
-import folleiLogo from "../../../../../assets/images/products/folleilogo.svg";
+import folleiLogo from "../../../../../assets/images/products/folleinew.svg";
 
 interface OrbitItemProps {
     radius: number;
@@ -135,7 +135,7 @@ export const ConnectedContext: React.FC = () => {
                     {/* Central Coirei Logo Dashboard Core */}
                     <div className="flex items-center justify-center relative z-30 flex-shrink-0">
                         <div
-                            className="w-28 h-28 rounded-full border border-orange-500/35 flex items-center justify-center bg-white relative transition-transform duration-500 hover:scale-105"
+                            className="w-28 h-28 rounded-full flex items-center justify-center bg-white relative transition-transform duration-500 hover:scale-105"
                             style={{
                                 boxShadow: "0 0 50px rgba(10, 102, 245, 0.15)"
                             }}
@@ -245,7 +245,7 @@ export const ConnectedContext: React.FC = () => {
 
                 {/* MOBILE VERSION: Clean Grid Layout */}
                 <div className="flex md:hidden flex-col items-center w-full mt-10 relative z-10 px-2">
-                    <div data-ns-animate="true" data-delay="0.1" className="w-24 h-24 rounded-full border border-orange-500/35 flex items-center justify-center bg-white shadow-[0_0_30px_rgba(10,102,245,0.15)] mb-10 relative">
+                    <div data-ns-animate="true" data-delay="0.1" className="w-24 h-24 rounded-full flex items-center justify-center bg-white shadow-[0_0_30px_rgba(10,102,245,0.15)] mb-10 relative">
                         {/* Connecting Line to Grid */}
                         <div className="absolute top-full left-1/2 -translate-x-1/2 w-[1.5px] h-10 bg-gradient-to-b from-[#4181CA]/50 to-transparent"></div>
                         <img

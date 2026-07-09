@@ -98,13 +98,12 @@ function Navbar() {
                 <div data-ns-animate data-delay="0.25" className="hidden md:block">
                     <Link
                         to="/contact"
-                        className={`rounded-lg py-3 px-4.5 text-[14px] font-medium transition-all duration-300 text-white shadow-md ${
-                            !isLight 
-                                ? 'bg-white text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-white' 
-                                : isFollei
-                                    ? 'bg-gradient-to-r from-[#1E62A6] to-[#0F4275] hover:from-[#17508B] hover:to-[#0B345D]' 
-                                    : 'bg-gradient-to-r from-[#F48120] to-[#FA9A4A] hover:from-[#E07104] hover:to-[#DE8235]'
-                        }`}
+                        className={`rounded-lg py-3 px-4.5 text-[14px] font-medium transition-all duration-300 text-white shadow-md ${!isLight
+                            ? 'bg-white text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-white'
+                            : isFollei
+                                ? 'bg-gradient-to-r from-[#1E62A6] to-[#0F4275] hover:from-[#17508B] hover:to-[#0B345D]'
+                                : 'bg-gradient-to-r from-[#F48120] to-[#FA9A4A] hover:from-[#E07104] hover:to-[#DE8235]'
+                            }`}
                     >
                         Contact Us
                     </Link>

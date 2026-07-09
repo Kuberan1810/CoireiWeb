@@ -117,7 +117,7 @@ const PipelineManagement: React.FC = () => {
                 originX: 0,
                 originY: 0
               }}
-              className="absolute inset-0 bg-[#004370] shadow-[0_0_15px_rgba(0,67,112,0.4)] h-px lg:h-0.5"
+              className="absolute inset-0 bg-[#004370] shadow-[0_0_15px_rgba(0,67,112,0.4)] h-full"
             />
           </div>
 

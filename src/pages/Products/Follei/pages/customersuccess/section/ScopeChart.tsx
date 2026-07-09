@@ -1,5 +1,6 @@
 import React from "react";
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { motion } from "framer-motion";
 
 const data = [
   { name: "Nov", green: 10, blue: 5, red: 8 },
@@ -7,14 +8,6 @@ const data = [
   { name: "Jan", green: 45, blue: 45, red: 30 },
   { name: "Feb", green: 20, blue: 85, red: 65 },
   { name: "Mar", green: 90, blue: null, red: null }
-];
-
-const zeroData = [
-  { name: "Nov", green: 0, blue: 0, red: 0 },
-  { name: "Dec", green: 0, blue: 0, red: 0 },
-  { name: "Jan", green: 0, blue: 0, red: 0 },
-  { name: "Feb", green: 0, blue: 0, red: 0 },
-  { name: "Mar", green: 0, blue: 0, red: 0 }
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -36,7 +29,6 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 const ScopeChart: React.FC<{ animate?: boolean }> = ({ animate = true }) => {
-  const displayData = animate ? data : zeroData;
   return (
     <div className="w-full flex flex-col justify-between h-[360px] bg-white rounded-[10px] p-4">
       {/* Legend Header */}
@@ -58,7 +50,7 @@ const ScopeChart: React.FC<{ animate?: boolean }> = ({ animate = true }) => {
       {/* Recharts Area */}
       <div className="relative flex-1 w-full min-h-0 mt-2">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={displayData} margin={{ top: 20, right: 10, left: 10, bottom: 20 }}>
+          <AreaChart data={data} margin={{ top: 20, right: 10, left: 10, bottom: 20 }}>
             <defs>
               <linearGradient id="greenGrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#17BB84" stopOpacity={0.25} />
@@ -92,7 +84,7 @@ const ScopeChart: React.FC<{ animate?: boolean }> = ({ animate = true }) => {
               activeDot={{ r: 6, stroke: '#fff', strokeWidth: 2 }}
               dot={{ r: 4, stroke: '#fff', strokeWidth: 2, fill: '#17BB84' }}
               style={{ filter: "url(#shadowGreen)" }}
-              animationDuration={1500}
+              isAnimationActive={false}
             />
             <Area 
               type="monotone" 
@@ -103,8 +95,8 @@ const ScopeChart: React.FC<{ animate?: boolean }> = ({ animate = true }) => {
               activeDot={{ r: 6, stroke: '#fff', strokeWidth: 2 }}
               dot={{ r: 4, stroke: '#fff', strokeWidth: 2, fill: '#428FDC' }}
               style={{ filter: "url(#shadowBlue)" }}
-              animationDuration={1500}
               connectNulls
+              isAnimationActive={false}
             />
             <Area 
               type="monotone" 
@@ -115,11 +107,20 @@ const ScopeChart: React.FC<{ animate?: boolean }> = ({ animate = true }) => {
               activeDot={{ r: 6, stroke: '#fff', strokeWidth: 2 }}
               dot={{ r: 4, stroke: '#fff', strokeWidth: 2, fill: '#F23D3D' }}
               style={{ filter: "url(#shadowRed)" }}
-              animationDuration={1500}
               connectNulls
+              isAnimationActive={false}
             />
           </AreaChart>
         </ResponsiveContainer>
+        
+        {/* Reveal Overlay Mask */}
+        <motion.div 
+          className="absolute inset-0 bg-white pointer-events-none z-20"
+          initial={{ scaleX: 1 }}
+          animate={animate ? { scaleX: 0 } : { scaleX: 1 }}
+          style={{ originX: 1 }}
+          transition={{ duration: 2.2, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
+        />
       </div>
     </div>
   );

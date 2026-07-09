@@ -24,18 +24,18 @@ export const SuccessIntelligenceSection: React.FC = () => {
           trigger: sectionRef.current,
           start: "top 80%",
           toggleActions: "play none none none",
-          onEnter: () => setStartChartAnimation(true)
+          onEnter: () => setStartChartAnimation(true),
+          onToggle: (self) => {
+            if (self.isActive) {
+              setStartChartAnimation(true);
+            }
+          }
         }
       });
 
       // Animate the opacity of the cards similar to LeadIntelligence
-      // Animate the opacity of the cards similar to LeadIntelligence
       gsap.set(".si-stat-card", { opacity: 0, y: 40, scale: 0.95 });
       tl.to(".si-stat-card", { opacity: 1, y: 0, scale: 1, duration: 1.2, stagger: 0.1, ease: "power3.out" });
-
-      // Animate the right column (ScopeChart container)
-      gsap.set(".si-right-col", { opacity: 0, x: 50 });
-      tl.to(".si-right-col", { opacity: 1, x: 0, duration: 1.2, ease: "power3.out" }, "-=1");
 
       tl.addLabel("counterStart", "-=0.8");
 
@@ -96,7 +96,6 @@ export const SuccessIntelligenceSection: React.FC = () => {
 
           {/* Right Column */}
           <div 
-            data-ns-animate="true" data-delay="0.4"
             className="si-right-col w-full lg:w-1/2 aspect-[1.5/1] bg-[#090C15] rounded-[10px] relative overflow-hidden flex flex-col justify-center items-center transition-all duration-500 group-hover:border-emerald-500/20">
             {/* Background Image */}
             <img

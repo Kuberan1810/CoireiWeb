@@ -15,7 +15,7 @@ import bg6 from "../../../../assets/images/products/bg6.jpg";
 import SalesExecutiveAnimation from "./salesExecutiveAnimation";
 
 
-import folleiLogo from "../../../../assets/images/products/folleilogo.svg";
+import folleiLogo from "../../../../assets/images/products/folleinew.svg";
 import { CustomerSuccessMockup } from "./mockups/CustomerSuccessMockup";
 import { AccountManagerMockup } from "./mockups/AccountManagerMockup";
 import {

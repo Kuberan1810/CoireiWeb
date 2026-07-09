@@ -1,4 +1,4 @@
-import  { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
 import '../footer.css';
@@ -7,7 +7,7 @@ const gsap: typeof localGsap = (window as any).gsap || localGsap;
 const ScrollTrigger: typeof localScrollTrigger = (window as any).ScrollTrigger || localScrollTrigger;
 
 if (!(window as any).gsap) {
-  localGsap.registerPlugin(ScrollTrigger);
+    localGsap.registerPlugin(ScrollTrigger);
 }
 
 const Footer = () => {
@@ -15,16 +15,16 @@ const Footer = () => {
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        
-        const ctx = gsap.context(() => {}, footerRef);
+
+        const ctx = gsap.context(() => { }, footerRef);
 
         const timeout = setTimeout(() => {
             ctx.add(() => {
                 const widgets = gsap.utils.toArray<HTMLElement>('.footer-widgets-nav');
-                
+
                 // Staggered slide-up for widgets
                 if (widgets.length > 0) {
-                    gsap.fromTo(widgets, 
+                    gsap.fromTo(widgets,
                         { y: 50, opacity: 0 },
                         {
                             scrollTrigger: {
@@ -159,7 +159,7 @@ const Footer = () => {
                                     </div>
                                 </a>
 
-                              
+
                                 <a href="/products/follei/account-manager" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Account Manager</div>
@@ -171,7 +171,7 @@ const Footer = () => {
                         <div className="footer-widgets-nav">
                             <div className="footer-title">Coirei Pages</div>
                             <div className="footer-nav">
-                                 <a href="/" aria-current="page" className="footer-text-link w-inline-block w--current">
+                                <a href="/" aria-current="page" className="footer-text-link w-inline-block w--current">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Home </div>
                                         <div className="link-text-hover white">Home</div>
@@ -190,13 +190,13 @@ const Footer = () => {
                                         <div className="link-text-hover white">Company</div>
                                     </div>
                                 </a>
-                                  <a href="/resources/privacy" className="footer-text-link w-inline-block">
+                                <a href="/resources/privacy" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Privacy</div>
                                         <div className="link-text-hover white">Privacy</div>
                                     </div>
                                 </a>
-                                  <a href="/contact" className="footer-text-link w-inline-block">
+                                <a href="/contact" className="footer-text-link w-inline-block">
                                     <div className="text-link-wrapper">
                                         <div className="link-text">Contact</div>
                                         <div className="link-text-hover white">Contact</div>

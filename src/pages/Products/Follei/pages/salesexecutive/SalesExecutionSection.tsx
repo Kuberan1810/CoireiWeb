@@ -7,7 +7,7 @@ import objectionIntelligenceImg from "../../../../../assets/images/products/obje
 import proposalGenerationImg from "../../../../../assets/images/products/proposalgeneration.svg";
 import commercialGuidanceImg from "../../../../../assets/images/products/commercialguidance.svg";
 import dealProgressionImg from "../../../../../assets/images/products/dealprogression.svg";
-import folleiLogo from "../../../../../assets/images/products/folleilogo.svg";
+import folleiLogo from "../../../../../assets/images/products/folleinew.svg";
 
 export const SalesExecutionSection: React.FC = () => {
     return (
