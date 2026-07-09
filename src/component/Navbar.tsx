@@ -204,12 +204,12 @@ function Navbar() {
 
                                     <div className={`overflow-hidden transition-all duration-300 ${servicesOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}`}>
                                         {[
-                                            { label: "AI Solutions & Integrations", to: "/services/ai-chatbot-development" },
-                                            { label: "Enterprise Applications & SaaS", to: "/services/custom-business-application-development" },
-                                            { label: "Web & Mobile Products", to: "/services/custom-web-platform-development" },
-                                            { label: "CRM & ERP Platforms", to: "/services/process-automation-system-integration" },
-                                            { label: "Business Automation Systems", to: "/services/process-automation-system-integration" },
-                                            { label: "Custom Enterprise Platforms", to: "/services" },
+                                            { label: "Web & Platform Development", to: "/services/custom-web-platform-development" },
+                                            { label: "Custom Business Applications", to: "/services/custom-business-application-development" },
+                                            { label: "AI Chatbots & Virtual Assistants", to: "/services/ai-chatbot-development" },
+                                            { label: "Process Automation & Integration", to: "/services/process-automation-system-integration" },
+                                            { label: "Data, Dashboards & BI", to: "/services/business-intelligence-dashboard-development" },
+                                            { label: "UI/UX, Branding & Design", to: "/services/ui-ux-branding-product-design" },
                                         ].map((item, index) => (
                                             <Link
                                                 key={item.label}

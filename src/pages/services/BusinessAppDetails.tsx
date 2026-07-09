@@ -166,7 +166,7 @@ const BusinessAppDetails = () => {
 
             <main className="pt-32 w-full bg-white flex flex-col items-center">
 
-                <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
+                <div className="flex flex-col items-center w-full">
 
                     {/* --- WHY COIREI FOR BUSINESS APP SECTION --- */}
                     <div ref={whyChooseScrollRef} className="w-full GlobalPadding !pt-0 md:!pt-4 flex flex-col items-center overflow-hidden">

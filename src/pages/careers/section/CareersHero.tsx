@@ -12,19 +12,19 @@ const CareersHero = () => {
             <div className="flex flex-col items-center relative max-w-[900px] mx-auto text-center mt-24">
                 
                 {/* Headline */}
-                <h1 data-ns-animate data-delay="0.1" className="font-bold text-[36px] sm:text-[44px] md:text-[52px] leading-[1.2] md:leading-[57.2px] text-[#000000] mb-8 tracking-normal">
+                <h1 data-ns-animate data-duration="0.4" data-delay="0.1" className="font-bold text-[36px] sm:text-[44px] md:text-[52px] leading-[1.2] md:leading-[57.2px] text-[#000000] mb-8 tracking-normal">
                     Build the Future of AI with Coirei <br className="hidden md:block" /> Join <span className="text-[#F67300]">Our Team</span> of Innovators
                 </h1>
                 
                 {/* Subtext */}
-                <p data-ns-animate data-delay="0.2" className="font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[1.4] md:leading-[28px] text-[#4F4F4F] mb-10 max-w-[950px]">
+                <p data-ns-animate data-duration="0.4" data-delay="0.2" className="font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[1.4] md:leading-[28px] text-[#4F4F4F] mb-10 max-w-[950px]">
                     Shape the next generation of AI-powered products, enterprise solutions, and <br />intelligent experiences. At Coirei, you'll collaborate with passionate minds, solve <br/> meaningful challenges, and create technology that makes a real impact.
                 </p>
                 
                 {/* CTA Button */}
                 <Link
                 to="/careers"
-                data-ns-animate data-delay="0.3" className="font-normal text-[18px] md:text-[22px] leading-[33px] text-white bg-[#272727] border-t border-[#000000] rounded-[8px] px-10 py-3 hover:bg-[#1a1a1a] transition-colors duration-300 shadow-md cursor-pointer">
+                data-ns-animate data-duration="0.4" data-delay="0.3" className="font-normal text-[18px] md:text-[22px] leading-[33px] text-white bg-[#272727] border-t border-[#000000] rounded-[8px] px-10 py-3 hover:bg-[#1a1a1a] transition-colors duration-300 shadow-md cursor-pointer">
                     Join Our Team
                 </Link>
 
