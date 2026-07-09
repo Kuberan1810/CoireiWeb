@@ -249,10 +249,10 @@ const UIUXDesignDetails = () => {
                     </div>
                 </section>
 
-                <div className="max-w-[1440px] mx-auto flex flex-col items-center w-full GlobalPadding">
+                <div className="flex flex-col items-center w-full">
 
                     {/* --- OUR UX/UI APPROACH --- */}
-                    <div className="flex flex-col items-center text-center w-full ">
+                    <div className="flex flex-col items-center text-center w-full GlobalPadding">
                         {/* <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-[#262626] tracking-tight">
                             Our UX/UI Approach
                         </h2>
@@ -265,7 +265,7 @@ const UIUXDesignDetails = () => {
                         </h2>
 
                         {/* HIGH-FIDELITY GRID LAYOUT */}
-                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+                        <div data-ns-animate="true" className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                             {/* Card 1: Web Design */}
                             <div className="bg-white border border-gray-200 rounded-[24px] p-8 md:p-10 hover:bg-gray-100 hover:border-gray-200 transition-all duration-300 min-h-[380px] flex flex-col justify-start text-center items-center group cursor-default">
                                 <div className="w-[72px] h-[72px] rounded-full bg-white  border border-gray-200 flex items-center justify-center mb-8 shadow-inner transition-transform duration-500 group-hover:scale-110">
@@ -308,7 +308,7 @@ const UIUXDesignDetails = () => {
 
                     {/* --- STATICS SECTION --- */}
                     <div className="w-full flex flex-col items-center GlobalPadding relative statics-section">
-                        <div className="max-w-[1440px] flex flex-col items-center w-full ">
+                        <div className="flex flex-col items-center w-full ">
                             <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-10 text-center">
                                 Statics
                             </h2>
@@ -411,9 +411,9 @@ const UIUXDesignDetails = () => {
                 </div> {/* Close Statics section wrapper */}
 
                 {/* Re-open parent max-w-1440px container for Why Choose Us */}
-                <div className="max-w-[1440px] flex flex-col items-center w-full">
+                <div className="flex flex-col items-center w-full">
                     {/* --- WHY CHOOSE US --- */}
-                    <div className="w-full flex flex-col items-center max-w-6xl">
+                    <div className="w-full flex flex-col items-center">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-6 text-center">
                             Why Choose Us?
                         </h2>
