@@ -21,7 +21,7 @@ function Careers() {
                     { name: "Careers", url: "https://coirei.com/careers" }
                 ]}
             />
-            <div className="fixed w-full top-0 z-10">
+            <div className="fixed w-full top-0 z-50">
                 <Navbar />
             </div>
             <CareersHero />

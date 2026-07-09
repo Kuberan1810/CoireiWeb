@@ -92,7 +92,7 @@ export const CustomerSuccessMockup: React.FC = () => {
                 <span className="research-counter" data-target="83">0</span><span className="text-3xl sm:text-4xl lg:text-[40px] text-gray-400 font-normal">%</span>
               </div>
               <p className="text-[9px] sm:text-[10px] lg:text-[11px] text-[#8E93A6] leading-snug pr-2">
-                Users often struggle to fully comprehend the detailed credit score analytics provided.
+                Personalized onboarding to accelerate customer success.
               </p>
             </div>
           </div>
@@ -116,7 +116,7 @@ export const CustomerSuccessMockup: React.FC = () => {
                 <span className="research-counter" data-target="58">0</span><span className="text-3xl sm:text-4xl lg:text-[40px] text-gray-400 font-normal">%</span>
               </div>
               <p className="text-[9px] sm:text-[10px] lg:text-[11px] text-[#8E93A6] leading-snug pr-2">
-                Many users requested additional guidance for tracking and improving their credit scores.
+                Drive feature adoption and maximize product value.
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@ export const CustomerSuccessMockup: React.FC = () => {
                 <span className="research-counter" data-target="47">0</span><span className="text-3xl sm:text-4xl lg:text-[40px] text-gray-400 font-normal">%</span>
               </div>
               <p className="text-[9px] sm:text-[10px] lg:text-[11px] text-[#8E93A6] leading-snug pr-2">
-                Many users requested additional guidance for tracking and improving their credit scores.
+                Monitor customer health and build lasting relationships.
               </p>
             </div>
           </div>
