@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, Animat
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
+import BusinessAppHero from "./sections/BusinessAppHero";
 import { Workflow, Smartphone, Settings, Building2 } from "lucide-react";
 import FAQSection from "../Home/sections/backup/FAQSection";
 
@@ -117,6 +118,7 @@ const AnalyticsIcon = () => (
 
 const BusinessAppDetails = () => {
     useScrollAnimations();
+    const [isHeroTypingDone, setIsHeroTypingDone] = useState(false);
 
     const containerRef = useRef<HTMLDivElement>(null);
     const [activeStep, setActiveStep] = useState(0);
@@ -134,7 +136,7 @@ const BusinessAppDetails = () => {
     const whyChooseXProgress = useTransform(whyChooseScrollY, [0.05, 0.55], [1, 0]);
 
     const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 80,
+        stiffness: 100,
         damping: 30,
         restDelta: 0.001
     });
@@ -148,31 +150,21 @@ const BusinessAppDetails = () => {
     });
 
     return (
-        <>
-            <div className="fixed w-full top-0 z-50">
+        <div className="overflow-x-clip w-full bg-white min-h-screen">
+            <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-out transform ${isHeroTypingDone ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
                 <Navbar />
             </div>
 
-            <main className="min-h-screen pt-32 pb-20 w-full bg-white  flex flex-col items-center">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center w-full">
+            <BusinessAppHero onTypingComplete={() => setIsHeroTypingDone(true)} />
 
-                    {/* --- HEADER SECTION --- */}
-                    <div className="flex flex-col items-center text-center mt-10 md:mt-16 w-full">
-                        {/* Main Title */}
-                        <h1 data-ns-animate="true" data-delay="0.1" className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight mb-8 max-w-5xl tracking-tight">
-                            <span className="text-[#F67300]">Custom Business Solutions</span> for Business Growth
-                        </h1>
+            <main className="pt-32 w-full bg-white flex flex-col items-center">
 
-                        {/* Subtitle / Description */}
-                        <p data-ns-animate="true" data-delay="0.2" className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-4xl mb-24 font-light">
-                            At Coirei, we don't just build apps; we architect the digital backbone of your business. Custom ERP, CRM, and Enterprise Portals built for scalability and performance.
-                        </p>
-                    </div>
+                <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
 
                     {/* --- WHY COIREI FOR BUSINESS APP SECTION --- */}
-                    <div ref={whyChooseScrollRef} className="w-full mb-32 flex flex-col items-center overflow-hidden">
+                    <div ref={whyChooseScrollRef} className="w-full GlobalPadding flex flex-col items-center overflow-hidden">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-16 tracking-tight leading-tight">
-                            Why <span className="text-[#F67300]">Coirei</span> for Business App?
+                            Why Coirei for Business App?
                         </h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
@@ -255,9 +247,9 @@ const BusinessAppDetails = () => {
                     </div>
 
                     {/* --- CORE BUSINESS APPS SECTION --- */}
-                    <div className="w-full mb-32 flex flex-col items-center">
+                    <div className="w-full GlobalPadding flex flex-col items-center">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-16 tracking-tight leading-tight">
-                            <span className="text-[#F67300]">Coirei Core</span> Custom Business Apps
+                            Coirei Core Custom Business Apps
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
@@ -454,11 +446,11 @@ const BusinessAppDetails = () => {
                 </div>
 
                 {/* --- WHY PARTNER WITH US SECTION --- */}
-                <div className="w-full mb-32 grid grid-cols-1 lg:grid-cols-12 gap-12 pt-16 px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto">
+                <div className="w-full GlobalPadding grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-[1920px] mx-auto">
                     {/* Left Heading */}
                     <div className="lg:col-span-4 flex flex-col justify-center">
                         <h2 data-ns-animate="true" className="text-4xl md:text-5xl lg:text-[56px] font-medium text-[#262626] tracking-tight leading-none lg:leading-[64px]">
-                            Why<br />Partner<br /><span className="text-[#F67300]">with Us</span>
+                            Why<br />Partner<br />with Us
                         </h2>
                     </div>
 
@@ -523,7 +515,7 @@ const BusinessAppDetails = () => {
                 </div>
 
                 {/* --- PROVEN IMPACT STATS SECTION --- */}
-                <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1920px] mx-auto mb-32">
+                <div className="w-full GlobalPadding max-w-[1920px] mx-auto">
                     <div className="max-w-6xl mx-auto">
                         <div className="w-full mt-8 text-center">
                             <p data-ns-animate="true" className="text-gray-900 text-2xl md:text-3xl font-light tracking-wide">
@@ -557,7 +549,7 @@ const BusinessAppDetails = () => {
 
             <FAQSection />
             <Footer />
-        </>
+        </div>
     );
 };
 
