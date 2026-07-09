@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
-import folleiLogo from "../../../../../../assets/images/products/folleilogo.svg";
+import folleiLogo from "../../../../../../assets/images/products/folleinew.svg";
 import bg5 from "../../../../../../assets/images/products/bg5.jpg";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";

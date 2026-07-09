@@ -8,7 +8,7 @@ import learnimproveImg from "../../../../assets/images/products/learn&improve.sv
 import layer1Img from "../../../../assets/images/homepage/layer1.svg";
 import layer2Img from "../../../../assets/images/homepage/layer2.svg";
 import layer3Img from "../../../../assets/images/homepage/layer3.svg";
-import folleilogoImg from "../../../../assets/images/products/folleilogo.svg";
+import folleilogoImg from "../../../../assets/images/products/folleinew.svg";
 import useScrollReveal from "../../../../hooks/useScrollReveal";
 
 import sdrworkerImg from "../../../../assets/images/products/sdrworker.svg";

@@ -11,8 +11,8 @@ const AnimatedSupportGraphic: React.FC = () => {
 
     const pfpNodes = [
         { id: 1, x: 109, y: 172, img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces', ring: '#5B5FD9', side: 'left' as const },
-        { id: 2, x: 205, y: 96,  img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=faces', ring: '#F4BCAE', side: 'left' as const },
-        { id: 3, x: 301, y: 96,  img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=faces', ring: '#5B5FD9', side: 'right' as const },
+        { id: 2, x: 205, y: 96, img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=faces', ring: '#F4BCAE', side: 'left' as const },
+        { id: 3, x: 301, y: 96, img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=faces', ring: '#5B5FD9', side: 'right' as const },
         { id: 4, x: 398, y: 172, img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=faces', ring: '#0A0E29', side: 'right' as const },
     ];
 
