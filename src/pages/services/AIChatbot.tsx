@@ -334,7 +334,7 @@ const AIChatbot = () => {
                             Why Choose Coirei AI Chatbot for Your Business
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl mx-auto px-4 md:px-0">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-4 md:px-0">
                             {/* Card 1 */}
                             <div data-ns-animate="true" data-delay="0.1" className="flex flex-col items-center text-center bg-gray-50 border border-gray-200 rounded-[20px] p-10 hover:bg-gray-100 hover:border-gray-300 transition-all duration-300 min-h-[580px] justify-between group">
                                 <div className="w-[250px] h-[250px] flex items-center justify-center text-gray-500 group-hover:text-gray-900 transition-colors duration-300">

@@ -178,7 +178,7 @@ const WebPlatformDetails = () => {
 
 
                 {/* --- SERVICE OFFERINGS SECTION --- */}
-                <div ref={offeringsScrollRef} className="w-full GlobalPadding max-w-7xl mx-auto flex flex-col items-center">
+                <div ref={offeringsScrollRef} className="w-full GlobalPadding flex flex-col items-center">
                     <h2 data-ns-animate="true" className="text-3xl md:text-5xl lg:text-[56px] font-medium text-[#262626] text-center mb-6 tracking-tight leading-tight">
                         Coirei Core Service Offerings
                     </h2>

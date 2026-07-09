@@ -52,12 +52,12 @@ const TypewriterText = ({ text, onComplete }: { text: string, onComplete?: () =>
 const BuildWithCoirei = () => {
   const [isTypingDone, setIsTypingDone] = useState(false);
   const services = [
-    { name: "AI Solutions & Integrations", path: "/services/ai-chatbot-development" },
-    { name: "Enterprise Applications & SaaS", path: "/services/custom-business-application-development" },
-    { name: "Web & Mobile Products", path: "/services/custom-web-platform-development" },
-    { name: "CRM & ERP Platforms", path: "/services/process-automation-system-integration" },
-    { name: "Business Automation Systems", path: "/services/process-automation-system-integration" },
-    { name: "Custom Enterprise Platforms", path: "/services" }
+    { name: "Web & Platform Development", path: "/services/custom-web-platform-development" },
+    { name: "Custom Business Applications", path: "/services/custom-business-application-development" },
+    { name: "AI Chatbots & Virtual Assistants", path: "/services/ai-chatbot-development" },
+    { name: "Process Automation & Integration", path: "/services/process-automation-system-integration" },
+    { name: "Data, Dashboards & BI", path: "/services/business-intelligence-dashboard-development" },
+    { name: "UI/UX, Branding & Design", path: "/services/ui-ux-branding-product-design" }
   ];
 
   return (

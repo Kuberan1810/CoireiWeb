@@ -18,17 +18,17 @@ const CareersCTA = () => {
 
             {/* Content Container */}
             <div className="relative z-10 flex flex-col items-center text-center max-w-[800px] mx-auto">
-                <h2 data-ns-animate data-delay="0.1" className="font-medium text-[42px] md:text-[52px] leading-[1.2] text-[#000000] mb-4">
+                <h2 data-ns-animate data-duration="0.4" data-delay="0.1" className="font-medium text-[42px] md:text-[52px] leading-[1.2] text-[#000000] mb-4">
                     Lets <span className="text-[#F67300]">Talk</span> Together
                 </h2>
                 
-                <p data-ns-animate data-delay="0.2" className="font-normal text-[16px] md:text-[18px] leading-[29.25px] text-[#4F4F4F] mb-10">
+                <p data-ns-animate data-duration="0.4" data-delay="0.2" className="font-normal text-[16px] md:text-[18px] leading-[29.25px] text-[#4F4F4F] mb-10">
                     Join thousands writing faster and better with us.
                 </p>
 
                 <Link 
                     to={"/contact"}
-                    data-ns-animate data-delay="0.3"
+                    data-ns-animate data-duration="0.4" data-delay="0.3"
                     className="bg-[#272727] text-white font-normal text-[20px] md:text-[22px] leading-[33px] px-10 py-3 rounded-[8px] hover:bg-[#1a1a1a] transition-colors duration-300 shadow-lg"
                     style={{ borderTop: "1px solid #000000" }}
                 >

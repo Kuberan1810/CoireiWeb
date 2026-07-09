@@ -28,7 +28,7 @@ const CareersRoles = () => {
         <section id="roles" className="w-full GlobalPadding bg-[#FFFFFF]">
             
             {/* Top Divider & Pill */}
-            <div data-ns-animate className="w-full max-w-[1400px] mx-auto flex items-center justify-center gap-6 mb-24">
+            <div data-ns-animate data-duration="0.4" className="w-full max-w-[1400px] mx-auto flex items-center justify-center gap-6 mb-24">
                 {/* Left Line */}
                 <div 
                     className="flex-grow h-[1px]" 
@@ -62,7 +62,7 @@ const CareersRoles = () => {
                 {roles.map((role, index) => (
                     <div 
                         key={index}
-                        data-ns-animate
+                        data-ns-animate data-duration="0.4"
                         data-delay={0.1 * index}
                         className="bg-[#F3F4F7] rounded-[16px] p-6 sm:p-8 flex flex-col w-full relative"
                         style={{ border: "0.5px solid #93939320" }}
