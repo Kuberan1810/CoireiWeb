@@ -440,7 +440,7 @@ const AIChatbot = () => {
                             </p>
                             <button
                                 onClick={() => navigate("/contactsales")}
-                                className="text-[#252525] py-2.5 px-6 bg-[#FAF9F6] rounded-md font-semibold border border-transparent hover:bg-[#F67300] hover:text-gray-900 hover:border-[#F67300] transition-all duration-500 ease-out cursor-pointer text-xs sm:text-sm w-fit"
+                                className="text-white py-2.5 px-6 bg-[#F67300] rounded-md font-semibold border border-[#F67300] hover:bg-white hover:text-[#F67300] transition-all duration-500 ease-out cursor-pointer text-xs sm:text-sm w-fit"
                             >
                                 Book a Consultation
                             </button>

@@ -4,6 +4,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
+import FAQSection from "../Home/sections/backup/FAQSection";
 import {
     Globe,
     Layers,
@@ -190,7 +191,7 @@ const WebPlatformDetails = () => {
                     <div className="flex flex-col md:flex-row gap-6 w-full h-auto md:h-[420px] items-stretch mt-4">
                         {offerings.map((card, index) => {
                             return (
-                                <OfferingCard key={index} index={index} card={card} offeringsXProgress={offeringsXProgress} />
+                                <OfferingCard key={index} index={index} card={card} offeringsXProgress={offeringsXProgress} isDesktop={isDesktop} />
                             );
                         })}
                     </div>
@@ -571,6 +572,7 @@ const WebPlatformDetails = () => {
 
 
 
+            <FAQSection />
             <Footer />
         </div>
     );
@@ -578,13 +580,18 @@ const WebPlatformDetails = () => {
 
 export default WebPlatformDetails;
 
-const OfferingCard = ({ index, card, offeringsXProgress }: { index: number, card: any, offeringsXProgress: any }) => {
+const OfferingCard = ({ index, card, offeringsXProgress, isDesktop }: { index: number, card: any, offeringsXProgress: any, isDesktop: boolean }) => {
     const Icon = card.icon;
     return (
         <motion.div
+            {...(!isDesktop ? {
+                "data-ns-animate": "true",
+                "data-direction": "up",
+                "data-delay": index * 0.1
+            } : {})}
             className="relative flex flex-col justify-between p-8 rounded-[20px] border border-gray-200 bg-gray-50 transition-all duration-500 overflow-hidden h-[320px] md:h-full w-full md:w-auto md:flex-1"
             style={{
-                x: useTransform(offeringsXProgress, (v: any) => `${v * index * -72}%`),
+                x: useTransform(offeringsXProgress, (v: any) => isDesktop ? `${v * index * -72}%` : `0%`),
                 borderColor: "rgba(0, 0, 0, 0.1)",
                 zIndex: index
             }}

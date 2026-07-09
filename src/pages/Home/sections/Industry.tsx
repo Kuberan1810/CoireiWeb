@@ -64,7 +64,7 @@ const Industry = () => {
           data-ns-animate="true"
           data-delay="0.1"
           data-offset="50"
-          className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] font-semibold tracking-tight text-white leading-[1.2] min-h-[90px] sm:min-h-[144px]"
+          className="text-center text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] font-semibold tracking-tight text-white leading-[1.2] min-h-[90px] sm:min-h-[144px]"
         >
           <TypewriterHeading text="Intelligent systems adapted to your industry's own workflow." />
         </h2>

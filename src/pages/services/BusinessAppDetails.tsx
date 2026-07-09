@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, AnimatePresence, useInView } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
@@ -119,6 +119,13 @@ const AnalyticsIcon = () => (
 const BusinessAppDetails = () => {
     useScrollAnimations();
     const [isHeroTypingDone, setIsHeroTypingDone] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+
+    useEffect(() => {
+        const checkIsDesktop = () => setIsDesktop(window.innerWidth >= 1024);
+        window.addEventListener("resize", checkIsDesktop);
+        return () => window.removeEventListener("resize", checkIsDesktop);
+    }, []);
 
     const containerRef = useRef<HTMLDivElement>(null);
     const [activeStep, setActiveStep] = useState(0);
@@ -162,7 +169,7 @@ const BusinessAppDetails = () => {
                 <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
 
                     {/* --- WHY COIREI FOR BUSINESS APP SECTION --- */}
-                    <div ref={whyChooseScrollRef} className="w-full GlobalPadding flex flex-col items-center overflow-hidden">
+                    <div ref={whyChooseScrollRef} className="w-full GlobalPadding !pt-0 md:!pt-4 flex flex-col items-center overflow-hidden">
                         <h2 data-ns-animate="true" className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#262626] text-center mb-16 tracking-tight leading-tight">
                             Why Coirei for Business App?
                         </h2>
@@ -170,9 +177,10 @@ const BusinessAppDetails = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                             {/* Card 1 */}
                             <motion.div
+                                {...(!isDesktop ? { "data-ns-animate": "true", "data-direction": "up", "data-delay": 0 } : {})}
                                 className="flex flex-col items-center text-center bg-gray-50 border border-gray-200 rounded-[20px] p-10 hover:bg-gray-100 hover:border-gray-300 transition-all duration-300 min-h-[380px] group cursor-default"
                                 style={{
-                                    x: useTransform(whyChooseXProgress, (v) => `${v * 0 * -72}%`),
+                                    x: useTransform(whyChooseXProgress, (v) => isDesktop ? `${v * 0 * -72}%` : `0%`),
                                     zIndex: 0
                                 }}
                             >
@@ -189,9 +197,10 @@ const BusinessAppDetails = () => {
 
                             {/* Card 2 */}
                             <motion.div
+                                {...(!isDesktop ? { "data-ns-animate": "true", "data-direction": "up", "data-delay": 0.1 } : {})}
                                 className="flex flex-col items-center text-center bg-gray-50 border border-gray-200 rounded-[20px] p-10 hover:bg-gray-100 hover:border-gray-300 transition-all duration-300 min-h-[380px] group cursor-default"
                                 style={{
-                                    x: useTransform(whyChooseXProgress, (v) => `${v * 1 * -72}%`),
+                                    x: useTransform(whyChooseXProgress, (v) => isDesktop ? `${v * 1 * -72}%` : `0%`),
                                     zIndex: 1
                                 }}
                             >
@@ -208,9 +217,10 @@ const BusinessAppDetails = () => {
 
                             {/* Card 3 */}
                             <motion.div
+                                {...(!isDesktop ? { "data-ns-animate": "true", "data-direction": "up", "data-delay": 0.2 } : {})}
                                 className="flex flex-col items-center text-center bg-gray-50 border border-gray-200 rounded-[20px] p-10 hover:bg-gray-100 hover:border-gray-300 transition-all duration-300 min-h-[380px] group cursor-default"
                                 style={{
-                                    x: useTransform(whyChooseXProgress, (v) => `${v * 2 * -72}%`),
+                                    x: useTransform(whyChooseXProgress, (v) => isDesktop ? `${v * 2 * -72}%` : `0%`),
                                     zIndex: 2
                                 }}
                             >
@@ -227,9 +237,10 @@ const BusinessAppDetails = () => {
 
                             {/* Card 4 */}
                             <motion.div
+                                {...(!isDesktop ? { "data-ns-animate": "true", "data-direction": "up", "data-delay": 0.3 } : {})}
                                 className="flex flex-col items-center text-center bg-gray-50 border border-gray-200 rounded-[20px] p-10 hover:bg-gray-100 hover:border-gray-300 transition-all duration-300 min-h-[380px] group cursor-default"
                                 style={{
-                                    x: useTransform(whyChooseXProgress, (v) => `${v * 3 * -72}%`),
+                                    x: useTransform(whyChooseXProgress, (v) => isDesktop ? `${v * 3 * -72}%` : `0%`),
                                     zIndex: 3
                                 }}
                             >
