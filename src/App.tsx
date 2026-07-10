@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound/NotFound";
 // Features pages
 import Features from "./pages/Features/Features";
 import Careers from "./pages/careers/Careers";
+import CareersApply from "./pages/careers/CareersApply";
 import Privacy from "./pages/Resources/Privacy/Privacy";
 import Company from "./pages/Resources/Company/Company";
 import Services from "./pages/services/Services";
@@ -82,32 +83,32 @@ function App() {
   const rafIdRef = useRef<number | null>(null);
 
   useEffect(() => {
-  const lenis = new Lenis({
-    duration: 1.4,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
-    orientation: "vertical",
-    gestureOrientation: "vertical",
-    smoothWheel: true,
-    wheelMultiplier: 1.0,
-    touchMultiplier: 1.5,
-  });
+    const lenis = new Lenis({
+      duration: 1.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
+    });
 
-  window.lenis = lenis;
+    window.lenis = lenis;
 
-  function raf(time: number) {
-    lenis.raf(time);
-    rafIdRef.current = requestAnimationFrame(raf);
-  }
-  rafIdRef.current = requestAnimationFrame(raf);
-
-  return () => {
-    if (rafIdRef.current !== null) {
-      cancelAnimationFrame(rafIdRef.current);
+    function raf(time: number) {
+      lenis.raf(time);
+      rafIdRef.current = requestAnimationFrame(raf);
     }
-    lenis.destroy();
-    window.lenis = undefined;
-  };
-}, []);
+    rafIdRef.current = requestAnimationFrame(raf);
+
+    return () => {
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current);
+      }
+      lenis.destroy();
+      window.lenis = undefined;
+    };
+  }, []);
 
   return (
     <>
@@ -119,6 +120,7 @@ function App() {
         {/* MAIN PAGES */}
         <Route path="/" element={<Home />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/apply" element={<CareersApply />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/custom-business-application-development" element={<BusinessAppDetails />} />
