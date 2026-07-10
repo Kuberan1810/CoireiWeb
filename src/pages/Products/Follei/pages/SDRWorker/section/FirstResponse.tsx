@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import overlay1Img from '../../../../../../assets/images/products/overlay1.svg';
+import overlay1Img from '../../../../../../assets/images/products/firstresponse replaced.svg';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
