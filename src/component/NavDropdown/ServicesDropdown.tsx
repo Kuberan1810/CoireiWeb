@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { useState, useRef } from "react";
 
 export default function ServicesDropdown({ isLight = false }: { isLight?: boolean }) {
     const [isOpen, setIsOpen] = useState(false);
     const timeoutId = useRef<number | null>(null);
+    const location = useLocation();
+    const isFollei = location.pathname.startsWith("/products/follei");
 
     const handleMouseEnter = () => {
         if (timeoutId.current) {
@@ -28,11 +30,10 @@ export default function ServicesDropdown({ isLight = false }: { isLight?: boolea
         >
             {/* Trigger */}
             <div
-                className={`flex items-center gap-1 cursor-pointer transition-all duration-300 ${
-                    isLight 
-                        ? 'text-[#04032E]/80 hover:text-[#04032E] hover:bg-white/50 hover:shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] border border-transparent hover:border-white/60 px-3.5 py-2 rounded-xl' 
-                        : 'hover:bg-[#7B7B7B20] text-inherit p-2.5 rounded'
-                }`}
+                className={`flex items-center gap-1 cursor-pointer transition-all duration-300 ${isLight
+                    ? `text-[#04032E]/80 ${isFollei ? 'hover:text-[#1079B7]' : 'hover:text-[#F48120]'} hover:bg-white/50 hover:shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] border border-transparent hover:border-white/60 px-3.5 py-2 rounded-xl`
+                    : 'hover:bg-[#7B7B7B20] text-inherit p-2.5 rounded'
+                    }`}
             >
                 <span className="font-medium leading-none">Services</span>
                 <ChevronRight
@@ -49,8 +50,8 @@ export default function ServicesDropdown({ isLight = false }: { isLight?: boolea
                     absolute left-1/2 -translate-x-1/2 top-full mt-5 w-[340px]
                     
                     backdrop-blur-3xl backdrop-saturate-150
-                    ${isLight 
-                        ? 'bg-white/95 border border-black/5 shadow-[0_24px_48px_-12px_rgba(16,121,183,0.15)]' 
+                    ${isLight
+                        ? 'bg-white/95 border border-black/5 shadow-[0_24px_48px_-12px_rgba(16,121,183,0.15)]'
                         : 'bg-linear-to-br from-[#292929]/95 via-[#292929]/90 to-[#292929]/85 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]'
                     }
                     
@@ -76,7 +77,7 @@ export default function ServicesDropdown({ isLight = false }: { isLight?: boolea
                     ` : ''}
                 `}
                 style={{
-                    boxShadow: isOpen 
+                    boxShadow: isOpen
                         ? (isLight
                             ? `0 24px 48px -12px rgba(16, 121, 183, 0.15), 0 0 1px 0 rgba(0, 0, 0, 0.1)`
                             : `0 8px 32px 0 rgba(0, 0, 0, 0.4), 0 2px 8px 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)`)
@@ -110,8 +111,8 @@ export default function ServicesDropdown({ isLight = false }: { isLight?: boolea
                                     group relative flex items-center justify-between
                                     px-4 py-3 mx-2 rounded-lg
                                     text-[15px] font-medium transition-all duration-300 overflow-hidden
-                                    ${isLight 
-                                        ? 'text-[#0A0E29] hover:text-[#1079B7] hover:bg-[#1079B7]/5' 
+                                    ${isLight
+                                        ? `text-[#0A0E29] ${isFollei ? 'hover:text-[#1079B7] hover:bg-[#1079B7]/5' : 'hover:text-[#F48120] hover:bg-[#F48120]/5'}`
                                         : 'text-white/90 hover:bg-white/10 hover:backdrop-blur-xl hover:shadow-lg'
                                     }
                                 `}
@@ -121,8 +122,8 @@ export default function ServicesDropdown({ isLight = false }: { isLight?: boolea
                                         absolute inset-0
                                         opacity-0 group-hover:opacity-100
                                         transition-opacity duration-300
-                                        ${isLight 
-                                            ? 'bg-transparent' 
+                                        ${isLight
+                                            ? 'bg-transparent'
                                             : 'bg-linear-to-r from-white/5 via-white/8 to-white/5'
                                         }
                                     `}
@@ -138,7 +139,7 @@ export default function ServicesDropdown({ isLight = false }: { isLight?: boolea
                                         transition-all duration-300
                                         group-hover:opacity-100
                                         group-hover:translate-x-1
-                                        ${isLight ? 'text-[#1079B7]' : 'text-white'}
+                                        ${isLight ? (isFollei ? 'text-[#1079B7]' : 'text-[#F48120]') : 'text-white'}
                                     `}
                                 />
                             </Link>

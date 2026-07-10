@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Brain, BookOpen, FileText, Heart, Users, Cpu } from "lucide-react";
 
 // Image Imports from assets/images/products
-import businessintelligenceImg from "../../../../assets/images/products/businessintelligence.svg";
+import businessintelligenceImg from "../../../../assets/images/products/businessintelligence replaced.svg";
 import knowledgesystemImg from "../../../../assets/images/products/knowledge system.svg";
 import revenueintelligenceImg from "../../../../assets/images/products/revenueintelligence.svg";
 import customerintelligenceImg from "../../../../assets/images/products/customerintelligence.svg";
-import aiworkforceImg from "../../../../assets/images/products/aiworkforce.svg";
-import learningengineImg from "../../../../assets/images/products/learningengine2.svg";
+import aiworkforceImg from "../../../../assets/images/products/aiworkforcereplaced.svg";
+import learningengineImg from "../../../../assets/images/products/learningengine replaced.svg";
 
 interface CardData {
   id: number;

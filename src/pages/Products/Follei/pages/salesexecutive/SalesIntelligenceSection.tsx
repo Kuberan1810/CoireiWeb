@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Target, DollarSign, Puzzle, Bot } from "lucide-react";
 
-import productIntelligenceImg from "../../../../../assets/images/products/productintelligence.svg";
+import productIntelligenceImg from "../../../../../assets/images/products/productintelligence copy.svg";
 import smartRecommendationImg from "../../../../../assets/images/products/smartrecommendation.svg";
 import proposalIntelligenceImg from "../../../../../assets/images/products/proposalntelligence.svg";
 import dealContextImg from "../../../../../assets/images/products/dealcontext.svg";

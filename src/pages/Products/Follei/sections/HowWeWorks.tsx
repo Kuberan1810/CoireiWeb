@@ -1,6 +1,6 @@
 import React from "react";
 
-import layer1Img from "../../../../assets/images/homepage/layer1.svg";
+import layer1Img from "../../../../assets/images/products/toplayerwithlogo.svg";
 import layer2Img from "../../../../assets/images/homepage/layer2.svg";
 import layer3Img from "../../../../assets/images/homepage/layer3.svg";
 import folleilogoImg from "../../../../assets/images/products/folleinew.svg";
@@ -102,9 +102,6 @@ export const HowWeWorks: React.FC = () => {
                                 </div>
                                 <div className="absolute w-[80%] flex justify-center z-20 transition-transform duration-[1500ms] delay-[200ms] ease-in-out" style={{ transform: isVisible ? "translateY(-20px)" : "translateY(-45px)" }}>
                                     <img src={layer1Img} alt="Layer 3" className="max-h-[160px] object-contain animate-float-3" />
-                                </div>
-                                <div className="absolute w-[20%] flex justify-center z-30 transition-transform duration-[1500ms] delay-[200ms] ease-in-out" style={{ transform: isVisible ? "translateY(-29px)" : "translateY(-70px)" }}>
-                                    <img src={folleilogoImg} alt="Follei Logo" className="max-h-[60px] object-contain animate-float-logo" />
                                 </div>
                             </div>
                         </div>

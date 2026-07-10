@@ -8,7 +8,7 @@ import whatsappIcon from '../../../..//assets/images/products/integration/whatsa
 import documentIcon from '../../../..//assets/images/products/integration/document.png';
 import filesIcon from '../../../..//assets/images/products/integration/files.png';
 import recordIcon from '../../../..//assets/images/products/integration/record.png';
-import folleiIcon from '../../../..//assets/images/products/integration/follei.png';
+import folleiIcon from '../../../..//assets/images/products/folleinew.svg';
 import robot2Icon from '../../../..//assets/images/products/integration/robot-2.png';
 import callOutIcon from '../../../..//assets/images/products/integration/call-out.png';
 import httpsIcon from '../../../..//assets/images/products/integration/https.png';

@@ -5,20 +5,19 @@ import localGsap from "gsap";
 import localScrollTrigger from "gsap/ScrollTrigger";
 // import bgImage from "../../../../assets/images/products/bg.png";
 
-import ai4 from "../../../../assets/images/products/ai4.png";
 import bg1 from "../../../../assets/images/products/bg1.png";
 import bg2 from "../../../../assets/images/products/bg2.jpg";
 import bg3 from "../../../../assets/images/products/bg3.jpg";
 import bg4 from "../../../../assets/images/products/bg4.jpg";
 
 import bg5 from "../../../../assets/images/products/bg5.jpg";
-import bg6 from "../../../../assets/images/products/bg6.jpg";
 import SalesExecutiveAnimation from "./salesExecutiveAnimation" ;
 
 
 import folleiLogo from "../../../../assets/images/products/folleinew.svg";
 import { CustomerSuccessMockup } from "./mockups/CustomerSuccessMockup";
 import { AccountManagerMockup } from "./mockups/AccountManagerMockup";
+import AnimatedSupportGraphic from "../pages/Support Worker/AnimatedSupportGraphic";
 import {
   ChevronRight,
   Search,
@@ -45,7 +44,7 @@ interface AgentCard {
   mockupTitle: string;
   mockupBg: string;
   mockup: React.ReactNode;
-  bgImage: string;
+  bgImage?: string;
   link: string;
 }
 
@@ -150,22 +149,66 @@ const CollectionsWorkerMockup: React.FC = () => {
 
   return (
     <div className="w-full h-full flex items-center justify-center scale-[0.55] sm:scale-[0.7] md:scale-90 lg:scale-100 origin-center">
+      <style>{`
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+        .cursor-blink {
+          animation: blink 0.8s infinite;
+        }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        .animate-shimmer {
+          background: linear-gradient(90deg, rgba(215,234,161,0.5) 25%, rgba(235,245,200,0.8) 50%, rgba(215,234,161,0.5) 75%);
+          background-size: 200% 100%;
+          animation: shimmer 1.2s infinite linear;
+        }
+        .animate-shimmer-blue {
+          background: linear-gradient(90deg, rgba(189,224,255,0.6) 25%, rgba(235,245,255,0.9) 50%, rgba(189,224,255,0.6) 75%);
+          background-size: 200% 100%;
+          animation: shimmer 1.2s infinite linear;
+        }
+        @keyframes flowRight {
+          0% { left: 0%; opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { left: 100%; opacity: 0; }
+        }
+        .animate-flow-right {
+          animation: flowRight 1.5s ease-in-out infinite;
+        }
+        @keyframes dash {
+          to {
+            stroke-dashoffset: -40;
+          }
+        }
+        .animate-dash {
+          stroke-dasharray: 8, 12;
+          animation: dash 1s linear infinite;
+        }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
       <div className="bg-white h-full w-full rounded-[16px] shadow-[0_0_10px_rgba(160,160,160,0.2)] border border-slate-200/50 flex items-center justify-between px-3 sm:px-6 relative overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
-
         {/* Left Card */}
-        <div className="w-[110px] sm:w-[135px] h-[60px] sm:h-[68px] flex-shrink-0 rounded-[4px] border-[1.5px] border-[#BDE0FF] bg-white flex flex-col justify-center gap-1.5 p-2 sm:p-2.5 relative z-10 shadow-sm">
-          <div className="flex items-center gap-1.5 mb-0.5">
-            <div className="w-0.5 h-3 bg-[#3B82F6]"></div>
-            <span className="text-[7px] sm:text-[9px] text-[#3B82F6] font-medium tracking-wide flex items-center">
+        <div className="w-[80px] sm:w-[135px] h-[50px] sm:h-[68px] flex-shrink-0 rounded-[4px] border-[1.5px] border-[#BDE0FF] bg-white flex flex-col justify-center gap-1.5 p-1.5 sm:p-2.5 relative z-10 shadow-sm">
+          <div className="flex items-center gap-1 sm:gap-1.5 mb-0.5">
+            <div className="w-0.5 h-2 sm:h-3 bg-[#3B82F6]"></div>
+            <span className="text-[6px] sm:text-[9px] text-[#3B82F6] font-medium tracking-wide flex items-center">
               {typedText || "Type here ......"}
               {(phase === "idle" || phase === "typing") && (
                 <span className="inline-block w-[1.5px] h-[8px] bg-[#3B82F6] ml-0.5 cursor-blink">|</span>
               )}
             </span>
           </div>
-          <div className={`w-[95%] h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
-          <div className={`w-[95%] h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
-          <div className={`w-[85%] h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
+          <div className={`w-[95%] h-[1.5px] sm:h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
+          <div className={`w-[95%] h-[1.5px] sm:h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
+          <div className={`w-[85%] h-[1.5px] sm:h-[2.5px] rounded-full ${(phase === "sending" || phase === "processing") ? "animate-shimmer-blue" : "bg-[#BDE0FF]"}`}></div>
         </div>
 
         {/* Connector 1 */}
@@ -175,33 +218,31 @@ const CollectionsWorkerMockup: React.FC = () => {
               <div className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-[#3B82F6] shadow-[0_0_8px_#3B82F6] animate-flow-right" />
             )}
           </div>
-          <div className="w-[16px] h-full bg-gradient-to-r from-[#E2E8F0] to-[#3B82F6]"></div>
+          <div className="w-[8px] sm:w-[16px] h-full bg-gradient-to-r from-[#E2E8F0] to-[#3B82F6]"></div>
         </div>
 
         {/* Center Circle */}
-        <div className="w-[72px] h-[72px] sm:w-[88px] sm:h-[88px] flex-shrink-0 rounded-full bg-white flex items-center justify-center relative z-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E2E8F0]">
+        <div className="w-[50px] h-[50px] sm:w-[88px] sm:h-[88px] flex-shrink-0 rounded-full bg-white flex items-center justify-center relative z-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E2E8F0]">
+          {/* Spinning Gradient Background */}
           <div
-            className="absolute w-[80%] h-[80%] flex items-start justify-center"
+            className={`absolute w-full h-full rounded-full ${
+              (phase === "processing" || phase === "sending" || phase === "revealed") 
+                ? 'animate-[spin_1s_linear_infinite]' 
+                : 'animate-[spin_3s_linear_infinite]'
+            }`}
             style={{
-              transform: 'rotate(-146.51deg)',
-              animation: (phase === "processing" || phase === "sending" || phase === "revealed")
-                ? 'spin-slow 6s linear infinite'
-                : 'spin-slow 20s linear infinite'
+              background: 'conic-gradient(from 0deg, transparent 0%, rgba(120, 169, 255, 0.2) 40%, rgba(59, 130, 246, 0.8) 100%)'
             }}
-          >
-            <div
-              className="w-full h-1/2 rounded-t-full bg-gradient-to-b from-[#78A9FF] to-[#B1CBFF]"
-            />
-          </div>
+          />
 
           {/* Inner Logo */}
-          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#1A56DB] to-[#0D389F] flex items-center justify-center relative z-10">
-            <img src={folleiLogo} alt="Follei Logo" className="w-7 h-7 object-contain" />
+          <div className="w-6 h-6 sm:w-[46px] sm:h-[46px] rounded-full bg-white flex items-center justify-center relative z-10 shadow-sm">
+            <img src={folleiLogo} alt="Follei Logo" className="w-3.5 h-3.5 sm:w-7 sm:h-7 object-contain" />
           </div>
         </div>
 
-        {/* Connector 2 */}
-        <div className="flex-1 h-[80px] sm:h-[100px] relative z-0 -mx-1 flex items-center">
+        {/* Connector 2  */}
+        <div className="flex-1 h-[40px] sm:h-[100px] relative z-0 -mx-1 flex items-center">
           <svg className="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
             <defs>
               <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
@@ -211,8 +252,20 @@ const CollectionsWorkerMockup: React.FC = () => {
                 <stop offset="100%" stopColor="#3B82F6" />
               </linearGradient>
             </defs>
-            <path d="M 0 50 L 100 15" stroke="url(#lineGrad)" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
-            <path d="M 0 50 L 100 85" stroke="url(#lineGrad)" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" />
+            <path
+              d="M 0 50 L 100 15"
+              stroke="url(#lineGrad)"
+              strokeWidth="2"
+              fill="none"
+              vectorEffect="non-scaling-stroke"
+            />
+            <path
+              d="M 0 50 L 100 85"
+              stroke="url(#lineGrad)"
+              strokeWidth="2"
+              fill="none"
+              vectorEffect="non-scaling-stroke"
+            />
 
             {/* Flowing Dot 1 */}
             {phase === "processing" && (
@@ -234,19 +287,19 @@ const CollectionsWorkerMockup: React.FC = () => {
           </svg>
         </div>
 
-        {/* Right Card*/}
-        <div className="w-[90px] sm:w-[110px] h-[90px] sm:h-[110px] flex-shrink-0 rounded-[8px] bg-[#EBF5C8] flex flex-col overflow-hidden relative z-10 shadow-sm border-[1.5px] border-[#B3D465]">
+        {/* Right Card */}
+        <div className="w-[65px] sm:w-[110px] h-[65px] sm:h-[110px] flex-shrink-0 rounded-[8px] bg-[#EBF5C8] flex flex-col overflow-hidden relative z-10 shadow-sm border-[1.5px] border-[#B3D465]">
           {/* Card Header */}
-          <div className="h-[28%] bg-[#B3D465] flex items-center px-2.5 gap-1.5">
+          <div className="h-[28%] bg-[#B3D465] flex items-center px-1.5 sm:px-2.5 gap-1 sm:gap-1.5">
             {phase === "revealed" ? (
               <div className="w-2.5 h-2.5 sm:w-4 sm:h-4 rounded-full bg-emerald-600 flex items-center justify-center text-[5px] sm:text-[8px] text-white font-bold">✓</div>
             ) : (
               <div className="w-2.5 h-2.5 sm:w-4 sm:h-4 rounded-full bg-white/80"></div>
             )}
-            <div className="w-8 h-1.5 rounded-full bg-white/80"></div>
+            <div className="w-5 sm:w-8 h-1 sm:h-1.5 rounded-full bg-white/80"></div>
           </div>
           {/* Card Body */}
-          <div className="flex-1 p-2 sm:p-2.5 flex flex-col gap-1 sm:gap-1.5 justify-center">
+          <div className="flex-1 p-1.5 sm:p-2 flex flex-col gap-1 sm:gap-1.5 justify-center">
             {phase === "revealed" ? (
               <div className="w-full h-full flex flex-col justify-center items-start text-left gap-0.5 sm:gap-1 text-[#4D7C0F]">
                 <span className="text-[5px] sm:text-[9px] font-bold leading-tight">Reminder Sent!</span>
@@ -269,7 +322,6 @@ const CollectionsWorkerMockup: React.FC = () => {
         </div>
 
       </div>
-
     </div>
   );
 };
@@ -407,9 +459,12 @@ const agents: AgentCard[] = [
     hoverBorder: "group-hover:border-indigo-500/20",
     mockupTitle: "support-routing-core",
     mockupBg: "bg-white",
-    bgImage: bg6,
     link: "/products/follei/support-worker",
-    mockup: <img src={ai4} className="w-full h-full object-cover rounded-[20px] drop-shadow-2xl" alt="Support dashboard" />
+    mockup: (
+      <div className="w-full h-full bg-white rounded-[20px] overflow-hidden flex items-center justify-center shadow-inner relative border border-slate-100">
+        <AnimatedSupportGraphic />
+      </div>
+    )
   },
   {
     id: "operations",
@@ -654,14 +709,16 @@ export const AIWorkforce: React.FC = () => {
                 </button>
 
               </div>
-              <div className={`solution-image-wrapper w-full lg:w-1/2 aspect-[1.4/1] bg-[#090C15] rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-colors duration-500 ${agent.hoverBorder}`}>
-                <img
-                  src={agent.bgImage}
-                  loading="lazy"
-                  alt=""
-                  className="image-cover absolute inset-0 w-full h-full object-cover opacity-30"
-                />
-                <div className="solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center p-6">
+              <div className={`solution-image-wrapper w-full lg:w-1/2 aspect-[1.4/1] ${agent.bgImage ? 'bg-[#090C15]' : 'bg-transparent'} rounded-[20px] relative overflow-hidden flex flex-col justify-center items-center transition-colors duration-500 ${agent.hoverBorder}`}>
+                {agent.bgImage && (
+                  <img
+                    src={agent.bgImage}
+                    loading="lazy"
+                    alt=""
+                    className="image-cover absolute inset-0 w-full h-full object-cover opacity-30"
+                  />
+                )}
+                <div className={`solution-inner-card-wrapper relative z-10 w-full h-full flex justify-center items-center ${agent.bgImage ? 'p-6' : 'p-0'}`}>
                   {agent.id === "sdr" ? (
                     <div className={`w-full h-full rounded-[20px]  flex flex-col overflow-hidden gap-[10px] ${agent.mockupBg}`}>
                       {agent.mockup}
