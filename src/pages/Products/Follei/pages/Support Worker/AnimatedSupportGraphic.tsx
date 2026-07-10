@@ -37,7 +37,7 @@ const AnimatedSupportGraphic: React.FC = () => {
     };
 
     return (
-        <div className="relative w-full aspect-[4/3] max-w-xl mx-auto rounded-[24px] overflow-hidden flex items-center justify-center shadow-lg bg-[#27303E]">
+        <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden flex items-center justify-center shadow-lg bg-[#27303E]">
             <img
                 src={staticbgglobal}
                 alt="Mountain Backdrop"

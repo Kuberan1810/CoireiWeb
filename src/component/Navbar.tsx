@@ -53,9 +53,9 @@ function Navbar() {
 
                 {/* LEFT */}
                 <div className="flex gap-6 items-center">
-                    <Link 
-                        to="/" 
-                        data-ns-animate 
+                    <Link
+                        to="/"
+                        data-ns-animate
                         data-delay="0.1"
                         onClick={(e) => {
                             if (location.pathname === "/") {
