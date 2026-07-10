@@ -195,23 +195,21 @@ export const Hero: React.FC = () => {
 
               {/* Center Circle */}
               <div className="w-[50px] h-[50px] sm:w-[88px] sm:h-[88px] flex-shrink-0 rounded-full bg-white flex items-center justify-center relative z-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E2E8F0]">
+                {/* Spinning Gradient Background */}
                 <div
-                  className="absolute w-[80%] h-[80%] flex items-start justify-center"
+                  className={`absolute w-full h-full rounded-full ${
+                    (phase === "processing" || phase === "sending" || phase === "revealed") 
+                      ? 'animate-[spin_1s_linear_infinite]' 
+                      : 'animate-[spin_3s_linear_infinite]'
+                  }`}
                   style={{
-                    transform: 'rotate(-146.51deg)',
-                    animation: (phase === "processing" || phase === "sending" || phase === "revealed")
-                      ? 'spin-slow 6s linear infinite'
-                      : 'spin-slow 20s linear infinite'
+                    background: 'conic-gradient(from 0deg, transparent 0%, rgba(120, 169, 255, 0.2) 40%, rgba(59, 130, 246, 0.8) 100%)'
                   }}
-                >
-                  <div
-                    className="w-full h-1/2 rounded-t-full bg-gradient-to-b from-[#78A9FF] to-[#B1CBFF]"
-                  />
-                </div>
+                />
 
                 {/* Inner Logo */}
-                <div className="w-8 h-8 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#1A56DB] to-[#0D389F] flex items-center justify-center shadow-[0_4px_12px_rgba(26,86,219,0.3)] relative z-10">
-                  <img src={folleiLogo} alt="Follei Logo" className="w-4 h-4 sm:w-7 sm:h-7 object-contain" />
+                <div className="w-6 h-6 sm:w-[46px] sm:h-[46px] rounded-full bg-white flex items-center justify-center relative z-10 shadow-sm">
+                  <img src={folleiLogo} alt="Follei Logo" className="w-3.5 h-3.5 sm:w-7 sm:h-7 object-contain" />
                 </div>
               </div>
 

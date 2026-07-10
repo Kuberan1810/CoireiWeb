@@ -58,7 +58,7 @@ export const SalesExecutionSection: React.FC = () => {
                                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#FFCCCC] to-[#CDD9FB] opacity-40 shadow-[0_4px_20px_rgba(0,0,0,0.03)]" />
 
                                 {/* Inner Logo Container */}
-                                <div className="w-[84px] h-[84px] rounded-full shadow-[0_10px_35px_rgba(0,67,112,0.15)] flex items-center justify-center relative z-10">
+                                <div className="w-[84px] h-[84px] rounded-full flex items-center justify-center relative z-10">
                                     <img
                                         src={folleiLogo}
                                         alt="Follei Logo Symbol"

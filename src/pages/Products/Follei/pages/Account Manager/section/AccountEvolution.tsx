@@ -3,74 +3,62 @@ import { Handshake, Activity, BrainCircuit, Lightbulb, TrendingUp } from "lucide
 import { motion, useScroll, useTransform, MotionValue, useSpring } from "framer-motion";
 
 const evolutionSteps = [
-  {
-    id: "Step 01",
-    title: "Relationship",
-    description: "Every meeting, email, and customer interaction is captured and connected.",
-    icon: Handshake
-  },
-  {
-    id: "Step 02",
-    title: "Engagement",
-    description: "Results are measured against and customer success goals.",
-    icon: Activity
-  },
-  {
-    id: "Step 03",
-    title: "Insights",
-    description: "AI identifies relationship trends, executive priorities.",
-    icon: BrainCircuit
-  },
-  {
-    id: "Step 04",
-    title: "Recommend",
-    description: "Follei recommends the next best action to and accelerate growth.",
-    icon: Lightbulb
-  },
-  {
-    id: "Step 05",
-    title: "Growth",
-    description: "Every insight helps increase customer value, business growth.",
-    icon: TrendingUp
-  }
+    {
+        id: "Step 01",
+        title: "Relationship",
+        description: "Every meeting, email, and customer interaction is captured and connected.",
+        icon: Handshake
+    },
+    {
+        id: "Step 02",
+        title: "Engagement",
+        description: "Results are measured against and customer success goals.",
+        icon: Activity
+    },
+    {
+        id: "Step 03",
+        title: "Insights",
+        description: "AI identifies relationship trends, executive priorities.",
+        icon: BrainCircuit
+    },
+    {
+        id: "Step 04",
+        title: "Recommend",
+        description: "Follei recommends the next best action to and accelerate growth.",
+        icon: Lightbulb
+    },
+    {
+        id: "Step 05",
+        title: "Growth",
+        description: "Every insight helps increase customer value, business growth.",
+        icon: TrendingUp
+    }
 ];
 
-const AnimatedStep = ({ 
-    step, 
-    index, 
+const AnimatedStep = ({
+    step,
+    index,
     scrollYProgress
-}: { 
-    step: any; 
-    index: number; 
+}: {
+    step: any;
+    index: number;
     scrollYProgress: MotionValue<number>;
 }) => {
     // 5 items justified around: we shift them later in the scroll to make room for the slower slide-in
     // Centers are now at 25%, 40%, 55%, 70%, 85%
     const threshold = (index * 0.15) + 0.25;
-    
+
     // Explicit 4-point mappings guarantee the state NEVER reverts after the threshold
     const activeOpacity = useTransform(
-        scrollYProgress, 
-        [0, Math.max(0, threshold - 0.1), threshold, 1], 
+        scrollYProgress,
+        [0, Math.max(0, threshold - 0.1), threshold, 1],
         [0.4, 0.4, 1, 1]
     );
-    
+
     const dotBackground = useTransform(
-        scrollYProgress, 
-        [0, Math.max(0, threshold - 0.02), Math.min(1, threshold + 0.02), 1], 
+        scrollYProgress,
+        [0, Math.max(0, threshold - 0.1), threshold, 1],
         ["#FFFFFF", "#FFFFFF", "#0068AD", "#0068AD"]
-    );
-    
-    const contentOpacity = useTransform(
-        scrollYProgress, 
-        [0, Math.max(0, threshold - 0.08), Math.min(1, threshold + 0.02), 1], 
-        [0, 0, 1, 1]
-    );
-    
-    const contentY = useTransform(
-        scrollYProgress, 
-        [0, Math.max(0, threshold - 0.08), Math.min(1, threshold + 0.02), 1], 
-        [-30, -30, 0, 0]
     );
 
     return (
@@ -78,23 +66,23 @@ const AnimatedStep = ({
             {/* Pill & Circle container */}
             <div className="relative flex items-center justify-center mb-8">
                 {/* Pill Container (Solid white background to hide the global line) */}
-                <div 
+                <div
                     className="px-6 py-2 rounded-lg relative z-10 flex items-center justify-center"
-                    style={{ 
+                    style={{
                         backgroundColor: '#FFFFFF',
                         boxShadow: '4px 4px 10px 0px #00000059'
                     }}
                 >
                     {/* Gradient background with animated opacity */}
-                    <motion.div 
+                    <motion.div
                         className="absolute inset-0 rounded-lg z-0"
-                        style={{ 
+                        style={{
                             background: 'linear-gradient(90deg, rgba(53, 82, 102, 0.2) 0%, rgba(0, 67, 112, 0.2) 100%)',
                             opacity: activeOpacity
                         }}
                     />
-                    
-                    <motion.span 
+
+                    <motion.span
                         className="text-[#004370] relative z-10"
                         style={{
                             fontWeight: 500,
@@ -105,18 +93,18 @@ const AnimatedStep = ({
                     >
                         {step.id}
                     </motion.span>
-                    
+
                     {/* Left Circle Node - touching pill */}
-                    <motion.div 
+                    <motion.div
                         className="absolute top-1/2 -translate-y-1/2 -left-[12px] w-[14px] h-[14px] rounded-full z-20"
                         style={{
                             backgroundColor: dotBackground,
                             border: '2px solid #0068AD'
                         }}
                     />
-                    
+
                     {/* Right Circle Node - touching pill */}
-                    <motion.div 
+                    <motion.div
                         className="absolute top-1/2 -translate-y-1/2 -right-[12px] w-[14px] h-[14px] rounded-full z-20"
                         style={{
                             backgroundColor: dotBackground,
@@ -127,18 +115,18 @@ const AnimatedStep = ({
             </div>
 
             {/* Content drops down and fades in */}
-            <motion.div 
+            <motion.div
                 className="flex flex-col items-center text-center max-w-[220px]"
-                initial={{ opacity: 0, y: -30 }}
-                style={{ 
-                    opacity: contentOpacity, 
-                    y: contentY
+                initial={{ opacity: 1, y: 0 }}
+                style={{
+                    opacity: 1,
+                    y: 0
                 }}
             >
                 <div className="text-[#000000] mb-4">
                     <step.icon size={28} strokeWidth={1.5} />
                 </div>
-                <h3 
+                <h3
                     className="text-[#000000] mb-3"
                     style={{
                         fontWeight: 400,
@@ -148,7 +136,7 @@ const AnimatedStep = ({
                 >
                     {step.title}
                 </h3>
-                <p 
+                <p
                     className="text-[#5A5A5C]"
                     style={{
                         fontWeight: 400,
@@ -165,37 +153,37 @@ const AnimatedStep = ({
 
 const MobileAnimatedStep = ({ step, index }: { step: any, index: number }) => {
     return (
-        <motion.div 
-            className="relative mb-10 last:mb-0 group" 
+        <motion.div
+            className="relative mb-10 last:mb-0 group"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
         >
             {/* Interactive Circle Dot */}
-            <motion.div 
-                className="absolute -left-[40px] top-1.5 w-[14px] h-[14px] rounded-full border-[2px] border-[#0068AD] z-10" 
+            <motion.div
+                className="absolute -left-[40px] top-1.5 w-[14px] h-[14px] rounded-full border-[2px] border-[#0068AD] z-10"
                 variants={{
                     hidden: { backgroundColor: '#FFFFFF' },
                     visible: { backgroundColor: '#1C99ED' }
                 }}
                 transition={{ duration: 0.3 }}
             />
-            
+
             {/* Step Pill */}
-            <div 
-                className="inline-flex items-center justify-center px-5 py-1.5 rounded-lg mb-4 relative overflow-hidden" 
+            <div
+                className="inline-flex items-center justify-center px-5 py-1.5 rounded-lg mb-4 relative overflow-hidden"
                 style={{ boxShadow: '2px 2px 8px 0px #00000030', backgroundColor: '#FFFFFF' }}
             >
-                <motion.div 
-                    className="absolute inset-0 rounded-lg" 
-                    style={{ background: 'linear-gradient(90deg, rgba(53, 82, 102, 0.2) 0%, rgba(0, 67, 112, 0.2) 100%)' }} 
+                <motion.div
+                    className="absolute inset-0 rounded-lg"
+                    style={{ background: 'linear-gradient(90deg, rgba(53, 82, 102, 0.2) 0%, rgba(0, 67, 112, 0.2) 100%)' }}
                     variants={{
                         hidden: { opacity: 0.4 },
                         visible: { opacity: 1 }
                     }}
                     transition={{ duration: 0.3 }}
                 />
-                <motion.span 
+                <motion.span
                     className="text-[#004370] relative z-10 font-medium text-[18px]"
                     variants={{
                         hidden: { opacity: 0.4 },
@@ -250,10 +238,10 @@ const AccountEvolution = () => {
     });
 
     // Add physical momentum to the raw scroll value for buttery smooth parallax
-    const smoothProgress = useSpring(scrollYProgress, { 
-        stiffness: 100, 
-        damping: 30, 
-        restDelta: 0.001 
+    const smoothProgress = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
     });
 
     // Slowed down travel distance over 20% of the scroll instead of 12%
@@ -264,7 +252,7 @@ const AccountEvolution = () => {
         <>
             {/* Desktop View with Scroll Animation */}
             <section ref={containerRef} className="hidden md:block w-full bg-[#FFFFFF] relative h-[350vh]">
-                
+
                 <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden GlobalPadding">
                     {/* Header Area */}
                     <div className="text-center max-w-4xl mx-auto mb-16 sm:mb-24 flex flex-col items-center">
@@ -292,28 +280,28 @@ const AccountEvolution = () => {
                     </div>
 
                     {/* Timeline Container Sliding In */}
-                    <motion.div 
+                    <motion.div
                         className="relative w-full max-w-[1400px] flex flex-row justify-around items-start pt-10"
                         style={{ x: timelineX, opacity: timelineOpacity }}
                     >
-                        
+
                         {/* Global Horizontal Progress Bar Track */}
                         <div className="absolute top-[62px] left-[5%] right-[5%] h-[2px] bg-[#E8E8E8] z-0 overflow-hidden">
                             {/* Animated blue fill line */}
-                            <motion.div 
+                            <motion.div
                                 className="absolute top-0 left-0 w-full h-full bg-[#1C99ED]"
-                                style={{ 
-                                    scaleX: smoothProgress, 
-                                    transformOrigin: 'left' 
+                                style={{
+                                    scaleX: smoothProgress,
+                                    transformOrigin: 'left'
                                 }}
                             />
                         </div>
 
                         {evolutionSteps.map((step, index) => (
-                            <AnimatedStep 
-                                key={step.id} 
-                                step={step} 
-                                index={index} 
+                            <AnimatedStep
+                                key={step.id}
+                                step={step}
+                                index={index}
                                 scrollYProgress={smoothProgress}
                             />
                         ))}

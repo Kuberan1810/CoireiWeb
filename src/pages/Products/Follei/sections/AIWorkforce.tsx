@@ -13,7 +13,7 @@ import bg4 from "../../../../assets/images/products/bg4.jpg";
 
 import bg5 from "../../../../assets/images/products/bg5.jpg";
 import bg6 from "../../../../assets/images/products/bg6.jpg";
-import SalesExecutiveAnimation from "./salesExecutiveAnimation";
+import SalesExecutiveAnimation from "./salesExecutiveAnimation" ;
 
 
 import folleiLogo from "../../../../assets/images/products/folleinew.svg";
@@ -195,7 +195,7 @@ const CollectionsWorkerMockup: React.FC = () => {
           </div>
 
           {/* Inner Logo */}
-          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#1A56DB] to-[#0D389F] flex items-center justify-center shadow-[0_4px_12px_rgba(26,86,219,0.3)] relative z-10">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#1A56DB] to-[#0D389F] flex items-center justify-center relative z-10">
             <img src={folleiLogo} alt="Follei Logo" className="w-7 h-7 object-contain" />
           </div>
         </div>

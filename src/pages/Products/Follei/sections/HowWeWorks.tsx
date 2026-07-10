@@ -104,7 +104,7 @@ export const HowWeWorks: React.FC = () => {
                                     <img src={layer1Img} alt="Layer 3" className="max-h-[160px] object-contain animate-float-3" />
                                 </div>
                                 <div className="absolute w-[20%] flex justify-center z-30 transition-transform duration-[1500ms] delay-[200ms] ease-in-out" style={{ transform: isVisible ? "translateY(-29px)" : "translateY(-70px)" }}>
-                                    <img src={folleilogoImg} alt="Follei Logo" className="max-h-[60px] object-contain drop-shadow-md animate-float-logo" />
+                                    <img src={folleilogoImg} alt="Follei Logo" className="max-h-[60px] object-contain animate-float-logo" />
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@ export const HowWeWorks: React.FC = () => {
                                         <div className="bg-white rounded-[20px] w-[260px] p-[14px] shadow-sm flex items-center justify-between">
                                             <div className="flex gap-3">
                                                 <div className="flex flex-col items-start gap-1">
-                                                    <div className="w-[32px] h-[32px] rounded-full bg-white flex items-center justify-center overflow-hidden border-[0.5px] border-[#E3E3E3] shadow-sm">
+                                                    <div className="w-[32px] h-[32px] rounded-full bg-white flex items-center justify-center overflow-hidden border-[0.5px] border-[#E3E3E3]">
                                                         <img src={folleilogoImg} className="w-[90%] h-[90%] object-contain" alt="Follei Logo" />
                                                     </div>
                                                     <span className="text-[13px] font-bold text-black leading-tight mt-1">AI Agent</span>
@@ -276,7 +276,7 @@ export const HowWeWorks: React.FC = () => {
                                 </div>
 
                                 {/* Center Icon (58.5px) */}
-                                <div className="absolute w-[58.5px] h-[58.5px] rounded-full shadow-lg z-10 flex items-center justify-center overflow-hidden bg-white">
+                                <div className="absolute w-[58.5px] h-[58.5px] rounded-full z-10 flex items-center justify-center overflow-hidden bg-white">
                                     <img src={folleilogoImg} alt="Follei Center" className="w-full h-full object-contain scale-110" />
                                 </div>
 
