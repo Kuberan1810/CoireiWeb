@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import LMSdashboard from '../../../../assets/images/products/dashboarddarkmode.svg';
+import LMSdashboard from '../../../../assets/images/products/LMSdashboard.svg';
 import cloudsBg from '../../../../assets/images/products/cloudsbg.svg';
 
 import { useNavigate } from 'react-router-dom';
