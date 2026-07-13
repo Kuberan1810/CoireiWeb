@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Handshake, Activity, BrainCircuit, Lightbulb, TrendingUp } from "lucide-react";
 import { motion, useScroll, useTransform, MotionValue, useSpring } from "framer-motion";
 
@@ -151,7 +151,7 @@ const AnimatedStep = ({
     );
 };
 
-const MobileAnimatedStep = ({ step, index }: { step: any, index: number }) => {
+const MobileAnimatedStep = ({ step }: { step: any, index: number }) => {
     return (
         <motion.div
             className="relative mb-10 last:mb-0 group"

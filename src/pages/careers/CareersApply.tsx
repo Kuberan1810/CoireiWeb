@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import SEO from "../../component/SEO";
 import Navbar from "../../component/Navbar";

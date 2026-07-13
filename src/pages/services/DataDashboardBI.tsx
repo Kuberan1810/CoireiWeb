@@ -1,5 +1,5 @@
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useTransform, useMotionValue, animate } from "framer-motion";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer/Footer";
@@ -8,7 +8,6 @@ import FAQSection from "../Home/sections/backup/FAQSection";
 import TestimonialSection from "../Home/sections/backup/Testimonal";
 import { LayoutGrid, LineChart, TrendingUp, Handshake, Network, Bot, Scan, Coins, Stethoscope, Factory, PhoneCall, Truck, Monitor, GraduationCap } from "lucide-react";
 import Sky from "../../assets/images/homepage/sky.svg";
-import HoverParticles from "../../component/HoverParticles";
 import { useNavigate } from "react-router-dom";
 
 const DataDashboardBI = () => {

@@ -23,7 +23,7 @@ export const AccountManagerMockup: React.FC = () => {
       gsap.set(".goals-widget", { opacity: 0, y: 20 });
 
       // Animation Sequence
-      tl.to(".graph-bar", { height: (i, el) => el.dataset.h, duration: 2.2, ease: "power2.out", stagger: 0.2 })
+      tl.to(".graph-bar", { height: (_, el) => el.dataset.h, duration: 2.2, ease: "power2.out", stagger: 0.2 })
         .to(".graph-tag", { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, "-=1.8")
         .to(".graph-widget", { opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.5)", stagger: 0.2 }, "-=1.2")
         .to(".goals-widget", { opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.5)" }, "-=1.0");

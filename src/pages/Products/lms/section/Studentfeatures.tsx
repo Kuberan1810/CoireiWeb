@@ -2,7 +2,6 @@ import { LayoutDashboard, BookOpen, FileText, Users, MessageSquare, ClipboardLis
 
 import bgImage from "../../../../assets/images/products/bg.svg";
 import coireiLogo from "../../../../assets/images/homepage/coirei-logo.png";
-import circleLogo from "../../../../assets/images/Features/coirei-cirlce-logo.png";
 import LMSdashboard from "../../../../assets/images/products/LMSdashboard.svg";
 import levitatingCard1 from "../../../../assets/images/products/levitatingcard1.svg";
 import levitatingCard2 from "../../../../assets/images/products/levitatingcard2.svg";

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const IntelligentLearning: React.FC = () => {
   const navigate = useNavigate();
-  const [inView, setInView] = useState(true);
+  const [, setInView] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

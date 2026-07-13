@@ -8,8 +8,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import TestimonialSection from "../Home/sections/backup/Testimonal";
 import FAQSection from "../Home/sections/backup/FAQSection";
 import Sky from "../../assets/images/homepage/sky.svg";
-import HoverParticles from "../../component/HoverParticles";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -125,7 +125,6 @@ const AIChatbotHero = ({ onTypingComplete }: AIChatbotHeroProps) => {
                                 const part1 = "Enhance Your Business with ";
                                 const part2 = "AI Chat";
                                 const part3 = " and ";
-                                const part4 = "Virtual Assistance";
 
                                 if (displayedText.length <= part1.length) {
                                     return <span>{displayedText}</span>;

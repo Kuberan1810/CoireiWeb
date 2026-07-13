@@ -14,22 +14,7 @@ const AnimatedResolutionWorkflow: React.FC = () => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: "-100px" });
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.4
-            }
-        }
-    };
-
-    const rowVariants = {
-        hidden: { opacity: 0, y: 10 },
-        visible: { opacity: 1, y: 0 }
-    };
-
+    
     return (
         <div ref={ref} className="relative w-full h-full aspect-[2/1] md:aspect-[3/1] max-h-[260px] rounded-[16px] overflow-hidden flex items-center justify-center border border-gray-100">
             {/* Background */}
