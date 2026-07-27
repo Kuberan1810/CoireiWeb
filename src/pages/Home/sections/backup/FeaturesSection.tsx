@@ -6,11 +6,15 @@ import {
     AnimatePresence,
     type Variants
 } from "framer-motion";
+import ProveBg from "../../../../assets/images/tasie/prove_bg.svg"
+import PatchBg from "../../../../assets/images/tasie/patch_bg.svg"
+
+
 
 /* ---------------- LAZY IMPORTS ---------------- */
 const CollaborateFeature = lazy(() => import("../Animation/ColabrationCard"));
-const OrchestrationCard = lazy(() => import("../Animation/OrchestrationCard"));
-const Traceability = lazy(() => import("../Animation/Traceability"));
+// const OrchestrationCard = lazy(() => import("../Animation/OrchestrationCard"));
+// const Traceability = lazy(() => import("../Animation/Traceability"));
 const Intelligence = lazy(() => import("../Animation/IntelligenceCard"));
 
 /* ---------------- TYPES ---------------- */
@@ -18,7 +22,7 @@ interface TabContent {
     id: string;
     label: string;
     tabIcon: JSX.Element;
-    image: JSX.Element;
+    image: JSX.Element | string;
     badge: string;
     badgeIcon: JSX.Element;
     title: string;
@@ -73,7 +77,7 @@ export default function FeaturesSection(): JSX.Element {
             id: "prove",
             label: "Prove",
             tabIcon: <FileBadge size={16} className="relative z-10 shrink-0" />,
-            image: <OrchestrationCard />,
+            image:ProveBg,
             badge: "Prove",
             badgeIcon: <FileBadge size={14} />,
             title: "Evidence. Not assumptions.",
@@ -87,7 +91,7 @@ export default function FeaturesSection(): JSX.Element {
             id: "patch",
             label: "Patch",
             tabIcon: <SquareStack size={16} className="relative z-10 shrink-0" />,
-            image: <Traceability />,
+            image: PatchBg,
             badge: "Patch",
             badgeIcon: <SquareStack size={14} />,
             title: "AI writes. AI verifies. You review.",
@@ -129,16 +133,16 @@ export default function FeaturesSection(): JSX.Element {
                 {/* ---------- Tabs (SCROLL) ---------- */}
                 <div data-ns-animate data-delay="0.2" data-offset="80" className="flex justify-center mb-10 sm:mb-12">
                     <LayoutGroup>
-                        <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-15 w-full lg:w-auto p-2.5 rounded-2xl lg:rounded-full bg-[#7B7B7B]/10 backdrop-blur-3xl border border-white/20">
+                        <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-15 w-full lg:w-auto p-2.5 rounded-2xl lg:rounded-full bg-[#7B7B7B]/20 backdrop-blur-3xl border border-white/20">
 
                             {tabs.map(tab => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`relative z-10 flex items-center justify-center gap-2 px-3 sm:px-6 md:px-10 py-2 sm:py-2.5 md:py-3 rounded-xl md:rounded-full text-xs sm:text-sm md:text-base transition-colors cursor-pointer ${activeTab === tab.id ? "text-black" : "text-black/70 hover:text-black"}`}
+                                    className={`relative z-10 flex items-center justify-center gap-2 px-3 sm:px-6 md:px-10 py-2 sm:py-2.5 md:py-3 rounded-xl md:rounded-full text-xs sm:text-sm md:text-base transition-colors cursor-pointer ${activeTab === tab.id ? "text-white" : "text-black/70 hover:text-black"}`}
                                 >
                                     {activeTab === tab.id && (
-                                        <motion.span layoutId="activeTab" className="absolute inset-0 rounded-xl md:rounded-full backdrop-blur-3xl shadow-[inset_-1px_1px_2px_#ffffff20]" transition={{ type: "spring", stiffness: 500, damping: 35 }} />
+                                        <motion.span layoutId="activeTab" className="absolute inset-0 rounded-xl md:rounded-full bg-[#2b2b2b]/80 shadow-md" transition={{ type: "spring", stiffness: 500, damping: 35 }} />
                                     )}
                                     {tab.tabIcon}
                                     <span className="relative z-10">{tab.label}</span>
@@ -169,7 +173,15 @@ export default function FeaturesSection(): JSX.Element {
                                 <div className="bg-linear-to-br from-white/70 to-gray-600 rounded-3xl px-6 sm:px-8 pt-10 sm:pt-15 shadow-2xl flex items-center justify-center min-h-[300px] md:min-h-[400px]">
                                     <Suspense fallback={<div className="w-full py-24 flex items-center justify-center text-white/40 text-sm">Loading animation...</div>}>
                                         <div className="w-full flex items-center justify-center">
-                                            {activeContent.image}
+                                            {typeof activeContent.image === "string" ? (
+                                                <img
+                                                    src={activeContent.image}
+                                                    alt={activeContent.title}
+                                                    className="w-full h-auto max-h-[550px] object-contain rounded-2xl"
+                                                />
+                                            ) : (
+                                                activeContent.image
+                                            )}
                                         </div>
                                     </Suspense>
                                 </div>
@@ -202,7 +214,10 @@ export default function FeaturesSection(): JSX.Element {
 
                                 <div className="mt-6 flex flex-wrap gap-3">
                                     {activeContent.bottomPills.map((pill, idx) => (
-                                        <span key={idx} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/20 text-white/80 text-[11px] sm:text-xs font-medium whitespace-nowrap">
+                                        <span
+                                            key={idx}
+                                            className="px-5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-[#1c1c1e] border border-white/20 text-white text-xs sm:text-sm font-normal tracking-wide whitespace-nowrap shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] hover:border-white/40 transition-all duration-300 cursor-default"
+                                        >
                                             {pill}
                                         </span>
                                     ))}

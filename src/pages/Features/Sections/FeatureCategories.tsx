@@ -6,7 +6,7 @@ import aiSun from "../../../assets/js/ganify ai sun.json";
 import shieldIcons from "../../../assets/js/shield and icons recreated.json";
 
 /* STATIC IMAGE */
-import ExecaImg from "../../../assets/images/Features/execa.svg";
+import ExecaImg from "../../../assets/images/tasie/execa 1.svg";
 
 import GlassCard from "./FeatureGlassCard";
 import AiWorkflowTrack from "./animation/AiWorkflowTrack";

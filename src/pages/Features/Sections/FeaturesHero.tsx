@@ -7,7 +7,7 @@ const FeaturesHero = () => {
           <h1 
             data-ns-animate 
             data-offset="100" 
-            className="text-white/90 text-[32px] text-center sm:text-start sm:text-[40px] md:text-[48px] lg:text-6xl font-medium leading-tight "
+            className="text-[#262626] text-[32px] text-center sm:text-start sm:text-[40px] md:text-[48px] lg:text-6xl font-medium leading-tight "
           >
             AI-native software execution platform, Built for engineering teams.
           </h1>
