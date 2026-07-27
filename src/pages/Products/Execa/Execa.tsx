@@ -9,7 +9,6 @@ import FeatureContact from "../../Features/Sections/FeatureContact";
 import WorksFlow from "../../Features/Sections/WorksFlow";
 import FeatureContent from "../../Features/Sections/FeatureContent";
 import FeaturesHero from "../../Features/Sections/FeaturesHero";
-import IntegrationSection from "../../Features/Sections/IntegrationSection";
 import FeaturesSection from "../../Home/sections/backup/FeaturesSection";
 import Hero from "../../Home/sections/backup/Hero";
 import ProblemSection from "../../Home/sections/backup/ProblemSection";
