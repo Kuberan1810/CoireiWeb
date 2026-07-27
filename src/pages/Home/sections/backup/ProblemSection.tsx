@@ -7,8 +7,8 @@ function ProblemSection() {
 
                 {/* TOP SECTION */}
                 <div className="flex flex-col justify-center items-center mb-14 md:mb-22 text-center">
-                    <p data-ns-animate data-offset="80" className="backdrop-blur-md border border-white/20 rounded-xl py-2 px-4 max-w-fit text-sm sm:text-base text-gray-600 mb-5">
-                        Why Orca AI Exist?
+                    <p data-ns-animate data-offset="80" className="backdrop-blur-md border border-black/20 rounded-xl p-2 max-w-fit text-base text-gray-600 mx-auto sm:mx-0 mb-2.5 bg-gray-50">
+                        Why Tasie  Exist?
                     </p>
 
                     <h2 data-ns-animate data-offset="80" className="leading-tight text-text-[#262626] text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] max-w-5xl">
@@ -44,7 +44,7 @@ function ProblemSection() {
 
                         <div data-ns-animate data-delay="0.6" data-offset="80" className="inline-flex items-center rounded-md bg-[#2b2b2b] px-3 py-1 text-sm sm:text-[16px] text-gray-300">
                             The Result is
-                            <span className="mx-1 text-orange-400 font-medium tracking-wider">
+                            <span className="mx-1 text-red-700 font-medium tracking-wider">
                                 <span className="relative top-px">b</span>
                                 <span className="relative -top-px">r</span>
                                 <span className="relative top-0.5">o</span>

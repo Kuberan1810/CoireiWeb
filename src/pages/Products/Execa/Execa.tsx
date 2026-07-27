@@ -35,12 +35,12 @@ function Execa() {
 
             <Hero />
             <ProblemSection />
-            <FeaturesSection />
+            <FeaturesSection />     
             <FeaturesHero />
             <FeatureCategories />
             <FeatureContent />
             <WorksFlow />
-            <IntegrationSection />
+            {/* <IntegrationSection /> */}
             <CTASection />
             <FeatureContact />
 

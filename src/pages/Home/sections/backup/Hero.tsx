@@ -18,9 +18,9 @@ function Hero() {
                         <p
                             data-ns-animate
                             data-offset="80"
-                            className="backdrop-blur-md border border-white/20 rounded-xl p-2 max-w-fit text-base text-gray-600 mx-auto sm:mx-0 mb-2.5"
+                            className="backdrop-blur-md border border-black/20 rounded-xl p-2 max-w-fit text-base text-gray-600 mx-auto sm:mx-0 mb-2.5 bg-gray-50"
                         >
-                            Orca AI
+                            Tasie
                         </p>
 
                         {/* Title */}
@@ -52,15 +52,15 @@ function Hero() {
                             className="flex justify-center sm:justify-start gap-4"
                         >
                             <button
-                                onClick={() => navigate("/contact-sales")}
-                                className="text-[#252525] py-2.5 px-4 bg-[#FAF9F6] rounded font-semibold border border-transparent hover:bg-[#1E1E1E] hover:text-white hover:border-white/10 transition-all duration-500 ease-out cursor-pointer sm:text-base text-[13px]"
+                                onClick={() => navigate("/contact")}
+                                className="text-[#0088FF] py-2.5 px-4 bg-white rounded font-medium border border-[#0088FF]/20  hover:bg-[#0088FF] hover:text-white hover:border-white/10 transition-all duration-500 ease-out cursor-pointer sm:text-base text-[13px]"
                             >
                                 Request Early Access
                             </button>
 
                             <button
                                 onClick={() => navigate("/features")}
-                                className="text-white py-2.5 px-4 bg-[#292929] rounded font-semibold border border-white/10 hover:bg-white hover:text-[#292929] transition-all duration-500 ease-out cursor-pointer sm:text-base text-[13px]"
+                                className="text-white py-2.5 px-4 bg-[#0088FF] rounded font-semibold border border-white/10 hover:bg-gray-200 hover:text-[#292929] transition-all duration-500 ease-out cursor-pointer sm:text-base text-[13px] "
                             >
                                 Explore the Platform
                             </button>

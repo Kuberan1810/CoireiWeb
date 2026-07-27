@@ -927,7 +927,7 @@
                     "ddd": 0,
                     "ind": 3,
                     "ty": 5,
-                    "nm": "Describe your interface in one line...",
+                    "nm": "POST /login?id=1' OR 1=1 --",
                     "tt": 1,
                     "tp": 2,
                     "sr": 1,
@@ -981,8 +981,8 @@
                                     "s": {
                                         "s": 8,
                                         "f": "Inter-Regular",
-                                        "t": "Describe your interface ...",
-                                        "ca": 0,
+                                        "t":"generate sql payload",
+                                        "ca": 0 ,
                                         "j": 2,
                                         "tr": -50,
                                         "lh": 18,
@@ -70576,7 +70576,7 @@
                     "ddd": 0,
                     "ind": 3,
                     "ty": 5,
-                    "nm": "Build Smarter, Launch Faster",
+                    "nm": "evidence over assumptions",
                     "sr": 1,
                     "ks": {
                         "o": {
@@ -70636,7 +70636,7 @@
                                         ],
                                         "s": 9.5,
                                         "f": "Inter-Regular",
-                                        "t": "Build Smarter, Launch Faster",
+                                        "t": "evidence over assumptions",
                                         "ca": 0,
                                         "j": 2,
                                         "tr": -50,
