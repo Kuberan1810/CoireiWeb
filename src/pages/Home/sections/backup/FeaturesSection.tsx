@@ -1,5 +1,5 @@
 import { useState, type JSX, lazy, Suspense } from "react";
-import { CardSim } from "lucide-react";
+import { Scan, FileBadge, SquareStack, DoorClosed } from "lucide-react";
 import {
     LayoutGroup,
     motion,
@@ -17,10 +17,13 @@ const Intelligence = lazy(() => import("../Animation/IntelligenceCard"));
 interface TabContent {
     id: string;
     label: string;
+    tabIcon: JSX.Element;
     image: JSX.Element;
     badge: string;
+    badgeIcon: JSX.Element;
     title: string;
     description: string | string[];
+    bottomPills: string[];
 }
 
 /* ---------------- TAB CONTENT ANIMATION (TS SAFE) ---------------- */
@@ -52,48 +55,58 @@ const tabContentVariants: Variants = {
 
 /* ---------------- COMPONENT ---------------- */
 export default function FeaturesSection(): JSX.Element {
-    const [activeTab, setActiveTab] = useState<string>("colabration");
+    const [activeTab, setActiveTab] = useState<string>("detect");
 
     const tabs: TabContent[] = [
         {
-            id: "colabration",
-            label: "Colabration",
+            id: "detect",
+            label: "Detect",
+            tabIcon: <Scan size={16} className="relative z-10 shrink-0" />,
             image: <CollaborateFeature />,
-            badge: "IN-FLOW TEAMS",
-            title: "Collaboration Without Context Switching",
-            description:
-                "ORCA AI embeds collaboration directly into the execution flow. Instead of juggling chats, meetings, and repos, teams work together with shared context."
+            badge: "Detect",
+            badgeIcon: <Scan size={14} />,
+            title: "Every repository. Every route. Every vulnerability.",
+            description: "TASIE continuously analyzes your codebase, maps execution paths, and identifies security vulnerabilities before they reach production.",
+            bottomPills: ["107 Endpoints", "30+ Vulnerability Classes", "98 Detection Engines"]
         },
         {
-            id: "orchestration",
-            label: "Orchestration",
+            id: "prove",
+            label: "Prove",
+            tabIcon: <FileBadge size={16} className="relative z-10 shrink-0" />,
             image: <OrchestrationCard />,
-            badge: "AUTO-COORDINATED EXECUTION",
-            title: "From Intent to Deployment, Orchestrated.",
+            badge: "Prove",
+            badgeIcon: <FileBadge size={14} />,
+            title: "Evidence. Not assumptions.",
             description: [
-                "Task → code → deploy automation",
-                "AI-managed execution workflows",
-                "Meaningful, change-aware commits",
-                "CI/CD pipelines with execution context"
-            ]
+                "Every vulnerability is validated against a sandboxed application.",
+                "Only vulnerabilities that successfully execute are promoted as proven."
+            ],
+            bottomPills: ["Status", "Proven", "Response", "User Data Retrieved"]
         },
         {
-            id: "traceability",
-            label: "Traceability",
+            id: "patch",
+            label: "Patch",
+            tabIcon: <SquareStack size={16} className="relative z-10 shrink-0" />,
             image: <Traceability />,
-            badge: "UNBROKEN CONTEXT",
-            title: "Software That Understands",
-            description:
-                "It analyzes intent, impact, and relationships across the system, not just lines of code, helping teams prevent conflicts, detect risks early, and make better decisions."
+            badge: "Patch",
+            badgeIcon: <SquareStack size={14} />,
+            title: "AI writes. AI verifies. You review.",
+            description: "Verified patches are generated, tested, and re-attacked before they're proposed.",
+            bottomPills: ["Exploit Failed", "Feature Working", "Scanner Clean"]
         },
         {
-            id: "intelligence",
-            label: "Intelligence",
+            id: "gate",
+            label: "Gate",
+            tabIcon: <DoorClosed size={16} className="relative z-10 shrink-0" />,
             image: <Intelligence />,
-            badge: "SEMANTIC AWARENESS",
-            title: "Execution That Never Lose Memory",
-            description:
-                "Every task, discussion, decision, code change, and deployment is automatically linked into a living execution graph."
+            badge: "Gate",
+            badgeIcon: <DoorClosed size={14} />,
+            title: "Automation stops. Control stays with you.",
+            description: [
+                "Nothing is merged automatically.",
+                "Every verified patch requires human approval before deployment."
+            ],
+            bottomPills: ["Approve", "Reject", "Defer"]
         }
     ];
 
@@ -104,25 +117,30 @@ export default function FeaturesSection(): JSX.Element {
             <div className="px-6 sm:px-10 md:px-15">
 
                 {/* ---------- Heading (SCROLL) ---------- */}
-                <h2 data-ns-animate data-offset="80" className="text-2xl md:text-5xl text-center mb-10 sm:mb-14 md:mb-16 font-normal leading-tight max-w-5xl mx-auto text-white/80">
-                    ORCA AI unifies the entire software execution lifecycle into a single AI-native platform.
-                </h2>
+                <div className="text-center mb-10 sm:mb-14 md:mb-16">
+                    <h2 data-ns-animate data-offset="80" className="text-2xl md:text-5xl font-normal leading-tight max-w-5xl mx-auto text-black mb-4">
+                        The Complete Security Loop.
+                    </h2>
+                    <p data-ns-animate data-delay="0.1" data-offset="80" className="text-sm sm:text-base md:text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
+                        From the first line of vulnerable code to a verified patch awaiting your approval, TASIE executes the entire security lifecycle with autonomous AI agents while keeping the final decision in your hands.
+                    </p>
+                </div>
 
                 {/* ---------- Tabs (SCROLL) ---------- */}
-                <div data-ns-animate data-delay="0.1" data-offset="80" className="flex justify-center mb-10 sm:mb-12">
+                <div data-ns-animate data-delay="0.2" data-offset="80" className="flex justify-center mb-10 sm:mb-12">
                     <LayoutGroup>
-                        <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-15 w-full lg:w-auto p-2.5 rounded-2xl lg:rounded-full bg-[#7B7B7B]/10 backdrop-blur-3xl border border-white/20">
+                        <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-15 w-full lg:w-auto p-2.5 rounded-2xl lg:rounded-full bg-[#7B7B7B]/10 backdrop-blur-3xl border border-white/20">
 
                             {tabs.map(tab => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`relative z-10 flex items-center justify-center gap-1 px-5 sm:px-6 md:px-10 py-2 sm:py-2.5 md:py-3 rounded-xl md:rounded-full text-sm sm:text-base transition-colors cursor-pointer ${activeTab === tab.id ? "text-white" : "text-white/70 hover:text-white"}`}
+                                    className={`relative z-10 flex items-center justify-center gap-2 px-3 sm:px-6 md:px-10 py-2 sm:py-2.5 md:py-3 rounded-xl md:rounded-full text-xs sm:text-sm md:text-base transition-colors cursor-pointer ${activeTab === tab.id ? "text-black" : "text-black/70 hover:text-black"}`}
                                 >
                                     {activeTab === tab.id && (
                                         <motion.span layoutId="activeTab" className="absolute inset-0 rounded-xl md:rounded-full backdrop-blur-3xl shadow-[inset_-1px_1px_2px_#ffffff20]" transition={{ type: "spring", stiffness: 500, damping: 35 }} />
                                     )}
-                                    <CardSim size={16} className="relative z-10 shrink-0" />
+                                    {tab.tabIcon}
                                     <span className="relative z-10">{tab.label}</span>
                                 </button>
                             ))}
@@ -140,15 +158,15 @@ export default function FeaturesSection(): JSX.Element {
                         animate="animate"
                         exit="exit"
                         data-ns-animate
-                        data-delay="0.2"
+                        data-delay="0.3"
                         data-offset="80"
                         className="bg-[#1E1E1E] rounded-[20px] px-5 sm:px-8 md:px-13 pt-5 pb-8"
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
 
                             {/* LEFT (IMAGE / ANIMATION) */}
-                            <div data-ns-animate data-delay="0.3" data-offset="80" className="relative w-full">
-                                <div className="bg-linear-to-br from-white/70 to-gray-600 rounded-3xl px-6 sm:px-8 pt-10 sm:pt-15 shadow-2xl">
+                            <div className="relative w-full">
+                                <div className="bg-linear-to-br from-white/70 to-gray-600 rounded-3xl px-6 sm:px-8 pt-10 sm:pt-15 shadow-2xl flex items-center justify-center min-h-[300px] md:min-h-[400px]">
                                     <Suspense fallback={<div className="w-full py-24 flex items-center justify-center text-white/40 text-sm">Loading animation...</div>}>
                                         <div className="w-full flex items-center justify-center">
                                             {activeContent.image}
@@ -158,8 +176,9 @@ export default function FeaturesSection(): JSX.Element {
                             </div>
 
                             {/* RIGHT (TEXT) */}
-                            <div data-ns-animate data-delay="0.4" data-offset="80" className="space-y-4">
-                                <span className="inline-block px-3 py-1.5 bg-[#FFF7A5] text-black rounded-full text-xs sm:text-sm font-medium tracking-wide uppercase">
+                            <div className="space-y-4">
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FFF7A5] text-black rounded-md text-xs sm:text-sm font-medium tracking-wide uppercase">
+                                    {activeContent.badgeIcon}
                                     {activeContent.badge}
                                 </span>
 
@@ -168,18 +187,26 @@ export default function FeaturesSection(): JSX.Element {
                                 </h2>
 
                                 {Array.isArray(activeContent.description) ? (
-                                    <ul className="space-y-2 text-white/80 text-sm sm:text-base">
+                                    <div className="space-y-4 text-white/80 text-sm sm:text-base leading-relaxed max-w-md">
                                         {activeContent.description.map((point, index) => (
-                                            <motion.li key={index} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 + index * 0.1 }}>
-                                                • {point}
-                                            </motion.li>
+                                            <motion.p key={index} initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + index * 0.1 }}>
+                                                {point}
+                                            </motion.p>
                                         ))}
-                                    </ul>
+                                    </div>
                                 ) : (
                                     <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-md">
                                         {activeContent.description}
                                     </p>
                                 )}
+
+                                <div className="mt-6 flex flex-wrap gap-3">
+                                    {activeContent.bottomPills.map((pill, idx) => (
+                                        <span key={idx} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/20 text-white/80 text-[11px] sm:text-xs font-medium whitespace-nowrap">
+                                            {pill}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
 
                         </div>
