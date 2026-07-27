@@ -18,17 +18,15 @@ const GlassCard: React.FC<GlassCardProps> = ({
     return (
         <div
             className="
-        glass backdrop-blur-4xl
-        border border-white/10
-        rounded-3xl
-        shadow-[0_20px_60px_rgba(0,0,0,0.65)]
-        hover:-translate-y-1.5
-        hover:shadow-[0_35px_90px_rgba(0,0,0,0.85)]
-        transition-all duration-300
-        p-5 sm:p-6 md:p-7
+        bg-gray-50
+        border border-gray-200
+        rounded-[20px] md:rounded-[24px]
+        p-6 sm:p-7 md:p-8
         animate-fadeUp
-        flex flex-col justify-evenly h-full
+        flex flex-col justify-between h-full
+        relative overflow-hidden
       "
+            style={{ borderColor: "rgba(0, 0, 0, 0.1)" }}
         >
             {/* IMAGE FIRST */}
             {imageFirst && children && (
@@ -37,21 +35,23 @@ const GlassCard: React.FC<GlassCardProps> = ({
                 </div>
             )}
 
-            <h3 className="text-white text-[22px] sm:text-[24px] md:text-[28px] font-semibold">
-                {title}
-            </h3>
+            <div>
+                <h3 className="text-gray-900 text-xl sm:text-2xl md:text-[26px] font-medium tracking-tight mb-2">
+                    {title}
+                </h3>
 
-            <p className="text-white/70 text-sm sm:text-base mb-5 sm:mb-6 md:mb-8">
-                {subtitle}
-            </p>
+                <p className="text-gray-500 text-sm sm:text-base font-light mb-4 sm:mb-5">
+                    {subtitle}
+                </p>
 
-            <p className="text-white/90 font-medium text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 md:mb-10">
-                {description}
-            </p>
+                <p className="text-gray-600 font-light text-sm sm:text-base md:text-[17px] leading-relaxed mb-6">
+                    {description}
+                </p>
+            </div>
 
             {/* NORMAL POSITION */}
             {!imageFirst && children && (
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-auto">
                     {children}
                 </div>
             )}
