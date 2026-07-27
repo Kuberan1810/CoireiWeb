@@ -35,7 +35,7 @@ const AiWorkflowTrack = () => {
     const visibleRightIcons = isSmall ? rightIcons.slice(0, 2) : rightIcons;
 
     return (
-        <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-full border border-white/10 overflow-hidden">
+        <div className="relative w-full h-40 sm:h-48 md:h-52 rounded-full border border-gray-200 bg-white/70 overflow-hidden" style={{ borderColor: "rgba(0, 0, 0, 0.1)" }}>
 
             {/* CENTER ICON */}
             <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -53,7 +53,7 @@ const AiWorkflowTrack = () => {
                 {visibleLeftIcons.map((icon, i) => (
                     <motion.div
                         key={i}
-                        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center"
+                        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center border border-gray-200"
                         animate={{
                             x: phase === "open" ? [60, 0] : 0,
                             scale:
@@ -66,7 +66,7 @@ const AiWorkflowTrack = () => {
                             ease: "easeInOut",
                         }}
                     >
-                        <img src={icon} className="w-full h-full object-contain" />
+                        <img src={icon} className="w-full h-full object-contain p-1" />
                     </motion.div>
                 ))}
             </div>
@@ -76,7 +76,7 @@ const AiWorkflowTrack = () => {
                 {visibleRightIcons.map((icon, i) => (
                     <motion.div
                         key={i}
-                        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center"
+                        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center border border-gray-200"
                         animate={{
                             x: phase === "open" ? [-60, 0] : 0,
                             scale:
@@ -89,7 +89,7 @@ const AiWorkflowTrack = () => {
                             ease: "easeInOut",
                         }}
                     >
-                        <img src={icon} className="w-full h-full object-contain" />
+                        <img src={icon} className="w-full h-full object-contain p-1" />
                     </motion.div>
                 ))}
             </div>
