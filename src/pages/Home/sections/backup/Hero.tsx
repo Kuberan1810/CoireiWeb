@@ -18,7 +18,7 @@ function Hero() {
                         <p
                             data-ns-animate
                             data-offset="80"
-                            className="backdrop-blur-md border border-white/20 rounded-xl p-2 max-w-fit text-base text-[#959493] mx-auto sm:mx-0 mb-2.5"
+                            className="backdrop-blur-md border border-white/20 rounded-xl p-2 max-w-fit text-base text-gray-600 mx-auto sm:mx-0 mb-2.5"
                         >
                             Orca AI
                         </p>
@@ -27,7 +27,7 @@ function Hero() {
                         <h1
                             data-ns-animate
                             data-offset="80"
-                            className="text-[#E3E3E0] text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight mb-5"
+                            className="text-[#262626] text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight mb-5"
                         >
                             Execution, Reimagined.
                         </h1>
@@ -37,7 +37,7 @@ function Hero() {
                             data-ns-animate
                             data-delay="0.1"
                             data-offset="80"
-                            className="text-[#B5B4B2] text-base sm:text-lg lg:text-xl max-w-2xl mb-8"
+                            className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-2xl mb-8"
                         >
                             The AI-native execution platform where software teams plan, build,
                             collaborate, test, deploy, and document software inside one
