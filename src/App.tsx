@@ -99,7 +99,7 @@ function App() {
       lenis.raf(time);
       rafIdRef.current = requestAnimationFrame(raf);
     }
-    rafIdRef.current = requestAnimationFrame(raf);
+    rafIdRef.current = requestAnimationFrame(raf);  
 
     return () => {
       if (rafIdRef.current !== null) {
