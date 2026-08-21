@@ -29,9 +29,9 @@ const Ecosystem = () => {
                             
                             <div className="flex items-center gap-6">
                                 <div className="flex space-x-4 items-center">
-                                    <img className="w-[20px] h-[20px] object-contain" src={tasieLogo} alt="Tasie" />
-                                    <img className="w-[20px] h-[20px] object-contain" src={folleiLogo} alt="Follei" />
-                                    <img className="w-[20px] h-[20px] object-contain" src={coireiLogo} alt="Coirei" />
+                                    <img className="w-[32px] h-[32px] object-contain" src={tasieLogo} alt="Tasie" />
+                                    <img className="w-[32px] h-[32px] object-contain" src={folleiLogo} alt="Follei" />
+                                    <img className="w-[32px] h-[32px] object-contain" src={coireiLogo} alt="Coirei" />
                                 </div>
                                 <div className="w-8 h-[2px] bg-[#E5E7EB]"></div>
                                 <span className="text-[#181B25] text-[16px] leading-[20.8px] font-normal instrument-sans">
