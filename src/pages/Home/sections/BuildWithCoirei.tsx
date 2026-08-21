@@ -61,7 +61,7 @@ const BuildWithCoirei = () => {
     ];
 
     return (
-        <section className="GlobalPadding">
+        <section>
             <h2 data-ns-animate className="text-[30px] sm:text-[40px] md:text-[52px] font-semibold text-black mb-15 min-h-[45px] sm:min-h-[82px]">
                 <TypewriterHeading text="Build With Coirei" />
             </h2>

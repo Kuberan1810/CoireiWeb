@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Cta = () => {
     return (
-        <section className="w-full  flex flex-col items-center justify-center bg-white GlobalPadding">
+        <section className="w-full  flex flex-col items-center justify-center bg-white">
 
             <div data-ns-animate className="flex items-center gap-2 mb-6">
                 <span className="text-[#0D9488] font-light text-[12.5px] leading-[20px] tracking-[1.75px] uppercase">

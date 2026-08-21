@@ -172,7 +172,7 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
 
 const OurProduct = () => {
     return (
-        <section id="our-products" className="relative GlobalPadding">
+        <section id="our-products" className="relative">
             <div className="">
 
                 {/* Section Header */}
