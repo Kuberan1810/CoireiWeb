@@ -5,7 +5,7 @@ import coireiLogo from "../../../assets/images/products/coirei-logo.svg";
 
 const Ecosystem = () => {
     return (
-        <section className="relative w-full bg-white py-24 md:py-32 px-6 sm:px-8 md:px-10 lg:px-24">
+        <section className="relative w-full bg-white GlobalPadding">
             <div className="w-full mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Left Column */}
@@ -21,12 +21,12 @@ const Ecosystem = () => {
                                 From AI sales to recruitment and secure engineering, Coirei is building the next generation of intelligent business products.
                             </p>
                         </div>
-                        
+
                         <div className="mt-16 lg:mt-32">
                             <p className="text-[#5B6280] text-[15px] leading-[22px] font-normal instrument-sans max-w-xs mb-8">
                                 Built by Coirei. <br /> Designed for what's next.
                             </p>
-                            
+
                             <div className="flex items-center gap-6">
                                 <div className="flex space-x-4 items-center">
                                     <img className="w-[32px] h-[32px] object-contain" src={tasieLogo} alt="Tasie" />
@@ -47,14 +47,14 @@ const Ecosystem = () => {
                         <div className="relative bg-[#F5F7FA] rounded-[24px] p-8 md:p-10 flex flex-col justify-between min-h-[280px] overflow-hidden">
                             {/* Background Logo with 2% opacity */}
                             <img src={coireiLogo} alt="" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 object-contain opacity-[0.02] pointer-events-none" />
-                            
+
                             <div className="relative z-10 mb-12">
                                 <span className="text-[16px] font-medium text-[#5B6280] instrument-sans">CoireiLMS</span>
                             </div>
                             <div className="relative z-10">
                                 <h3 className="text-[24px] font-medium text-[#0E121B] leading-tight mb-4 instrument-sans">
                                     AI-Powered Learning Platform
-                               </h3>
+                                </h3>
                                 <p className="text-[#5B6280] text-[15px] font-normal instrument-sans leading-[22px]">
                                     A modern platform connecting students, faculty, and administrators.
                                 </p>
@@ -65,7 +65,7 @@ const Ecosystem = () => {
                         <div className="relative bg-[#F5F7FA] rounded-[24px] p-8 md:p-10 flex flex-col justify-between min-h-[280px] overflow-hidden">
                             {/* Background Logo with 2% opacity */}
                             <img src={folleiLogo} alt="" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 object-contain opacity-[0.02] pointer-events-none" />
-                            
+
                             <div className="relative z-10 mb-12">
                                 <span className="text-[16px] font-medium text-[#5B6280] instrument-sans">Follei</span>
                             </div>
@@ -83,7 +83,7 @@ const Ecosystem = () => {
                         <div className="relative bg-[#F5F7FA] rounded-[24px] p-8 md:p-10 flex flex-col justify-between min-h-[280px] overflow-hidden">
                             {/* Background Logo with 2% opacity */}
                             <img src={tasieLogo} alt="" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 object-contain opacity-[0.02] pointer-events-none" />
-                            
+
                             <div className="relative z-10 mb-12">
                                 <span className="text-[16px] font-medium text-[#5B6280] instrument-sans">Tasie</span>
                             </div>
@@ -101,7 +101,7 @@ const Ecosystem = () => {
                         <div className="relative bg-[#F5F7FA] rounded-[24px] p-8 md:p-10 flex flex-col justify-between min-h-[280px] overflow-hidden">
                             {/* Background Logo with 2% opacity */}
                             <img src={coireiLogo} alt="" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 object-contain opacity-[0.02] pointer-events-none" />
-                            
+
                             <div className="relative z-10 mb-12">
                                 <span className="text-[16px] font-medium text-[#5B6280] instrument-sans">Velei</span>
                             </div>

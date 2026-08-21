@@ -37,7 +37,7 @@ const AnimatedCounter = ({ value, suffix = "" }: { value: number; suffix?: strin
 
 const Highlights = () => {
     return (
-        <section className="relative w-full bg-white py-24 md:py-32 px-6 sm:px-8 md:px-10 lg:px-24">
+        <section className="relative w-full bg-white GlobalPadding">
             <div className="w-full mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Left Column */}
@@ -53,12 +53,12 @@ const Highlights = () => {
                                 Building secure, scalable AI systems that help organizations <br></br> automate, innovate, and grow.
                             </p>
                         </div>
-                        
+
                         <div className="mt-16 lg:mt-32">
                             <p className="text-[#5B6280] text-[15px] leading-[22px] font-normal instrument-sans max-w-xs mb-8">
                                 Built for ambitious organizations From startups and institutions to enterprises and government organizations.
                             </p>
-                            
+
                             <div className="flex items-center gap-6">
                                 <div className="flex -space-x-2">
                                     <img className="w-14 h-14 rounded-full border-2 border-white object-cover object-top" src={founderImg} alt="Avatar 1" />
