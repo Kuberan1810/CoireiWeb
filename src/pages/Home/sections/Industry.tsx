@@ -125,14 +125,14 @@ const Industry = () => {
       <div
         data-ns-animate="true"
         data-delay="0.2"
-        className="marquee-mask w-full flex flex-col gap-3 sm:gap-4 md:gap-5 relative z-10 overflow-hidden -mx-6 sm:-mx-10 md:-mx-12 lg:-mx-[60px]"
+        className="marquee-mask w-full flex flex-col gap-3 sm:gap-4 md:gap-5 relative z-10 overflow-hidden"
       >
         <div
-          className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 w-[190px] h-[177px] bg-[#FAFCF9] z-20"
+          className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 w-[90px] h-[177px] bg-[#FAFCF9] z-20"
           style={{ filter: "blur(44px)" }}
         />
         <div
-          className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-[190px] h-[177px] bg-[#FAFCF9] z-20"
+          className="pointer-events-none absolute right-30 top-1/2 -translate-y-1/2 w-[90px] h-[177px] bg-[#FAFCF9] z-20"
           style={{ filter: "blur(44px)" }}
         />
 
