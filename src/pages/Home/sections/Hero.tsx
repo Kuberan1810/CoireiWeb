@@ -41,17 +41,17 @@ const Hero = () => {
                 <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2">
                     
                     {/* Ring 1 (Smallest) */}
-                    <div className="absolute w-[1200px] h-[1200px] rounded-full border border-gray-200/70 animate-spin-slow-reverse">
+                    <div className="absolute w-[180vw] sm:w-[120vw] lg:w-[1200px] h-[180vw] sm:h-[120vw] lg:h-[1200px] rounded-full border border-gray-200/70 animate-spin-slow-reverse">
                         <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full border-2 border-orange-400 bg-white shadow-[0_0_8px_rgba(251,146,60,0.6)]"></div>
                     </div>
                     
                     {/* Ring 2 (Middle) */}
-                    <div className="absolute w-[1600px] h-[1600px] rounded-full border border-gray-200/70 animate-spin-slow">
+                    <div className="absolute w-[240vw] sm:w-[160vw] lg:w-[1600px] h-[240vw] sm:h-[160vw] lg:h-[1600px] rounded-full border border-gray-200/70 animate-spin-slow">
                         <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full border-2 border-orange-400 bg-white shadow-[0_0_8px_rgba(251,146,60,0.6)]"></div>
                     </div>
                     
                     {/* Ring 3 (Largest) */}
-                    <div className="absolute w-[2000px] h-[2000px] rounded-full border border-gray-200/70 animate-spin-slow-reverse" style={{ animationDuration: '50s' }}>
+                    <div className="absolute w-[300vw] sm:w-[200vw] lg:w-[2000px] h-[300vw] sm:h-[200vw] lg:h-[2000px] rounded-full border border-gray-200/70 animate-spin-slow-reverse" style={{ animationDuration: '50s' }}>
                         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2.5 h-2.5 rounded-full border-2 border-orange-400 bg-white shadow-[0_0_8px_rgba(251,146,60,0.6)]"></div>
                     </div>
 
@@ -107,10 +107,10 @@ const Hero = () => {
                         {/* Left Edge Blur */}
                         <div className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-[111px] h-[85px] bg-[#F9FCF8] blur-[44px] z-10 pointer-events-none"></div>
                         
-                        <img src={networkRhinos} alt="Network Rhinos" className="h-8 md:h-10 object-contain relative z-0" />
-                        <img src={techPanda} alt="TechPanda" className="h-6 md:h-7 object-contain relative z-0" />
-                        <img src={skillPoint} alt="Skill Point" className="h-10 md:h-12 object-contain relative z-0" />
-                        <img src={jit} alt="JIT" className="h-16 md:h-20 object-contain relative z-0" />
+                        <img src={networkRhinos} alt="Network Rhinos" className="w-[168px] h-[28px] object-contain relative z-0" />
+                        <img src={techPanda} alt="TechPanda" className="w-[117px] h-[28px] object-contain relative z-0" />
+                        <img src={skillPoint} alt="Skill Point" className="w-[66.67px] h-[40px] object-contain relative z-0" />
+                        <img src={jit} alt="JIT" className="w-[52.67px] h-[60px] object-contain relative z-0" />
 
                         {/* Right Edge Blur */}
                         <div className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-[111px] h-[85px] bg-[#F9FCF8] blur-[44px] z-10 pointer-events-none"></div>

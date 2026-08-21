@@ -5,7 +5,7 @@ import coireiLogo from "../../../assets/images/products/coirei-logo.svg";
 
 const Ecosystem = () => {
     return (
-        <section className="relative w-full bg-white py-24 md:py-32 px-6 sm:px-8 md:px-10 lg:px-24">
+        <section className="relative w-full bg-white GlobalPadding">
             <div className="w-full mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Left Column */}

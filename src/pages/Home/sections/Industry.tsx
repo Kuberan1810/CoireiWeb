@@ -28,7 +28,7 @@ const row2 = [
 
 const Industry = () => {
   return (
-    <section className="relative w-full py-16 md:py-24 overflow-hidden bg-black text-white">
+    <section className="relative w-full overflow-hidden bg-black text-white GlobalPadding">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <style>{`

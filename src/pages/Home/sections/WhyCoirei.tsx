@@ -126,7 +126,7 @@ const WhyCoirei = () => {
     };
 
     return (
-        <section className="relative w-full bg-white overflow-hidden py-24 md:py-32 px-6 sm:px-8 md:px-10 lg:px-24">
+        <section className="relative w-full bg-white overflow-hidden GlobalPadding">
             <div className="w-full mx-auto">
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-12 md:mb-16">
