@@ -1,76 +1,103 @@
-import zoomImg from "../../../assets/images/homepage/zoom.svg";
-import handshakeImg from "../../../assets/images/homepage/handshake.svg";
 import TypewriterHeading from "../../../component/TypewriterHeading";
+import vmBgImg from "../../../assets/images/homepage/V&M BG.png";
+import vmCardImg from "../../../assets/images/homepage/v&M.jpg";
 
 const Vision = () => {
     return (
-        <section className="w-full GlobalPadding">
-            <div className="max-w-[1400px] mx-auto flex flex-col items-center">
-                
-                {/* Heading */}
-                <h2 
-                    data-ns-animate 
-                    className="font-semibold text-[30px] sm:text-[40px] md:text-[52px] lg:text-[68px] leading-[1.2] md:leading-tight text-[#000000] uppercase mb-12 sm:mb-20 text-center min-h-[45px] sm:min-h-[82px]"
-                >
-                    <TypewriterHeading text="Vision & Mission" />
-                </h2>
+        <section className="w-full GlobalPadding py-14 sm:py-20 md:py-28 bg-white text-neutral-900 overflow-hidden">
+            <div className="flex flex-col gap-12 sm:gap-16 md:gap-20">
 
-                {/* Grid Container */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 w-full max-w-[1100px]">
-                    
-                    {/* Vision Card */}
-                    <div 
-                        data-ns-animate 
-                        data-delay="0.1"
-                        className="flex flex-col rounded-[20px] overflow-hidden shadow-[0px_3px_4px_0px_#00000040]"
+                {/* Top Two-Column Block */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
+
+                    {/* Left Column: Heading & Introduction */}
+                    <div data-ns-animate className="lg:col-span-6 flex flex-col justify-center">
+                        <span className="inline-block text-[#D33B12] text-sm sm:text-[16px] tracking-wide mb-3 sm:mb-4">
+                            Vision & Mission
+                        </span>
+                        <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] text-[#0E121B] leading-[1.15] tracking-tight mb-4 sm:mb-6 min-h-[75px] sm:min-h-[96px]">
+                            <TypewriterHeading text="Building the future of intelligent business." />
+                        </h2>
+                        <p className="text-[#0E121B] text-sm sm:text-base md:text-[16px] leading-relaxed max-w-lg font-normal">
+                            Coirei is focused on creating practical, secure, and scalable AI systems that help organizations automate, innovate, and grow.
+                        </p>
+                    </div>
+
+                    {/* Right Column: Gradient Card with Inner Ecosystem Graphic */}
+                    <div
+                        data-ns-animate
+                        data-delay="0.15"
+                        className="lg:col-span-6 flex justify-center lg:justify-end"
                     >
-                        {/* Image Top */}
-                        <div className="w-full flex-shrink-0">
-                            <img src={zoomImg} alt="Our Vision" className="w-full h-auto object-cover block" />
+                        <div className="relative w-full max-w-[590px] min-h-[320px] sm:min-h-[380px] md:min-h-[430px] rounded-[16px] sm:rounded-[12px] overflow-hidden shadow-sm flex items-center justify-center p-4 sm:p-7 md:p-8">
+                            {/* Vibrant Gradient Background */}
+                            <img
+                                src={vmBgImg}
+                                alt=""
+                                className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+                            />
+
+                            {/* Inner White Card Graphic */}
+                            <div className="relative z-10 w-full rounded-[20px] sm:rounded-[28px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] bg-white">
+                                <img
+                                    src={vmCardImg}
+                                    alt="Coirei Ecosystem"
+                                    className="w-full h-auto object-contain block"
+                                />
+                            </div>
                         </div>
-                        
-                        {/* Content Bottom */}
-                        <div className="relative bg-[#000000] p-10 md:p-12 flex-grow min-h-[300px]">
-                            {/* Orange Corner Badge */}
-                            <div className="absolute top-4 left-4 w-0 h-0 border-t-[36px] border-t-[#F67300] border-r-[36px] border-r-transparent" />
-                            
-                            <h3 className="font-semibold text-[24px] leading-[28px] text-[#FFFFFF] mb-6 mt-2">
-                                Our Vision
+                    </div>
+                </div>
+
+                {/* Bottom Vision & Mission Rows */}
+                <div className="w-full flex flex-col pt-4 sm:pt-6">
+
+                    {/* Vision Row */}
+                    <div
+                        data-ns-animate
+                        data-delay="0.1"
+                        className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start py-6 sm:py-8 border-b border-neutral-200/80"
+                    >
+                        <div className="md:col-span-5">
+                            <span className="text-[#D33B12] text-xs sm:text-sm tracking-wide">
+                                Vision
+                            </span>
+                            <h3 className="text-lg sm:text-[24px] text-[#0E121B] mt-1">
+                                Global AI Leadership
                             </h3>
-                            <p className="font-normal text-sm sm:text-base md:text-[18px] lg:text-[21px] leading-[1.5] md:leading-[31px] text-[#D8D8D8]">
-                                To become a global leader in enterprise artificial intelligence  building intelligent products that transform how organizations sell, learn, hire, and build software.
+                        </div>
+                        <div className="md:col-span-7 ml-20">
+                            <p className="text-[#0E121B] text-sm sm:text-[16px] leading-relaxed font-normal">
+                                To become a global leader in enterprise AI, building intelligent products that transform how organizations sell, learn, hire, and build software.
                             </p>
                         </div>
                     </div>
 
-                    {/* Mission Card */}
-                    <div 
-                        data-ns-animate 
+                    {/* Mission Row */}
+                    <div
+                        data-ns-animate
                         data-delay="0.2"
-                        className="flex flex-col rounded-[20px] overflow-hidden shadow-[0px_3px_4px_0px_#00000040]"
+                        className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start py-6 sm:py-8 border-b border-neutral-200/80"
                     >
-                        {/* Image Top */}
-                        <div className="w-full flex-shrink-0">
-                            <img src={handshakeImg} alt="Our Mission" className="w-full h-auto object-cover block" />
-                        </div>
-                        
-                        {/* Content Bottom */}
-                        <div className="relative bg-[#000000] p-10 md:p-12 flex-grow min-h-[300px]">
-                            {/* Orange Corner Badge */}
-                            <div className="absolute top-4 left-4 w-0 h-0 border-t-[36px] border-t-[#F67300] border-r-[36px] border-r-transparent" />
-                            
-                            <h3 className="font-semibold text-[24px] leading-[28px] text-[#FFFFFF] mb-6 mt-2">
-                                Our Mission
+                        <div className="md:col-span-5">
+                            <span className="text-[#D33B12] text-xs sm:text-sm tracking-wide">
+                                Mission
+                            </span>
+                            <h3 className="text-lg sm:text-[24px] text-[#0E121B] mt-1">
+                                Practical AI for Business
                             </h3>
-                            <p className="font-normal text-sm sm:text-base md:text-[18px] lg:text-[21px] leading-[1.5] md:leading-[31px] text-[#D8D8D8]">
-                                To empower businesses worldwide by engineering secure, scalable, and practical AI ecosystems that solve real-world problems and drive operational excellence.
+                        </div>
+                        <div className="md:col-span-7 ml-20">
+                            <p className="text-[#0E121B] text-sm sm:text-[16px] leading-relaxed font-normal">
+                                To empower organizations with secure, scalable AI ecosystems that solve real-world problems and drive operational excellence.
                             </p>
                         </div>
                     </div>
 
                 </div>
+
             </div>
-        </section>
+        </section >
     );
 };
 

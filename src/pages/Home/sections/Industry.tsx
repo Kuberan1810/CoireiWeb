@@ -1,16 +1,16 @@
-
 import TypewriterHeading from "../../../component/TypewriterHeading";
+import bgImage from "../../../assets/images/homepage/bg.jpg";
 
 const row1 = [
+  "Human Resources",
+  "Logistics & Supply Chain",
   "Manufacturing",
   "Healthcare",
   "Education",
   "Banking & Financial Services",
   "Insurance",
   "Retail & E-commerce",
-  "Information Technology",
-  "Human Resources",
-  "Logistics & Supply Chain"
+  "Information Technology"
 ];
 
 const row2 = [
@@ -28,8 +28,15 @@ const row2 = [
 
 const Industry = () => {
   return (
-    <section className="relative w-full py-16 md:py-24 overflow-hidden bg-black text-white">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative w-full py-16 sm:py-20 md:py-28 overflow-hidden bg-white text-neutral-900">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
+        <img
+          src={bgImage}
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
 
       <style>{`
         @keyframes marqueeLeft {
@@ -42,15 +49,27 @@ const Industry = () => {
         }
         .marquee-container-left {
           display: flex;
-          gap: 16px;
+          gap: 12px;
           width: max-content;
-          animation: marqueeLeft 50s linear infinite;
+          animation: marqueeLeft 42s linear infinite;
+          will-change: transform;
         }
         .marquee-container-right {
           display: flex;
-          gap: 16px;
+          gap: 12px;
           width: max-content;
-          animation: marqueeRight 50s linear infinite;
+          animation: marqueeRight 42s linear infinite;
+          will-change: transform;
+        }
+        @media (min-width: 768px) {
+          .marquee-container-left {
+            gap: 16px;
+            animation-duration: 52s;
+          }
+          .marquee-container-right {
+            gap: 16px;
+            animation-duration: 52s;
+          }
         }
         .marquee-container-left:hover,
         .marquee-container-right:hover {
@@ -58,33 +77,59 @@ const Industry = () => {
         }
       `}</style>
 
-      <div className="GlobalPadding relative z-10 ">
-        {/* Heading */}
-        <h2
-          data-ns-animate="true"
-          data-delay="0.1"
-          data-offset="50"
-          className="text-center text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] font-semibold tracking-tight text-white leading-[1.2] min-h-[90px] sm:min-h-[144px]"
-        >
-          <TypewriterHeading text="Intelligent systems adapted to your industry's own workflow." />
-        </h2>
+      {/* Content Header */}
+      <div className="GlobalPadding relative z-10 max-w-[1400px] mx-auto !py-0 mb-10 sm:mb-14 md:mb-18">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-10">
+
+          {/* Left Column: Tag & Main Title */}
+          <div className="max-w-2xl">
+            <span
+              data-ns-animate="true"
+              className="inline-block text-[#D33B12] text-sm sm:text-[16px] tracking-wide mb-3 sm:mb-4"
+            >
+              Industries
+            </span>
+            <h2
+              data-ns-animate="true"
+              data-delay="0.05"
+              className="text-[32px] lg:text-[48px] text-[#111827] leading-[1.15] tracking-tight min-h-[75px] sm:min-h-[96px] md:min-h-[120px]"
+            >
+              <TypewriterHeading text="Intelligence that fits your industry." />
+            </h2>
+          </div>
+
+          {/* Right Column: Subtitle Description */}
+          <div
+            data-ns-animate="true"
+            data-delay="0.15"
+            className="lg:max-w-[25%] pb-1 sm:pb-2"
+          >
+            <p className="text-neutral-600 text-sm sm:text-base md:text-[17px] leading-relaxed font-normal">
+              We engineer AI solutions that adapt to how your industry works, not the other way around.
+            </p>
+          </div>
+        </div>
       </div>
 
-      {/* Marquee Rows */}
-      <div 
-      data-ns-animate="true"
-          data-delay="0.1"
-          data-offset="50"
-      className="w-full flex flex-col gap-4 md:gap-5 relative z-10 overflow-hidden">
+      {/* Marquee Container with soft fade gradient edges */}
+      <div
+        data-ns-animate="true"
+        data-delay="0.2"
+        className="w-full flex flex-col gap-3 sm:gap-4 md:gap-5 relative z-10 overflow-hidden"
+      >
+        {/* Left & Right Edge Vignette Fades */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 md:w-36 bg-gradient-to-r from-white via-white/80 to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 md:w-36 bg-gradient-to-l from-white via-white/80 to-transparent z-20" />
+
+        {/* Row 1 */}
         <div className="w-full overflow-hidden relative flex py-1">
-          <div
-           className="marquee-container-right">
+          <div className="marquee-container-right">
             {[...row1, ...row1, ...row1, ...row1].map((pill, idx) => (
               <div
                 key={`row1-${idx}`}
-                className="flex items-center px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300 cursor-default shrink-0 shadow-[inset_0_3px_4px_rgba(255,255,255,0.25)]"
+                className="h-[42px] px-5 sm:px-6 flex items-center justify-center rounded-full bg-[#333333]/20 hover:bg-[#333333]/30 border-[0.2px] border-[#333333]/10 shadow-[inset_4px_4px_4px_rgba(255,255,255,0.26),inset_-4px_-4px_4px_rgba(255,255,255,0.26)] transition-all duration-300 cursor-pointer shrink-0"
               >
-                <span className="text-white/80 text-xs md:text-sm font-medium tracking-wide">
+                <span className="text-[#333333] text-xs sm:text-sm md:text-[14.5px] font-normal tracking-normal whitespace-nowrap">
                   {pill}
                 </span>
               </div>
@@ -92,18 +137,15 @@ const Industry = () => {
           </div>
         </div>
 
-        <div
-        data-ns-animate="true"
-          data-delay="0.1"
-          data-offset="50"
-        className="w-full overflow-hidden relative flex py-1">
+        {/* Row 2 */}
+        <div className="w-full overflow-hidden relative flex py-1">
           <div className="marquee-container-left">
             {[...row2, ...row2, ...row2, ...row2].map((pill, idx) => (
               <div
                 key={`row2-${idx}`}
-                className="flex items-center px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300 cursor-default shrink-0 shadow-[inset_0_3px_4px_rgba(255,255,255,0.25)]"
+                className="h-[42px] px-5 sm:px-6 flex items-center justify-center rounded-full bg-[#333333]/20 hover:bg-[#333333]/30 border-[0.2px] border-[#333333]/10 shadow-[inset_4px_4px_4px_rgba(255,255,255,0.26),inset_-4px_-4px_4px_rgba(255,255,255,0.26)] transition-all duration-300 cursor-pointer shrink-0"
               >
-                <span className="text-white/80 text-xs md:text-sm font-medium tracking-wide">
+                <span className="text-[#333333] text-xs sm:text-sm md:text-[14.5px] font-normal tracking-normal whitespace-nowrap">
                   {pill}
                 </span>
               </div>
