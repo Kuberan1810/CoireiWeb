@@ -4,7 +4,7 @@ import TypewriterHeading from "../../../component/TypewriterHeading";
 
 const Vision = () => {
     return (
-        <section className="w-full">
+        <section className="w-full ">
             <div className="max-w-[1400px] mx-auto flex flex-col items-center">
                 
                 {/* Heading */}

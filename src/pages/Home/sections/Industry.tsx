@@ -58,7 +58,7 @@ const Industry = () => {
         }
       `}</style>
 
-      <div className="relative z-10 ">
+      <div className=" relative z-10 ">
         {/* Heading */}
         <h2
           data-ns-animate="true"

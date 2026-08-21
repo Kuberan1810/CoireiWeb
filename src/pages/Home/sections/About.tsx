@@ -4,7 +4,7 @@ import TypewriterHeading from "../../../component/TypewriterHeading";
 
 const About = () => {
     return (
-        <section className="relative w-full bg-[#FAFAFC]">
+        <section className="relative w-full  bg-[#FAFAFC]">
 
             {/* Blurred Background Layer (Matches Vector 41 in Figma) */}
             <div className="absolute top-1/2 right-[-10%] -translate-y-1/2 w-[800px] h-[400px] bg-[#B1BBFF50] opacity-100 blur-[1000px] rounded-full pointer-events-none -rotate-12"></div>

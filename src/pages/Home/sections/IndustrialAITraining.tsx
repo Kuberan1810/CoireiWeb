@@ -63,7 +63,7 @@ const IndustrialAITraining = () => {
 
 
     return (
-        <section>
+        <section className="">
             <h2 data-ns-animate className="text-[30px] sm:text-[40px] md:text-[52px] font-semibold text-black mb-15 min-h-[45px] sm:min-h-[78px]">
                 <TypewriterHeading text="Industrial AI Training" />
             </h2>
