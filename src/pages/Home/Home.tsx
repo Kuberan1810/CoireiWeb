@@ -12,28 +12,31 @@ import Ceo from "./sections/Ceo";
 import Cta from "./sections/Cta";
 import Hero from "./sections/Hero";
 import IndustrialAITraining from "./sections/IndustrialAITraining";
+import WhyCoirei from "./sections/WhyCoirei";
+import Highlights from "./sections/Highlights";
+import Ecosystem from "./sections/Ecosystem";
 import { useState } from "react";
 
 
 function Home() {
     useScrollAnimations();
-    const [isHeroTypingDone, setIsHeroTypingDone] = useState(false);
 
     return (
-        <div className="overflow-x-clip bg-white  min-h-screen">
+        <div className="overflow-x-clip bg-white min-h-screen">
             <SEO
-
                 title="AI Powered Solutions for Businesses | Coirei"
                 description="Coirei is AI powered solutions company. We create AI apps and chatbots. AI automation and AI web and platform. AI products and customized LMS for business."
             />
             <FaqSchema />
 
-
-            <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-out transform ${isHeroTypingDone ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
+            <div className="fixed top-0 left-0 w-full z-50">
                 <Navbar />
             </div>
 
-            <Hero onTypingComplete={() => setIsHeroTypingDone(true)} />
+            <Hero />
+            <WhyCoirei />
+            <Highlights />
+            <Ecosystem />
             <About />
             <OurProducts />
             <BuildWithCoirei />

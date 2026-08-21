@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import TypewriterHeading from '../../../component/TypewriterHeading';
-import logo1 from '../../../assets/images/homepage/logo1.svg';
-import logo2 from '../../../assets/images/homepage/logo2.svg';
-import logo3 from '../../../assets/images/homepage/logo3.svg';
-import logo4 from '../../../assets/images/homepage/logo4.svg';
+import logo1 from '../../../assets/images/homepage/networkrhinos.svg';
+import logo2 from '../../../assets/images/homepage/techpanda.svg';
+import logo3 from '../../../assets/images/homepage/skillpoint.svg';
+import logo4 from '../../../assets/images/homepage/jeppiarcollege.svg';
 
 const TypewriterText = ({ text, onComplete }: { text: string, onComplete?: () => void }) => {
     const [displayedText, setDisplayedText] = useState("");

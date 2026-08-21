@@ -6,7 +6,7 @@ import Velei from "../../../assets/videos/velei.mp4";
 import Tasie from "./Animation/Tasie";
 // import  from "./Animation/Velei";
 import TypewriterHeading from "../../../component/TypewriterHeading";
-import {  ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const products = [
     {
@@ -108,8 +108,8 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
                 {product.link && (
                     <div
                         className={`mt-8 transform transition-all duration-700 ease-out ${isTypingDone
-                                ? "translate-y-0 opacity-100"
-                                : "translate-y-8 opacity-0"
+                            ? "translate-y-0 opacity-100"
+                            : "translate-y-8 opacity-0"
                             }`}
                     >
                         <Link
@@ -127,7 +127,7 @@ const ProductCard = ({ product, index }: { product: any, index: number }) => {
                 )}
             </div>
 
-                        
+
 
             {/* Image Container */}
             <div
