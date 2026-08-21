@@ -9,7 +9,9 @@ import About from "./sections/About";
 import OurProducts from "./sections/OurProduct";
 import BuildWithCoirei from "./sections/BuildWithCoirei";
 import Ceo from "./sections/Ceo";
+import FAQ from "./sections/faq";
 import Cta from "./sections/Cta";
+import StayWithCoirei from "./sections/staywithcoirei";
 import Hero from "./sections/Hero";
 import IndustrialAITraining from "./sections/IndustrialAITraining";
 import { useState } from "react";
@@ -41,7 +43,8 @@ function Home() {
             <Industry />
             <Vision />
             <Ceo />
-            <Cta />
+            <FAQ />
+            <StayWithCoirei />
        
             <Footer />
 
