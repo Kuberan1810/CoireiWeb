@@ -4,7 +4,7 @@ import vmCardImg from "../../../assets/images/homepage/v&M.jpg";
 
 const Vision = () => {
     return (
-        <section className="w-full GlobalPadding py-14 sm:py-20 md:py-28 bg-white text-neutral-900 overflow-hidden">
+        <section className="w-full GlobalPadding bg-white text-neutral-900 overflow-hidden">
             <div className="flex flex-col gap-12 sm:gap-16 md:gap-20">
 
                 {/* Top Two-Column Block */}
