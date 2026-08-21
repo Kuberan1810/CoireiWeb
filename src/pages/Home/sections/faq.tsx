@@ -57,7 +57,7 @@ const FAQ = () => {
     };
 
     return (
-        <section className="w-full GlobalPadding py-16 sm:py-24 bg-white text-neutral-900">
+        <section className="w-full GlobalPadding bg-white text-neutral-900">
             <div className="">
                 {/* Header */}
                 <div data-ns-animate className="text-center mb-12 sm:mb-16">

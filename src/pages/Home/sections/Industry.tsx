@@ -28,13 +28,13 @@ const row2 = [
 
 const Industry = () => {
   return (
-    <section className="relative w-full py-16 sm:py-20 md:py-28 overflow-hidden bg-white text-neutral-900">
+    <section className="relative w-full GlobalPadding overflow-hidden bg-white text-neutral-900 min-h-[560px] flex flex-col justify-center">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
         <img
           src={bgImage}
           alt=""
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-top"
         />
       </div>
 
@@ -46,6 +46,16 @@ const Industry = () => {
         @keyframes marqueeRight {
           0% { transform: translate3d(-50%, 0, 0); }
           100% { transform: translate3d(0, 0, 0); }
+        }
+        .marquee-mask {
+          mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%);
+        }
+        @media (max-width: 768px) {
+          .marquee-mask {
+            mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 8%, rgba(0, 0, 0, 1) 92%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 8%, rgba(0, 0, 0, 1) 92%, transparent 100%);
+          }
         }
         .marquee-container-left {
           display: flex;
@@ -78,7 +88,7 @@ const Industry = () => {
       `}</style>
 
       {/* Content Header */}
-      <div className="GlobalPadding relative z-10 max-w-[1400px] mx-auto !py-0 mb-10 sm:mb-14 md:mb-18">
+      <div className="relative z-10 max-w-[1400px] w-full mx-auto mb-8 sm:mb-10 md:mb-12">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-10">
 
           {/* Left Column: Tag & Main Title */}
@@ -115,14 +125,19 @@ const Industry = () => {
       <div
         data-ns-animate="true"
         data-delay="0.2"
-        className="w-full flex flex-col gap-3 sm:gap-4 md:gap-5 relative z-10 overflow-hidden"
+        className="marquee-mask w-full flex flex-col gap-3 sm:gap-4 md:gap-5 relative z-10 overflow-hidden -mx-6 sm:-mx-10 md:-mx-12 lg:-mx-[60px]"
       >
-        {/* Left & Right Edge Vignette Fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 md:w-36 bg-gradient-to-r from-white via-white/80 to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 md:w-36 bg-gradient-to-l from-white via-white/80 to-transparent z-20" />
+        <div
+          className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 w-[190px] h-[177px] bg-[#FAFCF9] z-20"
+          style={{ filter: "blur(44px)" }}
+        />
+        <div
+          className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-[190px] h-[177px] bg-[#FAFCF9] z-20"
+          style={{ filter: "blur(44px)" }}
+        />
 
         {/* Row 1 */}
-        <div className="w-full overflow-hidden relative flex py-1">
+        <div className="w-full overflow-hidden relative flex py-1 mt-8">
           <div className="marquee-container-right">
             {[...row1, ...row1, ...row1, ...row1].map((pill, idx) => (
               <div
