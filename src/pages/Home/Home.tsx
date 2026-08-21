@@ -1,7 +1,7 @@
 import SEO from "../../component/SEO";
 import { FaqSchema } from "../../component/StructuredData";
 import Navbar from "../../component/Navbar";
-import Footer from "../../component/Footer/Footer";
+import FooterCoirei from "../../component/Footer/footerCoirei";
 import Industry from "./sections/Industry";
 import Vision from "./sections/Vision";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
@@ -46,7 +46,7 @@ function Home() {
             <FAQ />
             <StayWithCoirei />
        
-            <Footer />
+            <FooterCoirei />
 
         </div>
     );
