@@ -1,201 +1,114 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import follei from "../../../assets/videos/Follei.mp4";
-import Lms from "../../../assets/videos/lms.mp4";
-import Velei from "../../../assets/videos/velei.mp4";
-import Tasie from "./Animation/Tasie";
-// import  from "./Animation/Velei";
-import TypewriterHeading from "../../../component/TypewriterHeading";
-import { ChevronRight } from "lucide-react";
+import React, { useRef } from "react";
+import vmBgImg from "../../../assets/images/homepage/V&M BG.png";
+import folleiImg from "../../../assets/images/homepage/folleihome.svg";
+import coireiImg from "../../../assets/images/homepage/coireihome.svg";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const products = [
     {
         id: "follei",
-        name: "Follei",
-        category: "AUTONOMOUS AI SALES WORKFORCE",
-        description: "An end-to-end AI sales automation platform that manages the complete customer journey  from first contact to long-term customer success  as a coordinated workforce of specialized agents, not a single chatbot.",
-        pills: ["Voice", "WhatsApp", "Email", "Web Chat"],
-        mediaType: "video",
-        src: follei,
-        link: "/products/follei"
+        title: "Follei - Autonomous AI sales workforce",
+        description: "Transform your sales operation with a coordinated AI workforce that handles customer conversations, follow-ups, qualification, and engagement across every channel.",
+        src: folleiImg,
     },
     {
         id: "lms",
-        name: "Coirei LMS",
-        category: "AI-POWERED LEARNING MANAGEMENT PLATFORM",
-        description: "An intelligent learning platform for schools, colleges, universities, and corporate training  combining modern learning infrastructure with AI across student, faculty, admin, and super admin portals.",
-        pills: ["Student Portal", "Faculty Portal", "Admin Portal", "Super Portal"],
-        mediaType: "video",
-        src: Lms,
-        link: "/products/coireilms"
-    },
-    {
-        id: "velei",
-        name: "Velei",
-        upcomming: "(Coming Soon)",
-        category: "THE FUTURE OF AI RECRUITMENT",
-        description: "Recruitment based on skills, not just resumes. Velei runs autonomous AI interviews and delivers structured candidate assessments in place of manual resume review.",
-        pills: [],
-        mediaType: "video",
-        src: Velei,
-        // link: "/products/velei"
-    },
-    {
-        id: "tasie",
-        name: "TASIE",
-        upcomming: "(Coming Soon)",
-        category: "AI-POWERED SECURE SOFTWARE ENGINEERING",
-        description: "Rather than catching vulnerabilities after development, TASIE analyzes code continuously as it's written  helping teams shift quality and security earlier in the lifecycle.",
-        pills: [],
-        mediaType: "component",
-        component: <Tasie />
+        title: "Coirei LMS - AI-powered learning infrastructure",
+        description: "A modern learning platform that connects students, faculty, and administrators with intelligent tools for learning, management, engagement, and academic operations.",
+        src: coireiImg,
     }
 ];
 
-const ProductCard = ({ product, index }: { product: any, index: number }) => {
-    const [isTypingDone, setIsTypingDone] = React.useState(false);
-
-    return (
-        <div
-            className="group grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center "
-        >
-            {/* Text Content */}
-            <div
-                data-ns-animate="true"
-                data-delay={`${0.1 + index * 0.05}`}
-                data-offset="50"
-                className="lg:col-span-5 flex flex-col items-start max-w-[530px]"
-            >
-                {/* Product Title */}
-                <h3 className="text-2xl sm:text-[30px] font-bold text-[#14182C] tracking-tight mb-2 min-h-[35px] sm:min-h-[45px]">
-                    <TypewriterHeading text={product.name} delay={40} />
-                    {product.upcomming && (
-                        <span className="text-lg text-[#5B6280] font-medium">
-                            <TypewriterHeading text={` ${product.upcomming}`} delay={30} />
-                        </span>
-                    )}
-                </h3>
-
-                {/* Category Subtitle */}
-                <span className="text-[12px] font-semibold text-[#004370]/80 tracking-wider uppercase mb-4 min-h-[18px] block p-2.5 bg-gray-200 rounded-2xl">
-                    <TypewriterHeading text={product.category} delay={20} />
-                </span>
-
-                {/* Description */}
-                <p className=" text-[#878FAA] text-sm sm:text-base md:text-[18px] leading-relaxed mb-5 font-light min-h-[50px] sm:min-h-[81px]">
-                    <TypewriterHeading
-                        text={product.description}
-                        delay={10}
-                        onComplete={() => setIsTypingDone(true)}
-                    />
-                </p>
-
-                {/* Pills */}
-                {product.pills && product.pills.length > 0 && (
-                    <div className={`flex flex-wrap gap-2 transition-all duration-700 ease-out transform ${isTypingDone ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                        {product.pills.map((pill: string) => (
-                            <span
-                                key={pill}
-                                className="px-4 py-2.5 border border-[#DEE3EE] rounded-full text-xs md:text-[14px] text-[#5B6280] hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
-                            >
-                                {pill}
-                            </span>
-                        ))}
-                    </div>
-                )}
-
-                {/* View More Button */}
-                {product.link && (
-                    <div
-                        className={`mt-8 transform transition-all duration-700 ease-out ${isTypingDone
-                            ? "translate-y-0 opacity-100"
-                            : "translate-y-8 opacity-0"
-                            }`}
-                    >
-                        <Link
-                            to={product.link}
-                            className="group/btn relative inline-flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full border border-slate-200/80 bg-slate-50/50 px-6 py-2.5 text-sm font-medium text-slate-800 shadow-sm backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-slate-300 hover:bg-white hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.12)]  sm:w-auto"
-                        >
-                            <span className="relative z-10 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/btn:-translate-x-2">
-                                View More
-                            </span>
-                            <div className="absolute right-3.5 top-1/2 z-10 -translate-y-1/2 translate-x-4 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/btn:translate-x-0 group-hover/btn:opacity-100">
-                                <ChevronRight size={16} className="text-slate-700" strokeWidth={2.5} />
-                            </div>
-                        </Link>
-                    </div>
-                )}
-            </div>
-
-
-
-            {/* Image Container */}
-            <div
-                data-ns-animate="true"
-                data-delay={`${0.15 + index * 0.05}`}
-                data-offset="60"
-                className="lg:col-span-7 w-full"
-            >
-                <div className="block relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-50/50 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
-                    {product.mediaType === "video" && (
-                        <video
-                            src={product.src}
-                            className="w-full h-full object-cover"
-                            playsInline
-                            muted
-                            autoPlay
-                            loop
-                            preload="metadata"
-                            controls={false}
-                            disablePictureInPicture
-                            disableRemotePlayback
-                        />
-                    )}
-                    {product.mediaType === "image" && (
-                        <img
-                            src={product.src}
-                            alt={`${product.name} interface`}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                        />
-                    )}
-                    {product.mediaType === "component" && (
-                        <div className="w-full h-full flex items-center justify-center bg-linear-to-r from-green-50 to-indigo-100">
-                            {product.component}
-                        </div>
-                    )}
-                </div>
-            </div>
-        </div>
-    );
-};
-
 const OurProduct = () => {
-    return (
-        <section id="our-products" className="relative GlobalPadding">
-            <div className="">
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-                {/* Section Header */}
-                <div className="mb-10 md:mb-12.5">
-                    <h2
-                        data-ns-animate="true"
-                        data-delay="0.1"
-                        data-offset="40"
-                        className="text-[30px] sm:text-[40px] md:text-[52px] font-medium text-black min-h-[45px] sm:min-h-[78px]"
-                    >
-                        <TypewriterHeading text="Our Products" />
+    const scroll = (direction: "left" | "right") => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = window.innerWidth > 1024 ? window.innerWidth * 0.45 : window.innerWidth * 0.8;
+            scrollContainerRef.current.scrollBy({
+                left: direction === "left" ? -scrollAmount : scrollAmount,
+                behavior: "smooth"
+            });
+        }
+    };
+
+    return (
+        <section id="our-products" className="relative GlobalPadding overflow-hidden">
+            {/* Top Heading Section matches previous sections */}
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-end mb-10 lg:mb-15">
+                <div className="w-full lg:w-[60%]">
+                    <span className="text-[#D33B12] text-[16px] font-normal leading-[20.8px] tracking-[0px] mb-2 block">
+                        Our Products
+                    </span>
+                    <h2 data-ns-animate className="text-[32px] sm:text-[40px] md:text-[48px] font-normal text-[#0E121B] leading-[1.2] md:leading-[52.8px] tracking-[0px] instrument-sans">
+                        Intelligence built into products<br className="hidden sm:block" /> that move businesses forward.
                     </h2>
                 </div>
+                <div className="w-full lg:w-[40%] flex lg:justify-end pb-2">
+                    <p className="text-[#0E121B] font-normal text-[16px] leading-[30.8px] tracking-[0px] instrument-sans text-left">
+                        Coirei builds intelligent products that<br className="hidden lg:block" /> simplify complex challenges and drive<br className="hidden lg:block" /> what's next.
+                    </p>
+                </div>
+            </div>
 
-                {/* Products List */}
-                <div className="flex flex-col gap-12 md:gap-20">
-                    {products.map((product, index) => {
-                        return (
-                            <ProductCard key={product.id} product={product} index={index} />
-                        );
-                    })}
+            {/* Carousel Container */}
+            <div className="relative">
+                <div 
+                    ref={scrollContainerRef}
+                    className="flex gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory pb-6"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                >
+                    <style>{`
+                        /* Hide scrollbar for Chrome, Safari and Opera */
+                        .overflow-x-auto::-webkit-scrollbar {
+                            display: none;
+                        }
+                    `}</style>
+                    {products.map((product) => (
+                        <div key={product.id} className="min-w-[90vw] md:min-w-[60vw] lg:min-w-[45vw] snap-start flex flex-col">
+                            <div className="relative w-full rounded-2xl md:rounded-[32px] overflow-hidden mb-6 shadow-sm flex items-center justify-center p-4 md:py-[48px] md:pl-[48px] md:pr-[64px]">
+                                {/* Vibrant Gradient Background */}
+                                <img
+                                    src={vmBgImg}
+                                    alt=""
+                                    className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+                                />
+
+                                <div className="relative z-10 w-full aspect-[624/444] rounded-[12px] sm:rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] bg-white">
+                                    <img
+                                        src={product.src}
+                                        alt={product.title}
+                                        className="w-full h-full object-contain object-left-top block"
+                                    />
+                                </div>
+                            </div>
+                            <h3 className="text-[20px] md:text-[24px] font-medium text-[#0E121B] mb-3 instrument-sans tracking-tight">
+                                {product.title}
+                            </h3>
+                            <p className="text-[#5B6280] text-[14px] md:text-[16px] leading-[1.6] instrument-sans max-w-[95%]">
+                                {product.description}
+                            </p>
+                        </div>
+                    ))}
                 </div>
 
+                {/* Navigation Arrows */}
+                <div className="flex gap-3 mt-2">
+                    <button 
+                        onClick={() => scroll("left")}
+                        className="w-10 h-10 rounded-md bg-[#F4F5F7] flex items-center justify-center hover:bg-[#E2E4E9] transition-colors cursor-pointer"
+                        aria-label="Scroll Left"
+                    >
+                        <ArrowLeft size={18} className="text-[#5B6280]" strokeWidth={2} />
+                    </button>
+                    <button 
+                        onClick={() => scroll("right")}
+                        className="w-10 h-10 rounded-md bg-[#F4F5F7] flex items-center justify-center hover:bg-[#E2E4E9] transition-colors cursor-pointer"
+                        aria-label="Scroll Right"
+                    >
+                        <ArrowRight size={18} className="text-[#5B6280]" strokeWidth={2} />
+                    </button>
+                </div>
             </div>
         </section>
     );

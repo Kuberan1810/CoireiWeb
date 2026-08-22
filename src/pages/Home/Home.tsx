@@ -5,7 +5,6 @@ import FooterCoirei from "../../component/Footer/footerCoirei";
 import Industry from "./sections/Industry";
 import Vision from "./sections/Vision";
 import useScrollAnimations from "../../hooks/useScrollAnimations";
-import About from "./sections/About";
 import OurProducts from "./sections/OurProduct";
 import BuildWithCoirei from "./sections/BuildWithCoirei";
 import Ceo from "./sections/Ceo";
@@ -38,9 +37,8 @@ function Home() {
             <Hero />
             <WhyCoirei />
             <Highlights />
-            <Ecosystem />
-            <About />
             <OurProducts />
+            <Ecosystem />
             <BuildWithCoirei />
             <IndustrialAITraining />
             <Industry />

@@ -60,13 +60,13 @@ const Highlights = () => {
                             </p>
 
                             <div className="flex items-center gap-6">
-                                <div className="flex -space-x-2">
-                                    <img className="w-14 h-14 rounded-full border-2 border-white object-cover object-top" src={founderImg} alt="Avatar 1" />
-                                    <img className="w-14 h-14 rounded-full border-2 border-white object-cover object-top" src={coFounderImg} alt="Avatar 2" />
-                                    <img className="w-14 h-14 rounded-full border-2 border-white object-cover object-top" src={uiUxImg} alt="Avatar 3" />
-                                    <img className="w-14 h-14 rounded-full border-2 border-white object-cover object-top" src={backendImg} alt="Avatar 4" />
-                                    <img className="w-14 h-14 rounded-full border-2 border-white object-cover object-top" src={cyberSecurityImg} alt="Avatar 5" />
-                                    <img className="w-14 h-14 rounded-full border-2 border-white object-cover object-top" src={kubuImg} alt="Avatar 6" />
+                                <div className="flex -space-x-4">
+                                    <img className="relative z-[60] w-14 h-14 rounded-full border-2 border-white bg-slate-100 object-cover object-top" src={founderImg} alt="Avatar 1" />
+                                    <img className="relative z-[50] w-14 h-14 rounded-full border-2 border-white bg-slate-100 object-cover object-top" src={coFounderImg} alt="Avatar 2" />
+                                    <img className="relative z-[40] w-14 h-14 rounded-full border-2 border-white bg-slate-100 object-cover object-top" src={uiUxImg} alt="Avatar 3" />
+                                    <img className="relative z-[30] w-14 h-14 rounded-full border-2 border-white bg-slate-100 object-cover object-top" src={backendImg} alt="Avatar 4" />
+                                    <img className="relative z-[20] w-14 h-14 rounded-full border-2 border-white bg-slate-100 object-cover object-top" src={cyberSecurityImg} alt="Avatar 5" />
+                                    <img className="relative z-[10] w-14 h-14 rounded-full border-2 border-white bg-slate-100 object-cover object-top" src={kubuImg} alt="Avatar 6" />
                                 </div>
                                 <div className="w-8 h-[2px] bg-[#E5E7EB]"></div>
                                 <span className="text-[#0E121B] text-[18px] font-medium instrument-sans">
