@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import TypewriterHeading from '../../../component/TypewriterHeading';
+
 
 const TypewriterText = ({ text, onComplete }: { text: string, onComplete?: () => void }) => {
     const [displayedText, setDisplayedText] = useState("");
@@ -62,9 +62,21 @@ const BuildWithCoirei = () => {
 
     return (
         <section className="GlobalPadding">
-            <h2 data-ns-animate className="text-[30px] sm:text-[40px] md:text-[52px] font-semibold text-black mb-15 min-h-[45px] sm:min-h-[82px]">
-                <TypewriterHeading text="Build With Coirei" />
-            </h2>
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-end mb-10 lg:mb-15">
+                <div className="w-full lg:w-[60%]">
+                    <span className="text-[#D33B12] text-[16px] font-normal leading-[20.8px] tracking-[0px]  mb-2 block">
+                        Build With Coirei
+                    </span>
+                    <h2 data-ns-animate className="text-[32px] sm:text-[40px] md:text-[48px] font-normal text-[#0E121B] leading-[1.2] md:leading-[52.8px] tracking-[0px] instrument-sans">
+                        From ideas to intelligent<br className="hidden sm:block" /> solutions.
+                    </h2>
+                </div>
+                <div className="w-full lg:w-[40%] flex lg:justify-end pb-2">
+                    <p className="text-[#0E121B] font-normal text-[16px] leading-[30.8px] tracking-[0px] instrument-sans">
+                        We design and build AI-powered<br className="hidden lg:block" /> technology tailored to your business<br className="hidden lg:block" /> needs.
+                    </p>
+                </div>
+            </div>
 
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-center">
                 {/* Left Card */}

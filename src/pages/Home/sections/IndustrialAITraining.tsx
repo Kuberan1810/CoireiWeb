@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import TypewriterHeading from '../../../component/TypewriterHeading';
+
 import logo1 from '../../../assets/images/homepage/networkrhinos.svg';
 import logo2 from '../../../assets/images/homepage/techpanda.svg';
 import logo3 from '../../../assets/images/homepage/skillpoint.svg';
@@ -64,9 +64,21 @@ const IndustrialAITraining = () => {
 
     return (
         <section className="GlobalPadding">
-            <h2 data-ns-animate className="text-[30px] sm:text-[40px] md:text-[52px] font-semibold text-black mb-15 min-h-[45px] sm:min-h-[78px]">
-                <TypewriterHeading text="Industrial AI Training" />
-            </h2>
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-end mb-10 lg:mb-15">
+                <div className="w-full lg:w-[60%]">
+                    <span className="text-[#D33B12] text-[16px] font-normal leading-[20.8px] tracking-[0px] mb-2 block">
+                        Industrial AI Training
+                    </span>
+                    <h2 data-ns-animate className="text-[32px] sm:text-[40px] md:text-[48px] font-normal text-[#0E121B] leading-[1.2] md:leading-[52.8px] tracking-[0px] instrument-sans">
+                        Build AI skills for the<br className="hidden sm:block" /> real world.
+                    </h2>
+                </div>
+                <div className="w-full lg:w-[40%] flex lg:justify-end pb-2">
+                    <p className="text-[#0E121B] font-normal text-[16px] leading-[30.8px] tracking-[0px] instrument-sans text-left">
+                        Practical AI training designed to turn<br className="hidden lg:block" /> knowledge into real-world capability.
+                    </p>
+                </div>
+            </div>
 
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-center">
                 {/* Left List */}
