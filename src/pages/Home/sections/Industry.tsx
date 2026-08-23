@@ -1,4 +1,3 @@
-import TypewriterHeading from "../../../component/TypewriterHeading";
 import bgImage from "../../../assets/images/homepage/bg.jpg";
 
 const row1 = [
@@ -104,7 +103,7 @@ const Industry = () => {
               data-delay="0.05"
               className="text-[32px] lg:text-[48px] text-[#111827] leading-[1.15] tracking-tight min-h-[75px] sm:min-h-[96px] md:min-h-[120px]"
             >
-              <TypewriterHeading text="Intelligence that fits your industry." />
+              Intelligence that fits your industry.
             </h2>
           </div>
 

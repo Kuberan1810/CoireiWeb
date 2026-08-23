@@ -1,4 +1,3 @@
-import TypewriterHeading from "../../../component/TypewriterHeading";
 import vmBgImg from "../../../assets/images/homepage/V&M BG.png";
 import vmCardImg from "../../../assets/images/homepage/v&M.jpg";
 
@@ -16,7 +15,7 @@ const Vision = () => {
                             Vision & Mission
                         </span>
                         <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] text-[#0E121B] leading-[1.15] tracking-tight mb-4 sm:mb-6 min-h-[75px] sm:min-h-[96px]">
-                            <TypewriterHeading text="Building the future of intelligent business." />
+                            Building the future of intelligent business.
                         </h2>
                         <p className="text-[#0E121B] text-sm sm:text-base md:text-[16px] leading-relaxed max-w-lg font-normal">
                             Coirei is focused on creating practical, secure, and scalable AI systems that help organizations automate, innovate, and grow.
